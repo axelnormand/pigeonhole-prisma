@@ -9,5 +9,11 @@
     "client",
     "server",
     "prisma"
-  ]
+  ],
+  "dependencies": {
+    "prisma-client-lib": "^1.34.10"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
