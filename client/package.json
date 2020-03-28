@@ -7,6 +7,7 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
-    "@axelnormand/pigeonhole-prisma": "1.0.0"
+    "@axelnormand/pigeonhole-prisma-client": "1.0.0",
+    "@axelnormand/pigeonhole-nexus-client": "1.0.0"
   }
 }

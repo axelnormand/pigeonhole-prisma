@@ -1,4 +1,4 @@
-import { prisma } from "@axelnormand/pigeonhole-prisma";
+import { prisma } from "@axelnormand/pigeonhole-prisma-client";
 
 // A `main` function so that we can use async/await
 async function main() {

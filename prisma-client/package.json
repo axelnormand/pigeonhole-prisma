@@ -1,5 +1,5 @@
 {
-  "name": "@axelnormand/pigeonhole-prisma",
+  "name": "@axelnormand/pigeonhole-prisma-client",
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {}

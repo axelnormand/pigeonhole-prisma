@@ -8,7 +8,8 @@
   "workspaces": [
     "client",
     "server",
-    "prisma"
+    "prisma-client",
+    "nexus-client"
   ],
   "dependencies": {
     "prisma-client-lib": "^1.34.10"
