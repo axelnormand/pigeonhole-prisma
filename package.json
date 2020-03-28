@@ -1,0 +1,13 @@
+{
+  "name": "pigeonhole-prisma",
+  "version": "1.0.0",
+  "repository": "https://github.com/axelnormand/pigeonhole-prisma.git",
+  "author": "axelnormand <axel@axelnormand.co.uk>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "generated"
+  ]
+}
