@@ -1,14 +1,13 @@
 import { prisma } from "@axelnormand/pigeonhole-prisma-client";
+import { GraphQLServer } from "graphql-yoga";
+import { schema } from "./schema";
 
-// A `main` function so that we can use async/await
 async function main() {
-  // Create a new user called `Alice`
-  const newUser = await prisma.createUser({ name: "Alice" });
-  console.log(`Created new user: ${newUser.name} (ID: ${newUser.id})`);
-
-  // Read all users from the database and print them to the console
-  const allUsers = await prisma.users();
-  console.log(allUsers);
+  const server = new GraphQLServer({
+    schema,
+    context: { prisma }
+  });
+  server.start(() => console.log("Server is running on http://localhost:4000"));
 }
 
 main().catch(e => console.error(e));
