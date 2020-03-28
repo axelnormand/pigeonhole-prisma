@@ -1,0 +1,7 @@
+{
+  "name": "@axelnormand/pigeonhole-server",
+  "version": "1.0.0",
+  "dependencies": {
+    "@axelnormand/pigeonhole-prisma": "1.0.0"
+  }
+}

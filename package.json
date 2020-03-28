@@ -8,6 +8,6 @@
   "workspaces": [
     "client",
     "server",
-    "generated"
+    "prisma"
   ]
 }
