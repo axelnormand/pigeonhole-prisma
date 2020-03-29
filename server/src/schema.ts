@@ -2,9 +2,9 @@ import { prisma } from "@axelnormand/pigeonhole-prisma-client";
 import datamodelInfo from "@axelnormand/pigeonhole-nexus-client";
 import * as path from "path";
 import { stringArg, idArg } from "nexus";
-import { prismaObjectType, makePrismaSchema,  } from "nexus-prisma";
+import { prismaObjectType, makePrismaSchema } from "nexus-prisma";
 
-const Query = prismaObjectType({
+const Query = prismaObjectType<"Query">({
   name: "Query",
   definition(t) {
     t.prismaFields(["post"]);
@@ -22,7 +22,7 @@ const Query = prismaObjectType({
   }
 });
 
-const Mutation = prismaObjectType({
+const Mutation = prismaObjectType<"Mutation">({
   name: "Mutation",
   definition(t) {
     t.prismaFields(["createUser", "deletePost"]);
