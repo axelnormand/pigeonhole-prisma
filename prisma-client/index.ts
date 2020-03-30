@@ -16,8 +16,27 @@ export type AtLeastOne<T, U = { [K in keyof T]: Pick<T, K> }> = Partial<T> &
 export type Maybe<T> = T | undefined | null;
 
 export interface Exists {
-  post: (where?: PostWhereInput) => Promise<boolean>;
-  user: (where?: UserWhereInput) => Promise<boolean>;
+  punbbBan: (where?: PunbbBanWhereInput) => Promise<boolean>;
+  punbbCategory: (where?: PunbbCategoryWhereInput) => Promise<boolean>;
+  punbbCensoring: (where?: PunbbCensoringWhereInput) => Promise<boolean>;
+  punbbConfig: (where?: PunbbConfigWhereInput) => Promise<boolean>;
+  punbbForum: (where?: PunbbForumWhereInput) => Promise<boolean>;
+  punbbForumPerm: (where?: PunbbForumPermWhereInput) => Promise<boolean>;
+  punbbGroup: (where?: PunbbGroupWhereInput) => Promise<boolean>;
+  punbbOnline: (where?: PunbbOnlineWhereInput) => Promise<boolean>;
+  punbbPoll: (where?: PunbbPollWhereInput) => Promise<boolean>;
+  punbbPost: (where?: PunbbPostWhereInput) => Promise<boolean>;
+  punbbRank: (where?: PunbbRankWhereInput) => Promise<boolean>;
+  punbbReport: (where?: PunbbReportWhereInput) => Promise<boolean>;
+  punbbSearchCache: (where?: PunbbSearchCacheWhereInput) => Promise<boolean>;
+  punbbSearchMatch: (where?: PunbbSearchMatchWhereInput) => Promise<boolean>;
+  punbbSearchWord: (where?: PunbbSearchWordWhereInput) => Promise<boolean>;
+  punbbTopic: (where?: PunbbTopicWhereInput) => Promise<boolean>;
+  punbbUploaded: (where?: PunbbUploadedWhereInput) => Promise<boolean>;
+  punbbUploadsConf: (where?: PunbbUploadsConfWhereInput) => Promise<boolean>;
+  punbbUploadsType: (where?: PunbbUploadsTypeWhereInput) => Promise<boolean>;
+  punbbUser: (where?: PunbbUserWhereInput) => Promise<boolean>;
+  punbbUserthread: (where?: PunbbUserthreadWhereInput) => Promise<boolean>;
 }
 
 export interface Node {}
@@ -39,82 +58,749 @@ export interface Prisma {
    * Queries
    */
 
-  post: (where: PostWhereUniqueInput) => PostNullablePromise;
-  posts: (args?: {
-    where?: PostWhereInput;
-    orderBy?: PostOrderByInput;
+  punbbBan: (where: PunbbBanWhereUniqueInput) => PunbbBanNullablePromise;
+  punbbBans: (args?: {
+    where?: PunbbBanWhereInput;
+    orderBy?: PunbbBanOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FragmentableArray<Post>;
-  postsConnection: (args?: {
-    where?: PostWhereInput;
-    orderBy?: PostOrderByInput;
+  }) => FragmentableArray<PunbbBan>;
+  punbbBansConnection: (args?: {
+    where?: PunbbBanWhereInput;
+    orderBy?: PunbbBanOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => PostConnectionPromise;
-  user: (where: UserWhereUniqueInput) => UserNullablePromise;
-  users: (args?: {
-    where?: UserWhereInput;
-    orderBy?: UserOrderByInput;
+  }) => PunbbBanConnectionPromise;
+  punbbCategory: (
+    where: PunbbCategoryWhereUniqueInput
+  ) => PunbbCategoryNullablePromise;
+  punbbCategories: (args?: {
+    where?: PunbbCategoryWhereInput;
+    orderBy?: PunbbCategoryOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => FragmentableArray<User>;
-  usersConnection: (args?: {
-    where?: UserWhereInput;
-    orderBy?: UserOrderByInput;
+  }) => FragmentableArray<PunbbCategory>;
+  punbbCategoriesConnection: (args?: {
+    where?: PunbbCategoryWhereInput;
+    orderBy?: PunbbCategoryOrderByInput;
     skip?: Int;
     after?: String;
     before?: String;
     first?: Int;
     last?: Int;
-  }) => UserConnectionPromise;
+  }) => PunbbCategoryConnectionPromise;
+  punbbCensoring: (
+    where: PunbbCensoringWhereUniqueInput
+  ) => PunbbCensoringNullablePromise;
+  punbbCensorings: (args?: {
+    where?: PunbbCensoringWhereInput;
+    orderBy?: PunbbCensoringOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbCensoring>;
+  punbbCensoringsConnection: (args?: {
+    where?: PunbbCensoringWhereInput;
+    orderBy?: PunbbCensoringOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbCensoringConnectionPromise;
+  punbbConfig: (
+    where: PunbbConfigWhereUniqueInput
+  ) => PunbbConfigNullablePromise;
+  punbbConfigs: (args?: {
+    where?: PunbbConfigWhereInput;
+    orderBy?: PunbbConfigOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbConfig>;
+  punbbConfigsConnection: (args?: {
+    where?: PunbbConfigWhereInput;
+    orderBy?: PunbbConfigOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbConfigConnectionPromise;
+  punbbForum: (where: PunbbForumWhereUniqueInput) => PunbbForumNullablePromise;
+  punbbForums: (args?: {
+    where?: PunbbForumWhereInput;
+    orderBy?: PunbbForumOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbForum>;
+  punbbForumsConnection: (args?: {
+    where?: PunbbForumWhereInput;
+    orderBy?: PunbbForumOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbForumConnectionPromise;
+  punbbForumPerms: (args?: {
+    where?: PunbbForumPermWhereInput;
+    orderBy?: PunbbForumPermOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbForumPerm>;
+  punbbForumPermsConnection: (args?: {
+    where?: PunbbForumPermWhereInput;
+    orderBy?: PunbbForumPermOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbForumPermConnectionPromise;
+  punbbGroup: (where: PunbbGroupWhereUniqueInput) => PunbbGroupNullablePromise;
+  punbbGroups: (args?: {
+    where?: PunbbGroupWhereInput;
+    orderBy?: PunbbGroupOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbGroup>;
+  punbbGroupsConnection: (args?: {
+    where?: PunbbGroupWhereInput;
+    orderBy?: PunbbGroupOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbGroupConnectionPromise;
+  punbbOnlines: (args?: {
+    where?: PunbbOnlineWhereInput;
+    orderBy?: PunbbOnlineOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbOnline>;
+  punbbOnlinesConnection: (args?: {
+    where?: PunbbOnlineWhereInput;
+    orderBy?: PunbbOnlineOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbOnlineConnectionPromise;
+  punbbPoll: (where: PunbbPollWhereUniqueInput) => PunbbPollNullablePromise;
+  punbbPolls: (args?: {
+    where?: PunbbPollWhereInput;
+    orderBy?: PunbbPollOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbPoll>;
+  punbbPollsConnection: (args?: {
+    where?: PunbbPollWhereInput;
+    orderBy?: PunbbPollOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbPollConnectionPromise;
+  punbbPost: (where: PunbbPostWhereUniqueInput) => PunbbPostNullablePromise;
+  punbbPosts: (args?: {
+    where?: PunbbPostWhereInput;
+    orderBy?: PunbbPostOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbPost>;
+  punbbPostsConnection: (args?: {
+    where?: PunbbPostWhereInput;
+    orderBy?: PunbbPostOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbPostConnectionPromise;
+  punbbRank: (where: PunbbRankWhereUniqueInput) => PunbbRankNullablePromise;
+  punbbRanks: (args?: {
+    where?: PunbbRankWhereInput;
+    orderBy?: PunbbRankOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbRank>;
+  punbbRanksConnection: (args?: {
+    where?: PunbbRankWhereInput;
+    orderBy?: PunbbRankOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbRankConnectionPromise;
+  punbbReport: (
+    where: PunbbReportWhereUniqueInput
+  ) => PunbbReportNullablePromise;
+  punbbReports: (args?: {
+    where?: PunbbReportWhereInput;
+    orderBy?: PunbbReportOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbReport>;
+  punbbReportsConnection: (args?: {
+    where?: PunbbReportWhereInput;
+    orderBy?: PunbbReportOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbReportConnectionPromise;
+  punbbSearchCache: (
+    where: PunbbSearchCacheWhereUniqueInput
+  ) => PunbbSearchCacheNullablePromise;
+  punbbSearchCaches: (args?: {
+    where?: PunbbSearchCacheWhereInput;
+    orderBy?: PunbbSearchCacheOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbSearchCache>;
+  punbbSearchCachesConnection: (args?: {
+    where?: PunbbSearchCacheWhereInput;
+    orderBy?: PunbbSearchCacheOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbSearchCacheConnectionPromise;
+  punbbSearchMatches: (args?: {
+    where?: PunbbSearchMatchWhereInput;
+    orderBy?: PunbbSearchMatchOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbSearchMatch>;
+  punbbSearchMatchesConnection: (args?: {
+    where?: PunbbSearchMatchWhereInput;
+    orderBy?: PunbbSearchMatchOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbSearchMatchConnectionPromise;
+  punbbSearchWord: (
+    where: PunbbSearchWordWhereUniqueInput
+  ) => PunbbSearchWordNullablePromise;
+  punbbSearchWords: (args?: {
+    where?: PunbbSearchWordWhereInput;
+    orderBy?: PunbbSearchWordOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbSearchWord>;
+  punbbSearchWordsConnection: (args?: {
+    where?: PunbbSearchWordWhereInput;
+    orderBy?: PunbbSearchWordOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbSearchWordConnectionPromise;
+  punbbTopic: (where: PunbbTopicWhereUniqueInput) => PunbbTopicNullablePromise;
+  punbbTopics: (args?: {
+    where?: PunbbTopicWhereInput;
+    orderBy?: PunbbTopicOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbTopic>;
+  punbbTopicsConnection: (args?: {
+    where?: PunbbTopicWhereInput;
+    orderBy?: PunbbTopicOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbTopicConnectionPromise;
+  punbbUploaded: (
+    where: PunbbUploadedWhereUniqueInput
+  ) => PunbbUploadedNullablePromise;
+  punbbUploadeds: (args?: {
+    where?: PunbbUploadedWhereInput;
+    orderBy?: PunbbUploadedOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbUploaded>;
+  punbbUploadedsConnection: (args?: {
+    where?: PunbbUploadedWhereInput;
+    orderBy?: PunbbUploadedOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbUploadedConnectionPromise;
+  punbbUploadsConfs: (args?: {
+    where?: PunbbUploadsConfWhereInput;
+    orderBy?: PunbbUploadsConfOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbUploadsConf>;
+  punbbUploadsConfsConnection: (args?: {
+    where?: PunbbUploadsConfWhereInput;
+    orderBy?: PunbbUploadsConfOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbUploadsConfConnectionPromise;
+  punbbUploadsType: (
+    where: PunbbUploadsTypeWhereUniqueInput
+  ) => PunbbUploadsTypeNullablePromise;
+  punbbUploadsTypes: (args?: {
+    where?: PunbbUploadsTypeWhereInput;
+    orderBy?: PunbbUploadsTypeOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbUploadsType>;
+  punbbUploadsTypesConnection: (args?: {
+    where?: PunbbUploadsTypeWhereInput;
+    orderBy?: PunbbUploadsTypeOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbUploadsTypeConnectionPromise;
+  punbbUser: (where: PunbbUserWhereUniqueInput) => PunbbUserNullablePromise;
+  punbbUsers: (args?: {
+    where?: PunbbUserWhereInput;
+    orderBy?: PunbbUserOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbUser>;
+  punbbUsersConnection: (args?: {
+    where?: PunbbUserWhereInput;
+    orderBy?: PunbbUserOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbUserConnectionPromise;
+  punbbUserthreads: (args?: {
+    where?: PunbbUserthreadWhereInput;
+    orderBy?: PunbbUserthreadOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => FragmentableArray<PunbbUserthread>;
+  punbbUserthreadsConnection: (args?: {
+    where?: PunbbUserthreadWhereInput;
+    orderBy?: PunbbUserthreadOrderByInput;
+    skip?: Int;
+    after?: String;
+    before?: String;
+    first?: Int;
+    last?: Int;
+  }) => PunbbUserthreadConnectionPromise;
   node: (args: { id: ID_Output }) => Node;
 
   /**
    * Mutations
    */
 
-  createPost: (data: PostCreateInput) => PostPromise;
-  updatePost: (args: {
-    data: PostUpdateInput;
-    where: PostWhereUniqueInput;
-  }) => PostPromise;
-  updateManyPosts: (args: {
-    data: PostUpdateManyMutationInput;
-    where?: PostWhereInput;
+  createPunbbBan: (data: PunbbBanCreateInput) => PunbbBanPromise;
+  updatePunbbBan: (args: {
+    data: PunbbBanUpdateInput;
+    where: PunbbBanWhereUniqueInput;
+  }) => PunbbBanPromise;
+  updateManyPunbbBans: (args: {
+    data: PunbbBanUpdateManyMutationInput;
+    where?: PunbbBanWhereInput;
   }) => BatchPayloadPromise;
-  upsertPost: (args: {
-    where: PostWhereUniqueInput;
-    create: PostCreateInput;
-    update: PostUpdateInput;
-  }) => PostPromise;
-  deletePost: (where: PostWhereUniqueInput) => PostPromise;
-  deleteManyPosts: (where?: PostWhereInput) => BatchPayloadPromise;
-  createUser: (data: UserCreateInput) => UserPromise;
-  updateUser: (args: {
-    data: UserUpdateInput;
-    where: UserWhereUniqueInput;
-  }) => UserPromise;
-  updateManyUsers: (args: {
-    data: UserUpdateManyMutationInput;
-    where?: UserWhereInput;
+  upsertPunbbBan: (args: {
+    where: PunbbBanWhereUniqueInput;
+    create: PunbbBanCreateInput;
+    update: PunbbBanUpdateInput;
+  }) => PunbbBanPromise;
+  deletePunbbBan: (where: PunbbBanWhereUniqueInput) => PunbbBanPromise;
+  deleteManyPunbbBans: (where?: PunbbBanWhereInput) => BatchPayloadPromise;
+  createPunbbCategory: (data: PunbbCategoryCreateInput) => PunbbCategoryPromise;
+  updatePunbbCategory: (args: {
+    data: PunbbCategoryUpdateInput;
+    where: PunbbCategoryWhereUniqueInput;
+  }) => PunbbCategoryPromise;
+  updateManyPunbbCategories: (args: {
+    data: PunbbCategoryUpdateManyMutationInput;
+    where?: PunbbCategoryWhereInput;
   }) => BatchPayloadPromise;
-  upsertUser: (args: {
-    where: UserWhereUniqueInput;
-    create: UserCreateInput;
-    update: UserUpdateInput;
-  }) => UserPromise;
-  deleteUser: (where: UserWhereUniqueInput) => UserPromise;
-  deleteManyUsers: (where?: UserWhereInput) => BatchPayloadPromise;
+  upsertPunbbCategory: (args: {
+    where: PunbbCategoryWhereUniqueInput;
+    create: PunbbCategoryCreateInput;
+    update: PunbbCategoryUpdateInput;
+  }) => PunbbCategoryPromise;
+  deletePunbbCategory: (
+    where: PunbbCategoryWhereUniqueInput
+  ) => PunbbCategoryPromise;
+  deleteManyPunbbCategories: (
+    where?: PunbbCategoryWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbCensoring: (
+    data: PunbbCensoringCreateInput
+  ) => PunbbCensoringPromise;
+  updatePunbbCensoring: (args: {
+    data: PunbbCensoringUpdateInput;
+    where: PunbbCensoringWhereUniqueInput;
+  }) => PunbbCensoringPromise;
+  updateManyPunbbCensorings: (args: {
+    data: PunbbCensoringUpdateManyMutationInput;
+    where?: PunbbCensoringWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbCensoring: (args: {
+    where: PunbbCensoringWhereUniqueInput;
+    create: PunbbCensoringCreateInput;
+    update: PunbbCensoringUpdateInput;
+  }) => PunbbCensoringPromise;
+  deletePunbbCensoring: (
+    where: PunbbCensoringWhereUniqueInput
+  ) => PunbbCensoringPromise;
+  deleteManyPunbbCensorings: (
+    where?: PunbbCensoringWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbConfig: (data: PunbbConfigCreateInput) => PunbbConfigPromise;
+  updatePunbbConfig: (args: {
+    data: PunbbConfigUpdateInput;
+    where: PunbbConfigWhereUniqueInput;
+  }) => PunbbConfigPromise;
+  updateManyPunbbConfigs: (args: {
+    data: PunbbConfigUpdateManyMutationInput;
+    where?: PunbbConfigWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbConfig: (args: {
+    where: PunbbConfigWhereUniqueInput;
+    create: PunbbConfigCreateInput;
+    update: PunbbConfigUpdateInput;
+  }) => PunbbConfigPromise;
+  deletePunbbConfig: (where: PunbbConfigWhereUniqueInput) => PunbbConfigPromise;
+  deleteManyPunbbConfigs: (
+    where?: PunbbConfigWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbForum: (data: PunbbForumCreateInput) => PunbbForumPromise;
+  updatePunbbForum: (args: {
+    data: PunbbForumUpdateInput;
+    where: PunbbForumWhereUniqueInput;
+  }) => PunbbForumPromise;
+  updateManyPunbbForums: (args: {
+    data: PunbbForumUpdateManyMutationInput;
+    where?: PunbbForumWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbForum: (args: {
+    where: PunbbForumWhereUniqueInput;
+    create: PunbbForumCreateInput;
+    update: PunbbForumUpdateInput;
+  }) => PunbbForumPromise;
+  deletePunbbForum: (where: PunbbForumWhereUniqueInput) => PunbbForumPromise;
+  deleteManyPunbbForums: (where?: PunbbForumWhereInput) => BatchPayloadPromise;
+  createPunbbForumPerm: (
+    data: PunbbForumPermCreateInput
+  ) => PunbbForumPermPromise;
+  updateManyPunbbForumPerms: (args: {
+    data: PunbbForumPermUpdateManyMutationInput;
+    where?: PunbbForumPermWhereInput;
+  }) => BatchPayloadPromise;
+  deleteManyPunbbForumPerms: (
+    where?: PunbbForumPermWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbGroup: (data: PunbbGroupCreateInput) => PunbbGroupPromise;
+  updatePunbbGroup: (args: {
+    data: PunbbGroupUpdateInput;
+    where: PunbbGroupWhereUniqueInput;
+  }) => PunbbGroupPromise;
+  updateManyPunbbGroups: (args: {
+    data: PunbbGroupUpdateManyMutationInput;
+    where?: PunbbGroupWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbGroup: (args: {
+    where: PunbbGroupWhereUniqueInput;
+    create: PunbbGroupCreateInput;
+    update: PunbbGroupUpdateInput;
+  }) => PunbbGroupPromise;
+  deletePunbbGroup: (where: PunbbGroupWhereUniqueInput) => PunbbGroupPromise;
+  deleteManyPunbbGroups: (where?: PunbbGroupWhereInput) => BatchPayloadPromise;
+  createPunbbOnline: (data: PunbbOnlineCreateInput) => PunbbOnlinePromise;
+  updateManyPunbbOnlines: (args: {
+    data: PunbbOnlineUpdateManyMutationInput;
+    where?: PunbbOnlineWhereInput;
+  }) => BatchPayloadPromise;
+  deleteManyPunbbOnlines: (
+    where?: PunbbOnlineWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbPoll: (data: PunbbPollCreateInput) => PunbbPollPromise;
+  updatePunbbPoll: (args: {
+    data: PunbbPollUpdateInput;
+    where: PunbbPollWhereUniqueInput;
+  }) => PunbbPollPromise;
+  updateManyPunbbPolls: (args: {
+    data: PunbbPollUpdateManyMutationInput;
+    where?: PunbbPollWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbPoll: (args: {
+    where: PunbbPollWhereUniqueInput;
+    create: PunbbPollCreateInput;
+    update: PunbbPollUpdateInput;
+  }) => PunbbPollPromise;
+  deletePunbbPoll: (where: PunbbPollWhereUniqueInput) => PunbbPollPromise;
+  deleteManyPunbbPolls: (where?: PunbbPollWhereInput) => BatchPayloadPromise;
+  createPunbbPost: (data: PunbbPostCreateInput) => PunbbPostPromise;
+  updatePunbbPost: (args: {
+    data: PunbbPostUpdateInput;
+    where: PunbbPostWhereUniqueInput;
+  }) => PunbbPostPromise;
+  updateManyPunbbPosts: (args: {
+    data: PunbbPostUpdateManyMutationInput;
+    where?: PunbbPostWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbPost: (args: {
+    where: PunbbPostWhereUniqueInput;
+    create: PunbbPostCreateInput;
+    update: PunbbPostUpdateInput;
+  }) => PunbbPostPromise;
+  deletePunbbPost: (where: PunbbPostWhereUniqueInput) => PunbbPostPromise;
+  deleteManyPunbbPosts: (where?: PunbbPostWhereInput) => BatchPayloadPromise;
+  createPunbbRank: (data: PunbbRankCreateInput) => PunbbRankPromise;
+  updatePunbbRank: (args: {
+    data: PunbbRankUpdateInput;
+    where: PunbbRankWhereUniqueInput;
+  }) => PunbbRankPromise;
+  updateManyPunbbRanks: (args: {
+    data: PunbbRankUpdateManyMutationInput;
+    where?: PunbbRankWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbRank: (args: {
+    where: PunbbRankWhereUniqueInput;
+    create: PunbbRankCreateInput;
+    update: PunbbRankUpdateInput;
+  }) => PunbbRankPromise;
+  deletePunbbRank: (where: PunbbRankWhereUniqueInput) => PunbbRankPromise;
+  deleteManyPunbbRanks: (where?: PunbbRankWhereInput) => BatchPayloadPromise;
+  createPunbbReport: (data: PunbbReportCreateInput) => PunbbReportPromise;
+  updatePunbbReport: (args: {
+    data: PunbbReportUpdateInput;
+    where: PunbbReportWhereUniqueInput;
+  }) => PunbbReportPromise;
+  updateManyPunbbReports: (args: {
+    data: PunbbReportUpdateManyMutationInput;
+    where?: PunbbReportWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbReport: (args: {
+    where: PunbbReportWhereUniqueInput;
+    create: PunbbReportCreateInput;
+    update: PunbbReportUpdateInput;
+  }) => PunbbReportPromise;
+  deletePunbbReport: (where: PunbbReportWhereUniqueInput) => PunbbReportPromise;
+  deleteManyPunbbReports: (
+    where?: PunbbReportWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbSearchCache: (
+    data: PunbbSearchCacheCreateInput
+  ) => PunbbSearchCachePromise;
+  updatePunbbSearchCache: (args: {
+    data: PunbbSearchCacheUpdateInput;
+    where: PunbbSearchCacheWhereUniqueInput;
+  }) => PunbbSearchCachePromise;
+  updateManyPunbbSearchCaches: (args: {
+    data: PunbbSearchCacheUpdateManyMutationInput;
+    where?: PunbbSearchCacheWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbSearchCache: (args: {
+    where: PunbbSearchCacheWhereUniqueInput;
+    create: PunbbSearchCacheCreateInput;
+    update: PunbbSearchCacheUpdateInput;
+  }) => PunbbSearchCachePromise;
+  deletePunbbSearchCache: (
+    where: PunbbSearchCacheWhereUniqueInput
+  ) => PunbbSearchCachePromise;
+  deleteManyPunbbSearchCaches: (
+    where?: PunbbSearchCacheWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbSearchMatch: (
+    data: PunbbSearchMatchCreateInput
+  ) => PunbbSearchMatchPromise;
+  updateManyPunbbSearchMatches: (args: {
+    data: PunbbSearchMatchUpdateManyMutationInput;
+    where?: PunbbSearchMatchWhereInput;
+  }) => BatchPayloadPromise;
+  deleteManyPunbbSearchMatches: (
+    where?: PunbbSearchMatchWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbSearchWord: (
+    data: PunbbSearchWordCreateInput
+  ) => PunbbSearchWordPromise;
+  deletePunbbSearchWord: (
+    where: PunbbSearchWordWhereUniqueInput
+  ) => PunbbSearchWordPromise;
+  deleteManyPunbbSearchWords: (
+    where?: PunbbSearchWordWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbTopic: (data: PunbbTopicCreateInput) => PunbbTopicPromise;
+  updatePunbbTopic: (args: {
+    data: PunbbTopicUpdateInput;
+    where: PunbbTopicWhereUniqueInput;
+  }) => PunbbTopicPromise;
+  updateManyPunbbTopics: (args: {
+    data: PunbbTopicUpdateManyMutationInput;
+    where?: PunbbTopicWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbTopic: (args: {
+    where: PunbbTopicWhereUniqueInput;
+    create: PunbbTopicCreateInput;
+    update: PunbbTopicUpdateInput;
+  }) => PunbbTopicPromise;
+  deletePunbbTopic: (where: PunbbTopicWhereUniqueInput) => PunbbTopicPromise;
+  deleteManyPunbbTopics: (where?: PunbbTopicWhereInput) => BatchPayloadPromise;
+  createPunbbUploaded: (data: PunbbUploadedCreateInput) => PunbbUploadedPromise;
+  updatePunbbUploaded: (args: {
+    data: PunbbUploadedUpdateInput;
+    where: PunbbUploadedWhereUniqueInput;
+  }) => PunbbUploadedPromise;
+  updateManyPunbbUploadeds: (args: {
+    data: PunbbUploadedUpdateManyMutationInput;
+    where?: PunbbUploadedWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbUploaded: (args: {
+    where: PunbbUploadedWhereUniqueInput;
+    create: PunbbUploadedCreateInput;
+    update: PunbbUploadedUpdateInput;
+  }) => PunbbUploadedPromise;
+  deletePunbbUploaded: (
+    where: PunbbUploadedWhereUniqueInput
+  ) => PunbbUploadedPromise;
+  deleteManyPunbbUploadeds: (
+    where?: PunbbUploadedWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbUploadsConf: (
+    data: PunbbUploadsConfCreateInput
+  ) => PunbbUploadsConfPromise;
+  updateManyPunbbUploadsConfs: (args: {
+    data: PunbbUploadsConfUpdateManyMutationInput;
+    where?: PunbbUploadsConfWhereInput;
+  }) => BatchPayloadPromise;
+  deleteManyPunbbUploadsConfs: (
+    where?: PunbbUploadsConfWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbUploadsType: (
+    data: PunbbUploadsTypeCreateInput
+  ) => PunbbUploadsTypePromise;
+  updatePunbbUploadsType: (args: {
+    data: PunbbUploadsTypeUpdateInput;
+    where: PunbbUploadsTypeWhereUniqueInput;
+  }) => PunbbUploadsTypePromise;
+  updateManyPunbbUploadsTypes: (args: {
+    data: PunbbUploadsTypeUpdateManyMutationInput;
+    where?: PunbbUploadsTypeWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbUploadsType: (args: {
+    where: PunbbUploadsTypeWhereUniqueInput;
+    create: PunbbUploadsTypeCreateInput;
+    update: PunbbUploadsTypeUpdateInput;
+  }) => PunbbUploadsTypePromise;
+  deletePunbbUploadsType: (
+    where: PunbbUploadsTypeWhereUniqueInput
+  ) => PunbbUploadsTypePromise;
+  deleteManyPunbbUploadsTypes: (
+    where?: PunbbUploadsTypeWhereInput
+  ) => BatchPayloadPromise;
+  createPunbbUser: (data: PunbbUserCreateInput) => PunbbUserPromise;
+  updatePunbbUser: (args: {
+    data: PunbbUserUpdateInput;
+    where: PunbbUserWhereUniqueInput;
+  }) => PunbbUserPromise;
+  updateManyPunbbUsers: (args: {
+    data: PunbbUserUpdateManyMutationInput;
+    where?: PunbbUserWhereInput;
+  }) => BatchPayloadPromise;
+  upsertPunbbUser: (args: {
+    where: PunbbUserWhereUniqueInput;
+    create: PunbbUserCreateInput;
+    update: PunbbUserUpdateInput;
+  }) => PunbbUserPromise;
+  deletePunbbUser: (where: PunbbUserWhereUniqueInput) => PunbbUserPromise;
+  deleteManyPunbbUsers: (where?: PunbbUserWhereInput) => BatchPayloadPromise;
+  createPunbbUserthread: (
+    data: PunbbUserthreadCreateInput
+  ) => PunbbUserthreadPromise;
+  updateManyPunbbUserthreads: (args: {
+    data: PunbbUserthreadUpdateManyMutationInput;
+    where?: PunbbUserthreadWhereInput;
+  }) => BatchPayloadPromise;
+  deleteManyPunbbUserthreads: (
+    where?: PunbbUserthreadWhereInput
+  ) => BatchPayloadPromise;
 
   /**
    * Subscriptions
@@ -124,12 +810,69 @@ export interface Prisma {
 }
 
 export interface Subscription {
-  post: (
-    where?: PostSubscriptionWhereInput
-  ) => PostSubscriptionPayloadSubscription;
-  user: (
-    where?: UserSubscriptionWhereInput
-  ) => UserSubscriptionPayloadSubscription;
+  punbbBan: (
+    where?: PunbbBanSubscriptionWhereInput
+  ) => PunbbBanSubscriptionPayloadSubscription;
+  punbbCategory: (
+    where?: PunbbCategorySubscriptionWhereInput
+  ) => PunbbCategorySubscriptionPayloadSubscription;
+  punbbCensoring: (
+    where?: PunbbCensoringSubscriptionWhereInput
+  ) => PunbbCensoringSubscriptionPayloadSubscription;
+  punbbConfig: (
+    where?: PunbbConfigSubscriptionWhereInput
+  ) => PunbbConfigSubscriptionPayloadSubscription;
+  punbbForum: (
+    where?: PunbbForumSubscriptionWhereInput
+  ) => PunbbForumSubscriptionPayloadSubscription;
+  punbbForumPerm: (
+    where?: PunbbForumPermSubscriptionWhereInput
+  ) => PunbbForumPermSubscriptionPayloadSubscription;
+  punbbGroup: (
+    where?: PunbbGroupSubscriptionWhereInput
+  ) => PunbbGroupSubscriptionPayloadSubscription;
+  punbbOnline: (
+    where?: PunbbOnlineSubscriptionWhereInput
+  ) => PunbbOnlineSubscriptionPayloadSubscription;
+  punbbPoll: (
+    where?: PunbbPollSubscriptionWhereInput
+  ) => PunbbPollSubscriptionPayloadSubscription;
+  punbbPost: (
+    where?: PunbbPostSubscriptionWhereInput
+  ) => PunbbPostSubscriptionPayloadSubscription;
+  punbbRank: (
+    where?: PunbbRankSubscriptionWhereInput
+  ) => PunbbRankSubscriptionPayloadSubscription;
+  punbbReport: (
+    where?: PunbbReportSubscriptionWhereInput
+  ) => PunbbReportSubscriptionPayloadSubscription;
+  punbbSearchCache: (
+    where?: PunbbSearchCacheSubscriptionWhereInput
+  ) => PunbbSearchCacheSubscriptionPayloadSubscription;
+  punbbSearchMatch: (
+    where?: PunbbSearchMatchSubscriptionWhereInput
+  ) => PunbbSearchMatchSubscriptionPayloadSubscription;
+  punbbSearchWord: (
+    where?: PunbbSearchWordSubscriptionWhereInput
+  ) => PunbbSearchWordSubscriptionPayloadSubscription;
+  punbbTopic: (
+    where?: PunbbTopicSubscriptionWhereInput
+  ) => PunbbTopicSubscriptionPayloadSubscription;
+  punbbUploaded: (
+    where?: PunbbUploadedSubscriptionWhereInput
+  ) => PunbbUploadedSubscriptionPayloadSubscription;
+  punbbUploadsConf: (
+    where?: PunbbUploadsConfSubscriptionWhereInput
+  ) => PunbbUploadsConfSubscriptionPayloadSubscription;
+  punbbUploadsType: (
+    where?: PunbbUploadsTypeSubscriptionWhereInput
+  ) => PunbbUploadsTypeSubscriptionPayloadSubscription;
+  punbbUser: (
+    where?: PunbbUserSubscriptionWhereInput
+  ) => PunbbUserSubscriptionPayloadSubscription;
+  punbbUserthread: (
+    where?: PunbbUserthreadSubscriptionWhereInput
+  ) => PunbbUserthreadSubscriptionPayloadSubscription;
 }
 
 export interface ClientConstructor<T> {
@@ -140,80 +883,375 @@ export interface ClientConstructor<T> {
  * Types
  */
 
-export type PostOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "title_ASC"
-  | "title_DESC"
-  | "published_ASC"
-  | "published_DESC";
-
-export type UserOrderByInput =
+export type PunbbBanOrderByInput =
   | "id_ASC"
   | "id_DESC"
   | "email_ASC"
   | "email_DESC"
-  | "name_ASC"
-  | "name_DESC";
+  | "expire_ASC"
+  | "expire_DESC"
+  | "ip_ASC"
+  | "ip_DESC"
+  | "message_ASC"
+  | "message_DESC"
+  | "username_ASC"
+  | "username_DESC";
+
+export type PunbbCategoryOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "catName_ASC"
+  | "catName_DESC"
+  | "dispPosition_ASC"
+  | "dispPosition_DESC";
+
+export type PunbbCensoringOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "replaceWith_ASC"
+  | "replaceWith_DESC"
+  | "searchFor_ASC"
+  | "searchFor_DESC";
+
+export type PunbbConfigOrderByInput =
+  | "conf_name_ASC"
+  | "conf_name_DESC"
+  | "confValue_ASC"
+  | "confValue_DESC";
+
+export type PunbbForumOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "catId_ASC"
+  | "catId_DESC"
+  | "dispPosition_ASC"
+  | "dispPosition_DESC"
+  | "forumDesc_ASC"
+  | "forumDesc_DESC"
+  | "forumName_ASC"
+  | "forumName_DESC"
+  | "lastPost_ASC"
+  | "lastPost_DESC"
+  | "lastPoster_ASC"
+  | "lastPoster_DESC"
+  | "lastPostId_ASC"
+  | "lastPostId_DESC"
+  | "moderators_ASC"
+  | "moderators_DESC"
+  | "redirectUrl_ASC"
+  | "redirectUrl_DESC"
+  | "sortBy_ASC"
+  | "sortBy_DESC";
+
+export type PunbbForumPermOrderByInput =
+  | "postPolls_ASC"
+  | "postPolls_DESC"
+  | "postReplies_ASC"
+  | "postReplies_DESC"
+  | "postTopics_ASC"
+  | "postTopics_DESC"
+  | "readForum_ASC"
+  | "readForum_DESC";
+
+export type PunbbGroupOrderByInput =
+  | "g_id_ASC"
+  | "g_id_DESC"
+  | "gDeletePosts_ASC"
+  | "gDeletePosts_DESC"
+  | "gDeleteTopics_ASC"
+  | "gDeleteTopics_DESC"
+  | "gEditPosts_ASC"
+  | "gEditPosts_DESC"
+  | "gEditSubjectsInterval_ASC"
+  | "gEditSubjectsInterval_DESC"
+  | "gPostFlood_ASC"
+  | "gPostFlood_DESC"
+  | "gPostPolls_ASC"
+  | "gPostPolls_DESC"
+  | "gPostReplies_ASC"
+  | "gPostReplies_DESC"
+  | "gPostTopics_ASC"
+  | "gPostTopics_DESC"
+  | "gReadBoard_ASC"
+  | "gReadBoard_DESC"
+  | "gSearch_ASC"
+  | "gSearch_DESC"
+  | "gSearchFlood_ASC"
+  | "gSearchFlood_DESC"
+  | "gSearchUsers_ASC"
+  | "gSearchUsers_DESC"
+  | "gSetTitle_ASC"
+  | "gSetTitle_DESC"
+  | "gTitle_ASC"
+  | "gTitle_DESC"
+  | "gUserTitle_ASC"
+  | "gUserTitle_DESC";
+
+export type PunbbOnlineOrderByInput =
+  | "ident_ASC"
+  | "ident_DESC"
+  | "idle_ASC"
+  | "idle_DESC"
+  | "logged_ASC"
+  | "logged_DESC"
+  | "userId_ASC"
+  | "userId_DESC";
+
+export type PunbbPollOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "options_ASC"
+  | "options_DESC"
+  | "pollid_ASC"
+  | "pollid_DESC"
+  | "ptype_ASC"
+  | "ptype_DESC"
+  | "voters_ASC"
+  | "voters_DESC"
+  | "votes_ASC"
+  | "votes_DESC";
+
+export type PunbbPostOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "edited_ASC"
+  | "edited_DESC"
+  | "editedBy_ASC"
+  | "editedBy_DESC"
+  | "hideSmilies_ASC"
+  | "hideSmilies_DESC"
+  | "message_ASC"
+  | "message_DESC"
+  | "posted_ASC"
+  | "posted_DESC"
+  | "poster_ASC"
+  | "poster_DESC"
+  | "posterEmail_ASC"
+  | "posterEmail_DESC"
+  | "posterId_ASC"
+  | "posterId_DESC"
+  | "posterIp_ASC"
+  | "posterIp_DESC"
+  | "topicId_ASC"
+  | "topicId_DESC";
+
+export type PunbbRankOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "rank_ASC"
+  | "rank_DESC";
+
+export type PunbbReportOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "created_ASC"
+  | "created_DESC"
+  | "forumId_ASC"
+  | "forumId_DESC"
+  | "message_ASC"
+  | "message_DESC"
+  | "postId_ASC"
+  | "postId_DESC"
+  | "reportedBy_ASC"
+  | "reportedBy_DESC"
+  | "topicId_ASC"
+  | "topicId_DESC"
+  | "zapped_ASC"
+  | "zapped_DESC"
+  | "zappedBy_ASC"
+  | "zappedBy_DESC";
+
+export type PunbbSearchCacheOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "ident_ASC"
+  | "ident_DESC"
+  | "searchData_ASC"
+  | "searchData_DESC";
+
+export type PunbbSearchMatchOrderByInput =
+  | "postId_ASC"
+  | "postId_DESC"
+  | "subjectMatch_ASC"
+  | "subjectMatch_DESC";
+
+export type PunbbSearchWordOrderByInput = "word_ASC" | "word_DESC";
+
+export type PunbbTopicOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "closed_ASC"
+  | "closed_DESC"
+  | "forumId_ASC"
+  | "forumId_DESC"
+  | "lastPost_ASC"
+  | "lastPost_DESC"
+  | "lastPoster_ASC"
+  | "lastPoster_DESC"
+  | "lastPostId_ASC"
+  | "lastPostId_DESC"
+  | "movedTo_ASC"
+  | "movedTo_DESC"
+  | "no_ASC"
+  | "no_DESC"
+  | "posted_ASC"
+  | "posted_DESC"
+  | "poster_ASC"
+  | "poster_DESC"
+  | "question_ASC"
+  | "question_DESC"
+  | "sticky_ASC"
+  | "sticky_DESC"
+  | "subject_ASC"
+  | "subject_DESC"
+  | "yes_ASC"
+  | "yes_DESC";
+
+export type PunbbUploadedOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "data_ASC"
+  | "data_DESC"
+  | "descr_ASC"
+  | "descr_DESC"
+  | "downs_ASC"
+  | "downs_DESC"
+  | "file_ASC"
+  | "file_DESC"
+  | "size_ASC"
+  | "size_DESC"
+  | "uid_ASC"
+  | "uid_DESC"
+  | "user_ASC"
+  | "user_DESC"
+  | "userStat_ASC"
+  | "userStat_DESC";
+
+export type PunbbUploadsConfOrderByInput =
+  | "gId_ASC"
+  | "gId_DESC"
+  | "pDelete_ASC"
+  | "pDelete_DESC"
+  | "pGlobaldelete_ASC"
+  | "pGlobaldelete_DESC"
+  | "pGlobalview_ASC"
+  | "pGlobalview_DESC"
+  | "pSetop_ASC"
+  | "pSetop_DESC"
+  | "pUpload_ASC"
+  | "pUpload_DESC"
+  | "pView_ASC"
+  | "pView_DESC"
+  | "uFsize_ASC"
+  | "uFsize_DESC";
+
+export type PunbbUploadsTypeOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "exts_ASC"
+  | "exts_DESC"
+  | "type_ASC"
+  | "type_DESC";
+
+export type PunbbUserOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "activateKey_ASC"
+  | "activateKey_DESC"
+  | "activateString_ASC"
+  | "activateString_DESC"
+  | "adminNote_ASC"
+  | "adminNote_DESC"
+  | "aim_ASC"
+  | "aim_DESC"
+  | "dispPosts_ASC"
+  | "dispPosts_DESC"
+  | "dispTopics_ASC"
+  | "dispTopics_DESC"
+  | "email_ASC"
+  | "email_DESC"
+  | "emailSetting_ASC"
+  | "emailSetting_DESC"
+  | "groupId_ASC"
+  | "groupId_DESC"
+  | "icq_ASC"
+  | "icq_DESC"
+  | "jabber_ASC"
+  | "jabber_DESC"
+  | "language_ASC"
+  | "language_DESC"
+  | "lastPost_ASC"
+  | "lastPost_DESC"
+  | "lastVisit_ASC"
+  | "lastVisit_DESC"
+  | "location_ASC"
+  | "location_DESC"
+  | "msn_ASC"
+  | "msn_DESC"
+  | "notifyWithPost_ASC"
+  | "notifyWithPost_DESC"
+  | "numPosts_ASC"
+  | "numPosts_DESC"
+  | "password_ASC"
+  | "password_DESC"
+  | "readTopics_ASC"
+  | "readTopics_DESC"
+  | "realname_ASC"
+  | "realname_DESC"
+  | "registered_ASC"
+  | "registered_DESC"
+  | "registrationIp_ASC"
+  | "registrationIp_DESC"
+  | "savePass_ASC"
+  | "savePass_DESC"
+  | "showAvatars_ASC"
+  | "showAvatars_DESC"
+  | "showImg_ASC"
+  | "showImg_DESC"
+  | "showImgSig_ASC"
+  | "showImgSig_DESC"
+  | "showSig_ASC"
+  | "showSig_DESC"
+  | "showSmilies_ASC"
+  | "showSmilies_DESC"
+  | "signature_ASC"
+  | "signature_DESC"
+  | "style_ASC"
+  | "style_DESC"
+  | "timezone_ASC"
+  | "timezone_DESC"
+  | "title_ASC"
+  | "title_DESC"
+  | "url_ASC"
+  | "url_DESC"
+  | "useAvatar_ASC"
+  | "useAvatar_DESC"
+  | "username_ASC"
+  | "username_DESC"
+  | "yahoo_ASC"
+  | "yahoo_DESC";
+
+export type PunbbUserthreadOrderByInput =
+  | "lastRead_ASC"
+  | "lastRead_DESC"
+  | "posted_ASC"
+  | "posted_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
-export type PostWhereUniqueInput = AtLeastOne<{
-  id: Maybe<ID_Input>;
+export type PunbbBanWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
 }>;
 
-export interface PostWhereInput {
-  id?: Maybe<ID_Input>;
-  id_not?: Maybe<ID_Input>;
-  id_in?: Maybe<ID_Input[] | ID_Input>;
-  id_not_in?: Maybe<ID_Input[] | ID_Input>;
-  id_lt?: Maybe<ID_Input>;
-  id_lte?: Maybe<ID_Input>;
-  id_gt?: Maybe<ID_Input>;
-  id_gte?: Maybe<ID_Input>;
-  id_contains?: Maybe<ID_Input>;
-  id_not_contains?: Maybe<ID_Input>;
-  id_starts_with?: Maybe<ID_Input>;
-  id_not_starts_with?: Maybe<ID_Input>;
-  id_ends_with?: Maybe<ID_Input>;
-  id_not_ends_with?: Maybe<ID_Input>;
-  title?: Maybe<String>;
-  title_not?: Maybe<String>;
-  title_in?: Maybe<String[] | String>;
-  title_not_in?: Maybe<String[] | String>;
-  title_lt?: Maybe<String>;
-  title_lte?: Maybe<String>;
-  title_gt?: Maybe<String>;
-  title_gte?: Maybe<String>;
-  title_contains?: Maybe<String>;
-  title_not_contains?: Maybe<String>;
-  title_starts_with?: Maybe<String>;
-  title_not_starts_with?: Maybe<String>;
-  title_ends_with?: Maybe<String>;
-  title_not_ends_with?: Maybe<String>;
-  published?: Maybe<Boolean>;
-  published_not?: Maybe<Boolean>;
-  author?: Maybe<UserWhereInput>;
-  AND?: Maybe<PostWhereInput[] | PostWhereInput>;
-  OR?: Maybe<PostWhereInput[] | PostWhereInput>;
-  NOT?: Maybe<PostWhereInput[] | PostWhereInput>;
-}
-
-export interface UserWhereInput {
-  id?: Maybe<ID_Input>;
-  id_not?: Maybe<ID_Input>;
-  id_in?: Maybe<ID_Input[] | ID_Input>;
-  id_not_in?: Maybe<ID_Input[] | ID_Input>;
-  id_lt?: Maybe<ID_Input>;
-  id_lte?: Maybe<ID_Input>;
-  id_gt?: Maybe<ID_Input>;
-  id_gte?: Maybe<ID_Input>;
-  id_contains?: Maybe<ID_Input>;
-  id_not_contains?: Maybe<ID_Input>;
-  id_starts_with?: Maybe<ID_Input>;
-  id_not_starts_with?: Maybe<ID_Input>;
-  id_ends_with?: Maybe<ID_Input>;
-  id_not_ends_with?: Maybe<ID_Input>;
+export interface PunbbBanWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
   email?: Maybe<String>;
   email_not?: Maybe<String>;
   email_in?: Maybe<String[] | String>;
@@ -228,156 +1266,1484 @@ export interface UserWhereInput {
   email_not_starts_with?: Maybe<String>;
   email_ends_with?: Maybe<String>;
   email_not_ends_with?: Maybe<String>;
-  name?: Maybe<String>;
-  name_not?: Maybe<String>;
-  name_in?: Maybe<String[] | String>;
-  name_not_in?: Maybe<String[] | String>;
-  name_lt?: Maybe<String>;
-  name_lte?: Maybe<String>;
-  name_gt?: Maybe<String>;
-  name_gte?: Maybe<String>;
-  name_contains?: Maybe<String>;
-  name_not_contains?: Maybe<String>;
-  name_starts_with?: Maybe<String>;
-  name_not_starts_with?: Maybe<String>;
-  name_ends_with?: Maybe<String>;
-  name_not_ends_with?: Maybe<String>;
-  posts_every?: Maybe<PostWhereInput>;
-  posts_some?: Maybe<PostWhereInput>;
-  posts_none?: Maybe<PostWhereInput>;
-  AND?: Maybe<UserWhereInput[] | UserWhereInput>;
-  OR?: Maybe<UserWhereInput[] | UserWhereInput>;
-  NOT?: Maybe<UserWhereInput[] | UserWhereInput>;
+  expire?: Maybe<Int>;
+  expire_not?: Maybe<Int>;
+  expire_in?: Maybe<Int[] | Int>;
+  expire_not_in?: Maybe<Int[] | Int>;
+  expire_lt?: Maybe<Int>;
+  expire_lte?: Maybe<Int>;
+  expire_gt?: Maybe<Int>;
+  expire_gte?: Maybe<Int>;
+  ip?: Maybe<String>;
+  ip_not?: Maybe<String>;
+  ip_in?: Maybe<String[] | String>;
+  ip_not_in?: Maybe<String[] | String>;
+  ip_lt?: Maybe<String>;
+  ip_lte?: Maybe<String>;
+  ip_gt?: Maybe<String>;
+  ip_gte?: Maybe<String>;
+  ip_contains?: Maybe<String>;
+  ip_not_contains?: Maybe<String>;
+  ip_starts_with?: Maybe<String>;
+  ip_not_starts_with?: Maybe<String>;
+  ip_ends_with?: Maybe<String>;
+  ip_not_ends_with?: Maybe<String>;
+  message?: Maybe<String>;
+  message_not?: Maybe<String>;
+  message_in?: Maybe<String[] | String>;
+  message_not_in?: Maybe<String[] | String>;
+  message_lt?: Maybe<String>;
+  message_lte?: Maybe<String>;
+  message_gt?: Maybe<String>;
+  message_gte?: Maybe<String>;
+  message_contains?: Maybe<String>;
+  message_not_contains?: Maybe<String>;
+  message_starts_with?: Maybe<String>;
+  message_not_starts_with?: Maybe<String>;
+  message_ends_with?: Maybe<String>;
+  message_not_ends_with?: Maybe<String>;
+  username?: Maybe<String>;
+  username_not?: Maybe<String>;
+  username_in?: Maybe<String[] | String>;
+  username_not_in?: Maybe<String[] | String>;
+  username_lt?: Maybe<String>;
+  username_lte?: Maybe<String>;
+  username_gt?: Maybe<String>;
+  username_gte?: Maybe<String>;
+  username_contains?: Maybe<String>;
+  username_not_contains?: Maybe<String>;
+  username_starts_with?: Maybe<String>;
+  username_not_starts_with?: Maybe<String>;
+  username_ends_with?: Maybe<String>;
+  username_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbBanWhereInput[] | PunbbBanWhereInput>;
+  OR?: Maybe<PunbbBanWhereInput[] | PunbbBanWhereInput>;
+  NOT?: Maybe<PunbbBanWhereInput[] | PunbbBanWhereInput>;
 }
 
-export type UserWhereUniqueInput = AtLeastOne<{
-  id: Maybe<ID_Input>;
-  email?: Maybe<String>;
+export type PunbbCategoryWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
 }>;
 
-export interface PostCreateInput {
-  id?: Maybe<ID_Input>;
-  title: String;
-  published?: Maybe<Boolean>;
-  author?: Maybe<UserCreateOneWithoutPostsInput>;
+export interface PunbbCategoryWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  catName?: Maybe<String>;
+  catName_not?: Maybe<String>;
+  catName_in?: Maybe<String[] | String>;
+  catName_not_in?: Maybe<String[] | String>;
+  catName_lt?: Maybe<String>;
+  catName_lte?: Maybe<String>;
+  catName_gt?: Maybe<String>;
+  catName_gte?: Maybe<String>;
+  catName_contains?: Maybe<String>;
+  catName_not_contains?: Maybe<String>;
+  catName_starts_with?: Maybe<String>;
+  catName_not_starts_with?: Maybe<String>;
+  catName_ends_with?: Maybe<String>;
+  catName_not_ends_with?: Maybe<String>;
+  dispPosition?: Maybe<Int>;
+  dispPosition_not?: Maybe<Int>;
+  dispPosition_in?: Maybe<Int[] | Int>;
+  dispPosition_not_in?: Maybe<Int[] | Int>;
+  dispPosition_lt?: Maybe<Int>;
+  dispPosition_lte?: Maybe<Int>;
+  dispPosition_gt?: Maybe<Int>;
+  dispPosition_gte?: Maybe<Int>;
+  AND?: Maybe<PunbbCategoryWhereInput[] | PunbbCategoryWhereInput>;
+  OR?: Maybe<PunbbCategoryWhereInput[] | PunbbCategoryWhereInput>;
+  NOT?: Maybe<PunbbCategoryWhereInput[] | PunbbCategoryWhereInput>;
 }
 
-export interface UserCreateOneWithoutPostsInput {
-  create?: Maybe<UserCreateWithoutPostsInput>;
-  connect?: Maybe<UserWhereUniqueInput>;
+export type PunbbCensoringWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbCensoringWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  replaceWith?: Maybe<String>;
+  replaceWith_not?: Maybe<String>;
+  replaceWith_in?: Maybe<String[] | String>;
+  replaceWith_not_in?: Maybe<String[] | String>;
+  replaceWith_lt?: Maybe<String>;
+  replaceWith_lte?: Maybe<String>;
+  replaceWith_gt?: Maybe<String>;
+  replaceWith_gte?: Maybe<String>;
+  replaceWith_contains?: Maybe<String>;
+  replaceWith_not_contains?: Maybe<String>;
+  replaceWith_starts_with?: Maybe<String>;
+  replaceWith_not_starts_with?: Maybe<String>;
+  replaceWith_ends_with?: Maybe<String>;
+  replaceWith_not_ends_with?: Maybe<String>;
+  searchFor?: Maybe<String>;
+  searchFor_not?: Maybe<String>;
+  searchFor_in?: Maybe<String[] | String>;
+  searchFor_not_in?: Maybe<String[] | String>;
+  searchFor_lt?: Maybe<String>;
+  searchFor_lte?: Maybe<String>;
+  searchFor_gt?: Maybe<String>;
+  searchFor_gte?: Maybe<String>;
+  searchFor_contains?: Maybe<String>;
+  searchFor_not_contains?: Maybe<String>;
+  searchFor_starts_with?: Maybe<String>;
+  searchFor_not_starts_with?: Maybe<String>;
+  searchFor_ends_with?: Maybe<String>;
+  searchFor_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
+  OR?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
+  NOT?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
 }
 
-export interface UserCreateWithoutPostsInput {
-  id?: Maybe<ID_Input>;
+export type PunbbConfigWhereUniqueInput = AtLeastOne<{
+  conf_name: Maybe<ID_Input>;
+}>;
+
+export interface PunbbConfigWhereInput {
+  conf_name?: Maybe<ID_Input>;
+  conf_name_not?: Maybe<ID_Input>;
+  conf_name_in?: Maybe<ID_Input[] | ID_Input>;
+  conf_name_not_in?: Maybe<ID_Input[] | ID_Input>;
+  conf_name_lt?: Maybe<ID_Input>;
+  conf_name_lte?: Maybe<ID_Input>;
+  conf_name_gt?: Maybe<ID_Input>;
+  conf_name_gte?: Maybe<ID_Input>;
+  conf_name_contains?: Maybe<ID_Input>;
+  conf_name_not_contains?: Maybe<ID_Input>;
+  conf_name_starts_with?: Maybe<ID_Input>;
+  conf_name_not_starts_with?: Maybe<ID_Input>;
+  conf_name_ends_with?: Maybe<ID_Input>;
+  conf_name_not_ends_with?: Maybe<ID_Input>;
+  confValue?: Maybe<String>;
+  confValue_not?: Maybe<String>;
+  confValue_in?: Maybe<String[] | String>;
+  confValue_not_in?: Maybe<String[] | String>;
+  confValue_lt?: Maybe<String>;
+  confValue_lte?: Maybe<String>;
+  confValue_gt?: Maybe<String>;
+  confValue_gte?: Maybe<String>;
+  confValue_contains?: Maybe<String>;
+  confValue_not_contains?: Maybe<String>;
+  confValue_starts_with?: Maybe<String>;
+  confValue_not_starts_with?: Maybe<String>;
+  confValue_ends_with?: Maybe<String>;
+  confValue_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
+  OR?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
+  NOT?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
+}
+
+export type PunbbForumWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbForumWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  catId?: Maybe<Int>;
+  catId_not?: Maybe<Int>;
+  catId_in?: Maybe<Int[] | Int>;
+  catId_not_in?: Maybe<Int[] | Int>;
+  catId_lt?: Maybe<Int>;
+  catId_lte?: Maybe<Int>;
+  catId_gt?: Maybe<Int>;
+  catId_gte?: Maybe<Int>;
+  dispPosition?: Maybe<Int>;
+  dispPosition_not?: Maybe<Int>;
+  dispPosition_in?: Maybe<Int[] | Int>;
+  dispPosition_not_in?: Maybe<Int[] | Int>;
+  dispPosition_lt?: Maybe<Int>;
+  dispPosition_lte?: Maybe<Int>;
+  dispPosition_gt?: Maybe<Int>;
+  dispPosition_gte?: Maybe<Int>;
+  forumDesc?: Maybe<String>;
+  forumDesc_not?: Maybe<String>;
+  forumDesc_in?: Maybe<String[] | String>;
+  forumDesc_not_in?: Maybe<String[] | String>;
+  forumDesc_lt?: Maybe<String>;
+  forumDesc_lte?: Maybe<String>;
+  forumDesc_gt?: Maybe<String>;
+  forumDesc_gte?: Maybe<String>;
+  forumDesc_contains?: Maybe<String>;
+  forumDesc_not_contains?: Maybe<String>;
+  forumDesc_starts_with?: Maybe<String>;
+  forumDesc_not_starts_with?: Maybe<String>;
+  forumDesc_ends_with?: Maybe<String>;
+  forumDesc_not_ends_with?: Maybe<String>;
+  forumName?: Maybe<String>;
+  forumName_not?: Maybe<String>;
+  forumName_in?: Maybe<String[] | String>;
+  forumName_not_in?: Maybe<String[] | String>;
+  forumName_lt?: Maybe<String>;
+  forumName_lte?: Maybe<String>;
+  forumName_gt?: Maybe<String>;
+  forumName_gte?: Maybe<String>;
+  forumName_contains?: Maybe<String>;
+  forumName_not_contains?: Maybe<String>;
+  forumName_starts_with?: Maybe<String>;
+  forumName_not_starts_with?: Maybe<String>;
+  forumName_ends_with?: Maybe<String>;
+  forumName_not_ends_with?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastPost_not?: Maybe<Int>;
+  lastPost_in?: Maybe<Int[] | Int>;
+  lastPost_not_in?: Maybe<Int[] | Int>;
+  lastPost_lt?: Maybe<Int>;
+  lastPost_lte?: Maybe<Int>;
+  lastPost_gt?: Maybe<Int>;
+  lastPost_gte?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPoster_not?: Maybe<String>;
+  lastPoster_in?: Maybe<String[] | String>;
+  lastPoster_not_in?: Maybe<String[] | String>;
+  lastPoster_lt?: Maybe<String>;
+  lastPoster_lte?: Maybe<String>;
+  lastPoster_gt?: Maybe<String>;
+  lastPoster_gte?: Maybe<String>;
+  lastPoster_contains?: Maybe<String>;
+  lastPoster_not_contains?: Maybe<String>;
+  lastPoster_starts_with?: Maybe<String>;
+  lastPoster_not_starts_with?: Maybe<String>;
+  lastPoster_ends_with?: Maybe<String>;
+  lastPoster_not_ends_with?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  lastPostId_not?: Maybe<Int>;
+  lastPostId_in?: Maybe<Int[] | Int>;
+  lastPostId_not_in?: Maybe<Int[] | Int>;
+  lastPostId_lt?: Maybe<Int>;
+  lastPostId_lte?: Maybe<Int>;
+  lastPostId_gt?: Maybe<Int>;
+  lastPostId_gte?: Maybe<Int>;
+  moderators?: Maybe<String>;
+  moderators_not?: Maybe<String>;
+  moderators_in?: Maybe<String[] | String>;
+  moderators_not_in?: Maybe<String[] | String>;
+  moderators_lt?: Maybe<String>;
+  moderators_lte?: Maybe<String>;
+  moderators_gt?: Maybe<String>;
+  moderators_gte?: Maybe<String>;
+  moderators_contains?: Maybe<String>;
+  moderators_not_contains?: Maybe<String>;
+  moderators_starts_with?: Maybe<String>;
+  moderators_not_starts_with?: Maybe<String>;
+  moderators_ends_with?: Maybe<String>;
+  moderators_not_ends_with?: Maybe<String>;
+  redirectUrl?: Maybe<String>;
+  redirectUrl_not?: Maybe<String>;
+  redirectUrl_in?: Maybe<String[] | String>;
+  redirectUrl_not_in?: Maybe<String[] | String>;
+  redirectUrl_lt?: Maybe<String>;
+  redirectUrl_lte?: Maybe<String>;
+  redirectUrl_gt?: Maybe<String>;
+  redirectUrl_gte?: Maybe<String>;
+  redirectUrl_contains?: Maybe<String>;
+  redirectUrl_not_contains?: Maybe<String>;
+  redirectUrl_starts_with?: Maybe<String>;
+  redirectUrl_not_starts_with?: Maybe<String>;
+  redirectUrl_ends_with?: Maybe<String>;
+  redirectUrl_not_ends_with?: Maybe<String>;
+  sortBy?: Maybe<Boolean>;
+  sortBy_not?: Maybe<Boolean>;
+  AND?: Maybe<PunbbForumWhereInput[] | PunbbForumWhereInput>;
+  OR?: Maybe<PunbbForumWhereInput[] | PunbbForumWhereInput>;
+  NOT?: Maybe<PunbbForumWhereInput[] | PunbbForumWhereInput>;
+}
+
+export interface PunbbForumPermWhereInput {
+  postPolls?: Maybe<Boolean>;
+  postPolls_not?: Maybe<Boolean>;
+  postReplies?: Maybe<Boolean>;
+  postReplies_not?: Maybe<Boolean>;
+  postTopics?: Maybe<Boolean>;
+  postTopics_not?: Maybe<Boolean>;
+  readForum?: Maybe<Boolean>;
+  readForum_not?: Maybe<Boolean>;
+  AND?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
+  OR?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
+  NOT?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
+}
+
+export type PunbbGroupWhereUniqueInput = AtLeastOne<{
+  g_id: Maybe<Int>;
+}>;
+
+export interface PunbbGroupWhereInput {
+  g_id?: Maybe<Int>;
+  g_id_not?: Maybe<Int>;
+  g_id_in?: Maybe<Int[] | Int>;
+  g_id_not_in?: Maybe<Int[] | Int>;
+  g_id_lt?: Maybe<Int>;
+  g_id_lte?: Maybe<Int>;
+  g_id_gt?: Maybe<Int>;
+  g_id_gte?: Maybe<Int>;
+  gDeletePosts?: Maybe<Boolean>;
+  gDeletePosts_not?: Maybe<Boolean>;
+  gDeleteTopics?: Maybe<Boolean>;
+  gDeleteTopics_not?: Maybe<Boolean>;
+  gEditPosts?: Maybe<Boolean>;
+  gEditPosts_not?: Maybe<Boolean>;
+  gEditSubjectsInterval?: Maybe<Int>;
+  gEditSubjectsInterval_not?: Maybe<Int>;
+  gEditSubjectsInterval_in?: Maybe<Int[] | Int>;
+  gEditSubjectsInterval_not_in?: Maybe<Int[] | Int>;
+  gEditSubjectsInterval_lt?: Maybe<Int>;
+  gEditSubjectsInterval_lte?: Maybe<Int>;
+  gEditSubjectsInterval_gt?: Maybe<Int>;
+  gEditSubjectsInterval_gte?: Maybe<Int>;
+  gPostFlood?: Maybe<Int>;
+  gPostFlood_not?: Maybe<Int>;
+  gPostFlood_in?: Maybe<Int[] | Int>;
+  gPostFlood_not_in?: Maybe<Int[] | Int>;
+  gPostFlood_lt?: Maybe<Int>;
+  gPostFlood_lte?: Maybe<Int>;
+  gPostFlood_gt?: Maybe<Int>;
+  gPostFlood_gte?: Maybe<Int>;
+  gPostPolls?: Maybe<Boolean>;
+  gPostPolls_not?: Maybe<Boolean>;
+  gPostReplies?: Maybe<Boolean>;
+  gPostReplies_not?: Maybe<Boolean>;
+  gPostTopics?: Maybe<Boolean>;
+  gPostTopics_not?: Maybe<Boolean>;
+  gReadBoard?: Maybe<Boolean>;
+  gReadBoard_not?: Maybe<Boolean>;
+  gSearch?: Maybe<Boolean>;
+  gSearch_not?: Maybe<Boolean>;
+  gSearchFlood?: Maybe<Int>;
+  gSearchFlood_not?: Maybe<Int>;
+  gSearchFlood_in?: Maybe<Int[] | Int>;
+  gSearchFlood_not_in?: Maybe<Int[] | Int>;
+  gSearchFlood_lt?: Maybe<Int>;
+  gSearchFlood_lte?: Maybe<Int>;
+  gSearchFlood_gt?: Maybe<Int>;
+  gSearchFlood_gte?: Maybe<Int>;
+  gSearchUsers?: Maybe<Boolean>;
+  gSearchUsers_not?: Maybe<Boolean>;
+  gSetTitle?: Maybe<Boolean>;
+  gSetTitle_not?: Maybe<Boolean>;
+  gTitle?: Maybe<String>;
+  gTitle_not?: Maybe<String>;
+  gTitle_in?: Maybe<String[] | String>;
+  gTitle_not_in?: Maybe<String[] | String>;
+  gTitle_lt?: Maybe<String>;
+  gTitle_lte?: Maybe<String>;
+  gTitle_gt?: Maybe<String>;
+  gTitle_gte?: Maybe<String>;
+  gTitle_contains?: Maybe<String>;
+  gTitle_not_contains?: Maybe<String>;
+  gTitle_starts_with?: Maybe<String>;
+  gTitle_not_starts_with?: Maybe<String>;
+  gTitle_ends_with?: Maybe<String>;
+  gTitle_not_ends_with?: Maybe<String>;
+  gUserTitle?: Maybe<String>;
+  gUserTitle_not?: Maybe<String>;
+  gUserTitle_in?: Maybe<String[] | String>;
+  gUserTitle_not_in?: Maybe<String[] | String>;
+  gUserTitle_lt?: Maybe<String>;
+  gUserTitle_lte?: Maybe<String>;
+  gUserTitle_gt?: Maybe<String>;
+  gUserTitle_gte?: Maybe<String>;
+  gUserTitle_contains?: Maybe<String>;
+  gUserTitle_not_contains?: Maybe<String>;
+  gUserTitle_starts_with?: Maybe<String>;
+  gUserTitle_not_starts_with?: Maybe<String>;
+  gUserTitle_ends_with?: Maybe<String>;
+  gUserTitle_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
+  OR?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
+  NOT?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
+}
+
+export interface PunbbOnlineWhereInput {
+  ident?: Maybe<String>;
+  ident_not?: Maybe<String>;
+  ident_in?: Maybe<String[] | String>;
+  ident_not_in?: Maybe<String[] | String>;
+  ident_lt?: Maybe<String>;
+  ident_lte?: Maybe<String>;
+  ident_gt?: Maybe<String>;
+  ident_gte?: Maybe<String>;
+  ident_contains?: Maybe<String>;
+  ident_not_contains?: Maybe<String>;
+  ident_starts_with?: Maybe<String>;
+  ident_not_starts_with?: Maybe<String>;
+  ident_ends_with?: Maybe<String>;
+  ident_not_ends_with?: Maybe<String>;
+  idle?: Maybe<Boolean>;
+  idle_not?: Maybe<Boolean>;
+  logged?: Maybe<Int>;
+  logged_not?: Maybe<Int>;
+  logged_in?: Maybe<Int[] | Int>;
+  logged_not_in?: Maybe<Int[] | Int>;
+  logged_lt?: Maybe<Int>;
+  logged_lte?: Maybe<Int>;
+  logged_gt?: Maybe<Int>;
+  logged_gte?: Maybe<Int>;
+  userId?: Maybe<Int>;
+  userId_not?: Maybe<Int>;
+  userId_in?: Maybe<Int[] | Int>;
+  userId_not_in?: Maybe<Int[] | Int>;
+  userId_lt?: Maybe<Int>;
+  userId_lte?: Maybe<Int>;
+  userId_gt?: Maybe<Int>;
+  userId_gte?: Maybe<Int>;
+  AND?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
+  OR?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
+  NOT?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
+}
+
+export type PunbbPollWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbPollWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  options?: Maybe<String>;
+  options_not?: Maybe<String>;
+  options_in?: Maybe<String[] | String>;
+  options_not_in?: Maybe<String[] | String>;
+  options_lt?: Maybe<String>;
+  options_lte?: Maybe<String>;
+  options_gt?: Maybe<String>;
+  options_gte?: Maybe<String>;
+  options_contains?: Maybe<String>;
+  options_not_contains?: Maybe<String>;
+  options_starts_with?: Maybe<String>;
+  options_not_starts_with?: Maybe<String>;
+  options_ends_with?: Maybe<String>;
+  options_not_ends_with?: Maybe<String>;
+  pollid?: Maybe<Int>;
+  pollid_not?: Maybe<Int>;
+  pollid_in?: Maybe<Int[] | Int>;
+  pollid_not_in?: Maybe<Int[] | Int>;
+  pollid_lt?: Maybe<Int>;
+  pollid_lte?: Maybe<Int>;
+  pollid_gt?: Maybe<Int>;
+  pollid_gte?: Maybe<Int>;
+  ptype?: Maybe<Boolean>;
+  ptype_not?: Maybe<Boolean>;
+  voters?: Maybe<String>;
+  voters_not?: Maybe<String>;
+  voters_in?: Maybe<String[] | String>;
+  voters_not_in?: Maybe<String[] | String>;
+  voters_lt?: Maybe<String>;
+  voters_lte?: Maybe<String>;
+  voters_gt?: Maybe<String>;
+  voters_gte?: Maybe<String>;
+  voters_contains?: Maybe<String>;
+  voters_not_contains?: Maybe<String>;
+  voters_starts_with?: Maybe<String>;
+  voters_not_starts_with?: Maybe<String>;
+  voters_ends_with?: Maybe<String>;
+  voters_not_ends_with?: Maybe<String>;
+  votes?: Maybe<String>;
+  votes_not?: Maybe<String>;
+  votes_in?: Maybe<String[] | String>;
+  votes_not_in?: Maybe<String[] | String>;
+  votes_lt?: Maybe<String>;
+  votes_lte?: Maybe<String>;
+  votes_gt?: Maybe<String>;
+  votes_gte?: Maybe<String>;
+  votes_contains?: Maybe<String>;
+  votes_not_contains?: Maybe<String>;
+  votes_starts_with?: Maybe<String>;
+  votes_not_starts_with?: Maybe<String>;
+  votes_ends_with?: Maybe<String>;
+  votes_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
+  OR?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
+  NOT?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
+}
+
+export type PunbbPostWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbPostWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  edited?: Maybe<Int>;
+  edited_not?: Maybe<Int>;
+  edited_in?: Maybe<Int[] | Int>;
+  edited_not_in?: Maybe<Int[] | Int>;
+  edited_lt?: Maybe<Int>;
+  edited_lte?: Maybe<Int>;
+  edited_gt?: Maybe<Int>;
+  edited_gte?: Maybe<Int>;
+  editedBy?: Maybe<String>;
+  editedBy_not?: Maybe<String>;
+  editedBy_in?: Maybe<String[] | String>;
+  editedBy_not_in?: Maybe<String[] | String>;
+  editedBy_lt?: Maybe<String>;
+  editedBy_lte?: Maybe<String>;
+  editedBy_gt?: Maybe<String>;
+  editedBy_gte?: Maybe<String>;
+  editedBy_contains?: Maybe<String>;
+  editedBy_not_contains?: Maybe<String>;
+  editedBy_starts_with?: Maybe<String>;
+  editedBy_not_starts_with?: Maybe<String>;
+  editedBy_ends_with?: Maybe<String>;
+  editedBy_not_ends_with?: Maybe<String>;
+  hideSmilies?: Maybe<Boolean>;
+  hideSmilies_not?: Maybe<Boolean>;
+  message?: Maybe<String>;
+  message_not?: Maybe<String>;
+  message_in?: Maybe<String[] | String>;
+  message_not_in?: Maybe<String[] | String>;
+  message_lt?: Maybe<String>;
+  message_lte?: Maybe<String>;
+  message_gt?: Maybe<String>;
+  message_gte?: Maybe<String>;
+  message_contains?: Maybe<String>;
+  message_not_contains?: Maybe<String>;
+  message_starts_with?: Maybe<String>;
+  message_not_starts_with?: Maybe<String>;
+  message_ends_with?: Maybe<String>;
+  message_not_ends_with?: Maybe<String>;
+  posted?: Maybe<Int>;
+  posted_not?: Maybe<Int>;
+  posted_in?: Maybe<Int[] | Int>;
+  posted_not_in?: Maybe<Int[] | Int>;
+  posted_lt?: Maybe<Int>;
+  posted_lte?: Maybe<Int>;
+  posted_gt?: Maybe<Int>;
+  posted_gte?: Maybe<Int>;
+  poster?: Maybe<String>;
+  poster_not?: Maybe<String>;
+  poster_in?: Maybe<String[] | String>;
+  poster_not_in?: Maybe<String[] | String>;
+  poster_lt?: Maybe<String>;
+  poster_lte?: Maybe<String>;
+  poster_gt?: Maybe<String>;
+  poster_gte?: Maybe<String>;
+  poster_contains?: Maybe<String>;
+  poster_not_contains?: Maybe<String>;
+  poster_starts_with?: Maybe<String>;
+  poster_not_starts_with?: Maybe<String>;
+  poster_ends_with?: Maybe<String>;
+  poster_not_ends_with?: Maybe<String>;
+  posterEmail?: Maybe<String>;
+  posterEmail_not?: Maybe<String>;
+  posterEmail_in?: Maybe<String[] | String>;
+  posterEmail_not_in?: Maybe<String[] | String>;
+  posterEmail_lt?: Maybe<String>;
+  posterEmail_lte?: Maybe<String>;
+  posterEmail_gt?: Maybe<String>;
+  posterEmail_gte?: Maybe<String>;
+  posterEmail_contains?: Maybe<String>;
+  posterEmail_not_contains?: Maybe<String>;
+  posterEmail_starts_with?: Maybe<String>;
+  posterEmail_not_starts_with?: Maybe<String>;
+  posterEmail_ends_with?: Maybe<String>;
+  posterEmail_not_ends_with?: Maybe<String>;
+  posterId?: Maybe<Int>;
+  posterId_not?: Maybe<Int>;
+  posterId_in?: Maybe<Int[] | Int>;
+  posterId_not_in?: Maybe<Int[] | Int>;
+  posterId_lt?: Maybe<Int>;
+  posterId_lte?: Maybe<Int>;
+  posterId_gt?: Maybe<Int>;
+  posterId_gte?: Maybe<Int>;
+  posterIp?: Maybe<String>;
+  posterIp_not?: Maybe<String>;
+  posterIp_in?: Maybe<String[] | String>;
+  posterIp_not_in?: Maybe<String[] | String>;
+  posterIp_lt?: Maybe<String>;
+  posterIp_lte?: Maybe<String>;
+  posterIp_gt?: Maybe<String>;
+  posterIp_gte?: Maybe<String>;
+  posterIp_contains?: Maybe<String>;
+  posterIp_not_contains?: Maybe<String>;
+  posterIp_starts_with?: Maybe<String>;
+  posterIp_not_starts_with?: Maybe<String>;
+  posterIp_ends_with?: Maybe<String>;
+  posterIp_not_ends_with?: Maybe<String>;
+  topicId?: Maybe<Int>;
+  topicId_not?: Maybe<Int>;
+  topicId_in?: Maybe<Int[] | Int>;
+  topicId_not_in?: Maybe<Int[] | Int>;
+  topicId_lt?: Maybe<Int>;
+  topicId_lte?: Maybe<Int>;
+  topicId_gt?: Maybe<Int>;
+  topicId_gte?: Maybe<Int>;
+  AND?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
+  OR?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
+  NOT?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
+}
+
+export type PunbbRankWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbRankWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  rank?: Maybe<String>;
+  rank_not?: Maybe<String>;
+  rank_in?: Maybe<String[] | String>;
+  rank_not_in?: Maybe<String[] | String>;
+  rank_lt?: Maybe<String>;
+  rank_lte?: Maybe<String>;
+  rank_gt?: Maybe<String>;
+  rank_gte?: Maybe<String>;
+  rank_contains?: Maybe<String>;
+  rank_not_contains?: Maybe<String>;
+  rank_starts_with?: Maybe<String>;
+  rank_not_starts_with?: Maybe<String>;
+  rank_ends_with?: Maybe<String>;
+  rank_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
+  OR?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
+  NOT?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
+}
+
+export type PunbbReportWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbReportWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  created?: Maybe<Int>;
+  created_not?: Maybe<Int>;
+  created_in?: Maybe<Int[] | Int>;
+  created_not_in?: Maybe<Int[] | Int>;
+  created_lt?: Maybe<Int>;
+  created_lte?: Maybe<Int>;
+  created_gt?: Maybe<Int>;
+  created_gte?: Maybe<Int>;
+  forumId?: Maybe<Int>;
+  forumId_not?: Maybe<Int>;
+  forumId_in?: Maybe<Int[] | Int>;
+  forumId_not_in?: Maybe<Int[] | Int>;
+  forumId_lt?: Maybe<Int>;
+  forumId_lte?: Maybe<Int>;
+  forumId_gt?: Maybe<Int>;
+  forumId_gte?: Maybe<Int>;
+  message?: Maybe<String>;
+  message_not?: Maybe<String>;
+  message_in?: Maybe<String[] | String>;
+  message_not_in?: Maybe<String[] | String>;
+  message_lt?: Maybe<String>;
+  message_lte?: Maybe<String>;
+  message_gt?: Maybe<String>;
+  message_gte?: Maybe<String>;
+  message_contains?: Maybe<String>;
+  message_not_contains?: Maybe<String>;
+  message_starts_with?: Maybe<String>;
+  message_not_starts_with?: Maybe<String>;
+  message_ends_with?: Maybe<String>;
+  message_not_ends_with?: Maybe<String>;
+  postId?: Maybe<Int>;
+  postId_not?: Maybe<Int>;
+  postId_in?: Maybe<Int[] | Int>;
+  postId_not_in?: Maybe<Int[] | Int>;
+  postId_lt?: Maybe<Int>;
+  postId_lte?: Maybe<Int>;
+  postId_gt?: Maybe<Int>;
+  postId_gte?: Maybe<Int>;
+  reportedBy?: Maybe<Int>;
+  reportedBy_not?: Maybe<Int>;
+  reportedBy_in?: Maybe<Int[] | Int>;
+  reportedBy_not_in?: Maybe<Int[] | Int>;
+  reportedBy_lt?: Maybe<Int>;
+  reportedBy_lte?: Maybe<Int>;
+  reportedBy_gt?: Maybe<Int>;
+  reportedBy_gte?: Maybe<Int>;
+  topicId?: Maybe<Int>;
+  topicId_not?: Maybe<Int>;
+  topicId_in?: Maybe<Int[] | Int>;
+  topicId_not_in?: Maybe<Int[] | Int>;
+  topicId_lt?: Maybe<Int>;
+  topicId_lte?: Maybe<Int>;
+  topicId_gt?: Maybe<Int>;
+  topicId_gte?: Maybe<Int>;
+  zapped?: Maybe<Int>;
+  zapped_not?: Maybe<Int>;
+  zapped_in?: Maybe<Int[] | Int>;
+  zapped_not_in?: Maybe<Int[] | Int>;
+  zapped_lt?: Maybe<Int>;
+  zapped_lte?: Maybe<Int>;
+  zapped_gt?: Maybe<Int>;
+  zapped_gte?: Maybe<Int>;
+  zappedBy?: Maybe<Int>;
+  zappedBy_not?: Maybe<Int>;
+  zappedBy_in?: Maybe<Int[] | Int>;
+  zappedBy_not_in?: Maybe<Int[] | Int>;
+  zappedBy_lt?: Maybe<Int>;
+  zappedBy_lte?: Maybe<Int>;
+  zappedBy_gt?: Maybe<Int>;
+  zappedBy_gte?: Maybe<Int>;
+  AND?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
+  OR?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
+  NOT?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
+}
+
+export type PunbbSearchCacheWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbSearchCacheWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  ident?: Maybe<String>;
+  ident_not?: Maybe<String>;
+  ident_in?: Maybe<String[] | String>;
+  ident_not_in?: Maybe<String[] | String>;
+  ident_lt?: Maybe<String>;
+  ident_lte?: Maybe<String>;
+  ident_gt?: Maybe<String>;
+  ident_gte?: Maybe<String>;
+  ident_contains?: Maybe<String>;
+  ident_not_contains?: Maybe<String>;
+  ident_starts_with?: Maybe<String>;
+  ident_not_starts_with?: Maybe<String>;
+  ident_ends_with?: Maybe<String>;
+  ident_not_ends_with?: Maybe<String>;
+  searchData?: Maybe<String>;
+  searchData_not?: Maybe<String>;
+  searchData_in?: Maybe<String[] | String>;
+  searchData_not_in?: Maybe<String[] | String>;
+  searchData_lt?: Maybe<String>;
+  searchData_lte?: Maybe<String>;
+  searchData_gt?: Maybe<String>;
+  searchData_gte?: Maybe<String>;
+  searchData_contains?: Maybe<String>;
+  searchData_not_contains?: Maybe<String>;
+  searchData_starts_with?: Maybe<String>;
+  searchData_not_starts_with?: Maybe<String>;
+  searchData_ends_with?: Maybe<String>;
+  searchData_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
+  OR?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
+  NOT?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
+}
+
+export interface PunbbSearchMatchWhereInput {
+  postId?: Maybe<Int>;
+  postId_not?: Maybe<Int>;
+  postId_in?: Maybe<Int[] | Int>;
+  postId_not_in?: Maybe<Int[] | Int>;
+  postId_lt?: Maybe<Int>;
+  postId_lte?: Maybe<Int>;
+  postId_gt?: Maybe<Int>;
+  postId_gte?: Maybe<Int>;
+  subjectMatch?: Maybe<Boolean>;
+  subjectMatch_not?: Maybe<Boolean>;
+  AND?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
+  OR?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
+  NOT?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
+}
+
+export type PunbbSearchWordWhereUniqueInput = AtLeastOne<{
+  word: Maybe<ID_Input>;
+}>;
+
+export interface PunbbSearchWordWhereInput {
+  word?: Maybe<ID_Input>;
+  word_not?: Maybe<ID_Input>;
+  word_in?: Maybe<ID_Input[] | ID_Input>;
+  word_not_in?: Maybe<ID_Input[] | ID_Input>;
+  word_lt?: Maybe<ID_Input>;
+  word_lte?: Maybe<ID_Input>;
+  word_gt?: Maybe<ID_Input>;
+  word_gte?: Maybe<ID_Input>;
+  word_contains?: Maybe<ID_Input>;
+  word_not_contains?: Maybe<ID_Input>;
+  word_starts_with?: Maybe<ID_Input>;
+  word_not_starts_with?: Maybe<ID_Input>;
+  word_ends_with?: Maybe<ID_Input>;
+  word_not_ends_with?: Maybe<ID_Input>;
+  AND?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
+  OR?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
+  NOT?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
+}
+
+export type PunbbTopicWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbTopicWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  closed?: Maybe<Boolean>;
+  closed_not?: Maybe<Boolean>;
+  forumId?: Maybe<Int>;
+  forumId_not?: Maybe<Int>;
+  forumId_in?: Maybe<Int[] | Int>;
+  forumId_not_in?: Maybe<Int[] | Int>;
+  forumId_lt?: Maybe<Int>;
+  forumId_lte?: Maybe<Int>;
+  forumId_gt?: Maybe<Int>;
+  forumId_gte?: Maybe<Int>;
+  lastPost?: Maybe<Int>;
+  lastPost_not?: Maybe<Int>;
+  lastPost_in?: Maybe<Int[] | Int>;
+  lastPost_not_in?: Maybe<Int[] | Int>;
+  lastPost_lt?: Maybe<Int>;
+  lastPost_lte?: Maybe<Int>;
+  lastPost_gt?: Maybe<Int>;
+  lastPost_gte?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPoster_not?: Maybe<String>;
+  lastPoster_in?: Maybe<String[] | String>;
+  lastPoster_not_in?: Maybe<String[] | String>;
+  lastPoster_lt?: Maybe<String>;
+  lastPoster_lte?: Maybe<String>;
+  lastPoster_gt?: Maybe<String>;
+  lastPoster_gte?: Maybe<String>;
+  lastPoster_contains?: Maybe<String>;
+  lastPoster_not_contains?: Maybe<String>;
+  lastPoster_starts_with?: Maybe<String>;
+  lastPoster_not_starts_with?: Maybe<String>;
+  lastPoster_ends_with?: Maybe<String>;
+  lastPoster_not_ends_with?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  lastPostId_not?: Maybe<Int>;
+  lastPostId_in?: Maybe<Int[] | Int>;
+  lastPostId_not_in?: Maybe<Int[] | Int>;
+  lastPostId_lt?: Maybe<Int>;
+  lastPostId_lte?: Maybe<Int>;
+  lastPostId_gt?: Maybe<Int>;
+  lastPostId_gte?: Maybe<Int>;
+  movedTo?: Maybe<Int>;
+  movedTo_not?: Maybe<Int>;
+  movedTo_in?: Maybe<Int[] | Int>;
+  movedTo_not_in?: Maybe<Int[] | Int>;
+  movedTo_lt?: Maybe<Int>;
+  movedTo_lte?: Maybe<Int>;
+  movedTo_gt?: Maybe<Int>;
+  movedTo_gte?: Maybe<Int>;
+  no?: Maybe<String>;
+  no_not?: Maybe<String>;
+  no_in?: Maybe<String[] | String>;
+  no_not_in?: Maybe<String[] | String>;
+  no_lt?: Maybe<String>;
+  no_lte?: Maybe<String>;
+  no_gt?: Maybe<String>;
+  no_gte?: Maybe<String>;
+  no_contains?: Maybe<String>;
+  no_not_contains?: Maybe<String>;
+  no_starts_with?: Maybe<String>;
+  no_not_starts_with?: Maybe<String>;
+  no_ends_with?: Maybe<String>;
+  no_not_ends_with?: Maybe<String>;
+  posted?: Maybe<Int>;
+  posted_not?: Maybe<Int>;
+  posted_in?: Maybe<Int[] | Int>;
+  posted_not_in?: Maybe<Int[] | Int>;
+  posted_lt?: Maybe<Int>;
+  posted_lte?: Maybe<Int>;
+  posted_gt?: Maybe<Int>;
+  posted_gte?: Maybe<Int>;
+  poster?: Maybe<String>;
+  poster_not?: Maybe<String>;
+  poster_in?: Maybe<String[] | String>;
+  poster_not_in?: Maybe<String[] | String>;
+  poster_lt?: Maybe<String>;
+  poster_lte?: Maybe<String>;
+  poster_gt?: Maybe<String>;
+  poster_gte?: Maybe<String>;
+  poster_contains?: Maybe<String>;
+  poster_not_contains?: Maybe<String>;
+  poster_starts_with?: Maybe<String>;
+  poster_not_starts_with?: Maybe<String>;
+  poster_ends_with?: Maybe<String>;
+  poster_not_ends_with?: Maybe<String>;
+  question?: Maybe<String>;
+  question_not?: Maybe<String>;
+  question_in?: Maybe<String[] | String>;
+  question_not_in?: Maybe<String[] | String>;
+  question_lt?: Maybe<String>;
+  question_lte?: Maybe<String>;
+  question_gt?: Maybe<String>;
+  question_gte?: Maybe<String>;
+  question_contains?: Maybe<String>;
+  question_not_contains?: Maybe<String>;
+  question_starts_with?: Maybe<String>;
+  question_not_starts_with?: Maybe<String>;
+  question_ends_with?: Maybe<String>;
+  question_not_ends_with?: Maybe<String>;
+  sticky?: Maybe<Boolean>;
+  sticky_not?: Maybe<Boolean>;
+  subject?: Maybe<String>;
+  subject_not?: Maybe<String>;
+  subject_in?: Maybe<String[] | String>;
+  subject_not_in?: Maybe<String[] | String>;
+  subject_lt?: Maybe<String>;
+  subject_lte?: Maybe<String>;
+  subject_gt?: Maybe<String>;
+  subject_gte?: Maybe<String>;
+  subject_contains?: Maybe<String>;
+  subject_not_contains?: Maybe<String>;
+  subject_starts_with?: Maybe<String>;
+  subject_not_starts_with?: Maybe<String>;
+  subject_ends_with?: Maybe<String>;
+  subject_not_ends_with?: Maybe<String>;
+  yes?: Maybe<String>;
+  yes_not?: Maybe<String>;
+  yes_in?: Maybe<String[] | String>;
+  yes_not_in?: Maybe<String[] | String>;
+  yes_lt?: Maybe<String>;
+  yes_lte?: Maybe<String>;
+  yes_gt?: Maybe<String>;
+  yes_gte?: Maybe<String>;
+  yes_contains?: Maybe<String>;
+  yes_not_contains?: Maybe<String>;
+  yes_starts_with?: Maybe<String>;
+  yes_not_starts_with?: Maybe<String>;
+  yes_ends_with?: Maybe<String>;
+  yes_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbTopicWhereInput[] | PunbbTopicWhereInput>;
+  OR?: Maybe<PunbbTopicWhereInput[] | PunbbTopicWhereInput>;
+  NOT?: Maybe<PunbbTopicWhereInput[] | PunbbTopicWhereInput>;
+}
+
+export type PunbbUploadedWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbUploadedWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  data?: Maybe<Int>;
+  data_not?: Maybe<Int>;
+  data_in?: Maybe<Int[] | Int>;
+  data_not_in?: Maybe<Int[] | Int>;
+  data_lt?: Maybe<Int>;
+  data_lte?: Maybe<Int>;
+  data_gt?: Maybe<Int>;
+  data_gte?: Maybe<Int>;
+  descr?: Maybe<String>;
+  descr_not?: Maybe<String>;
+  descr_in?: Maybe<String[] | String>;
+  descr_not_in?: Maybe<String[] | String>;
+  descr_lt?: Maybe<String>;
+  descr_lte?: Maybe<String>;
+  descr_gt?: Maybe<String>;
+  descr_gte?: Maybe<String>;
+  descr_contains?: Maybe<String>;
+  descr_not_contains?: Maybe<String>;
+  descr_starts_with?: Maybe<String>;
+  descr_not_starts_with?: Maybe<String>;
+  descr_ends_with?: Maybe<String>;
+  descr_not_ends_with?: Maybe<String>;
+  downs?: Maybe<Int>;
+  downs_not?: Maybe<Int>;
+  downs_in?: Maybe<Int[] | Int>;
+  downs_not_in?: Maybe<Int[] | Int>;
+  downs_lt?: Maybe<Int>;
+  downs_lte?: Maybe<Int>;
+  downs_gt?: Maybe<Int>;
+  downs_gte?: Maybe<Int>;
+  file?: Maybe<String>;
+  file_not?: Maybe<String>;
+  file_in?: Maybe<String[] | String>;
+  file_not_in?: Maybe<String[] | String>;
+  file_lt?: Maybe<String>;
+  file_lte?: Maybe<String>;
+  file_gt?: Maybe<String>;
+  file_gte?: Maybe<String>;
+  file_contains?: Maybe<String>;
+  file_not_contains?: Maybe<String>;
+  file_starts_with?: Maybe<String>;
+  file_not_starts_with?: Maybe<String>;
+  file_ends_with?: Maybe<String>;
+  file_not_ends_with?: Maybe<String>;
+  size?: Maybe<Int>;
+  size_not?: Maybe<Int>;
+  size_in?: Maybe<Int[] | Int>;
+  size_not_in?: Maybe<Int[] | Int>;
+  size_lt?: Maybe<Int>;
+  size_lte?: Maybe<Int>;
+  size_gt?: Maybe<Int>;
+  size_gte?: Maybe<Int>;
+  uid?: Maybe<Int>;
+  uid_not?: Maybe<Int>;
+  uid_in?: Maybe<Int[] | Int>;
+  uid_not_in?: Maybe<Int[] | Int>;
+  uid_lt?: Maybe<Int>;
+  uid_lte?: Maybe<Int>;
+  uid_gt?: Maybe<Int>;
+  uid_gte?: Maybe<Int>;
+  user?: Maybe<String>;
+  user_not?: Maybe<String>;
+  user_in?: Maybe<String[] | String>;
+  user_not_in?: Maybe<String[] | String>;
+  user_lt?: Maybe<String>;
+  user_lte?: Maybe<String>;
+  user_gt?: Maybe<String>;
+  user_gte?: Maybe<String>;
+  user_contains?: Maybe<String>;
+  user_not_contains?: Maybe<String>;
+  user_starts_with?: Maybe<String>;
+  user_not_starts_with?: Maybe<String>;
+  user_ends_with?: Maybe<String>;
+  user_not_ends_with?: Maybe<String>;
+  userStat?: Maybe<String>;
+  userStat_not?: Maybe<String>;
+  userStat_in?: Maybe<String[] | String>;
+  userStat_not_in?: Maybe<String[] | String>;
+  userStat_lt?: Maybe<String>;
+  userStat_lte?: Maybe<String>;
+  userStat_gt?: Maybe<String>;
+  userStat_gte?: Maybe<String>;
+  userStat_contains?: Maybe<String>;
+  userStat_not_contains?: Maybe<String>;
+  userStat_starts_with?: Maybe<String>;
+  userStat_not_starts_with?: Maybe<String>;
+  userStat_ends_with?: Maybe<String>;
+  userStat_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
+  OR?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
+  NOT?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
+}
+
+export interface PunbbUploadsConfWhereInput {
+  gId?: Maybe<Int>;
+  gId_not?: Maybe<Int>;
+  gId_in?: Maybe<Int[] | Int>;
+  gId_not_in?: Maybe<Int[] | Int>;
+  gId_lt?: Maybe<Int>;
+  gId_lte?: Maybe<Int>;
+  gId_gt?: Maybe<Int>;
+  gId_gte?: Maybe<Int>;
+  pDelete?: Maybe<Boolean>;
+  pDelete_not?: Maybe<Boolean>;
+  pGlobaldelete?: Maybe<Boolean>;
+  pGlobaldelete_not?: Maybe<Boolean>;
+  pGlobalview?: Maybe<Boolean>;
+  pGlobalview_not?: Maybe<Boolean>;
+  pSetop?: Maybe<Boolean>;
+  pSetop_not?: Maybe<Boolean>;
+  pUpload?: Maybe<Boolean>;
+  pUpload_not?: Maybe<Boolean>;
+  pView?: Maybe<Boolean>;
+  pView_not?: Maybe<Boolean>;
+  uFsize?: Maybe<Int>;
+  uFsize_not?: Maybe<Int>;
+  uFsize_in?: Maybe<Int[] | Int>;
+  uFsize_not_in?: Maybe<Int[] | Int>;
+  uFsize_lt?: Maybe<Int>;
+  uFsize_lte?: Maybe<Int>;
+  uFsize_gt?: Maybe<Int>;
+  uFsize_gte?: Maybe<Int>;
+  AND?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
+  OR?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
+  NOT?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
+}
+
+export type PunbbUploadsTypeWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbUploadsTypeWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  exts?: Maybe<String>;
+  exts_not?: Maybe<String>;
+  exts_in?: Maybe<String[] | String>;
+  exts_not_in?: Maybe<String[] | String>;
+  exts_lt?: Maybe<String>;
+  exts_lte?: Maybe<String>;
+  exts_gt?: Maybe<String>;
+  exts_gte?: Maybe<String>;
+  exts_contains?: Maybe<String>;
+  exts_not_contains?: Maybe<String>;
+  exts_starts_with?: Maybe<String>;
+  exts_not_starts_with?: Maybe<String>;
+  exts_ends_with?: Maybe<String>;
+  exts_not_ends_with?: Maybe<String>;
+  type?: Maybe<String>;
+  type_not?: Maybe<String>;
+  type_in?: Maybe<String[] | String>;
+  type_not_in?: Maybe<String[] | String>;
+  type_lt?: Maybe<String>;
+  type_lte?: Maybe<String>;
+  type_gt?: Maybe<String>;
+  type_gte?: Maybe<String>;
+  type_contains?: Maybe<String>;
+  type_not_contains?: Maybe<String>;
+  type_starts_with?: Maybe<String>;
+  type_not_starts_with?: Maybe<String>;
+  type_ends_with?: Maybe<String>;
+  type_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
+  OR?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
+  NOT?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
+}
+
+export type PunbbUserWhereUniqueInput = AtLeastOne<{
+  id: Maybe<Int>;
+}>;
+
+export interface PunbbUserWhereInput {
+  id?: Maybe<Int>;
+  id_not?: Maybe<Int>;
+  id_in?: Maybe<Int[] | Int>;
+  id_not_in?: Maybe<Int[] | Int>;
+  id_lt?: Maybe<Int>;
+  id_lte?: Maybe<Int>;
+  id_gt?: Maybe<Int>;
+  id_gte?: Maybe<Int>;
+  activateKey?: Maybe<String>;
+  activateKey_not?: Maybe<String>;
+  activateKey_in?: Maybe<String[] | String>;
+  activateKey_not_in?: Maybe<String[] | String>;
+  activateKey_lt?: Maybe<String>;
+  activateKey_lte?: Maybe<String>;
+  activateKey_gt?: Maybe<String>;
+  activateKey_gte?: Maybe<String>;
+  activateKey_contains?: Maybe<String>;
+  activateKey_not_contains?: Maybe<String>;
+  activateKey_starts_with?: Maybe<String>;
+  activateKey_not_starts_with?: Maybe<String>;
+  activateKey_ends_with?: Maybe<String>;
+  activateKey_not_ends_with?: Maybe<String>;
+  activateString?: Maybe<String>;
+  activateString_not?: Maybe<String>;
+  activateString_in?: Maybe<String[] | String>;
+  activateString_not_in?: Maybe<String[] | String>;
+  activateString_lt?: Maybe<String>;
+  activateString_lte?: Maybe<String>;
+  activateString_gt?: Maybe<String>;
+  activateString_gte?: Maybe<String>;
+  activateString_contains?: Maybe<String>;
+  activateString_not_contains?: Maybe<String>;
+  activateString_starts_with?: Maybe<String>;
+  activateString_not_starts_with?: Maybe<String>;
+  activateString_ends_with?: Maybe<String>;
+  activateString_not_ends_with?: Maybe<String>;
+  adminNote?: Maybe<String>;
+  adminNote_not?: Maybe<String>;
+  adminNote_in?: Maybe<String[] | String>;
+  adminNote_not_in?: Maybe<String[] | String>;
+  adminNote_lt?: Maybe<String>;
+  adminNote_lte?: Maybe<String>;
+  adminNote_gt?: Maybe<String>;
+  adminNote_gte?: Maybe<String>;
+  adminNote_contains?: Maybe<String>;
+  adminNote_not_contains?: Maybe<String>;
+  adminNote_starts_with?: Maybe<String>;
+  adminNote_not_starts_with?: Maybe<String>;
+  adminNote_ends_with?: Maybe<String>;
+  adminNote_not_ends_with?: Maybe<String>;
+  aim?: Maybe<String>;
+  aim_not?: Maybe<String>;
+  aim_in?: Maybe<String[] | String>;
+  aim_not_in?: Maybe<String[] | String>;
+  aim_lt?: Maybe<String>;
+  aim_lte?: Maybe<String>;
+  aim_gt?: Maybe<String>;
+  aim_gte?: Maybe<String>;
+  aim_contains?: Maybe<String>;
+  aim_not_contains?: Maybe<String>;
+  aim_starts_with?: Maybe<String>;
+  aim_not_starts_with?: Maybe<String>;
+  aim_ends_with?: Maybe<String>;
+  aim_not_ends_with?: Maybe<String>;
+  dispPosts?: Maybe<Boolean>;
+  dispPosts_not?: Maybe<Boolean>;
+  dispTopics?: Maybe<Boolean>;
+  dispTopics_not?: Maybe<Boolean>;
   email?: Maybe<String>;
-  name: String;
-}
-
-export interface PostUpdateInput {
-  title?: Maybe<String>;
-  published?: Maybe<Boolean>;
-  author?: Maybe<UserUpdateOneWithoutPostsInput>;
-}
-
-export interface UserUpdateOneWithoutPostsInput {
-  create?: Maybe<UserCreateWithoutPostsInput>;
-  update?: Maybe<UserUpdateWithoutPostsDataInput>;
-  upsert?: Maybe<UserUpsertWithoutPostsInput>;
-  delete?: Maybe<Boolean>;
-  disconnect?: Maybe<Boolean>;
-  connect?: Maybe<UserWhereUniqueInput>;
-}
-
-export interface UserUpdateWithoutPostsDataInput {
-  email?: Maybe<String>;
-  name?: Maybe<String>;
-}
-
-export interface UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput;
-  create: UserCreateWithoutPostsInput;
-}
-
-export interface PostUpdateManyMutationInput {
-  title?: Maybe<String>;
-  published?: Maybe<Boolean>;
-}
-
-export interface UserCreateInput {
-  id?: Maybe<ID_Input>;
-  email?: Maybe<String>;
-  name: String;
-  posts?: Maybe<PostCreateManyWithoutAuthorInput>;
-}
-
-export interface PostCreateManyWithoutAuthorInput {
-  create?: Maybe<PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput>;
-  connect?: Maybe<PostWhereUniqueInput[] | PostWhereUniqueInput>;
-}
-
-export interface PostCreateWithoutAuthorInput {
-  id?: Maybe<ID_Input>;
-  title: String;
-  published?: Maybe<Boolean>;
-}
-
-export interface UserUpdateInput {
-  email?: Maybe<String>;
-  name?: Maybe<String>;
-  posts?: Maybe<PostUpdateManyWithoutAuthorInput>;
-}
-
-export interface PostUpdateManyWithoutAuthorInput {
-  create?: Maybe<PostCreateWithoutAuthorInput[] | PostCreateWithoutAuthorInput>;
-  delete?: Maybe<PostWhereUniqueInput[] | PostWhereUniqueInput>;
-  connect?: Maybe<PostWhereUniqueInput[] | PostWhereUniqueInput>;
-  set?: Maybe<PostWhereUniqueInput[] | PostWhereUniqueInput>;
-  disconnect?: Maybe<PostWhereUniqueInput[] | PostWhereUniqueInput>;
-  update?: Maybe<
-    | PostUpdateWithWhereUniqueWithoutAuthorInput[]
-    | PostUpdateWithWhereUniqueWithoutAuthorInput
-  >;
-  upsert?: Maybe<
-    | PostUpsertWithWhereUniqueWithoutAuthorInput[]
-    | PostUpsertWithWhereUniqueWithoutAuthorInput
-  >;
-  deleteMany?: Maybe<PostScalarWhereInput[] | PostScalarWhereInput>;
-  updateMany?: Maybe<
-    PostUpdateManyWithWhereNestedInput[] | PostUpdateManyWithWhereNestedInput
-  >;
-}
-
-export interface PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  data: PostUpdateWithoutAuthorDataInput;
-}
-
-export interface PostUpdateWithoutAuthorDataInput {
-  title?: Maybe<String>;
-  published?: Maybe<Boolean>;
-}
-
-export interface PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput;
-  update: PostUpdateWithoutAuthorDataInput;
-  create: PostCreateWithoutAuthorInput;
-}
-
-export interface PostScalarWhereInput {
-  id?: Maybe<ID_Input>;
-  id_not?: Maybe<ID_Input>;
-  id_in?: Maybe<ID_Input[] | ID_Input>;
-  id_not_in?: Maybe<ID_Input[] | ID_Input>;
-  id_lt?: Maybe<ID_Input>;
-  id_lte?: Maybe<ID_Input>;
-  id_gt?: Maybe<ID_Input>;
-  id_gte?: Maybe<ID_Input>;
-  id_contains?: Maybe<ID_Input>;
-  id_not_contains?: Maybe<ID_Input>;
-  id_starts_with?: Maybe<ID_Input>;
-  id_not_starts_with?: Maybe<ID_Input>;
-  id_ends_with?: Maybe<ID_Input>;
-  id_not_ends_with?: Maybe<ID_Input>;
+  email_not?: Maybe<String>;
+  email_in?: Maybe<String[] | String>;
+  email_not_in?: Maybe<String[] | String>;
+  email_lt?: Maybe<String>;
+  email_lte?: Maybe<String>;
+  email_gt?: Maybe<String>;
+  email_gte?: Maybe<String>;
+  email_contains?: Maybe<String>;
+  email_not_contains?: Maybe<String>;
+  email_starts_with?: Maybe<String>;
+  email_not_starts_with?: Maybe<String>;
+  email_ends_with?: Maybe<String>;
+  email_not_ends_with?: Maybe<String>;
+  emailSetting?: Maybe<Boolean>;
+  emailSetting_not?: Maybe<Boolean>;
+  groupId?: Maybe<Int>;
+  groupId_not?: Maybe<Int>;
+  groupId_in?: Maybe<Int[] | Int>;
+  groupId_not_in?: Maybe<Int[] | Int>;
+  groupId_lt?: Maybe<Int>;
+  groupId_lte?: Maybe<Int>;
+  groupId_gt?: Maybe<Int>;
+  groupId_gte?: Maybe<Int>;
+  icq?: Maybe<String>;
+  icq_not?: Maybe<String>;
+  icq_in?: Maybe<String[] | String>;
+  icq_not_in?: Maybe<String[] | String>;
+  icq_lt?: Maybe<String>;
+  icq_lte?: Maybe<String>;
+  icq_gt?: Maybe<String>;
+  icq_gte?: Maybe<String>;
+  icq_contains?: Maybe<String>;
+  icq_not_contains?: Maybe<String>;
+  icq_starts_with?: Maybe<String>;
+  icq_not_starts_with?: Maybe<String>;
+  icq_ends_with?: Maybe<String>;
+  icq_not_ends_with?: Maybe<String>;
+  jabber?: Maybe<String>;
+  jabber_not?: Maybe<String>;
+  jabber_in?: Maybe<String[] | String>;
+  jabber_not_in?: Maybe<String[] | String>;
+  jabber_lt?: Maybe<String>;
+  jabber_lte?: Maybe<String>;
+  jabber_gt?: Maybe<String>;
+  jabber_gte?: Maybe<String>;
+  jabber_contains?: Maybe<String>;
+  jabber_not_contains?: Maybe<String>;
+  jabber_starts_with?: Maybe<String>;
+  jabber_not_starts_with?: Maybe<String>;
+  jabber_ends_with?: Maybe<String>;
+  jabber_not_ends_with?: Maybe<String>;
+  language?: Maybe<String>;
+  language_not?: Maybe<String>;
+  language_in?: Maybe<String[] | String>;
+  language_not_in?: Maybe<String[] | String>;
+  language_lt?: Maybe<String>;
+  language_lte?: Maybe<String>;
+  language_gt?: Maybe<String>;
+  language_gte?: Maybe<String>;
+  language_contains?: Maybe<String>;
+  language_not_contains?: Maybe<String>;
+  language_starts_with?: Maybe<String>;
+  language_not_starts_with?: Maybe<String>;
+  language_ends_with?: Maybe<String>;
+  language_not_ends_with?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastPost_not?: Maybe<Int>;
+  lastPost_in?: Maybe<Int[] | Int>;
+  lastPost_not_in?: Maybe<Int[] | Int>;
+  lastPost_lt?: Maybe<Int>;
+  lastPost_lte?: Maybe<Int>;
+  lastPost_gt?: Maybe<Int>;
+  lastPost_gte?: Maybe<Int>;
+  lastVisit?: Maybe<Int>;
+  lastVisit_not?: Maybe<Int>;
+  lastVisit_in?: Maybe<Int[] | Int>;
+  lastVisit_not_in?: Maybe<Int[] | Int>;
+  lastVisit_lt?: Maybe<Int>;
+  lastVisit_lte?: Maybe<Int>;
+  lastVisit_gt?: Maybe<Int>;
+  lastVisit_gte?: Maybe<Int>;
+  location?: Maybe<String>;
+  location_not?: Maybe<String>;
+  location_in?: Maybe<String[] | String>;
+  location_not_in?: Maybe<String[] | String>;
+  location_lt?: Maybe<String>;
+  location_lte?: Maybe<String>;
+  location_gt?: Maybe<String>;
+  location_gte?: Maybe<String>;
+  location_contains?: Maybe<String>;
+  location_not_contains?: Maybe<String>;
+  location_starts_with?: Maybe<String>;
+  location_not_starts_with?: Maybe<String>;
+  location_ends_with?: Maybe<String>;
+  location_not_ends_with?: Maybe<String>;
+  msn?: Maybe<String>;
+  msn_not?: Maybe<String>;
+  msn_in?: Maybe<String[] | String>;
+  msn_not_in?: Maybe<String[] | String>;
+  msn_lt?: Maybe<String>;
+  msn_lte?: Maybe<String>;
+  msn_gt?: Maybe<String>;
+  msn_gte?: Maybe<String>;
+  msn_contains?: Maybe<String>;
+  msn_not_contains?: Maybe<String>;
+  msn_starts_with?: Maybe<String>;
+  msn_not_starts_with?: Maybe<String>;
+  msn_ends_with?: Maybe<String>;
+  msn_not_ends_with?: Maybe<String>;
+  notifyWithPost?: Maybe<Boolean>;
+  notifyWithPost_not?: Maybe<Boolean>;
+  numPosts?: Maybe<Int>;
+  numPosts_not?: Maybe<Int>;
+  numPosts_in?: Maybe<Int[] | Int>;
+  numPosts_not_in?: Maybe<Int[] | Int>;
+  numPosts_lt?: Maybe<Int>;
+  numPosts_lte?: Maybe<Int>;
+  numPosts_gt?: Maybe<Int>;
+  numPosts_gte?: Maybe<Int>;
+  password?: Maybe<String>;
+  password_not?: Maybe<String>;
+  password_in?: Maybe<String[] | String>;
+  password_not_in?: Maybe<String[] | String>;
+  password_lt?: Maybe<String>;
+  password_lte?: Maybe<String>;
+  password_gt?: Maybe<String>;
+  password_gte?: Maybe<String>;
+  password_contains?: Maybe<String>;
+  password_not_contains?: Maybe<String>;
+  password_starts_with?: Maybe<String>;
+  password_not_starts_with?: Maybe<String>;
+  password_ends_with?: Maybe<String>;
+  password_not_ends_with?: Maybe<String>;
+  readTopics?: Maybe<String>;
+  readTopics_not?: Maybe<String>;
+  readTopics_in?: Maybe<String[] | String>;
+  readTopics_not_in?: Maybe<String[] | String>;
+  readTopics_lt?: Maybe<String>;
+  readTopics_lte?: Maybe<String>;
+  readTopics_gt?: Maybe<String>;
+  readTopics_gte?: Maybe<String>;
+  readTopics_contains?: Maybe<String>;
+  readTopics_not_contains?: Maybe<String>;
+  readTopics_starts_with?: Maybe<String>;
+  readTopics_not_starts_with?: Maybe<String>;
+  readTopics_ends_with?: Maybe<String>;
+  readTopics_not_ends_with?: Maybe<String>;
+  realname?: Maybe<String>;
+  realname_not?: Maybe<String>;
+  realname_in?: Maybe<String[] | String>;
+  realname_not_in?: Maybe<String[] | String>;
+  realname_lt?: Maybe<String>;
+  realname_lte?: Maybe<String>;
+  realname_gt?: Maybe<String>;
+  realname_gte?: Maybe<String>;
+  realname_contains?: Maybe<String>;
+  realname_not_contains?: Maybe<String>;
+  realname_starts_with?: Maybe<String>;
+  realname_not_starts_with?: Maybe<String>;
+  realname_ends_with?: Maybe<String>;
+  realname_not_ends_with?: Maybe<String>;
+  registered?: Maybe<Int>;
+  registered_not?: Maybe<Int>;
+  registered_in?: Maybe<Int[] | Int>;
+  registered_not_in?: Maybe<Int[] | Int>;
+  registered_lt?: Maybe<Int>;
+  registered_lte?: Maybe<Int>;
+  registered_gt?: Maybe<Int>;
+  registered_gte?: Maybe<Int>;
+  registrationIp?: Maybe<String>;
+  registrationIp_not?: Maybe<String>;
+  registrationIp_in?: Maybe<String[] | String>;
+  registrationIp_not_in?: Maybe<String[] | String>;
+  registrationIp_lt?: Maybe<String>;
+  registrationIp_lte?: Maybe<String>;
+  registrationIp_gt?: Maybe<String>;
+  registrationIp_gte?: Maybe<String>;
+  registrationIp_contains?: Maybe<String>;
+  registrationIp_not_contains?: Maybe<String>;
+  registrationIp_starts_with?: Maybe<String>;
+  registrationIp_not_starts_with?: Maybe<String>;
+  registrationIp_ends_with?: Maybe<String>;
+  registrationIp_not_ends_with?: Maybe<String>;
+  savePass?: Maybe<Boolean>;
+  savePass_not?: Maybe<Boolean>;
+  showAvatars?: Maybe<Boolean>;
+  showAvatars_not?: Maybe<Boolean>;
+  showImg?: Maybe<Boolean>;
+  showImg_not?: Maybe<Boolean>;
+  showImgSig?: Maybe<Boolean>;
+  showImgSig_not?: Maybe<Boolean>;
+  showSig?: Maybe<Boolean>;
+  showSig_not?: Maybe<Boolean>;
+  showSmilies?: Maybe<Boolean>;
+  showSmilies_not?: Maybe<Boolean>;
+  signature?: Maybe<String>;
+  signature_not?: Maybe<String>;
+  signature_in?: Maybe<String[] | String>;
+  signature_not_in?: Maybe<String[] | String>;
+  signature_lt?: Maybe<String>;
+  signature_lte?: Maybe<String>;
+  signature_gt?: Maybe<String>;
+  signature_gte?: Maybe<String>;
+  signature_contains?: Maybe<String>;
+  signature_not_contains?: Maybe<String>;
+  signature_starts_with?: Maybe<String>;
+  signature_not_starts_with?: Maybe<String>;
+  signature_ends_with?: Maybe<String>;
+  signature_not_ends_with?: Maybe<String>;
+  style?: Maybe<String>;
+  style_not?: Maybe<String>;
+  style_in?: Maybe<String[] | String>;
+  style_not_in?: Maybe<String[] | String>;
+  style_lt?: Maybe<String>;
+  style_lte?: Maybe<String>;
+  style_gt?: Maybe<String>;
+  style_gte?: Maybe<String>;
+  style_contains?: Maybe<String>;
+  style_not_contains?: Maybe<String>;
+  style_starts_with?: Maybe<String>;
+  style_not_starts_with?: Maybe<String>;
+  style_ends_with?: Maybe<String>;
+  style_not_ends_with?: Maybe<String>;
+  timezone?: Maybe<Float>;
+  timezone_not?: Maybe<Float>;
+  timezone_in?: Maybe<Float[] | Float>;
+  timezone_not_in?: Maybe<Float[] | Float>;
+  timezone_lt?: Maybe<Float>;
+  timezone_lte?: Maybe<Float>;
+  timezone_gt?: Maybe<Float>;
+  timezone_gte?: Maybe<Float>;
   title?: Maybe<String>;
   title_not?: Maybe<String>;
   title_in?: Maybe<String[] | String>;
@@ -392,159 +2758,1100 @@ export interface PostScalarWhereInput {
   title_not_starts_with?: Maybe<String>;
   title_ends_with?: Maybe<String>;
   title_not_ends_with?: Maybe<String>;
-  published?: Maybe<Boolean>;
-  published_not?: Maybe<Boolean>;
-  AND?: Maybe<PostScalarWhereInput[] | PostScalarWhereInput>;
-  OR?: Maybe<PostScalarWhereInput[] | PostScalarWhereInput>;
-  NOT?: Maybe<PostScalarWhereInput[] | PostScalarWhereInput>;
+  url?: Maybe<String>;
+  url_not?: Maybe<String>;
+  url_in?: Maybe<String[] | String>;
+  url_not_in?: Maybe<String[] | String>;
+  url_lt?: Maybe<String>;
+  url_lte?: Maybe<String>;
+  url_gt?: Maybe<String>;
+  url_gte?: Maybe<String>;
+  url_contains?: Maybe<String>;
+  url_not_contains?: Maybe<String>;
+  url_starts_with?: Maybe<String>;
+  url_not_starts_with?: Maybe<String>;
+  url_ends_with?: Maybe<String>;
+  url_not_ends_with?: Maybe<String>;
+  useAvatar?: Maybe<Boolean>;
+  useAvatar_not?: Maybe<Boolean>;
+  username?: Maybe<String>;
+  username_not?: Maybe<String>;
+  username_in?: Maybe<String[] | String>;
+  username_not_in?: Maybe<String[] | String>;
+  username_lt?: Maybe<String>;
+  username_lte?: Maybe<String>;
+  username_gt?: Maybe<String>;
+  username_gte?: Maybe<String>;
+  username_contains?: Maybe<String>;
+  username_not_contains?: Maybe<String>;
+  username_starts_with?: Maybe<String>;
+  username_not_starts_with?: Maybe<String>;
+  username_ends_with?: Maybe<String>;
+  username_not_ends_with?: Maybe<String>;
+  yahoo?: Maybe<String>;
+  yahoo_not?: Maybe<String>;
+  yahoo_in?: Maybe<String[] | String>;
+  yahoo_not_in?: Maybe<String[] | String>;
+  yahoo_lt?: Maybe<String>;
+  yahoo_lte?: Maybe<String>;
+  yahoo_gt?: Maybe<String>;
+  yahoo_gte?: Maybe<String>;
+  yahoo_contains?: Maybe<String>;
+  yahoo_not_contains?: Maybe<String>;
+  yahoo_starts_with?: Maybe<String>;
+  yahoo_not_starts_with?: Maybe<String>;
+  yahoo_ends_with?: Maybe<String>;
+  yahoo_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PunbbUserWhereInput[] | PunbbUserWhereInput>;
+  OR?: Maybe<PunbbUserWhereInput[] | PunbbUserWhereInput>;
+  NOT?: Maybe<PunbbUserWhereInput[] | PunbbUserWhereInput>;
 }
 
-export interface PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput;
-  data: PostUpdateManyDataInput;
+export interface PunbbUserthreadWhereInput {
+  lastRead?: Maybe<Int>;
+  lastRead_not?: Maybe<Int>;
+  lastRead_in?: Maybe<Int[] | Int>;
+  lastRead_not_in?: Maybe<Int[] | Int>;
+  lastRead_lt?: Maybe<Int>;
+  lastRead_lte?: Maybe<Int>;
+  lastRead_gt?: Maybe<Int>;
+  lastRead_gte?: Maybe<Int>;
+  posted?: Maybe<Boolean>;
+  posted_not?: Maybe<Boolean>;
+  AND?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
+  OR?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
+  NOT?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
 }
 
-export interface PostUpdateManyDataInput {
-  title?: Maybe<String>;
-  published?: Maybe<Boolean>;
-}
-
-export interface UserUpdateManyMutationInput {
+export interface PunbbBanCreateInput {
+  id?: Maybe<Int>;
   email?: Maybe<String>;
-  name?: Maybe<String>;
+  expire?: Maybe<Int>;
+  ip?: Maybe<String>;
+  message?: Maybe<String>;
+  username?: Maybe<String>;
 }
 
-export interface PostSubscriptionWhereInput {
+export interface PunbbBanUpdateInput {
+  email?: Maybe<String>;
+  expire?: Maybe<Int>;
+  ip?: Maybe<String>;
+  message?: Maybe<String>;
+  username?: Maybe<String>;
+}
+
+export interface PunbbBanUpdateManyMutationInput {
+  email?: Maybe<String>;
+  expire?: Maybe<Int>;
+  ip?: Maybe<String>;
+  message?: Maybe<String>;
+  username?: Maybe<String>;
+}
+
+export interface PunbbCategoryCreateInput {
+  id?: Maybe<Int>;
+  catName?: Maybe<String>;
+  dispPosition?: Maybe<Int>;
+}
+
+export interface PunbbCategoryUpdateInput {
+  catName?: Maybe<String>;
+  dispPosition?: Maybe<Int>;
+}
+
+export interface PunbbCategoryUpdateManyMutationInput {
+  catName?: Maybe<String>;
+  dispPosition?: Maybe<Int>;
+}
+
+export interface PunbbCensoringCreateInput {
+  id?: Maybe<Int>;
+  replaceWith?: Maybe<String>;
+  searchFor?: Maybe<String>;
+}
+
+export interface PunbbCensoringUpdateInput {
+  replaceWith?: Maybe<String>;
+  searchFor?: Maybe<String>;
+}
+
+export interface PunbbCensoringUpdateManyMutationInput {
+  replaceWith?: Maybe<String>;
+  searchFor?: Maybe<String>;
+}
+
+export interface PunbbConfigCreateInput {
+  conf_name?: Maybe<ID_Input>;
+  confValue?: Maybe<String>;
+}
+
+export interface PunbbConfigUpdateInput {
+  confValue?: Maybe<String>;
+}
+
+export interface PunbbConfigUpdateManyMutationInput {
+  confValue?: Maybe<String>;
+}
+
+export interface PunbbForumCreateInput {
+  id?: Maybe<Int>;
+  catId?: Maybe<Int>;
+  dispPosition?: Maybe<Int>;
+  forumDesc?: Maybe<String>;
+  forumName?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  moderators?: Maybe<String>;
+  redirectUrl?: Maybe<String>;
+  sortBy?: Maybe<Boolean>;
+}
+
+export interface PunbbForumUpdateInput {
+  catId?: Maybe<Int>;
+  dispPosition?: Maybe<Int>;
+  forumDesc?: Maybe<String>;
+  forumName?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  moderators?: Maybe<String>;
+  redirectUrl?: Maybe<String>;
+  sortBy?: Maybe<Boolean>;
+}
+
+export interface PunbbForumUpdateManyMutationInput {
+  catId?: Maybe<Int>;
+  dispPosition?: Maybe<Int>;
+  forumDesc?: Maybe<String>;
+  forumName?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  moderators?: Maybe<String>;
+  redirectUrl?: Maybe<String>;
+  sortBy?: Maybe<Boolean>;
+}
+
+export interface PunbbForumPermCreateInput {
+  postPolls?: Maybe<Boolean>;
+  postReplies?: Maybe<Boolean>;
+  postTopics?: Maybe<Boolean>;
+  readForum?: Maybe<Boolean>;
+}
+
+export interface PunbbForumPermUpdateManyMutationInput {
+  postPolls?: Maybe<Boolean>;
+  postReplies?: Maybe<Boolean>;
+  postTopics?: Maybe<Boolean>;
+  readForum?: Maybe<Boolean>;
+}
+
+export interface PunbbGroupCreateInput {
+  g_id?: Maybe<Int>;
+  gDeletePosts?: Maybe<Boolean>;
+  gDeleteTopics?: Maybe<Boolean>;
+  gEditPosts?: Maybe<Boolean>;
+  gEditSubjectsInterval?: Maybe<Int>;
+  gPostFlood?: Maybe<Int>;
+  gPostPolls?: Maybe<Boolean>;
+  gPostReplies?: Maybe<Boolean>;
+  gPostTopics?: Maybe<Boolean>;
+  gReadBoard?: Maybe<Boolean>;
+  gSearch?: Maybe<Boolean>;
+  gSearchFlood?: Maybe<Int>;
+  gSearchUsers?: Maybe<Boolean>;
+  gSetTitle?: Maybe<Boolean>;
+  gTitle?: Maybe<String>;
+  gUserTitle?: Maybe<String>;
+}
+
+export interface PunbbGroupUpdateInput {
+  gDeletePosts?: Maybe<Boolean>;
+  gDeleteTopics?: Maybe<Boolean>;
+  gEditPosts?: Maybe<Boolean>;
+  gEditSubjectsInterval?: Maybe<Int>;
+  gPostFlood?: Maybe<Int>;
+  gPostPolls?: Maybe<Boolean>;
+  gPostReplies?: Maybe<Boolean>;
+  gPostTopics?: Maybe<Boolean>;
+  gReadBoard?: Maybe<Boolean>;
+  gSearch?: Maybe<Boolean>;
+  gSearchFlood?: Maybe<Int>;
+  gSearchUsers?: Maybe<Boolean>;
+  gSetTitle?: Maybe<Boolean>;
+  gTitle?: Maybe<String>;
+  gUserTitle?: Maybe<String>;
+}
+
+export interface PunbbGroupUpdateManyMutationInput {
+  gDeletePosts?: Maybe<Boolean>;
+  gDeleteTopics?: Maybe<Boolean>;
+  gEditPosts?: Maybe<Boolean>;
+  gEditSubjectsInterval?: Maybe<Int>;
+  gPostFlood?: Maybe<Int>;
+  gPostPolls?: Maybe<Boolean>;
+  gPostReplies?: Maybe<Boolean>;
+  gPostTopics?: Maybe<Boolean>;
+  gReadBoard?: Maybe<Boolean>;
+  gSearch?: Maybe<Boolean>;
+  gSearchFlood?: Maybe<Int>;
+  gSearchUsers?: Maybe<Boolean>;
+  gSetTitle?: Maybe<Boolean>;
+  gTitle?: Maybe<String>;
+  gUserTitle?: Maybe<String>;
+}
+
+export interface PunbbOnlineCreateInput {
+  ident?: Maybe<String>;
+  idle?: Maybe<Boolean>;
+  logged?: Maybe<Int>;
+  userId?: Maybe<Int>;
+}
+
+export interface PunbbOnlineUpdateManyMutationInput {
+  ident?: Maybe<String>;
+  idle?: Maybe<Boolean>;
+  logged?: Maybe<Int>;
+  userId?: Maybe<Int>;
+}
+
+export interface PunbbPollCreateInput {
+  id?: Maybe<Int>;
+  options: String;
+  pollid?: Maybe<Int>;
+  ptype?: Maybe<Boolean>;
+  voters: String;
+  votes: String;
+}
+
+export interface PunbbPollUpdateInput {
+  options?: Maybe<String>;
+  pollid?: Maybe<Int>;
+  ptype?: Maybe<Boolean>;
+  voters?: Maybe<String>;
+  votes?: Maybe<String>;
+}
+
+export interface PunbbPollUpdateManyMutationInput {
+  options?: Maybe<String>;
+  pollid?: Maybe<Int>;
+  ptype?: Maybe<Boolean>;
+  voters?: Maybe<String>;
+  votes?: Maybe<String>;
+}
+
+export interface PunbbPostCreateInput {
+  id?: Maybe<Int>;
+  edited?: Maybe<Int>;
+  editedBy?: Maybe<String>;
+  hideSmilies?: Maybe<Boolean>;
+  message: String;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  posterEmail?: Maybe<String>;
+  posterId?: Maybe<Int>;
+  posterIp?: Maybe<String>;
+  topicId?: Maybe<Int>;
+}
+
+export interface PunbbPostUpdateInput {
+  edited?: Maybe<Int>;
+  editedBy?: Maybe<String>;
+  hideSmilies?: Maybe<Boolean>;
+  message?: Maybe<String>;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  posterEmail?: Maybe<String>;
+  posterId?: Maybe<Int>;
+  posterIp?: Maybe<String>;
+  topicId?: Maybe<Int>;
+}
+
+export interface PunbbPostUpdateManyMutationInput {
+  edited?: Maybe<Int>;
+  editedBy?: Maybe<String>;
+  hideSmilies?: Maybe<Boolean>;
+  message?: Maybe<String>;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  posterEmail?: Maybe<String>;
+  posterId?: Maybe<Int>;
+  posterIp?: Maybe<String>;
+  topicId?: Maybe<Int>;
+}
+
+export interface PunbbRankCreateInput {
+  id?: Maybe<Int>;
+  rank?: Maybe<String>;
+}
+
+export interface PunbbRankUpdateInput {
+  rank?: Maybe<String>;
+}
+
+export interface PunbbRankUpdateManyMutationInput {
+  rank?: Maybe<String>;
+}
+
+export interface PunbbReportCreateInput {
+  id?: Maybe<Int>;
+  created?: Maybe<Int>;
+  forumId?: Maybe<Int>;
+  message: String;
+  postId?: Maybe<Int>;
+  reportedBy?: Maybe<Int>;
+  topicId?: Maybe<Int>;
+  zapped?: Maybe<Int>;
+  zappedBy?: Maybe<Int>;
+}
+
+export interface PunbbReportUpdateInput {
+  created?: Maybe<Int>;
+  forumId?: Maybe<Int>;
+  message?: Maybe<String>;
+  postId?: Maybe<Int>;
+  reportedBy?: Maybe<Int>;
+  topicId?: Maybe<Int>;
+  zapped?: Maybe<Int>;
+  zappedBy?: Maybe<Int>;
+}
+
+export interface PunbbReportUpdateManyMutationInput {
+  created?: Maybe<Int>;
+  forumId?: Maybe<Int>;
+  message?: Maybe<String>;
+  postId?: Maybe<Int>;
+  reportedBy?: Maybe<Int>;
+  topicId?: Maybe<Int>;
+  zapped?: Maybe<Int>;
+  zappedBy?: Maybe<Int>;
+}
+
+export interface PunbbSearchCacheCreateInput {
+  id?: Maybe<Int>;
+  ident?: Maybe<String>;
+  searchData: String;
+}
+
+export interface PunbbSearchCacheUpdateInput {
+  ident?: Maybe<String>;
+  searchData?: Maybe<String>;
+}
+
+export interface PunbbSearchCacheUpdateManyMutationInput {
+  ident?: Maybe<String>;
+  searchData?: Maybe<String>;
+}
+
+export interface PunbbSearchMatchCreateInput {
+  postId?: Maybe<Int>;
+  subjectMatch?: Maybe<Boolean>;
+}
+
+export interface PunbbSearchMatchUpdateManyMutationInput {
+  postId?: Maybe<Int>;
+  subjectMatch?: Maybe<Boolean>;
+}
+
+export interface PunbbSearchWordCreateInput {
+  word?: Maybe<ID_Input>;
+}
+
+export interface PunbbTopicCreateInput {
+  id?: Maybe<Int>;
+  closed?: Maybe<Boolean>;
+  forumId?: Maybe<Int>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  movedTo?: Maybe<Int>;
+  no: String;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  question: String;
+  sticky?: Maybe<Boolean>;
+  subject?: Maybe<String>;
+  yes: String;
+}
+
+export interface PunbbTopicUpdateInput {
+  closed?: Maybe<Boolean>;
+  forumId?: Maybe<Int>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  movedTo?: Maybe<Int>;
+  no?: Maybe<String>;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  question?: Maybe<String>;
+  sticky?: Maybe<Boolean>;
+  subject?: Maybe<String>;
+  yes?: Maybe<String>;
+}
+
+export interface PunbbTopicUpdateManyMutationInput {
+  closed?: Maybe<Boolean>;
+  forumId?: Maybe<Int>;
+  lastPost?: Maybe<Int>;
+  lastPoster?: Maybe<String>;
+  lastPostId?: Maybe<Int>;
+  movedTo?: Maybe<Int>;
+  no?: Maybe<String>;
+  posted?: Maybe<Int>;
+  poster?: Maybe<String>;
+  question?: Maybe<String>;
+  sticky?: Maybe<Boolean>;
+  subject?: Maybe<String>;
+  yes?: Maybe<String>;
+}
+
+export interface PunbbUploadedCreateInput {
+  id?: Maybe<Int>;
+  data: Int;
+  descr: String;
+  downs: Int;
+  file: String;
+  size: Int;
+  uid: Int;
+  user: String;
+  userStat: String;
+}
+
+export interface PunbbUploadedUpdateInput {
+  data?: Maybe<Int>;
+  descr?: Maybe<String>;
+  downs?: Maybe<Int>;
+  file?: Maybe<String>;
+  size?: Maybe<Int>;
+  uid?: Maybe<Int>;
+  user?: Maybe<String>;
+  userStat?: Maybe<String>;
+}
+
+export interface PunbbUploadedUpdateManyMutationInput {
+  data?: Maybe<Int>;
+  descr?: Maybe<String>;
+  downs?: Maybe<Int>;
+  file?: Maybe<String>;
+  size?: Maybe<Int>;
+  uid?: Maybe<Int>;
+  user?: Maybe<String>;
+  userStat?: Maybe<String>;
+}
+
+export interface PunbbUploadsConfCreateInput {
+  gId?: Maybe<Int>;
+  pDelete?: Maybe<Boolean>;
+  pGlobaldelete?: Maybe<Boolean>;
+  pGlobalview?: Maybe<Boolean>;
+  pSetop?: Maybe<Boolean>;
+  pUpload?: Maybe<Boolean>;
+  pView?: Maybe<Boolean>;
+  uFsize?: Maybe<Int>;
+}
+
+export interface PunbbUploadsConfUpdateManyMutationInput {
+  gId?: Maybe<Int>;
+  pDelete?: Maybe<Boolean>;
+  pGlobaldelete?: Maybe<Boolean>;
+  pGlobalview?: Maybe<Boolean>;
+  pSetop?: Maybe<Boolean>;
+  pUpload?: Maybe<Boolean>;
+  pView?: Maybe<Boolean>;
+  uFsize?: Maybe<Int>;
+}
+
+export interface PunbbUploadsTypeCreateInput {
+  id?: Maybe<Int>;
+  exts: String;
+  type: String;
+}
+
+export interface PunbbUploadsTypeUpdateInput {
+  exts?: Maybe<String>;
+  type?: Maybe<String>;
+}
+
+export interface PunbbUploadsTypeUpdateManyMutationInput {
+  exts?: Maybe<String>;
+  type?: Maybe<String>;
+}
+
+export interface PunbbUserCreateInput {
+  id?: Maybe<Int>;
+  activateKey?: Maybe<String>;
+  activateString?: Maybe<String>;
+  adminNote?: Maybe<String>;
+  aim?: Maybe<String>;
+  dispPosts?: Maybe<Boolean>;
+  dispTopics?: Maybe<Boolean>;
+  email?: Maybe<String>;
+  emailSetting?: Maybe<Boolean>;
+  groupId?: Maybe<Int>;
+  icq?: Maybe<String>;
+  jabber?: Maybe<String>;
+  language?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastVisit?: Maybe<Int>;
+  location?: Maybe<String>;
+  msn?: Maybe<String>;
+  notifyWithPost?: Maybe<Boolean>;
+  numPosts?: Maybe<Int>;
+  password?: Maybe<String>;
+  readTopics?: Maybe<String>;
+  realname?: Maybe<String>;
+  registered?: Maybe<Int>;
+  registrationIp?: Maybe<String>;
+  savePass?: Maybe<Boolean>;
+  showAvatars?: Maybe<Boolean>;
+  showImg?: Maybe<Boolean>;
+  showImgSig?: Maybe<Boolean>;
+  showSig?: Maybe<Boolean>;
+  showSmilies?: Maybe<Boolean>;
+  signature?: Maybe<String>;
+  style?: Maybe<String>;
+  timezone?: Maybe<Float>;
+  title?: Maybe<String>;
+  url?: Maybe<String>;
+  useAvatar?: Maybe<Boolean>;
+  username?: Maybe<String>;
+  yahoo?: Maybe<String>;
+}
+
+export interface PunbbUserUpdateInput {
+  activateKey?: Maybe<String>;
+  activateString?: Maybe<String>;
+  adminNote?: Maybe<String>;
+  aim?: Maybe<String>;
+  dispPosts?: Maybe<Boolean>;
+  dispTopics?: Maybe<Boolean>;
+  email?: Maybe<String>;
+  emailSetting?: Maybe<Boolean>;
+  groupId?: Maybe<Int>;
+  icq?: Maybe<String>;
+  jabber?: Maybe<String>;
+  language?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastVisit?: Maybe<Int>;
+  location?: Maybe<String>;
+  msn?: Maybe<String>;
+  notifyWithPost?: Maybe<Boolean>;
+  numPosts?: Maybe<Int>;
+  password?: Maybe<String>;
+  readTopics?: Maybe<String>;
+  realname?: Maybe<String>;
+  registered?: Maybe<Int>;
+  registrationIp?: Maybe<String>;
+  savePass?: Maybe<Boolean>;
+  showAvatars?: Maybe<Boolean>;
+  showImg?: Maybe<Boolean>;
+  showImgSig?: Maybe<Boolean>;
+  showSig?: Maybe<Boolean>;
+  showSmilies?: Maybe<Boolean>;
+  signature?: Maybe<String>;
+  style?: Maybe<String>;
+  timezone?: Maybe<Float>;
+  title?: Maybe<String>;
+  url?: Maybe<String>;
+  useAvatar?: Maybe<Boolean>;
+  username?: Maybe<String>;
+  yahoo?: Maybe<String>;
+}
+
+export interface PunbbUserUpdateManyMutationInput {
+  activateKey?: Maybe<String>;
+  activateString?: Maybe<String>;
+  adminNote?: Maybe<String>;
+  aim?: Maybe<String>;
+  dispPosts?: Maybe<Boolean>;
+  dispTopics?: Maybe<Boolean>;
+  email?: Maybe<String>;
+  emailSetting?: Maybe<Boolean>;
+  groupId?: Maybe<Int>;
+  icq?: Maybe<String>;
+  jabber?: Maybe<String>;
+  language?: Maybe<String>;
+  lastPost?: Maybe<Int>;
+  lastVisit?: Maybe<Int>;
+  location?: Maybe<String>;
+  msn?: Maybe<String>;
+  notifyWithPost?: Maybe<Boolean>;
+  numPosts?: Maybe<Int>;
+  password?: Maybe<String>;
+  readTopics?: Maybe<String>;
+  realname?: Maybe<String>;
+  registered?: Maybe<Int>;
+  registrationIp?: Maybe<String>;
+  savePass?: Maybe<Boolean>;
+  showAvatars?: Maybe<Boolean>;
+  showImg?: Maybe<Boolean>;
+  showImgSig?: Maybe<Boolean>;
+  showSig?: Maybe<Boolean>;
+  showSmilies?: Maybe<Boolean>;
+  signature?: Maybe<String>;
+  style?: Maybe<String>;
+  timezone?: Maybe<Float>;
+  title?: Maybe<String>;
+  url?: Maybe<String>;
+  useAvatar?: Maybe<Boolean>;
+  username?: Maybe<String>;
+  yahoo?: Maybe<String>;
+}
+
+export interface PunbbUserthreadCreateInput {
+  lastRead?: Maybe<Int>;
+  posted?: Maybe<Boolean>;
+}
+
+export interface PunbbUserthreadUpdateManyMutationInput {
+  lastRead?: Maybe<Int>;
+  posted?: Maybe<Boolean>;
+}
+
+export interface PunbbBanSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
   updatedFields_contains_every?: Maybe<String[] | String>;
   updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PostWhereInput>;
-  AND?: Maybe<PostSubscriptionWhereInput[] | PostSubscriptionWhereInput>;
-  OR?: Maybe<PostSubscriptionWhereInput[] | PostSubscriptionWhereInput>;
-  NOT?: Maybe<PostSubscriptionWhereInput[] | PostSubscriptionWhereInput>;
+  node?: Maybe<PunbbBanWhereInput>;
+  AND?: Maybe<
+    PunbbBanSubscriptionWhereInput[] | PunbbBanSubscriptionWhereInput
+  >;
+  OR?: Maybe<PunbbBanSubscriptionWhereInput[] | PunbbBanSubscriptionWhereInput>;
+  NOT?: Maybe<
+    PunbbBanSubscriptionWhereInput[] | PunbbBanSubscriptionWhereInput
+  >;
 }
 
-export interface UserSubscriptionWhereInput {
+export interface PunbbCategorySubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
   updatedFields_contains_every?: Maybe<String[] | String>;
   updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<UserWhereInput>;
-  AND?: Maybe<UserSubscriptionWhereInput[] | UserSubscriptionWhereInput>;
-  OR?: Maybe<UserSubscriptionWhereInput[] | UserSubscriptionWhereInput>;
-  NOT?: Maybe<UserSubscriptionWhereInput[] | UserSubscriptionWhereInput>;
+  node?: Maybe<PunbbCategoryWhereInput>;
+  AND?: Maybe<
+    PunbbCategorySubscriptionWhereInput[] | PunbbCategorySubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbCategorySubscriptionWhereInput[] | PunbbCategorySubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbCategorySubscriptionWhereInput[] | PunbbCategorySubscriptionWhereInput
+  >;
+}
+
+export interface PunbbCensoringSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbCensoringWhereInput>;
+  AND?: Maybe<
+    | PunbbCensoringSubscriptionWhereInput[]
+    | PunbbCensoringSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbCensoringSubscriptionWhereInput[]
+    | PunbbCensoringSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbCensoringSubscriptionWhereInput[]
+    | PunbbCensoringSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbConfigSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbConfigWhereInput>;
+  AND?: Maybe<
+    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbForumSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbForumWhereInput>;
+  AND?: Maybe<
+    PunbbForumSubscriptionWhereInput[] | PunbbForumSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbForumSubscriptionWhereInput[] | PunbbForumSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbForumSubscriptionWhereInput[] | PunbbForumSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbForumPermSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbForumPermWhereInput>;
+  AND?: Maybe<
+    | PunbbForumPermSubscriptionWhereInput[]
+    | PunbbForumPermSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbForumPermSubscriptionWhereInput[]
+    | PunbbForumPermSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbForumPermSubscriptionWhereInput[]
+    | PunbbForumPermSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbGroupSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbGroupWhereInput>;
+  AND?: Maybe<
+    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbOnlineSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbOnlineWhereInput>;
+  AND?: Maybe<
+    PunbbOnlineSubscriptionWhereInput[] | PunbbOnlineSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbOnlineSubscriptionWhereInput[] | PunbbOnlineSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbOnlineSubscriptionWhereInput[] | PunbbOnlineSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbPollSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbPollWhereInput>;
+  AND?: Maybe<
+    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbPostSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbPostWhereInput>;
+  AND?: Maybe<
+    PunbbPostSubscriptionWhereInput[] | PunbbPostSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbPostSubscriptionWhereInput[] | PunbbPostSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbPostSubscriptionWhereInput[] | PunbbPostSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbRankSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbRankWhereInput>;
+  AND?: Maybe<
+    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbReportSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbReportWhereInput>;
+  AND?: Maybe<
+    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbSearchCacheSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbSearchCacheWhereInput>;
+  AND?: Maybe<
+    | PunbbSearchCacheSubscriptionWhereInput[]
+    | PunbbSearchCacheSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbSearchCacheSubscriptionWhereInput[]
+    | PunbbSearchCacheSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbSearchCacheSubscriptionWhereInput[]
+    | PunbbSearchCacheSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbSearchMatchSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbSearchMatchWhereInput>;
+  AND?: Maybe<
+    | PunbbSearchMatchSubscriptionWhereInput[]
+    | PunbbSearchMatchSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbSearchMatchSubscriptionWhereInput[]
+    | PunbbSearchMatchSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbSearchMatchSubscriptionWhereInput[]
+    | PunbbSearchMatchSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbSearchWordSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbSearchWordWhereInput>;
+  AND?: Maybe<
+    | PunbbSearchWordSubscriptionWhereInput[]
+    | PunbbSearchWordSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbSearchWordSubscriptionWhereInput[]
+    | PunbbSearchWordSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbSearchWordSubscriptionWhereInput[]
+    | PunbbSearchWordSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbTopicSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbTopicWhereInput>;
+  AND?: Maybe<
+    PunbbTopicSubscriptionWhereInput[] | PunbbTopicSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbTopicSubscriptionWhereInput[] | PunbbTopicSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbTopicSubscriptionWhereInput[] | PunbbTopicSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbUploadedSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbUploadedWhereInput>;
+  AND?: Maybe<
+    PunbbUploadedSubscriptionWhereInput[] | PunbbUploadedSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbUploadedSubscriptionWhereInput[] | PunbbUploadedSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbUploadedSubscriptionWhereInput[] | PunbbUploadedSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbUploadsConfSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbUploadsConfWhereInput>;
+  AND?: Maybe<
+    | PunbbUploadsConfSubscriptionWhereInput[]
+    | PunbbUploadsConfSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbUploadsConfSubscriptionWhereInput[]
+    | PunbbUploadsConfSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbUploadsConfSubscriptionWhereInput[]
+    | PunbbUploadsConfSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbUploadsTypeSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbUploadsTypeWhereInput>;
+  AND?: Maybe<
+    | PunbbUploadsTypeSubscriptionWhereInput[]
+    | PunbbUploadsTypeSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbUploadsTypeSubscriptionWhereInput[]
+    | PunbbUploadsTypeSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbUploadsTypeSubscriptionWhereInput[]
+    | PunbbUploadsTypeSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbUserSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbUserWhereInput>;
+  AND?: Maybe<
+    PunbbUserSubscriptionWhereInput[] | PunbbUserSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    PunbbUserSubscriptionWhereInput[] | PunbbUserSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    PunbbUserSubscriptionWhereInput[] | PunbbUserSubscriptionWhereInput
+  >;
+}
+
+export interface PunbbUserthreadSubscriptionWhereInput {
+  mutation_in?: Maybe<MutationType[] | MutationType>;
+  updatedFields_contains?: Maybe<String>;
+  updatedFields_contains_every?: Maybe<String[] | String>;
+  updatedFields_contains_some?: Maybe<String[] | String>;
+  node?: Maybe<PunbbUserthreadWhereInput>;
+  AND?: Maybe<
+    | PunbbUserthreadSubscriptionWhereInput[]
+    | PunbbUserthreadSubscriptionWhereInput
+  >;
+  OR?: Maybe<
+    | PunbbUserthreadSubscriptionWhereInput[]
+    | PunbbUserthreadSubscriptionWhereInput
+  >;
+  NOT?: Maybe<
+    | PunbbUserthreadSubscriptionWhereInput[]
+    | PunbbUserthreadSubscriptionWhereInput
+  >;
 }
 
 export interface NodeNode {
   id: ID_Output;
 }
 
-export interface Post {
-  id: ID_Output;
-  title: String;
-  published: Boolean;
-}
-
-export interface PostPromise extends Promise<Post>, Fragmentable {
-  id: () => Promise<ID_Output>;
-  title: () => Promise<String>;
-  published: () => Promise<Boolean>;
-  author: <T = UserPromise>() => T;
-}
-
-export interface PostSubscription
-  extends Promise<AsyncIterator<Post>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  title: () => Promise<AsyncIterator<String>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
-  author: <T = UserSubscription>() => T;
-}
-
-export interface PostNullablePromise
-  extends Promise<Post | null>,
-    Fragmentable {
-  id: () => Promise<ID_Output>;
-  title: () => Promise<String>;
-  published: () => Promise<Boolean>;
-  author: <T = UserPromise>() => T;
-}
-
-export interface User {
-  id: ID_Output;
+export interface PunbbBan {
+  id: Int;
   email?: String;
-  name: String;
+  expire?: Int;
+  ip?: String;
+  message?: String;
+  username?: String;
 }
 
-export interface UserPromise extends Promise<User>, Fragmentable {
-  id: () => Promise<ID_Output>;
+export interface PunbbBanPromise extends Promise<PunbbBan>, Fragmentable {
+  id: () => Promise<Int>;
   email: () => Promise<String>;
-  name: () => Promise<String>;
-  posts: <T = FragmentableArray<Post>>(args?: {
-    where?: PostWhereInput;
-    orderBy?: PostOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => T;
+  expire: () => Promise<Int>;
+  ip: () => Promise<String>;
+  message: () => Promise<String>;
+  username: () => Promise<String>;
 }
 
-export interface UserSubscription
-  extends Promise<AsyncIterator<User>>,
+export interface PunbbBanSubscription
+  extends Promise<AsyncIterator<PunbbBan>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
+  id: () => Promise<AsyncIterator<Int>>;
   email: () => Promise<AsyncIterator<String>>;
-  name: () => Promise<AsyncIterator<String>>;
-  posts: <T = Promise<AsyncIterator<PostSubscription>>>(args?: {
-    where?: PostWhereInput;
-    orderBy?: PostOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => T;
+  expire: () => Promise<AsyncIterator<Int>>;
+  ip: () => Promise<AsyncIterator<String>>;
+  message: () => Promise<AsyncIterator<String>>;
+  username: () => Promise<AsyncIterator<String>>;
 }
 
-export interface UserNullablePromise
-  extends Promise<User | null>,
+export interface PunbbBanNullablePromise
+  extends Promise<PunbbBan | null>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
+  id: () => Promise<Int>;
   email: () => Promise<String>;
-  name: () => Promise<String>;
-  posts: <T = FragmentableArray<Post>>(args?: {
-    where?: PostWhereInput;
-    orderBy?: PostOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => T;
+  expire: () => Promise<Int>;
+  ip: () => Promise<String>;
+  message: () => Promise<String>;
+  username: () => Promise<String>;
 }
 
-export interface PostConnection {
+export interface PunbbBanConnection {
   pageInfo: PageInfo;
-  edges: PostEdge[];
+  edges: PunbbBanEdge[];
 }
 
-export interface PostConnectionPromise
-  extends Promise<PostConnection>,
+export interface PunbbBanConnectionPromise
+  extends Promise<PunbbBanConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PostEdge>>() => T;
-  aggregate: <T = AggregatePostPromise>() => T;
+  edges: <T = FragmentableArray<PunbbBanEdge>>() => T;
+  aggregate: <T = AggregatePunbbBanPromise>() => T;
 }
 
-export interface PostConnectionSubscription
-  extends Promise<AsyncIterator<PostConnection>>,
+export interface PunbbBanConnectionSubscription
+  extends Promise<AsyncIterator<PunbbBanConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PostEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePostSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbBanEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbBanSubscription>() => T;
 }
 
 export interface PageInfo {
@@ -570,89 +3877,2101 @@ export interface PageInfoSubscription
   endCursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface PostEdge {
-  node: Post;
+export interface PunbbBanEdge {
+  node: PunbbBan;
   cursor: String;
 }
 
-export interface PostEdgePromise extends Promise<PostEdge>, Fragmentable {
-  node: <T = PostPromise>() => T;
+export interface PunbbBanEdgePromise
+  extends Promise<PunbbBanEdge>,
+    Fragmentable {
+  node: <T = PunbbBanPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface PostEdgeSubscription
-  extends Promise<AsyncIterator<PostEdge>>,
+export interface PunbbBanEdgeSubscription
+  extends Promise<AsyncIterator<PunbbBanEdge>>,
     Fragmentable {
-  node: <T = PostSubscription>() => T;
+  node: <T = PunbbBanSubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregatePost {
+export interface AggregatePunbbBan {
   count: Int;
 }
 
-export interface AggregatePostPromise
-  extends Promise<AggregatePost>,
+export interface AggregatePunbbBanPromise
+  extends Promise<AggregatePunbbBan>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregatePostSubscription
-  extends Promise<AsyncIterator<AggregatePost>>,
+export interface AggregatePunbbBanSubscription
+  extends Promise<AsyncIterator<AggregatePunbbBan>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface UserConnection {
-  pageInfo: PageInfo;
-  edges: UserEdge[];
+export interface PunbbCategory {
+  id: Int;
+  catName: String;
+  dispPosition: Int;
 }
 
-export interface UserConnectionPromise
-  extends Promise<UserConnection>,
+export interface PunbbCategoryPromise
+  extends Promise<PunbbCategory>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  catName: () => Promise<String>;
+  dispPosition: () => Promise<Int>;
+}
+
+export interface PunbbCategorySubscription
+  extends Promise<AsyncIterator<PunbbCategory>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  catName: () => Promise<AsyncIterator<String>>;
+  dispPosition: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbCategoryNullablePromise
+  extends Promise<PunbbCategory | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  catName: () => Promise<String>;
+  dispPosition: () => Promise<Int>;
+}
+
+export interface PunbbCategoryConnection {
+  pageInfo: PageInfo;
+  edges: PunbbCategoryEdge[];
+}
+
+export interface PunbbCategoryConnectionPromise
+  extends Promise<PunbbCategoryConnection>,
     Fragmentable {
   pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<UserEdge>>() => T;
-  aggregate: <T = AggregateUserPromise>() => T;
+  edges: <T = FragmentableArray<PunbbCategoryEdge>>() => T;
+  aggregate: <T = AggregatePunbbCategoryPromise>() => T;
 }
 
-export interface UserConnectionSubscription
-  extends Promise<AsyncIterator<UserConnection>>,
+export interface PunbbCategoryConnectionSubscription
+  extends Promise<AsyncIterator<PunbbCategoryConnection>>,
     Fragmentable {
   pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<UserEdgeSubscription>>>() => T;
-  aggregate: <T = AggregateUserSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbCategoryEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbCategorySubscription>() => T;
 }
 
-export interface UserEdge {
-  node: User;
+export interface PunbbCategoryEdge {
+  node: PunbbCategory;
   cursor: String;
 }
 
-export interface UserEdgePromise extends Promise<UserEdge>, Fragmentable {
-  node: <T = UserPromise>() => T;
+export interface PunbbCategoryEdgePromise
+  extends Promise<PunbbCategoryEdge>,
+    Fragmentable {
+  node: <T = PunbbCategoryPromise>() => T;
   cursor: () => Promise<String>;
 }
 
-export interface UserEdgeSubscription
-  extends Promise<AsyncIterator<UserEdge>>,
+export interface PunbbCategoryEdgeSubscription
+  extends Promise<AsyncIterator<PunbbCategoryEdge>>,
     Fragmentable {
-  node: <T = UserSubscription>() => T;
+  node: <T = PunbbCategorySubscription>() => T;
   cursor: () => Promise<AsyncIterator<String>>;
 }
 
-export interface AggregateUser {
+export interface AggregatePunbbCategory {
   count: Int;
 }
 
-export interface AggregateUserPromise
-  extends Promise<AggregateUser>,
+export interface AggregatePunbbCategoryPromise
+  extends Promise<AggregatePunbbCategory>,
     Fragmentable {
   count: () => Promise<Int>;
 }
 
-export interface AggregateUserSubscription
-  extends Promise<AsyncIterator<AggregateUser>>,
+export interface AggregatePunbbCategorySubscription
+  extends Promise<AsyncIterator<AggregatePunbbCategory>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbCensoring {
+  id: Int;
+  replaceWith: String;
+  searchFor: String;
+}
+
+export interface PunbbCensoringPromise
+  extends Promise<PunbbCensoring>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  replaceWith: () => Promise<String>;
+  searchFor: () => Promise<String>;
+}
+
+export interface PunbbCensoringSubscription
+  extends Promise<AsyncIterator<PunbbCensoring>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  replaceWith: () => Promise<AsyncIterator<String>>;
+  searchFor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbCensoringNullablePromise
+  extends Promise<PunbbCensoring | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  replaceWith: () => Promise<String>;
+  searchFor: () => Promise<String>;
+}
+
+export interface PunbbCensoringConnection {
+  pageInfo: PageInfo;
+  edges: PunbbCensoringEdge[];
+}
+
+export interface PunbbCensoringConnectionPromise
+  extends Promise<PunbbCensoringConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbCensoringEdge>>() => T;
+  aggregate: <T = AggregatePunbbCensoringPromise>() => T;
+}
+
+export interface PunbbCensoringConnectionSubscription
+  extends Promise<AsyncIterator<PunbbCensoringConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbCensoringEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbCensoringSubscription>() => T;
+}
+
+export interface PunbbCensoringEdge {
+  node: PunbbCensoring;
+  cursor: String;
+}
+
+export interface PunbbCensoringEdgePromise
+  extends Promise<PunbbCensoringEdge>,
+    Fragmentable {
+  node: <T = PunbbCensoringPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbCensoringEdgeSubscription
+  extends Promise<AsyncIterator<PunbbCensoringEdge>>,
+    Fragmentable {
+  node: <T = PunbbCensoringSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbCensoring {
+  count: Int;
+}
+
+export interface AggregatePunbbCensoringPromise
+  extends Promise<AggregatePunbbCensoring>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbCensoringSubscription
+  extends Promise<AsyncIterator<AggregatePunbbCensoring>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbConfig {
+  conf_name: ID_Output;
+  confValue?: String;
+}
+
+export interface PunbbConfigPromise extends Promise<PunbbConfig>, Fragmentable {
+  conf_name: () => Promise<ID_Output>;
+  confValue: () => Promise<String>;
+}
+
+export interface PunbbConfigSubscription
+  extends Promise<AsyncIterator<PunbbConfig>>,
+    Fragmentable {
+  conf_name: () => Promise<AsyncIterator<ID_Output>>;
+  confValue: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbConfigNullablePromise
+  extends Promise<PunbbConfig | null>,
+    Fragmentable {
+  conf_name: () => Promise<ID_Output>;
+  confValue: () => Promise<String>;
+}
+
+export interface PunbbConfigConnection {
+  pageInfo: PageInfo;
+  edges: PunbbConfigEdge[];
+}
+
+export interface PunbbConfigConnectionPromise
+  extends Promise<PunbbConfigConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbConfigEdge>>() => T;
+  aggregate: <T = AggregatePunbbConfigPromise>() => T;
+}
+
+export interface PunbbConfigConnectionSubscription
+  extends Promise<AsyncIterator<PunbbConfigConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbConfigEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbConfigSubscription>() => T;
+}
+
+export interface PunbbConfigEdge {
+  node: PunbbConfig;
+  cursor: String;
+}
+
+export interface PunbbConfigEdgePromise
+  extends Promise<PunbbConfigEdge>,
+    Fragmentable {
+  node: <T = PunbbConfigPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbConfigEdgeSubscription
+  extends Promise<AsyncIterator<PunbbConfigEdge>>,
+    Fragmentable {
+  node: <T = PunbbConfigSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbConfig {
+  count: Int;
+}
+
+export interface AggregatePunbbConfigPromise
+  extends Promise<AggregatePunbbConfig>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbConfigSubscription
+  extends Promise<AsyncIterator<AggregatePunbbConfig>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbForum {
+  id: Int;
+  catId: Int;
+  dispPosition: Int;
+  forumDesc?: String;
+  forumName: String;
+  lastPost?: Int;
+  lastPoster?: String;
+  lastPostId?: Int;
+  moderators?: String;
+  redirectUrl?: String;
+  sortBy: Boolean;
+}
+
+export interface PunbbForumPromise extends Promise<PunbbForum>, Fragmentable {
+  id: () => Promise<Int>;
+  catId: () => Promise<Int>;
+  dispPosition: () => Promise<Int>;
+  forumDesc: () => Promise<String>;
+  forumName: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  moderators: () => Promise<String>;
+  redirectUrl: () => Promise<String>;
+  sortBy: () => Promise<Boolean>;
+}
+
+export interface PunbbForumSubscription
+  extends Promise<AsyncIterator<PunbbForum>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  catId: () => Promise<AsyncIterator<Int>>;
+  dispPosition: () => Promise<AsyncIterator<Int>>;
+  forumDesc: () => Promise<AsyncIterator<String>>;
+  forumName: () => Promise<AsyncIterator<String>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastPoster: () => Promise<AsyncIterator<String>>;
+  lastPostId: () => Promise<AsyncIterator<Int>>;
+  moderators: () => Promise<AsyncIterator<String>>;
+  redirectUrl: () => Promise<AsyncIterator<String>>;
+  sortBy: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbForumNullablePromise
+  extends Promise<PunbbForum | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  catId: () => Promise<Int>;
+  dispPosition: () => Promise<Int>;
+  forumDesc: () => Promise<String>;
+  forumName: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  moderators: () => Promise<String>;
+  redirectUrl: () => Promise<String>;
+  sortBy: () => Promise<Boolean>;
+}
+
+export interface PunbbForumConnection {
+  pageInfo: PageInfo;
+  edges: PunbbForumEdge[];
+}
+
+export interface PunbbForumConnectionPromise
+  extends Promise<PunbbForumConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbForumEdge>>() => T;
+  aggregate: <T = AggregatePunbbForumPromise>() => T;
+}
+
+export interface PunbbForumConnectionSubscription
+  extends Promise<AsyncIterator<PunbbForumConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbForumEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbForumSubscription>() => T;
+}
+
+export interface PunbbForumEdge {
+  node: PunbbForum;
+  cursor: String;
+}
+
+export interface PunbbForumEdgePromise
+  extends Promise<PunbbForumEdge>,
+    Fragmentable {
+  node: <T = PunbbForumPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbForumEdgeSubscription
+  extends Promise<AsyncIterator<PunbbForumEdge>>,
+    Fragmentable {
+  node: <T = PunbbForumSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbForum {
+  count: Int;
+}
+
+export interface AggregatePunbbForumPromise
+  extends Promise<AggregatePunbbForum>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbForumSubscription
+  extends Promise<AsyncIterator<AggregatePunbbForum>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbForumPerm {
+  postPolls: Boolean;
+  postReplies: Boolean;
+  postTopics: Boolean;
+  readForum: Boolean;
+}
+
+export interface PunbbForumPermPromise
+  extends Promise<PunbbForumPerm>,
+    Fragmentable {
+  postPolls: () => Promise<Boolean>;
+  postReplies: () => Promise<Boolean>;
+  postTopics: () => Promise<Boolean>;
+  readForum: () => Promise<Boolean>;
+}
+
+export interface PunbbForumPermSubscription
+  extends Promise<AsyncIterator<PunbbForumPerm>>,
+    Fragmentable {
+  postPolls: () => Promise<AsyncIterator<Boolean>>;
+  postReplies: () => Promise<AsyncIterator<Boolean>>;
+  postTopics: () => Promise<AsyncIterator<Boolean>>;
+  readForum: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbForumPermNullablePromise
+  extends Promise<PunbbForumPerm | null>,
+    Fragmentable {
+  postPolls: () => Promise<Boolean>;
+  postReplies: () => Promise<Boolean>;
+  postTopics: () => Promise<Boolean>;
+  readForum: () => Promise<Boolean>;
+}
+
+export interface PunbbForumPermConnection {
+  pageInfo: PageInfo;
+  edges: PunbbForumPermEdge[];
+}
+
+export interface PunbbForumPermConnectionPromise
+  extends Promise<PunbbForumPermConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbForumPermEdge>>() => T;
+  aggregate: <T = AggregatePunbbForumPermPromise>() => T;
+}
+
+export interface PunbbForumPermConnectionSubscription
+  extends Promise<AsyncIterator<PunbbForumPermConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbForumPermEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbForumPermSubscription>() => T;
+}
+
+export interface PunbbForumPermEdge {
+  node: PunbbForumPerm;
+  cursor: String;
+}
+
+export interface PunbbForumPermEdgePromise
+  extends Promise<PunbbForumPermEdge>,
+    Fragmentable {
+  node: <T = PunbbForumPermPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbForumPermEdgeSubscription
+  extends Promise<AsyncIterator<PunbbForumPermEdge>>,
+    Fragmentable {
+  node: <T = PunbbForumPermSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbForumPerm {
+  count: Int;
+}
+
+export interface AggregatePunbbForumPermPromise
+  extends Promise<AggregatePunbbForumPerm>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbForumPermSubscription
+  extends Promise<AsyncIterator<AggregatePunbbForumPerm>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbGroup {
+  g_id: Int;
+  gDeletePosts: Boolean;
+  gDeleteTopics: Boolean;
+  gEditPosts: Boolean;
+  gEditSubjectsInterval: Int;
+  gPostFlood: Int;
+  gPostPolls: Boolean;
+  gPostReplies: Boolean;
+  gPostTopics: Boolean;
+  gReadBoard: Boolean;
+  gSearch: Boolean;
+  gSearchFlood: Int;
+  gSearchUsers: Boolean;
+  gSetTitle: Boolean;
+  gTitle: String;
+  gUserTitle?: String;
+}
+
+export interface PunbbGroupPromise extends Promise<PunbbGroup>, Fragmentable {
+  g_id: () => Promise<Int>;
+  gDeletePosts: () => Promise<Boolean>;
+  gDeleteTopics: () => Promise<Boolean>;
+  gEditPosts: () => Promise<Boolean>;
+  gEditSubjectsInterval: () => Promise<Int>;
+  gPostFlood: () => Promise<Int>;
+  gPostPolls: () => Promise<Boolean>;
+  gPostReplies: () => Promise<Boolean>;
+  gPostTopics: () => Promise<Boolean>;
+  gReadBoard: () => Promise<Boolean>;
+  gSearch: () => Promise<Boolean>;
+  gSearchFlood: () => Promise<Int>;
+  gSearchUsers: () => Promise<Boolean>;
+  gSetTitle: () => Promise<Boolean>;
+  gTitle: () => Promise<String>;
+  gUserTitle: () => Promise<String>;
+}
+
+export interface PunbbGroupSubscription
+  extends Promise<AsyncIterator<PunbbGroup>>,
+    Fragmentable {
+  g_id: () => Promise<AsyncIterator<Int>>;
+  gDeletePosts: () => Promise<AsyncIterator<Boolean>>;
+  gDeleteTopics: () => Promise<AsyncIterator<Boolean>>;
+  gEditPosts: () => Promise<AsyncIterator<Boolean>>;
+  gEditSubjectsInterval: () => Promise<AsyncIterator<Int>>;
+  gPostFlood: () => Promise<AsyncIterator<Int>>;
+  gPostPolls: () => Promise<AsyncIterator<Boolean>>;
+  gPostReplies: () => Promise<AsyncIterator<Boolean>>;
+  gPostTopics: () => Promise<AsyncIterator<Boolean>>;
+  gReadBoard: () => Promise<AsyncIterator<Boolean>>;
+  gSearch: () => Promise<AsyncIterator<Boolean>>;
+  gSearchFlood: () => Promise<AsyncIterator<Int>>;
+  gSearchUsers: () => Promise<AsyncIterator<Boolean>>;
+  gSetTitle: () => Promise<AsyncIterator<Boolean>>;
+  gTitle: () => Promise<AsyncIterator<String>>;
+  gUserTitle: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbGroupNullablePromise
+  extends Promise<PunbbGroup | null>,
+    Fragmentable {
+  g_id: () => Promise<Int>;
+  gDeletePosts: () => Promise<Boolean>;
+  gDeleteTopics: () => Promise<Boolean>;
+  gEditPosts: () => Promise<Boolean>;
+  gEditSubjectsInterval: () => Promise<Int>;
+  gPostFlood: () => Promise<Int>;
+  gPostPolls: () => Promise<Boolean>;
+  gPostReplies: () => Promise<Boolean>;
+  gPostTopics: () => Promise<Boolean>;
+  gReadBoard: () => Promise<Boolean>;
+  gSearch: () => Promise<Boolean>;
+  gSearchFlood: () => Promise<Int>;
+  gSearchUsers: () => Promise<Boolean>;
+  gSetTitle: () => Promise<Boolean>;
+  gTitle: () => Promise<String>;
+  gUserTitle: () => Promise<String>;
+}
+
+export interface PunbbGroupConnection {
+  pageInfo: PageInfo;
+  edges: PunbbGroupEdge[];
+}
+
+export interface PunbbGroupConnectionPromise
+  extends Promise<PunbbGroupConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbGroupEdge>>() => T;
+  aggregate: <T = AggregatePunbbGroupPromise>() => T;
+}
+
+export interface PunbbGroupConnectionSubscription
+  extends Promise<AsyncIterator<PunbbGroupConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbGroupEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbGroupSubscription>() => T;
+}
+
+export interface PunbbGroupEdge {
+  node: PunbbGroup;
+  cursor: String;
+}
+
+export interface PunbbGroupEdgePromise
+  extends Promise<PunbbGroupEdge>,
+    Fragmentable {
+  node: <T = PunbbGroupPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbGroupEdgeSubscription
+  extends Promise<AsyncIterator<PunbbGroupEdge>>,
+    Fragmentable {
+  node: <T = PunbbGroupSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbGroup {
+  count: Int;
+}
+
+export interface AggregatePunbbGroupPromise
+  extends Promise<AggregatePunbbGroup>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbGroupSubscription
+  extends Promise<AsyncIterator<AggregatePunbbGroup>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbOnline {
+  ident: String;
+  idle: Boolean;
+  logged: Int;
+  userId: Int;
+}
+
+export interface PunbbOnlinePromise extends Promise<PunbbOnline>, Fragmentable {
+  ident: () => Promise<String>;
+  idle: () => Promise<Boolean>;
+  logged: () => Promise<Int>;
+  userId: () => Promise<Int>;
+}
+
+export interface PunbbOnlineSubscription
+  extends Promise<AsyncIterator<PunbbOnline>>,
+    Fragmentable {
+  ident: () => Promise<AsyncIterator<String>>;
+  idle: () => Promise<AsyncIterator<Boolean>>;
+  logged: () => Promise<AsyncIterator<Int>>;
+  userId: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbOnlineNullablePromise
+  extends Promise<PunbbOnline | null>,
+    Fragmentable {
+  ident: () => Promise<String>;
+  idle: () => Promise<Boolean>;
+  logged: () => Promise<Int>;
+  userId: () => Promise<Int>;
+}
+
+export interface PunbbOnlineConnection {
+  pageInfo: PageInfo;
+  edges: PunbbOnlineEdge[];
+}
+
+export interface PunbbOnlineConnectionPromise
+  extends Promise<PunbbOnlineConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbOnlineEdge>>() => T;
+  aggregate: <T = AggregatePunbbOnlinePromise>() => T;
+}
+
+export interface PunbbOnlineConnectionSubscription
+  extends Promise<AsyncIterator<PunbbOnlineConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbOnlineEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbOnlineSubscription>() => T;
+}
+
+export interface PunbbOnlineEdge {
+  node: PunbbOnline;
+  cursor: String;
+}
+
+export interface PunbbOnlineEdgePromise
+  extends Promise<PunbbOnlineEdge>,
+    Fragmentable {
+  node: <T = PunbbOnlinePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbOnlineEdgeSubscription
+  extends Promise<AsyncIterator<PunbbOnlineEdge>>,
+    Fragmentable {
+  node: <T = PunbbOnlineSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbOnline {
+  count: Int;
+}
+
+export interface AggregatePunbbOnlinePromise
+  extends Promise<AggregatePunbbOnline>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbOnlineSubscription
+  extends Promise<AsyncIterator<AggregatePunbbOnline>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbPoll {
+  id: Int;
+  options: String;
+  pollid: Int;
+  ptype: Boolean;
+  voters: String;
+  votes: String;
+}
+
+export interface PunbbPollPromise extends Promise<PunbbPoll>, Fragmentable {
+  id: () => Promise<Int>;
+  options: () => Promise<String>;
+  pollid: () => Promise<Int>;
+  ptype: () => Promise<Boolean>;
+  voters: () => Promise<String>;
+  votes: () => Promise<String>;
+}
+
+export interface PunbbPollSubscription
+  extends Promise<AsyncIterator<PunbbPoll>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  options: () => Promise<AsyncIterator<String>>;
+  pollid: () => Promise<AsyncIterator<Int>>;
+  ptype: () => Promise<AsyncIterator<Boolean>>;
+  voters: () => Promise<AsyncIterator<String>>;
+  votes: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbPollNullablePromise
+  extends Promise<PunbbPoll | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  options: () => Promise<String>;
+  pollid: () => Promise<Int>;
+  ptype: () => Promise<Boolean>;
+  voters: () => Promise<String>;
+  votes: () => Promise<String>;
+}
+
+export interface PunbbPollConnection {
+  pageInfo: PageInfo;
+  edges: PunbbPollEdge[];
+}
+
+export interface PunbbPollConnectionPromise
+  extends Promise<PunbbPollConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbPollEdge>>() => T;
+  aggregate: <T = AggregatePunbbPollPromise>() => T;
+}
+
+export interface PunbbPollConnectionSubscription
+  extends Promise<AsyncIterator<PunbbPollConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbPollEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbPollSubscription>() => T;
+}
+
+export interface PunbbPollEdge {
+  node: PunbbPoll;
+  cursor: String;
+}
+
+export interface PunbbPollEdgePromise
+  extends Promise<PunbbPollEdge>,
+    Fragmentable {
+  node: <T = PunbbPollPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbPollEdgeSubscription
+  extends Promise<AsyncIterator<PunbbPollEdge>>,
+    Fragmentable {
+  node: <T = PunbbPollSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbPoll {
+  count: Int;
+}
+
+export interface AggregatePunbbPollPromise
+  extends Promise<AggregatePunbbPoll>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbPollSubscription
+  extends Promise<AsyncIterator<AggregatePunbbPoll>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbPost {
+  id: Int;
+  edited?: Int;
+  editedBy?: String;
+  hideSmilies: Boolean;
+  message: String;
+  posted: Int;
+  poster: String;
+  posterEmail?: String;
+  posterId: Int;
+  posterIp?: String;
+  topicId: Int;
+}
+
+export interface PunbbPostPromise extends Promise<PunbbPost>, Fragmentable {
+  id: () => Promise<Int>;
+  edited: () => Promise<Int>;
+  editedBy: () => Promise<String>;
+  hideSmilies: () => Promise<Boolean>;
+  message: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  posterEmail: () => Promise<String>;
+  posterId: () => Promise<Int>;
+  posterIp: () => Promise<String>;
+  topicId: () => Promise<Int>;
+}
+
+export interface PunbbPostSubscription
+  extends Promise<AsyncIterator<PunbbPost>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  edited: () => Promise<AsyncIterator<Int>>;
+  editedBy: () => Promise<AsyncIterator<String>>;
+  hideSmilies: () => Promise<AsyncIterator<Boolean>>;
+  message: () => Promise<AsyncIterator<String>>;
+  posted: () => Promise<AsyncIterator<Int>>;
+  poster: () => Promise<AsyncIterator<String>>;
+  posterEmail: () => Promise<AsyncIterator<String>>;
+  posterId: () => Promise<AsyncIterator<Int>>;
+  posterIp: () => Promise<AsyncIterator<String>>;
+  topicId: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbPostNullablePromise
+  extends Promise<PunbbPost | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  edited: () => Promise<Int>;
+  editedBy: () => Promise<String>;
+  hideSmilies: () => Promise<Boolean>;
+  message: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  posterEmail: () => Promise<String>;
+  posterId: () => Promise<Int>;
+  posterIp: () => Promise<String>;
+  topicId: () => Promise<Int>;
+}
+
+export interface PunbbPostConnection {
+  pageInfo: PageInfo;
+  edges: PunbbPostEdge[];
+}
+
+export interface PunbbPostConnectionPromise
+  extends Promise<PunbbPostConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbPostEdge>>() => T;
+  aggregate: <T = AggregatePunbbPostPromise>() => T;
+}
+
+export interface PunbbPostConnectionSubscription
+  extends Promise<AsyncIterator<PunbbPostConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbPostEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbPostSubscription>() => T;
+}
+
+export interface PunbbPostEdge {
+  node: PunbbPost;
+  cursor: String;
+}
+
+export interface PunbbPostEdgePromise
+  extends Promise<PunbbPostEdge>,
+    Fragmentable {
+  node: <T = PunbbPostPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbPostEdgeSubscription
+  extends Promise<AsyncIterator<PunbbPostEdge>>,
+    Fragmentable {
+  node: <T = PunbbPostSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbPost {
+  count: Int;
+}
+
+export interface AggregatePunbbPostPromise
+  extends Promise<AggregatePunbbPost>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbPostSubscription
+  extends Promise<AsyncIterator<AggregatePunbbPost>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbRank {
+  id: Int;
+  rank: String;
+}
+
+export interface PunbbRankPromise extends Promise<PunbbRank>, Fragmentable {
+  id: () => Promise<Int>;
+  rank: () => Promise<String>;
+}
+
+export interface PunbbRankSubscription
+  extends Promise<AsyncIterator<PunbbRank>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  rank: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbRankNullablePromise
+  extends Promise<PunbbRank | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  rank: () => Promise<String>;
+}
+
+export interface PunbbRankConnection {
+  pageInfo: PageInfo;
+  edges: PunbbRankEdge[];
+}
+
+export interface PunbbRankConnectionPromise
+  extends Promise<PunbbRankConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbRankEdge>>() => T;
+  aggregate: <T = AggregatePunbbRankPromise>() => T;
+}
+
+export interface PunbbRankConnectionSubscription
+  extends Promise<AsyncIterator<PunbbRankConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbRankEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbRankSubscription>() => T;
+}
+
+export interface PunbbRankEdge {
+  node: PunbbRank;
+  cursor: String;
+}
+
+export interface PunbbRankEdgePromise
+  extends Promise<PunbbRankEdge>,
+    Fragmentable {
+  node: <T = PunbbRankPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbRankEdgeSubscription
+  extends Promise<AsyncIterator<PunbbRankEdge>>,
+    Fragmentable {
+  node: <T = PunbbRankSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbRank {
+  count: Int;
+}
+
+export interface AggregatePunbbRankPromise
+  extends Promise<AggregatePunbbRank>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbRankSubscription
+  extends Promise<AsyncIterator<AggregatePunbbRank>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbReport {
+  id: Int;
+  created: Int;
+  forumId: Int;
+  message: String;
+  postId: Int;
+  reportedBy: Int;
+  topicId: Int;
+  zapped?: Int;
+  zappedBy?: Int;
+}
+
+export interface PunbbReportPromise extends Promise<PunbbReport>, Fragmentable {
+  id: () => Promise<Int>;
+  created: () => Promise<Int>;
+  forumId: () => Promise<Int>;
+  message: () => Promise<String>;
+  postId: () => Promise<Int>;
+  reportedBy: () => Promise<Int>;
+  topicId: () => Promise<Int>;
+  zapped: () => Promise<Int>;
+  zappedBy: () => Promise<Int>;
+}
+
+export interface PunbbReportSubscription
+  extends Promise<AsyncIterator<PunbbReport>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  created: () => Promise<AsyncIterator<Int>>;
+  forumId: () => Promise<AsyncIterator<Int>>;
+  message: () => Promise<AsyncIterator<String>>;
+  postId: () => Promise<AsyncIterator<Int>>;
+  reportedBy: () => Promise<AsyncIterator<Int>>;
+  topicId: () => Promise<AsyncIterator<Int>>;
+  zapped: () => Promise<AsyncIterator<Int>>;
+  zappedBy: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbReportNullablePromise
+  extends Promise<PunbbReport | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  created: () => Promise<Int>;
+  forumId: () => Promise<Int>;
+  message: () => Promise<String>;
+  postId: () => Promise<Int>;
+  reportedBy: () => Promise<Int>;
+  topicId: () => Promise<Int>;
+  zapped: () => Promise<Int>;
+  zappedBy: () => Promise<Int>;
+}
+
+export interface PunbbReportConnection {
+  pageInfo: PageInfo;
+  edges: PunbbReportEdge[];
+}
+
+export interface PunbbReportConnectionPromise
+  extends Promise<PunbbReportConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbReportEdge>>() => T;
+  aggregate: <T = AggregatePunbbReportPromise>() => T;
+}
+
+export interface PunbbReportConnectionSubscription
+  extends Promise<AsyncIterator<PunbbReportConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbReportEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbReportSubscription>() => T;
+}
+
+export interface PunbbReportEdge {
+  node: PunbbReport;
+  cursor: String;
+}
+
+export interface PunbbReportEdgePromise
+  extends Promise<PunbbReportEdge>,
+    Fragmentable {
+  node: <T = PunbbReportPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbReportEdgeSubscription
+  extends Promise<AsyncIterator<PunbbReportEdge>>,
+    Fragmentable {
+  node: <T = PunbbReportSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbReport {
+  count: Int;
+}
+
+export interface AggregatePunbbReportPromise
+  extends Promise<AggregatePunbbReport>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbReportSubscription
+  extends Promise<AsyncIterator<AggregatePunbbReport>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbSearchCache {
+  id: Int;
+  ident: String;
+  searchData: String;
+}
+
+export interface PunbbSearchCachePromise
+  extends Promise<PunbbSearchCache>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  ident: () => Promise<String>;
+  searchData: () => Promise<String>;
+}
+
+export interface PunbbSearchCacheSubscription
+  extends Promise<AsyncIterator<PunbbSearchCache>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  ident: () => Promise<AsyncIterator<String>>;
+  searchData: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbSearchCacheNullablePromise
+  extends Promise<PunbbSearchCache | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  ident: () => Promise<String>;
+  searchData: () => Promise<String>;
+}
+
+export interface PunbbSearchCacheConnection {
+  pageInfo: PageInfo;
+  edges: PunbbSearchCacheEdge[];
+}
+
+export interface PunbbSearchCacheConnectionPromise
+  extends Promise<PunbbSearchCacheConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbSearchCacheEdge>>() => T;
+  aggregate: <T = AggregatePunbbSearchCachePromise>() => T;
+}
+
+export interface PunbbSearchCacheConnectionSubscription
+  extends Promise<AsyncIterator<PunbbSearchCacheConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbSearchCacheEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbSearchCacheSubscription>() => T;
+}
+
+export interface PunbbSearchCacheEdge {
+  node: PunbbSearchCache;
+  cursor: String;
+}
+
+export interface PunbbSearchCacheEdgePromise
+  extends Promise<PunbbSearchCacheEdge>,
+    Fragmentable {
+  node: <T = PunbbSearchCachePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbSearchCacheEdgeSubscription
+  extends Promise<AsyncIterator<PunbbSearchCacheEdge>>,
+    Fragmentable {
+  node: <T = PunbbSearchCacheSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbSearchCache {
+  count: Int;
+}
+
+export interface AggregatePunbbSearchCachePromise
+  extends Promise<AggregatePunbbSearchCache>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbSearchCacheSubscription
+  extends Promise<AsyncIterator<AggregatePunbbSearchCache>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbSearchMatch {
+  postId: Int;
+  subjectMatch: Boolean;
+}
+
+export interface PunbbSearchMatchPromise
+  extends Promise<PunbbSearchMatch>,
+    Fragmentable {
+  postId: () => Promise<Int>;
+  subjectMatch: () => Promise<Boolean>;
+}
+
+export interface PunbbSearchMatchSubscription
+  extends Promise<AsyncIterator<PunbbSearchMatch>>,
+    Fragmentable {
+  postId: () => Promise<AsyncIterator<Int>>;
+  subjectMatch: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbSearchMatchNullablePromise
+  extends Promise<PunbbSearchMatch | null>,
+    Fragmentable {
+  postId: () => Promise<Int>;
+  subjectMatch: () => Promise<Boolean>;
+}
+
+export interface PunbbSearchMatchConnection {
+  pageInfo: PageInfo;
+  edges: PunbbSearchMatchEdge[];
+}
+
+export interface PunbbSearchMatchConnectionPromise
+  extends Promise<PunbbSearchMatchConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbSearchMatchEdge>>() => T;
+  aggregate: <T = AggregatePunbbSearchMatchPromise>() => T;
+}
+
+export interface PunbbSearchMatchConnectionSubscription
+  extends Promise<AsyncIterator<PunbbSearchMatchConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbSearchMatchEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbSearchMatchSubscription>() => T;
+}
+
+export interface PunbbSearchMatchEdge {
+  node: PunbbSearchMatch;
+  cursor: String;
+}
+
+export interface PunbbSearchMatchEdgePromise
+  extends Promise<PunbbSearchMatchEdge>,
+    Fragmentable {
+  node: <T = PunbbSearchMatchPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbSearchMatchEdgeSubscription
+  extends Promise<AsyncIterator<PunbbSearchMatchEdge>>,
+    Fragmentable {
+  node: <T = PunbbSearchMatchSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbSearchMatch {
+  count: Int;
+}
+
+export interface AggregatePunbbSearchMatchPromise
+  extends Promise<AggregatePunbbSearchMatch>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbSearchMatchSubscription
+  extends Promise<AsyncIterator<AggregatePunbbSearchMatch>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbSearchWord {
+  word: ID_Output;
+}
+
+export interface PunbbSearchWordPromise
+  extends Promise<PunbbSearchWord>,
+    Fragmentable {
+  word: () => Promise<ID_Output>;
+}
+
+export interface PunbbSearchWordSubscription
+  extends Promise<AsyncIterator<PunbbSearchWord>>,
+    Fragmentable {
+  word: () => Promise<AsyncIterator<ID_Output>>;
+}
+
+export interface PunbbSearchWordNullablePromise
+  extends Promise<PunbbSearchWord | null>,
+    Fragmentable {
+  word: () => Promise<ID_Output>;
+}
+
+export interface PunbbSearchWordConnection {
+  pageInfo: PageInfo;
+  edges: PunbbSearchWordEdge[];
+}
+
+export interface PunbbSearchWordConnectionPromise
+  extends Promise<PunbbSearchWordConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbSearchWordEdge>>() => T;
+  aggregate: <T = AggregatePunbbSearchWordPromise>() => T;
+}
+
+export interface PunbbSearchWordConnectionSubscription
+  extends Promise<AsyncIterator<PunbbSearchWordConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbSearchWordEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbSearchWordSubscription>() => T;
+}
+
+export interface PunbbSearchWordEdge {
+  node: PunbbSearchWord;
+  cursor: String;
+}
+
+export interface PunbbSearchWordEdgePromise
+  extends Promise<PunbbSearchWordEdge>,
+    Fragmentable {
+  node: <T = PunbbSearchWordPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbSearchWordEdgeSubscription
+  extends Promise<AsyncIterator<PunbbSearchWordEdge>>,
+    Fragmentable {
+  node: <T = PunbbSearchWordSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbSearchWord {
+  count: Int;
+}
+
+export interface AggregatePunbbSearchWordPromise
+  extends Promise<AggregatePunbbSearchWord>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbSearchWordSubscription
+  extends Promise<AsyncIterator<AggregatePunbbSearchWord>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbTopic {
+  id: Int;
+  closed: Boolean;
+  forumId: Int;
+  lastPost: Int;
+  lastPoster?: String;
+  lastPostId: Int;
+  movedTo?: Int;
+  no: String;
+  posted: Int;
+  poster: String;
+  question: String;
+  sticky: Boolean;
+  subject: String;
+  yes: String;
+}
+
+export interface PunbbTopicPromise extends Promise<PunbbTopic>, Fragmentable {
+  id: () => Promise<Int>;
+  closed: () => Promise<Boolean>;
+  forumId: () => Promise<Int>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  movedTo: () => Promise<Int>;
+  no: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  question: () => Promise<String>;
+  sticky: () => Promise<Boolean>;
+  subject: () => Promise<String>;
+  yes: () => Promise<String>;
+}
+
+export interface PunbbTopicSubscription
+  extends Promise<AsyncIterator<PunbbTopic>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  closed: () => Promise<AsyncIterator<Boolean>>;
+  forumId: () => Promise<AsyncIterator<Int>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastPoster: () => Promise<AsyncIterator<String>>;
+  lastPostId: () => Promise<AsyncIterator<Int>>;
+  movedTo: () => Promise<AsyncIterator<Int>>;
+  no: () => Promise<AsyncIterator<String>>;
+  posted: () => Promise<AsyncIterator<Int>>;
+  poster: () => Promise<AsyncIterator<String>>;
+  question: () => Promise<AsyncIterator<String>>;
+  sticky: () => Promise<AsyncIterator<Boolean>>;
+  subject: () => Promise<AsyncIterator<String>>;
+  yes: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbTopicNullablePromise
+  extends Promise<PunbbTopic | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  closed: () => Promise<Boolean>;
+  forumId: () => Promise<Int>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  movedTo: () => Promise<Int>;
+  no: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  question: () => Promise<String>;
+  sticky: () => Promise<Boolean>;
+  subject: () => Promise<String>;
+  yes: () => Promise<String>;
+}
+
+export interface PunbbTopicConnection {
+  pageInfo: PageInfo;
+  edges: PunbbTopicEdge[];
+}
+
+export interface PunbbTopicConnectionPromise
+  extends Promise<PunbbTopicConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbTopicEdge>>() => T;
+  aggregate: <T = AggregatePunbbTopicPromise>() => T;
+}
+
+export interface PunbbTopicConnectionSubscription
+  extends Promise<AsyncIterator<PunbbTopicConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbTopicEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbTopicSubscription>() => T;
+}
+
+export interface PunbbTopicEdge {
+  node: PunbbTopic;
+  cursor: String;
+}
+
+export interface PunbbTopicEdgePromise
+  extends Promise<PunbbTopicEdge>,
+    Fragmentable {
+  node: <T = PunbbTopicPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbTopicEdgeSubscription
+  extends Promise<AsyncIterator<PunbbTopicEdge>>,
+    Fragmentable {
+  node: <T = PunbbTopicSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbTopic {
+  count: Int;
+}
+
+export interface AggregatePunbbTopicPromise
+  extends Promise<AggregatePunbbTopic>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbTopicSubscription
+  extends Promise<AsyncIterator<AggregatePunbbTopic>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUploaded {
+  id: Int;
+  data: Int;
+  descr: String;
+  downs: Int;
+  file: String;
+  size: Int;
+  uid: Int;
+  user: String;
+  userStat: String;
+}
+
+export interface PunbbUploadedPromise
+  extends Promise<PunbbUploaded>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  data: () => Promise<Int>;
+  descr: () => Promise<String>;
+  downs: () => Promise<Int>;
+  file: () => Promise<String>;
+  size: () => Promise<Int>;
+  uid: () => Promise<Int>;
+  user: () => Promise<String>;
+  userStat: () => Promise<String>;
+}
+
+export interface PunbbUploadedSubscription
+  extends Promise<AsyncIterator<PunbbUploaded>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  data: () => Promise<AsyncIterator<Int>>;
+  descr: () => Promise<AsyncIterator<String>>;
+  downs: () => Promise<AsyncIterator<Int>>;
+  file: () => Promise<AsyncIterator<String>>;
+  size: () => Promise<AsyncIterator<Int>>;
+  uid: () => Promise<AsyncIterator<Int>>;
+  user: () => Promise<AsyncIterator<String>>;
+  userStat: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUploadedNullablePromise
+  extends Promise<PunbbUploaded | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  data: () => Promise<Int>;
+  descr: () => Promise<String>;
+  downs: () => Promise<Int>;
+  file: () => Promise<String>;
+  size: () => Promise<Int>;
+  uid: () => Promise<Int>;
+  user: () => Promise<String>;
+  userStat: () => Promise<String>;
+}
+
+export interface PunbbUploadedConnection {
+  pageInfo: PageInfo;
+  edges: PunbbUploadedEdge[];
+}
+
+export interface PunbbUploadedConnectionPromise
+  extends Promise<PunbbUploadedConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbUploadedEdge>>() => T;
+  aggregate: <T = AggregatePunbbUploadedPromise>() => T;
+}
+
+export interface PunbbUploadedConnectionSubscription
+  extends Promise<AsyncIterator<PunbbUploadedConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbUploadedEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbUploadedSubscription>() => T;
+}
+
+export interface PunbbUploadedEdge {
+  node: PunbbUploaded;
+  cursor: String;
+}
+
+export interface PunbbUploadedEdgePromise
+  extends Promise<PunbbUploadedEdge>,
+    Fragmentable {
+  node: <T = PunbbUploadedPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbUploadedEdgeSubscription
+  extends Promise<AsyncIterator<PunbbUploadedEdge>>,
+    Fragmentable {
+  node: <T = PunbbUploadedSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbUploaded {
+  count: Int;
+}
+
+export interface AggregatePunbbUploadedPromise
+  extends Promise<AggregatePunbbUploaded>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbUploadedSubscription
+  extends Promise<AsyncIterator<AggregatePunbbUploaded>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUploadsConf {
+  gId: Int;
+  pDelete: Boolean;
+  pGlobaldelete: Boolean;
+  pGlobalview: Boolean;
+  pSetop: Boolean;
+  pUpload: Boolean;
+  pView: Boolean;
+  uFsize: Int;
+}
+
+export interface PunbbUploadsConfPromise
+  extends Promise<PunbbUploadsConf>,
+    Fragmentable {
+  gId: () => Promise<Int>;
+  pDelete: () => Promise<Boolean>;
+  pGlobaldelete: () => Promise<Boolean>;
+  pGlobalview: () => Promise<Boolean>;
+  pSetop: () => Promise<Boolean>;
+  pUpload: () => Promise<Boolean>;
+  pView: () => Promise<Boolean>;
+  uFsize: () => Promise<Int>;
+}
+
+export interface PunbbUploadsConfSubscription
+  extends Promise<AsyncIterator<PunbbUploadsConf>>,
+    Fragmentable {
+  gId: () => Promise<AsyncIterator<Int>>;
+  pDelete: () => Promise<AsyncIterator<Boolean>>;
+  pGlobaldelete: () => Promise<AsyncIterator<Boolean>>;
+  pGlobalview: () => Promise<AsyncIterator<Boolean>>;
+  pSetop: () => Promise<AsyncIterator<Boolean>>;
+  pUpload: () => Promise<AsyncIterator<Boolean>>;
+  pView: () => Promise<AsyncIterator<Boolean>>;
+  uFsize: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUploadsConfNullablePromise
+  extends Promise<PunbbUploadsConf | null>,
+    Fragmentable {
+  gId: () => Promise<Int>;
+  pDelete: () => Promise<Boolean>;
+  pGlobaldelete: () => Promise<Boolean>;
+  pGlobalview: () => Promise<Boolean>;
+  pSetop: () => Promise<Boolean>;
+  pUpload: () => Promise<Boolean>;
+  pView: () => Promise<Boolean>;
+  uFsize: () => Promise<Int>;
+}
+
+export interface PunbbUploadsConfConnection {
+  pageInfo: PageInfo;
+  edges: PunbbUploadsConfEdge[];
+}
+
+export interface PunbbUploadsConfConnectionPromise
+  extends Promise<PunbbUploadsConfConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbUploadsConfEdge>>() => T;
+  aggregate: <T = AggregatePunbbUploadsConfPromise>() => T;
+}
+
+export interface PunbbUploadsConfConnectionSubscription
+  extends Promise<AsyncIterator<PunbbUploadsConfConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbUploadsConfEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbUploadsConfSubscription>() => T;
+}
+
+export interface PunbbUploadsConfEdge {
+  node: PunbbUploadsConf;
+  cursor: String;
+}
+
+export interface PunbbUploadsConfEdgePromise
+  extends Promise<PunbbUploadsConfEdge>,
+    Fragmentable {
+  node: <T = PunbbUploadsConfPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbUploadsConfEdgeSubscription
+  extends Promise<AsyncIterator<PunbbUploadsConfEdge>>,
+    Fragmentable {
+  node: <T = PunbbUploadsConfSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbUploadsConf {
+  count: Int;
+}
+
+export interface AggregatePunbbUploadsConfPromise
+  extends Promise<AggregatePunbbUploadsConf>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbUploadsConfSubscription
+  extends Promise<AsyncIterator<AggregatePunbbUploadsConf>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUploadsType {
+  id: Int;
+  exts: String;
+  type: String;
+}
+
+export interface PunbbUploadsTypePromise
+  extends Promise<PunbbUploadsType>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  exts: () => Promise<String>;
+  type: () => Promise<String>;
+}
+
+export interface PunbbUploadsTypeSubscription
+  extends Promise<AsyncIterator<PunbbUploadsType>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  exts: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUploadsTypeNullablePromise
+  extends Promise<PunbbUploadsType | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  exts: () => Promise<String>;
+  type: () => Promise<String>;
+}
+
+export interface PunbbUploadsTypeConnection {
+  pageInfo: PageInfo;
+  edges: PunbbUploadsTypeEdge[];
+}
+
+export interface PunbbUploadsTypeConnectionPromise
+  extends Promise<PunbbUploadsTypeConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbUploadsTypeEdge>>() => T;
+  aggregate: <T = AggregatePunbbUploadsTypePromise>() => T;
+}
+
+export interface PunbbUploadsTypeConnectionSubscription
+  extends Promise<AsyncIterator<PunbbUploadsTypeConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbUploadsTypeEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbUploadsTypeSubscription>() => T;
+}
+
+export interface PunbbUploadsTypeEdge {
+  node: PunbbUploadsType;
+  cursor: String;
+}
+
+export interface PunbbUploadsTypeEdgePromise
+  extends Promise<PunbbUploadsTypeEdge>,
+    Fragmentable {
+  node: <T = PunbbUploadsTypePromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbUploadsTypeEdgeSubscription
+  extends Promise<AsyncIterator<PunbbUploadsTypeEdge>>,
+    Fragmentable {
+  node: <T = PunbbUploadsTypeSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbUploadsType {
+  count: Int;
+}
+
+export interface AggregatePunbbUploadsTypePromise
+  extends Promise<AggregatePunbbUploadsType>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbUploadsTypeSubscription
+  extends Promise<AsyncIterator<AggregatePunbbUploadsType>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUser {
+  id: Int;
+  activateKey?: String;
+  activateString?: String;
+  adminNote?: String;
+  aim?: String;
+  dispPosts?: Boolean;
+  dispTopics?: Boolean;
+  email: String;
+  emailSetting: Boolean;
+  groupId: Int;
+  icq?: String;
+  jabber?: String;
+  language: String;
+  lastPost?: Int;
+  lastVisit: Int;
+  location?: String;
+  msn?: String;
+  notifyWithPost: Boolean;
+  numPosts: Int;
+  password: String;
+  readTopics?: String;
+  realname?: String;
+  registered: Int;
+  registrationIp: String;
+  savePass: Boolean;
+  showAvatars: Boolean;
+  showImg: Boolean;
+  showImgSig: Boolean;
+  showSig: Boolean;
+  showSmilies: Boolean;
+  signature?: String;
+  style: String;
+  timezone: Float;
+  title?: String;
+  url?: String;
+  useAvatar: Boolean;
+  username: String;
+  yahoo?: String;
+}
+
+export interface PunbbUserPromise extends Promise<PunbbUser>, Fragmentable {
+  id: () => Promise<Int>;
+  activateKey: () => Promise<String>;
+  activateString: () => Promise<String>;
+  adminNote: () => Promise<String>;
+  aim: () => Promise<String>;
+  dispPosts: () => Promise<Boolean>;
+  dispTopics: () => Promise<Boolean>;
+  email: () => Promise<String>;
+  emailSetting: () => Promise<Boolean>;
+  groupId: () => Promise<Int>;
+  icq: () => Promise<String>;
+  jabber: () => Promise<String>;
+  language: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastVisit: () => Promise<Int>;
+  location: () => Promise<String>;
+  msn: () => Promise<String>;
+  notifyWithPost: () => Promise<Boolean>;
+  numPosts: () => Promise<Int>;
+  password: () => Promise<String>;
+  readTopics: () => Promise<String>;
+  realname: () => Promise<String>;
+  registered: () => Promise<Int>;
+  registrationIp: () => Promise<String>;
+  savePass: () => Promise<Boolean>;
+  showAvatars: () => Promise<Boolean>;
+  showImg: () => Promise<Boolean>;
+  showImgSig: () => Promise<Boolean>;
+  showSig: () => Promise<Boolean>;
+  showSmilies: () => Promise<Boolean>;
+  signature: () => Promise<String>;
+  style: () => Promise<String>;
+  timezone: () => Promise<Float>;
+  title: () => Promise<String>;
+  url: () => Promise<String>;
+  useAvatar: () => Promise<Boolean>;
+  username: () => Promise<String>;
+  yahoo: () => Promise<String>;
+}
+
+export interface PunbbUserSubscription
+  extends Promise<AsyncIterator<PunbbUser>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  activateKey: () => Promise<AsyncIterator<String>>;
+  activateString: () => Promise<AsyncIterator<String>>;
+  adminNote: () => Promise<AsyncIterator<String>>;
+  aim: () => Promise<AsyncIterator<String>>;
+  dispPosts: () => Promise<AsyncIterator<Boolean>>;
+  dispTopics: () => Promise<AsyncIterator<Boolean>>;
+  email: () => Promise<AsyncIterator<String>>;
+  emailSetting: () => Promise<AsyncIterator<Boolean>>;
+  groupId: () => Promise<AsyncIterator<Int>>;
+  icq: () => Promise<AsyncIterator<String>>;
+  jabber: () => Promise<AsyncIterator<String>>;
+  language: () => Promise<AsyncIterator<String>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastVisit: () => Promise<AsyncIterator<Int>>;
+  location: () => Promise<AsyncIterator<String>>;
+  msn: () => Promise<AsyncIterator<String>>;
+  notifyWithPost: () => Promise<AsyncIterator<Boolean>>;
+  numPosts: () => Promise<AsyncIterator<Int>>;
+  password: () => Promise<AsyncIterator<String>>;
+  readTopics: () => Promise<AsyncIterator<String>>;
+  realname: () => Promise<AsyncIterator<String>>;
+  registered: () => Promise<AsyncIterator<Int>>;
+  registrationIp: () => Promise<AsyncIterator<String>>;
+  savePass: () => Promise<AsyncIterator<Boolean>>;
+  showAvatars: () => Promise<AsyncIterator<Boolean>>;
+  showImg: () => Promise<AsyncIterator<Boolean>>;
+  showImgSig: () => Promise<AsyncIterator<Boolean>>;
+  showSig: () => Promise<AsyncIterator<Boolean>>;
+  showSmilies: () => Promise<AsyncIterator<Boolean>>;
+  signature: () => Promise<AsyncIterator<String>>;
+  style: () => Promise<AsyncIterator<String>>;
+  timezone: () => Promise<AsyncIterator<Float>>;
+  title: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+  useAvatar: () => Promise<AsyncIterator<Boolean>>;
+  username: () => Promise<AsyncIterator<String>>;
+  yahoo: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUserNullablePromise
+  extends Promise<PunbbUser | null>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  activateKey: () => Promise<String>;
+  activateString: () => Promise<String>;
+  adminNote: () => Promise<String>;
+  aim: () => Promise<String>;
+  dispPosts: () => Promise<Boolean>;
+  dispTopics: () => Promise<Boolean>;
+  email: () => Promise<String>;
+  emailSetting: () => Promise<Boolean>;
+  groupId: () => Promise<Int>;
+  icq: () => Promise<String>;
+  jabber: () => Promise<String>;
+  language: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastVisit: () => Promise<Int>;
+  location: () => Promise<String>;
+  msn: () => Promise<String>;
+  notifyWithPost: () => Promise<Boolean>;
+  numPosts: () => Promise<Int>;
+  password: () => Promise<String>;
+  readTopics: () => Promise<String>;
+  realname: () => Promise<String>;
+  registered: () => Promise<Int>;
+  registrationIp: () => Promise<String>;
+  savePass: () => Promise<Boolean>;
+  showAvatars: () => Promise<Boolean>;
+  showImg: () => Promise<Boolean>;
+  showImgSig: () => Promise<Boolean>;
+  showSig: () => Promise<Boolean>;
+  showSmilies: () => Promise<Boolean>;
+  signature: () => Promise<String>;
+  style: () => Promise<String>;
+  timezone: () => Promise<Float>;
+  title: () => Promise<String>;
+  url: () => Promise<String>;
+  useAvatar: () => Promise<Boolean>;
+  username: () => Promise<String>;
+  yahoo: () => Promise<String>;
+}
+
+export interface PunbbUserConnection {
+  pageInfo: PageInfo;
+  edges: PunbbUserEdge[];
+}
+
+export interface PunbbUserConnectionPromise
+  extends Promise<PunbbUserConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbUserEdge>>() => T;
+  aggregate: <T = AggregatePunbbUserPromise>() => T;
+}
+
+export interface PunbbUserConnectionSubscription
+  extends Promise<AsyncIterator<PunbbUserConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbUserEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbUserSubscription>() => T;
+}
+
+export interface PunbbUserEdge {
+  node: PunbbUser;
+  cursor: String;
+}
+
+export interface PunbbUserEdgePromise
+  extends Promise<PunbbUserEdge>,
+    Fragmentable {
+  node: <T = PunbbUserPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbUserEdgeSubscription
+  extends Promise<AsyncIterator<PunbbUserEdge>>,
+    Fragmentable {
+  node: <T = PunbbUserSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbUser {
+  count: Int;
+}
+
+export interface AggregatePunbbUserPromise
+  extends Promise<AggregatePunbbUser>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbUserSubscription
+  extends Promise<AsyncIterator<AggregatePunbbUser>>,
+    Fragmentable {
+  count: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUserthread {
+  lastRead?: Int;
+  posted: Boolean;
+}
+
+export interface PunbbUserthreadPromise
+  extends Promise<PunbbUserthread>,
+    Fragmentable {
+  lastRead: () => Promise<Int>;
+  posted: () => Promise<Boolean>;
+}
+
+export interface PunbbUserthreadSubscription
+  extends Promise<AsyncIterator<PunbbUserthread>>,
+    Fragmentable {
+  lastRead: () => Promise<AsyncIterator<Int>>;
+  posted: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbUserthreadNullablePromise
+  extends Promise<PunbbUserthread | null>,
+    Fragmentable {
+  lastRead: () => Promise<Int>;
+  posted: () => Promise<Boolean>;
+}
+
+export interface PunbbUserthreadConnection {
+  pageInfo: PageInfo;
+  edges: PunbbUserthreadEdge[];
+}
+
+export interface PunbbUserthreadConnectionPromise
+  extends Promise<PunbbUserthreadConnection>,
+    Fragmentable {
+  pageInfo: <T = PageInfoPromise>() => T;
+  edges: <T = FragmentableArray<PunbbUserthreadEdge>>() => T;
+  aggregate: <T = AggregatePunbbUserthreadPromise>() => T;
+}
+
+export interface PunbbUserthreadConnectionSubscription
+  extends Promise<AsyncIterator<PunbbUserthreadConnection>>,
+    Fragmentable {
+  pageInfo: <T = PageInfoSubscription>() => T;
+  edges: <T = Promise<AsyncIterator<PunbbUserthreadEdgeSubscription>>>() => T;
+  aggregate: <T = AggregatePunbbUserthreadSubscription>() => T;
+}
+
+export interface PunbbUserthreadEdge {
+  node: PunbbUserthread;
+  cursor: String;
+}
+
+export interface PunbbUserthreadEdgePromise
+  extends Promise<PunbbUserthreadEdge>,
+    Fragmentable {
+  node: <T = PunbbUserthreadPromise>() => T;
+  cursor: () => Promise<String>;
+}
+
+export interface PunbbUserthreadEdgeSubscription
+  extends Promise<AsyncIterator<PunbbUserthreadEdge>>,
+    Fragmentable {
+  node: <T = PunbbUserthreadSubscription>() => T;
+  cursor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface AggregatePunbbUserthread {
+  count: Int;
+}
+
+export interface AggregatePunbbUserthreadPromise
+  extends Promise<AggregatePunbbUserthread>,
+    Fragmentable {
+  count: () => Promise<Int>;
+}
+
+export interface AggregatePunbbUserthreadSubscription
+  extends Promise<AsyncIterator<AggregatePunbbUserthread>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -673,105 +5992,1279 @@ export interface BatchPayloadSubscription
   count: () => Promise<AsyncIterator<Long>>;
 }
 
-export interface PostSubscriptionPayload {
+export interface PunbbBanSubscriptionPayload {
   mutation: MutationType;
-  node: Post;
+  node: PunbbBan;
   updatedFields: String[];
-  previousValues: PostPreviousValues;
+  previousValues: PunbbBanPreviousValues;
 }
 
-export interface PostSubscriptionPayloadPromise
-  extends Promise<PostSubscriptionPayload>,
+export interface PunbbBanSubscriptionPayloadPromise
+  extends Promise<PunbbBanSubscriptionPayload>,
     Fragmentable {
   mutation: () => Promise<MutationType>;
-  node: <T = PostPromise>() => T;
+  node: <T = PunbbBanPromise>() => T;
   updatedFields: () => Promise<String[]>;
-  previousValues: <T = PostPreviousValuesPromise>() => T;
+  previousValues: <T = PunbbBanPreviousValuesPromise>() => T;
 }
 
-export interface PostSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PostSubscriptionPayload>>,
+export interface PunbbBanSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbBanSubscriptionPayload>>,
     Fragmentable {
   mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PostSubscription>() => T;
+  node: <T = PunbbBanSubscription>() => T;
   updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PostPreviousValuesSubscription>() => T;
+  previousValues: <T = PunbbBanPreviousValuesSubscription>() => T;
 }
 
-export interface PostPreviousValues {
-  id: ID_Output;
-  title: String;
-  published: Boolean;
-}
-
-export interface PostPreviousValuesPromise
-  extends Promise<PostPreviousValues>,
-    Fragmentable {
-  id: () => Promise<ID_Output>;
-  title: () => Promise<String>;
-  published: () => Promise<Boolean>;
-}
-
-export interface PostPreviousValuesSubscription
-  extends Promise<AsyncIterator<PostPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
-  title: () => Promise<AsyncIterator<String>>;
-  published: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface UserSubscriptionPayload {
-  mutation: MutationType;
-  node: User;
-  updatedFields: String[];
-  previousValues: UserPreviousValues;
-}
-
-export interface UserSubscriptionPayloadPromise
-  extends Promise<UserSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = UserPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = UserPreviousValuesPromise>() => T;
-}
-
-export interface UserSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<UserSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = UserSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = UserPreviousValuesSubscription>() => T;
-}
-
-export interface UserPreviousValues {
-  id: ID_Output;
+export interface PunbbBanPreviousValues {
+  id: Int;
   email?: String;
-  name: String;
+  expire?: Int;
+  ip?: String;
+  message?: String;
+  username?: String;
 }
 
-export interface UserPreviousValuesPromise
-  extends Promise<UserPreviousValues>,
+export interface PunbbBanPreviousValuesPromise
+  extends Promise<PunbbBanPreviousValues>,
     Fragmentable {
-  id: () => Promise<ID_Output>;
+  id: () => Promise<Int>;
   email: () => Promise<String>;
-  name: () => Promise<String>;
+  expire: () => Promise<Int>;
+  ip: () => Promise<String>;
+  message: () => Promise<String>;
+  username: () => Promise<String>;
 }
 
-export interface UserPreviousValuesSubscription
-  extends Promise<AsyncIterator<UserPreviousValues>>,
+export interface PunbbBanPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbBanPreviousValues>>,
     Fragmentable {
-  id: () => Promise<AsyncIterator<ID_Output>>;
+  id: () => Promise<AsyncIterator<Int>>;
   email: () => Promise<AsyncIterator<String>>;
-  name: () => Promise<AsyncIterator<String>>;
+  expire: () => Promise<AsyncIterator<Int>>;
+  ip: () => Promise<AsyncIterator<String>>;
+  message: () => Promise<AsyncIterator<String>>;
+  username: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbCategorySubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbCategory;
+  updatedFields: String[];
+  previousValues: PunbbCategoryPreviousValues;
+}
+
+export interface PunbbCategorySubscriptionPayloadPromise
+  extends Promise<PunbbCategorySubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbCategoryPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbCategoryPreviousValuesPromise>() => T;
+}
+
+export interface PunbbCategorySubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbCategorySubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbCategorySubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbCategoryPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbCategoryPreviousValues {
+  id: Int;
+  catName: String;
+  dispPosition: Int;
+}
+
+export interface PunbbCategoryPreviousValuesPromise
+  extends Promise<PunbbCategoryPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  catName: () => Promise<String>;
+  dispPosition: () => Promise<Int>;
+}
+
+export interface PunbbCategoryPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbCategoryPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  catName: () => Promise<AsyncIterator<String>>;
+  dispPosition: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbCensoringSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbCensoring;
+  updatedFields: String[];
+  previousValues: PunbbCensoringPreviousValues;
+}
+
+export interface PunbbCensoringSubscriptionPayloadPromise
+  extends Promise<PunbbCensoringSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbCensoringPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbCensoringPreviousValuesPromise>() => T;
+}
+
+export interface PunbbCensoringSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbCensoringSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbCensoringSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbCensoringPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbCensoringPreviousValues {
+  id: Int;
+  replaceWith: String;
+  searchFor: String;
+}
+
+export interface PunbbCensoringPreviousValuesPromise
+  extends Promise<PunbbCensoringPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  replaceWith: () => Promise<String>;
+  searchFor: () => Promise<String>;
+}
+
+export interface PunbbCensoringPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbCensoringPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  replaceWith: () => Promise<AsyncIterator<String>>;
+  searchFor: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbConfigSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbConfig;
+  updatedFields: String[];
+  previousValues: PunbbConfigPreviousValues;
+}
+
+export interface PunbbConfigSubscriptionPayloadPromise
+  extends Promise<PunbbConfigSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbConfigPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbConfigPreviousValuesPromise>() => T;
+}
+
+export interface PunbbConfigSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbConfigSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbConfigSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbConfigPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbConfigPreviousValues {
+  conf_name: ID_Output;
+  confValue?: String;
+}
+
+export interface PunbbConfigPreviousValuesPromise
+  extends Promise<PunbbConfigPreviousValues>,
+    Fragmentable {
+  conf_name: () => Promise<ID_Output>;
+  confValue: () => Promise<String>;
+}
+
+export interface PunbbConfigPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbConfigPreviousValues>>,
+    Fragmentable {
+  conf_name: () => Promise<AsyncIterator<ID_Output>>;
+  confValue: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbForumSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbForum;
+  updatedFields: String[];
+  previousValues: PunbbForumPreviousValues;
+}
+
+export interface PunbbForumSubscriptionPayloadPromise
+  extends Promise<PunbbForumSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbForumPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbForumPreviousValuesPromise>() => T;
+}
+
+export interface PunbbForumSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbForumSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbForumSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbForumPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbForumPreviousValues {
+  id: Int;
+  catId: Int;
+  dispPosition: Int;
+  forumDesc?: String;
+  forumName: String;
+  lastPost?: Int;
+  lastPoster?: String;
+  lastPostId?: Int;
+  moderators?: String;
+  redirectUrl?: String;
+  sortBy: Boolean;
+}
+
+export interface PunbbForumPreviousValuesPromise
+  extends Promise<PunbbForumPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  catId: () => Promise<Int>;
+  dispPosition: () => Promise<Int>;
+  forumDesc: () => Promise<String>;
+  forumName: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  moderators: () => Promise<String>;
+  redirectUrl: () => Promise<String>;
+  sortBy: () => Promise<Boolean>;
+}
+
+export interface PunbbForumPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbForumPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  catId: () => Promise<AsyncIterator<Int>>;
+  dispPosition: () => Promise<AsyncIterator<Int>>;
+  forumDesc: () => Promise<AsyncIterator<String>>;
+  forumName: () => Promise<AsyncIterator<String>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastPoster: () => Promise<AsyncIterator<String>>;
+  lastPostId: () => Promise<AsyncIterator<Int>>;
+  moderators: () => Promise<AsyncIterator<String>>;
+  redirectUrl: () => Promise<AsyncIterator<String>>;
+  sortBy: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbForumPermSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbForumPerm;
+  updatedFields: String[];
+  previousValues: PunbbForumPermPreviousValues;
+}
+
+export interface PunbbForumPermSubscriptionPayloadPromise
+  extends Promise<PunbbForumPermSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbForumPermPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbForumPermPreviousValuesPromise>() => T;
+}
+
+export interface PunbbForumPermSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbForumPermSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbForumPermSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbForumPermPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbForumPermPreviousValues {
+  postPolls: Boolean;
+  postReplies: Boolean;
+  postTopics: Boolean;
+  readForum: Boolean;
+}
+
+export interface PunbbForumPermPreviousValuesPromise
+  extends Promise<PunbbForumPermPreviousValues>,
+    Fragmentable {
+  postPolls: () => Promise<Boolean>;
+  postReplies: () => Promise<Boolean>;
+  postTopics: () => Promise<Boolean>;
+  readForum: () => Promise<Boolean>;
+}
+
+export interface PunbbForumPermPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbForumPermPreviousValues>>,
+    Fragmentable {
+  postPolls: () => Promise<AsyncIterator<Boolean>>;
+  postReplies: () => Promise<AsyncIterator<Boolean>>;
+  postTopics: () => Promise<AsyncIterator<Boolean>>;
+  readForum: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbGroupSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbGroup;
+  updatedFields: String[];
+  previousValues: PunbbGroupPreviousValues;
+}
+
+export interface PunbbGroupSubscriptionPayloadPromise
+  extends Promise<PunbbGroupSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbGroupPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbGroupPreviousValuesPromise>() => T;
+}
+
+export interface PunbbGroupSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbGroupSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbGroupSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbGroupPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbGroupPreviousValues {
+  g_id: Int;
+  gDeletePosts: Boolean;
+  gDeleteTopics: Boolean;
+  gEditPosts: Boolean;
+  gEditSubjectsInterval: Int;
+  gPostFlood: Int;
+  gPostPolls: Boolean;
+  gPostReplies: Boolean;
+  gPostTopics: Boolean;
+  gReadBoard: Boolean;
+  gSearch: Boolean;
+  gSearchFlood: Int;
+  gSearchUsers: Boolean;
+  gSetTitle: Boolean;
+  gTitle: String;
+  gUserTitle?: String;
+}
+
+export interface PunbbGroupPreviousValuesPromise
+  extends Promise<PunbbGroupPreviousValues>,
+    Fragmentable {
+  g_id: () => Promise<Int>;
+  gDeletePosts: () => Promise<Boolean>;
+  gDeleteTopics: () => Promise<Boolean>;
+  gEditPosts: () => Promise<Boolean>;
+  gEditSubjectsInterval: () => Promise<Int>;
+  gPostFlood: () => Promise<Int>;
+  gPostPolls: () => Promise<Boolean>;
+  gPostReplies: () => Promise<Boolean>;
+  gPostTopics: () => Promise<Boolean>;
+  gReadBoard: () => Promise<Boolean>;
+  gSearch: () => Promise<Boolean>;
+  gSearchFlood: () => Promise<Int>;
+  gSearchUsers: () => Promise<Boolean>;
+  gSetTitle: () => Promise<Boolean>;
+  gTitle: () => Promise<String>;
+  gUserTitle: () => Promise<String>;
+}
+
+export interface PunbbGroupPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbGroupPreviousValues>>,
+    Fragmentable {
+  g_id: () => Promise<AsyncIterator<Int>>;
+  gDeletePosts: () => Promise<AsyncIterator<Boolean>>;
+  gDeleteTopics: () => Promise<AsyncIterator<Boolean>>;
+  gEditPosts: () => Promise<AsyncIterator<Boolean>>;
+  gEditSubjectsInterval: () => Promise<AsyncIterator<Int>>;
+  gPostFlood: () => Promise<AsyncIterator<Int>>;
+  gPostPolls: () => Promise<AsyncIterator<Boolean>>;
+  gPostReplies: () => Promise<AsyncIterator<Boolean>>;
+  gPostTopics: () => Promise<AsyncIterator<Boolean>>;
+  gReadBoard: () => Promise<AsyncIterator<Boolean>>;
+  gSearch: () => Promise<AsyncIterator<Boolean>>;
+  gSearchFlood: () => Promise<AsyncIterator<Int>>;
+  gSearchUsers: () => Promise<AsyncIterator<Boolean>>;
+  gSetTitle: () => Promise<AsyncIterator<Boolean>>;
+  gTitle: () => Promise<AsyncIterator<String>>;
+  gUserTitle: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbOnlineSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbOnline;
+  updatedFields: String[];
+  previousValues: PunbbOnlinePreviousValues;
+}
+
+export interface PunbbOnlineSubscriptionPayloadPromise
+  extends Promise<PunbbOnlineSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbOnlinePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbOnlinePreviousValuesPromise>() => T;
+}
+
+export interface PunbbOnlineSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbOnlineSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbOnlineSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbOnlinePreviousValuesSubscription>() => T;
+}
+
+export interface PunbbOnlinePreviousValues {
+  ident: String;
+  idle: Boolean;
+  logged: Int;
+  userId: Int;
+}
+
+export interface PunbbOnlinePreviousValuesPromise
+  extends Promise<PunbbOnlinePreviousValues>,
+    Fragmentable {
+  ident: () => Promise<String>;
+  idle: () => Promise<Boolean>;
+  logged: () => Promise<Int>;
+  userId: () => Promise<Int>;
+}
+
+export interface PunbbOnlinePreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbOnlinePreviousValues>>,
+    Fragmentable {
+  ident: () => Promise<AsyncIterator<String>>;
+  idle: () => Promise<AsyncIterator<Boolean>>;
+  logged: () => Promise<AsyncIterator<Int>>;
+  userId: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbPollSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbPoll;
+  updatedFields: String[];
+  previousValues: PunbbPollPreviousValues;
+}
+
+export interface PunbbPollSubscriptionPayloadPromise
+  extends Promise<PunbbPollSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbPollPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbPollPreviousValuesPromise>() => T;
+}
+
+export interface PunbbPollSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbPollSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbPollSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbPollPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbPollPreviousValues {
+  id: Int;
+  options: String;
+  pollid: Int;
+  ptype: Boolean;
+  voters: String;
+  votes: String;
+}
+
+export interface PunbbPollPreviousValuesPromise
+  extends Promise<PunbbPollPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  options: () => Promise<String>;
+  pollid: () => Promise<Int>;
+  ptype: () => Promise<Boolean>;
+  voters: () => Promise<String>;
+  votes: () => Promise<String>;
+}
+
+export interface PunbbPollPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbPollPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  options: () => Promise<AsyncIterator<String>>;
+  pollid: () => Promise<AsyncIterator<Int>>;
+  ptype: () => Promise<AsyncIterator<Boolean>>;
+  voters: () => Promise<AsyncIterator<String>>;
+  votes: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbPostSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbPost;
+  updatedFields: String[];
+  previousValues: PunbbPostPreviousValues;
+}
+
+export interface PunbbPostSubscriptionPayloadPromise
+  extends Promise<PunbbPostSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbPostPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbPostPreviousValuesPromise>() => T;
+}
+
+export interface PunbbPostSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbPostSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbPostSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbPostPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbPostPreviousValues {
+  id: Int;
+  edited?: Int;
+  editedBy?: String;
+  hideSmilies: Boolean;
+  message: String;
+  posted: Int;
+  poster: String;
+  posterEmail?: String;
+  posterId: Int;
+  posterIp?: String;
+  topicId: Int;
+}
+
+export interface PunbbPostPreviousValuesPromise
+  extends Promise<PunbbPostPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  edited: () => Promise<Int>;
+  editedBy: () => Promise<String>;
+  hideSmilies: () => Promise<Boolean>;
+  message: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  posterEmail: () => Promise<String>;
+  posterId: () => Promise<Int>;
+  posterIp: () => Promise<String>;
+  topicId: () => Promise<Int>;
+}
+
+export interface PunbbPostPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbPostPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  edited: () => Promise<AsyncIterator<Int>>;
+  editedBy: () => Promise<AsyncIterator<String>>;
+  hideSmilies: () => Promise<AsyncIterator<Boolean>>;
+  message: () => Promise<AsyncIterator<String>>;
+  posted: () => Promise<AsyncIterator<Int>>;
+  poster: () => Promise<AsyncIterator<String>>;
+  posterEmail: () => Promise<AsyncIterator<String>>;
+  posterId: () => Promise<AsyncIterator<Int>>;
+  posterIp: () => Promise<AsyncIterator<String>>;
+  topicId: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbRankSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbRank;
+  updatedFields: String[];
+  previousValues: PunbbRankPreviousValues;
+}
+
+export interface PunbbRankSubscriptionPayloadPromise
+  extends Promise<PunbbRankSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbRankPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbRankPreviousValuesPromise>() => T;
+}
+
+export interface PunbbRankSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbRankSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbRankSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbRankPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbRankPreviousValues {
+  id: Int;
+  rank: String;
+}
+
+export interface PunbbRankPreviousValuesPromise
+  extends Promise<PunbbRankPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  rank: () => Promise<String>;
+}
+
+export interface PunbbRankPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbRankPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  rank: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbReportSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbReport;
+  updatedFields: String[];
+  previousValues: PunbbReportPreviousValues;
+}
+
+export interface PunbbReportSubscriptionPayloadPromise
+  extends Promise<PunbbReportSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbReportPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbReportPreviousValuesPromise>() => T;
+}
+
+export interface PunbbReportSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbReportSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbReportSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbReportPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbReportPreviousValues {
+  id: Int;
+  created: Int;
+  forumId: Int;
+  message: String;
+  postId: Int;
+  reportedBy: Int;
+  topicId: Int;
+  zapped?: Int;
+  zappedBy?: Int;
+}
+
+export interface PunbbReportPreviousValuesPromise
+  extends Promise<PunbbReportPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  created: () => Promise<Int>;
+  forumId: () => Promise<Int>;
+  message: () => Promise<String>;
+  postId: () => Promise<Int>;
+  reportedBy: () => Promise<Int>;
+  topicId: () => Promise<Int>;
+  zapped: () => Promise<Int>;
+  zappedBy: () => Promise<Int>;
+}
+
+export interface PunbbReportPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbReportPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  created: () => Promise<AsyncIterator<Int>>;
+  forumId: () => Promise<AsyncIterator<Int>>;
+  message: () => Promise<AsyncIterator<String>>;
+  postId: () => Promise<AsyncIterator<Int>>;
+  reportedBy: () => Promise<AsyncIterator<Int>>;
+  topicId: () => Promise<AsyncIterator<Int>>;
+  zapped: () => Promise<AsyncIterator<Int>>;
+  zappedBy: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbSearchCacheSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbSearchCache;
+  updatedFields: String[];
+  previousValues: PunbbSearchCachePreviousValues;
+}
+
+export interface PunbbSearchCacheSubscriptionPayloadPromise
+  extends Promise<PunbbSearchCacheSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbSearchCachePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbSearchCachePreviousValuesPromise>() => T;
+}
+
+export interface PunbbSearchCacheSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbSearchCacheSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbSearchCacheSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbSearchCachePreviousValuesSubscription>() => T;
+}
+
+export interface PunbbSearchCachePreviousValues {
+  id: Int;
+  ident: String;
+  searchData: String;
+}
+
+export interface PunbbSearchCachePreviousValuesPromise
+  extends Promise<PunbbSearchCachePreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  ident: () => Promise<String>;
+  searchData: () => Promise<String>;
+}
+
+export interface PunbbSearchCachePreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbSearchCachePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  ident: () => Promise<AsyncIterator<String>>;
+  searchData: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbSearchMatchSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbSearchMatch;
+  updatedFields: String[];
+  previousValues: PunbbSearchMatchPreviousValues;
+}
+
+export interface PunbbSearchMatchSubscriptionPayloadPromise
+  extends Promise<PunbbSearchMatchSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbSearchMatchPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbSearchMatchPreviousValuesPromise>() => T;
+}
+
+export interface PunbbSearchMatchSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbSearchMatchSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbSearchMatchSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbSearchMatchPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbSearchMatchPreviousValues {
+  postId: Int;
+  subjectMatch: Boolean;
+}
+
+export interface PunbbSearchMatchPreviousValuesPromise
+  extends Promise<PunbbSearchMatchPreviousValues>,
+    Fragmentable {
+  postId: () => Promise<Int>;
+  subjectMatch: () => Promise<Boolean>;
+}
+
+export interface PunbbSearchMatchPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbSearchMatchPreviousValues>>,
+    Fragmentable {
+  postId: () => Promise<AsyncIterator<Int>>;
+  subjectMatch: () => Promise<AsyncIterator<Boolean>>;
+}
+
+export interface PunbbSearchWordSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbSearchWord;
+  updatedFields: String[];
+  previousValues: PunbbSearchWordPreviousValues;
+}
+
+export interface PunbbSearchWordSubscriptionPayloadPromise
+  extends Promise<PunbbSearchWordSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbSearchWordPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbSearchWordPreviousValuesPromise>() => T;
+}
+
+export interface PunbbSearchWordSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbSearchWordSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbSearchWordSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbSearchWordPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbSearchWordPreviousValues {
+  word: ID_Output;
+}
+
+export interface PunbbSearchWordPreviousValuesPromise
+  extends Promise<PunbbSearchWordPreviousValues>,
+    Fragmentable {
+  word: () => Promise<ID_Output>;
+}
+
+export interface PunbbSearchWordPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbSearchWordPreviousValues>>,
+    Fragmentable {
+  word: () => Promise<AsyncIterator<ID_Output>>;
+}
+
+export interface PunbbTopicSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbTopic;
+  updatedFields: String[];
+  previousValues: PunbbTopicPreviousValues;
+}
+
+export interface PunbbTopicSubscriptionPayloadPromise
+  extends Promise<PunbbTopicSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbTopicPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbTopicPreviousValuesPromise>() => T;
+}
+
+export interface PunbbTopicSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbTopicSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbTopicSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbTopicPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbTopicPreviousValues {
+  id: Int;
+  closed: Boolean;
+  forumId: Int;
+  lastPost: Int;
+  lastPoster?: String;
+  lastPostId: Int;
+  movedTo?: Int;
+  no: String;
+  posted: Int;
+  poster: String;
+  question: String;
+  sticky: Boolean;
+  subject: String;
+  yes: String;
+}
+
+export interface PunbbTopicPreviousValuesPromise
+  extends Promise<PunbbTopicPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  closed: () => Promise<Boolean>;
+  forumId: () => Promise<Int>;
+  lastPost: () => Promise<Int>;
+  lastPoster: () => Promise<String>;
+  lastPostId: () => Promise<Int>;
+  movedTo: () => Promise<Int>;
+  no: () => Promise<String>;
+  posted: () => Promise<Int>;
+  poster: () => Promise<String>;
+  question: () => Promise<String>;
+  sticky: () => Promise<Boolean>;
+  subject: () => Promise<String>;
+  yes: () => Promise<String>;
+}
+
+export interface PunbbTopicPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbTopicPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  closed: () => Promise<AsyncIterator<Boolean>>;
+  forumId: () => Promise<AsyncIterator<Int>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastPoster: () => Promise<AsyncIterator<String>>;
+  lastPostId: () => Promise<AsyncIterator<Int>>;
+  movedTo: () => Promise<AsyncIterator<Int>>;
+  no: () => Promise<AsyncIterator<String>>;
+  posted: () => Promise<AsyncIterator<Int>>;
+  poster: () => Promise<AsyncIterator<String>>;
+  question: () => Promise<AsyncIterator<String>>;
+  sticky: () => Promise<AsyncIterator<Boolean>>;
+  subject: () => Promise<AsyncIterator<String>>;
+  yes: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUploadedSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbUploaded;
+  updatedFields: String[];
+  previousValues: PunbbUploadedPreviousValues;
+}
+
+export interface PunbbUploadedSubscriptionPayloadPromise
+  extends Promise<PunbbUploadedSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbUploadedPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbUploadedPreviousValuesPromise>() => T;
+}
+
+export interface PunbbUploadedSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbUploadedSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbUploadedSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbUploadedPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbUploadedPreviousValues {
+  id: Int;
+  data: Int;
+  descr: String;
+  downs: Int;
+  file: String;
+  size: Int;
+  uid: Int;
+  user: String;
+  userStat: String;
+}
+
+export interface PunbbUploadedPreviousValuesPromise
+  extends Promise<PunbbUploadedPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  data: () => Promise<Int>;
+  descr: () => Promise<String>;
+  downs: () => Promise<Int>;
+  file: () => Promise<String>;
+  size: () => Promise<Int>;
+  uid: () => Promise<Int>;
+  user: () => Promise<String>;
+  userStat: () => Promise<String>;
+}
+
+export interface PunbbUploadedPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbUploadedPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  data: () => Promise<AsyncIterator<Int>>;
+  descr: () => Promise<AsyncIterator<String>>;
+  downs: () => Promise<AsyncIterator<Int>>;
+  file: () => Promise<AsyncIterator<String>>;
+  size: () => Promise<AsyncIterator<Int>>;
+  uid: () => Promise<AsyncIterator<Int>>;
+  user: () => Promise<AsyncIterator<String>>;
+  userStat: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUploadsConfSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbUploadsConf;
+  updatedFields: String[];
+  previousValues: PunbbUploadsConfPreviousValues;
+}
+
+export interface PunbbUploadsConfSubscriptionPayloadPromise
+  extends Promise<PunbbUploadsConfSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbUploadsConfPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbUploadsConfPreviousValuesPromise>() => T;
+}
+
+export interface PunbbUploadsConfSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbUploadsConfSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbUploadsConfSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbUploadsConfPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbUploadsConfPreviousValues {
+  gId: Int;
+  pDelete: Boolean;
+  pGlobaldelete: Boolean;
+  pGlobalview: Boolean;
+  pSetop: Boolean;
+  pUpload: Boolean;
+  pView: Boolean;
+  uFsize: Int;
+}
+
+export interface PunbbUploadsConfPreviousValuesPromise
+  extends Promise<PunbbUploadsConfPreviousValues>,
+    Fragmentable {
+  gId: () => Promise<Int>;
+  pDelete: () => Promise<Boolean>;
+  pGlobaldelete: () => Promise<Boolean>;
+  pGlobalview: () => Promise<Boolean>;
+  pSetop: () => Promise<Boolean>;
+  pUpload: () => Promise<Boolean>;
+  pView: () => Promise<Boolean>;
+  uFsize: () => Promise<Int>;
+}
+
+export interface PunbbUploadsConfPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbUploadsConfPreviousValues>>,
+    Fragmentable {
+  gId: () => Promise<AsyncIterator<Int>>;
+  pDelete: () => Promise<AsyncIterator<Boolean>>;
+  pGlobaldelete: () => Promise<AsyncIterator<Boolean>>;
+  pGlobalview: () => Promise<AsyncIterator<Boolean>>;
+  pSetop: () => Promise<AsyncIterator<Boolean>>;
+  pUpload: () => Promise<AsyncIterator<Boolean>>;
+  pView: () => Promise<AsyncIterator<Boolean>>;
+  uFsize: () => Promise<AsyncIterator<Int>>;
+}
+
+export interface PunbbUploadsTypeSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbUploadsType;
+  updatedFields: String[];
+  previousValues: PunbbUploadsTypePreviousValues;
+}
+
+export interface PunbbUploadsTypeSubscriptionPayloadPromise
+  extends Promise<PunbbUploadsTypeSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbUploadsTypePromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbUploadsTypePreviousValuesPromise>() => T;
+}
+
+export interface PunbbUploadsTypeSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbUploadsTypeSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbUploadsTypeSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbUploadsTypePreviousValuesSubscription>() => T;
+}
+
+export interface PunbbUploadsTypePreviousValues {
+  id: Int;
+  exts: String;
+  type: String;
+}
+
+export interface PunbbUploadsTypePreviousValuesPromise
+  extends Promise<PunbbUploadsTypePreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  exts: () => Promise<String>;
+  type: () => Promise<String>;
+}
+
+export interface PunbbUploadsTypePreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbUploadsTypePreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  exts: () => Promise<AsyncIterator<String>>;
+  type: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUserSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbUser;
+  updatedFields: String[];
+  previousValues: PunbbUserPreviousValues;
+}
+
+export interface PunbbUserSubscriptionPayloadPromise
+  extends Promise<PunbbUserSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbUserPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbUserPreviousValuesPromise>() => T;
+}
+
+export interface PunbbUserSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbUserSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbUserSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbUserPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbUserPreviousValues {
+  id: Int;
+  activateKey?: String;
+  activateString?: String;
+  adminNote?: String;
+  aim?: String;
+  dispPosts?: Boolean;
+  dispTopics?: Boolean;
+  email: String;
+  emailSetting: Boolean;
+  groupId: Int;
+  icq?: String;
+  jabber?: String;
+  language: String;
+  lastPost?: Int;
+  lastVisit: Int;
+  location?: String;
+  msn?: String;
+  notifyWithPost: Boolean;
+  numPosts: Int;
+  password: String;
+  readTopics?: String;
+  realname?: String;
+  registered: Int;
+  registrationIp: String;
+  savePass: Boolean;
+  showAvatars: Boolean;
+  showImg: Boolean;
+  showImgSig: Boolean;
+  showSig: Boolean;
+  showSmilies: Boolean;
+  signature?: String;
+  style: String;
+  timezone: Float;
+  title?: String;
+  url?: String;
+  useAvatar: Boolean;
+  username: String;
+  yahoo?: String;
+}
+
+export interface PunbbUserPreviousValuesPromise
+  extends Promise<PunbbUserPreviousValues>,
+    Fragmentable {
+  id: () => Promise<Int>;
+  activateKey: () => Promise<String>;
+  activateString: () => Promise<String>;
+  adminNote: () => Promise<String>;
+  aim: () => Promise<String>;
+  dispPosts: () => Promise<Boolean>;
+  dispTopics: () => Promise<Boolean>;
+  email: () => Promise<String>;
+  emailSetting: () => Promise<Boolean>;
+  groupId: () => Promise<Int>;
+  icq: () => Promise<String>;
+  jabber: () => Promise<String>;
+  language: () => Promise<String>;
+  lastPost: () => Promise<Int>;
+  lastVisit: () => Promise<Int>;
+  location: () => Promise<String>;
+  msn: () => Promise<String>;
+  notifyWithPost: () => Promise<Boolean>;
+  numPosts: () => Promise<Int>;
+  password: () => Promise<String>;
+  readTopics: () => Promise<String>;
+  realname: () => Promise<String>;
+  registered: () => Promise<Int>;
+  registrationIp: () => Promise<String>;
+  savePass: () => Promise<Boolean>;
+  showAvatars: () => Promise<Boolean>;
+  showImg: () => Promise<Boolean>;
+  showImgSig: () => Promise<Boolean>;
+  showSig: () => Promise<Boolean>;
+  showSmilies: () => Promise<Boolean>;
+  signature: () => Promise<String>;
+  style: () => Promise<String>;
+  timezone: () => Promise<Float>;
+  title: () => Promise<String>;
+  url: () => Promise<String>;
+  useAvatar: () => Promise<Boolean>;
+  username: () => Promise<String>;
+  yahoo: () => Promise<String>;
+}
+
+export interface PunbbUserPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbUserPreviousValues>>,
+    Fragmentable {
+  id: () => Promise<AsyncIterator<Int>>;
+  activateKey: () => Promise<AsyncIterator<String>>;
+  activateString: () => Promise<AsyncIterator<String>>;
+  adminNote: () => Promise<AsyncIterator<String>>;
+  aim: () => Promise<AsyncIterator<String>>;
+  dispPosts: () => Promise<AsyncIterator<Boolean>>;
+  dispTopics: () => Promise<AsyncIterator<Boolean>>;
+  email: () => Promise<AsyncIterator<String>>;
+  emailSetting: () => Promise<AsyncIterator<Boolean>>;
+  groupId: () => Promise<AsyncIterator<Int>>;
+  icq: () => Promise<AsyncIterator<String>>;
+  jabber: () => Promise<AsyncIterator<String>>;
+  language: () => Promise<AsyncIterator<String>>;
+  lastPost: () => Promise<AsyncIterator<Int>>;
+  lastVisit: () => Promise<AsyncIterator<Int>>;
+  location: () => Promise<AsyncIterator<String>>;
+  msn: () => Promise<AsyncIterator<String>>;
+  notifyWithPost: () => Promise<AsyncIterator<Boolean>>;
+  numPosts: () => Promise<AsyncIterator<Int>>;
+  password: () => Promise<AsyncIterator<String>>;
+  readTopics: () => Promise<AsyncIterator<String>>;
+  realname: () => Promise<AsyncIterator<String>>;
+  registered: () => Promise<AsyncIterator<Int>>;
+  registrationIp: () => Promise<AsyncIterator<String>>;
+  savePass: () => Promise<AsyncIterator<Boolean>>;
+  showAvatars: () => Promise<AsyncIterator<Boolean>>;
+  showImg: () => Promise<AsyncIterator<Boolean>>;
+  showImgSig: () => Promise<AsyncIterator<Boolean>>;
+  showSig: () => Promise<AsyncIterator<Boolean>>;
+  showSmilies: () => Promise<AsyncIterator<Boolean>>;
+  signature: () => Promise<AsyncIterator<String>>;
+  style: () => Promise<AsyncIterator<String>>;
+  timezone: () => Promise<AsyncIterator<Float>>;
+  title: () => Promise<AsyncIterator<String>>;
+  url: () => Promise<AsyncIterator<String>>;
+  useAvatar: () => Promise<AsyncIterator<Boolean>>;
+  username: () => Promise<AsyncIterator<String>>;
+  yahoo: () => Promise<AsyncIterator<String>>;
+}
+
+export interface PunbbUserthreadSubscriptionPayload {
+  mutation: MutationType;
+  node: PunbbUserthread;
+  updatedFields: String[];
+  previousValues: PunbbUserthreadPreviousValues;
+}
+
+export interface PunbbUserthreadSubscriptionPayloadPromise
+  extends Promise<PunbbUserthreadSubscriptionPayload>,
+    Fragmentable {
+  mutation: () => Promise<MutationType>;
+  node: <T = PunbbUserthreadPromise>() => T;
+  updatedFields: () => Promise<String[]>;
+  previousValues: <T = PunbbUserthreadPreviousValuesPromise>() => T;
+}
+
+export interface PunbbUserthreadSubscriptionPayloadSubscription
+  extends Promise<AsyncIterator<PunbbUserthreadSubscriptionPayload>>,
+    Fragmentable {
+  mutation: () => Promise<AsyncIterator<MutationType>>;
+  node: <T = PunbbUserthreadSubscription>() => T;
+  updatedFields: () => Promise<AsyncIterator<String[]>>;
+  previousValues: <T = PunbbUserthreadPreviousValuesSubscription>() => T;
+}
+
+export interface PunbbUserthreadPreviousValues {
+  lastRead?: Int;
+  posted: Boolean;
+}
+
+export interface PunbbUserthreadPreviousValuesPromise
+  extends Promise<PunbbUserthreadPreviousValues>,
+    Fragmentable {
+  lastRead: () => Promise<Int>;
+  posted: () => Promise<Boolean>;
+}
+
+export interface PunbbUserthreadPreviousValuesSubscription
+  extends Promise<AsyncIterator<PunbbUserthreadPreviousValues>>,
+    Fragmentable {
+  lastRead: () => Promise<AsyncIterator<Int>>;
+  posted: () => Promise<AsyncIterator<Boolean>>;
 }
 
 /*
-The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 */
-export type ID_Input = string | number;
-export type ID_Output = string;
+export type Int = number;
 
 /*
 The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.
@@ -784,9 +7277,15 @@ The `Boolean` scalar type represents `true` or `false`.
 export type Boolean = boolean;
 
 /*
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
 */
-export type Int = number;
+export type ID_Input = string | number;
+export type ID_Output = string;
+
+/*
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+*/
+export type Float = number;
 
 export type Long = string;
 
@@ -796,11 +7295,87 @@ export type Long = string;
 
 export const models: Model[] = [
   {
-    name: "User",
+    name: "PunbbBan",
     embedded: false
   },
   {
-    name: "Post",
+    name: "PunbbCategory",
+    embedded: false
+  },
+  {
+    name: "PunbbCensoring",
+    embedded: false
+  },
+  {
+    name: "PunbbConfig",
+    embedded: false
+  },
+  {
+    name: "PunbbForum",
+    embedded: false
+  },
+  {
+    name: "PunbbForumPerm",
+    embedded: false
+  },
+  {
+    name: "PunbbGroup",
+    embedded: false
+  },
+  {
+    name: "PunbbOnline",
+    embedded: false
+  },
+  {
+    name: "PunbbPoll",
+    embedded: false
+  },
+  {
+    name: "PunbbPost",
+    embedded: false
+  },
+  {
+    name: "PunbbRank",
+    embedded: false
+  },
+  {
+    name: "PunbbReport",
+    embedded: false
+  },
+  {
+    name: "PunbbSearchCache",
+    embedded: false
+  },
+  {
+    name: "PunbbSearchMatch",
+    embedded: false
+  },
+  {
+    name: "PunbbSearchWord",
+    embedded: false
+  },
+  {
+    name: "PunbbTopic",
+    embedded: false
+  },
+  {
+    name: "PunbbUploaded",
+    embedded: false
+  },
+  {
+    name: "PunbbUploadsConf",
+    embedded: false
+  },
+  {
+    name: "PunbbUploadsType",
+    embedded: false
+  },
+  {
+    name: "PunbbUser",
+    embedded: false
+  },
+  {
+    name: "PunbbUserthread",
     embedded: false
   }
 ];

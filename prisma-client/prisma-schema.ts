@@ -2,11 +2,87 @@
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-export const typeDefs = /* GraphQL */ `type AggregatePost {
+export const typeDefs = /* GraphQL */ `type AggregatePunbbBan {
   count: Int!
 }
 
-type AggregateUser {
+type AggregatePunbbCategory {
+  count: Int!
+}
+
+type AggregatePunbbCensoring {
+  count: Int!
+}
+
+type AggregatePunbbConfig {
+  count: Int!
+}
+
+type AggregatePunbbForum {
+  count: Int!
+}
+
+type AggregatePunbbForumPerm {
+  count: Int!
+}
+
+type AggregatePunbbGroup {
+  count: Int!
+}
+
+type AggregatePunbbOnline {
+  count: Int!
+}
+
+type AggregatePunbbPoll {
+  count: Int!
+}
+
+type AggregatePunbbPost {
+  count: Int!
+}
+
+type AggregatePunbbRank {
+  count: Int!
+}
+
+type AggregatePunbbReport {
+  count: Int!
+}
+
+type AggregatePunbbSearchCache {
+  count: Int!
+}
+
+type AggregatePunbbSearchMatch {
+  count: Int!
+}
+
+type AggregatePunbbSearchWord {
+  count: Int!
+}
+
+type AggregatePunbbTopic {
+  count: Int!
+}
+
+type AggregatePunbbUploaded {
+  count: Int!
+}
+
+type AggregatePunbbUploadsConf {
+  count: Int!
+}
+
+type AggregatePunbbUploadsType {
+  count: Int!
+}
+
+type AggregatePunbbUser {
+  count: Int!
+}
+
+type AggregatePunbbUserthread {
   count: Int!
 }
 
@@ -17,18 +93,114 @@ type BatchPayload {
 scalar Long
 
 type Mutation {
-  createPost(data: PostCreateInput!): Post!
-  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
-  updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
-  upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!
-  deletePost(where: PostWhereUniqueInput!): Post
-  deleteManyPosts(where: PostWhereInput): BatchPayload!
-  createUser(data: UserCreateInput!): User!
-  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
-  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
-  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
-  deleteUser(where: UserWhereUniqueInput!): User
-  deleteManyUsers(where: UserWhereInput): BatchPayload!
+  createPunbbBan(data: PunbbBanCreateInput!): PunbbBan!
+  updatePunbbBan(data: PunbbBanUpdateInput!, where: PunbbBanWhereUniqueInput!): PunbbBan
+  updateManyPunbbBans(data: PunbbBanUpdateManyMutationInput!, where: PunbbBanWhereInput): BatchPayload!
+  upsertPunbbBan(where: PunbbBanWhereUniqueInput!, create: PunbbBanCreateInput!, update: PunbbBanUpdateInput!): PunbbBan!
+  deletePunbbBan(where: PunbbBanWhereUniqueInput!): PunbbBan
+  deleteManyPunbbBans(where: PunbbBanWhereInput): BatchPayload!
+  createPunbbCategory(data: PunbbCategoryCreateInput!): PunbbCategory!
+  updatePunbbCategory(data: PunbbCategoryUpdateInput!, where: PunbbCategoryWhereUniqueInput!): PunbbCategory
+  updateManyPunbbCategories(data: PunbbCategoryUpdateManyMutationInput!, where: PunbbCategoryWhereInput): BatchPayload!
+  upsertPunbbCategory(where: PunbbCategoryWhereUniqueInput!, create: PunbbCategoryCreateInput!, update: PunbbCategoryUpdateInput!): PunbbCategory!
+  deletePunbbCategory(where: PunbbCategoryWhereUniqueInput!): PunbbCategory
+  deleteManyPunbbCategories(where: PunbbCategoryWhereInput): BatchPayload!
+  createPunbbCensoring(data: PunbbCensoringCreateInput!): PunbbCensoring!
+  updatePunbbCensoring(data: PunbbCensoringUpdateInput!, where: PunbbCensoringWhereUniqueInput!): PunbbCensoring
+  updateManyPunbbCensorings(data: PunbbCensoringUpdateManyMutationInput!, where: PunbbCensoringWhereInput): BatchPayload!
+  upsertPunbbCensoring(where: PunbbCensoringWhereUniqueInput!, create: PunbbCensoringCreateInput!, update: PunbbCensoringUpdateInput!): PunbbCensoring!
+  deletePunbbCensoring(where: PunbbCensoringWhereUniqueInput!): PunbbCensoring
+  deleteManyPunbbCensorings(where: PunbbCensoringWhereInput): BatchPayload!
+  createPunbbConfig(data: PunbbConfigCreateInput!): PunbbConfig!
+  updatePunbbConfig(data: PunbbConfigUpdateInput!, where: PunbbConfigWhereUniqueInput!): PunbbConfig
+  updateManyPunbbConfigs(data: PunbbConfigUpdateManyMutationInput!, where: PunbbConfigWhereInput): BatchPayload!
+  upsertPunbbConfig(where: PunbbConfigWhereUniqueInput!, create: PunbbConfigCreateInput!, update: PunbbConfigUpdateInput!): PunbbConfig!
+  deletePunbbConfig(where: PunbbConfigWhereUniqueInput!): PunbbConfig
+  deleteManyPunbbConfigs(where: PunbbConfigWhereInput): BatchPayload!
+  createPunbbForum(data: PunbbForumCreateInput!): PunbbForum!
+  updatePunbbForum(data: PunbbForumUpdateInput!, where: PunbbForumWhereUniqueInput!): PunbbForum
+  updateManyPunbbForums(data: PunbbForumUpdateManyMutationInput!, where: PunbbForumWhereInput): BatchPayload!
+  upsertPunbbForum(where: PunbbForumWhereUniqueInput!, create: PunbbForumCreateInput!, update: PunbbForumUpdateInput!): PunbbForum!
+  deletePunbbForum(where: PunbbForumWhereUniqueInput!): PunbbForum
+  deleteManyPunbbForums(where: PunbbForumWhereInput): BatchPayload!
+  createPunbbForumPerm(data: PunbbForumPermCreateInput!): PunbbForumPerm!
+  updateManyPunbbForumPerms(data: PunbbForumPermUpdateManyMutationInput!, where: PunbbForumPermWhereInput): BatchPayload!
+  deleteManyPunbbForumPerms(where: PunbbForumPermWhereInput): BatchPayload!
+  createPunbbGroup(data: PunbbGroupCreateInput!): PunbbGroup!
+  updatePunbbGroup(data: PunbbGroupUpdateInput!, where: PunbbGroupWhereUniqueInput!): PunbbGroup
+  updateManyPunbbGroups(data: PunbbGroupUpdateManyMutationInput!, where: PunbbGroupWhereInput): BatchPayload!
+  upsertPunbbGroup(where: PunbbGroupWhereUniqueInput!, create: PunbbGroupCreateInput!, update: PunbbGroupUpdateInput!): PunbbGroup!
+  deletePunbbGroup(where: PunbbGroupWhereUniqueInput!): PunbbGroup
+  deleteManyPunbbGroups(where: PunbbGroupWhereInput): BatchPayload!
+  createPunbbOnline(data: PunbbOnlineCreateInput!): PunbbOnline!
+  updateManyPunbbOnlines(data: PunbbOnlineUpdateManyMutationInput!, where: PunbbOnlineWhereInput): BatchPayload!
+  deleteManyPunbbOnlines(where: PunbbOnlineWhereInput): BatchPayload!
+  createPunbbPoll(data: PunbbPollCreateInput!): PunbbPoll!
+  updatePunbbPoll(data: PunbbPollUpdateInput!, where: PunbbPollWhereUniqueInput!): PunbbPoll
+  updateManyPunbbPolls(data: PunbbPollUpdateManyMutationInput!, where: PunbbPollWhereInput): BatchPayload!
+  upsertPunbbPoll(where: PunbbPollWhereUniqueInput!, create: PunbbPollCreateInput!, update: PunbbPollUpdateInput!): PunbbPoll!
+  deletePunbbPoll(where: PunbbPollWhereUniqueInput!): PunbbPoll
+  deleteManyPunbbPolls(where: PunbbPollWhereInput): BatchPayload!
+  createPunbbPost(data: PunbbPostCreateInput!): PunbbPost!
+  updatePunbbPost(data: PunbbPostUpdateInput!, where: PunbbPostWhereUniqueInput!): PunbbPost
+  updateManyPunbbPosts(data: PunbbPostUpdateManyMutationInput!, where: PunbbPostWhereInput): BatchPayload!
+  upsertPunbbPost(where: PunbbPostWhereUniqueInput!, create: PunbbPostCreateInput!, update: PunbbPostUpdateInput!): PunbbPost!
+  deletePunbbPost(where: PunbbPostWhereUniqueInput!): PunbbPost
+  deleteManyPunbbPosts(where: PunbbPostWhereInput): BatchPayload!
+  createPunbbRank(data: PunbbRankCreateInput!): PunbbRank!
+  updatePunbbRank(data: PunbbRankUpdateInput!, where: PunbbRankWhereUniqueInput!): PunbbRank
+  updateManyPunbbRanks(data: PunbbRankUpdateManyMutationInput!, where: PunbbRankWhereInput): BatchPayload!
+  upsertPunbbRank(where: PunbbRankWhereUniqueInput!, create: PunbbRankCreateInput!, update: PunbbRankUpdateInput!): PunbbRank!
+  deletePunbbRank(where: PunbbRankWhereUniqueInput!): PunbbRank
+  deleteManyPunbbRanks(where: PunbbRankWhereInput): BatchPayload!
+  createPunbbReport(data: PunbbReportCreateInput!): PunbbReport!
+  updatePunbbReport(data: PunbbReportUpdateInput!, where: PunbbReportWhereUniqueInput!): PunbbReport
+  updateManyPunbbReports(data: PunbbReportUpdateManyMutationInput!, where: PunbbReportWhereInput): BatchPayload!
+  upsertPunbbReport(where: PunbbReportWhereUniqueInput!, create: PunbbReportCreateInput!, update: PunbbReportUpdateInput!): PunbbReport!
+  deletePunbbReport(where: PunbbReportWhereUniqueInput!): PunbbReport
+  deleteManyPunbbReports(where: PunbbReportWhereInput): BatchPayload!
+  createPunbbSearchCache(data: PunbbSearchCacheCreateInput!): PunbbSearchCache!
+  updatePunbbSearchCache(data: PunbbSearchCacheUpdateInput!, where: PunbbSearchCacheWhereUniqueInput!): PunbbSearchCache
+  updateManyPunbbSearchCaches(data: PunbbSearchCacheUpdateManyMutationInput!, where: PunbbSearchCacheWhereInput): BatchPayload!
+  upsertPunbbSearchCache(where: PunbbSearchCacheWhereUniqueInput!, create: PunbbSearchCacheCreateInput!, update: PunbbSearchCacheUpdateInput!): PunbbSearchCache!
+  deletePunbbSearchCache(where: PunbbSearchCacheWhereUniqueInput!): PunbbSearchCache
+  deleteManyPunbbSearchCaches(where: PunbbSearchCacheWhereInput): BatchPayload!
+  createPunbbSearchMatch(data: PunbbSearchMatchCreateInput!): PunbbSearchMatch!
+  updateManyPunbbSearchMatches(data: PunbbSearchMatchUpdateManyMutationInput!, where: PunbbSearchMatchWhereInput): BatchPayload!
+  deleteManyPunbbSearchMatches(where: PunbbSearchMatchWhereInput): BatchPayload!
+  createPunbbSearchWord(data: PunbbSearchWordCreateInput!): PunbbSearchWord!
+  deletePunbbSearchWord(where: PunbbSearchWordWhereUniqueInput!): PunbbSearchWord
+  deleteManyPunbbSearchWords(where: PunbbSearchWordWhereInput): BatchPayload!
+  createPunbbTopic(data: PunbbTopicCreateInput!): PunbbTopic!
+  updatePunbbTopic(data: PunbbTopicUpdateInput!, where: PunbbTopicWhereUniqueInput!): PunbbTopic
+  updateManyPunbbTopics(data: PunbbTopicUpdateManyMutationInput!, where: PunbbTopicWhereInput): BatchPayload!
+  upsertPunbbTopic(where: PunbbTopicWhereUniqueInput!, create: PunbbTopicCreateInput!, update: PunbbTopicUpdateInput!): PunbbTopic!
+  deletePunbbTopic(where: PunbbTopicWhereUniqueInput!): PunbbTopic
+  deleteManyPunbbTopics(where: PunbbTopicWhereInput): BatchPayload!
+  createPunbbUploaded(data: PunbbUploadedCreateInput!): PunbbUploaded!
+  updatePunbbUploaded(data: PunbbUploadedUpdateInput!, where: PunbbUploadedWhereUniqueInput!): PunbbUploaded
+  updateManyPunbbUploadeds(data: PunbbUploadedUpdateManyMutationInput!, where: PunbbUploadedWhereInput): BatchPayload!
+  upsertPunbbUploaded(where: PunbbUploadedWhereUniqueInput!, create: PunbbUploadedCreateInput!, update: PunbbUploadedUpdateInput!): PunbbUploaded!
+  deletePunbbUploaded(where: PunbbUploadedWhereUniqueInput!): PunbbUploaded
+  deleteManyPunbbUploadeds(where: PunbbUploadedWhereInput): BatchPayload!
+  createPunbbUploadsConf(data: PunbbUploadsConfCreateInput!): PunbbUploadsConf!
+  updateManyPunbbUploadsConfs(data: PunbbUploadsConfUpdateManyMutationInput!, where: PunbbUploadsConfWhereInput): BatchPayload!
+  deleteManyPunbbUploadsConfs(where: PunbbUploadsConfWhereInput): BatchPayload!
+  createPunbbUploadsType(data: PunbbUploadsTypeCreateInput!): PunbbUploadsType!
+  updatePunbbUploadsType(data: PunbbUploadsTypeUpdateInput!, where: PunbbUploadsTypeWhereUniqueInput!): PunbbUploadsType
+  updateManyPunbbUploadsTypes(data: PunbbUploadsTypeUpdateManyMutationInput!, where: PunbbUploadsTypeWhereInput): BatchPayload!
+  upsertPunbbUploadsType(where: PunbbUploadsTypeWhereUniqueInput!, create: PunbbUploadsTypeCreateInput!, update: PunbbUploadsTypeUpdateInput!): PunbbUploadsType!
+  deletePunbbUploadsType(where: PunbbUploadsTypeWhereUniqueInput!): PunbbUploadsType
+  deleteManyPunbbUploadsTypes(where: PunbbUploadsTypeWhereInput): BatchPayload!
+  createPunbbUser(data: PunbbUserCreateInput!): PunbbUser!
+  updatePunbbUser(data: PunbbUserUpdateInput!, where: PunbbUserWhereUniqueInput!): PunbbUser
+  updateManyPunbbUsers(data: PunbbUserUpdateManyMutationInput!, where: PunbbUserWhereInput): BatchPayload!
+  upsertPunbbUser(where: PunbbUserWhereUniqueInput!, create: PunbbUserCreateInput!, update: PunbbUserUpdateInput!): PunbbUser!
+  deletePunbbUser(where: PunbbUserWhereUniqueInput!): PunbbUser
+  deleteManyPunbbUsers(where: PunbbUserWhereInput): BatchPayload!
+  createPunbbUserthread(data: PunbbUserthreadCreateInput!): PunbbUserthread!
+  updateManyPunbbUserthreads(data: PunbbUserthreadUpdateManyMutationInput!, where: PunbbUserthreadWhereInput): BatchPayload!
+  deleteManyPunbbUserthreads(where: PunbbUserthreadWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -48,330 +220,102 @@ type PageInfo {
   endCursor: String
 }
 
-type Post {
-  id: ID!
-  title: String!
-  published: Boolean!
-  author: User
+type PunbbBan {
+  id: Int!
+  email: String
+  expire: Int
+  ip: String
+  message: String
+  username: String
 }
 
-type PostConnection {
+type PunbbBanConnection {
   pageInfo: PageInfo!
-  edges: [PostEdge]!
-  aggregate: AggregatePost!
+  edges: [PunbbBanEdge]!
+  aggregate: AggregatePunbbBan!
 }
 
-input PostCreateInput {
-  id: ID
-  title: String!
-  published: Boolean
-  author: UserCreateOneWithoutPostsInput
+input PunbbBanCreateInput {
+  id: Int
+  email: String
+  expire: Int
+  ip: String
+  message: String
+  username: String
 }
 
-input PostCreateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  connect: [PostWhereUniqueInput!]
-}
-
-input PostCreateWithoutAuthorInput {
-  id: ID
-  title: String!
-  published: Boolean
-}
-
-type PostEdge {
-  node: Post!
+type PunbbBanEdge {
+  node: PunbbBan!
   cursor: String!
 }
 
-enum PostOrderByInput {
-  id_ASC
-  id_DESC
-  title_ASC
-  title_DESC
-  published_ASC
-  published_DESC
-}
-
-type PostPreviousValues {
-  id: ID!
-  title: String!
-  published: Boolean!
-}
-
-input PostScalarWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  published: Boolean
-  published_not: Boolean
-  AND: [PostScalarWhereInput!]
-  OR: [PostScalarWhereInput!]
-  NOT: [PostScalarWhereInput!]
-}
-
-type PostSubscriptionPayload {
-  mutation: MutationType!
-  node: Post
-  updatedFields: [String!]
-  previousValues: PostPreviousValues
-}
-
-input PostSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: PostWhereInput
-  AND: [PostSubscriptionWhereInput!]
-  OR: [PostSubscriptionWhereInput!]
-  NOT: [PostSubscriptionWhereInput!]
-}
-
-input PostUpdateInput {
-  title: String
-  published: Boolean
-  author: UserUpdateOneWithoutPostsInput
-}
-
-input PostUpdateManyDataInput {
-  title: String
-  published: Boolean
-}
-
-input PostUpdateManyMutationInput {
-  title: String
-  published: Boolean
-}
-
-input PostUpdateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  delete: [PostWhereUniqueInput!]
-  connect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  disconnect: [PostWhereUniqueInput!]
-  update: [PostUpdateWithWhereUniqueWithoutAuthorInput!]
-  upsert: [PostUpsertWithWhereUniqueWithoutAuthorInput!]
-  deleteMany: [PostScalarWhereInput!]
-  updateMany: [PostUpdateManyWithWhereNestedInput!]
-}
-
-input PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput!
-  data: PostUpdateManyDataInput!
-}
-
-input PostUpdateWithoutAuthorDataInput {
-  title: String
-  published: Boolean
-}
-
-input PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  data: PostUpdateWithoutAuthorDataInput!
-}
-
-input PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  update: PostUpdateWithoutAuthorDataInput!
-  create: PostCreateWithoutAuthorInput!
-}
-
-input PostWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  published: Boolean
-  published_not: Boolean
-  author: UserWhereInput
-  AND: [PostWhereInput!]
-  OR: [PostWhereInput!]
-  NOT: [PostWhereInput!]
-}
-
-input PostWhereUniqueInput {
-  id: ID
-}
-
-type Query {
-  post(where: PostWhereUniqueInput!): Post
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
-  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
-  user(where: UserWhereUniqueInput!): User
-  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
-  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
-  node(id: ID!): Node
-}
-
-type Subscription {
-  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
-  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
-}
-
-type User {
-  id: ID!
-  email: String
-  name: String!
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
-}
-
-type UserConnection {
-  pageInfo: PageInfo!
-  edges: [UserEdge]!
-  aggregate: AggregateUser!
-}
-
-input UserCreateInput {
-  id: ID
-  email: String
-  name: String!
-  posts: PostCreateManyWithoutAuthorInput
-}
-
-input UserCreateOneWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateWithoutPostsInput {
-  id: ID
-  email: String
-  name: String!
-}
-
-type UserEdge {
-  node: User!
-  cursor: String!
-}
-
-enum UserOrderByInput {
+enum PunbbBanOrderByInput {
   id_ASC
   id_DESC
   email_ASC
   email_DESC
-  name_ASC
-  name_DESC
+  expire_ASC
+  expire_DESC
+  ip_ASC
+  ip_DESC
+  message_ASC
+  message_DESC
+  username_ASC
+  username_DESC
 }
 
-type UserPreviousValues {
-  id: ID!
+type PunbbBanPreviousValues {
+  id: Int!
   email: String
-  name: String!
+  expire: Int
+  ip: String
+  message: String
+  username: String
 }
 
-type UserSubscriptionPayload {
+type PunbbBanSubscriptionPayload {
   mutation: MutationType!
-  node: User
+  node: PunbbBan
   updatedFields: [String!]
-  previousValues: UserPreviousValues
+  previousValues: PunbbBanPreviousValues
 }
 
-input UserSubscriptionWhereInput {
+input PunbbBanSubscriptionWhereInput {
   mutation_in: [MutationType!]
   updatedFields_contains: String
   updatedFields_contains_every: [String!]
   updatedFields_contains_some: [String!]
-  node: UserWhereInput
-  AND: [UserSubscriptionWhereInput!]
-  OR: [UserSubscriptionWhereInput!]
-  NOT: [UserSubscriptionWhereInput!]
+  node: PunbbBanWhereInput
+  AND: [PunbbBanSubscriptionWhereInput!]
+  OR: [PunbbBanSubscriptionWhereInput!]
+  NOT: [PunbbBanSubscriptionWhereInput!]
 }
 
-input UserUpdateInput {
+input PunbbBanUpdateInput {
   email: String
-  name: String
-  posts: PostUpdateManyWithoutAuthorInput
+  expire: Int
+  ip: String
+  message: String
+  username: String
 }
 
-input UserUpdateManyMutationInput {
+input PunbbBanUpdateManyMutationInput {
   email: String
-  name: String
+  expire: Int
+  ip: String
+  message: String
+  username: String
 }
 
-input UserUpdateOneWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  update: UserUpdateWithoutPostsDataInput
-  upsert: UserUpsertWithoutPostsInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: UserWhereUniqueInput
-}
-
-input UserUpdateWithoutPostsDataInput {
-  email: String
-  name: String
-}
-
-input UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput!
-  create: UserCreateWithoutPostsInput!
-}
-
-input UserWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
+input PunbbBanWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
   email: String
   email_not: String
   email_in: [String!]
@@ -386,30 +330,3576 @@ input UserWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  posts_every: PostWhereInput
-  posts_some: PostWhereInput
-  posts_none: PostWhereInput
-  AND: [UserWhereInput!]
-  OR: [UserWhereInput!]
-  NOT: [UserWhereInput!]
+  expire: Int
+  expire_not: Int
+  expire_in: [Int!]
+  expire_not_in: [Int!]
+  expire_lt: Int
+  expire_lte: Int
+  expire_gt: Int
+  expire_gte: Int
+  ip: String
+  ip_not: String
+  ip_in: [String!]
+  ip_not_in: [String!]
+  ip_lt: String
+  ip_lte: String
+  ip_gt: String
+  ip_gte: String
+  ip_contains: String
+  ip_not_contains: String
+  ip_starts_with: String
+  ip_not_starts_with: String
+  ip_ends_with: String
+  ip_not_ends_with: String
+  message: String
+  message_not: String
+  message_in: [String!]
+  message_not_in: [String!]
+  message_lt: String
+  message_lte: String
+  message_gt: String
+  message_gte: String
+  message_contains: String
+  message_not_contains: String
+  message_starts_with: String
+  message_not_starts_with: String
+  message_ends_with: String
+  message_not_ends_with: String
+  username: String
+  username_not: String
+  username_in: [String!]
+  username_not_in: [String!]
+  username_lt: String
+  username_lte: String
+  username_gt: String
+  username_gte: String
+  username_contains: String
+  username_not_contains: String
+  username_starts_with: String
+  username_not_starts_with: String
+  username_ends_with: String
+  username_not_ends_with: String
+  AND: [PunbbBanWhereInput!]
+  OR: [PunbbBanWhereInput!]
+  NOT: [PunbbBanWhereInput!]
 }
 
-input UserWhereUniqueInput {
-  id: ID
+input PunbbBanWhereUniqueInput {
+  id: Int
+}
+
+type PunbbCategory {
+  id: Int!
+  catName: String!
+  dispPosition: Int!
+}
+
+type PunbbCategoryConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbCategoryEdge]!
+  aggregate: AggregatePunbbCategory!
+}
+
+input PunbbCategoryCreateInput {
+  id: Int
+  catName: String
+  dispPosition: Int
+}
+
+type PunbbCategoryEdge {
+  node: PunbbCategory!
+  cursor: String!
+}
+
+enum PunbbCategoryOrderByInput {
+  id_ASC
+  id_DESC
+  catName_ASC
+  catName_DESC
+  dispPosition_ASC
+  dispPosition_DESC
+}
+
+type PunbbCategoryPreviousValues {
+  id: Int!
+  catName: String!
+  dispPosition: Int!
+}
+
+type PunbbCategorySubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbCategory
+  updatedFields: [String!]
+  previousValues: PunbbCategoryPreviousValues
+}
+
+input PunbbCategorySubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbCategoryWhereInput
+  AND: [PunbbCategorySubscriptionWhereInput!]
+  OR: [PunbbCategorySubscriptionWhereInput!]
+  NOT: [PunbbCategorySubscriptionWhereInput!]
+}
+
+input PunbbCategoryUpdateInput {
+  catName: String
+  dispPosition: Int
+}
+
+input PunbbCategoryUpdateManyMutationInput {
+  catName: String
+  dispPosition: Int
+}
+
+input PunbbCategoryWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  catName: String
+  catName_not: String
+  catName_in: [String!]
+  catName_not_in: [String!]
+  catName_lt: String
+  catName_lte: String
+  catName_gt: String
+  catName_gte: String
+  catName_contains: String
+  catName_not_contains: String
+  catName_starts_with: String
+  catName_not_starts_with: String
+  catName_ends_with: String
+  catName_not_ends_with: String
+  dispPosition: Int
+  dispPosition_not: Int
+  dispPosition_in: [Int!]
+  dispPosition_not_in: [Int!]
+  dispPosition_lt: Int
+  dispPosition_lte: Int
+  dispPosition_gt: Int
+  dispPosition_gte: Int
+  AND: [PunbbCategoryWhereInput!]
+  OR: [PunbbCategoryWhereInput!]
+  NOT: [PunbbCategoryWhereInput!]
+}
+
+input PunbbCategoryWhereUniqueInput {
+  id: Int
+}
+
+type PunbbCensoring {
+  id: Int!
+  replaceWith: String!
+  searchFor: String!
+}
+
+type PunbbCensoringConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbCensoringEdge]!
+  aggregate: AggregatePunbbCensoring!
+}
+
+input PunbbCensoringCreateInput {
+  id: Int
+  replaceWith: String
+  searchFor: String
+}
+
+type PunbbCensoringEdge {
+  node: PunbbCensoring!
+  cursor: String!
+}
+
+enum PunbbCensoringOrderByInput {
+  id_ASC
+  id_DESC
+  replaceWith_ASC
+  replaceWith_DESC
+  searchFor_ASC
+  searchFor_DESC
+}
+
+type PunbbCensoringPreviousValues {
+  id: Int!
+  replaceWith: String!
+  searchFor: String!
+}
+
+type PunbbCensoringSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbCensoring
+  updatedFields: [String!]
+  previousValues: PunbbCensoringPreviousValues
+}
+
+input PunbbCensoringSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbCensoringWhereInput
+  AND: [PunbbCensoringSubscriptionWhereInput!]
+  OR: [PunbbCensoringSubscriptionWhereInput!]
+  NOT: [PunbbCensoringSubscriptionWhereInput!]
+}
+
+input PunbbCensoringUpdateInput {
+  replaceWith: String
+  searchFor: String
+}
+
+input PunbbCensoringUpdateManyMutationInput {
+  replaceWith: String
+  searchFor: String
+}
+
+input PunbbCensoringWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  replaceWith: String
+  replaceWith_not: String
+  replaceWith_in: [String!]
+  replaceWith_not_in: [String!]
+  replaceWith_lt: String
+  replaceWith_lte: String
+  replaceWith_gt: String
+  replaceWith_gte: String
+  replaceWith_contains: String
+  replaceWith_not_contains: String
+  replaceWith_starts_with: String
+  replaceWith_not_starts_with: String
+  replaceWith_ends_with: String
+  replaceWith_not_ends_with: String
+  searchFor: String
+  searchFor_not: String
+  searchFor_in: [String!]
+  searchFor_not_in: [String!]
+  searchFor_lt: String
+  searchFor_lte: String
+  searchFor_gt: String
+  searchFor_gte: String
+  searchFor_contains: String
+  searchFor_not_contains: String
+  searchFor_starts_with: String
+  searchFor_not_starts_with: String
+  searchFor_ends_with: String
+  searchFor_not_ends_with: String
+  AND: [PunbbCensoringWhereInput!]
+  OR: [PunbbCensoringWhereInput!]
+  NOT: [PunbbCensoringWhereInput!]
+}
+
+input PunbbCensoringWhereUniqueInput {
+  id: Int
+}
+
+type PunbbConfig {
+  conf_name: ID!
+  confValue: String
+}
+
+type PunbbConfigConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbConfigEdge]!
+  aggregate: AggregatePunbbConfig!
+}
+
+input PunbbConfigCreateInput {
+  conf_name: ID
+  confValue: String
+}
+
+type PunbbConfigEdge {
+  node: PunbbConfig!
+  cursor: String!
+}
+
+enum PunbbConfigOrderByInput {
+  conf_name_ASC
+  conf_name_DESC
+  confValue_ASC
+  confValue_DESC
+}
+
+type PunbbConfigPreviousValues {
+  conf_name: ID!
+  confValue: String
+}
+
+type PunbbConfigSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbConfig
+  updatedFields: [String!]
+  previousValues: PunbbConfigPreviousValues
+}
+
+input PunbbConfigSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbConfigWhereInput
+  AND: [PunbbConfigSubscriptionWhereInput!]
+  OR: [PunbbConfigSubscriptionWhereInput!]
+  NOT: [PunbbConfigSubscriptionWhereInput!]
+}
+
+input PunbbConfigUpdateInput {
+  confValue: String
+}
+
+input PunbbConfigUpdateManyMutationInput {
+  confValue: String
+}
+
+input PunbbConfigWhereInput {
+  conf_name: ID
+  conf_name_not: ID
+  conf_name_in: [ID!]
+  conf_name_not_in: [ID!]
+  conf_name_lt: ID
+  conf_name_lte: ID
+  conf_name_gt: ID
+  conf_name_gte: ID
+  conf_name_contains: ID
+  conf_name_not_contains: ID
+  conf_name_starts_with: ID
+  conf_name_not_starts_with: ID
+  conf_name_ends_with: ID
+  conf_name_not_ends_with: ID
+  confValue: String
+  confValue_not: String
+  confValue_in: [String!]
+  confValue_not_in: [String!]
+  confValue_lt: String
+  confValue_lte: String
+  confValue_gt: String
+  confValue_gte: String
+  confValue_contains: String
+  confValue_not_contains: String
+  confValue_starts_with: String
+  confValue_not_starts_with: String
+  confValue_ends_with: String
+  confValue_not_ends_with: String
+  AND: [PunbbConfigWhereInput!]
+  OR: [PunbbConfigWhereInput!]
+  NOT: [PunbbConfigWhereInput!]
+}
+
+input PunbbConfigWhereUniqueInput {
+  conf_name: ID
+}
+
+type PunbbForum {
+  id: Int!
+  catId: Int!
+  dispPosition: Int!
+  forumDesc: String
+  forumName: String!
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  moderators: String
+  redirectUrl: String
+  sortBy: Boolean!
+}
+
+type PunbbForumConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbForumEdge]!
+  aggregate: AggregatePunbbForum!
+}
+
+input PunbbForumCreateInput {
+  id: Int
+  catId: Int
+  dispPosition: Int
+  forumDesc: String
+  forumName: String
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  moderators: String
+  redirectUrl: String
+  sortBy: Boolean
+}
+
+type PunbbForumEdge {
+  node: PunbbForum!
+  cursor: String!
+}
+
+enum PunbbForumOrderByInput {
+  id_ASC
+  id_DESC
+  catId_ASC
+  catId_DESC
+  dispPosition_ASC
+  dispPosition_DESC
+  forumDesc_ASC
+  forumDesc_DESC
+  forumName_ASC
+  forumName_DESC
+  lastPost_ASC
+  lastPost_DESC
+  lastPoster_ASC
+  lastPoster_DESC
+  lastPostId_ASC
+  lastPostId_DESC
+  moderators_ASC
+  moderators_DESC
+  redirectUrl_ASC
+  redirectUrl_DESC
+  sortBy_ASC
+  sortBy_DESC
+}
+
+type PunbbForumPerm {
+  postPolls: Boolean!
+  postReplies: Boolean!
+  postTopics: Boolean!
+  readForum: Boolean!
+}
+
+type PunbbForumPermConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbForumPermEdge]!
+  aggregate: AggregatePunbbForumPerm!
+}
+
+input PunbbForumPermCreateInput {
+  postPolls: Boolean
+  postReplies: Boolean
+  postTopics: Boolean
+  readForum: Boolean
+}
+
+type PunbbForumPermEdge {
+  node: PunbbForumPerm!
+  cursor: String!
+}
+
+enum PunbbForumPermOrderByInput {
+  postPolls_ASC
+  postPolls_DESC
+  postReplies_ASC
+  postReplies_DESC
+  postTopics_ASC
+  postTopics_DESC
+  readForum_ASC
+  readForum_DESC
+}
+
+type PunbbForumPermPreviousValues {
+  postPolls: Boolean!
+  postReplies: Boolean!
+  postTopics: Boolean!
+  readForum: Boolean!
+}
+
+type PunbbForumPermSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbForumPerm
+  updatedFields: [String!]
+  previousValues: PunbbForumPermPreviousValues
+}
+
+input PunbbForumPermSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbForumPermWhereInput
+  AND: [PunbbForumPermSubscriptionWhereInput!]
+  OR: [PunbbForumPermSubscriptionWhereInput!]
+  NOT: [PunbbForumPermSubscriptionWhereInput!]
+}
+
+input PunbbForumPermUpdateManyMutationInput {
+  postPolls: Boolean
+  postReplies: Boolean
+  postTopics: Boolean
+  readForum: Boolean
+}
+
+input PunbbForumPermWhereInput {
+  postPolls: Boolean
+  postPolls_not: Boolean
+  postReplies: Boolean
+  postReplies_not: Boolean
+  postTopics: Boolean
+  postTopics_not: Boolean
+  readForum: Boolean
+  readForum_not: Boolean
+  AND: [PunbbForumPermWhereInput!]
+  OR: [PunbbForumPermWhereInput!]
+  NOT: [PunbbForumPermWhereInput!]
+}
+
+type PunbbForumPreviousValues {
+  id: Int!
+  catId: Int!
+  dispPosition: Int!
+  forumDesc: String
+  forumName: String!
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  moderators: String
+  redirectUrl: String
+  sortBy: Boolean!
+}
+
+type PunbbForumSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbForum
+  updatedFields: [String!]
+  previousValues: PunbbForumPreviousValues
+}
+
+input PunbbForumSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbForumWhereInput
+  AND: [PunbbForumSubscriptionWhereInput!]
+  OR: [PunbbForumSubscriptionWhereInput!]
+  NOT: [PunbbForumSubscriptionWhereInput!]
+}
+
+input PunbbForumUpdateInput {
+  catId: Int
+  dispPosition: Int
+  forumDesc: String
+  forumName: String
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  moderators: String
+  redirectUrl: String
+  sortBy: Boolean
+}
+
+input PunbbForumUpdateManyMutationInput {
+  catId: Int
+  dispPosition: Int
+  forumDesc: String
+  forumName: String
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  moderators: String
+  redirectUrl: String
+  sortBy: Boolean
+}
+
+input PunbbForumWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  catId: Int
+  catId_not: Int
+  catId_in: [Int!]
+  catId_not_in: [Int!]
+  catId_lt: Int
+  catId_lte: Int
+  catId_gt: Int
+  catId_gte: Int
+  dispPosition: Int
+  dispPosition_not: Int
+  dispPosition_in: [Int!]
+  dispPosition_not_in: [Int!]
+  dispPosition_lt: Int
+  dispPosition_lte: Int
+  dispPosition_gt: Int
+  dispPosition_gte: Int
+  forumDesc: String
+  forumDesc_not: String
+  forumDesc_in: [String!]
+  forumDesc_not_in: [String!]
+  forumDesc_lt: String
+  forumDesc_lte: String
+  forumDesc_gt: String
+  forumDesc_gte: String
+  forumDesc_contains: String
+  forumDesc_not_contains: String
+  forumDesc_starts_with: String
+  forumDesc_not_starts_with: String
+  forumDesc_ends_with: String
+  forumDesc_not_ends_with: String
+  forumName: String
+  forumName_not: String
+  forumName_in: [String!]
+  forumName_not_in: [String!]
+  forumName_lt: String
+  forumName_lte: String
+  forumName_gt: String
+  forumName_gte: String
+  forumName_contains: String
+  forumName_not_contains: String
+  forumName_starts_with: String
+  forumName_not_starts_with: String
+  forumName_ends_with: String
+  forumName_not_ends_with: String
+  lastPost: Int
+  lastPost_not: Int
+  lastPost_in: [Int!]
+  lastPost_not_in: [Int!]
+  lastPost_lt: Int
+  lastPost_lte: Int
+  lastPost_gt: Int
+  lastPost_gte: Int
+  lastPoster: String
+  lastPoster_not: String
+  lastPoster_in: [String!]
+  lastPoster_not_in: [String!]
+  lastPoster_lt: String
+  lastPoster_lte: String
+  lastPoster_gt: String
+  lastPoster_gte: String
+  lastPoster_contains: String
+  lastPoster_not_contains: String
+  lastPoster_starts_with: String
+  lastPoster_not_starts_with: String
+  lastPoster_ends_with: String
+  lastPoster_not_ends_with: String
+  lastPostId: Int
+  lastPostId_not: Int
+  lastPostId_in: [Int!]
+  lastPostId_not_in: [Int!]
+  lastPostId_lt: Int
+  lastPostId_lte: Int
+  lastPostId_gt: Int
+  lastPostId_gte: Int
+  moderators: String
+  moderators_not: String
+  moderators_in: [String!]
+  moderators_not_in: [String!]
+  moderators_lt: String
+  moderators_lte: String
+  moderators_gt: String
+  moderators_gte: String
+  moderators_contains: String
+  moderators_not_contains: String
+  moderators_starts_with: String
+  moderators_not_starts_with: String
+  moderators_ends_with: String
+  moderators_not_ends_with: String
+  redirectUrl: String
+  redirectUrl_not: String
+  redirectUrl_in: [String!]
+  redirectUrl_not_in: [String!]
+  redirectUrl_lt: String
+  redirectUrl_lte: String
+  redirectUrl_gt: String
+  redirectUrl_gte: String
+  redirectUrl_contains: String
+  redirectUrl_not_contains: String
+  redirectUrl_starts_with: String
+  redirectUrl_not_starts_with: String
+  redirectUrl_ends_with: String
+  redirectUrl_not_ends_with: String
+  sortBy: Boolean
+  sortBy_not: Boolean
+  AND: [PunbbForumWhereInput!]
+  OR: [PunbbForumWhereInput!]
+  NOT: [PunbbForumWhereInput!]
+}
+
+input PunbbForumWhereUniqueInput {
+  id: Int
+}
+
+type PunbbGroup {
+  g_id: Int!
+  gDeletePosts: Boolean!
+  gDeleteTopics: Boolean!
+  gEditPosts: Boolean!
+  gEditSubjectsInterval: Int!
+  gPostFlood: Int!
+  gPostPolls: Boolean!
+  gPostReplies: Boolean!
+  gPostTopics: Boolean!
+  gReadBoard: Boolean!
+  gSearch: Boolean!
+  gSearchFlood: Int!
+  gSearchUsers: Boolean!
+  gSetTitle: Boolean!
+  gTitle: String!
+  gUserTitle: String
+}
+
+type PunbbGroupConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbGroupEdge]!
+  aggregate: AggregatePunbbGroup!
+}
+
+input PunbbGroupCreateInput {
+  g_id: Int
+  gDeletePosts: Boolean
+  gDeleteTopics: Boolean
+  gEditPosts: Boolean
+  gEditSubjectsInterval: Int
+  gPostFlood: Int
+  gPostPolls: Boolean
+  gPostReplies: Boolean
+  gPostTopics: Boolean
+  gReadBoard: Boolean
+  gSearch: Boolean
+  gSearchFlood: Int
+  gSearchUsers: Boolean
+  gSetTitle: Boolean
+  gTitle: String
+  gUserTitle: String
+}
+
+type PunbbGroupEdge {
+  node: PunbbGroup!
+  cursor: String!
+}
+
+enum PunbbGroupOrderByInput {
+  g_id_ASC
+  g_id_DESC
+  gDeletePosts_ASC
+  gDeletePosts_DESC
+  gDeleteTopics_ASC
+  gDeleteTopics_DESC
+  gEditPosts_ASC
+  gEditPosts_DESC
+  gEditSubjectsInterval_ASC
+  gEditSubjectsInterval_DESC
+  gPostFlood_ASC
+  gPostFlood_DESC
+  gPostPolls_ASC
+  gPostPolls_DESC
+  gPostReplies_ASC
+  gPostReplies_DESC
+  gPostTopics_ASC
+  gPostTopics_DESC
+  gReadBoard_ASC
+  gReadBoard_DESC
+  gSearch_ASC
+  gSearch_DESC
+  gSearchFlood_ASC
+  gSearchFlood_DESC
+  gSearchUsers_ASC
+  gSearchUsers_DESC
+  gSetTitle_ASC
+  gSetTitle_DESC
+  gTitle_ASC
+  gTitle_DESC
+  gUserTitle_ASC
+  gUserTitle_DESC
+}
+
+type PunbbGroupPreviousValues {
+  g_id: Int!
+  gDeletePosts: Boolean!
+  gDeleteTopics: Boolean!
+  gEditPosts: Boolean!
+  gEditSubjectsInterval: Int!
+  gPostFlood: Int!
+  gPostPolls: Boolean!
+  gPostReplies: Boolean!
+  gPostTopics: Boolean!
+  gReadBoard: Boolean!
+  gSearch: Boolean!
+  gSearchFlood: Int!
+  gSearchUsers: Boolean!
+  gSetTitle: Boolean!
+  gTitle: String!
+  gUserTitle: String
+}
+
+type PunbbGroupSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbGroup
+  updatedFields: [String!]
+  previousValues: PunbbGroupPreviousValues
+}
+
+input PunbbGroupSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbGroupWhereInput
+  AND: [PunbbGroupSubscriptionWhereInput!]
+  OR: [PunbbGroupSubscriptionWhereInput!]
+  NOT: [PunbbGroupSubscriptionWhereInput!]
+}
+
+input PunbbGroupUpdateInput {
+  gDeletePosts: Boolean
+  gDeleteTopics: Boolean
+  gEditPosts: Boolean
+  gEditSubjectsInterval: Int
+  gPostFlood: Int
+  gPostPolls: Boolean
+  gPostReplies: Boolean
+  gPostTopics: Boolean
+  gReadBoard: Boolean
+  gSearch: Boolean
+  gSearchFlood: Int
+  gSearchUsers: Boolean
+  gSetTitle: Boolean
+  gTitle: String
+  gUserTitle: String
+}
+
+input PunbbGroupUpdateManyMutationInput {
+  gDeletePosts: Boolean
+  gDeleteTopics: Boolean
+  gEditPosts: Boolean
+  gEditSubjectsInterval: Int
+  gPostFlood: Int
+  gPostPolls: Boolean
+  gPostReplies: Boolean
+  gPostTopics: Boolean
+  gReadBoard: Boolean
+  gSearch: Boolean
+  gSearchFlood: Int
+  gSearchUsers: Boolean
+  gSetTitle: Boolean
+  gTitle: String
+  gUserTitle: String
+}
+
+input PunbbGroupWhereInput {
+  g_id: Int
+  g_id_not: Int
+  g_id_in: [Int!]
+  g_id_not_in: [Int!]
+  g_id_lt: Int
+  g_id_lte: Int
+  g_id_gt: Int
+  g_id_gte: Int
+  gDeletePosts: Boolean
+  gDeletePosts_not: Boolean
+  gDeleteTopics: Boolean
+  gDeleteTopics_not: Boolean
+  gEditPosts: Boolean
+  gEditPosts_not: Boolean
+  gEditSubjectsInterval: Int
+  gEditSubjectsInterval_not: Int
+  gEditSubjectsInterval_in: [Int!]
+  gEditSubjectsInterval_not_in: [Int!]
+  gEditSubjectsInterval_lt: Int
+  gEditSubjectsInterval_lte: Int
+  gEditSubjectsInterval_gt: Int
+  gEditSubjectsInterval_gte: Int
+  gPostFlood: Int
+  gPostFlood_not: Int
+  gPostFlood_in: [Int!]
+  gPostFlood_not_in: [Int!]
+  gPostFlood_lt: Int
+  gPostFlood_lte: Int
+  gPostFlood_gt: Int
+  gPostFlood_gte: Int
+  gPostPolls: Boolean
+  gPostPolls_not: Boolean
+  gPostReplies: Boolean
+  gPostReplies_not: Boolean
+  gPostTopics: Boolean
+  gPostTopics_not: Boolean
+  gReadBoard: Boolean
+  gReadBoard_not: Boolean
+  gSearch: Boolean
+  gSearch_not: Boolean
+  gSearchFlood: Int
+  gSearchFlood_not: Int
+  gSearchFlood_in: [Int!]
+  gSearchFlood_not_in: [Int!]
+  gSearchFlood_lt: Int
+  gSearchFlood_lte: Int
+  gSearchFlood_gt: Int
+  gSearchFlood_gte: Int
+  gSearchUsers: Boolean
+  gSearchUsers_not: Boolean
+  gSetTitle: Boolean
+  gSetTitle_not: Boolean
+  gTitle: String
+  gTitle_not: String
+  gTitle_in: [String!]
+  gTitle_not_in: [String!]
+  gTitle_lt: String
+  gTitle_lte: String
+  gTitle_gt: String
+  gTitle_gte: String
+  gTitle_contains: String
+  gTitle_not_contains: String
+  gTitle_starts_with: String
+  gTitle_not_starts_with: String
+  gTitle_ends_with: String
+  gTitle_not_ends_with: String
+  gUserTitle: String
+  gUserTitle_not: String
+  gUserTitle_in: [String!]
+  gUserTitle_not_in: [String!]
+  gUserTitle_lt: String
+  gUserTitle_lte: String
+  gUserTitle_gt: String
+  gUserTitle_gte: String
+  gUserTitle_contains: String
+  gUserTitle_not_contains: String
+  gUserTitle_starts_with: String
+  gUserTitle_not_starts_with: String
+  gUserTitle_ends_with: String
+  gUserTitle_not_ends_with: String
+  AND: [PunbbGroupWhereInput!]
+  OR: [PunbbGroupWhereInput!]
+  NOT: [PunbbGroupWhereInput!]
+}
+
+input PunbbGroupWhereUniqueInput {
+  g_id: Int
+}
+
+type PunbbOnline {
+  ident: String!
+  idle: Boolean!
+  logged: Int!
+  userId: Int!
+}
+
+type PunbbOnlineConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbOnlineEdge]!
+  aggregate: AggregatePunbbOnline!
+}
+
+input PunbbOnlineCreateInput {
+  ident: String
+  idle: Boolean
+  logged: Int
+  userId: Int
+}
+
+type PunbbOnlineEdge {
+  node: PunbbOnline!
+  cursor: String!
+}
+
+enum PunbbOnlineOrderByInput {
+  ident_ASC
+  ident_DESC
+  idle_ASC
+  idle_DESC
+  logged_ASC
+  logged_DESC
+  userId_ASC
+  userId_DESC
+}
+
+type PunbbOnlinePreviousValues {
+  ident: String!
+  idle: Boolean!
+  logged: Int!
+  userId: Int!
+}
+
+type PunbbOnlineSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbOnline
+  updatedFields: [String!]
+  previousValues: PunbbOnlinePreviousValues
+}
+
+input PunbbOnlineSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbOnlineWhereInput
+  AND: [PunbbOnlineSubscriptionWhereInput!]
+  OR: [PunbbOnlineSubscriptionWhereInput!]
+  NOT: [PunbbOnlineSubscriptionWhereInput!]
+}
+
+input PunbbOnlineUpdateManyMutationInput {
+  ident: String
+  idle: Boolean
+  logged: Int
+  userId: Int
+}
+
+input PunbbOnlineWhereInput {
+  ident: String
+  ident_not: String
+  ident_in: [String!]
+  ident_not_in: [String!]
+  ident_lt: String
+  ident_lte: String
+  ident_gt: String
+  ident_gte: String
+  ident_contains: String
+  ident_not_contains: String
+  ident_starts_with: String
+  ident_not_starts_with: String
+  ident_ends_with: String
+  ident_not_ends_with: String
+  idle: Boolean
+  idle_not: Boolean
+  logged: Int
+  logged_not: Int
+  logged_in: [Int!]
+  logged_not_in: [Int!]
+  logged_lt: Int
+  logged_lte: Int
+  logged_gt: Int
+  logged_gte: Int
+  userId: Int
+  userId_not: Int
+  userId_in: [Int!]
+  userId_not_in: [Int!]
+  userId_lt: Int
+  userId_lte: Int
+  userId_gt: Int
+  userId_gte: Int
+  AND: [PunbbOnlineWhereInput!]
+  OR: [PunbbOnlineWhereInput!]
+  NOT: [PunbbOnlineWhereInput!]
+}
+
+type PunbbPoll {
+  id: Int!
+  options: String!
+  pollid: Int!
+  ptype: Boolean!
+  voters: String!
+  votes: String!
+}
+
+type PunbbPollConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbPollEdge]!
+  aggregate: AggregatePunbbPoll!
+}
+
+input PunbbPollCreateInput {
+  id: Int
+  options: String!
+  pollid: Int
+  ptype: Boolean
+  voters: String!
+  votes: String!
+}
+
+type PunbbPollEdge {
+  node: PunbbPoll!
+  cursor: String!
+}
+
+enum PunbbPollOrderByInput {
+  id_ASC
+  id_DESC
+  options_ASC
+  options_DESC
+  pollid_ASC
+  pollid_DESC
+  ptype_ASC
+  ptype_DESC
+  voters_ASC
+  voters_DESC
+  votes_ASC
+  votes_DESC
+}
+
+type PunbbPollPreviousValues {
+  id: Int!
+  options: String!
+  pollid: Int!
+  ptype: Boolean!
+  voters: String!
+  votes: String!
+}
+
+type PunbbPollSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbPoll
+  updatedFields: [String!]
+  previousValues: PunbbPollPreviousValues
+}
+
+input PunbbPollSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbPollWhereInput
+  AND: [PunbbPollSubscriptionWhereInput!]
+  OR: [PunbbPollSubscriptionWhereInput!]
+  NOT: [PunbbPollSubscriptionWhereInput!]
+}
+
+input PunbbPollUpdateInput {
+  options: String
+  pollid: Int
+  ptype: Boolean
+  voters: String
+  votes: String
+}
+
+input PunbbPollUpdateManyMutationInput {
+  options: String
+  pollid: Int
+  ptype: Boolean
+  voters: String
+  votes: String
+}
+
+input PunbbPollWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  options: String
+  options_not: String
+  options_in: [String!]
+  options_not_in: [String!]
+  options_lt: String
+  options_lte: String
+  options_gt: String
+  options_gte: String
+  options_contains: String
+  options_not_contains: String
+  options_starts_with: String
+  options_not_starts_with: String
+  options_ends_with: String
+  options_not_ends_with: String
+  pollid: Int
+  pollid_not: Int
+  pollid_in: [Int!]
+  pollid_not_in: [Int!]
+  pollid_lt: Int
+  pollid_lte: Int
+  pollid_gt: Int
+  pollid_gte: Int
+  ptype: Boolean
+  ptype_not: Boolean
+  voters: String
+  voters_not: String
+  voters_in: [String!]
+  voters_not_in: [String!]
+  voters_lt: String
+  voters_lte: String
+  voters_gt: String
+  voters_gte: String
+  voters_contains: String
+  voters_not_contains: String
+  voters_starts_with: String
+  voters_not_starts_with: String
+  voters_ends_with: String
+  voters_not_ends_with: String
+  votes: String
+  votes_not: String
+  votes_in: [String!]
+  votes_not_in: [String!]
+  votes_lt: String
+  votes_lte: String
+  votes_gt: String
+  votes_gte: String
+  votes_contains: String
+  votes_not_contains: String
+  votes_starts_with: String
+  votes_not_starts_with: String
+  votes_ends_with: String
+  votes_not_ends_with: String
+  AND: [PunbbPollWhereInput!]
+  OR: [PunbbPollWhereInput!]
+  NOT: [PunbbPollWhereInput!]
+}
+
+input PunbbPollWhereUniqueInput {
+  id: Int
+}
+
+type PunbbPost {
+  id: Int!
+  edited: Int
+  editedBy: String
+  hideSmilies: Boolean!
+  message: String!
+  posted: Int!
+  poster: String!
+  posterEmail: String
+  posterId: Int!
+  posterIp: String
+  topicId: Int!
+}
+
+type PunbbPostConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbPostEdge]!
+  aggregate: AggregatePunbbPost!
+}
+
+input PunbbPostCreateInput {
+  id: Int
+  edited: Int
+  editedBy: String
+  hideSmilies: Boolean
+  message: String!
+  posted: Int
+  poster: String
+  posterEmail: String
+  posterId: Int
+  posterIp: String
+  topicId: Int
+}
+
+type PunbbPostEdge {
+  node: PunbbPost!
+  cursor: String!
+}
+
+enum PunbbPostOrderByInput {
+  id_ASC
+  id_DESC
+  edited_ASC
+  edited_DESC
+  editedBy_ASC
+  editedBy_DESC
+  hideSmilies_ASC
+  hideSmilies_DESC
+  message_ASC
+  message_DESC
+  posted_ASC
+  posted_DESC
+  poster_ASC
+  poster_DESC
+  posterEmail_ASC
+  posterEmail_DESC
+  posterId_ASC
+  posterId_DESC
+  posterIp_ASC
+  posterIp_DESC
+  topicId_ASC
+  topicId_DESC
+}
+
+type PunbbPostPreviousValues {
+  id: Int!
+  edited: Int
+  editedBy: String
+  hideSmilies: Boolean!
+  message: String!
+  posted: Int!
+  poster: String!
+  posterEmail: String
+  posterId: Int!
+  posterIp: String
+  topicId: Int!
+}
+
+type PunbbPostSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbPost
+  updatedFields: [String!]
+  previousValues: PunbbPostPreviousValues
+}
+
+input PunbbPostSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbPostWhereInput
+  AND: [PunbbPostSubscriptionWhereInput!]
+  OR: [PunbbPostSubscriptionWhereInput!]
+  NOT: [PunbbPostSubscriptionWhereInput!]
+}
+
+input PunbbPostUpdateInput {
+  edited: Int
+  editedBy: String
+  hideSmilies: Boolean
+  message: String
+  posted: Int
+  poster: String
+  posterEmail: String
+  posterId: Int
+  posterIp: String
+  topicId: Int
+}
+
+input PunbbPostUpdateManyMutationInput {
+  edited: Int
+  editedBy: String
+  hideSmilies: Boolean
+  message: String
+  posted: Int
+  poster: String
+  posterEmail: String
+  posterId: Int
+  posterIp: String
+  topicId: Int
+}
+
+input PunbbPostWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  edited: Int
+  edited_not: Int
+  edited_in: [Int!]
+  edited_not_in: [Int!]
+  edited_lt: Int
+  edited_lte: Int
+  edited_gt: Int
+  edited_gte: Int
+  editedBy: String
+  editedBy_not: String
+  editedBy_in: [String!]
+  editedBy_not_in: [String!]
+  editedBy_lt: String
+  editedBy_lte: String
+  editedBy_gt: String
+  editedBy_gte: String
+  editedBy_contains: String
+  editedBy_not_contains: String
+  editedBy_starts_with: String
+  editedBy_not_starts_with: String
+  editedBy_ends_with: String
+  editedBy_not_ends_with: String
+  hideSmilies: Boolean
+  hideSmilies_not: Boolean
+  message: String
+  message_not: String
+  message_in: [String!]
+  message_not_in: [String!]
+  message_lt: String
+  message_lte: String
+  message_gt: String
+  message_gte: String
+  message_contains: String
+  message_not_contains: String
+  message_starts_with: String
+  message_not_starts_with: String
+  message_ends_with: String
+  message_not_ends_with: String
+  posted: Int
+  posted_not: Int
+  posted_in: [Int!]
+  posted_not_in: [Int!]
+  posted_lt: Int
+  posted_lte: Int
+  posted_gt: Int
+  posted_gte: Int
+  poster: String
+  poster_not: String
+  poster_in: [String!]
+  poster_not_in: [String!]
+  poster_lt: String
+  poster_lte: String
+  poster_gt: String
+  poster_gte: String
+  poster_contains: String
+  poster_not_contains: String
+  poster_starts_with: String
+  poster_not_starts_with: String
+  poster_ends_with: String
+  poster_not_ends_with: String
+  posterEmail: String
+  posterEmail_not: String
+  posterEmail_in: [String!]
+  posterEmail_not_in: [String!]
+  posterEmail_lt: String
+  posterEmail_lte: String
+  posterEmail_gt: String
+  posterEmail_gte: String
+  posterEmail_contains: String
+  posterEmail_not_contains: String
+  posterEmail_starts_with: String
+  posterEmail_not_starts_with: String
+  posterEmail_ends_with: String
+  posterEmail_not_ends_with: String
+  posterId: Int
+  posterId_not: Int
+  posterId_in: [Int!]
+  posterId_not_in: [Int!]
+  posterId_lt: Int
+  posterId_lte: Int
+  posterId_gt: Int
+  posterId_gte: Int
+  posterIp: String
+  posterIp_not: String
+  posterIp_in: [String!]
+  posterIp_not_in: [String!]
+  posterIp_lt: String
+  posterIp_lte: String
+  posterIp_gt: String
+  posterIp_gte: String
+  posterIp_contains: String
+  posterIp_not_contains: String
+  posterIp_starts_with: String
+  posterIp_not_starts_with: String
+  posterIp_ends_with: String
+  posterIp_not_ends_with: String
+  topicId: Int
+  topicId_not: Int
+  topicId_in: [Int!]
+  topicId_not_in: [Int!]
+  topicId_lt: Int
+  topicId_lte: Int
+  topicId_gt: Int
+  topicId_gte: Int
+  AND: [PunbbPostWhereInput!]
+  OR: [PunbbPostWhereInput!]
+  NOT: [PunbbPostWhereInput!]
+}
+
+input PunbbPostWhereUniqueInput {
+  id: Int
+}
+
+type PunbbRank {
+  id: Int!
+  rank: String!
+}
+
+type PunbbRankConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbRankEdge]!
+  aggregate: AggregatePunbbRank!
+}
+
+input PunbbRankCreateInput {
+  id: Int
+  rank: String
+}
+
+type PunbbRankEdge {
+  node: PunbbRank!
+  cursor: String!
+}
+
+enum PunbbRankOrderByInput {
+  id_ASC
+  id_DESC
+  rank_ASC
+  rank_DESC
+}
+
+type PunbbRankPreviousValues {
+  id: Int!
+  rank: String!
+}
+
+type PunbbRankSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbRank
+  updatedFields: [String!]
+  previousValues: PunbbRankPreviousValues
+}
+
+input PunbbRankSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbRankWhereInput
+  AND: [PunbbRankSubscriptionWhereInput!]
+  OR: [PunbbRankSubscriptionWhereInput!]
+  NOT: [PunbbRankSubscriptionWhereInput!]
+}
+
+input PunbbRankUpdateInput {
+  rank: String
+}
+
+input PunbbRankUpdateManyMutationInput {
+  rank: String
+}
+
+input PunbbRankWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  rank: String
+  rank_not: String
+  rank_in: [String!]
+  rank_not_in: [String!]
+  rank_lt: String
+  rank_lte: String
+  rank_gt: String
+  rank_gte: String
+  rank_contains: String
+  rank_not_contains: String
+  rank_starts_with: String
+  rank_not_starts_with: String
+  rank_ends_with: String
+  rank_not_ends_with: String
+  AND: [PunbbRankWhereInput!]
+  OR: [PunbbRankWhereInput!]
+  NOT: [PunbbRankWhereInput!]
+}
+
+input PunbbRankWhereUniqueInput {
+  id: Int
+}
+
+type PunbbReport {
+  id: Int!
+  created: Int!
+  forumId: Int!
+  message: String!
+  postId: Int!
+  reportedBy: Int!
+  topicId: Int!
+  zapped: Int
+  zappedBy: Int
+}
+
+type PunbbReportConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbReportEdge]!
+  aggregate: AggregatePunbbReport!
+}
+
+input PunbbReportCreateInput {
+  id: Int
+  created: Int
+  forumId: Int
+  message: String!
+  postId: Int
+  reportedBy: Int
+  topicId: Int
+  zapped: Int
+  zappedBy: Int
+}
+
+type PunbbReportEdge {
+  node: PunbbReport!
+  cursor: String!
+}
+
+enum PunbbReportOrderByInput {
+  id_ASC
+  id_DESC
+  created_ASC
+  created_DESC
+  forumId_ASC
+  forumId_DESC
+  message_ASC
+  message_DESC
+  postId_ASC
+  postId_DESC
+  reportedBy_ASC
+  reportedBy_DESC
+  topicId_ASC
+  topicId_DESC
+  zapped_ASC
+  zapped_DESC
+  zappedBy_ASC
+  zappedBy_DESC
+}
+
+type PunbbReportPreviousValues {
+  id: Int!
+  created: Int!
+  forumId: Int!
+  message: String!
+  postId: Int!
+  reportedBy: Int!
+  topicId: Int!
+  zapped: Int
+  zappedBy: Int
+}
+
+type PunbbReportSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbReport
+  updatedFields: [String!]
+  previousValues: PunbbReportPreviousValues
+}
+
+input PunbbReportSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbReportWhereInput
+  AND: [PunbbReportSubscriptionWhereInput!]
+  OR: [PunbbReportSubscriptionWhereInput!]
+  NOT: [PunbbReportSubscriptionWhereInput!]
+}
+
+input PunbbReportUpdateInput {
+  created: Int
+  forumId: Int
+  message: String
+  postId: Int
+  reportedBy: Int
+  topicId: Int
+  zapped: Int
+  zappedBy: Int
+}
+
+input PunbbReportUpdateManyMutationInput {
+  created: Int
+  forumId: Int
+  message: String
+  postId: Int
+  reportedBy: Int
+  topicId: Int
+  zapped: Int
+  zappedBy: Int
+}
+
+input PunbbReportWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  created: Int
+  created_not: Int
+  created_in: [Int!]
+  created_not_in: [Int!]
+  created_lt: Int
+  created_lte: Int
+  created_gt: Int
+  created_gte: Int
+  forumId: Int
+  forumId_not: Int
+  forumId_in: [Int!]
+  forumId_not_in: [Int!]
+  forumId_lt: Int
+  forumId_lte: Int
+  forumId_gt: Int
+  forumId_gte: Int
+  message: String
+  message_not: String
+  message_in: [String!]
+  message_not_in: [String!]
+  message_lt: String
+  message_lte: String
+  message_gt: String
+  message_gte: String
+  message_contains: String
+  message_not_contains: String
+  message_starts_with: String
+  message_not_starts_with: String
+  message_ends_with: String
+  message_not_ends_with: String
+  postId: Int
+  postId_not: Int
+  postId_in: [Int!]
+  postId_not_in: [Int!]
+  postId_lt: Int
+  postId_lte: Int
+  postId_gt: Int
+  postId_gte: Int
+  reportedBy: Int
+  reportedBy_not: Int
+  reportedBy_in: [Int!]
+  reportedBy_not_in: [Int!]
+  reportedBy_lt: Int
+  reportedBy_lte: Int
+  reportedBy_gt: Int
+  reportedBy_gte: Int
+  topicId: Int
+  topicId_not: Int
+  topicId_in: [Int!]
+  topicId_not_in: [Int!]
+  topicId_lt: Int
+  topicId_lte: Int
+  topicId_gt: Int
+  topicId_gte: Int
+  zapped: Int
+  zapped_not: Int
+  zapped_in: [Int!]
+  zapped_not_in: [Int!]
+  zapped_lt: Int
+  zapped_lte: Int
+  zapped_gt: Int
+  zapped_gte: Int
+  zappedBy: Int
+  zappedBy_not: Int
+  zappedBy_in: [Int!]
+  zappedBy_not_in: [Int!]
+  zappedBy_lt: Int
+  zappedBy_lte: Int
+  zappedBy_gt: Int
+  zappedBy_gte: Int
+  AND: [PunbbReportWhereInput!]
+  OR: [PunbbReportWhereInput!]
+  NOT: [PunbbReportWhereInput!]
+}
+
+input PunbbReportWhereUniqueInput {
+  id: Int
+}
+
+type PunbbSearchCache {
+  id: Int!
+  ident: String!
+  searchData: String!
+}
+
+type PunbbSearchCacheConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbSearchCacheEdge]!
+  aggregate: AggregatePunbbSearchCache!
+}
+
+input PunbbSearchCacheCreateInput {
+  id: Int
+  ident: String
+  searchData: String!
+}
+
+type PunbbSearchCacheEdge {
+  node: PunbbSearchCache!
+  cursor: String!
+}
+
+enum PunbbSearchCacheOrderByInput {
+  id_ASC
+  id_DESC
+  ident_ASC
+  ident_DESC
+  searchData_ASC
+  searchData_DESC
+}
+
+type PunbbSearchCachePreviousValues {
+  id: Int!
+  ident: String!
+  searchData: String!
+}
+
+type PunbbSearchCacheSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbSearchCache
+  updatedFields: [String!]
+  previousValues: PunbbSearchCachePreviousValues
+}
+
+input PunbbSearchCacheSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbSearchCacheWhereInput
+  AND: [PunbbSearchCacheSubscriptionWhereInput!]
+  OR: [PunbbSearchCacheSubscriptionWhereInput!]
+  NOT: [PunbbSearchCacheSubscriptionWhereInput!]
+}
+
+input PunbbSearchCacheUpdateInput {
+  ident: String
+  searchData: String
+}
+
+input PunbbSearchCacheUpdateManyMutationInput {
+  ident: String
+  searchData: String
+}
+
+input PunbbSearchCacheWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  ident: String
+  ident_not: String
+  ident_in: [String!]
+  ident_not_in: [String!]
+  ident_lt: String
+  ident_lte: String
+  ident_gt: String
+  ident_gte: String
+  ident_contains: String
+  ident_not_contains: String
+  ident_starts_with: String
+  ident_not_starts_with: String
+  ident_ends_with: String
+  ident_not_ends_with: String
+  searchData: String
+  searchData_not: String
+  searchData_in: [String!]
+  searchData_not_in: [String!]
+  searchData_lt: String
+  searchData_lte: String
+  searchData_gt: String
+  searchData_gte: String
+  searchData_contains: String
+  searchData_not_contains: String
+  searchData_starts_with: String
+  searchData_not_starts_with: String
+  searchData_ends_with: String
+  searchData_not_ends_with: String
+  AND: [PunbbSearchCacheWhereInput!]
+  OR: [PunbbSearchCacheWhereInput!]
+  NOT: [PunbbSearchCacheWhereInput!]
+}
+
+input PunbbSearchCacheWhereUniqueInput {
+  id: Int
+}
+
+type PunbbSearchMatch {
+  postId: Int!
+  subjectMatch: Boolean!
+}
+
+type PunbbSearchMatchConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbSearchMatchEdge]!
+  aggregate: AggregatePunbbSearchMatch!
+}
+
+input PunbbSearchMatchCreateInput {
+  postId: Int
+  subjectMatch: Boolean
+}
+
+type PunbbSearchMatchEdge {
+  node: PunbbSearchMatch!
+  cursor: String!
+}
+
+enum PunbbSearchMatchOrderByInput {
+  postId_ASC
+  postId_DESC
+  subjectMatch_ASC
+  subjectMatch_DESC
+}
+
+type PunbbSearchMatchPreviousValues {
+  postId: Int!
+  subjectMatch: Boolean!
+}
+
+type PunbbSearchMatchSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbSearchMatch
+  updatedFields: [String!]
+  previousValues: PunbbSearchMatchPreviousValues
+}
+
+input PunbbSearchMatchSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbSearchMatchWhereInput
+  AND: [PunbbSearchMatchSubscriptionWhereInput!]
+  OR: [PunbbSearchMatchSubscriptionWhereInput!]
+  NOT: [PunbbSearchMatchSubscriptionWhereInput!]
+}
+
+input PunbbSearchMatchUpdateManyMutationInput {
+  postId: Int
+  subjectMatch: Boolean
+}
+
+input PunbbSearchMatchWhereInput {
+  postId: Int
+  postId_not: Int
+  postId_in: [Int!]
+  postId_not_in: [Int!]
+  postId_lt: Int
+  postId_lte: Int
+  postId_gt: Int
+  postId_gte: Int
+  subjectMatch: Boolean
+  subjectMatch_not: Boolean
+  AND: [PunbbSearchMatchWhereInput!]
+  OR: [PunbbSearchMatchWhereInput!]
+  NOT: [PunbbSearchMatchWhereInput!]
+}
+
+type PunbbSearchWord {
+  word: ID!
+}
+
+type PunbbSearchWordConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbSearchWordEdge]!
+  aggregate: AggregatePunbbSearchWord!
+}
+
+input PunbbSearchWordCreateInput {
+  word: ID
+}
+
+type PunbbSearchWordEdge {
+  node: PunbbSearchWord!
+  cursor: String!
+}
+
+enum PunbbSearchWordOrderByInput {
+  word_ASC
+  word_DESC
+}
+
+type PunbbSearchWordPreviousValues {
+  word: ID!
+}
+
+type PunbbSearchWordSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbSearchWord
+  updatedFields: [String!]
+  previousValues: PunbbSearchWordPreviousValues
+}
+
+input PunbbSearchWordSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbSearchWordWhereInput
+  AND: [PunbbSearchWordSubscriptionWhereInput!]
+  OR: [PunbbSearchWordSubscriptionWhereInput!]
+  NOT: [PunbbSearchWordSubscriptionWhereInput!]
+}
+
+input PunbbSearchWordWhereInput {
+  word: ID
+  word_not: ID
+  word_in: [ID!]
+  word_not_in: [ID!]
+  word_lt: ID
+  word_lte: ID
+  word_gt: ID
+  word_gte: ID
+  word_contains: ID
+  word_not_contains: ID
+  word_starts_with: ID
+  word_not_starts_with: ID
+  word_ends_with: ID
+  word_not_ends_with: ID
+  AND: [PunbbSearchWordWhereInput!]
+  OR: [PunbbSearchWordWhereInput!]
+  NOT: [PunbbSearchWordWhereInput!]
+}
+
+input PunbbSearchWordWhereUniqueInput {
+  word: ID
+}
+
+type PunbbTopic {
+  id: Int!
+  closed: Boolean!
+  forumId: Int!
+  lastPost: Int!
+  lastPoster: String
+  lastPostId: Int!
+  movedTo: Int
+  no: String!
+  posted: Int!
+  poster: String!
+  question: String!
+  sticky: Boolean!
+  subject: String!
+  yes: String!
+}
+
+type PunbbTopicConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbTopicEdge]!
+  aggregate: AggregatePunbbTopic!
+}
+
+input PunbbTopicCreateInput {
+  id: Int
+  closed: Boolean
+  forumId: Int
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  movedTo: Int
+  no: String!
+  posted: Int
+  poster: String
+  question: String!
+  sticky: Boolean
+  subject: String
+  yes: String!
+}
+
+type PunbbTopicEdge {
+  node: PunbbTopic!
+  cursor: String!
+}
+
+enum PunbbTopicOrderByInput {
+  id_ASC
+  id_DESC
+  closed_ASC
+  closed_DESC
+  forumId_ASC
+  forumId_DESC
+  lastPost_ASC
+  lastPost_DESC
+  lastPoster_ASC
+  lastPoster_DESC
+  lastPostId_ASC
+  lastPostId_DESC
+  movedTo_ASC
+  movedTo_DESC
+  no_ASC
+  no_DESC
+  posted_ASC
+  posted_DESC
+  poster_ASC
+  poster_DESC
+  question_ASC
+  question_DESC
+  sticky_ASC
+  sticky_DESC
+  subject_ASC
+  subject_DESC
+  yes_ASC
+  yes_DESC
+}
+
+type PunbbTopicPreviousValues {
+  id: Int!
+  closed: Boolean!
+  forumId: Int!
+  lastPost: Int!
+  lastPoster: String
+  lastPostId: Int!
+  movedTo: Int
+  no: String!
+  posted: Int!
+  poster: String!
+  question: String!
+  sticky: Boolean!
+  subject: String!
+  yes: String!
+}
+
+type PunbbTopicSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbTopic
+  updatedFields: [String!]
+  previousValues: PunbbTopicPreviousValues
+}
+
+input PunbbTopicSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbTopicWhereInput
+  AND: [PunbbTopicSubscriptionWhereInput!]
+  OR: [PunbbTopicSubscriptionWhereInput!]
+  NOT: [PunbbTopicSubscriptionWhereInput!]
+}
+
+input PunbbTopicUpdateInput {
+  closed: Boolean
+  forumId: Int
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  movedTo: Int
+  no: String
+  posted: Int
+  poster: String
+  question: String
+  sticky: Boolean
+  subject: String
+  yes: String
+}
+
+input PunbbTopicUpdateManyMutationInput {
+  closed: Boolean
+  forumId: Int
+  lastPost: Int
+  lastPoster: String
+  lastPostId: Int
+  movedTo: Int
+  no: String
+  posted: Int
+  poster: String
+  question: String
+  sticky: Boolean
+  subject: String
+  yes: String
+}
+
+input PunbbTopicWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  closed: Boolean
+  closed_not: Boolean
+  forumId: Int
+  forumId_not: Int
+  forumId_in: [Int!]
+  forumId_not_in: [Int!]
+  forumId_lt: Int
+  forumId_lte: Int
+  forumId_gt: Int
+  forumId_gte: Int
+  lastPost: Int
+  lastPost_not: Int
+  lastPost_in: [Int!]
+  lastPost_not_in: [Int!]
+  lastPost_lt: Int
+  lastPost_lte: Int
+  lastPost_gt: Int
+  lastPost_gte: Int
+  lastPoster: String
+  lastPoster_not: String
+  lastPoster_in: [String!]
+  lastPoster_not_in: [String!]
+  lastPoster_lt: String
+  lastPoster_lte: String
+  lastPoster_gt: String
+  lastPoster_gte: String
+  lastPoster_contains: String
+  lastPoster_not_contains: String
+  lastPoster_starts_with: String
+  lastPoster_not_starts_with: String
+  lastPoster_ends_with: String
+  lastPoster_not_ends_with: String
+  lastPostId: Int
+  lastPostId_not: Int
+  lastPostId_in: [Int!]
+  lastPostId_not_in: [Int!]
+  lastPostId_lt: Int
+  lastPostId_lte: Int
+  lastPostId_gt: Int
+  lastPostId_gte: Int
+  movedTo: Int
+  movedTo_not: Int
+  movedTo_in: [Int!]
+  movedTo_not_in: [Int!]
+  movedTo_lt: Int
+  movedTo_lte: Int
+  movedTo_gt: Int
+  movedTo_gte: Int
+  no: String
+  no_not: String
+  no_in: [String!]
+  no_not_in: [String!]
+  no_lt: String
+  no_lte: String
+  no_gt: String
+  no_gte: String
+  no_contains: String
+  no_not_contains: String
+  no_starts_with: String
+  no_not_starts_with: String
+  no_ends_with: String
+  no_not_ends_with: String
+  posted: Int
+  posted_not: Int
+  posted_in: [Int!]
+  posted_not_in: [Int!]
+  posted_lt: Int
+  posted_lte: Int
+  posted_gt: Int
+  posted_gte: Int
+  poster: String
+  poster_not: String
+  poster_in: [String!]
+  poster_not_in: [String!]
+  poster_lt: String
+  poster_lte: String
+  poster_gt: String
+  poster_gte: String
+  poster_contains: String
+  poster_not_contains: String
+  poster_starts_with: String
+  poster_not_starts_with: String
+  poster_ends_with: String
+  poster_not_ends_with: String
+  question: String
+  question_not: String
+  question_in: [String!]
+  question_not_in: [String!]
+  question_lt: String
+  question_lte: String
+  question_gt: String
+  question_gte: String
+  question_contains: String
+  question_not_contains: String
+  question_starts_with: String
+  question_not_starts_with: String
+  question_ends_with: String
+  question_not_ends_with: String
+  sticky: Boolean
+  sticky_not: Boolean
+  subject: String
+  subject_not: String
+  subject_in: [String!]
+  subject_not_in: [String!]
+  subject_lt: String
+  subject_lte: String
+  subject_gt: String
+  subject_gte: String
+  subject_contains: String
+  subject_not_contains: String
+  subject_starts_with: String
+  subject_not_starts_with: String
+  subject_ends_with: String
+  subject_not_ends_with: String
+  yes: String
+  yes_not: String
+  yes_in: [String!]
+  yes_not_in: [String!]
+  yes_lt: String
+  yes_lte: String
+  yes_gt: String
+  yes_gte: String
+  yes_contains: String
+  yes_not_contains: String
+  yes_starts_with: String
+  yes_not_starts_with: String
+  yes_ends_with: String
+  yes_not_ends_with: String
+  AND: [PunbbTopicWhereInput!]
+  OR: [PunbbTopicWhereInput!]
+  NOT: [PunbbTopicWhereInput!]
+}
+
+input PunbbTopicWhereUniqueInput {
+  id: Int
+}
+
+type PunbbUploaded {
+  id: Int!
+  data: Int!
+  descr: String!
+  downs: Int!
+  file: String!
+  size: Int!
+  uid: Int!
+  user: String!
+  userStat: String!
+}
+
+type PunbbUploadedConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbUploadedEdge]!
+  aggregate: AggregatePunbbUploaded!
+}
+
+input PunbbUploadedCreateInput {
+  id: Int
+  data: Int!
+  descr: String!
+  downs: Int!
+  file: String!
+  size: Int!
+  uid: Int!
+  user: String!
+  userStat: String!
+}
+
+type PunbbUploadedEdge {
+  node: PunbbUploaded!
+  cursor: String!
+}
+
+enum PunbbUploadedOrderByInput {
+  id_ASC
+  id_DESC
+  data_ASC
+  data_DESC
+  descr_ASC
+  descr_DESC
+  downs_ASC
+  downs_DESC
+  file_ASC
+  file_DESC
+  size_ASC
+  size_DESC
+  uid_ASC
+  uid_DESC
+  user_ASC
+  user_DESC
+  userStat_ASC
+  userStat_DESC
+}
+
+type PunbbUploadedPreviousValues {
+  id: Int!
+  data: Int!
+  descr: String!
+  downs: Int!
+  file: String!
+  size: Int!
+  uid: Int!
+  user: String!
+  userStat: String!
+}
+
+type PunbbUploadedSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbUploaded
+  updatedFields: [String!]
+  previousValues: PunbbUploadedPreviousValues
+}
+
+input PunbbUploadedSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbUploadedWhereInput
+  AND: [PunbbUploadedSubscriptionWhereInput!]
+  OR: [PunbbUploadedSubscriptionWhereInput!]
+  NOT: [PunbbUploadedSubscriptionWhereInput!]
+}
+
+input PunbbUploadedUpdateInput {
+  data: Int
+  descr: String
+  downs: Int
+  file: String
+  size: Int
+  uid: Int
+  user: String
+  userStat: String
+}
+
+input PunbbUploadedUpdateManyMutationInput {
+  data: Int
+  descr: String
+  downs: Int
+  file: String
+  size: Int
+  uid: Int
+  user: String
+  userStat: String
+}
+
+input PunbbUploadedWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  data: Int
+  data_not: Int
+  data_in: [Int!]
+  data_not_in: [Int!]
+  data_lt: Int
+  data_lte: Int
+  data_gt: Int
+  data_gte: Int
+  descr: String
+  descr_not: String
+  descr_in: [String!]
+  descr_not_in: [String!]
+  descr_lt: String
+  descr_lte: String
+  descr_gt: String
+  descr_gte: String
+  descr_contains: String
+  descr_not_contains: String
+  descr_starts_with: String
+  descr_not_starts_with: String
+  descr_ends_with: String
+  descr_not_ends_with: String
+  downs: Int
+  downs_not: Int
+  downs_in: [Int!]
+  downs_not_in: [Int!]
+  downs_lt: Int
+  downs_lte: Int
+  downs_gt: Int
+  downs_gte: Int
+  file: String
+  file_not: String
+  file_in: [String!]
+  file_not_in: [String!]
+  file_lt: String
+  file_lte: String
+  file_gt: String
+  file_gte: String
+  file_contains: String
+  file_not_contains: String
+  file_starts_with: String
+  file_not_starts_with: String
+  file_ends_with: String
+  file_not_ends_with: String
+  size: Int
+  size_not: Int
+  size_in: [Int!]
+  size_not_in: [Int!]
+  size_lt: Int
+  size_lte: Int
+  size_gt: Int
+  size_gte: Int
+  uid: Int
+  uid_not: Int
+  uid_in: [Int!]
+  uid_not_in: [Int!]
+  uid_lt: Int
+  uid_lte: Int
+  uid_gt: Int
+  uid_gte: Int
+  user: String
+  user_not: String
+  user_in: [String!]
+  user_not_in: [String!]
+  user_lt: String
+  user_lte: String
+  user_gt: String
+  user_gte: String
+  user_contains: String
+  user_not_contains: String
+  user_starts_with: String
+  user_not_starts_with: String
+  user_ends_with: String
+  user_not_ends_with: String
+  userStat: String
+  userStat_not: String
+  userStat_in: [String!]
+  userStat_not_in: [String!]
+  userStat_lt: String
+  userStat_lte: String
+  userStat_gt: String
+  userStat_gte: String
+  userStat_contains: String
+  userStat_not_contains: String
+  userStat_starts_with: String
+  userStat_not_starts_with: String
+  userStat_ends_with: String
+  userStat_not_ends_with: String
+  AND: [PunbbUploadedWhereInput!]
+  OR: [PunbbUploadedWhereInput!]
+  NOT: [PunbbUploadedWhereInput!]
+}
+
+input PunbbUploadedWhereUniqueInput {
+  id: Int
+}
+
+type PunbbUploadsConf {
+  gId: Int!
+  pDelete: Boolean!
+  pGlobaldelete: Boolean!
+  pGlobalview: Boolean!
+  pSetop: Boolean!
+  pUpload: Boolean!
+  pView: Boolean!
+  uFsize: Int!
+}
+
+type PunbbUploadsConfConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbUploadsConfEdge]!
+  aggregate: AggregatePunbbUploadsConf!
+}
+
+input PunbbUploadsConfCreateInput {
+  gId: Int
+  pDelete: Boolean
+  pGlobaldelete: Boolean
+  pGlobalview: Boolean
+  pSetop: Boolean
+  pUpload: Boolean
+  pView: Boolean
+  uFsize: Int
+}
+
+type PunbbUploadsConfEdge {
+  node: PunbbUploadsConf!
+  cursor: String!
+}
+
+enum PunbbUploadsConfOrderByInput {
+  gId_ASC
+  gId_DESC
+  pDelete_ASC
+  pDelete_DESC
+  pGlobaldelete_ASC
+  pGlobaldelete_DESC
+  pGlobalview_ASC
+  pGlobalview_DESC
+  pSetop_ASC
+  pSetop_DESC
+  pUpload_ASC
+  pUpload_DESC
+  pView_ASC
+  pView_DESC
+  uFsize_ASC
+  uFsize_DESC
+}
+
+type PunbbUploadsConfPreviousValues {
+  gId: Int!
+  pDelete: Boolean!
+  pGlobaldelete: Boolean!
+  pGlobalview: Boolean!
+  pSetop: Boolean!
+  pUpload: Boolean!
+  pView: Boolean!
+  uFsize: Int!
+}
+
+type PunbbUploadsConfSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbUploadsConf
+  updatedFields: [String!]
+  previousValues: PunbbUploadsConfPreviousValues
+}
+
+input PunbbUploadsConfSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbUploadsConfWhereInput
+  AND: [PunbbUploadsConfSubscriptionWhereInput!]
+  OR: [PunbbUploadsConfSubscriptionWhereInput!]
+  NOT: [PunbbUploadsConfSubscriptionWhereInput!]
+}
+
+input PunbbUploadsConfUpdateManyMutationInput {
+  gId: Int
+  pDelete: Boolean
+  pGlobaldelete: Boolean
+  pGlobalview: Boolean
+  pSetop: Boolean
+  pUpload: Boolean
+  pView: Boolean
+  uFsize: Int
+}
+
+input PunbbUploadsConfWhereInput {
+  gId: Int
+  gId_not: Int
+  gId_in: [Int!]
+  gId_not_in: [Int!]
+  gId_lt: Int
+  gId_lte: Int
+  gId_gt: Int
+  gId_gte: Int
+  pDelete: Boolean
+  pDelete_not: Boolean
+  pGlobaldelete: Boolean
+  pGlobaldelete_not: Boolean
+  pGlobalview: Boolean
+  pGlobalview_not: Boolean
+  pSetop: Boolean
+  pSetop_not: Boolean
+  pUpload: Boolean
+  pUpload_not: Boolean
+  pView: Boolean
+  pView_not: Boolean
+  uFsize: Int
+  uFsize_not: Int
+  uFsize_in: [Int!]
+  uFsize_not_in: [Int!]
+  uFsize_lt: Int
+  uFsize_lte: Int
+  uFsize_gt: Int
+  uFsize_gte: Int
+  AND: [PunbbUploadsConfWhereInput!]
+  OR: [PunbbUploadsConfWhereInput!]
+  NOT: [PunbbUploadsConfWhereInput!]
+}
+
+type PunbbUploadsType {
+  id: Int!
+  exts: String!
+  type: String!
+}
+
+type PunbbUploadsTypeConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbUploadsTypeEdge]!
+  aggregate: AggregatePunbbUploadsType!
+}
+
+input PunbbUploadsTypeCreateInput {
+  id: Int
+  exts: String!
+  type: String!
+}
+
+type PunbbUploadsTypeEdge {
+  node: PunbbUploadsType!
+  cursor: String!
+}
+
+enum PunbbUploadsTypeOrderByInput {
+  id_ASC
+  id_DESC
+  exts_ASC
+  exts_DESC
+  type_ASC
+  type_DESC
+}
+
+type PunbbUploadsTypePreviousValues {
+  id: Int!
+  exts: String!
+  type: String!
+}
+
+type PunbbUploadsTypeSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbUploadsType
+  updatedFields: [String!]
+  previousValues: PunbbUploadsTypePreviousValues
+}
+
+input PunbbUploadsTypeSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbUploadsTypeWhereInput
+  AND: [PunbbUploadsTypeSubscriptionWhereInput!]
+  OR: [PunbbUploadsTypeSubscriptionWhereInput!]
+  NOT: [PunbbUploadsTypeSubscriptionWhereInput!]
+}
+
+input PunbbUploadsTypeUpdateInput {
+  exts: String
+  type: String
+}
+
+input PunbbUploadsTypeUpdateManyMutationInput {
+  exts: String
+  type: String
+}
+
+input PunbbUploadsTypeWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  exts: String
+  exts_not: String
+  exts_in: [String!]
+  exts_not_in: [String!]
+  exts_lt: String
+  exts_lte: String
+  exts_gt: String
+  exts_gte: String
+  exts_contains: String
+  exts_not_contains: String
+  exts_starts_with: String
+  exts_not_starts_with: String
+  exts_ends_with: String
+  exts_not_ends_with: String
+  type: String
+  type_not: String
+  type_in: [String!]
+  type_not_in: [String!]
+  type_lt: String
+  type_lte: String
+  type_gt: String
+  type_gte: String
+  type_contains: String
+  type_not_contains: String
+  type_starts_with: String
+  type_not_starts_with: String
+  type_ends_with: String
+  type_not_ends_with: String
+  AND: [PunbbUploadsTypeWhereInput!]
+  OR: [PunbbUploadsTypeWhereInput!]
+  NOT: [PunbbUploadsTypeWhereInput!]
+}
+
+input PunbbUploadsTypeWhereUniqueInput {
+  id: Int
+}
+
+type PunbbUser {
+  id: Int!
+  activateKey: String
+  activateString: String
+  adminNote: String
+  aim: String
+  dispPosts: Boolean
+  dispTopics: Boolean
+  email: String!
+  emailSetting: Boolean!
+  groupId: Int!
+  icq: String
+  jabber: String
+  language: String!
+  lastPost: Int
+  lastVisit: Int!
+  location: String
+  msn: String
+  notifyWithPost: Boolean!
+  numPosts: Int!
+  password: String!
+  readTopics: String
+  realname: String
+  registered: Int!
+  registrationIp: String!
+  savePass: Boolean!
+  showAvatars: Boolean!
+  showImg: Boolean!
+  showImgSig: Boolean!
+  showSig: Boolean!
+  showSmilies: Boolean!
+  signature: String
+  style: String!
+  timezone: Float!
+  title: String
+  url: String
+  useAvatar: Boolean!
+  username: String!
+  yahoo: String
+}
+
+type PunbbUserConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbUserEdge]!
+  aggregate: AggregatePunbbUser!
+}
+
+input PunbbUserCreateInput {
+  id: Int
+  activateKey: String
+  activateString: String
+  adminNote: String
+  aim: String
+  dispPosts: Boolean
+  dispTopics: Boolean
   email: String
+  emailSetting: Boolean
+  groupId: Int
+  icq: String
+  jabber: String
+  language: String
+  lastPost: Int
+  lastVisit: Int
+  location: String
+  msn: String
+  notifyWithPost: Boolean
+  numPosts: Int
+  password: String
+  readTopics: String
+  realname: String
+  registered: Int
+  registrationIp: String
+  savePass: Boolean
+  showAvatars: Boolean
+  showImg: Boolean
+  showImgSig: Boolean
+  showSig: Boolean
+  showSmilies: Boolean
+  signature: String
+  style: String
+  timezone: Float
+  title: String
+  url: String
+  useAvatar: Boolean
+  username: String
+  yahoo: String
+}
+
+type PunbbUserEdge {
+  node: PunbbUser!
+  cursor: String!
+}
+
+enum PunbbUserOrderByInput {
+  id_ASC
+  id_DESC
+  activateKey_ASC
+  activateKey_DESC
+  activateString_ASC
+  activateString_DESC
+  adminNote_ASC
+  adminNote_DESC
+  aim_ASC
+  aim_DESC
+  dispPosts_ASC
+  dispPosts_DESC
+  dispTopics_ASC
+  dispTopics_DESC
+  email_ASC
+  email_DESC
+  emailSetting_ASC
+  emailSetting_DESC
+  groupId_ASC
+  groupId_DESC
+  icq_ASC
+  icq_DESC
+  jabber_ASC
+  jabber_DESC
+  language_ASC
+  language_DESC
+  lastPost_ASC
+  lastPost_DESC
+  lastVisit_ASC
+  lastVisit_DESC
+  location_ASC
+  location_DESC
+  msn_ASC
+  msn_DESC
+  notifyWithPost_ASC
+  notifyWithPost_DESC
+  numPosts_ASC
+  numPosts_DESC
+  password_ASC
+  password_DESC
+  readTopics_ASC
+  readTopics_DESC
+  realname_ASC
+  realname_DESC
+  registered_ASC
+  registered_DESC
+  registrationIp_ASC
+  registrationIp_DESC
+  savePass_ASC
+  savePass_DESC
+  showAvatars_ASC
+  showAvatars_DESC
+  showImg_ASC
+  showImg_DESC
+  showImgSig_ASC
+  showImgSig_DESC
+  showSig_ASC
+  showSig_DESC
+  showSmilies_ASC
+  showSmilies_DESC
+  signature_ASC
+  signature_DESC
+  style_ASC
+  style_DESC
+  timezone_ASC
+  timezone_DESC
+  title_ASC
+  title_DESC
+  url_ASC
+  url_DESC
+  useAvatar_ASC
+  useAvatar_DESC
+  username_ASC
+  username_DESC
+  yahoo_ASC
+  yahoo_DESC
+}
+
+type PunbbUserPreviousValues {
+  id: Int!
+  activateKey: String
+  activateString: String
+  adminNote: String
+  aim: String
+  dispPosts: Boolean
+  dispTopics: Boolean
+  email: String!
+  emailSetting: Boolean!
+  groupId: Int!
+  icq: String
+  jabber: String
+  language: String!
+  lastPost: Int
+  lastVisit: Int!
+  location: String
+  msn: String
+  notifyWithPost: Boolean!
+  numPosts: Int!
+  password: String!
+  readTopics: String
+  realname: String
+  registered: Int!
+  registrationIp: String!
+  savePass: Boolean!
+  showAvatars: Boolean!
+  showImg: Boolean!
+  showImgSig: Boolean!
+  showSig: Boolean!
+  showSmilies: Boolean!
+  signature: String
+  style: String!
+  timezone: Float!
+  title: String
+  url: String
+  useAvatar: Boolean!
+  username: String!
+  yahoo: String
+}
+
+type PunbbUserSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbUser
+  updatedFields: [String!]
+  previousValues: PunbbUserPreviousValues
+}
+
+input PunbbUserSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbUserWhereInput
+  AND: [PunbbUserSubscriptionWhereInput!]
+  OR: [PunbbUserSubscriptionWhereInput!]
+  NOT: [PunbbUserSubscriptionWhereInput!]
+}
+
+type PunbbUserthread {
+  lastRead: Int
+  posted: Boolean!
+}
+
+type PunbbUserthreadConnection {
+  pageInfo: PageInfo!
+  edges: [PunbbUserthreadEdge]!
+  aggregate: AggregatePunbbUserthread!
+}
+
+input PunbbUserthreadCreateInput {
+  lastRead: Int
+  posted: Boolean
+}
+
+type PunbbUserthreadEdge {
+  node: PunbbUserthread!
+  cursor: String!
+}
+
+enum PunbbUserthreadOrderByInput {
+  lastRead_ASC
+  lastRead_DESC
+  posted_ASC
+  posted_DESC
+}
+
+type PunbbUserthreadPreviousValues {
+  lastRead: Int
+  posted: Boolean!
+}
+
+type PunbbUserthreadSubscriptionPayload {
+  mutation: MutationType!
+  node: PunbbUserthread
+  updatedFields: [String!]
+  previousValues: PunbbUserthreadPreviousValues
+}
+
+input PunbbUserthreadSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: PunbbUserthreadWhereInput
+  AND: [PunbbUserthreadSubscriptionWhereInput!]
+  OR: [PunbbUserthreadSubscriptionWhereInput!]
+  NOT: [PunbbUserthreadSubscriptionWhereInput!]
+}
+
+input PunbbUserthreadUpdateManyMutationInput {
+  lastRead: Int
+  posted: Boolean
+}
+
+input PunbbUserthreadWhereInput {
+  lastRead: Int
+  lastRead_not: Int
+  lastRead_in: [Int!]
+  lastRead_not_in: [Int!]
+  lastRead_lt: Int
+  lastRead_lte: Int
+  lastRead_gt: Int
+  lastRead_gte: Int
+  posted: Boolean
+  posted_not: Boolean
+  AND: [PunbbUserthreadWhereInput!]
+  OR: [PunbbUserthreadWhereInput!]
+  NOT: [PunbbUserthreadWhereInput!]
+}
+
+input PunbbUserUpdateInput {
+  activateKey: String
+  activateString: String
+  adminNote: String
+  aim: String
+  dispPosts: Boolean
+  dispTopics: Boolean
+  email: String
+  emailSetting: Boolean
+  groupId: Int
+  icq: String
+  jabber: String
+  language: String
+  lastPost: Int
+  lastVisit: Int
+  location: String
+  msn: String
+  notifyWithPost: Boolean
+  numPosts: Int
+  password: String
+  readTopics: String
+  realname: String
+  registered: Int
+  registrationIp: String
+  savePass: Boolean
+  showAvatars: Boolean
+  showImg: Boolean
+  showImgSig: Boolean
+  showSig: Boolean
+  showSmilies: Boolean
+  signature: String
+  style: String
+  timezone: Float
+  title: String
+  url: String
+  useAvatar: Boolean
+  username: String
+  yahoo: String
+}
+
+input PunbbUserUpdateManyMutationInput {
+  activateKey: String
+  activateString: String
+  adminNote: String
+  aim: String
+  dispPosts: Boolean
+  dispTopics: Boolean
+  email: String
+  emailSetting: Boolean
+  groupId: Int
+  icq: String
+  jabber: String
+  language: String
+  lastPost: Int
+  lastVisit: Int
+  location: String
+  msn: String
+  notifyWithPost: Boolean
+  numPosts: Int
+  password: String
+  readTopics: String
+  realname: String
+  registered: Int
+  registrationIp: String
+  savePass: Boolean
+  showAvatars: Boolean
+  showImg: Boolean
+  showImgSig: Boolean
+  showSig: Boolean
+  showSmilies: Boolean
+  signature: String
+  style: String
+  timezone: Float
+  title: String
+  url: String
+  useAvatar: Boolean
+  username: String
+  yahoo: String
+}
+
+input PunbbUserWhereInput {
+  id: Int
+  id_not: Int
+  id_in: [Int!]
+  id_not_in: [Int!]
+  id_lt: Int
+  id_lte: Int
+  id_gt: Int
+  id_gte: Int
+  activateKey: String
+  activateKey_not: String
+  activateKey_in: [String!]
+  activateKey_not_in: [String!]
+  activateKey_lt: String
+  activateKey_lte: String
+  activateKey_gt: String
+  activateKey_gte: String
+  activateKey_contains: String
+  activateKey_not_contains: String
+  activateKey_starts_with: String
+  activateKey_not_starts_with: String
+  activateKey_ends_with: String
+  activateKey_not_ends_with: String
+  activateString: String
+  activateString_not: String
+  activateString_in: [String!]
+  activateString_not_in: [String!]
+  activateString_lt: String
+  activateString_lte: String
+  activateString_gt: String
+  activateString_gte: String
+  activateString_contains: String
+  activateString_not_contains: String
+  activateString_starts_with: String
+  activateString_not_starts_with: String
+  activateString_ends_with: String
+  activateString_not_ends_with: String
+  adminNote: String
+  adminNote_not: String
+  adminNote_in: [String!]
+  adminNote_not_in: [String!]
+  adminNote_lt: String
+  adminNote_lte: String
+  adminNote_gt: String
+  adminNote_gte: String
+  adminNote_contains: String
+  adminNote_not_contains: String
+  adminNote_starts_with: String
+  adminNote_not_starts_with: String
+  adminNote_ends_with: String
+  adminNote_not_ends_with: String
+  aim: String
+  aim_not: String
+  aim_in: [String!]
+  aim_not_in: [String!]
+  aim_lt: String
+  aim_lte: String
+  aim_gt: String
+  aim_gte: String
+  aim_contains: String
+  aim_not_contains: String
+  aim_starts_with: String
+  aim_not_starts_with: String
+  aim_ends_with: String
+  aim_not_ends_with: String
+  dispPosts: Boolean
+  dispPosts_not: Boolean
+  dispTopics: Boolean
+  dispTopics_not: Boolean
+  email: String
+  email_not: String
+  email_in: [String!]
+  email_not_in: [String!]
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  emailSetting: Boolean
+  emailSetting_not: Boolean
+  groupId: Int
+  groupId_not: Int
+  groupId_in: [Int!]
+  groupId_not_in: [Int!]
+  groupId_lt: Int
+  groupId_lte: Int
+  groupId_gt: Int
+  groupId_gte: Int
+  icq: String
+  icq_not: String
+  icq_in: [String!]
+  icq_not_in: [String!]
+  icq_lt: String
+  icq_lte: String
+  icq_gt: String
+  icq_gte: String
+  icq_contains: String
+  icq_not_contains: String
+  icq_starts_with: String
+  icq_not_starts_with: String
+  icq_ends_with: String
+  icq_not_ends_with: String
+  jabber: String
+  jabber_not: String
+  jabber_in: [String!]
+  jabber_not_in: [String!]
+  jabber_lt: String
+  jabber_lte: String
+  jabber_gt: String
+  jabber_gte: String
+  jabber_contains: String
+  jabber_not_contains: String
+  jabber_starts_with: String
+  jabber_not_starts_with: String
+  jabber_ends_with: String
+  jabber_not_ends_with: String
+  language: String
+  language_not: String
+  language_in: [String!]
+  language_not_in: [String!]
+  language_lt: String
+  language_lte: String
+  language_gt: String
+  language_gte: String
+  language_contains: String
+  language_not_contains: String
+  language_starts_with: String
+  language_not_starts_with: String
+  language_ends_with: String
+  language_not_ends_with: String
+  lastPost: Int
+  lastPost_not: Int
+  lastPost_in: [Int!]
+  lastPost_not_in: [Int!]
+  lastPost_lt: Int
+  lastPost_lte: Int
+  lastPost_gt: Int
+  lastPost_gte: Int
+  lastVisit: Int
+  lastVisit_not: Int
+  lastVisit_in: [Int!]
+  lastVisit_not_in: [Int!]
+  lastVisit_lt: Int
+  lastVisit_lte: Int
+  lastVisit_gt: Int
+  lastVisit_gte: Int
+  location: String
+  location_not: String
+  location_in: [String!]
+  location_not_in: [String!]
+  location_lt: String
+  location_lte: String
+  location_gt: String
+  location_gte: String
+  location_contains: String
+  location_not_contains: String
+  location_starts_with: String
+  location_not_starts_with: String
+  location_ends_with: String
+  location_not_ends_with: String
+  msn: String
+  msn_not: String
+  msn_in: [String!]
+  msn_not_in: [String!]
+  msn_lt: String
+  msn_lte: String
+  msn_gt: String
+  msn_gte: String
+  msn_contains: String
+  msn_not_contains: String
+  msn_starts_with: String
+  msn_not_starts_with: String
+  msn_ends_with: String
+  msn_not_ends_with: String
+  notifyWithPost: Boolean
+  notifyWithPost_not: Boolean
+  numPosts: Int
+  numPosts_not: Int
+  numPosts_in: [Int!]
+  numPosts_not_in: [Int!]
+  numPosts_lt: Int
+  numPosts_lte: Int
+  numPosts_gt: Int
+  numPosts_gte: Int
+  password: String
+  password_not: String
+  password_in: [String!]
+  password_not_in: [String!]
+  password_lt: String
+  password_lte: String
+  password_gt: String
+  password_gte: String
+  password_contains: String
+  password_not_contains: String
+  password_starts_with: String
+  password_not_starts_with: String
+  password_ends_with: String
+  password_not_ends_with: String
+  readTopics: String
+  readTopics_not: String
+  readTopics_in: [String!]
+  readTopics_not_in: [String!]
+  readTopics_lt: String
+  readTopics_lte: String
+  readTopics_gt: String
+  readTopics_gte: String
+  readTopics_contains: String
+  readTopics_not_contains: String
+  readTopics_starts_with: String
+  readTopics_not_starts_with: String
+  readTopics_ends_with: String
+  readTopics_not_ends_with: String
+  realname: String
+  realname_not: String
+  realname_in: [String!]
+  realname_not_in: [String!]
+  realname_lt: String
+  realname_lte: String
+  realname_gt: String
+  realname_gte: String
+  realname_contains: String
+  realname_not_contains: String
+  realname_starts_with: String
+  realname_not_starts_with: String
+  realname_ends_with: String
+  realname_not_ends_with: String
+  registered: Int
+  registered_not: Int
+  registered_in: [Int!]
+  registered_not_in: [Int!]
+  registered_lt: Int
+  registered_lte: Int
+  registered_gt: Int
+  registered_gte: Int
+  registrationIp: String
+  registrationIp_not: String
+  registrationIp_in: [String!]
+  registrationIp_not_in: [String!]
+  registrationIp_lt: String
+  registrationIp_lte: String
+  registrationIp_gt: String
+  registrationIp_gte: String
+  registrationIp_contains: String
+  registrationIp_not_contains: String
+  registrationIp_starts_with: String
+  registrationIp_not_starts_with: String
+  registrationIp_ends_with: String
+  registrationIp_not_ends_with: String
+  savePass: Boolean
+  savePass_not: Boolean
+  showAvatars: Boolean
+  showAvatars_not: Boolean
+  showImg: Boolean
+  showImg_not: Boolean
+  showImgSig: Boolean
+  showImgSig_not: Boolean
+  showSig: Boolean
+  showSig_not: Boolean
+  showSmilies: Boolean
+  showSmilies_not: Boolean
+  signature: String
+  signature_not: String
+  signature_in: [String!]
+  signature_not_in: [String!]
+  signature_lt: String
+  signature_lte: String
+  signature_gt: String
+  signature_gte: String
+  signature_contains: String
+  signature_not_contains: String
+  signature_starts_with: String
+  signature_not_starts_with: String
+  signature_ends_with: String
+  signature_not_ends_with: String
+  style: String
+  style_not: String
+  style_in: [String!]
+  style_not_in: [String!]
+  style_lt: String
+  style_lte: String
+  style_gt: String
+  style_gte: String
+  style_contains: String
+  style_not_contains: String
+  style_starts_with: String
+  style_not_starts_with: String
+  style_ends_with: String
+  style_not_ends_with: String
+  timezone: Float
+  timezone_not: Float
+  timezone_in: [Float!]
+  timezone_not_in: [Float!]
+  timezone_lt: Float
+  timezone_lte: Float
+  timezone_gt: Float
+  timezone_gte: Float
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  useAvatar: Boolean
+  useAvatar_not: Boolean
+  username: String
+  username_not: String
+  username_in: [String!]
+  username_not_in: [String!]
+  username_lt: String
+  username_lte: String
+  username_gt: String
+  username_gte: String
+  username_contains: String
+  username_not_contains: String
+  username_starts_with: String
+  username_not_starts_with: String
+  username_ends_with: String
+  username_not_ends_with: String
+  yahoo: String
+  yahoo_not: String
+  yahoo_in: [String!]
+  yahoo_not_in: [String!]
+  yahoo_lt: String
+  yahoo_lte: String
+  yahoo_gt: String
+  yahoo_gte: String
+  yahoo_contains: String
+  yahoo_not_contains: String
+  yahoo_starts_with: String
+  yahoo_not_starts_with: String
+  yahoo_ends_with: String
+  yahoo_not_ends_with: String
+  AND: [PunbbUserWhereInput!]
+  OR: [PunbbUserWhereInput!]
+  NOT: [PunbbUserWhereInput!]
+}
+
+input PunbbUserWhereUniqueInput {
+  id: Int
+}
+
+type Query {
+  punbbBan(where: PunbbBanWhereUniqueInput!): PunbbBan
+  punbbBans(where: PunbbBanWhereInput, orderBy: PunbbBanOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbBan]!
+  punbbBansConnection(where: PunbbBanWhereInput, orderBy: PunbbBanOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbBanConnection!
+  punbbCategory(where: PunbbCategoryWhereUniqueInput!): PunbbCategory
+  punbbCategories(where: PunbbCategoryWhereInput, orderBy: PunbbCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbCategory]!
+  punbbCategoriesConnection(where: PunbbCategoryWhereInput, orderBy: PunbbCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbCategoryConnection!
+  punbbCensoring(where: PunbbCensoringWhereUniqueInput!): PunbbCensoring
+  punbbCensorings(where: PunbbCensoringWhereInput, orderBy: PunbbCensoringOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbCensoring]!
+  punbbCensoringsConnection(where: PunbbCensoringWhereInput, orderBy: PunbbCensoringOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbCensoringConnection!
+  punbbConfig(where: PunbbConfigWhereUniqueInput!): PunbbConfig
+  punbbConfigs(where: PunbbConfigWhereInput, orderBy: PunbbConfigOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbConfig]!
+  punbbConfigsConnection(where: PunbbConfigWhereInput, orderBy: PunbbConfigOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbConfigConnection!
+  punbbForum(where: PunbbForumWhereUniqueInput!): PunbbForum
+  punbbForums(where: PunbbForumWhereInput, orderBy: PunbbForumOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbForum]!
+  punbbForumsConnection(where: PunbbForumWhereInput, orderBy: PunbbForumOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbForumConnection!
+  punbbForumPerms(where: PunbbForumPermWhereInput, orderBy: PunbbForumPermOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbForumPerm]!
+  punbbForumPermsConnection(where: PunbbForumPermWhereInput, orderBy: PunbbForumPermOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbForumPermConnection!
+  punbbGroup(where: PunbbGroupWhereUniqueInput!): PunbbGroup
+  punbbGroups(where: PunbbGroupWhereInput, orderBy: PunbbGroupOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbGroup]!
+  punbbGroupsConnection(where: PunbbGroupWhereInput, orderBy: PunbbGroupOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbGroupConnection!
+  punbbOnlines(where: PunbbOnlineWhereInput, orderBy: PunbbOnlineOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbOnline]!
+  punbbOnlinesConnection(where: PunbbOnlineWhereInput, orderBy: PunbbOnlineOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbOnlineConnection!
+  punbbPoll(where: PunbbPollWhereUniqueInput!): PunbbPoll
+  punbbPolls(where: PunbbPollWhereInput, orderBy: PunbbPollOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbPoll]!
+  punbbPollsConnection(where: PunbbPollWhereInput, orderBy: PunbbPollOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbPollConnection!
+  punbbPost(where: PunbbPostWhereUniqueInput!): PunbbPost
+  punbbPosts(where: PunbbPostWhereInput, orderBy: PunbbPostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbPost]!
+  punbbPostsConnection(where: PunbbPostWhereInput, orderBy: PunbbPostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbPostConnection!
+  punbbRank(where: PunbbRankWhereUniqueInput!): PunbbRank
+  punbbRanks(where: PunbbRankWhereInput, orderBy: PunbbRankOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbRank]!
+  punbbRanksConnection(where: PunbbRankWhereInput, orderBy: PunbbRankOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbRankConnection!
+  punbbReport(where: PunbbReportWhereUniqueInput!): PunbbReport
+  punbbReports(where: PunbbReportWhereInput, orderBy: PunbbReportOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbReport]!
+  punbbReportsConnection(where: PunbbReportWhereInput, orderBy: PunbbReportOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbReportConnection!
+  punbbSearchCache(where: PunbbSearchCacheWhereUniqueInput!): PunbbSearchCache
+  punbbSearchCaches(where: PunbbSearchCacheWhereInput, orderBy: PunbbSearchCacheOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbSearchCache]!
+  punbbSearchCachesConnection(where: PunbbSearchCacheWhereInput, orderBy: PunbbSearchCacheOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbSearchCacheConnection!
+  punbbSearchMatches(where: PunbbSearchMatchWhereInput, orderBy: PunbbSearchMatchOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbSearchMatch]!
+  punbbSearchMatchesConnection(where: PunbbSearchMatchWhereInput, orderBy: PunbbSearchMatchOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbSearchMatchConnection!
+  punbbSearchWord(where: PunbbSearchWordWhereUniqueInput!): PunbbSearchWord
+  punbbSearchWords(where: PunbbSearchWordWhereInput, orderBy: PunbbSearchWordOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbSearchWord]!
+  punbbSearchWordsConnection(where: PunbbSearchWordWhereInput, orderBy: PunbbSearchWordOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbSearchWordConnection!
+  punbbTopic(where: PunbbTopicWhereUniqueInput!): PunbbTopic
+  punbbTopics(where: PunbbTopicWhereInput, orderBy: PunbbTopicOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbTopic]!
+  punbbTopicsConnection(where: PunbbTopicWhereInput, orderBy: PunbbTopicOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbTopicConnection!
+  punbbUploaded(where: PunbbUploadedWhereUniqueInput!): PunbbUploaded
+  punbbUploadeds(where: PunbbUploadedWhereInput, orderBy: PunbbUploadedOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbUploaded]!
+  punbbUploadedsConnection(where: PunbbUploadedWhereInput, orderBy: PunbbUploadedOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbUploadedConnection!
+  punbbUploadsConfs(where: PunbbUploadsConfWhereInput, orderBy: PunbbUploadsConfOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbUploadsConf]!
+  punbbUploadsConfsConnection(where: PunbbUploadsConfWhereInput, orderBy: PunbbUploadsConfOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbUploadsConfConnection!
+  punbbUploadsType(where: PunbbUploadsTypeWhereUniqueInput!): PunbbUploadsType
+  punbbUploadsTypes(where: PunbbUploadsTypeWhereInput, orderBy: PunbbUploadsTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbUploadsType]!
+  punbbUploadsTypesConnection(where: PunbbUploadsTypeWhereInput, orderBy: PunbbUploadsTypeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbUploadsTypeConnection!
+  punbbUser(where: PunbbUserWhereUniqueInput!): PunbbUser
+  punbbUsers(where: PunbbUserWhereInput, orderBy: PunbbUserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbUser]!
+  punbbUsersConnection(where: PunbbUserWhereInput, orderBy: PunbbUserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbUserConnection!
+  punbbUserthreads(where: PunbbUserthreadWhereInput, orderBy: PunbbUserthreadOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PunbbUserthread]!
+  punbbUserthreadsConnection(where: PunbbUserthreadWhereInput, orderBy: PunbbUserthreadOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PunbbUserthreadConnection!
+  node(id: ID!): Node
+}
+
+type Subscription {
+  punbbBan(where: PunbbBanSubscriptionWhereInput): PunbbBanSubscriptionPayload
+  punbbCategory(where: PunbbCategorySubscriptionWhereInput): PunbbCategorySubscriptionPayload
+  punbbCensoring(where: PunbbCensoringSubscriptionWhereInput): PunbbCensoringSubscriptionPayload
+  punbbConfig(where: PunbbConfigSubscriptionWhereInput): PunbbConfigSubscriptionPayload
+  punbbForum(where: PunbbForumSubscriptionWhereInput): PunbbForumSubscriptionPayload
+  punbbForumPerm(where: PunbbForumPermSubscriptionWhereInput): PunbbForumPermSubscriptionPayload
+  punbbGroup(where: PunbbGroupSubscriptionWhereInput): PunbbGroupSubscriptionPayload
+  punbbOnline(where: PunbbOnlineSubscriptionWhereInput): PunbbOnlineSubscriptionPayload
+  punbbPoll(where: PunbbPollSubscriptionWhereInput): PunbbPollSubscriptionPayload
+  punbbPost(where: PunbbPostSubscriptionWhereInput): PunbbPostSubscriptionPayload
+  punbbRank(where: PunbbRankSubscriptionWhereInput): PunbbRankSubscriptionPayload
+  punbbReport(where: PunbbReportSubscriptionWhereInput): PunbbReportSubscriptionPayload
+  punbbSearchCache(where: PunbbSearchCacheSubscriptionWhereInput): PunbbSearchCacheSubscriptionPayload
+  punbbSearchMatch(where: PunbbSearchMatchSubscriptionWhereInput): PunbbSearchMatchSubscriptionPayload
+  punbbSearchWord(where: PunbbSearchWordSubscriptionWhereInput): PunbbSearchWordSubscriptionPayload
+  punbbTopic(where: PunbbTopicSubscriptionWhereInput): PunbbTopicSubscriptionPayload
+  punbbUploaded(where: PunbbUploadedSubscriptionWhereInput): PunbbUploadedSubscriptionPayload
+  punbbUploadsConf(where: PunbbUploadsConfSubscriptionWhereInput): PunbbUploadsConfSubscriptionPayload
+  punbbUploadsType(where: PunbbUploadsTypeSubscriptionWhereInput): PunbbUploadsTypeSubscriptionPayload
+  punbbUser(where: PunbbUserSubscriptionWhereInput): PunbbUserSubscriptionPayload
+  punbbUserthread(where: PunbbUserthreadSubscriptionWhereInput): PunbbUserthreadSubscriptionPayload
 }
 `

@@ -9,15 +9,16 @@ services:
       PRISMA_CONFIG: |
         port: 4466
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
-        # managementApiSecret: my-secret
+        managementApiSecret: triangle
         databases:
           default:
             connector: mysql
             host: mysql
             user: root
-            password: prisma
+            password: triangle
             rawAccess: true
             port: 3306
+            database: axelnormand_tess
             migrations: true
   mysql:
     image: mysql:5.7
@@ -26,7 +27,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: prisma
+      MYSQL_ROOT_PASSWORD: triangle
     volumes:
       - mysql:/var/lib/mysql
 volumes:
