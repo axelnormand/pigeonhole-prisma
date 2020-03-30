@@ -18,25 +18,12 @@ export type Maybe<T> = T | undefined | null;
 export interface Exists {
   punbbBan: (where?: PunbbBanWhereInput) => Promise<boolean>;
   punbbCategory: (where?: PunbbCategoryWhereInput) => Promise<boolean>;
-  punbbCensoring: (where?: PunbbCensoringWhereInput) => Promise<boolean>;
-  punbbConfig: (where?: PunbbConfigWhereInput) => Promise<boolean>;
   punbbForum: (where?: PunbbForumWhereInput) => Promise<boolean>;
-  punbbForumPerm: (where?: PunbbForumPermWhereInput) => Promise<boolean>;
-  punbbGroup: (where?: PunbbGroupWhereInput) => Promise<boolean>;
   punbbOnline: (where?: PunbbOnlineWhereInput) => Promise<boolean>;
-  punbbPoll: (where?: PunbbPollWhereInput) => Promise<boolean>;
   punbbPost: (where?: PunbbPostWhereInput) => Promise<boolean>;
-  punbbRank: (where?: PunbbRankWhereInput) => Promise<boolean>;
-  punbbReport: (where?: PunbbReportWhereInput) => Promise<boolean>;
-  punbbSearchCache: (where?: PunbbSearchCacheWhereInput) => Promise<boolean>;
-  punbbSearchMatch: (where?: PunbbSearchMatchWhereInput) => Promise<boolean>;
-  punbbSearchWord: (where?: PunbbSearchWordWhereInput) => Promise<boolean>;
   punbbTopic: (where?: PunbbTopicWhereInput) => Promise<boolean>;
   punbbUploaded: (where?: PunbbUploadedWhereInput) => Promise<boolean>;
-  punbbUploadsConf: (where?: PunbbUploadsConfWhereInput) => Promise<boolean>;
-  punbbUploadsType: (where?: PunbbUploadsTypeWhereInput) => Promise<boolean>;
   punbbUser: (where?: PunbbUserWhereInput) => Promise<boolean>;
-  punbbUserthread: (where?: PunbbUserthreadWhereInput) => Promise<boolean>;
 }
 
 export interface Node {}
@@ -98,48 +85,6 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbCategoryConnectionPromise;
-  punbbCensoring: (
-    where: PunbbCensoringWhereUniqueInput
-  ) => PunbbCensoringNullablePromise;
-  punbbCensorings: (args?: {
-    where?: PunbbCensoringWhereInput;
-    orderBy?: PunbbCensoringOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbCensoring>;
-  punbbCensoringsConnection: (args?: {
-    where?: PunbbCensoringWhereInput;
-    orderBy?: PunbbCensoringOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbCensoringConnectionPromise;
-  punbbConfig: (
-    where: PunbbConfigWhereUniqueInput
-  ) => PunbbConfigNullablePromise;
-  punbbConfigs: (args?: {
-    where?: PunbbConfigWhereInput;
-    orderBy?: PunbbConfigOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbConfig>;
-  punbbConfigsConnection: (args?: {
-    where?: PunbbConfigWhereInput;
-    orderBy?: PunbbConfigOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbConfigConnectionPromise;
   punbbForum: (where: PunbbForumWhereUniqueInput) => PunbbForumNullablePromise;
   punbbForums: (args?: {
     where?: PunbbForumWhereInput;
@@ -159,43 +104,9 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbForumConnectionPromise;
-  punbbForumPerms: (args?: {
-    where?: PunbbForumPermWhereInput;
-    orderBy?: PunbbForumPermOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbForumPerm>;
-  punbbForumPermsConnection: (args?: {
-    where?: PunbbForumPermWhereInput;
-    orderBy?: PunbbForumPermOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbForumPermConnectionPromise;
-  punbbGroup: (where: PunbbGroupWhereUniqueInput) => PunbbGroupNullablePromise;
-  punbbGroups: (args?: {
-    where?: PunbbGroupWhereInput;
-    orderBy?: PunbbGroupOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbGroup>;
-  punbbGroupsConnection: (args?: {
-    where?: PunbbGroupWhereInput;
-    orderBy?: PunbbGroupOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbGroupConnectionPromise;
+  punbbOnline: (
+    where: PunbbOnlineWhereUniqueInput
+  ) => PunbbOnlineNullablePromise;
   punbbOnlines: (args?: {
     where?: PunbbOnlineWhereInput;
     orderBy?: PunbbOnlineOrderByInput;
@@ -214,25 +125,6 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbOnlineConnectionPromise;
-  punbbPoll: (where: PunbbPollWhereUniqueInput) => PunbbPollNullablePromise;
-  punbbPolls: (args?: {
-    where?: PunbbPollWhereInput;
-    orderBy?: PunbbPollOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbPoll>;
-  punbbPollsConnection: (args?: {
-    where?: PunbbPollWhereInput;
-    orderBy?: PunbbPollOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbPollConnectionPromise;
   punbbPost: (where: PunbbPostWhereUniqueInput) => PunbbPostNullablePromise;
   punbbPosts: (args?: {
     where?: PunbbPostWhereInput;
@@ -252,106 +144,6 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbPostConnectionPromise;
-  punbbRank: (where: PunbbRankWhereUniqueInput) => PunbbRankNullablePromise;
-  punbbRanks: (args?: {
-    where?: PunbbRankWhereInput;
-    orderBy?: PunbbRankOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbRank>;
-  punbbRanksConnection: (args?: {
-    where?: PunbbRankWhereInput;
-    orderBy?: PunbbRankOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbRankConnectionPromise;
-  punbbReport: (
-    where: PunbbReportWhereUniqueInput
-  ) => PunbbReportNullablePromise;
-  punbbReports: (args?: {
-    where?: PunbbReportWhereInput;
-    orderBy?: PunbbReportOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbReport>;
-  punbbReportsConnection: (args?: {
-    where?: PunbbReportWhereInput;
-    orderBy?: PunbbReportOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbReportConnectionPromise;
-  punbbSearchCache: (
-    where: PunbbSearchCacheWhereUniqueInput
-  ) => PunbbSearchCacheNullablePromise;
-  punbbSearchCaches: (args?: {
-    where?: PunbbSearchCacheWhereInput;
-    orderBy?: PunbbSearchCacheOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbSearchCache>;
-  punbbSearchCachesConnection: (args?: {
-    where?: PunbbSearchCacheWhereInput;
-    orderBy?: PunbbSearchCacheOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbSearchCacheConnectionPromise;
-  punbbSearchMatches: (args?: {
-    where?: PunbbSearchMatchWhereInput;
-    orderBy?: PunbbSearchMatchOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbSearchMatch>;
-  punbbSearchMatchesConnection: (args?: {
-    where?: PunbbSearchMatchWhereInput;
-    orderBy?: PunbbSearchMatchOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbSearchMatchConnectionPromise;
-  punbbSearchWord: (
-    where: PunbbSearchWordWhereUniqueInput
-  ) => PunbbSearchWordNullablePromise;
-  punbbSearchWords: (args?: {
-    where?: PunbbSearchWordWhereInput;
-    orderBy?: PunbbSearchWordOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbSearchWord>;
-  punbbSearchWordsConnection: (args?: {
-    where?: PunbbSearchWordWhereInput;
-    orderBy?: PunbbSearchWordOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbSearchWordConnectionPromise;
   punbbTopic: (where: PunbbTopicWhereUniqueInput) => PunbbTopicNullablePromise;
   punbbTopics: (args?: {
     where?: PunbbTopicWhereInput;
@@ -392,45 +184,6 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbUploadedConnectionPromise;
-  punbbUploadsConfs: (args?: {
-    where?: PunbbUploadsConfWhereInput;
-    orderBy?: PunbbUploadsConfOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbUploadsConf>;
-  punbbUploadsConfsConnection: (args?: {
-    where?: PunbbUploadsConfWhereInput;
-    orderBy?: PunbbUploadsConfOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbUploadsConfConnectionPromise;
-  punbbUploadsType: (
-    where: PunbbUploadsTypeWhereUniqueInput
-  ) => PunbbUploadsTypeNullablePromise;
-  punbbUploadsTypes: (args?: {
-    where?: PunbbUploadsTypeWhereInput;
-    orderBy?: PunbbUploadsTypeOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbUploadsType>;
-  punbbUploadsTypesConnection: (args?: {
-    where?: PunbbUploadsTypeWhereInput;
-    orderBy?: PunbbUploadsTypeOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbUploadsTypeConnectionPromise;
   punbbUser: (where: PunbbUserWhereUniqueInput) => PunbbUserNullablePromise;
   punbbUsers: (args?: {
     where?: PunbbUserWhereInput;
@@ -450,24 +203,6 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => PunbbUserConnectionPromise;
-  punbbUserthreads: (args?: {
-    where?: PunbbUserthreadWhereInput;
-    orderBy?: PunbbUserthreadOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => FragmentableArray<PunbbUserthread>;
-  punbbUserthreadsConnection: (args?: {
-    where?: PunbbUserthreadWhereInput;
-    orderBy?: PunbbUserthreadOrderByInput;
-    skip?: Int;
-    after?: String;
-    before?: String;
-    first?: Int;
-    last?: Int;
-  }) => PunbbUserthreadConnectionPromise;
   node: (args: { id: ID_Output }) => Node;
 
   /**
@@ -510,46 +245,6 @@ export interface Prisma {
   deleteManyPunbbCategories: (
     where?: PunbbCategoryWhereInput
   ) => BatchPayloadPromise;
-  createPunbbCensoring: (
-    data: PunbbCensoringCreateInput
-  ) => PunbbCensoringPromise;
-  updatePunbbCensoring: (args: {
-    data: PunbbCensoringUpdateInput;
-    where: PunbbCensoringWhereUniqueInput;
-  }) => PunbbCensoringPromise;
-  updateManyPunbbCensorings: (args: {
-    data: PunbbCensoringUpdateManyMutationInput;
-    where?: PunbbCensoringWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbCensoring: (args: {
-    where: PunbbCensoringWhereUniqueInput;
-    create: PunbbCensoringCreateInput;
-    update: PunbbCensoringUpdateInput;
-  }) => PunbbCensoringPromise;
-  deletePunbbCensoring: (
-    where: PunbbCensoringWhereUniqueInput
-  ) => PunbbCensoringPromise;
-  deleteManyPunbbCensorings: (
-    where?: PunbbCensoringWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbConfig: (data: PunbbConfigCreateInput) => PunbbConfigPromise;
-  updatePunbbConfig: (args: {
-    data: PunbbConfigUpdateInput;
-    where: PunbbConfigWhereUniqueInput;
-  }) => PunbbConfigPromise;
-  updateManyPunbbConfigs: (args: {
-    data: PunbbConfigUpdateManyMutationInput;
-    where?: PunbbConfigWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbConfig: (args: {
-    where: PunbbConfigWhereUniqueInput;
-    create: PunbbConfigCreateInput;
-    update: PunbbConfigUpdateInput;
-  }) => PunbbConfigPromise;
-  deletePunbbConfig: (where: PunbbConfigWhereUniqueInput) => PunbbConfigPromise;
-  deleteManyPunbbConfigs: (
-    where?: PunbbConfigWhereInput
-  ) => BatchPayloadPromise;
   createPunbbForum: (data: PunbbForumCreateInput) => PunbbForumPromise;
   updatePunbbForum: (args: {
     data: PunbbForumUpdateInput;
@@ -566,56 +261,24 @@ export interface Prisma {
   }) => PunbbForumPromise;
   deletePunbbForum: (where: PunbbForumWhereUniqueInput) => PunbbForumPromise;
   deleteManyPunbbForums: (where?: PunbbForumWhereInput) => BatchPayloadPromise;
-  createPunbbForumPerm: (
-    data: PunbbForumPermCreateInput
-  ) => PunbbForumPermPromise;
-  updateManyPunbbForumPerms: (args: {
-    data: PunbbForumPermUpdateManyMutationInput;
-    where?: PunbbForumPermWhereInput;
-  }) => BatchPayloadPromise;
-  deleteManyPunbbForumPerms: (
-    where?: PunbbForumPermWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbGroup: (data: PunbbGroupCreateInput) => PunbbGroupPromise;
-  updatePunbbGroup: (args: {
-    data: PunbbGroupUpdateInput;
-    where: PunbbGroupWhereUniqueInput;
-  }) => PunbbGroupPromise;
-  updateManyPunbbGroups: (args: {
-    data: PunbbGroupUpdateManyMutationInput;
-    where?: PunbbGroupWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbGroup: (args: {
-    where: PunbbGroupWhereUniqueInput;
-    create: PunbbGroupCreateInput;
-    update: PunbbGroupUpdateInput;
-  }) => PunbbGroupPromise;
-  deletePunbbGroup: (where: PunbbGroupWhereUniqueInput) => PunbbGroupPromise;
-  deleteManyPunbbGroups: (where?: PunbbGroupWhereInput) => BatchPayloadPromise;
   createPunbbOnline: (data: PunbbOnlineCreateInput) => PunbbOnlinePromise;
+  updatePunbbOnline: (args: {
+    data: PunbbOnlineUpdateInput;
+    where: PunbbOnlineWhereUniqueInput;
+  }) => PunbbOnlinePromise;
   updateManyPunbbOnlines: (args: {
     data: PunbbOnlineUpdateManyMutationInput;
     where?: PunbbOnlineWhereInput;
   }) => BatchPayloadPromise;
+  upsertPunbbOnline: (args: {
+    where: PunbbOnlineWhereUniqueInput;
+    create: PunbbOnlineCreateInput;
+    update: PunbbOnlineUpdateInput;
+  }) => PunbbOnlinePromise;
+  deletePunbbOnline: (where: PunbbOnlineWhereUniqueInput) => PunbbOnlinePromise;
   deleteManyPunbbOnlines: (
     where?: PunbbOnlineWhereInput
   ) => BatchPayloadPromise;
-  createPunbbPoll: (data: PunbbPollCreateInput) => PunbbPollPromise;
-  updatePunbbPoll: (args: {
-    data: PunbbPollUpdateInput;
-    where: PunbbPollWhereUniqueInput;
-  }) => PunbbPollPromise;
-  updateManyPunbbPolls: (args: {
-    data: PunbbPollUpdateManyMutationInput;
-    where?: PunbbPollWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbPoll: (args: {
-    where: PunbbPollWhereUniqueInput;
-    create: PunbbPollCreateInput;
-    update: PunbbPollUpdateInput;
-  }) => PunbbPollPromise;
-  deletePunbbPoll: (where: PunbbPollWhereUniqueInput) => PunbbPollPromise;
-  deleteManyPunbbPolls: (where?: PunbbPollWhereInput) => BatchPayloadPromise;
   createPunbbPost: (data: PunbbPostCreateInput) => PunbbPostPromise;
   updatePunbbPost: (args: {
     data: PunbbPostUpdateInput;
@@ -632,81 +295,6 @@ export interface Prisma {
   }) => PunbbPostPromise;
   deletePunbbPost: (where: PunbbPostWhereUniqueInput) => PunbbPostPromise;
   deleteManyPunbbPosts: (where?: PunbbPostWhereInput) => BatchPayloadPromise;
-  createPunbbRank: (data: PunbbRankCreateInput) => PunbbRankPromise;
-  updatePunbbRank: (args: {
-    data: PunbbRankUpdateInput;
-    where: PunbbRankWhereUniqueInput;
-  }) => PunbbRankPromise;
-  updateManyPunbbRanks: (args: {
-    data: PunbbRankUpdateManyMutationInput;
-    where?: PunbbRankWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbRank: (args: {
-    where: PunbbRankWhereUniqueInput;
-    create: PunbbRankCreateInput;
-    update: PunbbRankUpdateInput;
-  }) => PunbbRankPromise;
-  deletePunbbRank: (where: PunbbRankWhereUniqueInput) => PunbbRankPromise;
-  deleteManyPunbbRanks: (where?: PunbbRankWhereInput) => BatchPayloadPromise;
-  createPunbbReport: (data: PunbbReportCreateInput) => PunbbReportPromise;
-  updatePunbbReport: (args: {
-    data: PunbbReportUpdateInput;
-    where: PunbbReportWhereUniqueInput;
-  }) => PunbbReportPromise;
-  updateManyPunbbReports: (args: {
-    data: PunbbReportUpdateManyMutationInput;
-    where?: PunbbReportWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbReport: (args: {
-    where: PunbbReportWhereUniqueInput;
-    create: PunbbReportCreateInput;
-    update: PunbbReportUpdateInput;
-  }) => PunbbReportPromise;
-  deletePunbbReport: (where: PunbbReportWhereUniqueInput) => PunbbReportPromise;
-  deleteManyPunbbReports: (
-    where?: PunbbReportWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbSearchCache: (
-    data: PunbbSearchCacheCreateInput
-  ) => PunbbSearchCachePromise;
-  updatePunbbSearchCache: (args: {
-    data: PunbbSearchCacheUpdateInput;
-    where: PunbbSearchCacheWhereUniqueInput;
-  }) => PunbbSearchCachePromise;
-  updateManyPunbbSearchCaches: (args: {
-    data: PunbbSearchCacheUpdateManyMutationInput;
-    where?: PunbbSearchCacheWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbSearchCache: (args: {
-    where: PunbbSearchCacheWhereUniqueInput;
-    create: PunbbSearchCacheCreateInput;
-    update: PunbbSearchCacheUpdateInput;
-  }) => PunbbSearchCachePromise;
-  deletePunbbSearchCache: (
-    where: PunbbSearchCacheWhereUniqueInput
-  ) => PunbbSearchCachePromise;
-  deleteManyPunbbSearchCaches: (
-    where?: PunbbSearchCacheWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbSearchMatch: (
-    data: PunbbSearchMatchCreateInput
-  ) => PunbbSearchMatchPromise;
-  updateManyPunbbSearchMatches: (args: {
-    data: PunbbSearchMatchUpdateManyMutationInput;
-    where?: PunbbSearchMatchWhereInput;
-  }) => BatchPayloadPromise;
-  deleteManyPunbbSearchMatches: (
-    where?: PunbbSearchMatchWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbSearchWord: (
-    data: PunbbSearchWordCreateInput
-  ) => PunbbSearchWordPromise;
-  deletePunbbSearchWord: (
-    where: PunbbSearchWordWhereUniqueInput
-  ) => PunbbSearchWordPromise;
-  deleteManyPunbbSearchWords: (
-    where?: PunbbSearchWordWhereInput
-  ) => BatchPayloadPromise;
   createPunbbTopic: (data: PunbbTopicCreateInput) => PunbbTopicPromise;
   updatePunbbTopic: (args: {
     data: PunbbTopicUpdateInput;
@@ -743,38 +331,6 @@ export interface Prisma {
   deleteManyPunbbUploadeds: (
     where?: PunbbUploadedWhereInput
   ) => BatchPayloadPromise;
-  createPunbbUploadsConf: (
-    data: PunbbUploadsConfCreateInput
-  ) => PunbbUploadsConfPromise;
-  updateManyPunbbUploadsConfs: (args: {
-    data: PunbbUploadsConfUpdateManyMutationInput;
-    where?: PunbbUploadsConfWhereInput;
-  }) => BatchPayloadPromise;
-  deleteManyPunbbUploadsConfs: (
-    where?: PunbbUploadsConfWhereInput
-  ) => BatchPayloadPromise;
-  createPunbbUploadsType: (
-    data: PunbbUploadsTypeCreateInput
-  ) => PunbbUploadsTypePromise;
-  updatePunbbUploadsType: (args: {
-    data: PunbbUploadsTypeUpdateInput;
-    where: PunbbUploadsTypeWhereUniqueInput;
-  }) => PunbbUploadsTypePromise;
-  updateManyPunbbUploadsTypes: (args: {
-    data: PunbbUploadsTypeUpdateManyMutationInput;
-    where?: PunbbUploadsTypeWhereInput;
-  }) => BatchPayloadPromise;
-  upsertPunbbUploadsType: (args: {
-    where: PunbbUploadsTypeWhereUniqueInput;
-    create: PunbbUploadsTypeCreateInput;
-    update: PunbbUploadsTypeUpdateInput;
-  }) => PunbbUploadsTypePromise;
-  deletePunbbUploadsType: (
-    where: PunbbUploadsTypeWhereUniqueInput
-  ) => PunbbUploadsTypePromise;
-  deleteManyPunbbUploadsTypes: (
-    where?: PunbbUploadsTypeWhereInput
-  ) => BatchPayloadPromise;
   createPunbbUser: (data: PunbbUserCreateInput) => PunbbUserPromise;
   updatePunbbUser: (args: {
     data: PunbbUserUpdateInput;
@@ -791,16 +347,6 @@ export interface Prisma {
   }) => PunbbUserPromise;
   deletePunbbUser: (where: PunbbUserWhereUniqueInput) => PunbbUserPromise;
   deleteManyPunbbUsers: (where?: PunbbUserWhereInput) => BatchPayloadPromise;
-  createPunbbUserthread: (
-    data: PunbbUserthreadCreateInput
-  ) => PunbbUserthreadPromise;
-  updateManyPunbbUserthreads: (args: {
-    data: PunbbUserthreadUpdateManyMutationInput;
-    where?: PunbbUserthreadWhereInput;
-  }) => BatchPayloadPromise;
-  deleteManyPunbbUserthreads: (
-    where?: PunbbUserthreadWhereInput
-  ) => BatchPayloadPromise;
 
   /**
    * Subscriptions
@@ -816,63 +362,24 @@ export interface Subscription {
   punbbCategory: (
     where?: PunbbCategorySubscriptionWhereInput
   ) => PunbbCategorySubscriptionPayloadSubscription;
-  punbbCensoring: (
-    where?: PunbbCensoringSubscriptionWhereInput
-  ) => PunbbCensoringSubscriptionPayloadSubscription;
-  punbbConfig: (
-    where?: PunbbConfigSubscriptionWhereInput
-  ) => PunbbConfigSubscriptionPayloadSubscription;
   punbbForum: (
     where?: PunbbForumSubscriptionWhereInput
   ) => PunbbForumSubscriptionPayloadSubscription;
-  punbbForumPerm: (
-    where?: PunbbForumPermSubscriptionWhereInput
-  ) => PunbbForumPermSubscriptionPayloadSubscription;
-  punbbGroup: (
-    where?: PunbbGroupSubscriptionWhereInput
-  ) => PunbbGroupSubscriptionPayloadSubscription;
   punbbOnline: (
     where?: PunbbOnlineSubscriptionWhereInput
   ) => PunbbOnlineSubscriptionPayloadSubscription;
-  punbbPoll: (
-    where?: PunbbPollSubscriptionWhereInput
-  ) => PunbbPollSubscriptionPayloadSubscription;
   punbbPost: (
     where?: PunbbPostSubscriptionWhereInput
   ) => PunbbPostSubscriptionPayloadSubscription;
-  punbbRank: (
-    where?: PunbbRankSubscriptionWhereInput
-  ) => PunbbRankSubscriptionPayloadSubscription;
-  punbbReport: (
-    where?: PunbbReportSubscriptionWhereInput
-  ) => PunbbReportSubscriptionPayloadSubscription;
-  punbbSearchCache: (
-    where?: PunbbSearchCacheSubscriptionWhereInput
-  ) => PunbbSearchCacheSubscriptionPayloadSubscription;
-  punbbSearchMatch: (
-    where?: PunbbSearchMatchSubscriptionWhereInput
-  ) => PunbbSearchMatchSubscriptionPayloadSubscription;
-  punbbSearchWord: (
-    where?: PunbbSearchWordSubscriptionWhereInput
-  ) => PunbbSearchWordSubscriptionPayloadSubscription;
   punbbTopic: (
     where?: PunbbTopicSubscriptionWhereInput
   ) => PunbbTopicSubscriptionPayloadSubscription;
   punbbUploaded: (
     where?: PunbbUploadedSubscriptionWhereInput
   ) => PunbbUploadedSubscriptionPayloadSubscription;
-  punbbUploadsConf: (
-    where?: PunbbUploadsConfSubscriptionWhereInput
-  ) => PunbbUploadsConfSubscriptionPayloadSubscription;
-  punbbUploadsType: (
-    where?: PunbbUploadsTypeSubscriptionWhereInput
-  ) => PunbbUploadsTypeSubscriptionPayloadSubscription;
   punbbUser: (
     where?: PunbbUserSubscriptionWhereInput
   ) => PunbbUserSubscriptionPayloadSubscription;
-  punbbUserthread: (
-    where?: PunbbUserthreadSubscriptionWhereInput
-  ) => PunbbUserthreadSubscriptionPayloadSubscription;
 }
 
 export interface ClientConstructor<T> {
@@ -905,20 +412,6 @@ export type PunbbCategoryOrderByInput =
   | "dispPosition_ASC"
   | "dispPosition_DESC";
 
-export type PunbbCensoringOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "replaceWith_ASC"
-  | "replaceWith_DESC"
-  | "searchFor_ASC"
-  | "searchFor_DESC";
-
-export type PunbbConfigOrderByInput =
-  | "conf_name_ASC"
-  | "conf_name_DESC"
-  | "confValue_ASC"
-  | "confValue_DESC";
-
 export type PunbbForumOrderByInput =
   | "id_ASC"
   | "id_DESC"
@@ -943,50 +436,6 @@ export type PunbbForumOrderByInput =
   | "sortBy_ASC"
   | "sortBy_DESC";
 
-export type PunbbForumPermOrderByInput =
-  | "postPolls_ASC"
-  | "postPolls_DESC"
-  | "postReplies_ASC"
-  | "postReplies_DESC"
-  | "postTopics_ASC"
-  | "postTopics_DESC"
-  | "readForum_ASC"
-  | "readForum_DESC";
-
-export type PunbbGroupOrderByInput =
-  | "g_id_ASC"
-  | "g_id_DESC"
-  | "gDeletePosts_ASC"
-  | "gDeletePosts_DESC"
-  | "gDeleteTopics_ASC"
-  | "gDeleteTopics_DESC"
-  | "gEditPosts_ASC"
-  | "gEditPosts_DESC"
-  | "gEditSubjectsInterval_ASC"
-  | "gEditSubjectsInterval_DESC"
-  | "gPostFlood_ASC"
-  | "gPostFlood_DESC"
-  | "gPostPolls_ASC"
-  | "gPostPolls_DESC"
-  | "gPostReplies_ASC"
-  | "gPostReplies_DESC"
-  | "gPostTopics_ASC"
-  | "gPostTopics_DESC"
-  | "gReadBoard_ASC"
-  | "gReadBoard_DESC"
-  | "gSearch_ASC"
-  | "gSearch_DESC"
-  | "gSearchFlood_ASC"
-  | "gSearchFlood_DESC"
-  | "gSearchUsers_ASC"
-  | "gSearchUsers_DESC"
-  | "gSetTitle_ASC"
-  | "gSetTitle_DESC"
-  | "gTitle_ASC"
-  | "gTitle_DESC"
-  | "gUserTitle_ASC"
-  | "gUserTitle_DESC";
-
 export type PunbbOnlineOrderByInput =
   | "ident_ASC"
   | "ident_DESC"
@@ -996,20 +445,6 @@ export type PunbbOnlineOrderByInput =
   | "logged_DESC"
   | "userId_ASC"
   | "userId_DESC";
-
-export type PunbbPollOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "options_ASC"
-  | "options_DESC"
-  | "pollid_ASC"
-  | "pollid_DESC"
-  | "ptype_ASC"
-  | "ptype_DESC"
-  | "voters_ASC"
-  | "voters_DESC"
-  | "votes_ASC"
-  | "votes_DESC";
 
 export type PunbbPostOrderByInput =
   | "id_ASC"
@@ -1034,48 +469,6 @@ export type PunbbPostOrderByInput =
   | "posterIp_DESC"
   | "topicId_ASC"
   | "topicId_DESC";
-
-export type PunbbRankOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "rank_ASC"
-  | "rank_DESC";
-
-export type PunbbReportOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "created_ASC"
-  | "created_DESC"
-  | "forumId_ASC"
-  | "forumId_DESC"
-  | "message_ASC"
-  | "message_DESC"
-  | "postId_ASC"
-  | "postId_DESC"
-  | "reportedBy_ASC"
-  | "reportedBy_DESC"
-  | "topicId_ASC"
-  | "topicId_DESC"
-  | "zapped_ASC"
-  | "zapped_DESC"
-  | "zappedBy_ASC"
-  | "zappedBy_DESC";
-
-export type PunbbSearchCacheOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "ident_ASC"
-  | "ident_DESC"
-  | "searchData_ASC"
-  | "searchData_DESC";
-
-export type PunbbSearchMatchOrderByInput =
-  | "postId_ASC"
-  | "postId_DESC"
-  | "subjectMatch_ASC"
-  | "subjectMatch_DESC";
-
-export type PunbbSearchWordOrderByInput = "word_ASC" | "word_DESC";
 
 export type PunbbTopicOrderByInput =
   | "id_ASC"
@@ -1126,32 +519,6 @@ export type PunbbUploadedOrderByInput =
   | "user_DESC"
   | "userStat_ASC"
   | "userStat_DESC";
-
-export type PunbbUploadsConfOrderByInput =
-  | "gId_ASC"
-  | "gId_DESC"
-  | "pDelete_ASC"
-  | "pDelete_DESC"
-  | "pGlobaldelete_ASC"
-  | "pGlobaldelete_DESC"
-  | "pGlobalview_ASC"
-  | "pGlobalview_DESC"
-  | "pSetop_ASC"
-  | "pSetop_DESC"
-  | "pUpload_ASC"
-  | "pUpload_DESC"
-  | "pView_ASC"
-  | "pView_DESC"
-  | "uFsize_ASC"
-  | "uFsize_DESC";
-
-export type PunbbUploadsTypeOrderByInput =
-  | "id_ASC"
-  | "id_DESC"
-  | "exts_ASC"
-  | "exts_DESC"
-  | "type_ASC"
-  | "type_DESC";
 
 export type PunbbUserOrderByInput =
   | "id_ASC"
@@ -1230,12 +597,6 @@ export type PunbbUserOrderByInput =
   | "username_DESC"
   | "yahoo_ASC"
   | "yahoo_DESC";
-
-export type PunbbUserthreadOrderByInput =
-  | "lastRead_ASC"
-  | "lastRead_DESC"
-  | "posted_ASC"
-  | "posted_DESC";
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
@@ -1361,90 +722,6 @@ export interface PunbbCategoryWhereInput {
   NOT?: Maybe<PunbbCategoryWhereInput[] | PunbbCategoryWhereInput>;
 }
 
-export type PunbbCensoringWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbCensoringWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  replaceWith?: Maybe<String>;
-  replaceWith_not?: Maybe<String>;
-  replaceWith_in?: Maybe<String[] | String>;
-  replaceWith_not_in?: Maybe<String[] | String>;
-  replaceWith_lt?: Maybe<String>;
-  replaceWith_lte?: Maybe<String>;
-  replaceWith_gt?: Maybe<String>;
-  replaceWith_gte?: Maybe<String>;
-  replaceWith_contains?: Maybe<String>;
-  replaceWith_not_contains?: Maybe<String>;
-  replaceWith_starts_with?: Maybe<String>;
-  replaceWith_not_starts_with?: Maybe<String>;
-  replaceWith_ends_with?: Maybe<String>;
-  replaceWith_not_ends_with?: Maybe<String>;
-  searchFor?: Maybe<String>;
-  searchFor_not?: Maybe<String>;
-  searchFor_in?: Maybe<String[] | String>;
-  searchFor_not_in?: Maybe<String[] | String>;
-  searchFor_lt?: Maybe<String>;
-  searchFor_lte?: Maybe<String>;
-  searchFor_gt?: Maybe<String>;
-  searchFor_gte?: Maybe<String>;
-  searchFor_contains?: Maybe<String>;
-  searchFor_not_contains?: Maybe<String>;
-  searchFor_starts_with?: Maybe<String>;
-  searchFor_not_starts_with?: Maybe<String>;
-  searchFor_ends_with?: Maybe<String>;
-  searchFor_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
-  OR?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
-  NOT?: Maybe<PunbbCensoringWhereInput[] | PunbbCensoringWhereInput>;
-}
-
-export type PunbbConfigWhereUniqueInput = AtLeastOne<{
-  conf_name: Maybe<ID_Input>;
-}>;
-
-export interface PunbbConfigWhereInput {
-  conf_name?: Maybe<ID_Input>;
-  conf_name_not?: Maybe<ID_Input>;
-  conf_name_in?: Maybe<ID_Input[] | ID_Input>;
-  conf_name_not_in?: Maybe<ID_Input[] | ID_Input>;
-  conf_name_lt?: Maybe<ID_Input>;
-  conf_name_lte?: Maybe<ID_Input>;
-  conf_name_gt?: Maybe<ID_Input>;
-  conf_name_gte?: Maybe<ID_Input>;
-  conf_name_contains?: Maybe<ID_Input>;
-  conf_name_not_contains?: Maybe<ID_Input>;
-  conf_name_starts_with?: Maybe<ID_Input>;
-  conf_name_not_starts_with?: Maybe<ID_Input>;
-  conf_name_ends_with?: Maybe<ID_Input>;
-  conf_name_not_ends_with?: Maybe<ID_Input>;
-  confValue?: Maybe<String>;
-  confValue_not?: Maybe<String>;
-  confValue_in?: Maybe<String[] | String>;
-  confValue_not_in?: Maybe<String[] | String>;
-  confValue_lt?: Maybe<String>;
-  confValue_lte?: Maybe<String>;
-  confValue_gt?: Maybe<String>;
-  confValue_gte?: Maybe<String>;
-  confValue_contains?: Maybe<String>;
-  confValue_not_contains?: Maybe<String>;
-  confValue_starts_with?: Maybe<String>;
-  confValue_not_starts_with?: Maybe<String>;
-  confValue_ends_with?: Maybe<String>;
-  confValue_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
-  OR?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
-  NOT?: Maybe<PunbbConfigWhereInput[] | PunbbConfigWhereInput>;
-}
-
 export type PunbbForumWhereUniqueInput = AtLeastOne<{
   id: Maybe<Int>;
 }>;
@@ -1567,109 +844,9 @@ export interface PunbbForumWhereInput {
   NOT?: Maybe<PunbbForumWhereInput[] | PunbbForumWhereInput>;
 }
 
-export interface PunbbForumPermWhereInput {
-  postPolls?: Maybe<Boolean>;
-  postPolls_not?: Maybe<Boolean>;
-  postReplies?: Maybe<Boolean>;
-  postReplies_not?: Maybe<Boolean>;
-  postTopics?: Maybe<Boolean>;
-  postTopics_not?: Maybe<Boolean>;
-  readForum?: Maybe<Boolean>;
-  readForum_not?: Maybe<Boolean>;
-  AND?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
-  OR?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
-  NOT?: Maybe<PunbbForumPermWhereInput[] | PunbbForumPermWhereInput>;
-}
-
-export type PunbbGroupWhereUniqueInput = AtLeastOne<{
-  g_id: Maybe<Int>;
+export type PunbbOnlineWhereUniqueInput = AtLeastOne<{
+  userId: Maybe<Int>;
 }>;
-
-export interface PunbbGroupWhereInput {
-  g_id?: Maybe<Int>;
-  g_id_not?: Maybe<Int>;
-  g_id_in?: Maybe<Int[] | Int>;
-  g_id_not_in?: Maybe<Int[] | Int>;
-  g_id_lt?: Maybe<Int>;
-  g_id_lte?: Maybe<Int>;
-  g_id_gt?: Maybe<Int>;
-  g_id_gte?: Maybe<Int>;
-  gDeletePosts?: Maybe<Boolean>;
-  gDeletePosts_not?: Maybe<Boolean>;
-  gDeleteTopics?: Maybe<Boolean>;
-  gDeleteTopics_not?: Maybe<Boolean>;
-  gEditPosts?: Maybe<Boolean>;
-  gEditPosts_not?: Maybe<Boolean>;
-  gEditSubjectsInterval?: Maybe<Int>;
-  gEditSubjectsInterval_not?: Maybe<Int>;
-  gEditSubjectsInterval_in?: Maybe<Int[] | Int>;
-  gEditSubjectsInterval_not_in?: Maybe<Int[] | Int>;
-  gEditSubjectsInterval_lt?: Maybe<Int>;
-  gEditSubjectsInterval_lte?: Maybe<Int>;
-  gEditSubjectsInterval_gt?: Maybe<Int>;
-  gEditSubjectsInterval_gte?: Maybe<Int>;
-  gPostFlood?: Maybe<Int>;
-  gPostFlood_not?: Maybe<Int>;
-  gPostFlood_in?: Maybe<Int[] | Int>;
-  gPostFlood_not_in?: Maybe<Int[] | Int>;
-  gPostFlood_lt?: Maybe<Int>;
-  gPostFlood_lte?: Maybe<Int>;
-  gPostFlood_gt?: Maybe<Int>;
-  gPostFlood_gte?: Maybe<Int>;
-  gPostPolls?: Maybe<Boolean>;
-  gPostPolls_not?: Maybe<Boolean>;
-  gPostReplies?: Maybe<Boolean>;
-  gPostReplies_not?: Maybe<Boolean>;
-  gPostTopics?: Maybe<Boolean>;
-  gPostTopics_not?: Maybe<Boolean>;
-  gReadBoard?: Maybe<Boolean>;
-  gReadBoard_not?: Maybe<Boolean>;
-  gSearch?: Maybe<Boolean>;
-  gSearch_not?: Maybe<Boolean>;
-  gSearchFlood?: Maybe<Int>;
-  gSearchFlood_not?: Maybe<Int>;
-  gSearchFlood_in?: Maybe<Int[] | Int>;
-  gSearchFlood_not_in?: Maybe<Int[] | Int>;
-  gSearchFlood_lt?: Maybe<Int>;
-  gSearchFlood_lte?: Maybe<Int>;
-  gSearchFlood_gt?: Maybe<Int>;
-  gSearchFlood_gte?: Maybe<Int>;
-  gSearchUsers?: Maybe<Boolean>;
-  gSearchUsers_not?: Maybe<Boolean>;
-  gSetTitle?: Maybe<Boolean>;
-  gSetTitle_not?: Maybe<Boolean>;
-  gTitle?: Maybe<String>;
-  gTitle_not?: Maybe<String>;
-  gTitle_in?: Maybe<String[] | String>;
-  gTitle_not_in?: Maybe<String[] | String>;
-  gTitle_lt?: Maybe<String>;
-  gTitle_lte?: Maybe<String>;
-  gTitle_gt?: Maybe<String>;
-  gTitle_gte?: Maybe<String>;
-  gTitle_contains?: Maybe<String>;
-  gTitle_not_contains?: Maybe<String>;
-  gTitle_starts_with?: Maybe<String>;
-  gTitle_not_starts_with?: Maybe<String>;
-  gTitle_ends_with?: Maybe<String>;
-  gTitle_not_ends_with?: Maybe<String>;
-  gUserTitle?: Maybe<String>;
-  gUserTitle_not?: Maybe<String>;
-  gUserTitle_in?: Maybe<String[] | String>;
-  gUserTitle_not_in?: Maybe<String[] | String>;
-  gUserTitle_lt?: Maybe<String>;
-  gUserTitle_lte?: Maybe<String>;
-  gUserTitle_gt?: Maybe<String>;
-  gUserTitle_gte?: Maybe<String>;
-  gUserTitle_contains?: Maybe<String>;
-  gUserTitle_not_contains?: Maybe<String>;
-  gUserTitle_starts_with?: Maybe<String>;
-  gUserTitle_not_starts_with?: Maybe<String>;
-  gUserTitle_ends_with?: Maybe<String>;
-  gUserTitle_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
-  OR?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
-  NOT?: Maybe<PunbbGroupWhereInput[] | PunbbGroupWhereInput>;
-}
 
 export interface PunbbOnlineWhereInput {
   ident?: Maybe<String>;
@@ -1707,76 +884,6 @@ export interface PunbbOnlineWhereInput {
   AND?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
   OR?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
   NOT?: Maybe<PunbbOnlineWhereInput[] | PunbbOnlineWhereInput>;
-}
-
-export type PunbbPollWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbPollWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  options?: Maybe<String>;
-  options_not?: Maybe<String>;
-  options_in?: Maybe<String[] | String>;
-  options_not_in?: Maybe<String[] | String>;
-  options_lt?: Maybe<String>;
-  options_lte?: Maybe<String>;
-  options_gt?: Maybe<String>;
-  options_gte?: Maybe<String>;
-  options_contains?: Maybe<String>;
-  options_not_contains?: Maybe<String>;
-  options_starts_with?: Maybe<String>;
-  options_not_starts_with?: Maybe<String>;
-  options_ends_with?: Maybe<String>;
-  options_not_ends_with?: Maybe<String>;
-  pollid?: Maybe<Int>;
-  pollid_not?: Maybe<Int>;
-  pollid_in?: Maybe<Int[] | Int>;
-  pollid_not_in?: Maybe<Int[] | Int>;
-  pollid_lt?: Maybe<Int>;
-  pollid_lte?: Maybe<Int>;
-  pollid_gt?: Maybe<Int>;
-  pollid_gte?: Maybe<Int>;
-  ptype?: Maybe<Boolean>;
-  ptype_not?: Maybe<Boolean>;
-  voters?: Maybe<String>;
-  voters_not?: Maybe<String>;
-  voters_in?: Maybe<String[] | String>;
-  voters_not_in?: Maybe<String[] | String>;
-  voters_lt?: Maybe<String>;
-  voters_lte?: Maybe<String>;
-  voters_gt?: Maybe<String>;
-  voters_gte?: Maybe<String>;
-  voters_contains?: Maybe<String>;
-  voters_not_contains?: Maybe<String>;
-  voters_starts_with?: Maybe<String>;
-  voters_not_starts_with?: Maybe<String>;
-  voters_ends_with?: Maybe<String>;
-  voters_not_ends_with?: Maybe<String>;
-  votes?: Maybe<String>;
-  votes_not?: Maybe<String>;
-  votes_in?: Maybe<String[] | String>;
-  votes_not_in?: Maybe<String[] | String>;
-  votes_lt?: Maybe<String>;
-  votes_lte?: Maybe<String>;
-  votes_gt?: Maybe<String>;
-  votes_gte?: Maybe<String>;
-  votes_contains?: Maybe<String>;
-  votes_not_contains?: Maybe<String>;
-  votes_starts_with?: Maybe<String>;
-  votes_not_starts_with?: Maybe<String>;
-  votes_ends_with?: Maybe<String>;
-  votes_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
-  OR?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
-  NOT?: Maybe<PunbbPollWhereInput[] | PunbbPollWhereInput>;
 }
 
 export type PunbbPostWhereUniqueInput = AtLeastOne<{
@@ -1899,212 +1006,6 @@ export interface PunbbPostWhereInput {
   AND?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
   OR?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
   NOT?: Maybe<PunbbPostWhereInput[] | PunbbPostWhereInput>;
-}
-
-export type PunbbRankWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbRankWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  rank?: Maybe<String>;
-  rank_not?: Maybe<String>;
-  rank_in?: Maybe<String[] | String>;
-  rank_not_in?: Maybe<String[] | String>;
-  rank_lt?: Maybe<String>;
-  rank_lte?: Maybe<String>;
-  rank_gt?: Maybe<String>;
-  rank_gte?: Maybe<String>;
-  rank_contains?: Maybe<String>;
-  rank_not_contains?: Maybe<String>;
-  rank_starts_with?: Maybe<String>;
-  rank_not_starts_with?: Maybe<String>;
-  rank_ends_with?: Maybe<String>;
-  rank_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
-  OR?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
-  NOT?: Maybe<PunbbRankWhereInput[] | PunbbRankWhereInput>;
-}
-
-export type PunbbReportWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbReportWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  created?: Maybe<Int>;
-  created_not?: Maybe<Int>;
-  created_in?: Maybe<Int[] | Int>;
-  created_not_in?: Maybe<Int[] | Int>;
-  created_lt?: Maybe<Int>;
-  created_lte?: Maybe<Int>;
-  created_gt?: Maybe<Int>;
-  created_gte?: Maybe<Int>;
-  forumId?: Maybe<Int>;
-  forumId_not?: Maybe<Int>;
-  forumId_in?: Maybe<Int[] | Int>;
-  forumId_not_in?: Maybe<Int[] | Int>;
-  forumId_lt?: Maybe<Int>;
-  forumId_lte?: Maybe<Int>;
-  forumId_gt?: Maybe<Int>;
-  forumId_gte?: Maybe<Int>;
-  message?: Maybe<String>;
-  message_not?: Maybe<String>;
-  message_in?: Maybe<String[] | String>;
-  message_not_in?: Maybe<String[] | String>;
-  message_lt?: Maybe<String>;
-  message_lte?: Maybe<String>;
-  message_gt?: Maybe<String>;
-  message_gte?: Maybe<String>;
-  message_contains?: Maybe<String>;
-  message_not_contains?: Maybe<String>;
-  message_starts_with?: Maybe<String>;
-  message_not_starts_with?: Maybe<String>;
-  message_ends_with?: Maybe<String>;
-  message_not_ends_with?: Maybe<String>;
-  postId?: Maybe<Int>;
-  postId_not?: Maybe<Int>;
-  postId_in?: Maybe<Int[] | Int>;
-  postId_not_in?: Maybe<Int[] | Int>;
-  postId_lt?: Maybe<Int>;
-  postId_lte?: Maybe<Int>;
-  postId_gt?: Maybe<Int>;
-  postId_gte?: Maybe<Int>;
-  reportedBy?: Maybe<Int>;
-  reportedBy_not?: Maybe<Int>;
-  reportedBy_in?: Maybe<Int[] | Int>;
-  reportedBy_not_in?: Maybe<Int[] | Int>;
-  reportedBy_lt?: Maybe<Int>;
-  reportedBy_lte?: Maybe<Int>;
-  reportedBy_gt?: Maybe<Int>;
-  reportedBy_gte?: Maybe<Int>;
-  topicId?: Maybe<Int>;
-  topicId_not?: Maybe<Int>;
-  topicId_in?: Maybe<Int[] | Int>;
-  topicId_not_in?: Maybe<Int[] | Int>;
-  topicId_lt?: Maybe<Int>;
-  topicId_lte?: Maybe<Int>;
-  topicId_gt?: Maybe<Int>;
-  topicId_gte?: Maybe<Int>;
-  zapped?: Maybe<Int>;
-  zapped_not?: Maybe<Int>;
-  zapped_in?: Maybe<Int[] | Int>;
-  zapped_not_in?: Maybe<Int[] | Int>;
-  zapped_lt?: Maybe<Int>;
-  zapped_lte?: Maybe<Int>;
-  zapped_gt?: Maybe<Int>;
-  zapped_gte?: Maybe<Int>;
-  zappedBy?: Maybe<Int>;
-  zappedBy_not?: Maybe<Int>;
-  zappedBy_in?: Maybe<Int[] | Int>;
-  zappedBy_not_in?: Maybe<Int[] | Int>;
-  zappedBy_lt?: Maybe<Int>;
-  zappedBy_lte?: Maybe<Int>;
-  zappedBy_gt?: Maybe<Int>;
-  zappedBy_gte?: Maybe<Int>;
-  AND?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
-  OR?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
-  NOT?: Maybe<PunbbReportWhereInput[] | PunbbReportWhereInput>;
-}
-
-export type PunbbSearchCacheWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbSearchCacheWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  ident?: Maybe<String>;
-  ident_not?: Maybe<String>;
-  ident_in?: Maybe<String[] | String>;
-  ident_not_in?: Maybe<String[] | String>;
-  ident_lt?: Maybe<String>;
-  ident_lte?: Maybe<String>;
-  ident_gt?: Maybe<String>;
-  ident_gte?: Maybe<String>;
-  ident_contains?: Maybe<String>;
-  ident_not_contains?: Maybe<String>;
-  ident_starts_with?: Maybe<String>;
-  ident_not_starts_with?: Maybe<String>;
-  ident_ends_with?: Maybe<String>;
-  ident_not_ends_with?: Maybe<String>;
-  searchData?: Maybe<String>;
-  searchData_not?: Maybe<String>;
-  searchData_in?: Maybe<String[] | String>;
-  searchData_not_in?: Maybe<String[] | String>;
-  searchData_lt?: Maybe<String>;
-  searchData_lte?: Maybe<String>;
-  searchData_gt?: Maybe<String>;
-  searchData_gte?: Maybe<String>;
-  searchData_contains?: Maybe<String>;
-  searchData_not_contains?: Maybe<String>;
-  searchData_starts_with?: Maybe<String>;
-  searchData_not_starts_with?: Maybe<String>;
-  searchData_ends_with?: Maybe<String>;
-  searchData_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
-  OR?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
-  NOT?: Maybe<PunbbSearchCacheWhereInput[] | PunbbSearchCacheWhereInput>;
-}
-
-export interface PunbbSearchMatchWhereInput {
-  postId?: Maybe<Int>;
-  postId_not?: Maybe<Int>;
-  postId_in?: Maybe<Int[] | Int>;
-  postId_not_in?: Maybe<Int[] | Int>;
-  postId_lt?: Maybe<Int>;
-  postId_lte?: Maybe<Int>;
-  postId_gt?: Maybe<Int>;
-  postId_gte?: Maybe<Int>;
-  subjectMatch?: Maybe<Boolean>;
-  subjectMatch_not?: Maybe<Boolean>;
-  AND?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
-  OR?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
-  NOT?: Maybe<PunbbSearchMatchWhereInput[] | PunbbSearchMatchWhereInput>;
-}
-
-export type PunbbSearchWordWhereUniqueInput = AtLeastOne<{
-  word: Maybe<ID_Input>;
-}>;
-
-export interface PunbbSearchWordWhereInput {
-  word?: Maybe<ID_Input>;
-  word_not?: Maybe<ID_Input>;
-  word_in?: Maybe<ID_Input[] | ID_Input>;
-  word_not_in?: Maybe<ID_Input[] | ID_Input>;
-  word_lt?: Maybe<ID_Input>;
-  word_lte?: Maybe<ID_Input>;
-  word_gt?: Maybe<ID_Input>;
-  word_gte?: Maybe<ID_Input>;
-  word_contains?: Maybe<ID_Input>;
-  word_not_contains?: Maybe<ID_Input>;
-  word_starts_with?: Maybe<ID_Input>;
-  word_not_starts_with?: Maybe<ID_Input>;
-  word_ends_with?: Maybe<ID_Input>;
-  word_not_ends_with?: Maybe<ID_Input>;
-  AND?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
-  OR?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
-  NOT?: Maybe<PunbbSearchWordWhereInput[] | PunbbSearchWordWhereInput>;
 }
 
 export type PunbbTopicWhereUniqueInput = AtLeastOne<{
@@ -2357,86 +1258,6 @@ export interface PunbbUploadedWhereInput {
   AND?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
   OR?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
   NOT?: Maybe<PunbbUploadedWhereInput[] | PunbbUploadedWhereInput>;
-}
-
-export interface PunbbUploadsConfWhereInput {
-  gId?: Maybe<Int>;
-  gId_not?: Maybe<Int>;
-  gId_in?: Maybe<Int[] | Int>;
-  gId_not_in?: Maybe<Int[] | Int>;
-  gId_lt?: Maybe<Int>;
-  gId_lte?: Maybe<Int>;
-  gId_gt?: Maybe<Int>;
-  gId_gte?: Maybe<Int>;
-  pDelete?: Maybe<Boolean>;
-  pDelete_not?: Maybe<Boolean>;
-  pGlobaldelete?: Maybe<Boolean>;
-  pGlobaldelete_not?: Maybe<Boolean>;
-  pGlobalview?: Maybe<Boolean>;
-  pGlobalview_not?: Maybe<Boolean>;
-  pSetop?: Maybe<Boolean>;
-  pSetop_not?: Maybe<Boolean>;
-  pUpload?: Maybe<Boolean>;
-  pUpload_not?: Maybe<Boolean>;
-  pView?: Maybe<Boolean>;
-  pView_not?: Maybe<Boolean>;
-  uFsize?: Maybe<Int>;
-  uFsize_not?: Maybe<Int>;
-  uFsize_in?: Maybe<Int[] | Int>;
-  uFsize_not_in?: Maybe<Int[] | Int>;
-  uFsize_lt?: Maybe<Int>;
-  uFsize_lte?: Maybe<Int>;
-  uFsize_gt?: Maybe<Int>;
-  uFsize_gte?: Maybe<Int>;
-  AND?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
-  OR?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
-  NOT?: Maybe<PunbbUploadsConfWhereInput[] | PunbbUploadsConfWhereInput>;
-}
-
-export type PunbbUploadsTypeWhereUniqueInput = AtLeastOne<{
-  id: Maybe<Int>;
-}>;
-
-export interface PunbbUploadsTypeWhereInput {
-  id?: Maybe<Int>;
-  id_not?: Maybe<Int>;
-  id_in?: Maybe<Int[] | Int>;
-  id_not_in?: Maybe<Int[] | Int>;
-  id_lt?: Maybe<Int>;
-  id_lte?: Maybe<Int>;
-  id_gt?: Maybe<Int>;
-  id_gte?: Maybe<Int>;
-  exts?: Maybe<String>;
-  exts_not?: Maybe<String>;
-  exts_in?: Maybe<String[] | String>;
-  exts_not_in?: Maybe<String[] | String>;
-  exts_lt?: Maybe<String>;
-  exts_lte?: Maybe<String>;
-  exts_gt?: Maybe<String>;
-  exts_gte?: Maybe<String>;
-  exts_contains?: Maybe<String>;
-  exts_not_contains?: Maybe<String>;
-  exts_starts_with?: Maybe<String>;
-  exts_not_starts_with?: Maybe<String>;
-  exts_ends_with?: Maybe<String>;
-  exts_not_ends_with?: Maybe<String>;
-  type?: Maybe<String>;
-  type_not?: Maybe<String>;
-  type_in?: Maybe<String[] | String>;
-  type_not_in?: Maybe<String[] | String>;
-  type_lt?: Maybe<String>;
-  type_lte?: Maybe<String>;
-  type_gt?: Maybe<String>;
-  type_gte?: Maybe<String>;
-  type_contains?: Maybe<String>;
-  type_not_contains?: Maybe<String>;
-  type_starts_with?: Maybe<String>;
-  type_not_starts_with?: Maybe<String>;
-  type_ends_with?: Maybe<String>;
-  type_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
-  OR?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
-  NOT?: Maybe<PunbbUploadsTypeWhereInput[] | PunbbUploadsTypeWhereInput>;
 }
 
 export type PunbbUserWhereUniqueInput = AtLeastOne<{
@@ -2807,22 +1628,6 @@ export interface PunbbUserWhereInput {
   NOT?: Maybe<PunbbUserWhereInput[] | PunbbUserWhereInput>;
 }
 
-export interface PunbbUserthreadWhereInput {
-  lastRead?: Maybe<Int>;
-  lastRead_not?: Maybe<Int>;
-  lastRead_in?: Maybe<Int[] | Int>;
-  lastRead_not_in?: Maybe<Int[] | Int>;
-  lastRead_lt?: Maybe<Int>;
-  lastRead_lte?: Maybe<Int>;
-  lastRead_gt?: Maybe<Int>;
-  lastRead_gte?: Maybe<Int>;
-  posted?: Maybe<Boolean>;
-  posted_not?: Maybe<Boolean>;
-  AND?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
-  OR?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
-  NOT?: Maybe<PunbbUserthreadWhereInput[] | PunbbUserthreadWhereInput>;
-}
-
 export interface PunbbBanCreateInput {
   id?: Maybe<Int>;
   email?: Maybe<String>;
@@ -2862,35 +1667,6 @@ export interface PunbbCategoryUpdateInput {
 export interface PunbbCategoryUpdateManyMutationInput {
   catName?: Maybe<String>;
   dispPosition?: Maybe<Int>;
-}
-
-export interface PunbbCensoringCreateInput {
-  id?: Maybe<Int>;
-  replaceWith?: Maybe<String>;
-  searchFor?: Maybe<String>;
-}
-
-export interface PunbbCensoringUpdateInput {
-  replaceWith?: Maybe<String>;
-  searchFor?: Maybe<String>;
-}
-
-export interface PunbbCensoringUpdateManyMutationInput {
-  replaceWith?: Maybe<String>;
-  searchFor?: Maybe<String>;
-}
-
-export interface PunbbConfigCreateInput {
-  conf_name?: Maybe<ID_Input>;
-  confValue?: Maybe<String>;
-}
-
-export interface PunbbConfigUpdateInput {
-  confValue?: Maybe<String>;
-}
-
-export interface PunbbConfigUpdateManyMutationInput {
-  confValue?: Maybe<String>;
 }
 
 export interface PunbbForumCreateInput {
@@ -2933,75 +1709,6 @@ export interface PunbbForumUpdateManyMutationInput {
   sortBy?: Maybe<Boolean>;
 }
 
-export interface PunbbForumPermCreateInput {
-  postPolls?: Maybe<Boolean>;
-  postReplies?: Maybe<Boolean>;
-  postTopics?: Maybe<Boolean>;
-  readForum?: Maybe<Boolean>;
-}
-
-export interface PunbbForumPermUpdateManyMutationInput {
-  postPolls?: Maybe<Boolean>;
-  postReplies?: Maybe<Boolean>;
-  postTopics?: Maybe<Boolean>;
-  readForum?: Maybe<Boolean>;
-}
-
-export interface PunbbGroupCreateInput {
-  g_id?: Maybe<Int>;
-  gDeletePosts?: Maybe<Boolean>;
-  gDeleteTopics?: Maybe<Boolean>;
-  gEditPosts?: Maybe<Boolean>;
-  gEditSubjectsInterval?: Maybe<Int>;
-  gPostFlood?: Maybe<Int>;
-  gPostPolls?: Maybe<Boolean>;
-  gPostReplies?: Maybe<Boolean>;
-  gPostTopics?: Maybe<Boolean>;
-  gReadBoard?: Maybe<Boolean>;
-  gSearch?: Maybe<Boolean>;
-  gSearchFlood?: Maybe<Int>;
-  gSearchUsers?: Maybe<Boolean>;
-  gSetTitle?: Maybe<Boolean>;
-  gTitle?: Maybe<String>;
-  gUserTitle?: Maybe<String>;
-}
-
-export interface PunbbGroupUpdateInput {
-  gDeletePosts?: Maybe<Boolean>;
-  gDeleteTopics?: Maybe<Boolean>;
-  gEditPosts?: Maybe<Boolean>;
-  gEditSubjectsInterval?: Maybe<Int>;
-  gPostFlood?: Maybe<Int>;
-  gPostPolls?: Maybe<Boolean>;
-  gPostReplies?: Maybe<Boolean>;
-  gPostTopics?: Maybe<Boolean>;
-  gReadBoard?: Maybe<Boolean>;
-  gSearch?: Maybe<Boolean>;
-  gSearchFlood?: Maybe<Int>;
-  gSearchUsers?: Maybe<Boolean>;
-  gSetTitle?: Maybe<Boolean>;
-  gTitle?: Maybe<String>;
-  gUserTitle?: Maybe<String>;
-}
-
-export interface PunbbGroupUpdateManyMutationInput {
-  gDeletePosts?: Maybe<Boolean>;
-  gDeleteTopics?: Maybe<Boolean>;
-  gEditPosts?: Maybe<Boolean>;
-  gEditSubjectsInterval?: Maybe<Int>;
-  gPostFlood?: Maybe<Int>;
-  gPostPolls?: Maybe<Boolean>;
-  gPostReplies?: Maybe<Boolean>;
-  gPostTopics?: Maybe<Boolean>;
-  gReadBoard?: Maybe<Boolean>;
-  gSearch?: Maybe<Boolean>;
-  gSearchFlood?: Maybe<Int>;
-  gSearchUsers?: Maybe<Boolean>;
-  gSetTitle?: Maybe<Boolean>;
-  gTitle?: Maybe<String>;
-  gUserTitle?: Maybe<String>;
-}
-
 export interface PunbbOnlineCreateInput {
   ident?: Maybe<String>;
   idle?: Maybe<Boolean>;
@@ -3009,36 +1716,16 @@ export interface PunbbOnlineCreateInput {
   userId?: Maybe<Int>;
 }
 
+export interface PunbbOnlineUpdateInput {
+  ident?: Maybe<String>;
+  idle?: Maybe<Boolean>;
+  logged?: Maybe<Int>;
+}
+
 export interface PunbbOnlineUpdateManyMutationInput {
   ident?: Maybe<String>;
   idle?: Maybe<Boolean>;
   logged?: Maybe<Int>;
-  userId?: Maybe<Int>;
-}
-
-export interface PunbbPollCreateInput {
-  id?: Maybe<Int>;
-  options: String;
-  pollid?: Maybe<Int>;
-  ptype?: Maybe<Boolean>;
-  voters: String;
-  votes: String;
-}
-
-export interface PunbbPollUpdateInput {
-  options?: Maybe<String>;
-  pollid?: Maybe<Int>;
-  ptype?: Maybe<Boolean>;
-  voters?: Maybe<String>;
-  votes?: Maybe<String>;
-}
-
-export interface PunbbPollUpdateManyMutationInput {
-  options?: Maybe<String>;
-  pollid?: Maybe<Int>;
-  ptype?: Maybe<Boolean>;
-  voters?: Maybe<String>;
-  votes?: Maybe<String>;
 }
 
 export interface PunbbPostCreateInput {
@@ -3079,83 +1766,6 @@ export interface PunbbPostUpdateManyMutationInput {
   posterId?: Maybe<Int>;
   posterIp?: Maybe<String>;
   topicId?: Maybe<Int>;
-}
-
-export interface PunbbRankCreateInput {
-  id?: Maybe<Int>;
-  rank?: Maybe<String>;
-}
-
-export interface PunbbRankUpdateInput {
-  rank?: Maybe<String>;
-}
-
-export interface PunbbRankUpdateManyMutationInput {
-  rank?: Maybe<String>;
-}
-
-export interface PunbbReportCreateInput {
-  id?: Maybe<Int>;
-  created?: Maybe<Int>;
-  forumId?: Maybe<Int>;
-  message: String;
-  postId?: Maybe<Int>;
-  reportedBy?: Maybe<Int>;
-  topicId?: Maybe<Int>;
-  zapped?: Maybe<Int>;
-  zappedBy?: Maybe<Int>;
-}
-
-export interface PunbbReportUpdateInput {
-  created?: Maybe<Int>;
-  forumId?: Maybe<Int>;
-  message?: Maybe<String>;
-  postId?: Maybe<Int>;
-  reportedBy?: Maybe<Int>;
-  topicId?: Maybe<Int>;
-  zapped?: Maybe<Int>;
-  zappedBy?: Maybe<Int>;
-}
-
-export interface PunbbReportUpdateManyMutationInput {
-  created?: Maybe<Int>;
-  forumId?: Maybe<Int>;
-  message?: Maybe<String>;
-  postId?: Maybe<Int>;
-  reportedBy?: Maybe<Int>;
-  topicId?: Maybe<Int>;
-  zapped?: Maybe<Int>;
-  zappedBy?: Maybe<Int>;
-}
-
-export interface PunbbSearchCacheCreateInput {
-  id?: Maybe<Int>;
-  ident?: Maybe<String>;
-  searchData: String;
-}
-
-export interface PunbbSearchCacheUpdateInput {
-  ident?: Maybe<String>;
-  searchData?: Maybe<String>;
-}
-
-export interface PunbbSearchCacheUpdateManyMutationInput {
-  ident?: Maybe<String>;
-  searchData?: Maybe<String>;
-}
-
-export interface PunbbSearchMatchCreateInput {
-  postId?: Maybe<Int>;
-  subjectMatch?: Maybe<Boolean>;
-}
-
-export interface PunbbSearchMatchUpdateManyMutationInput {
-  postId?: Maybe<Int>;
-  subjectMatch?: Maybe<Boolean>;
-}
-
-export interface PunbbSearchWordCreateInput {
-  word?: Maybe<ID_Input>;
 }
 
 export interface PunbbTopicCreateInput {
@@ -3239,44 +1849,6 @@ export interface PunbbUploadedUpdateManyMutationInput {
   uid?: Maybe<Int>;
   user?: Maybe<String>;
   userStat?: Maybe<String>;
-}
-
-export interface PunbbUploadsConfCreateInput {
-  gId?: Maybe<Int>;
-  pDelete?: Maybe<Boolean>;
-  pGlobaldelete?: Maybe<Boolean>;
-  pGlobalview?: Maybe<Boolean>;
-  pSetop?: Maybe<Boolean>;
-  pUpload?: Maybe<Boolean>;
-  pView?: Maybe<Boolean>;
-  uFsize?: Maybe<Int>;
-}
-
-export interface PunbbUploadsConfUpdateManyMutationInput {
-  gId?: Maybe<Int>;
-  pDelete?: Maybe<Boolean>;
-  pGlobaldelete?: Maybe<Boolean>;
-  pGlobalview?: Maybe<Boolean>;
-  pSetop?: Maybe<Boolean>;
-  pUpload?: Maybe<Boolean>;
-  pView?: Maybe<Boolean>;
-  uFsize?: Maybe<Int>;
-}
-
-export interface PunbbUploadsTypeCreateInput {
-  id?: Maybe<Int>;
-  exts: String;
-  type: String;
-}
-
-export interface PunbbUploadsTypeUpdateInput {
-  exts?: Maybe<String>;
-  type?: Maybe<String>;
-}
-
-export interface PunbbUploadsTypeUpdateManyMutationInput {
-  exts?: Maybe<String>;
-  type?: Maybe<String>;
 }
 
 export interface PunbbUserCreateInput {
@@ -3400,16 +1972,6 @@ export interface PunbbUserUpdateManyMutationInput {
   yahoo?: Maybe<String>;
 }
 
-export interface PunbbUserthreadCreateInput {
-  lastRead?: Maybe<Int>;
-  posted?: Maybe<Boolean>;
-}
-
-export interface PunbbUserthreadUpdateManyMutationInput {
-  lastRead?: Maybe<Int>;
-  posted?: Maybe<Boolean>;
-}
-
 export interface PunbbBanSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
@@ -3442,43 +2004,6 @@ export interface PunbbCategorySubscriptionWhereInput {
   >;
 }
 
-export interface PunbbCensoringSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbCensoringWhereInput>;
-  AND?: Maybe<
-    | PunbbCensoringSubscriptionWhereInput[]
-    | PunbbCensoringSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbCensoringSubscriptionWhereInput[]
-    | PunbbCensoringSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbCensoringSubscriptionWhereInput[]
-    | PunbbCensoringSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbConfigSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbConfigWhereInput>;
-  AND?: Maybe<
-    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    PunbbConfigSubscriptionWhereInput[] | PunbbConfigSubscriptionWhereInput
-  >;
-}
-
 export interface PunbbForumSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
@@ -3493,43 +2018,6 @@ export interface PunbbForumSubscriptionWhereInput {
   >;
   NOT?: Maybe<
     PunbbForumSubscriptionWhereInput[] | PunbbForumSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbForumPermSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbForumPermWhereInput>;
-  AND?: Maybe<
-    | PunbbForumPermSubscriptionWhereInput[]
-    | PunbbForumPermSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbForumPermSubscriptionWhereInput[]
-    | PunbbForumPermSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbForumPermSubscriptionWhereInput[]
-    | PunbbForumPermSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbGroupSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbGroupWhereInput>;
-  AND?: Maybe<
-    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    PunbbGroupSubscriptionWhereInput[] | PunbbGroupSubscriptionWhereInput
   >;
 }
 
@@ -3550,23 +2038,6 @@ export interface PunbbOnlineSubscriptionWhereInput {
   >;
 }
 
-export interface PunbbPollSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbPollWhereInput>;
-  AND?: Maybe<
-    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    PunbbPollSubscriptionWhereInput[] | PunbbPollSubscriptionWhereInput
-  >;
-}
-
 export interface PunbbPostSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
@@ -3581,100 +2052,6 @@ export interface PunbbPostSubscriptionWhereInput {
   >;
   NOT?: Maybe<
     PunbbPostSubscriptionWhereInput[] | PunbbPostSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbRankSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbRankWhereInput>;
-  AND?: Maybe<
-    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    PunbbRankSubscriptionWhereInput[] | PunbbRankSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbReportSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbReportWhereInput>;
-  AND?: Maybe<
-    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    PunbbReportSubscriptionWhereInput[] | PunbbReportSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbSearchCacheSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbSearchCacheWhereInput>;
-  AND?: Maybe<
-    | PunbbSearchCacheSubscriptionWhereInput[]
-    | PunbbSearchCacheSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbSearchCacheSubscriptionWhereInput[]
-    | PunbbSearchCacheSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbSearchCacheSubscriptionWhereInput[]
-    | PunbbSearchCacheSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbSearchMatchSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbSearchMatchWhereInput>;
-  AND?: Maybe<
-    | PunbbSearchMatchSubscriptionWhereInput[]
-    | PunbbSearchMatchSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbSearchMatchSubscriptionWhereInput[]
-    | PunbbSearchMatchSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbSearchMatchSubscriptionWhereInput[]
-    | PunbbSearchMatchSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbSearchWordSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbSearchWordWhereInput>;
-  AND?: Maybe<
-    | PunbbSearchWordSubscriptionWhereInput[]
-    | PunbbSearchWordSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbSearchWordSubscriptionWhereInput[]
-    | PunbbSearchWordSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbSearchWordSubscriptionWhereInput[]
-    | PunbbSearchWordSubscriptionWhereInput
   >;
 }
 
@@ -3712,46 +2089,6 @@ export interface PunbbUploadedSubscriptionWhereInput {
   >;
 }
 
-export interface PunbbUploadsConfSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbUploadsConfWhereInput>;
-  AND?: Maybe<
-    | PunbbUploadsConfSubscriptionWhereInput[]
-    | PunbbUploadsConfSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbUploadsConfSubscriptionWhereInput[]
-    | PunbbUploadsConfSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbUploadsConfSubscriptionWhereInput[]
-    | PunbbUploadsConfSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbUploadsTypeSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbUploadsTypeWhereInput>;
-  AND?: Maybe<
-    | PunbbUploadsTypeSubscriptionWhereInput[]
-    | PunbbUploadsTypeSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbUploadsTypeSubscriptionWhereInput[]
-    | PunbbUploadsTypeSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbUploadsTypeSubscriptionWhereInput[]
-    | PunbbUploadsTypeSubscriptionWhereInput
-  >;
-}
-
 export interface PunbbUserSubscriptionWhereInput {
   mutation_in?: Maybe<MutationType[] | MutationType>;
   updatedFields_contains?: Maybe<String>;
@@ -3766,26 +2103,6 @@ export interface PunbbUserSubscriptionWhereInput {
   >;
   NOT?: Maybe<
     PunbbUserSubscriptionWhereInput[] | PunbbUserSubscriptionWhereInput
-  >;
-}
-
-export interface PunbbUserthreadSubscriptionWhereInput {
-  mutation_in?: Maybe<MutationType[] | MutationType>;
-  updatedFields_contains?: Maybe<String>;
-  updatedFields_contains_every?: Maybe<String[] | String>;
-  updatedFields_contains_some?: Maybe<String[] | String>;
-  node?: Maybe<PunbbUserthreadWhereInput>;
-  AND?: Maybe<
-    | PunbbUserthreadSubscriptionWhereInput[]
-    | PunbbUserthreadSubscriptionWhereInput
-  >;
-  OR?: Maybe<
-    | PunbbUserthreadSubscriptionWhereInput[]
-    | PunbbUserthreadSubscriptionWhereInput
-  >;
-  NOT?: Maybe<
-    | PunbbUserthreadSubscriptionWhereInput[]
-    | PunbbUserthreadSubscriptionWhereInput
   >;
 }
 
@@ -3998,172 +2315,6 @@ export interface AggregatePunbbCategorySubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PunbbCensoring {
-  id: Int;
-  replaceWith: String;
-  searchFor: String;
-}
-
-export interface PunbbCensoringPromise
-  extends Promise<PunbbCensoring>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  replaceWith: () => Promise<String>;
-  searchFor: () => Promise<String>;
-}
-
-export interface PunbbCensoringSubscription
-  extends Promise<AsyncIterator<PunbbCensoring>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  replaceWith: () => Promise<AsyncIterator<String>>;
-  searchFor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbCensoringNullablePromise
-  extends Promise<PunbbCensoring | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  replaceWith: () => Promise<String>;
-  searchFor: () => Promise<String>;
-}
-
-export interface PunbbCensoringConnection {
-  pageInfo: PageInfo;
-  edges: PunbbCensoringEdge[];
-}
-
-export interface PunbbCensoringConnectionPromise
-  extends Promise<PunbbCensoringConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbCensoringEdge>>() => T;
-  aggregate: <T = AggregatePunbbCensoringPromise>() => T;
-}
-
-export interface PunbbCensoringConnectionSubscription
-  extends Promise<AsyncIterator<PunbbCensoringConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbCensoringEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbCensoringSubscription>() => T;
-}
-
-export interface PunbbCensoringEdge {
-  node: PunbbCensoring;
-  cursor: String;
-}
-
-export interface PunbbCensoringEdgePromise
-  extends Promise<PunbbCensoringEdge>,
-    Fragmentable {
-  node: <T = PunbbCensoringPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbCensoringEdgeSubscription
-  extends Promise<AsyncIterator<PunbbCensoringEdge>>,
-    Fragmentable {
-  node: <T = PunbbCensoringSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbCensoring {
-  count: Int;
-}
-
-export interface AggregatePunbbCensoringPromise
-  extends Promise<AggregatePunbbCensoring>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbCensoringSubscription
-  extends Promise<AsyncIterator<AggregatePunbbCensoring>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbConfig {
-  conf_name: ID_Output;
-  confValue?: String;
-}
-
-export interface PunbbConfigPromise extends Promise<PunbbConfig>, Fragmentable {
-  conf_name: () => Promise<ID_Output>;
-  confValue: () => Promise<String>;
-}
-
-export interface PunbbConfigSubscription
-  extends Promise<AsyncIterator<PunbbConfig>>,
-    Fragmentable {
-  conf_name: () => Promise<AsyncIterator<ID_Output>>;
-  confValue: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbConfigNullablePromise
-  extends Promise<PunbbConfig | null>,
-    Fragmentable {
-  conf_name: () => Promise<ID_Output>;
-  confValue: () => Promise<String>;
-}
-
-export interface PunbbConfigConnection {
-  pageInfo: PageInfo;
-  edges: PunbbConfigEdge[];
-}
-
-export interface PunbbConfigConnectionPromise
-  extends Promise<PunbbConfigConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbConfigEdge>>() => T;
-  aggregate: <T = AggregatePunbbConfigPromise>() => T;
-}
-
-export interface PunbbConfigConnectionSubscription
-  extends Promise<AsyncIterator<PunbbConfigConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbConfigEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbConfigSubscription>() => T;
-}
-
-export interface PunbbConfigEdge {
-  node: PunbbConfig;
-  cursor: String;
-}
-
-export interface PunbbConfigEdgePromise
-  extends Promise<PunbbConfigEdge>,
-    Fragmentable {
-  node: <T = PunbbConfigPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbConfigEdgeSubscription
-  extends Promise<AsyncIterator<PunbbConfigEdge>>,
-    Fragmentable {
-  node: <T = PunbbConfigSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbConfig {
-  count: Int;
-}
-
-export interface AggregatePunbbConfigPromise
-  extends Promise<AggregatePunbbConfig>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbConfigSubscription
-  extends Promise<AsyncIterator<AggregatePunbbConfig>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
 export interface PunbbForum {
   id: Int;
   catId: Int;
@@ -4280,232 +2431,6 @@ export interface AggregatePunbbForumSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PunbbForumPerm {
-  postPolls: Boolean;
-  postReplies: Boolean;
-  postTopics: Boolean;
-  readForum: Boolean;
-}
-
-export interface PunbbForumPermPromise
-  extends Promise<PunbbForumPerm>,
-    Fragmentable {
-  postPolls: () => Promise<Boolean>;
-  postReplies: () => Promise<Boolean>;
-  postTopics: () => Promise<Boolean>;
-  readForum: () => Promise<Boolean>;
-}
-
-export interface PunbbForumPermSubscription
-  extends Promise<AsyncIterator<PunbbForumPerm>>,
-    Fragmentable {
-  postPolls: () => Promise<AsyncIterator<Boolean>>;
-  postReplies: () => Promise<AsyncIterator<Boolean>>;
-  postTopics: () => Promise<AsyncIterator<Boolean>>;
-  readForum: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface PunbbForumPermNullablePromise
-  extends Promise<PunbbForumPerm | null>,
-    Fragmentable {
-  postPolls: () => Promise<Boolean>;
-  postReplies: () => Promise<Boolean>;
-  postTopics: () => Promise<Boolean>;
-  readForum: () => Promise<Boolean>;
-}
-
-export interface PunbbForumPermConnection {
-  pageInfo: PageInfo;
-  edges: PunbbForumPermEdge[];
-}
-
-export interface PunbbForumPermConnectionPromise
-  extends Promise<PunbbForumPermConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbForumPermEdge>>() => T;
-  aggregate: <T = AggregatePunbbForumPermPromise>() => T;
-}
-
-export interface PunbbForumPermConnectionSubscription
-  extends Promise<AsyncIterator<PunbbForumPermConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbForumPermEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbForumPermSubscription>() => T;
-}
-
-export interface PunbbForumPermEdge {
-  node: PunbbForumPerm;
-  cursor: String;
-}
-
-export interface PunbbForumPermEdgePromise
-  extends Promise<PunbbForumPermEdge>,
-    Fragmentable {
-  node: <T = PunbbForumPermPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbForumPermEdgeSubscription
-  extends Promise<AsyncIterator<PunbbForumPermEdge>>,
-    Fragmentable {
-  node: <T = PunbbForumPermSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbForumPerm {
-  count: Int;
-}
-
-export interface AggregatePunbbForumPermPromise
-  extends Promise<AggregatePunbbForumPerm>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbForumPermSubscription
-  extends Promise<AsyncIterator<AggregatePunbbForumPerm>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbGroup {
-  g_id: Int;
-  gDeletePosts: Boolean;
-  gDeleteTopics: Boolean;
-  gEditPosts: Boolean;
-  gEditSubjectsInterval: Int;
-  gPostFlood: Int;
-  gPostPolls: Boolean;
-  gPostReplies: Boolean;
-  gPostTopics: Boolean;
-  gReadBoard: Boolean;
-  gSearch: Boolean;
-  gSearchFlood: Int;
-  gSearchUsers: Boolean;
-  gSetTitle: Boolean;
-  gTitle: String;
-  gUserTitle?: String;
-}
-
-export interface PunbbGroupPromise extends Promise<PunbbGroup>, Fragmentable {
-  g_id: () => Promise<Int>;
-  gDeletePosts: () => Promise<Boolean>;
-  gDeleteTopics: () => Promise<Boolean>;
-  gEditPosts: () => Promise<Boolean>;
-  gEditSubjectsInterval: () => Promise<Int>;
-  gPostFlood: () => Promise<Int>;
-  gPostPolls: () => Promise<Boolean>;
-  gPostReplies: () => Promise<Boolean>;
-  gPostTopics: () => Promise<Boolean>;
-  gReadBoard: () => Promise<Boolean>;
-  gSearch: () => Promise<Boolean>;
-  gSearchFlood: () => Promise<Int>;
-  gSearchUsers: () => Promise<Boolean>;
-  gSetTitle: () => Promise<Boolean>;
-  gTitle: () => Promise<String>;
-  gUserTitle: () => Promise<String>;
-}
-
-export interface PunbbGroupSubscription
-  extends Promise<AsyncIterator<PunbbGroup>>,
-    Fragmentable {
-  g_id: () => Promise<AsyncIterator<Int>>;
-  gDeletePosts: () => Promise<AsyncIterator<Boolean>>;
-  gDeleteTopics: () => Promise<AsyncIterator<Boolean>>;
-  gEditPosts: () => Promise<AsyncIterator<Boolean>>;
-  gEditSubjectsInterval: () => Promise<AsyncIterator<Int>>;
-  gPostFlood: () => Promise<AsyncIterator<Int>>;
-  gPostPolls: () => Promise<AsyncIterator<Boolean>>;
-  gPostReplies: () => Promise<AsyncIterator<Boolean>>;
-  gPostTopics: () => Promise<AsyncIterator<Boolean>>;
-  gReadBoard: () => Promise<AsyncIterator<Boolean>>;
-  gSearch: () => Promise<AsyncIterator<Boolean>>;
-  gSearchFlood: () => Promise<AsyncIterator<Int>>;
-  gSearchUsers: () => Promise<AsyncIterator<Boolean>>;
-  gSetTitle: () => Promise<AsyncIterator<Boolean>>;
-  gTitle: () => Promise<AsyncIterator<String>>;
-  gUserTitle: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbGroupNullablePromise
-  extends Promise<PunbbGroup | null>,
-    Fragmentable {
-  g_id: () => Promise<Int>;
-  gDeletePosts: () => Promise<Boolean>;
-  gDeleteTopics: () => Promise<Boolean>;
-  gEditPosts: () => Promise<Boolean>;
-  gEditSubjectsInterval: () => Promise<Int>;
-  gPostFlood: () => Promise<Int>;
-  gPostPolls: () => Promise<Boolean>;
-  gPostReplies: () => Promise<Boolean>;
-  gPostTopics: () => Promise<Boolean>;
-  gReadBoard: () => Promise<Boolean>;
-  gSearch: () => Promise<Boolean>;
-  gSearchFlood: () => Promise<Int>;
-  gSearchUsers: () => Promise<Boolean>;
-  gSetTitle: () => Promise<Boolean>;
-  gTitle: () => Promise<String>;
-  gUserTitle: () => Promise<String>;
-}
-
-export interface PunbbGroupConnection {
-  pageInfo: PageInfo;
-  edges: PunbbGroupEdge[];
-}
-
-export interface PunbbGroupConnectionPromise
-  extends Promise<PunbbGroupConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbGroupEdge>>() => T;
-  aggregate: <T = AggregatePunbbGroupPromise>() => T;
-}
-
-export interface PunbbGroupConnectionSubscription
-  extends Promise<AsyncIterator<PunbbGroupConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbGroupEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbGroupSubscription>() => T;
-}
-
-export interface PunbbGroupEdge {
-  node: PunbbGroup;
-  cursor: String;
-}
-
-export interface PunbbGroupEdgePromise
-  extends Promise<PunbbGroupEdge>,
-    Fragmentable {
-  node: <T = PunbbGroupPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbGroupEdgeSubscription
-  extends Promise<AsyncIterator<PunbbGroupEdge>>,
-    Fragmentable {
-  node: <T = PunbbGroupSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbGroup {
-  count: Int;
-}
-
-export interface AggregatePunbbGroupPromise
-  extends Promise<AggregatePunbbGroup>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbGroupSubscription
-  extends Promise<AsyncIterator<AggregatePunbbGroup>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
 export interface PunbbOnline {
   ident: String;
   idle: Boolean;
@@ -4590,102 +2515,6 @@ export interface AggregatePunbbOnlinePromise
 
 export interface AggregatePunbbOnlineSubscription
   extends Promise<AsyncIterator<AggregatePunbbOnline>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbPoll {
-  id: Int;
-  options: String;
-  pollid: Int;
-  ptype: Boolean;
-  voters: String;
-  votes: String;
-}
-
-export interface PunbbPollPromise extends Promise<PunbbPoll>, Fragmentable {
-  id: () => Promise<Int>;
-  options: () => Promise<String>;
-  pollid: () => Promise<Int>;
-  ptype: () => Promise<Boolean>;
-  voters: () => Promise<String>;
-  votes: () => Promise<String>;
-}
-
-export interface PunbbPollSubscription
-  extends Promise<AsyncIterator<PunbbPoll>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  options: () => Promise<AsyncIterator<String>>;
-  pollid: () => Promise<AsyncIterator<Int>>;
-  ptype: () => Promise<AsyncIterator<Boolean>>;
-  voters: () => Promise<AsyncIterator<String>>;
-  votes: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbPollNullablePromise
-  extends Promise<PunbbPoll | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  options: () => Promise<String>;
-  pollid: () => Promise<Int>;
-  ptype: () => Promise<Boolean>;
-  voters: () => Promise<String>;
-  votes: () => Promise<String>;
-}
-
-export interface PunbbPollConnection {
-  pageInfo: PageInfo;
-  edges: PunbbPollEdge[];
-}
-
-export interface PunbbPollConnectionPromise
-  extends Promise<PunbbPollConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbPollEdge>>() => T;
-  aggregate: <T = AggregatePunbbPollPromise>() => T;
-}
-
-export interface PunbbPollConnectionSubscription
-  extends Promise<AsyncIterator<PunbbPollConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbPollEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbPollSubscription>() => T;
-}
-
-export interface PunbbPollEdge {
-  node: PunbbPoll;
-  cursor: String;
-}
-
-export interface PunbbPollEdgePromise
-  extends Promise<PunbbPollEdge>,
-    Fragmentable {
-  node: <T = PunbbPollPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbPollEdgeSubscription
-  extends Promise<AsyncIterator<PunbbPollEdge>>,
-    Fragmentable {
-  node: <T = PunbbPollSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbPoll {
-  count: Int;
-}
-
-export interface AggregatePunbbPollPromise
-  extends Promise<AggregatePunbbPoll>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbPollSubscription
-  extends Promise<AsyncIterator<AggregatePunbbPoll>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -4802,440 +2631,6 @@ export interface AggregatePunbbPostPromise
 
 export interface AggregatePunbbPostSubscription
   extends Promise<AsyncIterator<AggregatePunbbPost>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbRank {
-  id: Int;
-  rank: String;
-}
-
-export interface PunbbRankPromise extends Promise<PunbbRank>, Fragmentable {
-  id: () => Promise<Int>;
-  rank: () => Promise<String>;
-}
-
-export interface PunbbRankSubscription
-  extends Promise<AsyncIterator<PunbbRank>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  rank: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbRankNullablePromise
-  extends Promise<PunbbRank | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  rank: () => Promise<String>;
-}
-
-export interface PunbbRankConnection {
-  pageInfo: PageInfo;
-  edges: PunbbRankEdge[];
-}
-
-export interface PunbbRankConnectionPromise
-  extends Promise<PunbbRankConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbRankEdge>>() => T;
-  aggregate: <T = AggregatePunbbRankPromise>() => T;
-}
-
-export interface PunbbRankConnectionSubscription
-  extends Promise<AsyncIterator<PunbbRankConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbRankEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbRankSubscription>() => T;
-}
-
-export interface PunbbRankEdge {
-  node: PunbbRank;
-  cursor: String;
-}
-
-export interface PunbbRankEdgePromise
-  extends Promise<PunbbRankEdge>,
-    Fragmentable {
-  node: <T = PunbbRankPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbRankEdgeSubscription
-  extends Promise<AsyncIterator<PunbbRankEdge>>,
-    Fragmentable {
-  node: <T = PunbbRankSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbRank {
-  count: Int;
-}
-
-export interface AggregatePunbbRankPromise
-  extends Promise<AggregatePunbbRank>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbRankSubscription
-  extends Promise<AsyncIterator<AggregatePunbbRank>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbReport {
-  id: Int;
-  created: Int;
-  forumId: Int;
-  message: String;
-  postId: Int;
-  reportedBy: Int;
-  topicId: Int;
-  zapped?: Int;
-  zappedBy?: Int;
-}
-
-export interface PunbbReportPromise extends Promise<PunbbReport>, Fragmentable {
-  id: () => Promise<Int>;
-  created: () => Promise<Int>;
-  forumId: () => Promise<Int>;
-  message: () => Promise<String>;
-  postId: () => Promise<Int>;
-  reportedBy: () => Promise<Int>;
-  topicId: () => Promise<Int>;
-  zapped: () => Promise<Int>;
-  zappedBy: () => Promise<Int>;
-}
-
-export interface PunbbReportSubscription
-  extends Promise<AsyncIterator<PunbbReport>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  created: () => Promise<AsyncIterator<Int>>;
-  forumId: () => Promise<AsyncIterator<Int>>;
-  message: () => Promise<AsyncIterator<String>>;
-  postId: () => Promise<AsyncIterator<Int>>;
-  reportedBy: () => Promise<AsyncIterator<Int>>;
-  topicId: () => Promise<AsyncIterator<Int>>;
-  zapped: () => Promise<AsyncIterator<Int>>;
-  zappedBy: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbReportNullablePromise
-  extends Promise<PunbbReport | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  created: () => Promise<Int>;
-  forumId: () => Promise<Int>;
-  message: () => Promise<String>;
-  postId: () => Promise<Int>;
-  reportedBy: () => Promise<Int>;
-  topicId: () => Promise<Int>;
-  zapped: () => Promise<Int>;
-  zappedBy: () => Promise<Int>;
-}
-
-export interface PunbbReportConnection {
-  pageInfo: PageInfo;
-  edges: PunbbReportEdge[];
-}
-
-export interface PunbbReportConnectionPromise
-  extends Promise<PunbbReportConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbReportEdge>>() => T;
-  aggregate: <T = AggregatePunbbReportPromise>() => T;
-}
-
-export interface PunbbReportConnectionSubscription
-  extends Promise<AsyncIterator<PunbbReportConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbReportEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbReportSubscription>() => T;
-}
-
-export interface PunbbReportEdge {
-  node: PunbbReport;
-  cursor: String;
-}
-
-export interface PunbbReportEdgePromise
-  extends Promise<PunbbReportEdge>,
-    Fragmentable {
-  node: <T = PunbbReportPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbReportEdgeSubscription
-  extends Promise<AsyncIterator<PunbbReportEdge>>,
-    Fragmentable {
-  node: <T = PunbbReportSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbReport {
-  count: Int;
-}
-
-export interface AggregatePunbbReportPromise
-  extends Promise<AggregatePunbbReport>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbReportSubscription
-  extends Promise<AsyncIterator<AggregatePunbbReport>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbSearchCache {
-  id: Int;
-  ident: String;
-  searchData: String;
-}
-
-export interface PunbbSearchCachePromise
-  extends Promise<PunbbSearchCache>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  ident: () => Promise<String>;
-  searchData: () => Promise<String>;
-}
-
-export interface PunbbSearchCacheSubscription
-  extends Promise<AsyncIterator<PunbbSearchCache>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  ident: () => Promise<AsyncIterator<String>>;
-  searchData: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbSearchCacheNullablePromise
-  extends Promise<PunbbSearchCache | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  ident: () => Promise<String>;
-  searchData: () => Promise<String>;
-}
-
-export interface PunbbSearchCacheConnection {
-  pageInfo: PageInfo;
-  edges: PunbbSearchCacheEdge[];
-}
-
-export interface PunbbSearchCacheConnectionPromise
-  extends Promise<PunbbSearchCacheConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbSearchCacheEdge>>() => T;
-  aggregate: <T = AggregatePunbbSearchCachePromise>() => T;
-}
-
-export interface PunbbSearchCacheConnectionSubscription
-  extends Promise<AsyncIterator<PunbbSearchCacheConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbSearchCacheEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbSearchCacheSubscription>() => T;
-}
-
-export interface PunbbSearchCacheEdge {
-  node: PunbbSearchCache;
-  cursor: String;
-}
-
-export interface PunbbSearchCacheEdgePromise
-  extends Promise<PunbbSearchCacheEdge>,
-    Fragmentable {
-  node: <T = PunbbSearchCachePromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbSearchCacheEdgeSubscription
-  extends Promise<AsyncIterator<PunbbSearchCacheEdge>>,
-    Fragmentable {
-  node: <T = PunbbSearchCacheSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbSearchCache {
-  count: Int;
-}
-
-export interface AggregatePunbbSearchCachePromise
-  extends Promise<AggregatePunbbSearchCache>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbSearchCacheSubscription
-  extends Promise<AsyncIterator<AggregatePunbbSearchCache>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbSearchMatch {
-  postId: Int;
-  subjectMatch: Boolean;
-}
-
-export interface PunbbSearchMatchPromise
-  extends Promise<PunbbSearchMatch>,
-    Fragmentable {
-  postId: () => Promise<Int>;
-  subjectMatch: () => Promise<Boolean>;
-}
-
-export interface PunbbSearchMatchSubscription
-  extends Promise<AsyncIterator<PunbbSearchMatch>>,
-    Fragmentable {
-  postId: () => Promise<AsyncIterator<Int>>;
-  subjectMatch: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface PunbbSearchMatchNullablePromise
-  extends Promise<PunbbSearchMatch | null>,
-    Fragmentable {
-  postId: () => Promise<Int>;
-  subjectMatch: () => Promise<Boolean>;
-}
-
-export interface PunbbSearchMatchConnection {
-  pageInfo: PageInfo;
-  edges: PunbbSearchMatchEdge[];
-}
-
-export interface PunbbSearchMatchConnectionPromise
-  extends Promise<PunbbSearchMatchConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbSearchMatchEdge>>() => T;
-  aggregate: <T = AggregatePunbbSearchMatchPromise>() => T;
-}
-
-export interface PunbbSearchMatchConnectionSubscription
-  extends Promise<AsyncIterator<PunbbSearchMatchConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbSearchMatchEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbSearchMatchSubscription>() => T;
-}
-
-export interface PunbbSearchMatchEdge {
-  node: PunbbSearchMatch;
-  cursor: String;
-}
-
-export interface PunbbSearchMatchEdgePromise
-  extends Promise<PunbbSearchMatchEdge>,
-    Fragmentable {
-  node: <T = PunbbSearchMatchPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbSearchMatchEdgeSubscription
-  extends Promise<AsyncIterator<PunbbSearchMatchEdge>>,
-    Fragmentable {
-  node: <T = PunbbSearchMatchSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbSearchMatch {
-  count: Int;
-}
-
-export interface AggregatePunbbSearchMatchPromise
-  extends Promise<AggregatePunbbSearchMatch>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbSearchMatchSubscription
-  extends Promise<AsyncIterator<AggregatePunbbSearchMatch>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbSearchWord {
-  word: ID_Output;
-}
-
-export interface PunbbSearchWordPromise
-  extends Promise<PunbbSearchWord>,
-    Fragmentable {
-  word: () => Promise<ID_Output>;
-}
-
-export interface PunbbSearchWordSubscription
-  extends Promise<AsyncIterator<PunbbSearchWord>>,
-    Fragmentable {
-  word: () => Promise<AsyncIterator<ID_Output>>;
-}
-
-export interface PunbbSearchWordNullablePromise
-  extends Promise<PunbbSearchWord | null>,
-    Fragmentable {
-  word: () => Promise<ID_Output>;
-}
-
-export interface PunbbSearchWordConnection {
-  pageInfo: PageInfo;
-  edges: PunbbSearchWordEdge[];
-}
-
-export interface PunbbSearchWordConnectionPromise
-  extends Promise<PunbbSearchWordConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbSearchWordEdge>>() => T;
-  aggregate: <T = AggregatePunbbSearchWordPromise>() => T;
-}
-
-export interface PunbbSearchWordConnectionSubscription
-  extends Promise<AsyncIterator<PunbbSearchWordConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbSearchWordEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbSearchWordSubscription>() => T;
-}
-
-export interface PunbbSearchWordEdge {
-  node: PunbbSearchWord;
-  cursor: String;
-}
-
-export interface PunbbSearchWordEdgePromise
-  extends Promise<PunbbSearchWordEdge>,
-    Fragmentable {
-  node: <T = PunbbSearchWordPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbSearchWordEdgeSubscription
-  extends Promise<AsyncIterator<PunbbSearchWordEdge>>,
-    Fragmentable {
-  node: <T = PunbbSearchWordSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbSearchWord {
-  count: Int;
-}
-
-export interface AggregatePunbbSearchWordPromise
-  extends Promise<AggregatePunbbSearchWord>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbSearchWordSubscription
-  extends Promise<AsyncIterator<AggregatePunbbSearchWord>>,
     Fragmentable {
   count: () => Promise<AsyncIterator<Int>>;
 }
@@ -5478,198 +2873,6 @@ export interface AggregatePunbbUploadedSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PunbbUploadsConf {
-  gId: Int;
-  pDelete: Boolean;
-  pGlobaldelete: Boolean;
-  pGlobalview: Boolean;
-  pSetop: Boolean;
-  pUpload: Boolean;
-  pView: Boolean;
-  uFsize: Int;
-}
-
-export interface PunbbUploadsConfPromise
-  extends Promise<PunbbUploadsConf>,
-    Fragmentable {
-  gId: () => Promise<Int>;
-  pDelete: () => Promise<Boolean>;
-  pGlobaldelete: () => Promise<Boolean>;
-  pGlobalview: () => Promise<Boolean>;
-  pSetop: () => Promise<Boolean>;
-  pUpload: () => Promise<Boolean>;
-  pView: () => Promise<Boolean>;
-  uFsize: () => Promise<Int>;
-}
-
-export interface PunbbUploadsConfSubscription
-  extends Promise<AsyncIterator<PunbbUploadsConf>>,
-    Fragmentable {
-  gId: () => Promise<AsyncIterator<Int>>;
-  pDelete: () => Promise<AsyncIterator<Boolean>>;
-  pGlobaldelete: () => Promise<AsyncIterator<Boolean>>;
-  pGlobalview: () => Promise<AsyncIterator<Boolean>>;
-  pSetop: () => Promise<AsyncIterator<Boolean>>;
-  pUpload: () => Promise<AsyncIterator<Boolean>>;
-  pView: () => Promise<AsyncIterator<Boolean>>;
-  uFsize: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbUploadsConfNullablePromise
-  extends Promise<PunbbUploadsConf | null>,
-    Fragmentable {
-  gId: () => Promise<Int>;
-  pDelete: () => Promise<Boolean>;
-  pGlobaldelete: () => Promise<Boolean>;
-  pGlobalview: () => Promise<Boolean>;
-  pSetop: () => Promise<Boolean>;
-  pUpload: () => Promise<Boolean>;
-  pView: () => Promise<Boolean>;
-  uFsize: () => Promise<Int>;
-}
-
-export interface PunbbUploadsConfConnection {
-  pageInfo: PageInfo;
-  edges: PunbbUploadsConfEdge[];
-}
-
-export interface PunbbUploadsConfConnectionPromise
-  extends Promise<PunbbUploadsConfConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbUploadsConfEdge>>() => T;
-  aggregate: <T = AggregatePunbbUploadsConfPromise>() => T;
-}
-
-export interface PunbbUploadsConfConnectionSubscription
-  extends Promise<AsyncIterator<PunbbUploadsConfConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbUploadsConfEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbUploadsConfSubscription>() => T;
-}
-
-export interface PunbbUploadsConfEdge {
-  node: PunbbUploadsConf;
-  cursor: String;
-}
-
-export interface PunbbUploadsConfEdgePromise
-  extends Promise<PunbbUploadsConfEdge>,
-    Fragmentable {
-  node: <T = PunbbUploadsConfPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbUploadsConfEdgeSubscription
-  extends Promise<AsyncIterator<PunbbUploadsConfEdge>>,
-    Fragmentable {
-  node: <T = PunbbUploadsConfSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbUploadsConf {
-  count: Int;
-}
-
-export interface AggregatePunbbUploadsConfPromise
-  extends Promise<AggregatePunbbUploadsConf>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbUploadsConfSubscription
-  extends Promise<AsyncIterator<AggregatePunbbUploadsConf>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbUploadsType {
-  id: Int;
-  exts: String;
-  type: String;
-}
-
-export interface PunbbUploadsTypePromise
-  extends Promise<PunbbUploadsType>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  exts: () => Promise<String>;
-  type: () => Promise<String>;
-}
-
-export interface PunbbUploadsTypeSubscription
-  extends Promise<AsyncIterator<PunbbUploadsType>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  exts: () => Promise<AsyncIterator<String>>;
-  type: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbUploadsTypeNullablePromise
-  extends Promise<PunbbUploadsType | null>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  exts: () => Promise<String>;
-  type: () => Promise<String>;
-}
-
-export interface PunbbUploadsTypeConnection {
-  pageInfo: PageInfo;
-  edges: PunbbUploadsTypeEdge[];
-}
-
-export interface PunbbUploadsTypeConnectionPromise
-  extends Promise<PunbbUploadsTypeConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbUploadsTypeEdge>>() => T;
-  aggregate: <T = AggregatePunbbUploadsTypePromise>() => T;
-}
-
-export interface PunbbUploadsTypeConnectionSubscription
-  extends Promise<AsyncIterator<PunbbUploadsTypeConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbUploadsTypeEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbUploadsTypeSubscription>() => T;
-}
-
-export interface PunbbUploadsTypeEdge {
-  node: PunbbUploadsType;
-  cursor: String;
-}
-
-export interface PunbbUploadsTypeEdgePromise
-  extends Promise<PunbbUploadsTypeEdge>,
-    Fragmentable {
-  node: <T = PunbbUploadsTypePromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbUploadsTypeEdgeSubscription
-  extends Promise<AsyncIterator<PunbbUploadsTypeEdge>>,
-    Fragmentable {
-  node: <T = PunbbUploadsTypeSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbUploadsType {
-  count: Int;
-}
-
-export interface AggregatePunbbUploadsTypePromise
-  extends Promise<AggregatePunbbUploadsType>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbUploadsTypeSubscription
-  extends Promise<AsyncIterator<AggregatePunbbUploadsType>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
 export interface PunbbUser {
   id: Int;
   activateKey?: String;
@@ -5894,88 +3097,6 @@ export interface AggregatePunbbUserSubscription
   count: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PunbbUserthread {
-  lastRead?: Int;
-  posted: Boolean;
-}
-
-export interface PunbbUserthreadPromise
-  extends Promise<PunbbUserthread>,
-    Fragmentable {
-  lastRead: () => Promise<Int>;
-  posted: () => Promise<Boolean>;
-}
-
-export interface PunbbUserthreadSubscription
-  extends Promise<AsyncIterator<PunbbUserthread>>,
-    Fragmentable {
-  lastRead: () => Promise<AsyncIterator<Int>>;
-  posted: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface PunbbUserthreadNullablePromise
-  extends Promise<PunbbUserthread | null>,
-    Fragmentable {
-  lastRead: () => Promise<Int>;
-  posted: () => Promise<Boolean>;
-}
-
-export interface PunbbUserthreadConnection {
-  pageInfo: PageInfo;
-  edges: PunbbUserthreadEdge[];
-}
-
-export interface PunbbUserthreadConnectionPromise
-  extends Promise<PunbbUserthreadConnection>,
-    Fragmentable {
-  pageInfo: <T = PageInfoPromise>() => T;
-  edges: <T = FragmentableArray<PunbbUserthreadEdge>>() => T;
-  aggregate: <T = AggregatePunbbUserthreadPromise>() => T;
-}
-
-export interface PunbbUserthreadConnectionSubscription
-  extends Promise<AsyncIterator<PunbbUserthreadConnection>>,
-    Fragmentable {
-  pageInfo: <T = PageInfoSubscription>() => T;
-  edges: <T = Promise<AsyncIterator<PunbbUserthreadEdgeSubscription>>>() => T;
-  aggregate: <T = AggregatePunbbUserthreadSubscription>() => T;
-}
-
-export interface PunbbUserthreadEdge {
-  node: PunbbUserthread;
-  cursor: String;
-}
-
-export interface PunbbUserthreadEdgePromise
-  extends Promise<PunbbUserthreadEdge>,
-    Fragmentable {
-  node: <T = PunbbUserthreadPromise>() => T;
-  cursor: () => Promise<String>;
-}
-
-export interface PunbbUserthreadEdgeSubscription
-  extends Promise<AsyncIterator<PunbbUserthreadEdge>>,
-    Fragmentable {
-  node: <T = PunbbUserthreadSubscription>() => T;
-  cursor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface AggregatePunbbUserthread {
-  count: Int;
-}
-
-export interface AggregatePunbbUserthreadPromise
-  extends Promise<AggregatePunbbUserthread>,
-    Fragmentable {
-  count: () => Promise<Int>;
-}
-
-export interface AggregatePunbbUserthreadSubscription
-  extends Promise<AsyncIterator<AggregatePunbbUserthread>>,
-    Fragmentable {
-  count: () => Promise<AsyncIterator<Int>>;
-}
-
 export interface BatchPayload {
   count: Long;
 }
@@ -6095,97 +3216,6 @@ export interface PunbbCategoryPreviousValuesSubscription
   dispPosition: () => Promise<AsyncIterator<Int>>;
 }
 
-export interface PunbbCensoringSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbCensoring;
-  updatedFields: String[];
-  previousValues: PunbbCensoringPreviousValues;
-}
-
-export interface PunbbCensoringSubscriptionPayloadPromise
-  extends Promise<PunbbCensoringSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbCensoringPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbCensoringPreviousValuesPromise>() => T;
-}
-
-export interface PunbbCensoringSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbCensoringSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbCensoringSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbCensoringPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbCensoringPreviousValues {
-  id: Int;
-  replaceWith: String;
-  searchFor: String;
-}
-
-export interface PunbbCensoringPreviousValuesPromise
-  extends Promise<PunbbCensoringPreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  replaceWith: () => Promise<String>;
-  searchFor: () => Promise<String>;
-}
-
-export interface PunbbCensoringPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbCensoringPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  replaceWith: () => Promise<AsyncIterator<String>>;
-  searchFor: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbConfigSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbConfig;
-  updatedFields: String[];
-  previousValues: PunbbConfigPreviousValues;
-}
-
-export interface PunbbConfigSubscriptionPayloadPromise
-  extends Promise<PunbbConfigSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbConfigPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbConfigPreviousValuesPromise>() => T;
-}
-
-export interface PunbbConfigSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbConfigSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbConfigSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbConfigPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbConfigPreviousValues {
-  conf_name: ID_Output;
-  confValue?: String;
-}
-
-export interface PunbbConfigPreviousValuesPromise
-  extends Promise<PunbbConfigPreviousValues>,
-    Fragmentable {
-  conf_name: () => Promise<ID_Output>;
-  confValue: () => Promise<String>;
-}
-
-export interface PunbbConfigPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbConfigPreviousValues>>,
-    Fragmentable {
-  conf_name: () => Promise<AsyncIterator<ID_Output>>;
-  confValue: () => Promise<AsyncIterator<String>>;
-}
-
 export interface PunbbForumSubscriptionPayload {
   mutation: MutationType;
   node: PunbbForum;
@@ -6257,142 +3287,6 @@ export interface PunbbForumPreviousValuesSubscription
   sortBy: () => Promise<AsyncIterator<Boolean>>;
 }
 
-export interface PunbbForumPermSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbForumPerm;
-  updatedFields: String[];
-  previousValues: PunbbForumPermPreviousValues;
-}
-
-export interface PunbbForumPermSubscriptionPayloadPromise
-  extends Promise<PunbbForumPermSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbForumPermPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbForumPermPreviousValuesPromise>() => T;
-}
-
-export interface PunbbForumPermSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbForumPermSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbForumPermSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbForumPermPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbForumPermPreviousValues {
-  postPolls: Boolean;
-  postReplies: Boolean;
-  postTopics: Boolean;
-  readForum: Boolean;
-}
-
-export interface PunbbForumPermPreviousValuesPromise
-  extends Promise<PunbbForumPermPreviousValues>,
-    Fragmentable {
-  postPolls: () => Promise<Boolean>;
-  postReplies: () => Promise<Boolean>;
-  postTopics: () => Promise<Boolean>;
-  readForum: () => Promise<Boolean>;
-}
-
-export interface PunbbForumPermPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbForumPermPreviousValues>>,
-    Fragmentable {
-  postPolls: () => Promise<AsyncIterator<Boolean>>;
-  postReplies: () => Promise<AsyncIterator<Boolean>>;
-  postTopics: () => Promise<AsyncIterator<Boolean>>;
-  readForum: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface PunbbGroupSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbGroup;
-  updatedFields: String[];
-  previousValues: PunbbGroupPreviousValues;
-}
-
-export interface PunbbGroupSubscriptionPayloadPromise
-  extends Promise<PunbbGroupSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbGroupPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbGroupPreviousValuesPromise>() => T;
-}
-
-export interface PunbbGroupSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbGroupSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbGroupSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbGroupPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbGroupPreviousValues {
-  g_id: Int;
-  gDeletePosts: Boolean;
-  gDeleteTopics: Boolean;
-  gEditPosts: Boolean;
-  gEditSubjectsInterval: Int;
-  gPostFlood: Int;
-  gPostPolls: Boolean;
-  gPostReplies: Boolean;
-  gPostTopics: Boolean;
-  gReadBoard: Boolean;
-  gSearch: Boolean;
-  gSearchFlood: Int;
-  gSearchUsers: Boolean;
-  gSetTitle: Boolean;
-  gTitle: String;
-  gUserTitle?: String;
-}
-
-export interface PunbbGroupPreviousValuesPromise
-  extends Promise<PunbbGroupPreviousValues>,
-    Fragmentable {
-  g_id: () => Promise<Int>;
-  gDeletePosts: () => Promise<Boolean>;
-  gDeleteTopics: () => Promise<Boolean>;
-  gEditPosts: () => Promise<Boolean>;
-  gEditSubjectsInterval: () => Promise<Int>;
-  gPostFlood: () => Promise<Int>;
-  gPostPolls: () => Promise<Boolean>;
-  gPostReplies: () => Promise<Boolean>;
-  gPostTopics: () => Promise<Boolean>;
-  gReadBoard: () => Promise<Boolean>;
-  gSearch: () => Promise<Boolean>;
-  gSearchFlood: () => Promise<Int>;
-  gSearchUsers: () => Promise<Boolean>;
-  gSetTitle: () => Promise<Boolean>;
-  gTitle: () => Promise<String>;
-  gUserTitle: () => Promise<String>;
-}
-
-export interface PunbbGroupPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbGroupPreviousValues>>,
-    Fragmentable {
-  g_id: () => Promise<AsyncIterator<Int>>;
-  gDeletePosts: () => Promise<AsyncIterator<Boolean>>;
-  gDeleteTopics: () => Promise<AsyncIterator<Boolean>>;
-  gEditPosts: () => Promise<AsyncIterator<Boolean>>;
-  gEditSubjectsInterval: () => Promise<AsyncIterator<Int>>;
-  gPostFlood: () => Promise<AsyncIterator<Int>>;
-  gPostPolls: () => Promise<AsyncIterator<Boolean>>;
-  gPostReplies: () => Promise<AsyncIterator<Boolean>>;
-  gPostTopics: () => Promise<AsyncIterator<Boolean>>;
-  gReadBoard: () => Promise<AsyncIterator<Boolean>>;
-  gSearch: () => Promise<AsyncIterator<Boolean>>;
-  gSearchFlood: () => Promise<AsyncIterator<Int>>;
-  gSearchUsers: () => Promise<AsyncIterator<Boolean>>;
-  gSetTitle: () => Promise<AsyncIterator<Boolean>>;
-  gTitle: () => Promise<AsyncIterator<String>>;
-  gUserTitle: () => Promise<AsyncIterator<String>>;
-}
-
 export interface PunbbOnlineSubscriptionPayload {
   mutation: MutationType;
   node: PunbbOnline;
@@ -6441,62 +3335,6 @@ export interface PunbbOnlinePreviousValuesSubscription
   idle: () => Promise<AsyncIterator<Boolean>>;
   logged: () => Promise<AsyncIterator<Int>>;
   userId: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbPollSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbPoll;
-  updatedFields: String[];
-  previousValues: PunbbPollPreviousValues;
-}
-
-export interface PunbbPollSubscriptionPayloadPromise
-  extends Promise<PunbbPollSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbPollPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbPollPreviousValuesPromise>() => T;
-}
-
-export interface PunbbPollSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbPollSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbPollSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbPollPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbPollPreviousValues {
-  id: Int;
-  options: String;
-  pollid: Int;
-  ptype: Boolean;
-  voters: String;
-  votes: String;
-}
-
-export interface PunbbPollPreviousValuesPromise
-  extends Promise<PunbbPollPreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  options: () => Promise<String>;
-  pollid: () => Promise<Int>;
-  ptype: () => Promise<Boolean>;
-  voters: () => Promise<String>;
-  votes: () => Promise<String>;
-}
-
-export interface PunbbPollPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbPollPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  options: () => Promise<AsyncIterator<String>>;
-  pollid: () => Promise<AsyncIterator<Int>>;
-  ptype: () => Promise<AsyncIterator<Boolean>>;
-  voters: () => Promise<AsyncIterator<String>>;
-  votes: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PunbbPostSubscriptionPayload {
@@ -6568,247 +3406,6 @@ export interface PunbbPostPreviousValuesSubscription
   posterId: () => Promise<AsyncIterator<Int>>;
   posterIp: () => Promise<AsyncIterator<String>>;
   topicId: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbRankSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbRank;
-  updatedFields: String[];
-  previousValues: PunbbRankPreviousValues;
-}
-
-export interface PunbbRankSubscriptionPayloadPromise
-  extends Promise<PunbbRankSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbRankPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbRankPreviousValuesPromise>() => T;
-}
-
-export interface PunbbRankSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbRankSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbRankSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbRankPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbRankPreviousValues {
-  id: Int;
-  rank: String;
-}
-
-export interface PunbbRankPreviousValuesPromise
-  extends Promise<PunbbRankPreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  rank: () => Promise<String>;
-}
-
-export interface PunbbRankPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbRankPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  rank: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbReportSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbReport;
-  updatedFields: String[];
-  previousValues: PunbbReportPreviousValues;
-}
-
-export interface PunbbReportSubscriptionPayloadPromise
-  extends Promise<PunbbReportSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbReportPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbReportPreviousValuesPromise>() => T;
-}
-
-export interface PunbbReportSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbReportSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbReportSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbReportPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbReportPreviousValues {
-  id: Int;
-  created: Int;
-  forumId: Int;
-  message: String;
-  postId: Int;
-  reportedBy: Int;
-  topicId: Int;
-  zapped?: Int;
-  zappedBy?: Int;
-}
-
-export interface PunbbReportPreviousValuesPromise
-  extends Promise<PunbbReportPreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  created: () => Promise<Int>;
-  forumId: () => Promise<Int>;
-  message: () => Promise<String>;
-  postId: () => Promise<Int>;
-  reportedBy: () => Promise<Int>;
-  topicId: () => Promise<Int>;
-  zapped: () => Promise<Int>;
-  zappedBy: () => Promise<Int>;
-}
-
-export interface PunbbReportPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbReportPreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  created: () => Promise<AsyncIterator<Int>>;
-  forumId: () => Promise<AsyncIterator<Int>>;
-  message: () => Promise<AsyncIterator<String>>;
-  postId: () => Promise<AsyncIterator<Int>>;
-  reportedBy: () => Promise<AsyncIterator<Int>>;
-  topicId: () => Promise<AsyncIterator<Int>>;
-  zapped: () => Promise<AsyncIterator<Int>>;
-  zappedBy: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbSearchCacheSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbSearchCache;
-  updatedFields: String[];
-  previousValues: PunbbSearchCachePreviousValues;
-}
-
-export interface PunbbSearchCacheSubscriptionPayloadPromise
-  extends Promise<PunbbSearchCacheSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbSearchCachePromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbSearchCachePreviousValuesPromise>() => T;
-}
-
-export interface PunbbSearchCacheSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbSearchCacheSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbSearchCacheSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbSearchCachePreviousValuesSubscription>() => T;
-}
-
-export interface PunbbSearchCachePreviousValues {
-  id: Int;
-  ident: String;
-  searchData: String;
-}
-
-export interface PunbbSearchCachePreviousValuesPromise
-  extends Promise<PunbbSearchCachePreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  ident: () => Promise<String>;
-  searchData: () => Promise<String>;
-}
-
-export interface PunbbSearchCachePreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbSearchCachePreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  ident: () => Promise<AsyncIterator<String>>;
-  searchData: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbSearchMatchSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbSearchMatch;
-  updatedFields: String[];
-  previousValues: PunbbSearchMatchPreviousValues;
-}
-
-export interface PunbbSearchMatchSubscriptionPayloadPromise
-  extends Promise<PunbbSearchMatchSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbSearchMatchPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbSearchMatchPreviousValuesPromise>() => T;
-}
-
-export interface PunbbSearchMatchSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbSearchMatchSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbSearchMatchSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbSearchMatchPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbSearchMatchPreviousValues {
-  postId: Int;
-  subjectMatch: Boolean;
-}
-
-export interface PunbbSearchMatchPreviousValuesPromise
-  extends Promise<PunbbSearchMatchPreviousValues>,
-    Fragmentable {
-  postId: () => Promise<Int>;
-  subjectMatch: () => Promise<Boolean>;
-}
-
-export interface PunbbSearchMatchPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbSearchMatchPreviousValues>>,
-    Fragmentable {
-  postId: () => Promise<AsyncIterator<Int>>;
-  subjectMatch: () => Promise<AsyncIterator<Boolean>>;
-}
-
-export interface PunbbSearchWordSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbSearchWord;
-  updatedFields: String[];
-  previousValues: PunbbSearchWordPreviousValues;
-}
-
-export interface PunbbSearchWordSubscriptionPayloadPromise
-  extends Promise<PunbbSearchWordSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbSearchWordPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbSearchWordPreviousValuesPromise>() => T;
-}
-
-export interface PunbbSearchWordSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbSearchWordSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbSearchWordSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbSearchWordPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbSearchWordPreviousValues {
-  word: ID_Output;
-}
-
-export interface PunbbSearchWordPreviousValuesPromise
-  extends Promise<PunbbSearchWordPreviousValues>,
-    Fragmentable {
-  word: () => Promise<ID_Output>;
-}
-
-export interface PunbbSearchWordPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbSearchWordPreviousValues>>,
-    Fragmentable {
-  word: () => Promise<AsyncIterator<ID_Output>>;
 }
 
 export interface PunbbTopicSubscriptionPayload {
@@ -6954,115 +3551,6 @@ export interface PunbbUploadedPreviousValuesSubscription
   uid: () => Promise<AsyncIterator<Int>>;
   user: () => Promise<AsyncIterator<String>>;
   userStat: () => Promise<AsyncIterator<String>>;
-}
-
-export interface PunbbUploadsConfSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbUploadsConf;
-  updatedFields: String[];
-  previousValues: PunbbUploadsConfPreviousValues;
-}
-
-export interface PunbbUploadsConfSubscriptionPayloadPromise
-  extends Promise<PunbbUploadsConfSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbUploadsConfPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbUploadsConfPreviousValuesPromise>() => T;
-}
-
-export interface PunbbUploadsConfSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbUploadsConfSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbUploadsConfSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbUploadsConfPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbUploadsConfPreviousValues {
-  gId: Int;
-  pDelete: Boolean;
-  pGlobaldelete: Boolean;
-  pGlobalview: Boolean;
-  pSetop: Boolean;
-  pUpload: Boolean;
-  pView: Boolean;
-  uFsize: Int;
-}
-
-export interface PunbbUploadsConfPreviousValuesPromise
-  extends Promise<PunbbUploadsConfPreviousValues>,
-    Fragmentable {
-  gId: () => Promise<Int>;
-  pDelete: () => Promise<Boolean>;
-  pGlobaldelete: () => Promise<Boolean>;
-  pGlobalview: () => Promise<Boolean>;
-  pSetop: () => Promise<Boolean>;
-  pUpload: () => Promise<Boolean>;
-  pView: () => Promise<Boolean>;
-  uFsize: () => Promise<Int>;
-}
-
-export interface PunbbUploadsConfPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbUploadsConfPreviousValues>>,
-    Fragmentable {
-  gId: () => Promise<AsyncIterator<Int>>;
-  pDelete: () => Promise<AsyncIterator<Boolean>>;
-  pGlobaldelete: () => Promise<AsyncIterator<Boolean>>;
-  pGlobalview: () => Promise<AsyncIterator<Boolean>>;
-  pSetop: () => Promise<AsyncIterator<Boolean>>;
-  pUpload: () => Promise<AsyncIterator<Boolean>>;
-  pView: () => Promise<AsyncIterator<Boolean>>;
-  uFsize: () => Promise<AsyncIterator<Int>>;
-}
-
-export interface PunbbUploadsTypeSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbUploadsType;
-  updatedFields: String[];
-  previousValues: PunbbUploadsTypePreviousValues;
-}
-
-export interface PunbbUploadsTypeSubscriptionPayloadPromise
-  extends Promise<PunbbUploadsTypeSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbUploadsTypePromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbUploadsTypePreviousValuesPromise>() => T;
-}
-
-export interface PunbbUploadsTypeSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbUploadsTypeSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbUploadsTypeSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbUploadsTypePreviousValuesSubscription>() => T;
-}
-
-export interface PunbbUploadsTypePreviousValues {
-  id: Int;
-  exts: String;
-  type: String;
-}
-
-export interface PunbbUploadsTypePreviousValuesPromise
-  extends Promise<PunbbUploadsTypePreviousValues>,
-    Fragmentable {
-  id: () => Promise<Int>;
-  exts: () => Promise<String>;
-  type: () => Promise<String>;
-}
-
-export interface PunbbUploadsTypePreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbUploadsTypePreviousValues>>,
-    Fragmentable {
-  id: () => Promise<AsyncIterator<Int>>;
-  exts: () => Promise<AsyncIterator<String>>;
-  type: () => Promise<AsyncIterator<String>>;
 }
 
 export interface PunbbUserSubscriptionPayload {
@@ -7217,50 +3705,6 @@ export interface PunbbUserPreviousValuesSubscription
   yahoo: () => Promise<AsyncIterator<String>>;
 }
 
-export interface PunbbUserthreadSubscriptionPayload {
-  mutation: MutationType;
-  node: PunbbUserthread;
-  updatedFields: String[];
-  previousValues: PunbbUserthreadPreviousValues;
-}
-
-export interface PunbbUserthreadSubscriptionPayloadPromise
-  extends Promise<PunbbUserthreadSubscriptionPayload>,
-    Fragmentable {
-  mutation: () => Promise<MutationType>;
-  node: <T = PunbbUserthreadPromise>() => T;
-  updatedFields: () => Promise<String[]>;
-  previousValues: <T = PunbbUserthreadPreviousValuesPromise>() => T;
-}
-
-export interface PunbbUserthreadSubscriptionPayloadSubscription
-  extends Promise<AsyncIterator<PunbbUserthreadSubscriptionPayload>>,
-    Fragmentable {
-  mutation: () => Promise<AsyncIterator<MutationType>>;
-  node: <T = PunbbUserthreadSubscription>() => T;
-  updatedFields: () => Promise<AsyncIterator<String[]>>;
-  previousValues: <T = PunbbUserthreadPreviousValuesSubscription>() => T;
-}
-
-export interface PunbbUserthreadPreviousValues {
-  lastRead?: Int;
-  posted: Boolean;
-}
-
-export interface PunbbUserthreadPreviousValuesPromise
-  extends Promise<PunbbUserthreadPreviousValues>,
-    Fragmentable {
-  lastRead: () => Promise<Int>;
-  posted: () => Promise<Boolean>;
-}
-
-export interface PunbbUserthreadPreviousValuesSubscription
-  extends Promise<AsyncIterator<PunbbUserthreadPreviousValues>>,
-    Fragmentable {
-  lastRead: () => Promise<AsyncIterator<Int>>;
-  posted: () => Promise<AsyncIterator<Boolean>>;
-}
-
 /*
 The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 */
@@ -7277,15 +3721,15 @@ The `Boolean` scalar type represents `true` or `false`.
 export type Boolean = boolean;
 
 /*
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
+*/
+export type Float = number;
+
+/*
 The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
 */
 export type ID_Input = string | number;
 export type ID_Output = string;
-
-/*
-The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
-*/
-export type Float = number;
 
 export type Long = string;
 
@@ -7303,23 +3747,7 @@ export const models: Model[] = [
     embedded: false
   },
   {
-    name: "PunbbCensoring",
-    embedded: false
-  },
-  {
-    name: "PunbbConfig",
-    embedded: false
-  },
-  {
     name: "PunbbForum",
-    embedded: false
-  },
-  {
-    name: "PunbbForumPerm",
-    embedded: false
-  },
-  {
-    name: "PunbbGroup",
     embedded: false
   },
   {
@@ -7327,31 +3755,7 @@ export const models: Model[] = [
     embedded: false
   },
   {
-    name: "PunbbPoll",
-    embedded: false
-  },
-  {
     name: "PunbbPost",
-    embedded: false
-  },
-  {
-    name: "PunbbRank",
-    embedded: false
-  },
-  {
-    name: "PunbbReport",
-    embedded: false
-  },
-  {
-    name: "PunbbSearchCache",
-    embedded: false
-  },
-  {
-    name: "PunbbSearchMatch",
-    embedded: false
-  },
-  {
-    name: "PunbbSearchWord",
     embedded: false
   },
   {
@@ -7363,19 +3767,7 @@ export const models: Model[] = [
     embedded: false
   },
   {
-    name: "PunbbUploadsConf",
-    embedded: false
-  },
-  {
-    name: "PunbbUploadsType",
-    embedded: false
-  },
-  {
     name: "PunbbUser",
-    embedded: false
-  },
-  {
-    name: "PunbbUserthread",
     embedded: false
   }
 ];

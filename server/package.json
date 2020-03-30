@@ -7,10 +7,7 @@
     "start": "ts-node ./src/index.ts",
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "docker:start": "docker-compose up -d",
-    "docker:restart": "docker-compose restart",
-    "prisma:generate": "prisma generate",
-    "prisma:introspect": "prisma introspect",
-    "prisma:deploy": "prisma deploy"
+    "docker:restart": "docker-compose restart"
   },
   "dependencies": {
     "@axelnormand/pigeonhole-prisma-client": "1.0.0",

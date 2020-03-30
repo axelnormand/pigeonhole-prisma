@@ -15,76 +15,174 @@ export interface NexusPrismaTypes {
   objectTypes: {
     fields: {
       Query: QueryObject
-      User: UserObject
-      Post: PostObject
-      UserConnection: UserConnectionObject
+      PunbbBan: PunbbBanObject
+      PunbbBanConnection: PunbbBanConnectionObject
       PageInfo: PageInfoObject
-      UserEdge: UserEdgeObject
-      AggregateUser: AggregateUserObject
-      PostConnection: PostConnectionObject
-      PostEdge: PostEdgeObject
-      AggregatePost: AggregatePostObject
+      PunbbBanEdge: PunbbBanEdgeObject
+      AggregatePunbbBan: AggregatePunbbBanObject
+      PunbbCategory: PunbbCategoryObject
+      PunbbCategoryConnection: PunbbCategoryConnectionObject
+      PunbbCategoryEdge: PunbbCategoryEdgeObject
+      AggregatePunbbCategory: AggregatePunbbCategoryObject
+      PunbbForum: PunbbForumObject
+      PunbbForumConnection: PunbbForumConnectionObject
+      PunbbForumEdge: PunbbForumEdgeObject
+      AggregatePunbbForum: AggregatePunbbForumObject
+      PunbbOnline: PunbbOnlineObject
+      PunbbOnlineConnection: PunbbOnlineConnectionObject
+      PunbbOnlineEdge: PunbbOnlineEdgeObject
+      AggregatePunbbOnline: AggregatePunbbOnlineObject
+      PunbbPost: PunbbPostObject
+      PunbbPostConnection: PunbbPostConnectionObject
+      PunbbPostEdge: PunbbPostEdgeObject
+      AggregatePunbbPost: AggregatePunbbPostObject
+      PunbbTopic: PunbbTopicObject
+      PunbbTopicConnection: PunbbTopicConnectionObject
+      PunbbTopicEdge: PunbbTopicEdgeObject
+      AggregatePunbbTopic: AggregatePunbbTopicObject
+      PunbbUploaded: PunbbUploadedObject
+      PunbbUploadedConnection: PunbbUploadedConnectionObject
+      PunbbUploadedEdge: PunbbUploadedEdgeObject
+      AggregatePunbbUploaded: AggregatePunbbUploadedObject
+      PunbbUser: PunbbUserObject
+      PunbbUserConnection: PunbbUserConnectionObject
+      PunbbUserEdge: PunbbUserEdgeObject
+      AggregatePunbbUser: AggregatePunbbUserObject
       Mutation: MutationObject
       BatchPayload: BatchPayloadObject
       Subscription: SubscriptionObject
-      UserSubscriptionPayload: UserSubscriptionPayloadObject
-      UserPreviousValues: UserPreviousValuesObject
-      PostSubscriptionPayload: PostSubscriptionPayloadObject
-      PostPreviousValues: PostPreviousValuesObject
+      PunbbBanSubscriptionPayload: PunbbBanSubscriptionPayloadObject
+      PunbbBanPreviousValues: PunbbBanPreviousValuesObject
+      PunbbCategorySubscriptionPayload: PunbbCategorySubscriptionPayloadObject
+      PunbbCategoryPreviousValues: PunbbCategoryPreviousValuesObject
+      PunbbForumSubscriptionPayload: PunbbForumSubscriptionPayloadObject
+      PunbbForumPreviousValues: PunbbForumPreviousValuesObject
+      PunbbOnlineSubscriptionPayload: PunbbOnlineSubscriptionPayloadObject
+      PunbbOnlinePreviousValues: PunbbOnlinePreviousValuesObject
+      PunbbPostSubscriptionPayload: PunbbPostSubscriptionPayloadObject
+      PunbbPostPreviousValues: PunbbPostPreviousValuesObject
+      PunbbTopicSubscriptionPayload: PunbbTopicSubscriptionPayloadObject
+      PunbbTopicPreviousValues: PunbbTopicPreviousValuesObject
+      PunbbUploadedSubscriptionPayload: PunbbUploadedSubscriptionPayloadObject
+      PunbbUploadedPreviousValues: PunbbUploadedPreviousValuesObject
+      PunbbUserSubscriptionPayload: PunbbUserSubscriptionPayloadObject
+      PunbbUserPreviousValues: PunbbUserPreviousValuesObject
     }
     fieldsDetails: {
       Query: QueryFieldDetails
-      User: UserFieldDetails
-      Post: PostFieldDetails
-      UserConnection: UserConnectionFieldDetails
+      PunbbBan: PunbbBanFieldDetails
+      PunbbBanConnection: PunbbBanConnectionFieldDetails
       PageInfo: PageInfoFieldDetails
-      UserEdge: UserEdgeFieldDetails
-      AggregateUser: AggregateUserFieldDetails
-      PostConnection: PostConnectionFieldDetails
-      PostEdge: PostEdgeFieldDetails
-      AggregatePost: AggregatePostFieldDetails
+      PunbbBanEdge: PunbbBanEdgeFieldDetails
+      AggregatePunbbBan: AggregatePunbbBanFieldDetails
+      PunbbCategory: PunbbCategoryFieldDetails
+      PunbbCategoryConnection: PunbbCategoryConnectionFieldDetails
+      PunbbCategoryEdge: PunbbCategoryEdgeFieldDetails
+      AggregatePunbbCategory: AggregatePunbbCategoryFieldDetails
+      PunbbForum: PunbbForumFieldDetails
+      PunbbForumConnection: PunbbForumConnectionFieldDetails
+      PunbbForumEdge: PunbbForumEdgeFieldDetails
+      AggregatePunbbForum: AggregatePunbbForumFieldDetails
+      PunbbOnline: PunbbOnlineFieldDetails
+      PunbbOnlineConnection: PunbbOnlineConnectionFieldDetails
+      PunbbOnlineEdge: PunbbOnlineEdgeFieldDetails
+      AggregatePunbbOnline: AggregatePunbbOnlineFieldDetails
+      PunbbPost: PunbbPostFieldDetails
+      PunbbPostConnection: PunbbPostConnectionFieldDetails
+      PunbbPostEdge: PunbbPostEdgeFieldDetails
+      AggregatePunbbPost: AggregatePunbbPostFieldDetails
+      PunbbTopic: PunbbTopicFieldDetails
+      PunbbTopicConnection: PunbbTopicConnectionFieldDetails
+      PunbbTopicEdge: PunbbTopicEdgeFieldDetails
+      AggregatePunbbTopic: AggregatePunbbTopicFieldDetails
+      PunbbUploaded: PunbbUploadedFieldDetails
+      PunbbUploadedConnection: PunbbUploadedConnectionFieldDetails
+      PunbbUploadedEdge: PunbbUploadedEdgeFieldDetails
+      AggregatePunbbUploaded: AggregatePunbbUploadedFieldDetails
+      PunbbUser: PunbbUserFieldDetails
+      PunbbUserConnection: PunbbUserConnectionFieldDetails
+      PunbbUserEdge: PunbbUserEdgeFieldDetails
+      AggregatePunbbUser: AggregatePunbbUserFieldDetails
       Mutation: MutationFieldDetails
       BatchPayload: BatchPayloadFieldDetails
       Subscription: SubscriptionFieldDetails
-      UserSubscriptionPayload: UserSubscriptionPayloadFieldDetails
-      UserPreviousValues: UserPreviousValuesFieldDetails
-      PostSubscriptionPayload: PostSubscriptionPayloadFieldDetails
-      PostPreviousValues: PostPreviousValuesFieldDetails
+      PunbbBanSubscriptionPayload: PunbbBanSubscriptionPayloadFieldDetails
+      PunbbBanPreviousValues: PunbbBanPreviousValuesFieldDetails
+      PunbbCategorySubscriptionPayload: PunbbCategorySubscriptionPayloadFieldDetails
+      PunbbCategoryPreviousValues: PunbbCategoryPreviousValuesFieldDetails
+      PunbbForumSubscriptionPayload: PunbbForumSubscriptionPayloadFieldDetails
+      PunbbForumPreviousValues: PunbbForumPreviousValuesFieldDetails
+      PunbbOnlineSubscriptionPayload: PunbbOnlineSubscriptionPayloadFieldDetails
+      PunbbOnlinePreviousValues: PunbbOnlinePreviousValuesFieldDetails
+      PunbbPostSubscriptionPayload: PunbbPostSubscriptionPayloadFieldDetails
+      PunbbPostPreviousValues: PunbbPostPreviousValuesFieldDetails
+      PunbbTopicSubscriptionPayload: PunbbTopicSubscriptionPayloadFieldDetails
+      PunbbTopicPreviousValues: PunbbTopicPreviousValuesFieldDetails
+      PunbbUploadedSubscriptionPayload: PunbbUploadedSubscriptionPayloadFieldDetails
+      PunbbUploadedPreviousValues: PunbbUploadedPreviousValuesFieldDetails
+      PunbbUserSubscriptionPayload: PunbbUserSubscriptionPayloadFieldDetails
+      PunbbUserPreviousValues: PunbbUserPreviousValuesFieldDetails
     }
   }
   inputTypes: {
     fields: {
-      UserWhereUniqueInput: UserWhereUniqueInputInputObject
-      PostWhereInput: PostWhereInputInputObject
-      UserWhereInput: UserWhereInputInputObject
-      PostWhereUniqueInput: PostWhereUniqueInputInputObject
-      UserCreateInput: UserCreateInputInputObject
-      PostCreateManyWithoutAuthorInput: PostCreateManyWithoutAuthorInputInputObject
-      PostCreateWithoutAuthorInput: PostCreateWithoutAuthorInputInputObject
-      UserUpdateInput: UserUpdateInputInputObject
-      PostUpdateManyWithoutAuthorInput: PostUpdateManyWithoutAuthorInputInputObject
-      PostUpdateWithWhereUniqueWithoutAuthorInput: PostUpdateWithWhereUniqueWithoutAuthorInputInputObject
-      PostUpdateWithoutAuthorDataInput: PostUpdateWithoutAuthorDataInputInputObject
-      PostUpsertWithWhereUniqueWithoutAuthorInput: PostUpsertWithWhereUniqueWithoutAuthorInputInputObject
-      PostScalarWhereInput: PostScalarWhereInputInputObject
-      PostUpdateManyWithWhereNestedInput: PostUpdateManyWithWhereNestedInputInputObject
-      PostUpdateManyDataInput: PostUpdateManyDataInputInputObject
-      UserUpdateManyMutationInput: UserUpdateManyMutationInputInputObject
-      PostCreateInput: PostCreateInputInputObject
-      UserCreateOneWithoutPostsInput: UserCreateOneWithoutPostsInputInputObject
-      UserCreateWithoutPostsInput: UserCreateWithoutPostsInputInputObject
-      PostUpdateInput: PostUpdateInputInputObject
-      UserUpdateOneWithoutPostsInput: UserUpdateOneWithoutPostsInputInputObject
-      UserUpdateWithoutPostsDataInput: UserUpdateWithoutPostsDataInputInputObject
-      UserUpsertWithoutPostsInput: UserUpsertWithoutPostsInputInputObject
-      PostUpdateManyMutationInput: PostUpdateManyMutationInputInputObject
-      UserSubscriptionWhereInput: UserSubscriptionWhereInputInputObject
-      PostSubscriptionWhereInput: PostSubscriptionWhereInputInputObject
+      PunbbBanWhereUniqueInput: PunbbBanWhereUniqueInputInputObject
+      PunbbBanWhereInput: PunbbBanWhereInputInputObject
+      PunbbCategoryWhereUniqueInput: PunbbCategoryWhereUniqueInputInputObject
+      PunbbCategoryWhereInput: PunbbCategoryWhereInputInputObject
+      PunbbForumWhereUniqueInput: PunbbForumWhereUniqueInputInputObject
+      PunbbForumWhereInput: PunbbForumWhereInputInputObject
+      PunbbOnlineWhereInput: PunbbOnlineWhereInputInputObject
+      PunbbPostWhereUniqueInput: PunbbPostWhereUniqueInputInputObject
+      PunbbPostWhereInput: PunbbPostWhereInputInputObject
+      PunbbTopicWhereUniqueInput: PunbbTopicWhereUniqueInputInputObject
+      PunbbTopicWhereInput: PunbbTopicWhereInputInputObject
+      PunbbUploadedWhereUniqueInput: PunbbUploadedWhereUniqueInputInputObject
+      PunbbUploadedWhereInput: PunbbUploadedWhereInputInputObject
+      PunbbUserWhereUniqueInput: PunbbUserWhereUniqueInputInputObject
+      PunbbUserWhereInput: PunbbUserWhereInputInputObject
+      PunbbBanCreateInput: PunbbBanCreateInputInputObject
+      PunbbBanUpdateInput: PunbbBanUpdateInputInputObject
+      PunbbBanUpdateManyMutationInput: PunbbBanUpdateManyMutationInputInputObject
+      PunbbCategoryCreateInput: PunbbCategoryCreateInputInputObject
+      PunbbCategoryUpdateInput: PunbbCategoryUpdateInputInputObject
+      PunbbCategoryUpdateManyMutationInput: PunbbCategoryUpdateManyMutationInputInputObject
+      PunbbForumCreateInput: PunbbForumCreateInputInputObject
+      PunbbForumUpdateInput: PunbbForumUpdateInputInputObject
+      PunbbForumUpdateManyMutationInput: PunbbForumUpdateManyMutationInputInputObject
+      PunbbOnlineCreateInput: PunbbOnlineCreateInputInputObject
+      PunbbOnlineUpdateManyMutationInput: PunbbOnlineUpdateManyMutationInputInputObject
+      PunbbPostCreateInput: PunbbPostCreateInputInputObject
+      PunbbPostUpdateInput: PunbbPostUpdateInputInputObject
+      PunbbPostUpdateManyMutationInput: PunbbPostUpdateManyMutationInputInputObject
+      PunbbTopicCreateInput: PunbbTopicCreateInputInputObject
+      PunbbTopicUpdateInput: PunbbTopicUpdateInputInputObject
+      PunbbTopicUpdateManyMutationInput: PunbbTopicUpdateManyMutationInputInputObject
+      PunbbUploadedCreateInput: PunbbUploadedCreateInputInputObject
+      PunbbUploadedUpdateInput: PunbbUploadedUpdateInputInputObject
+      PunbbUploadedUpdateManyMutationInput: PunbbUploadedUpdateManyMutationInputInputObject
+      PunbbUserCreateInput: PunbbUserCreateInputInputObject
+      PunbbUserUpdateInput: PunbbUserUpdateInputInputObject
+      PunbbUserUpdateManyMutationInput: PunbbUserUpdateManyMutationInputInputObject
+      PunbbBanSubscriptionWhereInput: PunbbBanSubscriptionWhereInputInputObject
+      PunbbCategorySubscriptionWhereInput: PunbbCategorySubscriptionWhereInputInputObject
+      PunbbForumSubscriptionWhereInput: PunbbForumSubscriptionWhereInputInputObject
+      PunbbOnlineSubscriptionWhereInput: PunbbOnlineSubscriptionWhereInputInputObject
+      PunbbPostSubscriptionWhereInput: PunbbPostSubscriptionWhereInputInputObject
+      PunbbTopicSubscriptionWhereInput: PunbbTopicSubscriptionWhereInputInputObject
+      PunbbUploadedSubscriptionWhereInput: PunbbUploadedSubscriptionWhereInputInputObject
+      PunbbUserSubscriptionWhereInput: PunbbUserSubscriptionWhereInputInputObject
     }
   }
   enumTypes: {
-    PostOrderByInput: PostOrderByInputValues,
-    UserOrderByInput: UserOrderByInputValues,
+    PunbbBanOrderByInput: PunbbBanOrderByInputValues,
+    PunbbCategoryOrderByInput: PunbbCategoryOrderByInputValues,
+    PunbbForumOrderByInput: PunbbForumOrderByInputValues,
+    PunbbOnlineOrderByInput: PunbbOnlineOrderByInputValues,
+    PunbbPostOrderByInput: PunbbPostOrderByInputValues,
+    PunbbTopicOrderByInput: PunbbTopicOrderByInputValues,
+    PunbbUploadedOrderByInput: PunbbUploadedOrderByInputValues,
+    PunbbUserOrderByInput: PunbbUserOrderByInputValues,
     MutationType: MutationTypeValues,
   }
 }
@@ -93,33 +191,59 @@ export interface NexusPrismaTypes {
 
 type QueryObject =
   | QueryFields
-  | { name: 'user', args?: QueryUserArgs[] | false, alias?: string  } 
-  | { name: 'users', args?: QueryUsersArgs[] | false, alias?: string  } 
-  | { name: 'usersConnection', args?: QueryUsersConnectionArgs[] | false, alias?: string  } 
-  | { name: 'post', args?: QueryPostArgs[] | false, alias?: string  } 
-  | { name: 'posts', args?: QueryPostsArgs[] | false, alias?: string  } 
-  | { name: 'postsConnection', args?: QueryPostsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbBan', args?: QueryPunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'punbbBans', args?: QueryPunbbBansArgs[] | false, alias?: string  } 
+  | { name: 'punbbBansConnection', args?: QueryPunbbBansConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbCategory', args?: QueryPunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'punbbCategories', args?: QueryPunbbCategoriesArgs[] | false, alias?: string  } 
+  | { name: 'punbbCategoriesConnection', args?: QueryPunbbCategoriesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbForum', args?: QueryPunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'punbbForums', args?: QueryPunbbForumsArgs[] | false, alias?: string  } 
+  | { name: 'punbbForumsConnection', args?: QueryPunbbForumsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbOnlines', args?: QueryPunbbOnlinesArgs[] | false, alias?: string  } 
+  | { name: 'punbbOnlinesConnection', args?: QueryPunbbOnlinesConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbPost', args?: QueryPunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'punbbPosts', args?: QueryPunbbPostsArgs[] | false, alias?: string  } 
+  | { name: 'punbbPostsConnection', args?: QueryPunbbPostsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbTopic', args?: QueryPunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'punbbTopics', args?: QueryPunbbTopicsArgs[] | false, alias?: string  } 
+  | { name: 'punbbTopicsConnection', args?: QueryPunbbTopicsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbUploaded', args?: QueryPunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'punbbUploadeds', args?: QueryPunbbUploadedsArgs[] | false, alias?: string  } 
+  | { name: 'punbbUploadedsConnection', args?: QueryPunbbUploadedsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'punbbUser', args?: QueryPunbbUserArgs[] | false, alias?: string  } 
+  | { name: 'punbbUsers', args?: QueryPunbbUsersArgs[] | false, alias?: string  } 
+  | { name: 'punbbUsersConnection', args?: QueryPunbbUsersConnectionArgs[] | false, alias?: string  } 
 
 type QueryFields =
-  | 'user'
-  | 'users'
-  | 'usersConnection'
-  | 'post'
-  | 'posts'
-  | 'postsConnection'
+  | 'punbbBan'
+  | 'punbbBans'
+  | 'punbbBansConnection'
+  | 'punbbCategory'
+  | 'punbbCategories'
+  | 'punbbCategoriesConnection'
+  | 'punbbForum'
+  | 'punbbForums'
+  | 'punbbForumsConnection'
+  | 'punbbOnlines'
+  | 'punbbOnlinesConnection'
+  | 'punbbPost'
+  | 'punbbPosts'
+  | 'punbbPostsConnection'
+  | 'punbbTopic'
+  | 'punbbTopics'
+  | 'punbbTopicsConnection'
+  | 'punbbUploaded'
+  | 'punbbUploadeds'
+  | 'punbbUploadedsConnection'
+  | 'punbbUser'
+  | 'punbbUsers'
+  | 'punbbUsersConnection'
 
 
-type QueryUserArgs =
+type QueryPunbbBanArgs =
   | 'where'
-type QueryUsersArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
-type QueryUsersConnectionArgs =
+type QueryPunbbBansArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -127,9 +251,7 @@ type QueryUsersConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryPostArgs =
-  | 'where'
-type QueryPostsArgs =
+type QueryPunbbBansConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -137,7 +259,123 @@ type QueryPostsArgs =
   | 'before'
   | 'first'
   | 'last'
-type QueryPostsConnectionArgs =
+type QueryPunbbCategoryArgs =
+  | 'where'
+type QueryPunbbCategoriesArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbCategoriesConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbForumArgs =
+  | 'where'
+type QueryPunbbForumsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbForumsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbOnlinesArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbOnlinesConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbPostArgs =
+  | 'where'
+type QueryPunbbPostsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbPostsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbTopicArgs =
+  | 'where'
+type QueryPunbbTopicsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbTopicsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbUploadedArgs =
+  | 'where'
+type QueryPunbbUploadedsArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbUploadedsConnectionArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbUserArgs =
+  | 'where'
+type QueryPunbbUsersArgs =
+  | 'where'
+  | 'orderBy'
+  | 'skip'
+  | 'after'
+  | 'before'
+  | 'first'
+  | 'last'
+type QueryPunbbUsersConnectionArgs =
   | 'where'
   | 'orderBy'
   | 'skip'
@@ -148,116 +386,334 @@ type QueryPostsConnectionArgs =
   
 
 export interface QueryFieldDetails {
-  user: {
-    type: 'User'
-    args: Record<QueryUserArgs, core.NexusArgDef<string>>
+  punbbBan: {
+    type: 'PunbbBan'
+    args: Record<QueryPunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: UserWhereUniqueInput }  ,
+      args: { where: PunbbBanWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.PunbbBan | null> | prisma.PunbbBan | null
   }
-  users: {
-    type: 'User'
-    args: Record<QueryUsersArgs, core.NexusArgDef<string>>
+  punbbBans: {
+    type: 'PunbbBan'
+    args: Record<QueryPunbbBansArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: UserWhereInput | null, orderBy?: prisma.UserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: PunbbBanWhereInput | null, orderBy?: prisma.PunbbBanOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User[]> | prisma.User[]
+    ) => Promise<prisma.PunbbBan[]> | prisma.PunbbBan[]
   }
-  usersConnection: {
-    type: 'UserConnection'
-    args: Record<QueryUsersConnectionArgs, core.NexusArgDef<string>>
+  punbbBansConnection: {
+    type: 'PunbbBanConnection'
+    args: Record<QueryPunbbBansConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: UserWhereInput | null, orderBy?: prisma.UserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: PunbbBanWhereInput | null, orderBy?: prisma.PunbbBanOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserConnection> | prisma.UserConnection
+    ) => Promise<prisma.PunbbBanConnection> | prisma.PunbbBanConnection
   }
-  post: {
-    type: 'Post'
-    args: Record<QueryPostArgs, core.NexusArgDef<string>>
+  punbbCategory: {
+    type: 'PunbbCategory'
+    args: Record<QueryPunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where: PostWhereUniqueInput }  ,
+      args: { where: PunbbCategoryWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.PunbbCategory | null> | prisma.PunbbCategory | null
   }
-  posts: {
-    type: 'Post'
-    args: Record<QueryPostsArgs, core.NexusArgDef<string>>
+  punbbCategories: {
+    type: 'PunbbCategory'
+    args: Record<QueryPunbbCategoriesArgs, core.NexusArgDef<string>>
     description: string
     list: true
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: PunbbCategoryWhereInput | null, orderBy?: prisma.PunbbCategoryOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post[]> | prisma.Post[]
+    ) => Promise<prisma.PunbbCategory[]> | prisma.PunbbCategory[]
   }
-  postsConnection: {
-    type: 'PostConnection'
-    args: Record<QueryPostsConnectionArgs, core.NexusArgDef<string>>
+  punbbCategoriesConnection: {
+    type: 'PunbbCategoryConnection'
+    args: Record<QueryPunbbCategoriesConnectionArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Query">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      args: { where?: PunbbCategoryWhereInput | null, orderBy?: prisma.PunbbCategoryOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostConnection> | prisma.PostConnection
+    ) => Promise<prisma.PunbbCategoryConnection> | prisma.PunbbCategoryConnection
+  }
+  punbbForum: {
+    type: 'PunbbForum'
+    args: Record<QueryPunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PunbbForumWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum | null> | prisma.PunbbForum | null
+  }
+  punbbForums: {
+    type: 'PunbbForum'
+    args: Record<QueryPunbbForumsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbForumWhereInput | null, orderBy?: prisma.PunbbForumOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum[]> | prisma.PunbbForum[]
+  }
+  punbbForumsConnection: {
+    type: 'PunbbForumConnection'
+    args: Record<QueryPunbbForumsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbForumWhereInput | null, orderBy?: prisma.PunbbForumOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForumConnection> | prisma.PunbbForumConnection
+  }
+  punbbOnlines: {
+    type: 'PunbbOnline'
+    args: Record<QueryPunbbOnlinesArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbOnlineWhereInput | null, orderBy?: prisma.PunbbOnlineOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnline[]> | prisma.PunbbOnline[]
+  }
+  punbbOnlinesConnection: {
+    type: 'PunbbOnlineConnection'
+    args: Record<QueryPunbbOnlinesConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbOnlineWhereInput | null, orderBy?: prisma.PunbbOnlineOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnlineConnection> | prisma.PunbbOnlineConnection
+  }
+  punbbPost: {
+    type: 'PunbbPost'
+    args: Record<QueryPunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PunbbPostWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost | null> | prisma.PunbbPost | null
+  }
+  punbbPosts: {
+    type: 'PunbbPost'
+    args: Record<QueryPunbbPostsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbPostWhereInput | null, orderBy?: prisma.PunbbPostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost[]> | prisma.PunbbPost[]
+  }
+  punbbPostsConnection: {
+    type: 'PunbbPostConnection'
+    args: Record<QueryPunbbPostsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbPostWhereInput | null, orderBy?: prisma.PunbbPostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPostConnection> | prisma.PunbbPostConnection
+  }
+  punbbTopic: {
+    type: 'PunbbTopic'
+    args: Record<QueryPunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PunbbTopicWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic | null> | prisma.PunbbTopic | null
+  }
+  punbbTopics: {
+    type: 'PunbbTopic'
+    args: Record<QueryPunbbTopicsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbTopicWhereInput | null, orderBy?: prisma.PunbbTopicOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic[]> | prisma.PunbbTopic[]
+  }
+  punbbTopicsConnection: {
+    type: 'PunbbTopicConnection'
+    args: Record<QueryPunbbTopicsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbTopicWhereInput | null, orderBy?: prisma.PunbbTopicOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopicConnection> | prisma.PunbbTopicConnection
+  }
+  punbbUploaded: {
+    type: 'PunbbUploaded'
+    args: Record<QueryPunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PunbbUploadedWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded | null> | prisma.PunbbUploaded | null
+  }
+  punbbUploadeds: {
+    type: 'PunbbUploaded'
+    args: Record<QueryPunbbUploadedsArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbUploadedWhereInput | null, orderBy?: prisma.PunbbUploadedOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded[]> | prisma.PunbbUploaded[]
+  }
+  punbbUploadedsConnection: {
+    type: 'PunbbUploadedConnection'
+    args: Record<QueryPunbbUploadedsConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbUploadedWhereInput | null, orderBy?: prisma.PunbbUploadedOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploadedConnection> | prisma.PunbbUploadedConnection
+  }
+  punbbUser: {
+    type: 'PunbbUser'
+    args: Record<QueryPunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PunbbUserWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser | null> | prisma.PunbbUser | null
+  }
+  punbbUsers: {
+    type: 'PunbbUser'
+    args: Record<QueryPunbbUsersArgs, core.NexusArgDef<string>>
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbUserWhereInput | null, orderBy?: prisma.PunbbUserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser[]> | prisma.PunbbUser[]
+  }
+  punbbUsersConnection: {
+    type: 'PunbbUserConnection'
+    args: Record<QueryPunbbUsersConnectionArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where?: PunbbUserWhereInput | null, orderBy?: prisma.PunbbUserOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUserConnection> | prisma.PunbbUserConnection
   }
 }
   
 
-// Types for User
+// Types for PunbbBan
 
-type UserObject =
-  | UserFields
+type PunbbBanObject =
+  | PunbbBanFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'email', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
-  | { name: 'posts', args?: UserPostsArgs[] | false, alias?: string  } 
+  | { name: 'expire', args?: [] | false, alias?: string  } 
+  | { name: 'ip', args?: [] | false, alias?: string  } 
+  | { name: 'message', args?: [] | false, alias?: string  } 
+  | { name: 'username', args?: [] | false, alias?: string  } 
 
-type UserFields =
+type PunbbBanFields =
   | 'id'
   | 'email'
-  | 'name'
-  | 'posts'
+  | 'expire'
+  | 'ip'
+  | 'message'
+  | 'username'
 
 
-type UserPostsArgs =
-  | 'where'
-  | 'orderBy'
-  | 'skip'
-  | 'after'
-  | 'before'
-  | 'first'
-  | 'last'
+
   
 
-export interface UserFieldDetails {
+export interface PunbbBanFieldDetails {
   id: {
-    type: 'ID'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -272,99 +728,50 @@ export interface UserFieldDetails {
     nullable: true
     resolve: undefined
   }
-  name: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  posts: {
-    type: 'Post'
-    args: Record<UserPostsArgs, core.NexusArgDef<string>>
-    description: string
-    list: true
-    nullable: false
-    resolve: (
-      root: core.RootValue<"User">,
-      args: { where?: PostWhereInput | null, orderBy?: prisma.PostOrderByInput | null, skip?: number | null, after?: string | null, before?: string | null, first?: number | null, last?: number | null }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post[]> | prisma.Post[]
-  }
-}
-  
-
-// Types for Post
-
-type PostObject =
-  | PostFields
-  | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'title', args?: [] | false, alias?: string  } 
-  | { name: 'published', args?: [] | false, alias?: string  } 
-  | { name: 'author', args?: [] | false, alias?: string  } 
-
-type PostFields =
-  | 'id'
-  | 'title'
-  | 'published'
-  | 'author'
-
-
-
-  
-
-export interface PostFieldDetails {
-  id: {
-    type: 'ID'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  title: {
-    type: 'String'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  published: {
-    type: 'Boolean'
-    args: {}
-    description: string
-    list: undefined
-    nullable: false
-    resolve: undefined
-  }
-  author: {
-    type: 'User'
+  expire: {
+    type: 'Int'
     args: {}
     description: string
     list: undefined
     nullable: true
-    resolve: (
-      root: core.RootValue<"Post">,
-      args: {  }  ,
-      context: core.GetGen<"context">,
-      info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    resolve: undefined
+  }
+  ip: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  message: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  username: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
   }
 }
   
 
-// Types for UserConnection
+// Types for PunbbBanConnection
 
-type UserConnectionObject =
-  | UserConnectionFields
+type PunbbBanConnectionObject =
+  | PunbbBanConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type UserConnectionFields =
+type PunbbBanConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -373,7 +780,7 @@ type UserConnectionFields =
 
   
 
-export interface UserConnectionFieldDetails {
+export interface PunbbBanConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -381,37 +788,37 @@ export interface UserConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"PunbbBanConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'UserEdge'
+    type: 'PunbbBanEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"PunbbBanConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserEdge[]> | prisma.UserEdge[]
+    ) => Promise<prisma.PunbbBanEdge[]> | prisma.PunbbBanEdge[]
   }
   aggregate: {
-    type: 'AggregateUser'
+    type: 'AggregatePunbbBan'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserConnection">,
+      root: core.RootValue<"PunbbBanConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregateUser> | prisma.AggregateUser
+    ) => Promise<prisma.AggregatePunbbBan> | prisma.AggregatePunbbBan
   }
 }
   
@@ -471,14 +878,14 @@ export interface PageInfoFieldDetails {
 }
   
 
-// Types for UserEdge
+// Types for PunbbBanEdge
 
-type UserEdgeObject =
-  | UserEdgeFields
+type PunbbBanEdgeObject =
+  | PunbbBanEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type UserEdgeFields =
+type PunbbBanEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -486,19 +893,19 @@ type UserEdgeFields =
 
   
 
-export interface UserEdgeFieldDetails {
+export interface PunbbBanEdgeFieldDetails {
   node: {
-    type: 'User'
+    type: 'PunbbBan'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserEdge">,
+      root: core.RootValue<"PunbbBanEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.PunbbBan> | prisma.PunbbBan
   }
   cursor: {
     type: 'String'
@@ -511,20 +918,20 @@ export interface UserEdgeFieldDetails {
 }
   
 
-// Types for AggregateUser
+// Types for AggregatePunbbBan
 
-type AggregateUserObject =
-  | AggregateUserFields
+type AggregatePunbbBanObject =
+  | AggregatePunbbBanFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregateUserFields =
+type AggregatePunbbBanFields =
   | 'count'
 
 
 
   
 
-export interface AggregateUserFieldDetails {
+export interface AggregatePunbbBanFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -536,15 +943,60 @@ export interface AggregateUserFieldDetails {
 }
   
 
-// Types for PostConnection
+// Types for PunbbCategory
 
-type PostConnectionObject =
-  | PostConnectionFields
+type PunbbCategoryObject =
+  | PunbbCategoryFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'catName', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosition', args?: [] | false, alias?: string  } 
+
+type PunbbCategoryFields =
+  | 'id'
+  | 'catName'
+  | 'dispPosition'
+
+
+
+  
+
+export interface PunbbCategoryFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  catName: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  dispPosition: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbCategoryConnection
+
+type PunbbCategoryConnectionObject =
+  | PunbbCategoryConnectionFields
   | { name: 'pageInfo', args?: [] | false, alias?: string  } 
   | { name: 'edges', args?: [] | false, alias?: string  } 
   | { name: 'aggregate', args?: [] | false, alias?: string  } 
 
-type PostConnectionFields =
+type PunbbCategoryConnectionFields =
   | 'pageInfo'
   | 'edges'
   | 'aggregate'
@@ -553,7 +1005,7 @@ type PostConnectionFields =
 
   
 
-export interface PostConnectionFieldDetails {
+export interface PunbbCategoryConnectionFieldDetails {
   pageInfo: {
     type: 'PageInfo'
     args: {}
@@ -561,49 +1013,49 @@ export interface PostConnectionFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"PunbbCategoryConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PageInfo> | prisma.PageInfo
   }
   edges: {
-    type: 'PostEdge'
+    type: 'PunbbCategoryEdge'
     args: {}
     description: string
     list: true
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"PunbbCategoryConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostEdge[]> | prisma.PostEdge[]
+    ) => Promise<prisma.PunbbCategoryEdge[]> | prisma.PunbbCategoryEdge[]
   }
   aggregate: {
-    type: 'AggregatePost'
+    type: 'AggregatePunbbCategory'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostConnection">,
+      root: core.RootValue<"PunbbCategoryConnection">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.AggregatePost> | prisma.AggregatePost
+    ) => Promise<prisma.AggregatePunbbCategory> | prisma.AggregatePunbbCategory
   }
 }
   
 
-// Types for PostEdge
+// Types for PunbbCategoryEdge
 
-type PostEdgeObject =
-  | PostEdgeFields
+type PunbbCategoryEdgeObject =
+  | PunbbCategoryEdgeFields
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'cursor', args?: [] | false, alias?: string  } 
 
-type PostEdgeFields =
+type PunbbCategoryEdgeFields =
   | 'node'
   | 'cursor'
 
@@ -611,19 +1063,19 @@ type PostEdgeFields =
 
   
 
-export interface PostEdgeFieldDetails {
+export interface PunbbCategoryEdgeFieldDetails {
   node: {
-    type: 'Post'
+    type: 'PunbbCategory'
     args: {}
     description: string
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostEdge">,
+      root: core.RootValue<"PunbbCategoryEdge">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.PunbbCategory> | prisma.PunbbCategory
   }
   cursor: {
     type: 'String'
@@ -636,20 +1088,1730 @@ export interface PostEdgeFieldDetails {
 }
   
 
-// Types for AggregatePost
+// Types for AggregatePunbbCategory
 
-type AggregatePostObject =
-  | AggregatePostFields
+type AggregatePunbbCategoryObject =
+  | AggregatePunbbCategoryFields
   | { name: 'count', args?: [] | false, alias?: string  } 
 
-type AggregatePostFields =
+type AggregatePunbbCategoryFields =
   | 'count'
 
 
 
   
 
-export interface AggregatePostFieldDetails {
+export interface AggregatePunbbCategoryFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbForum
+
+type PunbbForumObject =
+  | PunbbForumFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'catId', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosition', args?: [] | false, alias?: string  } 
+  | { name: 'forumDesc', args?: [] | false, alias?: string  } 
+  | { name: 'forumName', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastPoster', args?: [] | false, alias?: string  } 
+  | { name: 'lastPostId', args?: [] | false, alias?: string  } 
+  | { name: 'moderators', args?: [] | false, alias?: string  } 
+  | { name: 'redirectUrl', args?: [] | false, alias?: string  } 
+  | { name: 'sortBy', args?: [] | false, alias?: string  } 
+
+type PunbbForumFields =
+  | 'id'
+  | 'catId'
+  | 'dispPosition'
+  | 'forumDesc'
+  | 'forumName'
+  | 'lastPost'
+  | 'lastPoster'
+  | 'lastPostId'
+  | 'moderators'
+  | 'redirectUrl'
+  | 'sortBy'
+
+
+
+  
+
+export interface PunbbForumFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  catId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  dispPosition: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  forumDesc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  forumName: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPoster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPostId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  moderators: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  redirectUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  sortBy: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbForumConnection
+
+type PunbbForumConnectionObject =
+  | PunbbForumConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbForumConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbForumConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbForumConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbForumEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbForumConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForumEdge[]> | prisma.PunbbForumEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbForum'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbForumConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbForum> | prisma.AggregatePunbbForum
+  }
+}
+  
+
+// Types for PunbbForumEdge
+
+type PunbbForumEdgeObject =
+  | PunbbForumEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbForumEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbForumEdgeFieldDetails {
+  node: {
+    type: 'PunbbForum'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbForumEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum> | prisma.PunbbForum
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbForum
+
+type AggregatePunbbForumObject =
+  | AggregatePunbbForumFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbForumFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbForumFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbOnline
+
+type PunbbOnlineObject =
+  | PunbbOnlineFields
+  | { name: 'ident', args?: [] | false, alias?: string  } 
+  | { name: 'idle', args?: [] | false, alias?: string  } 
+  | { name: 'logged', args?: [] | false, alias?: string  } 
+  | { name: 'userId', args?: [] | false, alias?: string  } 
+
+type PunbbOnlineFields =
+  | 'ident'
+  | 'idle'
+  | 'logged'
+  | 'userId'
+
+
+
+  
+
+export interface PunbbOnlineFieldDetails {
+  ident: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  idle: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  logged: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  userId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbOnlineConnection
+
+type PunbbOnlineConnectionObject =
+  | PunbbOnlineConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbOnlineConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbOnlineConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbOnlineConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbOnlineEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbOnlineConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnlineEdge[]> | prisma.PunbbOnlineEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbOnline'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbOnlineConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbOnline> | prisma.AggregatePunbbOnline
+  }
+}
+  
+
+// Types for PunbbOnlineEdge
+
+type PunbbOnlineEdgeObject =
+  | PunbbOnlineEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbOnlineEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbOnlineEdgeFieldDetails {
+  node: {
+    type: 'PunbbOnline'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbOnlineEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnline> | prisma.PunbbOnline
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbOnline
+
+type AggregatePunbbOnlineObject =
+  | AggregatePunbbOnlineFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbOnlineFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbOnlineFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbPost
+
+type PunbbPostObject =
+  | PunbbPostFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'edited', args?: [] | false, alias?: string  } 
+  | { name: 'editedBy', args?: [] | false, alias?: string  } 
+  | { name: 'hideSmilies', args?: [] | false, alias?: string  } 
+  | { name: 'message', args?: [] | false, alias?: string  } 
+  | { name: 'posted', args?: [] | false, alias?: string  } 
+  | { name: 'poster', args?: [] | false, alias?: string  } 
+  | { name: 'posterEmail', args?: [] | false, alias?: string  } 
+  | { name: 'posterId', args?: [] | false, alias?: string  } 
+  | { name: 'posterIp', args?: [] | false, alias?: string  } 
+  | { name: 'topicId', args?: [] | false, alias?: string  } 
+
+type PunbbPostFields =
+  | 'id'
+  | 'edited'
+  | 'editedBy'
+  | 'hideSmilies'
+  | 'message'
+  | 'posted'
+  | 'poster'
+  | 'posterEmail'
+  | 'posterId'
+  | 'posterIp'
+  | 'topicId'
+
+
+
+  
+
+export interface PunbbPostFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  edited: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  editedBy: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  hideSmilies: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  message: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posted: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  poster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posterEmail: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  posterId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posterIp: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  topicId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbPostConnection
+
+type PunbbPostConnectionObject =
+  | PunbbPostConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbPostConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbPostConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbPostConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbPostEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbPostConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPostEdge[]> | prisma.PunbbPostEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbPost'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbPostConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbPost> | prisma.AggregatePunbbPost
+  }
+}
+  
+
+// Types for PunbbPostEdge
+
+type PunbbPostEdgeObject =
+  | PunbbPostEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbPostEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbPostEdgeFieldDetails {
+  node: {
+    type: 'PunbbPost'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbPostEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost> | prisma.PunbbPost
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbPost
+
+type AggregatePunbbPostObject =
+  | AggregatePunbbPostFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbPostFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbPostFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbTopic
+
+type PunbbTopicObject =
+  | PunbbTopicFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'closed', args?: [] | false, alias?: string  } 
+  | { name: 'forumId', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastPoster', args?: [] | false, alias?: string  } 
+  | { name: 'lastPostId', args?: [] | false, alias?: string  } 
+  | { name: 'movedTo', args?: [] | false, alias?: string  } 
+  | { name: 'no', args?: [] | false, alias?: string  } 
+  | { name: 'posted', args?: [] | false, alias?: string  } 
+  | { name: 'poster', args?: [] | false, alias?: string  } 
+  | { name: 'question', args?: [] | false, alias?: string  } 
+  | { name: 'sticky', args?: [] | false, alias?: string  } 
+  | { name: 'subject', args?: [] | false, alias?: string  } 
+  | { name: 'yes', args?: [] | false, alias?: string  } 
+
+type PunbbTopicFields =
+  | 'id'
+  | 'closed'
+  | 'forumId'
+  | 'lastPost'
+  | 'lastPoster'
+  | 'lastPostId'
+  | 'movedTo'
+  | 'no'
+  | 'posted'
+  | 'poster'
+  | 'question'
+  | 'sticky'
+  | 'subject'
+  | 'yes'
+
+
+
+  
+
+export interface PunbbTopicFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  closed: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  forumId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPoster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPostId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  movedTo: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  no: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posted: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  poster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  question: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  sticky: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  subject: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  yes: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbTopicConnection
+
+type PunbbTopicConnectionObject =
+  | PunbbTopicConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbTopicConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbTopicConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbTopicConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbTopicEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbTopicConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopicEdge[]> | prisma.PunbbTopicEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbTopic'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbTopicConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbTopic> | prisma.AggregatePunbbTopic
+  }
+}
+  
+
+// Types for PunbbTopicEdge
+
+type PunbbTopicEdgeObject =
+  | PunbbTopicEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbTopicEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbTopicEdgeFieldDetails {
+  node: {
+    type: 'PunbbTopic'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbTopicEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic> | prisma.PunbbTopic
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbTopic
+
+type AggregatePunbbTopicObject =
+  | AggregatePunbbTopicFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbTopicFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbTopicFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUploaded
+
+type PunbbUploadedObject =
+  | PunbbUploadedFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'data', args?: [] | false, alias?: string  } 
+  | { name: 'descr', args?: [] | false, alias?: string  } 
+  | { name: 'downs', args?: [] | false, alias?: string  } 
+  | { name: 'file', args?: [] | false, alias?: string  } 
+  | { name: 'size', args?: [] | false, alias?: string  } 
+  | { name: 'uid', args?: [] | false, alias?: string  } 
+  | { name: 'user', args?: [] | false, alias?: string  } 
+  | { name: 'userStat', args?: [] | false, alias?: string  } 
+
+type PunbbUploadedFields =
+  | 'id'
+  | 'data'
+  | 'descr'
+  | 'downs'
+  | 'file'
+  | 'size'
+  | 'uid'
+  | 'user'
+  | 'userStat'
+
+
+
+  
+
+export interface PunbbUploadedFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  data: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  descr: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  downs: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  file: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  size: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  uid: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  user: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  userStat: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUploadedConnection
+
+type PunbbUploadedConnectionObject =
+  | PunbbUploadedConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbUploadedConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbUploadedConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUploadedConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbUploadedEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUploadedConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploadedEdge[]> | prisma.PunbbUploadedEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbUploaded'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUploadedConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbUploaded> | prisma.AggregatePunbbUploaded
+  }
+}
+  
+
+// Types for PunbbUploadedEdge
+
+type PunbbUploadedEdgeObject =
+  | PunbbUploadedEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbUploadedEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbUploadedEdgeFieldDetails {
+  node: {
+    type: 'PunbbUploaded'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUploadedEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded> | prisma.PunbbUploaded
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbUploaded
+
+type AggregatePunbbUploadedObject =
+  | AggregatePunbbUploadedFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbUploadedFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbUploadedFieldDetails {
+  count: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUser
+
+type PunbbUserObject =
+  | PunbbUserFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'activateKey', args?: [] | false, alias?: string  } 
+  | { name: 'activateString', args?: [] | false, alias?: string  } 
+  | { name: 'adminNote', args?: [] | false, alias?: string  } 
+  | { name: 'aim', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosts', args?: [] | false, alias?: string  } 
+  | { name: 'dispTopics', args?: [] | false, alias?: string  } 
+  | { name: 'email', args?: [] | false, alias?: string  } 
+  | { name: 'emailSetting', args?: [] | false, alias?: string  } 
+  | { name: 'groupId', args?: [] | false, alias?: string  } 
+  | { name: 'icq', args?: [] | false, alias?: string  } 
+  | { name: 'jabber', args?: [] | false, alias?: string  } 
+  | { name: 'language', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastVisit', args?: [] | false, alias?: string  } 
+  | { name: 'location', args?: [] | false, alias?: string  } 
+  | { name: 'msn', args?: [] | false, alias?: string  } 
+  | { name: 'notifyWithPost', args?: [] | false, alias?: string  } 
+  | { name: 'numPosts', args?: [] | false, alias?: string  } 
+  | { name: 'password', args?: [] | false, alias?: string  } 
+  | { name: 'readTopics', args?: [] | false, alias?: string  } 
+  | { name: 'realname', args?: [] | false, alias?: string  } 
+  | { name: 'registered', args?: [] | false, alias?: string  } 
+  | { name: 'registrationIp', args?: [] | false, alias?: string  } 
+  | { name: 'savePass', args?: [] | false, alias?: string  } 
+  | { name: 'showAvatars', args?: [] | false, alias?: string  } 
+  | { name: 'showImg', args?: [] | false, alias?: string  } 
+  | { name: 'showImgSig', args?: [] | false, alias?: string  } 
+  | { name: 'showSig', args?: [] | false, alias?: string  } 
+  | { name: 'showSmilies', args?: [] | false, alias?: string  } 
+  | { name: 'signature', args?: [] | false, alias?: string  } 
+  | { name: 'style', args?: [] | false, alias?: string  } 
+  | { name: 'timezone', args?: [] | false, alias?: string  } 
+  | { name: 'title', args?: [] | false, alias?: string  } 
+  | { name: 'url', args?: [] | false, alias?: string  } 
+  | { name: 'useAvatar', args?: [] | false, alias?: string  } 
+  | { name: 'username', args?: [] | false, alias?: string  } 
+  | { name: 'yahoo', args?: [] | false, alias?: string  } 
+
+type PunbbUserFields =
+  | 'id'
+  | 'activateKey'
+  | 'activateString'
+  | 'adminNote'
+  | 'aim'
+  | 'dispPosts'
+  | 'dispTopics'
+  | 'email'
+  | 'emailSetting'
+  | 'groupId'
+  | 'icq'
+  | 'jabber'
+  | 'language'
+  | 'lastPost'
+  | 'lastVisit'
+  | 'location'
+  | 'msn'
+  | 'notifyWithPost'
+  | 'numPosts'
+  | 'password'
+  | 'readTopics'
+  | 'realname'
+  | 'registered'
+  | 'registrationIp'
+  | 'savePass'
+  | 'showAvatars'
+  | 'showImg'
+  | 'showImgSig'
+  | 'showSig'
+  | 'showSmilies'
+  | 'signature'
+  | 'style'
+  | 'timezone'
+  | 'title'
+  | 'url'
+  | 'useAvatar'
+  | 'username'
+  | 'yahoo'
+
+
+
+  
+
+export interface PunbbUserFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  activateKey: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  activateString: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  adminNote: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  aim: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  dispPosts: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  dispTopics: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  email: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  emailSetting: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  groupId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  icq: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  jabber: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  language: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastVisit: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  location: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  msn: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  notifyWithPost: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  numPosts: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  password: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  readTopics: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  realname: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  registered: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  registrationIp: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  savePass: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showAvatars: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showImg: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showImgSig: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showSig: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showSmilies: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  signature: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  style: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  timezone: {
+    type: 'Float'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  title: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  url: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  useAvatar: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  username: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  yahoo: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUserConnection
+
+type PunbbUserConnectionObject =
+  | PunbbUserConnectionFields
+  | { name: 'pageInfo', args?: [] | false, alias?: string  } 
+  | { name: 'edges', args?: [] | false, alias?: string  } 
+  | { name: 'aggregate', args?: [] | false, alias?: string  } 
+
+type PunbbUserConnectionFields =
+  | 'pageInfo'
+  | 'edges'
+  | 'aggregate'
+
+
+
+  
+
+export interface PunbbUserConnectionFieldDetails {
+  pageInfo: {
+    type: 'PageInfo'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUserConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PageInfo> | prisma.PageInfo
+  }
+  edges: {
+    type: 'PunbbUserEdge'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUserConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUserEdge[]> | prisma.PunbbUserEdge[]
+  }
+  aggregate: {
+    type: 'AggregatePunbbUser'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUserConnection">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.AggregatePunbbUser> | prisma.AggregatePunbbUser
+  }
+}
+  
+
+// Types for PunbbUserEdge
+
+type PunbbUserEdgeObject =
+  | PunbbUserEdgeFields
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'cursor', args?: [] | false, alias?: string  } 
+
+type PunbbUserEdgeFields =
+  | 'node'
+  | 'cursor'
+
+
+
+  
+
+export interface PunbbUserEdgeFieldDetails {
+  node: {
+    type: 'PunbbUser'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUserEdge">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser> | prisma.PunbbUser
+  }
+  cursor: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for AggregatePunbbUser
+
+type AggregatePunbbUserObject =
+  | AggregatePunbbUserFields
+  | { name: 'count', args?: [] | false, alias?: string  } 
+
+type AggregatePunbbUserFields =
+  | 'count'
+
+
+
+  
+
+export interface AggregatePunbbUserFieldDetails {
   count: {
     type: 'Int'
     args: {}
@@ -665,221 +2827,803 @@ export interface AggregatePostFieldDetails {
 
 type MutationObject =
   | MutationFields
-  | { name: 'createUser', args?: MutationCreateUserArgs[] | false, alias?: string  } 
-  | { name: 'updateUser', args?: MutationUpdateUserArgs[] | false, alias?: string  } 
-  | { name: 'updateManyUsers', args?: MutationUpdateManyUsersArgs[] | false, alias?: string  } 
-  | { name: 'upsertUser', args?: MutationUpsertUserArgs[] | false, alias?: string  } 
-  | { name: 'deleteUser', args?: MutationDeleteUserArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyUsers', args?: MutationDeleteManyUsersArgs[] | false, alias?: string  } 
-  | { name: 'createPost', args?: MutationCreatePostArgs[] | false, alias?: string  } 
-  | { name: 'updatePost', args?: MutationUpdatePostArgs[] | false, alias?: string  } 
-  | { name: 'updateManyPosts', args?: MutationUpdateManyPostsArgs[] | false, alias?: string  } 
-  | { name: 'upsertPost', args?: MutationUpsertPostArgs[] | false, alias?: string  } 
-  | { name: 'deletePost', args?: MutationDeletePostArgs[] | false, alias?: string  } 
-  | { name: 'deleteManyPosts', args?: MutationDeleteManyPostsArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbBan', args?: MutationCreatePunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbBan', args?: MutationUpdatePunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbBans', args?: MutationUpdateManyPunbbBansArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbBan', args?: MutationUpsertPunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbBan', args?: MutationDeletePunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbBans', args?: MutationDeleteManyPunbbBansArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbCategory', args?: MutationCreatePunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbCategory', args?: MutationUpdatePunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbCategories', args?: MutationUpdateManyPunbbCategoriesArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbCategory', args?: MutationUpsertPunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbCategory', args?: MutationDeletePunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbCategories', args?: MutationDeleteManyPunbbCategoriesArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbForum', args?: MutationCreatePunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbForum', args?: MutationUpdatePunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbForums', args?: MutationUpdateManyPunbbForumsArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbForum', args?: MutationUpsertPunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbForum', args?: MutationDeletePunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbForums', args?: MutationDeleteManyPunbbForumsArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbOnline', args?: MutationCreatePunbbOnlineArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbOnlines', args?: MutationUpdateManyPunbbOnlinesArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbOnlines', args?: MutationDeleteManyPunbbOnlinesArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbPost', args?: MutationCreatePunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbPost', args?: MutationUpdatePunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbPosts', args?: MutationUpdateManyPunbbPostsArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbPost', args?: MutationUpsertPunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbPost', args?: MutationDeletePunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbPosts', args?: MutationDeleteManyPunbbPostsArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbTopic', args?: MutationCreatePunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbTopic', args?: MutationUpdatePunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbTopics', args?: MutationUpdateManyPunbbTopicsArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbTopic', args?: MutationUpsertPunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbTopic', args?: MutationDeletePunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbTopics', args?: MutationDeleteManyPunbbTopicsArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbUploaded', args?: MutationCreatePunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbUploaded', args?: MutationUpdatePunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbUploadeds', args?: MutationUpdateManyPunbbUploadedsArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbUploaded', args?: MutationUpsertPunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbUploaded', args?: MutationDeletePunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbUploadeds', args?: MutationDeleteManyPunbbUploadedsArgs[] | false, alias?: string  } 
+  | { name: 'createPunbbUser', args?: MutationCreatePunbbUserArgs[] | false, alias?: string  } 
+  | { name: 'updatePunbbUser', args?: MutationUpdatePunbbUserArgs[] | false, alias?: string  } 
+  | { name: 'updateManyPunbbUsers', args?: MutationUpdateManyPunbbUsersArgs[] | false, alias?: string  } 
+  | { name: 'upsertPunbbUser', args?: MutationUpsertPunbbUserArgs[] | false, alias?: string  } 
+  | { name: 'deletePunbbUser', args?: MutationDeletePunbbUserArgs[] | false, alias?: string  } 
+  | { name: 'deleteManyPunbbUsers', args?: MutationDeleteManyPunbbUsersArgs[] | false, alias?: string  } 
 
 type MutationFields =
-  | 'createUser'
-  | 'updateUser'
-  | 'updateManyUsers'
-  | 'upsertUser'
-  | 'deleteUser'
-  | 'deleteManyUsers'
-  | 'createPost'
-  | 'updatePost'
-  | 'updateManyPosts'
-  | 'upsertPost'
-  | 'deletePost'
-  | 'deleteManyPosts'
+  | 'createPunbbBan'
+  | 'updatePunbbBan'
+  | 'updateManyPunbbBans'
+  | 'upsertPunbbBan'
+  | 'deletePunbbBan'
+  | 'deleteManyPunbbBans'
+  | 'createPunbbCategory'
+  | 'updatePunbbCategory'
+  | 'updateManyPunbbCategories'
+  | 'upsertPunbbCategory'
+  | 'deletePunbbCategory'
+  | 'deleteManyPunbbCategories'
+  | 'createPunbbForum'
+  | 'updatePunbbForum'
+  | 'updateManyPunbbForums'
+  | 'upsertPunbbForum'
+  | 'deletePunbbForum'
+  | 'deleteManyPunbbForums'
+  | 'createPunbbOnline'
+  | 'updateManyPunbbOnlines'
+  | 'deleteManyPunbbOnlines'
+  | 'createPunbbPost'
+  | 'updatePunbbPost'
+  | 'updateManyPunbbPosts'
+  | 'upsertPunbbPost'
+  | 'deletePunbbPost'
+  | 'deleteManyPunbbPosts'
+  | 'createPunbbTopic'
+  | 'updatePunbbTopic'
+  | 'updateManyPunbbTopics'
+  | 'upsertPunbbTopic'
+  | 'deletePunbbTopic'
+  | 'deleteManyPunbbTopics'
+  | 'createPunbbUploaded'
+  | 'updatePunbbUploaded'
+  | 'updateManyPunbbUploadeds'
+  | 'upsertPunbbUploaded'
+  | 'deletePunbbUploaded'
+  | 'deleteManyPunbbUploadeds'
+  | 'createPunbbUser'
+  | 'updatePunbbUser'
+  | 'updateManyPunbbUsers'
+  | 'upsertPunbbUser'
+  | 'deletePunbbUser'
+  | 'deleteManyPunbbUsers'
 
 
-type MutationCreateUserArgs =
+type MutationCreatePunbbBanArgs =
   | 'data'
-type MutationUpdateUserArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyUsersArgs =
+type MutationUpdatePunbbBanArgs =
   | 'data'
   | 'where'
-type MutationUpsertUserArgs =
+type MutationUpdateManyPunbbBansArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbBanArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeleteUserArgs =
+type MutationDeletePunbbBanArgs =
   | 'where'
-type MutationDeleteManyUsersArgs =
+type MutationDeleteManyPunbbBansArgs =
   | 'where'
-type MutationCreatePostArgs =
+type MutationCreatePunbbCategoryArgs =
   | 'data'
-type MutationUpdatePostArgs =
-  | 'data'
-  | 'where'
-type MutationUpdateManyPostsArgs =
+type MutationUpdatePunbbCategoryArgs =
   | 'data'
   | 'where'
-type MutationUpsertPostArgs =
+type MutationUpdateManyPunbbCategoriesArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbCategoryArgs =
   | 'where'
   | 'create'
   | 'update'
-type MutationDeletePostArgs =
+type MutationDeletePunbbCategoryArgs =
   | 'where'
-type MutationDeleteManyPostsArgs =
+type MutationDeleteManyPunbbCategoriesArgs =
+  | 'where'
+type MutationCreatePunbbForumArgs =
+  | 'data'
+type MutationUpdatePunbbForumArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPunbbForumsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbForumArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePunbbForumArgs =
+  | 'where'
+type MutationDeleteManyPunbbForumsArgs =
+  | 'where'
+type MutationCreatePunbbOnlineArgs =
+  | 'data'
+type MutationUpdateManyPunbbOnlinesArgs =
+  | 'data'
+  | 'where'
+type MutationDeleteManyPunbbOnlinesArgs =
+  | 'where'
+type MutationCreatePunbbPostArgs =
+  | 'data'
+type MutationUpdatePunbbPostArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPunbbPostsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbPostArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePunbbPostArgs =
+  | 'where'
+type MutationDeleteManyPunbbPostsArgs =
+  | 'where'
+type MutationCreatePunbbTopicArgs =
+  | 'data'
+type MutationUpdatePunbbTopicArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPunbbTopicsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbTopicArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePunbbTopicArgs =
+  | 'where'
+type MutationDeleteManyPunbbTopicsArgs =
+  | 'where'
+type MutationCreatePunbbUploadedArgs =
+  | 'data'
+type MutationUpdatePunbbUploadedArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPunbbUploadedsArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbUploadedArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePunbbUploadedArgs =
+  | 'where'
+type MutationDeleteManyPunbbUploadedsArgs =
+  | 'where'
+type MutationCreatePunbbUserArgs =
+  | 'data'
+type MutationUpdatePunbbUserArgs =
+  | 'data'
+  | 'where'
+type MutationUpdateManyPunbbUsersArgs =
+  | 'data'
+  | 'where'
+type MutationUpsertPunbbUserArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePunbbUserArgs =
+  | 'where'
+type MutationDeleteManyPunbbUsersArgs =
   | 'where'
   
 
 export interface MutationFieldDetails {
-  createUser: {
-    type: 'User'
-    args: Record<MutationCreateUserArgs, core.NexusArgDef<string>>
+  createPunbbBan: {
+    type: 'PunbbBan'
+    args: Record<MutationCreatePunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserCreateInput }  ,
+      args: { data: PunbbBanCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.PunbbBan> | prisma.PunbbBan
   }
-  updateUser: {
-    type: 'User'
-    args: Record<MutationUpdateUserArgs, core.NexusArgDef<string>>
+  updatePunbbBan: {
+    type: 'PunbbBan'
+    args: Record<MutationUpdatePunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserUpdateInput, where: UserWhereUniqueInput }  ,
+      args: { data: PunbbBanUpdateInput, where: PunbbBanWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.PunbbBan | null> | prisma.PunbbBan | null
   }
-  updateManyUsers: {
+  updateManyPunbbBans: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyUsersArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyPunbbBansArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }  ,
+      args: { data: PunbbBanUpdateManyMutationInput, where?: PunbbBanWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertUser: {
-    type: 'User'
-    args: Record<MutationUpsertUserArgs, core.NexusArgDef<string>>
+  upsertPunbbBan: {
+    type: 'PunbbBan'
+    args: Record<MutationUpsertPunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }  ,
+      args: { where: PunbbBanWhereUniqueInput, create: PunbbBanCreateInput, update: PunbbBanUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User> | prisma.User
+    ) => Promise<prisma.PunbbBan> | prisma.PunbbBan
   }
-  deleteUser: {
-    type: 'User'
-    args: Record<MutationDeleteUserArgs, core.NexusArgDef<string>>
+  deletePunbbBan: {
+    type: 'PunbbBan'
+    args: Record<MutationDeletePunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: UserWhereUniqueInput }  ,
+      args: { where: PunbbBanWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.PunbbBan | null> | prisma.PunbbBan | null
   }
-  deleteManyUsers: {
+  deleteManyPunbbBans: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyUsersArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyPunbbBansArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: UserWhereInput | null }  ,
+      args: { where?: PunbbBanWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  createPost: {
-    type: 'Post'
-    args: Record<MutationCreatePostArgs, core.NexusArgDef<string>>
+  createPunbbCategory: {
+    type: 'PunbbCategory'
+    args: Record<MutationCreatePunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostCreateInput }  ,
+      args: { data: PunbbCategoryCreateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.PunbbCategory> | prisma.PunbbCategory
   }
-  updatePost: {
-    type: 'Post'
-    args: Record<MutationUpdatePostArgs, core.NexusArgDef<string>>
+  updatePunbbCategory: {
+    type: 'PunbbCategory'
+    args: Record<MutationUpdatePunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostUpdateInput, where: PostWhereUniqueInput }  ,
+      args: { data: PunbbCategoryUpdateInput, where: PunbbCategoryWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.PunbbCategory | null> | prisma.PunbbCategory | null
   }
-  updateManyPosts: {
+  updateManyPunbbCategories: {
     type: 'BatchPayload'
-    args: Record<MutationUpdateManyPostsArgs, core.NexusArgDef<string>>
+    args: Record<MutationUpdateManyPunbbCategoriesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { data: PostUpdateManyMutationInput, where?: PostWhereInput | null }  ,
+      args: { data: PunbbCategoryUpdateManyMutationInput, where?: PunbbCategoryWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
   }
-  upsertPost: {
-    type: 'Post'
-    args: Record<MutationUpsertPostArgs, core.NexusArgDef<string>>
+  upsertPunbbCategory: {
+    type: 'PunbbCategory'
+    args: Record<MutationUpsertPunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PostWhereUniqueInput, create: PostCreateInput, update: PostUpdateInput }  ,
+      args: { where: PunbbCategoryWhereUniqueInput, create: PunbbCategoryCreateInput, update: PunbbCategoryUpdateInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post> | prisma.Post
+    ) => Promise<prisma.PunbbCategory> | prisma.PunbbCategory
   }
-  deletePost: {
-    type: 'Post'
-    args: Record<MutationDeletePostArgs, core.NexusArgDef<string>>
+  deletePunbbCategory: {
+    type: 'PunbbCategory'
+    args: Record<MutationDeletePunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where: PostWhereUniqueInput }  ,
+      args: { where: PunbbCategoryWhereUniqueInput }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.PunbbCategory | null> | prisma.PunbbCategory | null
   }
-  deleteManyPosts: {
+  deleteManyPunbbCategories: {
     type: 'BatchPayload'
-    args: Record<MutationDeleteManyPostsArgs, core.NexusArgDef<string>>
+    args: Record<MutationDeleteManyPunbbCategoriesArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: false
     resolve: (
       root: core.RootValue<"Mutation">,
-      args: { where?: PostWhereInput | null }  ,
+      args: { where?: PunbbCategoryWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbForum: {
+    type: 'PunbbForum'
+    args: Record<MutationCreatePunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbForumCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum> | prisma.PunbbForum
+  }
+  updatePunbbForum: {
+    type: 'PunbbForum'
+    args: Record<MutationUpdatePunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbForumUpdateInput, where: PunbbForumWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum | null> | prisma.PunbbForum | null
+  }
+  updateManyPunbbForums: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbForumsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbForumUpdateManyMutationInput, where?: PunbbForumWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPunbbForum: {
+    type: 'PunbbForum'
+    args: Record<MutationUpsertPunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbForumWhereUniqueInput, create: PunbbForumCreateInput, update: PunbbForumUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum> | prisma.PunbbForum
+  }
+  deletePunbbForum: {
+    type: 'PunbbForum'
+    args: Record<MutationDeletePunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbForumWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum | null> | prisma.PunbbForum | null
+  }
+  deleteManyPunbbForums: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbForumsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbForumWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbOnline: {
+    type: 'PunbbOnline'
+    args: Record<MutationCreatePunbbOnlineArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbOnlineCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnline> | prisma.PunbbOnline
+  }
+  updateManyPunbbOnlines: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbOnlinesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbOnlineUpdateManyMutationInput, where?: PunbbOnlineWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  deleteManyPunbbOnlines: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbOnlinesArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbOnlineWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbPost: {
+    type: 'PunbbPost'
+    args: Record<MutationCreatePunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbPostCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost> | prisma.PunbbPost
+  }
+  updatePunbbPost: {
+    type: 'PunbbPost'
+    args: Record<MutationUpdatePunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbPostUpdateInput, where: PunbbPostWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost | null> | prisma.PunbbPost | null
+  }
+  updateManyPunbbPosts: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbPostsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbPostUpdateManyMutationInput, where?: PunbbPostWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPunbbPost: {
+    type: 'PunbbPost'
+    args: Record<MutationUpsertPunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbPostWhereUniqueInput, create: PunbbPostCreateInput, update: PunbbPostUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost> | prisma.PunbbPost
+  }
+  deletePunbbPost: {
+    type: 'PunbbPost'
+    args: Record<MutationDeletePunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbPostWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost | null> | prisma.PunbbPost | null
+  }
+  deleteManyPunbbPosts: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbPostsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbPostWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbTopic: {
+    type: 'PunbbTopic'
+    args: Record<MutationCreatePunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbTopicCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic> | prisma.PunbbTopic
+  }
+  updatePunbbTopic: {
+    type: 'PunbbTopic'
+    args: Record<MutationUpdatePunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbTopicUpdateInput, where: PunbbTopicWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic | null> | prisma.PunbbTopic | null
+  }
+  updateManyPunbbTopics: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbTopicsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbTopicUpdateManyMutationInput, where?: PunbbTopicWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPunbbTopic: {
+    type: 'PunbbTopic'
+    args: Record<MutationUpsertPunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbTopicWhereUniqueInput, create: PunbbTopicCreateInput, update: PunbbTopicUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic> | prisma.PunbbTopic
+  }
+  deletePunbbTopic: {
+    type: 'PunbbTopic'
+    args: Record<MutationDeletePunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbTopicWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic | null> | prisma.PunbbTopic | null
+  }
+  deleteManyPunbbTopics: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbTopicsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbTopicWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbUploaded: {
+    type: 'PunbbUploaded'
+    args: Record<MutationCreatePunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUploadedCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded> | prisma.PunbbUploaded
+  }
+  updatePunbbUploaded: {
+    type: 'PunbbUploaded'
+    args: Record<MutationUpdatePunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUploadedUpdateInput, where: PunbbUploadedWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded | null> | prisma.PunbbUploaded | null
+  }
+  updateManyPunbbUploadeds: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbUploadedsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUploadedUpdateManyMutationInput, where?: PunbbUploadedWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPunbbUploaded: {
+    type: 'PunbbUploaded'
+    args: Record<MutationUpsertPunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbUploadedWhereUniqueInput, create: PunbbUploadedCreateInput, update: PunbbUploadedUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded> | prisma.PunbbUploaded
+  }
+  deletePunbbUploaded: {
+    type: 'PunbbUploaded'
+    args: Record<MutationDeletePunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbUploadedWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded | null> | prisma.PunbbUploaded | null
+  }
+  deleteManyPunbbUploadeds: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbUploadedsArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbUploadedWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  createPunbbUser: {
+    type: 'PunbbUser'
+    args: Record<MutationCreatePunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUserCreateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser> | prisma.PunbbUser
+  }
+  updatePunbbUser: {
+    type: 'PunbbUser'
+    args: Record<MutationUpdatePunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUserUpdateInput, where: PunbbUserWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser | null> | prisma.PunbbUser | null
+  }
+  updateManyPunbbUsers: {
+    type: 'BatchPayload'
+    args: Record<MutationUpdateManyPunbbUsersArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PunbbUserUpdateManyMutationInput, where?: PunbbUserWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPunbbUser: {
+    type: 'PunbbUser'
+    args: Record<MutationUpsertPunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbUserWhereUniqueInput, create: PunbbUserCreateInput, update: PunbbUserUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser> | prisma.PunbbUser
+  }
+  deletePunbbUser: {
+    type: 'PunbbUser'
+    args: Record<MutationDeletePunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PunbbUserWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser | null> | prisma.PunbbUser | null
+  }
+  deleteManyPunbbUsers: {
+    type: 'BatchPayload'
+    args: Record<MutationDeleteManyPunbbUsersArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where?: PunbbUserWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
@@ -916,60 +3660,162 @@ export interface BatchPayloadFieldDetails {
 
 type SubscriptionObject =
   | SubscriptionFields
-  | { name: 'user', args?: SubscriptionUserArgs[] | false, alias?: string  } 
-  | { name: 'post', args?: SubscriptionPostArgs[] | false, alias?: string  } 
+  | { name: 'punbbBan', args?: SubscriptionPunbbBanArgs[] | false, alias?: string  } 
+  | { name: 'punbbCategory', args?: SubscriptionPunbbCategoryArgs[] | false, alias?: string  } 
+  | { name: 'punbbForum', args?: SubscriptionPunbbForumArgs[] | false, alias?: string  } 
+  | { name: 'punbbOnline', args?: SubscriptionPunbbOnlineArgs[] | false, alias?: string  } 
+  | { name: 'punbbPost', args?: SubscriptionPunbbPostArgs[] | false, alias?: string  } 
+  | { name: 'punbbTopic', args?: SubscriptionPunbbTopicArgs[] | false, alias?: string  } 
+  | { name: 'punbbUploaded', args?: SubscriptionPunbbUploadedArgs[] | false, alias?: string  } 
+  | { name: 'punbbUser', args?: SubscriptionPunbbUserArgs[] | false, alias?: string  } 
 
 type SubscriptionFields =
-  | 'user'
-  | 'post'
+  | 'punbbBan'
+  | 'punbbCategory'
+  | 'punbbForum'
+  | 'punbbOnline'
+  | 'punbbPost'
+  | 'punbbTopic'
+  | 'punbbUploaded'
+  | 'punbbUser'
 
 
-type SubscriptionUserArgs =
+type SubscriptionPunbbBanArgs =
   | 'where'
-type SubscriptionPostArgs =
+type SubscriptionPunbbCategoryArgs =
+  | 'where'
+type SubscriptionPunbbForumArgs =
+  | 'where'
+type SubscriptionPunbbOnlineArgs =
+  | 'where'
+type SubscriptionPunbbPostArgs =
+  | 'where'
+type SubscriptionPunbbTopicArgs =
+  | 'where'
+type SubscriptionPunbbUploadedArgs =
+  | 'where'
+type SubscriptionPunbbUserArgs =
   | 'where'
   
 
 export interface SubscriptionFieldDetails {
-  user: {
-    type: 'UserSubscriptionPayload'
-    args: Record<SubscriptionUserArgs, core.NexusArgDef<string>>
+  punbbBan: {
+    type: 'PunbbBanSubscriptionPayload'
+    args: Record<SubscriptionPunbbBanArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: UserSubscriptionWhereInput | null }  ,
+      args: { where?: PunbbBanSubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserSubscriptionPayload | null> | prisma.UserSubscriptionPayload | null
+    ) => Promise<prisma.PunbbBanSubscriptionPayload | null> | prisma.PunbbBanSubscriptionPayload | null
   }
-  post: {
-    type: 'PostSubscriptionPayload'
-    args: Record<SubscriptionPostArgs, core.NexusArgDef<string>>
+  punbbCategory: {
+    type: 'PunbbCategorySubscriptionPayload'
+    args: Record<SubscriptionPunbbCategoryArgs, core.NexusArgDef<string>>
     description: string
     list: undefined
     nullable: true
     resolve: (
       root: core.RootValue<"Subscription">,
-      args: { where?: PostSubscriptionWhereInput | null }  ,
+      args: { where?: PunbbCategorySubscriptionWhereInput | null }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostSubscriptionPayload | null> | prisma.PostSubscriptionPayload | null
+    ) => Promise<prisma.PunbbCategorySubscriptionPayload | null> | prisma.PunbbCategorySubscriptionPayload | null
+  }
+  punbbForum: {
+    type: 'PunbbForumSubscriptionPayload'
+    args: Record<SubscriptionPunbbForumArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbForumSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForumSubscriptionPayload | null> | prisma.PunbbForumSubscriptionPayload | null
+  }
+  punbbOnline: {
+    type: 'PunbbOnlineSubscriptionPayload'
+    args: Record<SubscriptionPunbbOnlineArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbOnlineSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnlineSubscriptionPayload | null> | prisma.PunbbOnlineSubscriptionPayload | null
+  }
+  punbbPost: {
+    type: 'PunbbPostSubscriptionPayload'
+    args: Record<SubscriptionPunbbPostArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbPostSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPostSubscriptionPayload | null> | prisma.PunbbPostSubscriptionPayload | null
+  }
+  punbbTopic: {
+    type: 'PunbbTopicSubscriptionPayload'
+    args: Record<SubscriptionPunbbTopicArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbTopicSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopicSubscriptionPayload | null> | prisma.PunbbTopicSubscriptionPayload | null
+  }
+  punbbUploaded: {
+    type: 'PunbbUploadedSubscriptionPayload'
+    args: Record<SubscriptionPunbbUploadedArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbUploadedSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploadedSubscriptionPayload | null> | prisma.PunbbUploadedSubscriptionPayload | null
+  }
+  punbbUser: {
+    type: 'PunbbUserSubscriptionPayload'
+    args: Record<SubscriptionPunbbUserArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Subscription">,
+      args: { where?: PunbbUserSubscriptionWhereInput | null }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUserSubscriptionPayload | null> | prisma.PunbbUserSubscriptionPayload | null
   }
 }
   
 
-// Types for UserSubscriptionPayload
+// Types for PunbbBanSubscriptionPayload
 
-type UserSubscriptionPayloadObject =
-  | UserSubscriptionPayloadFields
+type PunbbBanSubscriptionPayloadObject =
+  | PunbbBanSubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type UserSubscriptionPayloadFields =
+type PunbbBanSubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -979,7 +3825,7 @@ type UserSubscriptionPayloadFields =
 
   
 
-export interface UserSubscriptionPayloadFieldDetails {
+export interface PunbbBanSubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -987,24 +3833,24 @@ export interface UserSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"PunbbBanSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'User'
+    type: 'PunbbBan'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"PunbbBanSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.User | null> | prisma.User | null
+    ) => Promise<prisma.PunbbBan | null> | prisma.PunbbBan | null
   }
   updatedFields: {
     type: 'String'
@@ -1015,41 +3861,47 @@ export interface UserSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'UserPreviousValues'
+    type: 'PunbbBanPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"UserSubscriptionPayload">,
+      root: core.RootValue<"PunbbBanSubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.UserPreviousValues | null> | prisma.UserPreviousValues | null
+    ) => Promise<prisma.PunbbBanPreviousValues | null> | prisma.PunbbBanPreviousValues | null
   }
 }
   
 
-// Types for UserPreviousValues
+// Types for PunbbBanPreviousValues
 
-type UserPreviousValuesObject =
-  | UserPreviousValuesFields
+type PunbbBanPreviousValuesObject =
+  | PunbbBanPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'email', args?: [] | false, alias?: string  } 
-  | { name: 'name', args?: [] | false, alias?: string  } 
+  | { name: 'expire', args?: [] | false, alias?: string  } 
+  | { name: 'ip', args?: [] | false, alias?: string  } 
+  | { name: 'message', args?: [] | false, alias?: string  } 
+  | { name: 'username', args?: [] | false, alias?: string  } 
 
-type UserPreviousValuesFields =
+type PunbbBanPreviousValuesFields =
   | 'id'
   | 'email'
-  | 'name'
+  | 'expire'
+  | 'ip'
+  | 'message'
+  | 'username'
 
 
 
   
 
-export interface UserPreviousValuesFieldDetails {
+export interface PunbbBanPreviousValuesFieldDetails {
   id: {
-    type: 'ID'
+    type: 'Int'
     args: {}
     description: string
     list: undefined
@@ -1064,27 +3916,51 @@ export interface UserPreviousValuesFieldDetails {
     nullable: true
     resolve: undefined
   }
-  name: {
+  expire: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  ip: {
     type: 'String'
     args: {}
     description: string
     list: undefined
-    nullable: false
+    nullable: true
+    resolve: undefined
+  }
+  message: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  username: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
     resolve: undefined
   }
 }
   
 
-// Types for PostSubscriptionPayload
+// Types for PunbbCategorySubscriptionPayload
 
-type PostSubscriptionPayloadObject =
-  | PostSubscriptionPayloadFields
+type PunbbCategorySubscriptionPayloadObject =
+  | PunbbCategorySubscriptionPayloadFields
   | { name: 'mutation', args?: [] | false, alias?: string  } 
   | { name: 'node', args?: [] | false, alias?: string  } 
   | { name: 'updatedFields', args?: [] | false, alias?: string  } 
   | { name: 'previousValues', args?: [] | false, alias?: string  } 
 
-type PostSubscriptionPayloadFields =
+type PunbbCategorySubscriptionPayloadFields =
   | 'mutation'
   | 'node'
   | 'updatedFields'
@@ -1094,7 +3970,7 @@ type PostSubscriptionPayloadFields =
 
   
 
-export interface PostSubscriptionPayloadFieldDetails {
+export interface PunbbCategorySubscriptionPayloadFieldDetails {
   mutation: {
     type: 'MutationType'
     args: {}
@@ -1102,24 +3978,24 @@ export interface PostSubscriptionPayloadFieldDetails {
     list: undefined
     nullable: false
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"PunbbCategorySubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.MutationType> | prisma.MutationType
   }
   node: {
-    type: 'Post'
+    type: 'PunbbCategory'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"PunbbCategorySubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.Post | null> | prisma.Post | null
+    ) => Promise<prisma.PunbbCategory | null> | prisma.PunbbCategory | null
   }
   updatedFields: {
     type: 'String'
@@ -1130,41 +4006,1397 @@ export interface PostSubscriptionPayloadFieldDetails {
     resolve: undefined
   }
   previousValues: {
-    type: 'PostPreviousValues'
+    type: 'PunbbCategoryPreviousValues'
     args: {}
     description: string
     list: undefined
     nullable: true
     resolve: (
-      root: core.RootValue<"PostSubscriptionPayload">,
+      root: core.RootValue<"PunbbCategorySubscriptionPayload">,
       args: {  }  ,
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
-    ) => Promise<prisma.PostPreviousValues | null> | prisma.PostPreviousValues | null
+    ) => Promise<prisma.PunbbCategoryPreviousValues | null> | prisma.PunbbCategoryPreviousValues | null
   }
 }
   
 
-// Types for PostPreviousValues
+// Types for PunbbCategoryPreviousValues
 
-type PostPreviousValuesObject =
-  | PostPreviousValuesFields
+type PunbbCategoryPreviousValuesObject =
+  | PunbbCategoryPreviousValuesFields
   | { name: 'id', args?: [] | false, alias?: string  } 
-  | { name: 'title', args?: [] | false, alias?: string  } 
-  | { name: 'published', args?: [] | false, alias?: string  } 
+  | { name: 'catName', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosition', args?: [] | false, alias?: string  } 
 
-type PostPreviousValuesFields =
+type PunbbCategoryPreviousValuesFields =
   | 'id'
-  | 'title'
-  | 'published'
+  | 'catName'
+  | 'dispPosition'
 
 
 
   
 
-export interface PostPreviousValuesFieldDetails {
+export interface PunbbCategoryPreviousValuesFieldDetails {
   id: {
-    type: 'ID'
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  catName: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  dispPosition: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbForumSubscriptionPayload
+
+type PunbbForumSubscriptionPayloadObject =
+  | PunbbForumSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbForumSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbForumSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbForumSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbForum'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbForumSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForum | null> | prisma.PunbbForum | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbForumPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbForumSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbForumPreviousValues | null> | prisma.PunbbForumPreviousValues | null
+  }
+}
+  
+
+// Types for PunbbForumPreviousValues
+
+type PunbbForumPreviousValuesObject =
+  | PunbbForumPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'catId', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosition', args?: [] | false, alias?: string  } 
+  | { name: 'forumDesc', args?: [] | false, alias?: string  } 
+  | { name: 'forumName', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastPoster', args?: [] | false, alias?: string  } 
+  | { name: 'lastPostId', args?: [] | false, alias?: string  } 
+  | { name: 'moderators', args?: [] | false, alias?: string  } 
+  | { name: 'redirectUrl', args?: [] | false, alias?: string  } 
+  | { name: 'sortBy', args?: [] | false, alias?: string  } 
+
+type PunbbForumPreviousValuesFields =
+  | 'id'
+  | 'catId'
+  | 'dispPosition'
+  | 'forumDesc'
+  | 'forumName'
+  | 'lastPost'
+  | 'lastPoster'
+  | 'lastPostId'
+  | 'moderators'
+  | 'redirectUrl'
+  | 'sortBy'
+
+
+
+  
+
+export interface PunbbForumPreviousValuesFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  catId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  dispPosition: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  forumDesc: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  forumName: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPoster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPostId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  moderators: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  redirectUrl: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  sortBy: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbOnlineSubscriptionPayload
+
+type PunbbOnlineSubscriptionPayloadObject =
+  | PunbbOnlineSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbOnlineSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbOnlineSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbOnlineSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbOnline'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbOnlineSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnline | null> | prisma.PunbbOnline | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbOnlinePreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbOnlineSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbOnlinePreviousValues | null> | prisma.PunbbOnlinePreviousValues | null
+  }
+}
+  
+
+// Types for PunbbOnlinePreviousValues
+
+type PunbbOnlinePreviousValuesObject =
+  | PunbbOnlinePreviousValuesFields
+  | { name: 'ident', args?: [] | false, alias?: string  } 
+  | { name: 'idle', args?: [] | false, alias?: string  } 
+  | { name: 'logged', args?: [] | false, alias?: string  } 
+  | { name: 'userId', args?: [] | false, alias?: string  } 
+
+type PunbbOnlinePreviousValuesFields =
+  | 'ident'
+  | 'idle'
+  | 'logged'
+  | 'userId'
+
+
+
+  
+
+export interface PunbbOnlinePreviousValuesFieldDetails {
+  ident: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  idle: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  logged: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  userId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbPostSubscriptionPayload
+
+type PunbbPostSubscriptionPayloadObject =
+  | PunbbPostSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbPostSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbPostSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbPostSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbPost'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbPostSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPost | null> | prisma.PunbbPost | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbPostPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbPostSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbPostPreviousValues | null> | prisma.PunbbPostPreviousValues | null
+  }
+}
+  
+
+// Types for PunbbPostPreviousValues
+
+type PunbbPostPreviousValuesObject =
+  | PunbbPostPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'edited', args?: [] | false, alias?: string  } 
+  | { name: 'editedBy', args?: [] | false, alias?: string  } 
+  | { name: 'hideSmilies', args?: [] | false, alias?: string  } 
+  | { name: 'message', args?: [] | false, alias?: string  } 
+  | { name: 'posted', args?: [] | false, alias?: string  } 
+  | { name: 'poster', args?: [] | false, alias?: string  } 
+  | { name: 'posterEmail', args?: [] | false, alias?: string  } 
+  | { name: 'posterId', args?: [] | false, alias?: string  } 
+  | { name: 'posterIp', args?: [] | false, alias?: string  } 
+  | { name: 'topicId', args?: [] | false, alias?: string  } 
+
+type PunbbPostPreviousValuesFields =
+  | 'id'
+  | 'edited'
+  | 'editedBy'
+  | 'hideSmilies'
+  | 'message'
+  | 'posted'
+  | 'poster'
+  | 'posterEmail'
+  | 'posterId'
+  | 'posterIp'
+  | 'topicId'
+
+
+
+  
+
+export interface PunbbPostPreviousValuesFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  edited: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  editedBy: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  hideSmilies: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  message: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posted: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  poster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posterEmail: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  posterId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posterIp: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  topicId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbTopicSubscriptionPayload
+
+type PunbbTopicSubscriptionPayloadObject =
+  | PunbbTopicSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbTopicSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbTopicSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbTopicSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbTopic'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbTopicSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopic | null> | prisma.PunbbTopic | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbTopicPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbTopicSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbTopicPreviousValues | null> | prisma.PunbbTopicPreviousValues | null
+  }
+}
+  
+
+// Types for PunbbTopicPreviousValues
+
+type PunbbTopicPreviousValuesObject =
+  | PunbbTopicPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'closed', args?: [] | false, alias?: string  } 
+  | { name: 'forumId', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastPoster', args?: [] | false, alias?: string  } 
+  | { name: 'lastPostId', args?: [] | false, alias?: string  } 
+  | { name: 'movedTo', args?: [] | false, alias?: string  } 
+  | { name: 'no', args?: [] | false, alias?: string  } 
+  | { name: 'posted', args?: [] | false, alias?: string  } 
+  | { name: 'poster', args?: [] | false, alias?: string  } 
+  | { name: 'question', args?: [] | false, alias?: string  } 
+  | { name: 'sticky', args?: [] | false, alias?: string  } 
+  | { name: 'subject', args?: [] | false, alias?: string  } 
+  | { name: 'yes', args?: [] | false, alias?: string  } 
+
+type PunbbTopicPreviousValuesFields =
+  | 'id'
+  | 'closed'
+  | 'forumId'
+  | 'lastPost'
+  | 'lastPoster'
+  | 'lastPostId'
+  | 'movedTo'
+  | 'no'
+  | 'posted'
+  | 'poster'
+  | 'question'
+  | 'sticky'
+  | 'subject'
+  | 'yes'
+
+
+
+  
+
+export interface PunbbTopicPreviousValuesFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  closed: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  forumId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPoster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastPostId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  movedTo: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  no: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  posted: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  poster: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  question: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  sticky: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  subject: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  yes: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUploadedSubscriptionPayload
+
+type PunbbUploadedSubscriptionPayloadObject =
+  | PunbbUploadedSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbUploadedSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbUploadedSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUploadedSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbUploaded'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbUploadedSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploaded | null> | prisma.PunbbUploaded | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbUploadedPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbUploadedSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUploadedPreviousValues | null> | prisma.PunbbUploadedPreviousValues | null
+  }
+}
+  
+
+// Types for PunbbUploadedPreviousValues
+
+type PunbbUploadedPreviousValuesObject =
+  | PunbbUploadedPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'data', args?: [] | false, alias?: string  } 
+  | { name: 'descr', args?: [] | false, alias?: string  } 
+  | { name: 'downs', args?: [] | false, alias?: string  } 
+  | { name: 'file', args?: [] | false, alias?: string  } 
+  | { name: 'size', args?: [] | false, alias?: string  } 
+  | { name: 'uid', args?: [] | false, alias?: string  } 
+  | { name: 'user', args?: [] | false, alias?: string  } 
+  | { name: 'userStat', args?: [] | false, alias?: string  } 
+
+type PunbbUploadedPreviousValuesFields =
+  | 'id'
+  | 'data'
+  | 'descr'
+  | 'downs'
+  | 'file'
+  | 'size'
+  | 'uid'
+  | 'user'
+  | 'userStat'
+
+
+
+  
+
+export interface PunbbUploadedPreviousValuesFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  data: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  descr: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  downs: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  file: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  size: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  uid: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  user: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  userStat: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+}
+  
+
+// Types for PunbbUserSubscriptionPayload
+
+type PunbbUserSubscriptionPayloadObject =
+  | PunbbUserSubscriptionPayloadFields
+  | { name: 'mutation', args?: [] | false, alias?: string  } 
+  | { name: 'node', args?: [] | false, alias?: string  } 
+  | { name: 'updatedFields', args?: [] | false, alias?: string  } 
+  | { name: 'previousValues', args?: [] | false, alias?: string  } 
+
+type PunbbUserSubscriptionPayloadFields =
+  | 'mutation'
+  | 'node'
+  | 'updatedFields'
+  | 'previousValues'
+
+
+
+  
+
+export interface PunbbUserSubscriptionPayloadFieldDetails {
+  mutation: {
+    type: 'MutationType'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"PunbbUserSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.MutationType> | prisma.MutationType
+  }
+  node: {
+    type: 'PunbbUser'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbUserSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUser | null> | prisma.PunbbUser | null
+  }
+  updatedFields: {
+    type: 'String'
+    args: {}
+    description: string
+    list: true
+    nullable: false
+    resolve: undefined
+  }
+  previousValues: {
+    type: 'PunbbUserPreviousValues'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"PunbbUserSubscriptionPayload">,
+      args: {  }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PunbbUserPreviousValues | null> | prisma.PunbbUserPreviousValues | null
+  }
+}
+  
+
+// Types for PunbbUserPreviousValues
+
+type PunbbUserPreviousValuesObject =
+  | PunbbUserPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
+  | { name: 'activateKey', args?: [] | false, alias?: string  } 
+  | { name: 'activateString', args?: [] | false, alias?: string  } 
+  | { name: 'adminNote', args?: [] | false, alias?: string  } 
+  | { name: 'aim', args?: [] | false, alias?: string  } 
+  | { name: 'dispPosts', args?: [] | false, alias?: string  } 
+  | { name: 'dispTopics', args?: [] | false, alias?: string  } 
+  | { name: 'email', args?: [] | false, alias?: string  } 
+  | { name: 'emailSetting', args?: [] | false, alias?: string  } 
+  | { name: 'groupId', args?: [] | false, alias?: string  } 
+  | { name: 'icq', args?: [] | false, alias?: string  } 
+  | { name: 'jabber', args?: [] | false, alias?: string  } 
+  | { name: 'language', args?: [] | false, alias?: string  } 
+  | { name: 'lastPost', args?: [] | false, alias?: string  } 
+  | { name: 'lastVisit', args?: [] | false, alias?: string  } 
+  | { name: 'location', args?: [] | false, alias?: string  } 
+  | { name: 'msn', args?: [] | false, alias?: string  } 
+  | { name: 'notifyWithPost', args?: [] | false, alias?: string  } 
+  | { name: 'numPosts', args?: [] | false, alias?: string  } 
+  | { name: 'password', args?: [] | false, alias?: string  } 
+  | { name: 'readTopics', args?: [] | false, alias?: string  } 
+  | { name: 'realname', args?: [] | false, alias?: string  } 
+  | { name: 'registered', args?: [] | false, alias?: string  } 
+  | { name: 'registrationIp', args?: [] | false, alias?: string  } 
+  | { name: 'savePass', args?: [] | false, alias?: string  } 
+  | { name: 'showAvatars', args?: [] | false, alias?: string  } 
+  | { name: 'showImg', args?: [] | false, alias?: string  } 
+  | { name: 'showImgSig', args?: [] | false, alias?: string  } 
+  | { name: 'showSig', args?: [] | false, alias?: string  } 
+  | { name: 'showSmilies', args?: [] | false, alias?: string  } 
+  | { name: 'signature', args?: [] | false, alias?: string  } 
+  | { name: 'style', args?: [] | false, alias?: string  } 
+  | { name: 'timezone', args?: [] | false, alias?: string  } 
+  | { name: 'title', args?: [] | false, alias?: string  } 
+  | { name: 'url', args?: [] | false, alias?: string  } 
+  | { name: 'useAvatar', args?: [] | false, alias?: string  } 
+  | { name: 'username', args?: [] | false, alias?: string  } 
+  | { name: 'yahoo', args?: [] | false, alias?: string  } 
+
+type PunbbUserPreviousValuesFields =
+  | 'id'
+  | 'activateKey'
+  | 'activateString'
+  | 'adminNote'
+  | 'aim'
+  | 'dispPosts'
+  | 'dispTopics'
+  | 'email'
+  | 'emailSetting'
+  | 'groupId'
+  | 'icq'
+  | 'jabber'
+  | 'language'
+  | 'lastPost'
+  | 'lastVisit'
+  | 'location'
+  | 'msn'
+  | 'notifyWithPost'
+  | 'numPosts'
+  | 'password'
+  | 'readTopics'
+  | 'realname'
+  | 'registered'
+  | 'registrationIp'
+  | 'savePass'
+  | 'showAvatars'
+  | 'showImg'
+  | 'showImgSig'
+  | 'showSig'
+  | 'showSmilies'
+  | 'signature'
+  | 'style'
+  | 'timezone'
+  | 'title'
+  | 'url'
+  | 'useAvatar'
+  | 'username'
+  | 'yahoo'
+
+
+
+  
+
+export interface PunbbUserPreviousValuesFieldDetails {
+  id: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  activateKey: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  activateString: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  adminNote: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  aim: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  dispPosts: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  dispTopics: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  email: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  emailSetting: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  groupId: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  icq: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  jabber: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  language: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  lastPost: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  lastVisit: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  location: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  msn: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  notifyWithPost: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  numPosts: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  password: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  readTopics: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  realname: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  registered: {
+    type: 'Int'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  registrationIp: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  savePass: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showAvatars: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showImg: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showImgSig: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showSig: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  showSmilies: {
+    type: 'Boolean'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  signature: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  style: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  timezone: {
+    type: 'Float'
     args: {}
     description: string
     list: undefined
@@ -1176,10 +5408,18 @@ export interface PostPreviousValuesFieldDetails {
     args: {}
     description: string
     list: undefined
-    nullable: false
+    nullable: true
     resolve: undefined
   }
-  published: {
+  url: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
+  useAvatar: {
     type: 'Boolean'
     args: {}
     description: string
@@ -1187,107 +5427,42 @@ export interface PostPreviousValuesFieldDetails {
     nullable: false
     resolve: undefined
   }
+  username: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
+  yahoo: {
+    type: 'String'
+    args: {}
+    description: string
+    list: undefined
+    nullable: true
+    resolve: undefined
+  }
 }
   
 
 
-export interface UserWhereUniqueInput {
-  id?: string | null
-  email?: string | null
+export interface PunbbBanWhereUniqueInput {
+  id?: number | null
 }
-export type UserWhereUniqueInputInputObject =
-  | Extract<keyof UserWhereUniqueInput, string>
+export type PunbbBanWhereUniqueInputInputObject =
+  | Extract<keyof PunbbBanWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'email', alias?: string  } 
   
-export interface PostWhereInput {
-  id?: string | null
-  id_not?: string | null
-  id_in?: string[]
-  id_not_in?: string[]
-  id_lt?: string | null
-  id_lte?: string | null
-  id_gt?: string | null
-  id_gte?: string | null
-  id_contains?: string | null
-  id_not_contains?: string | null
-  id_starts_with?: string | null
-  id_not_starts_with?: string | null
-  id_ends_with?: string | null
-  id_not_ends_with?: string | null
-  title?: string | null
-  title_not?: string | null
-  title_in?: string[]
-  title_not_in?: string[]
-  title_lt?: string | null
-  title_lte?: string | null
-  title_gt?: string | null
-  title_gte?: string | null
-  title_contains?: string | null
-  title_not_contains?: string | null
-  title_starts_with?: string | null
-  title_not_starts_with?: string | null
-  title_ends_with?: string | null
-  title_not_ends_with?: string | null
-  published?: boolean | null
-  published_not?: boolean | null
-  author?: UserWhereInput | null
-  AND?: PostWhereInput[]
-  OR?: PostWhereInput[]
-  NOT?: PostWhereInput[]
-}
-export type PostWhereInputInputObject =
-  | Extract<keyof PostWhereInput, string>
-  | { name: 'id', alias?: string  } 
-  | { name: 'id_not', alias?: string  } 
-  | { name: 'id_in', alias?: string  } 
-  | { name: 'id_not_in', alias?: string  } 
-  | { name: 'id_lt', alias?: string  } 
-  | { name: 'id_lte', alias?: string  } 
-  | { name: 'id_gt', alias?: string  } 
-  | { name: 'id_gte', alias?: string  } 
-  | { name: 'id_contains', alias?: string  } 
-  | { name: 'id_not_contains', alias?: string  } 
-  | { name: 'id_starts_with', alias?: string  } 
-  | { name: 'id_not_starts_with', alias?: string  } 
-  | { name: 'id_ends_with', alias?: string  } 
-  | { name: 'id_not_ends_with', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'title_not', alias?: string  } 
-  | { name: 'title_in', alias?: string  } 
-  | { name: 'title_not_in', alias?: string  } 
-  | { name: 'title_lt', alias?: string  } 
-  | { name: 'title_lte', alias?: string  } 
-  | { name: 'title_gt', alias?: string  } 
-  | { name: 'title_gte', alias?: string  } 
-  | { name: 'title_contains', alias?: string  } 
-  | { name: 'title_not_contains', alias?: string  } 
-  | { name: 'title_starts_with', alias?: string  } 
-  | { name: 'title_not_starts_with', alias?: string  } 
-  | { name: 'title_ends_with', alias?: string  } 
-  | { name: 'title_not_ends_with', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'published_not', alias?: string  } 
-  | { name: 'author', alias?: string  } 
-  | { name: 'AND', alias?: string  } 
-  | { name: 'OR', alias?: string  } 
-  | { name: 'NOT', alias?: string  } 
-  
-export interface UserWhereInput {
-  id?: string | null
-  id_not?: string | null
-  id_in?: string[]
-  id_not_in?: string[]
-  id_lt?: string | null
-  id_lte?: string | null
-  id_gt?: string | null
-  id_gte?: string | null
-  id_contains?: string | null
-  id_not_contains?: string | null
-  id_starts_with?: string | null
-  id_not_starts_with?: string | null
-  id_ends_with?: string | null
-  id_not_ends_with?: string | null
+export interface PunbbBanWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
   email?: string | null
   email_not?: string | null
   email_in?: string[]
@@ -1302,29 +5477,62 @@ export interface UserWhereInput {
   email_not_starts_with?: string | null
   email_ends_with?: string | null
   email_not_ends_with?: string | null
-  name?: string | null
-  name_not?: string | null
-  name_in?: string[]
-  name_not_in?: string[]
-  name_lt?: string | null
-  name_lte?: string | null
-  name_gt?: string | null
-  name_gte?: string | null
-  name_contains?: string | null
-  name_not_contains?: string | null
-  name_starts_with?: string | null
-  name_not_starts_with?: string | null
-  name_ends_with?: string | null
-  name_not_ends_with?: string | null
-  posts_every?: PostWhereInput | null
-  posts_some?: PostWhereInput | null
-  posts_none?: PostWhereInput | null
-  AND?: UserWhereInput[]
-  OR?: UserWhereInput[]
-  NOT?: UserWhereInput[]
+  expire?: number | null
+  expire_not?: number | null
+  expire_in?: number[]
+  expire_not_in?: number[]
+  expire_lt?: number | null
+  expire_lte?: number | null
+  expire_gt?: number | null
+  expire_gte?: number | null
+  ip?: string | null
+  ip_not?: string | null
+  ip_in?: string[]
+  ip_not_in?: string[]
+  ip_lt?: string | null
+  ip_lte?: string | null
+  ip_gt?: string | null
+  ip_gte?: string | null
+  ip_contains?: string | null
+  ip_not_contains?: string | null
+  ip_starts_with?: string | null
+  ip_not_starts_with?: string | null
+  ip_ends_with?: string | null
+  ip_not_ends_with?: string | null
+  message?: string | null
+  message_not?: string | null
+  message_in?: string[]
+  message_not_in?: string[]
+  message_lt?: string | null
+  message_lte?: string | null
+  message_gt?: string | null
+  message_gte?: string | null
+  message_contains?: string | null
+  message_not_contains?: string | null
+  message_starts_with?: string | null
+  message_not_starts_with?: string | null
+  message_ends_with?: string | null
+  message_not_ends_with?: string | null
+  username?: string | null
+  username_not?: string | null
+  username_in?: string[]
+  username_not_in?: string[]
+  username_lt?: string | null
+  username_lte?: string | null
+  username_gt?: string | null
+  username_gte?: string | null
+  username_contains?: string | null
+  username_not_contains?: string | null
+  username_starts_with?: string | null
+  username_not_starts_with?: string | null
+  username_ends_with?: string | null
+  username_not_ends_with?: string | null
+  AND?: PunbbBanWhereInput[]
+  OR?: PunbbBanWhereInput[]
+  NOT?: PunbbBanWhereInput[]
 }
-export type UserWhereInputInputObject =
-  | Extract<keyof UserWhereInput, string>
+export type PunbbBanWhereInputInputObject =
+  | Extract<keyof PunbbBanWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -1333,12 +5541,6 @@ export type UserWhereInputInputObject =
   | { name: 'id_lte', alias?: string  } 
   | { name: 'id_gt', alias?: string  } 
   | { name: 'id_gte', alias?: string  } 
-  | { name: 'id_contains', alias?: string  } 
-  | { name: 'id_not_contains', alias?: string  } 
-  | { name: 'id_starts_with', alias?: string  } 
-  | { name: 'id_not_starts_with', alias?: string  } 
-  | { name: 'id_ends_with', alias?: string  } 
-  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'email_not', alias?: string  } 
   | { name: 'email_in', alias?: string  } 
@@ -1353,145 +5555,1505 @@ export type UserWhereInputInputObject =
   | { name: 'email_not_starts_with', alias?: string  } 
   | { name: 'email_ends_with', alias?: string  } 
   | { name: 'email_not_ends_with', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'name_not', alias?: string  } 
-  | { name: 'name_in', alias?: string  } 
-  | { name: 'name_not_in', alias?: string  } 
-  | { name: 'name_lt', alias?: string  } 
-  | { name: 'name_lte', alias?: string  } 
-  | { name: 'name_gt', alias?: string  } 
-  | { name: 'name_gte', alias?: string  } 
-  | { name: 'name_contains', alias?: string  } 
-  | { name: 'name_not_contains', alias?: string  } 
-  | { name: 'name_starts_with', alias?: string  } 
-  | { name: 'name_not_starts_with', alias?: string  } 
-  | { name: 'name_ends_with', alias?: string  } 
-  | { name: 'name_not_ends_with', alias?: string  } 
-  | { name: 'posts_every', alias?: string  } 
-  | { name: 'posts_some', alias?: string  } 
-  | { name: 'posts_none', alias?: string  } 
+  | { name: 'expire', alias?: string  } 
+  | { name: 'expire_not', alias?: string  } 
+  | { name: 'expire_in', alias?: string  } 
+  | { name: 'expire_not_in', alias?: string  } 
+  | { name: 'expire_lt', alias?: string  } 
+  | { name: 'expire_lte', alias?: string  } 
+  | { name: 'expire_gt', alias?: string  } 
+  | { name: 'expire_gte', alias?: string  } 
+  | { name: 'ip', alias?: string  } 
+  | { name: 'ip_not', alias?: string  } 
+  | { name: 'ip_in', alias?: string  } 
+  | { name: 'ip_not_in', alias?: string  } 
+  | { name: 'ip_lt', alias?: string  } 
+  | { name: 'ip_lte', alias?: string  } 
+  | { name: 'ip_gt', alias?: string  } 
+  | { name: 'ip_gte', alias?: string  } 
+  | { name: 'ip_contains', alias?: string  } 
+  | { name: 'ip_not_contains', alias?: string  } 
+  | { name: 'ip_starts_with', alias?: string  } 
+  | { name: 'ip_not_starts_with', alias?: string  } 
+  | { name: 'ip_ends_with', alias?: string  } 
+  | { name: 'ip_not_ends_with', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'message_not', alias?: string  } 
+  | { name: 'message_in', alias?: string  } 
+  | { name: 'message_not_in', alias?: string  } 
+  | { name: 'message_lt', alias?: string  } 
+  | { name: 'message_lte', alias?: string  } 
+  | { name: 'message_gt', alias?: string  } 
+  | { name: 'message_gte', alias?: string  } 
+  | { name: 'message_contains', alias?: string  } 
+  | { name: 'message_not_contains', alias?: string  } 
+  | { name: 'message_starts_with', alias?: string  } 
+  | { name: 'message_not_starts_with', alias?: string  } 
+  | { name: 'message_ends_with', alias?: string  } 
+  | { name: 'message_not_ends_with', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  | { name: 'username_not', alias?: string  } 
+  | { name: 'username_in', alias?: string  } 
+  | { name: 'username_not_in', alias?: string  } 
+  | { name: 'username_lt', alias?: string  } 
+  | { name: 'username_lte', alias?: string  } 
+  | { name: 'username_gt', alias?: string  } 
+  | { name: 'username_gte', alias?: string  } 
+  | { name: 'username_contains', alias?: string  } 
+  | { name: 'username_not_contains', alias?: string  } 
+  | { name: 'username_starts_with', alias?: string  } 
+  | { name: 'username_not_starts_with', alias?: string  } 
+  | { name: 'username_ends_with', alias?: string  } 
+  | { name: 'username_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostWhereUniqueInput {
-  id?: string | null
+export interface PunbbCategoryWhereUniqueInput {
+  id?: number | null
 }
-export type PostWhereUniqueInputInputObject =
-  | Extract<keyof PostWhereUniqueInput, string>
+export type PunbbCategoryWhereUniqueInputInputObject =
+  | Extract<keyof PunbbCategoryWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
-export interface UserCreateInput {
-  id?: string | null
-  email?: string | null
-  name?: string
-  posts?: PostCreateManyWithoutAuthorInput | null
+export interface PunbbCategoryWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  catName?: string | null
+  catName_not?: string | null
+  catName_in?: string[]
+  catName_not_in?: string[]
+  catName_lt?: string | null
+  catName_lte?: string | null
+  catName_gt?: string | null
+  catName_gte?: string | null
+  catName_contains?: string | null
+  catName_not_contains?: string | null
+  catName_starts_with?: string | null
+  catName_not_starts_with?: string | null
+  catName_ends_with?: string | null
+  catName_not_ends_with?: string | null
+  dispPosition?: number | null
+  dispPosition_not?: number | null
+  dispPosition_in?: number[]
+  dispPosition_not_in?: number[]
+  dispPosition_lt?: number | null
+  dispPosition_lte?: number | null
+  dispPosition_gt?: number | null
+  dispPosition_gte?: number | null
+  AND?: PunbbCategoryWhereInput[]
+  OR?: PunbbCategoryWhereInput[]
+  NOT?: PunbbCategoryWhereInput[]
 }
-export type UserCreateInputInputObject =
-  | Extract<keyof UserCreateInput, string>
+export type PunbbCategoryWhereInputInputObject =
+  | Extract<keyof PunbbCategoryWhereInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'posts', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'catName', alias?: string  } 
+  | { name: 'catName_not', alias?: string  } 
+  | { name: 'catName_in', alias?: string  } 
+  | { name: 'catName_not_in', alias?: string  } 
+  | { name: 'catName_lt', alias?: string  } 
+  | { name: 'catName_lte', alias?: string  } 
+  | { name: 'catName_gt', alias?: string  } 
+  | { name: 'catName_gte', alias?: string  } 
+  | { name: 'catName_contains', alias?: string  } 
+  | { name: 'catName_not_contains', alias?: string  } 
+  | { name: 'catName_starts_with', alias?: string  } 
+  | { name: 'catName_not_starts_with', alias?: string  } 
+  | { name: 'catName_ends_with', alias?: string  } 
+  | { name: 'catName_not_ends_with', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  | { name: 'dispPosition_not', alias?: string  } 
+  | { name: 'dispPosition_in', alias?: string  } 
+  | { name: 'dispPosition_not_in', alias?: string  } 
+  | { name: 'dispPosition_lt', alias?: string  } 
+  | { name: 'dispPosition_lte', alias?: string  } 
+  | { name: 'dispPosition_gt', alias?: string  } 
+  | { name: 'dispPosition_gte', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface PostCreateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[]
-  connect?: PostWhereUniqueInput[]
+export interface PunbbForumWhereUniqueInput {
+  id?: number | null
 }
-export type PostCreateManyWithoutAuthorInputInputObject =
-  | Extract<keyof PostCreateManyWithoutAuthorInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface PostCreateWithoutAuthorInput {
-  id?: string | null
-  title?: string
-  published?: boolean | null
-}
-export type PostCreateWithoutAuthorInputInputObject =
-  | Extract<keyof PostCreateWithoutAuthorInput, string>
+export type PunbbForumWhereUniqueInputInputObject =
+  | Extract<keyof PunbbForumWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
   
-export interface UserUpdateInput {
-  email?: string | null
-  name?: string | null
-  posts?: PostUpdateManyWithoutAuthorInput | null
+export interface PunbbForumWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  catId?: number | null
+  catId_not?: number | null
+  catId_in?: number[]
+  catId_not_in?: number[]
+  catId_lt?: number | null
+  catId_lte?: number | null
+  catId_gt?: number | null
+  catId_gte?: number | null
+  dispPosition?: number | null
+  dispPosition_not?: number | null
+  dispPosition_in?: number[]
+  dispPosition_not_in?: number[]
+  dispPosition_lt?: number | null
+  dispPosition_lte?: number | null
+  dispPosition_gt?: number | null
+  dispPosition_gte?: number | null
+  forumDesc?: string | null
+  forumDesc_not?: string | null
+  forumDesc_in?: string[]
+  forumDesc_not_in?: string[]
+  forumDesc_lt?: string | null
+  forumDesc_lte?: string | null
+  forumDesc_gt?: string | null
+  forumDesc_gte?: string | null
+  forumDesc_contains?: string | null
+  forumDesc_not_contains?: string | null
+  forumDesc_starts_with?: string | null
+  forumDesc_not_starts_with?: string | null
+  forumDesc_ends_with?: string | null
+  forumDesc_not_ends_with?: string | null
+  forumName?: string | null
+  forumName_not?: string | null
+  forumName_in?: string[]
+  forumName_not_in?: string[]
+  forumName_lt?: string | null
+  forumName_lte?: string | null
+  forumName_gt?: string | null
+  forumName_gte?: string | null
+  forumName_contains?: string | null
+  forumName_not_contains?: string | null
+  forumName_starts_with?: string | null
+  forumName_not_starts_with?: string | null
+  forumName_ends_with?: string | null
+  forumName_not_ends_with?: string | null
+  lastPost?: number | null
+  lastPost_not?: number | null
+  lastPost_in?: number[]
+  lastPost_not_in?: number[]
+  lastPost_lt?: number | null
+  lastPost_lte?: number | null
+  lastPost_gt?: number | null
+  lastPost_gte?: number | null
+  lastPoster?: string | null
+  lastPoster_not?: string | null
+  lastPoster_in?: string[]
+  lastPoster_not_in?: string[]
+  lastPoster_lt?: string | null
+  lastPoster_lte?: string | null
+  lastPoster_gt?: string | null
+  lastPoster_gte?: string | null
+  lastPoster_contains?: string | null
+  lastPoster_not_contains?: string | null
+  lastPoster_starts_with?: string | null
+  lastPoster_not_starts_with?: string | null
+  lastPoster_ends_with?: string | null
+  lastPoster_not_ends_with?: string | null
+  lastPostId?: number | null
+  lastPostId_not?: number | null
+  lastPostId_in?: number[]
+  lastPostId_not_in?: number[]
+  lastPostId_lt?: number | null
+  lastPostId_lte?: number | null
+  lastPostId_gt?: number | null
+  lastPostId_gte?: number | null
+  moderators?: string | null
+  moderators_not?: string | null
+  moderators_in?: string[]
+  moderators_not_in?: string[]
+  moderators_lt?: string | null
+  moderators_lte?: string | null
+  moderators_gt?: string | null
+  moderators_gte?: string | null
+  moderators_contains?: string | null
+  moderators_not_contains?: string | null
+  moderators_starts_with?: string | null
+  moderators_not_starts_with?: string | null
+  moderators_ends_with?: string | null
+  moderators_not_ends_with?: string | null
+  redirectUrl?: string | null
+  redirectUrl_not?: string | null
+  redirectUrl_in?: string[]
+  redirectUrl_not_in?: string[]
+  redirectUrl_lt?: string | null
+  redirectUrl_lte?: string | null
+  redirectUrl_gt?: string | null
+  redirectUrl_gte?: string | null
+  redirectUrl_contains?: string | null
+  redirectUrl_not_contains?: string | null
+  redirectUrl_starts_with?: string | null
+  redirectUrl_not_starts_with?: string | null
+  redirectUrl_ends_with?: string | null
+  redirectUrl_not_ends_with?: string | null
+  sortBy?: boolean | null
+  sortBy_not?: boolean | null
+  AND?: PunbbForumWhereInput[]
+  OR?: PunbbForumWhereInput[]
+  NOT?: PunbbForumWhereInput[]
 }
-export type UserUpdateInputInputObject =
-  | Extract<keyof UserUpdateInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  | { name: 'posts', alias?: string  } 
+export type PunbbForumWhereInputInputObject =
+  | Extract<keyof PunbbForumWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'catId', alias?: string  } 
+  | { name: 'catId_not', alias?: string  } 
+  | { name: 'catId_in', alias?: string  } 
+  | { name: 'catId_not_in', alias?: string  } 
+  | { name: 'catId_lt', alias?: string  } 
+  | { name: 'catId_lte', alias?: string  } 
+  | { name: 'catId_gt', alias?: string  } 
+  | { name: 'catId_gte', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  | { name: 'dispPosition_not', alias?: string  } 
+  | { name: 'dispPosition_in', alias?: string  } 
+  | { name: 'dispPosition_not_in', alias?: string  } 
+  | { name: 'dispPosition_lt', alias?: string  } 
+  | { name: 'dispPosition_lte', alias?: string  } 
+  | { name: 'dispPosition_gt', alias?: string  } 
+  | { name: 'dispPosition_gte', alias?: string  } 
+  | { name: 'forumDesc', alias?: string  } 
+  | { name: 'forumDesc_not', alias?: string  } 
+  | { name: 'forumDesc_in', alias?: string  } 
+  | { name: 'forumDesc_not_in', alias?: string  } 
+  | { name: 'forumDesc_lt', alias?: string  } 
+  | { name: 'forumDesc_lte', alias?: string  } 
+  | { name: 'forumDesc_gt', alias?: string  } 
+  | { name: 'forumDesc_gte', alias?: string  } 
+  | { name: 'forumDesc_contains', alias?: string  } 
+  | { name: 'forumDesc_not_contains', alias?: string  } 
+  | { name: 'forumDesc_starts_with', alias?: string  } 
+  | { name: 'forumDesc_not_starts_with', alias?: string  } 
+  | { name: 'forumDesc_ends_with', alias?: string  } 
+  | { name: 'forumDesc_not_ends_with', alias?: string  } 
+  | { name: 'forumName', alias?: string  } 
+  | { name: 'forumName_not', alias?: string  } 
+  | { name: 'forumName_in', alias?: string  } 
+  | { name: 'forumName_not_in', alias?: string  } 
+  | { name: 'forumName_lt', alias?: string  } 
+  | { name: 'forumName_lte', alias?: string  } 
+  | { name: 'forumName_gt', alias?: string  } 
+  | { name: 'forumName_gte', alias?: string  } 
+  | { name: 'forumName_contains', alias?: string  } 
+  | { name: 'forumName_not_contains', alias?: string  } 
+  | { name: 'forumName_starts_with', alias?: string  } 
+  | { name: 'forumName_not_starts_with', alias?: string  } 
+  | { name: 'forumName_ends_with', alias?: string  } 
+  | { name: 'forumName_not_ends_with', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPost_not', alias?: string  } 
+  | { name: 'lastPost_in', alias?: string  } 
+  | { name: 'lastPost_not_in', alias?: string  } 
+  | { name: 'lastPost_lt', alias?: string  } 
+  | { name: 'lastPost_lte', alias?: string  } 
+  | { name: 'lastPost_gt', alias?: string  } 
+  | { name: 'lastPost_gte', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPoster_not', alias?: string  } 
+  | { name: 'lastPoster_in', alias?: string  } 
+  | { name: 'lastPoster_not_in', alias?: string  } 
+  | { name: 'lastPoster_lt', alias?: string  } 
+  | { name: 'lastPoster_lte', alias?: string  } 
+  | { name: 'lastPoster_gt', alias?: string  } 
+  | { name: 'lastPoster_gte', alias?: string  } 
+  | { name: 'lastPoster_contains', alias?: string  } 
+  | { name: 'lastPoster_not_contains', alias?: string  } 
+  | { name: 'lastPoster_starts_with', alias?: string  } 
+  | { name: 'lastPoster_not_starts_with', alias?: string  } 
+  | { name: 'lastPoster_ends_with', alias?: string  } 
+  | { name: 'lastPoster_not_ends_with', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'lastPostId_not', alias?: string  } 
+  | { name: 'lastPostId_in', alias?: string  } 
+  | { name: 'lastPostId_not_in', alias?: string  } 
+  | { name: 'lastPostId_lt', alias?: string  } 
+  | { name: 'lastPostId_lte', alias?: string  } 
+  | { name: 'lastPostId_gt', alias?: string  } 
+  | { name: 'lastPostId_gte', alias?: string  } 
+  | { name: 'moderators', alias?: string  } 
+  | { name: 'moderators_not', alias?: string  } 
+  | { name: 'moderators_in', alias?: string  } 
+  | { name: 'moderators_not_in', alias?: string  } 
+  | { name: 'moderators_lt', alias?: string  } 
+  | { name: 'moderators_lte', alias?: string  } 
+  | { name: 'moderators_gt', alias?: string  } 
+  | { name: 'moderators_gte', alias?: string  } 
+  | { name: 'moderators_contains', alias?: string  } 
+  | { name: 'moderators_not_contains', alias?: string  } 
+  | { name: 'moderators_starts_with', alias?: string  } 
+  | { name: 'moderators_not_starts_with', alias?: string  } 
+  | { name: 'moderators_ends_with', alias?: string  } 
+  | { name: 'moderators_not_ends_with', alias?: string  } 
+  | { name: 'redirectUrl', alias?: string  } 
+  | { name: 'redirectUrl_not', alias?: string  } 
+  | { name: 'redirectUrl_in', alias?: string  } 
+  | { name: 'redirectUrl_not_in', alias?: string  } 
+  | { name: 'redirectUrl_lt', alias?: string  } 
+  | { name: 'redirectUrl_lte', alias?: string  } 
+  | { name: 'redirectUrl_gt', alias?: string  } 
+  | { name: 'redirectUrl_gte', alias?: string  } 
+  | { name: 'redirectUrl_contains', alias?: string  } 
+  | { name: 'redirectUrl_not_contains', alias?: string  } 
+  | { name: 'redirectUrl_starts_with', alias?: string  } 
+  | { name: 'redirectUrl_not_starts_with', alias?: string  } 
+  | { name: 'redirectUrl_ends_with', alias?: string  } 
+  | { name: 'redirectUrl_not_ends_with', alias?: string  } 
+  | { name: 'sortBy', alias?: string  } 
+  | { name: 'sortBy_not', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface PostUpdateManyWithoutAuthorInput {
-  create?: PostCreateWithoutAuthorInput[]
-  delete?: PostWhereUniqueInput[]
-  connect?: PostWhereUniqueInput[]
-  set?: PostWhereUniqueInput[]
-  disconnect?: PostWhereUniqueInput[]
-  update?: PostUpdateWithWhereUniqueWithoutAuthorInput[]
-  upsert?: PostUpsertWithWhereUniqueWithoutAuthorInput[]
-  deleteMany?: PostScalarWhereInput[]
-  updateMany?: PostUpdateManyWithWhereNestedInput[]
+export interface PunbbOnlineWhereInput {
+  ident?: string | null
+  ident_not?: string | null
+  ident_in?: string[]
+  ident_not_in?: string[]
+  ident_lt?: string | null
+  ident_lte?: string | null
+  ident_gt?: string | null
+  ident_gte?: string | null
+  ident_contains?: string | null
+  ident_not_contains?: string | null
+  ident_starts_with?: string | null
+  ident_not_starts_with?: string | null
+  ident_ends_with?: string | null
+  ident_not_ends_with?: string | null
+  idle?: boolean | null
+  idle_not?: boolean | null
+  logged?: number | null
+  logged_not?: number | null
+  logged_in?: number[]
+  logged_not_in?: number[]
+  logged_lt?: number | null
+  logged_lte?: number | null
+  logged_gt?: number | null
+  logged_gte?: number | null
+  userId?: number | null
+  userId_not?: number | null
+  userId_in?: number[]
+  userId_not_in?: number[]
+  userId_lt?: number | null
+  userId_lte?: number | null
+  userId_gt?: number | null
+  userId_gte?: number | null
+  AND?: PunbbOnlineWhereInput[]
+  OR?: PunbbOnlineWhereInput[]
+  NOT?: PunbbOnlineWhereInput[]
 }
-export type PostUpdateManyWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpdateManyWithoutAuthorInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  | { name: 'set', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'upsert', alias?: string  } 
-  | { name: 'deleteMany', alias?: string  } 
-  | { name: 'updateMany', alias?: string  } 
+export type PunbbOnlineWhereInputInputObject =
+  | Extract<keyof PunbbOnlineWhereInput, string>
+  | { name: 'ident', alias?: string  } 
+  | { name: 'ident_not', alias?: string  } 
+  | { name: 'ident_in', alias?: string  } 
+  | { name: 'ident_not_in', alias?: string  } 
+  | { name: 'ident_lt', alias?: string  } 
+  | { name: 'ident_lte', alias?: string  } 
+  | { name: 'ident_gt', alias?: string  } 
+  | { name: 'ident_gte', alias?: string  } 
+  | { name: 'ident_contains', alias?: string  } 
+  | { name: 'ident_not_contains', alias?: string  } 
+  | { name: 'ident_starts_with', alias?: string  } 
+  | { name: 'ident_not_starts_with', alias?: string  } 
+  | { name: 'ident_ends_with', alias?: string  } 
+  | { name: 'ident_not_ends_with', alias?: string  } 
+  | { name: 'idle', alias?: string  } 
+  | { name: 'idle_not', alias?: string  } 
+  | { name: 'logged', alias?: string  } 
+  | { name: 'logged_not', alias?: string  } 
+  | { name: 'logged_in', alias?: string  } 
+  | { name: 'logged_not_in', alias?: string  } 
+  | { name: 'logged_lt', alias?: string  } 
+  | { name: 'logged_lte', alias?: string  } 
+  | { name: 'logged_gt', alias?: string  } 
+  | { name: 'logged_gte', alias?: string  } 
+  | { name: 'userId', alias?: string  } 
+  | { name: 'userId_not', alias?: string  } 
+  | { name: 'userId_in', alias?: string  } 
+  | { name: 'userId_not_in', alias?: string  } 
+  | { name: 'userId_lt', alias?: string  } 
+  | { name: 'userId_lte', alias?: string  } 
+  | { name: 'userId_gt', alias?: string  } 
+  | { name: 'userId_gte', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where?: PostWhereUniqueInput
-  data?: PostUpdateWithoutAuthorDataInput
+export interface PunbbPostWhereUniqueInput {
+  id?: number | null
 }
-export type PostUpdateWithWhereUniqueWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpdateWithWhereUniqueWithoutAuthorInput, string>
-  | { name: 'where', alias?: string  } 
+export type PunbbPostWhereUniqueInputInputObject =
+  | Extract<keyof PunbbPostWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface PunbbPostWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  edited?: number | null
+  edited_not?: number | null
+  edited_in?: number[]
+  edited_not_in?: number[]
+  edited_lt?: number | null
+  edited_lte?: number | null
+  edited_gt?: number | null
+  edited_gte?: number | null
+  editedBy?: string | null
+  editedBy_not?: string | null
+  editedBy_in?: string[]
+  editedBy_not_in?: string[]
+  editedBy_lt?: string | null
+  editedBy_lte?: string | null
+  editedBy_gt?: string | null
+  editedBy_gte?: string | null
+  editedBy_contains?: string | null
+  editedBy_not_contains?: string | null
+  editedBy_starts_with?: string | null
+  editedBy_not_starts_with?: string | null
+  editedBy_ends_with?: string | null
+  editedBy_not_ends_with?: string | null
+  hideSmilies?: boolean | null
+  hideSmilies_not?: boolean | null
+  message?: string | null
+  message_not?: string | null
+  message_in?: string[]
+  message_not_in?: string[]
+  message_lt?: string | null
+  message_lte?: string | null
+  message_gt?: string | null
+  message_gte?: string | null
+  message_contains?: string | null
+  message_not_contains?: string | null
+  message_starts_with?: string | null
+  message_not_starts_with?: string | null
+  message_ends_with?: string | null
+  message_not_ends_with?: string | null
+  posted?: number | null
+  posted_not?: number | null
+  posted_in?: number[]
+  posted_not_in?: number[]
+  posted_lt?: number | null
+  posted_lte?: number | null
+  posted_gt?: number | null
+  posted_gte?: number | null
+  poster?: string | null
+  poster_not?: string | null
+  poster_in?: string[]
+  poster_not_in?: string[]
+  poster_lt?: string | null
+  poster_lte?: string | null
+  poster_gt?: string | null
+  poster_gte?: string | null
+  poster_contains?: string | null
+  poster_not_contains?: string | null
+  poster_starts_with?: string | null
+  poster_not_starts_with?: string | null
+  poster_ends_with?: string | null
+  poster_not_ends_with?: string | null
+  posterEmail?: string | null
+  posterEmail_not?: string | null
+  posterEmail_in?: string[]
+  posterEmail_not_in?: string[]
+  posterEmail_lt?: string | null
+  posterEmail_lte?: string | null
+  posterEmail_gt?: string | null
+  posterEmail_gte?: string | null
+  posterEmail_contains?: string | null
+  posterEmail_not_contains?: string | null
+  posterEmail_starts_with?: string | null
+  posterEmail_not_starts_with?: string | null
+  posterEmail_ends_with?: string | null
+  posterEmail_not_ends_with?: string | null
+  posterId?: number | null
+  posterId_not?: number | null
+  posterId_in?: number[]
+  posterId_not_in?: number[]
+  posterId_lt?: number | null
+  posterId_lte?: number | null
+  posterId_gt?: number | null
+  posterId_gte?: number | null
+  posterIp?: string | null
+  posterIp_not?: string | null
+  posterIp_in?: string[]
+  posterIp_not_in?: string[]
+  posterIp_lt?: string | null
+  posterIp_lte?: string | null
+  posterIp_gt?: string | null
+  posterIp_gte?: string | null
+  posterIp_contains?: string | null
+  posterIp_not_contains?: string | null
+  posterIp_starts_with?: string | null
+  posterIp_not_starts_with?: string | null
+  posterIp_ends_with?: string | null
+  posterIp_not_ends_with?: string | null
+  topicId?: number | null
+  topicId_not?: number | null
+  topicId_in?: number[]
+  topicId_not_in?: number[]
+  topicId_lt?: number | null
+  topicId_lte?: number | null
+  topicId_gt?: number | null
+  topicId_gte?: number | null
+  AND?: PunbbPostWhereInput[]
+  OR?: PunbbPostWhereInput[]
+  NOT?: PunbbPostWhereInput[]
+}
+export type PunbbPostWhereInputInputObject =
+  | Extract<keyof PunbbPostWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'edited', alias?: string  } 
+  | { name: 'edited_not', alias?: string  } 
+  | { name: 'edited_in', alias?: string  } 
+  | { name: 'edited_not_in', alias?: string  } 
+  | { name: 'edited_lt', alias?: string  } 
+  | { name: 'edited_lte', alias?: string  } 
+  | { name: 'edited_gt', alias?: string  } 
+  | { name: 'edited_gte', alias?: string  } 
+  | { name: 'editedBy', alias?: string  } 
+  | { name: 'editedBy_not', alias?: string  } 
+  | { name: 'editedBy_in', alias?: string  } 
+  | { name: 'editedBy_not_in', alias?: string  } 
+  | { name: 'editedBy_lt', alias?: string  } 
+  | { name: 'editedBy_lte', alias?: string  } 
+  | { name: 'editedBy_gt', alias?: string  } 
+  | { name: 'editedBy_gte', alias?: string  } 
+  | { name: 'editedBy_contains', alias?: string  } 
+  | { name: 'editedBy_not_contains', alias?: string  } 
+  | { name: 'editedBy_starts_with', alias?: string  } 
+  | { name: 'editedBy_not_starts_with', alias?: string  } 
+  | { name: 'editedBy_ends_with', alias?: string  } 
+  | { name: 'editedBy_not_ends_with', alias?: string  } 
+  | { name: 'hideSmilies', alias?: string  } 
+  | { name: 'hideSmilies_not', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'message_not', alias?: string  } 
+  | { name: 'message_in', alias?: string  } 
+  | { name: 'message_not_in', alias?: string  } 
+  | { name: 'message_lt', alias?: string  } 
+  | { name: 'message_lte', alias?: string  } 
+  | { name: 'message_gt', alias?: string  } 
+  | { name: 'message_gte', alias?: string  } 
+  | { name: 'message_contains', alias?: string  } 
+  | { name: 'message_not_contains', alias?: string  } 
+  | { name: 'message_starts_with', alias?: string  } 
+  | { name: 'message_not_starts_with', alias?: string  } 
+  | { name: 'message_ends_with', alias?: string  } 
+  | { name: 'message_not_ends_with', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'posted_not', alias?: string  } 
+  | { name: 'posted_in', alias?: string  } 
+  | { name: 'posted_not_in', alias?: string  } 
+  | { name: 'posted_lt', alias?: string  } 
+  | { name: 'posted_lte', alias?: string  } 
+  | { name: 'posted_gt', alias?: string  } 
+  | { name: 'posted_gte', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'poster_not', alias?: string  } 
+  | { name: 'poster_in', alias?: string  } 
+  | { name: 'poster_not_in', alias?: string  } 
+  | { name: 'poster_lt', alias?: string  } 
+  | { name: 'poster_lte', alias?: string  } 
+  | { name: 'poster_gt', alias?: string  } 
+  | { name: 'poster_gte', alias?: string  } 
+  | { name: 'poster_contains', alias?: string  } 
+  | { name: 'poster_not_contains', alias?: string  } 
+  | { name: 'poster_starts_with', alias?: string  } 
+  | { name: 'poster_not_starts_with', alias?: string  } 
+  | { name: 'poster_ends_with', alias?: string  } 
+  | { name: 'poster_not_ends_with', alias?: string  } 
+  | { name: 'posterEmail', alias?: string  } 
+  | { name: 'posterEmail_not', alias?: string  } 
+  | { name: 'posterEmail_in', alias?: string  } 
+  | { name: 'posterEmail_not_in', alias?: string  } 
+  | { name: 'posterEmail_lt', alias?: string  } 
+  | { name: 'posterEmail_lte', alias?: string  } 
+  | { name: 'posterEmail_gt', alias?: string  } 
+  | { name: 'posterEmail_gte', alias?: string  } 
+  | { name: 'posterEmail_contains', alias?: string  } 
+  | { name: 'posterEmail_not_contains', alias?: string  } 
+  | { name: 'posterEmail_starts_with', alias?: string  } 
+  | { name: 'posterEmail_not_starts_with', alias?: string  } 
+  | { name: 'posterEmail_ends_with', alias?: string  } 
+  | { name: 'posterEmail_not_ends_with', alias?: string  } 
+  | { name: 'posterId', alias?: string  } 
+  | { name: 'posterId_not', alias?: string  } 
+  | { name: 'posterId_in', alias?: string  } 
+  | { name: 'posterId_not_in', alias?: string  } 
+  | { name: 'posterId_lt', alias?: string  } 
+  | { name: 'posterId_lte', alias?: string  } 
+  | { name: 'posterId_gt', alias?: string  } 
+  | { name: 'posterId_gte', alias?: string  } 
+  | { name: 'posterIp', alias?: string  } 
+  | { name: 'posterIp_not', alias?: string  } 
+  | { name: 'posterIp_in', alias?: string  } 
+  | { name: 'posterIp_not_in', alias?: string  } 
+  | { name: 'posterIp_lt', alias?: string  } 
+  | { name: 'posterIp_lte', alias?: string  } 
+  | { name: 'posterIp_gt', alias?: string  } 
+  | { name: 'posterIp_gte', alias?: string  } 
+  | { name: 'posterIp_contains', alias?: string  } 
+  | { name: 'posterIp_not_contains', alias?: string  } 
+  | { name: 'posterIp_starts_with', alias?: string  } 
+  | { name: 'posterIp_not_starts_with', alias?: string  } 
+  | { name: 'posterIp_ends_with', alias?: string  } 
+  | { name: 'posterIp_not_ends_with', alias?: string  } 
+  | { name: 'topicId', alias?: string  } 
+  | { name: 'topicId_not', alias?: string  } 
+  | { name: 'topicId_in', alias?: string  } 
+  | { name: 'topicId_not_in', alias?: string  } 
+  | { name: 'topicId_lt', alias?: string  } 
+  | { name: 'topicId_lte', alias?: string  } 
+  | { name: 'topicId_gt', alias?: string  } 
+  | { name: 'topicId_gte', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbTopicWhereUniqueInput {
+  id?: number | null
+}
+export type PunbbTopicWhereUniqueInputInputObject =
+  | Extract<keyof PunbbTopicWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface PunbbTopicWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  closed?: boolean | null
+  closed_not?: boolean | null
+  forumId?: number | null
+  forumId_not?: number | null
+  forumId_in?: number[]
+  forumId_not_in?: number[]
+  forumId_lt?: number | null
+  forumId_lte?: number | null
+  forumId_gt?: number | null
+  forumId_gte?: number | null
+  lastPost?: number | null
+  lastPost_not?: number | null
+  lastPost_in?: number[]
+  lastPost_not_in?: number[]
+  lastPost_lt?: number | null
+  lastPost_lte?: number | null
+  lastPost_gt?: number | null
+  lastPost_gte?: number | null
+  lastPoster?: string | null
+  lastPoster_not?: string | null
+  lastPoster_in?: string[]
+  lastPoster_not_in?: string[]
+  lastPoster_lt?: string | null
+  lastPoster_lte?: string | null
+  lastPoster_gt?: string | null
+  lastPoster_gte?: string | null
+  lastPoster_contains?: string | null
+  lastPoster_not_contains?: string | null
+  lastPoster_starts_with?: string | null
+  lastPoster_not_starts_with?: string | null
+  lastPoster_ends_with?: string | null
+  lastPoster_not_ends_with?: string | null
+  lastPostId?: number | null
+  lastPostId_not?: number | null
+  lastPostId_in?: number[]
+  lastPostId_not_in?: number[]
+  lastPostId_lt?: number | null
+  lastPostId_lte?: number | null
+  lastPostId_gt?: number | null
+  lastPostId_gte?: number | null
+  movedTo?: number | null
+  movedTo_not?: number | null
+  movedTo_in?: number[]
+  movedTo_not_in?: number[]
+  movedTo_lt?: number | null
+  movedTo_lte?: number | null
+  movedTo_gt?: number | null
+  movedTo_gte?: number | null
+  no?: string | null
+  no_not?: string | null
+  no_in?: string[]
+  no_not_in?: string[]
+  no_lt?: string | null
+  no_lte?: string | null
+  no_gt?: string | null
+  no_gte?: string | null
+  no_contains?: string | null
+  no_not_contains?: string | null
+  no_starts_with?: string | null
+  no_not_starts_with?: string | null
+  no_ends_with?: string | null
+  no_not_ends_with?: string | null
+  posted?: number | null
+  posted_not?: number | null
+  posted_in?: number[]
+  posted_not_in?: number[]
+  posted_lt?: number | null
+  posted_lte?: number | null
+  posted_gt?: number | null
+  posted_gte?: number | null
+  poster?: string | null
+  poster_not?: string | null
+  poster_in?: string[]
+  poster_not_in?: string[]
+  poster_lt?: string | null
+  poster_lte?: string | null
+  poster_gt?: string | null
+  poster_gte?: string | null
+  poster_contains?: string | null
+  poster_not_contains?: string | null
+  poster_starts_with?: string | null
+  poster_not_starts_with?: string | null
+  poster_ends_with?: string | null
+  poster_not_ends_with?: string | null
+  question?: string | null
+  question_not?: string | null
+  question_in?: string[]
+  question_not_in?: string[]
+  question_lt?: string | null
+  question_lte?: string | null
+  question_gt?: string | null
+  question_gte?: string | null
+  question_contains?: string | null
+  question_not_contains?: string | null
+  question_starts_with?: string | null
+  question_not_starts_with?: string | null
+  question_ends_with?: string | null
+  question_not_ends_with?: string | null
+  sticky?: boolean | null
+  sticky_not?: boolean | null
+  subject?: string | null
+  subject_not?: string | null
+  subject_in?: string[]
+  subject_not_in?: string[]
+  subject_lt?: string | null
+  subject_lte?: string | null
+  subject_gt?: string | null
+  subject_gte?: string | null
+  subject_contains?: string | null
+  subject_not_contains?: string | null
+  subject_starts_with?: string | null
+  subject_not_starts_with?: string | null
+  subject_ends_with?: string | null
+  subject_not_ends_with?: string | null
+  yes?: string | null
+  yes_not?: string | null
+  yes_in?: string[]
+  yes_not_in?: string[]
+  yes_lt?: string | null
+  yes_lte?: string | null
+  yes_gt?: string | null
+  yes_gte?: string | null
+  yes_contains?: string | null
+  yes_not_contains?: string | null
+  yes_starts_with?: string | null
+  yes_not_starts_with?: string | null
+  yes_ends_with?: string | null
+  yes_not_ends_with?: string | null
+  AND?: PunbbTopicWhereInput[]
+  OR?: PunbbTopicWhereInput[]
+  NOT?: PunbbTopicWhereInput[]
+}
+export type PunbbTopicWhereInputInputObject =
+  | Extract<keyof PunbbTopicWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'closed', alias?: string  } 
+  | { name: 'closed_not', alias?: string  } 
+  | { name: 'forumId', alias?: string  } 
+  | { name: 'forumId_not', alias?: string  } 
+  | { name: 'forumId_in', alias?: string  } 
+  | { name: 'forumId_not_in', alias?: string  } 
+  | { name: 'forumId_lt', alias?: string  } 
+  | { name: 'forumId_lte', alias?: string  } 
+  | { name: 'forumId_gt', alias?: string  } 
+  | { name: 'forumId_gte', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPost_not', alias?: string  } 
+  | { name: 'lastPost_in', alias?: string  } 
+  | { name: 'lastPost_not_in', alias?: string  } 
+  | { name: 'lastPost_lt', alias?: string  } 
+  | { name: 'lastPost_lte', alias?: string  } 
+  | { name: 'lastPost_gt', alias?: string  } 
+  | { name: 'lastPost_gte', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPoster_not', alias?: string  } 
+  | { name: 'lastPoster_in', alias?: string  } 
+  | { name: 'lastPoster_not_in', alias?: string  } 
+  | { name: 'lastPoster_lt', alias?: string  } 
+  | { name: 'lastPoster_lte', alias?: string  } 
+  | { name: 'lastPoster_gt', alias?: string  } 
+  | { name: 'lastPoster_gte', alias?: string  } 
+  | { name: 'lastPoster_contains', alias?: string  } 
+  | { name: 'lastPoster_not_contains', alias?: string  } 
+  | { name: 'lastPoster_starts_with', alias?: string  } 
+  | { name: 'lastPoster_not_starts_with', alias?: string  } 
+  | { name: 'lastPoster_ends_with', alias?: string  } 
+  | { name: 'lastPoster_not_ends_with', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'lastPostId_not', alias?: string  } 
+  | { name: 'lastPostId_in', alias?: string  } 
+  | { name: 'lastPostId_not_in', alias?: string  } 
+  | { name: 'lastPostId_lt', alias?: string  } 
+  | { name: 'lastPostId_lte', alias?: string  } 
+  | { name: 'lastPostId_gt', alias?: string  } 
+  | { name: 'lastPostId_gte', alias?: string  } 
+  | { name: 'movedTo', alias?: string  } 
+  | { name: 'movedTo_not', alias?: string  } 
+  | { name: 'movedTo_in', alias?: string  } 
+  | { name: 'movedTo_not_in', alias?: string  } 
+  | { name: 'movedTo_lt', alias?: string  } 
+  | { name: 'movedTo_lte', alias?: string  } 
+  | { name: 'movedTo_gt', alias?: string  } 
+  | { name: 'movedTo_gte', alias?: string  } 
+  | { name: 'no', alias?: string  } 
+  | { name: 'no_not', alias?: string  } 
+  | { name: 'no_in', alias?: string  } 
+  | { name: 'no_not_in', alias?: string  } 
+  | { name: 'no_lt', alias?: string  } 
+  | { name: 'no_lte', alias?: string  } 
+  | { name: 'no_gt', alias?: string  } 
+  | { name: 'no_gte', alias?: string  } 
+  | { name: 'no_contains', alias?: string  } 
+  | { name: 'no_not_contains', alias?: string  } 
+  | { name: 'no_starts_with', alias?: string  } 
+  | { name: 'no_not_starts_with', alias?: string  } 
+  | { name: 'no_ends_with', alias?: string  } 
+  | { name: 'no_not_ends_with', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'posted_not', alias?: string  } 
+  | { name: 'posted_in', alias?: string  } 
+  | { name: 'posted_not_in', alias?: string  } 
+  | { name: 'posted_lt', alias?: string  } 
+  | { name: 'posted_lte', alias?: string  } 
+  | { name: 'posted_gt', alias?: string  } 
+  | { name: 'posted_gte', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'poster_not', alias?: string  } 
+  | { name: 'poster_in', alias?: string  } 
+  | { name: 'poster_not_in', alias?: string  } 
+  | { name: 'poster_lt', alias?: string  } 
+  | { name: 'poster_lte', alias?: string  } 
+  | { name: 'poster_gt', alias?: string  } 
+  | { name: 'poster_gte', alias?: string  } 
+  | { name: 'poster_contains', alias?: string  } 
+  | { name: 'poster_not_contains', alias?: string  } 
+  | { name: 'poster_starts_with', alias?: string  } 
+  | { name: 'poster_not_starts_with', alias?: string  } 
+  | { name: 'poster_ends_with', alias?: string  } 
+  | { name: 'poster_not_ends_with', alias?: string  } 
+  | { name: 'question', alias?: string  } 
+  | { name: 'question_not', alias?: string  } 
+  | { name: 'question_in', alias?: string  } 
+  | { name: 'question_not_in', alias?: string  } 
+  | { name: 'question_lt', alias?: string  } 
+  | { name: 'question_lte', alias?: string  } 
+  | { name: 'question_gt', alias?: string  } 
+  | { name: 'question_gte', alias?: string  } 
+  | { name: 'question_contains', alias?: string  } 
+  | { name: 'question_not_contains', alias?: string  } 
+  | { name: 'question_starts_with', alias?: string  } 
+  | { name: 'question_not_starts_with', alias?: string  } 
+  | { name: 'question_ends_with', alias?: string  } 
+  | { name: 'question_not_ends_with', alias?: string  } 
+  | { name: 'sticky', alias?: string  } 
+  | { name: 'sticky_not', alias?: string  } 
+  | { name: 'subject', alias?: string  } 
+  | { name: 'subject_not', alias?: string  } 
+  | { name: 'subject_in', alias?: string  } 
+  | { name: 'subject_not_in', alias?: string  } 
+  | { name: 'subject_lt', alias?: string  } 
+  | { name: 'subject_lte', alias?: string  } 
+  | { name: 'subject_gt', alias?: string  } 
+  | { name: 'subject_gte', alias?: string  } 
+  | { name: 'subject_contains', alias?: string  } 
+  | { name: 'subject_not_contains', alias?: string  } 
+  | { name: 'subject_starts_with', alias?: string  } 
+  | { name: 'subject_not_starts_with', alias?: string  } 
+  | { name: 'subject_ends_with', alias?: string  } 
+  | { name: 'subject_not_ends_with', alias?: string  } 
+  | { name: 'yes', alias?: string  } 
+  | { name: 'yes_not', alias?: string  } 
+  | { name: 'yes_in', alias?: string  } 
+  | { name: 'yes_not_in', alias?: string  } 
+  | { name: 'yes_lt', alias?: string  } 
+  | { name: 'yes_lte', alias?: string  } 
+  | { name: 'yes_gt', alias?: string  } 
+  | { name: 'yes_gte', alias?: string  } 
+  | { name: 'yes_contains', alias?: string  } 
+  | { name: 'yes_not_contains', alias?: string  } 
+  | { name: 'yes_starts_with', alias?: string  } 
+  | { name: 'yes_not_starts_with', alias?: string  } 
+  | { name: 'yes_ends_with', alias?: string  } 
+  | { name: 'yes_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbUploadedWhereUniqueInput {
+  id?: number | null
+}
+export type PunbbUploadedWhereUniqueInputInputObject =
+  | Extract<keyof PunbbUploadedWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface PunbbUploadedWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  data?: number | null
+  data_not?: number | null
+  data_in?: number[]
+  data_not_in?: number[]
+  data_lt?: number | null
+  data_lte?: number | null
+  data_gt?: number | null
+  data_gte?: number | null
+  descr?: string | null
+  descr_not?: string | null
+  descr_in?: string[]
+  descr_not_in?: string[]
+  descr_lt?: string | null
+  descr_lte?: string | null
+  descr_gt?: string | null
+  descr_gte?: string | null
+  descr_contains?: string | null
+  descr_not_contains?: string | null
+  descr_starts_with?: string | null
+  descr_not_starts_with?: string | null
+  descr_ends_with?: string | null
+  descr_not_ends_with?: string | null
+  downs?: number | null
+  downs_not?: number | null
+  downs_in?: number[]
+  downs_not_in?: number[]
+  downs_lt?: number | null
+  downs_lte?: number | null
+  downs_gt?: number | null
+  downs_gte?: number | null
+  file?: string | null
+  file_not?: string | null
+  file_in?: string[]
+  file_not_in?: string[]
+  file_lt?: string | null
+  file_lte?: string | null
+  file_gt?: string | null
+  file_gte?: string | null
+  file_contains?: string | null
+  file_not_contains?: string | null
+  file_starts_with?: string | null
+  file_not_starts_with?: string | null
+  file_ends_with?: string | null
+  file_not_ends_with?: string | null
+  size?: number | null
+  size_not?: number | null
+  size_in?: number[]
+  size_not_in?: number[]
+  size_lt?: number | null
+  size_lte?: number | null
+  size_gt?: number | null
+  size_gte?: number | null
+  uid?: number | null
+  uid_not?: number | null
+  uid_in?: number[]
+  uid_not_in?: number[]
+  uid_lt?: number | null
+  uid_lte?: number | null
+  uid_gt?: number | null
+  uid_gte?: number | null
+  user?: string | null
+  user_not?: string | null
+  user_in?: string[]
+  user_not_in?: string[]
+  user_lt?: string | null
+  user_lte?: string | null
+  user_gt?: string | null
+  user_gte?: string | null
+  user_contains?: string | null
+  user_not_contains?: string | null
+  user_starts_with?: string | null
+  user_not_starts_with?: string | null
+  user_ends_with?: string | null
+  user_not_ends_with?: string | null
+  userStat?: string | null
+  userStat_not?: string | null
+  userStat_in?: string[]
+  userStat_not_in?: string[]
+  userStat_lt?: string | null
+  userStat_lte?: string | null
+  userStat_gt?: string | null
+  userStat_gte?: string | null
+  userStat_contains?: string | null
+  userStat_not_contains?: string | null
+  userStat_starts_with?: string | null
+  userStat_not_starts_with?: string | null
+  userStat_ends_with?: string | null
+  userStat_not_ends_with?: string | null
+  AND?: PunbbUploadedWhereInput[]
+  OR?: PunbbUploadedWhereInput[]
+  NOT?: PunbbUploadedWhereInput[]
+}
+export type PunbbUploadedWhereInputInputObject =
+  | Extract<keyof PunbbUploadedWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
   | { name: 'data', alias?: string  } 
+  | { name: 'data_not', alias?: string  } 
+  | { name: 'data_in', alias?: string  } 
+  | { name: 'data_not_in', alias?: string  } 
+  | { name: 'data_lt', alias?: string  } 
+  | { name: 'data_lte', alias?: string  } 
+  | { name: 'data_gt', alias?: string  } 
+  | { name: 'data_gte', alias?: string  } 
+  | { name: 'descr', alias?: string  } 
+  | { name: 'descr_not', alias?: string  } 
+  | { name: 'descr_in', alias?: string  } 
+  | { name: 'descr_not_in', alias?: string  } 
+  | { name: 'descr_lt', alias?: string  } 
+  | { name: 'descr_lte', alias?: string  } 
+  | { name: 'descr_gt', alias?: string  } 
+  | { name: 'descr_gte', alias?: string  } 
+  | { name: 'descr_contains', alias?: string  } 
+  | { name: 'descr_not_contains', alias?: string  } 
+  | { name: 'descr_starts_with', alias?: string  } 
+  | { name: 'descr_not_starts_with', alias?: string  } 
+  | { name: 'descr_ends_with', alias?: string  } 
+  | { name: 'descr_not_ends_with', alias?: string  } 
+  | { name: 'downs', alias?: string  } 
+  | { name: 'downs_not', alias?: string  } 
+  | { name: 'downs_in', alias?: string  } 
+  | { name: 'downs_not_in', alias?: string  } 
+  | { name: 'downs_lt', alias?: string  } 
+  | { name: 'downs_lte', alias?: string  } 
+  | { name: 'downs_gt', alias?: string  } 
+  | { name: 'downs_gte', alias?: string  } 
+  | { name: 'file', alias?: string  } 
+  | { name: 'file_not', alias?: string  } 
+  | { name: 'file_in', alias?: string  } 
+  | { name: 'file_not_in', alias?: string  } 
+  | { name: 'file_lt', alias?: string  } 
+  | { name: 'file_lte', alias?: string  } 
+  | { name: 'file_gt', alias?: string  } 
+  | { name: 'file_gte', alias?: string  } 
+  | { name: 'file_contains', alias?: string  } 
+  | { name: 'file_not_contains', alias?: string  } 
+  | { name: 'file_starts_with', alias?: string  } 
+  | { name: 'file_not_starts_with', alias?: string  } 
+  | { name: 'file_ends_with', alias?: string  } 
+  | { name: 'file_not_ends_with', alias?: string  } 
+  | { name: 'size', alias?: string  } 
+  | { name: 'size_not', alias?: string  } 
+  | { name: 'size_in', alias?: string  } 
+  | { name: 'size_not_in', alias?: string  } 
+  | { name: 'size_lt', alias?: string  } 
+  | { name: 'size_lte', alias?: string  } 
+  | { name: 'size_gt', alias?: string  } 
+  | { name: 'size_gte', alias?: string  } 
+  | { name: 'uid', alias?: string  } 
+  | { name: 'uid_not', alias?: string  } 
+  | { name: 'uid_in', alias?: string  } 
+  | { name: 'uid_not_in', alias?: string  } 
+  | { name: 'uid_lt', alias?: string  } 
+  | { name: 'uid_lte', alias?: string  } 
+  | { name: 'uid_gt', alias?: string  } 
+  | { name: 'uid_gte', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'user_not', alias?: string  } 
+  | { name: 'user_in', alias?: string  } 
+  | { name: 'user_not_in', alias?: string  } 
+  | { name: 'user_lt', alias?: string  } 
+  | { name: 'user_lte', alias?: string  } 
+  | { name: 'user_gt', alias?: string  } 
+  | { name: 'user_gte', alias?: string  } 
+  | { name: 'user_contains', alias?: string  } 
+  | { name: 'user_not_contains', alias?: string  } 
+  | { name: 'user_starts_with', alias?: string  } 
+  | { name: 'user_not_starts_with', alias?: string  } 
+  | { name: 'user_ends_with', alias?: string  } 
+  | { name: 'user_not_ends_with', alias?: string  } 
+  | { name: 'userStat', alias?: string  } 
+  | { name: 'userStat_not', alias?: string  } 
+  | { name: 'userStat_in', alias?: string  } 
+  | { name: 'userStat_not_in', alias?: string  } 
+  | { name: 'userStat_lt', alias?: string  } 
+  | { name: 'userStat_lte', alias?: string  } 
+  | { name: 'userStat_gt', alias?: string  } 
+  | { name: 'userStat_gte', alias?: string  } 
+  | { name: 'userStat_contains', alias?: string  } 
+  | { name: 'userStat_not_contains', alias?: string  } 
+  | { name: 'userStat_starts_with', alias?: string  } 
+  | { name: 'userStat_not_starts_with', alias?: string  } 
+  | { name: 'userStat_ends_with', alias?: string  } 
+  | { name: 'userStat_not_ends_with', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
   
-export interface PostUpdateWithoutAuthorDataInput {
-  title?: string | null
-  published?: boolean | null
+export interface PunbbUserWhereUniqueInput {
+  id?: number | null
 }
-export type PostUpdateWithoutAuthorDataInputInputObject =
-  | Extract<keyof PostUpdateWithoutAuthorDataInput, string>
-  | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
+export type PunbbUserWhereUniqueInputInputObject =
+  | Extract<keyof PunbbUserWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
   
-export interface PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where?: PostWhereUniqueInput
-  update?: PostUpdateWithoutAuthorDataInput
-  create?: PostCreateWithoutAuthorInput
-}
-export type PostUpsertWithWhereUniqueWithoutAuthorInputInputObject =
-  | Extract<keyof PostUpsertWithWhereUniqueWithoutAuthorInput, string>
-  | { name: 'where', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'create', alias?: string  } 
-  
-export interface PostScalarWhereInput {
-  id?: string | null
-  id_not?: string | null
-  id_in?: string[]
-  id_not_in?: string[]
-  id_lt?: string | null
-  id_lte?: string | null
-  id_gt?: string | null
-  id_gte?: string | null
-  id_contains?: string | null
-  id_not_contains?: string | null
-  id_starts_with?: string | null
-  id_not_starts_with?: string | null
-  id_ends_with?: string | null
-  id_not_ends_with?: string | null
+export interface PunbbUserWhereInput {
+  id?: number | null
+  id_not?: number | null
+  id_in?: number[]
+  id_not_in?: number[]
+  id_lt?: number | null
+  id_lte?: number | null
+  id_gt?: number | null
+  id_gte?: number | null
+  activateKey?: string | null
+  activateKey_not?: string | null
+  activateKey_in?: string[]
+  activateKey_not_in?: string[]
+  activateKey_lt?: string | null
+  activateKey_lte?: string | null
+  activateKey_gt?: string | null
+  activateKey_gte?: string | null
+  activateKey_contains?: string | null
+  activateKey_not_contains?: string | null
+  activateKey_starts_with?: string | null
+  activateKey_not_starts_with?: string | null
+  activateKey_ends_with?: string | null
+  activateKey_not_ends_with?: string | null
+  activateString?: string | null
+  activateString_not?: string | null
+  activateString_in?: string[]
+  activateString_not_in?: string[]
+  activateString_lt?: string | null
+  activateString_lte?: string | null
+  activateString_gt?: string | null
+  activateString_gte?: string | null
+  activateString_contains?: string | null
+  activateString_not_contains?: string | null
+  activateString_starts_with?: string | null
+  activateString_not_starts_with?: string | null
+  activateString_ends_with?: string | null
+  activateString_not_ends_with?: string | null
+  adminNote?: string | null
+  adminNote_not?: string | null
+  adminNote_in?: string[]
+  adminNote_not_in?: string[]
+  adminNote_lt?: string | null
+  adminNote_lte?: string | null
+  adminNote_gt?: string | null
+  adminNote_gte?: string | null
+  adminNote_contains?: string | null
+  adminNote_not_contains?: string | null
+  adminNote_starts_with?: string | null
+  adminNote_not_starts_with?: string | null
+  adminNote_ends_with?: string | null
+  adminNote_not_ends_with?: string | null
+  aim?: string | null
+  aim_not?: string | null
+  aim_in?: string[]
+  aim_not_in?: string[]
+  aim_lt?: string | null
+  aim_lte?: string | null
+  aim_gt?: string | null
+  aim_gte?: string | null
+  aim_contains?: string | null
+  aim_not_contains?: string | null
+  aim_starts_with?: string | null
+  aim_not_starts_with?: string | null
+  aim_ends_with?: string | null
+  aim_not_ends_with?: string | null
+  dispPosts?: boolean | null
+  dispPosts_not?: boolean | null
+  dispTopics?: boolean | null
+  dispTopics_not?: boolean | null
+  email?: string | null
+  email_not?: string | null
+  email_in?: string[]
+  email_not_in?: string[]
+  email_lt?: string | null
+  email_lte?: string | null
+  email_gt?: string | null
+  email_gte?: string | null
+  email_contains?: string | null
+  email_not_contains?: string | null
+  email_starts_with?: string | null
+  email_not_starts_with?: string | null
+  email_ends_with?: string | null
+  email_not_ends_with?: string | null
+  emailSetting?: boolean | null
+  emailSetting_not?: boolean | null
+  groupId?: number | null
+  groupId_not?: number | null
+  groupId_in?: number[]
+  groupId_not_in?: number[]
+  groupId_lt?: number | null
+  groupId_lte?: number | null
+  groupId_gt?: number | null
+  groupId_gte?: number | null
+  icq?: string | null
+  icq_not?: string | null
+  icq_in?: string[]
+  icq_not_in?: string[]
+  icq_lt?: string | null
+  icq_lte?: string | null
+  icq_gt?: string | null
+  icq_gte?: string | null
+  icq_contains?: string | null
+  icq_not_contains?: string | null
+  icq_starts_with?: string | null
+  icq_not_starts_with?: string | null
+  icq_ends_with?: string | null
+  icq_not_ends_with?: string | null
+  jabber?: string | null
+  jabber_not?: string | null
+  jabber_in?: string[]
+  jabber_not_in?: string[]
+  jabber_lt?: string | null
+  jabber_lte?: string | null
+  jabber_gt?: string | null
+  jabber_gte?: string | null
+  jabber_contains?: string | null
+  jabber_not_contains?: string | null
+  jabber_starts_with?: string | null
+  jabber_not_starts_with?: string | null
+  jabber_ends_with?: string | null
+  jabber_not_ends_with?: string | null
+  language?: string | null
+  language_not?: string | null
+  language_in?: string[]
+  language_not_in?: string[]
+  language_lt?: string | null
+  language_lte?: string | null
+  language_gt?: string | null
+  language_gte?: string | null
+  language_contains?: string | null
+  language_not_contains?: string | null
+  language_starts_with?: string | null
+  language_not_starts_with?: string | null
+  language_ends_with?: string | null
+  language_not_ends_with?: string | null
+  lastPost?: number | null
+  lastPost_not?: number | null
+  lastPost_in?: number[]
+  lastPost_not_in?: number[]
+  lastPost_lt?: number | null
+  lastPost_lte?: number | null
+  lastPost_gt?: number | null
+  lastPost_gte?: number | null
+  lastVisit?: number | null
+  lastVisit_not?: number | null
+  lastVisit_in?: number[]
+  lastVisit_not_in?: number[]
+  lastVisit_lt?: number | null
+  lastVisit_lte?: number | null
+  lastVisit_gt?: number | null
+  lastVisit_gte?: number | null
+  location?: string | null
+  location_not?: string | null
+  location_in?: string[]
+  location_not_in?: string[]
+  location_lt?: string | null
+  location_lte?: string | null
+  location_gt?: string | null
+  location_gte?: string | null
+  location_contains?: string | null
+  location_not_contains?: string | null
+  location_starts_with?: string | null
+  location_not_starts_with?: string | null
+  location_ends_with?: string | null
+  location_not_ends_with?: string | null
+  msn?: string | null
+  msn_not?: string | null
+  msn_in?: string[]
+  msn_not_in?: string[]
+  msn_lt?: string | null
+  msn_lte?: string | null
+  msn_gt?: string | null
+  msn_gte?: string | null
+  msn_contains?: string | null
+  msn_not_contains?: string | null
+  msn_starts_with?: string | null
+  msn_not_starts_with?: string | null
+  msn_ends_with?: string | null
+  msn_not_ends_with?: string | null
+  notifyWithPost?: boolean | null
+  notifyWithPost_not?: boolean | null
+  numPosts?: number | null
+  numPosts_not?: number | null
+  numPosts_in?: number[]
+  numPosts_not_in?: number[]
+  numPosts_lt?: number | null
+  numPosts_lte?: number | null
+  numPosts_gt?: number | null
+  numPosts_gte?: number | null
+  password?: string | null
+  password_not?: string | null
+  password_in?: string[]
+  password_not_in?: string[]
+  password_lt?: string | null
+  password_lte?: string | null
+  password_gt?: string | null
+  password_gte?: string | null
+  password_contains?: string | null
+  password_not_contains?: string | null
+  password_starts_with?: string | null
+  password_not_starts_with?: string | null
+  password_ends_with?: string | null
+  password_not_ends_with?: string | null
+  readTopics?: string | null
+  readTopics_not?: string | null
+  readTopics_in?: string[]
+  readTopics_not_in?: string[]
+  readTopics_lt?: string | null
+  readTopics_lte?: string | null
+  readTopics_gt?: string | null
+  readTopics_gte?: string | null
+  readTopics_contains?: string | null
+  readTopics_not_contains?: string | null
+  readTopics_starts_with?: string | null
+  readTopics_not_starts_with?: string | null
+  readTopics_ends_with?: string | null
+  readTopics_not_ends_with?: string | null
+  realname?: string | null
+  realname_not?: string | null
+  realname_in?: string[]
+  realname_not_in?: string[]
+  realname_lt?: string | null
+  realname_lte?: string | null
+  realname_gt?: string | null
+  realname_gte?: string | null
+  realname_contains?: string | null
+  realname_not_contains?: string | null
+  realname_starts_with?: string | null
+  realname_not_starts_with?: string | null
+  realname_ends_with?: string | null
+  realname_not_ends_with?: string | null
+  registered?: number | null
+  registered_not?: number | null
+  registered_in?: number[]
+  registered_not_in?: number[]
+  registered_lt?: number | null
+  registered_lte?: number | null
+  registered_gt?: number | null
+  registered_gte?: number | null
+  registrationIp?: string | null
+  registrationIp_not?: string | null
+  registrationIp_in?: string[]
+  registrationIp_not_in?: string[]
+  registrationIp_lt?: string | null
+  registrationIp_lte?: string | null
+  registrationIp_gt?: string | null
+  registrationIp_gte?: string | null
+  registrationIp_contains?: string | null
+  registrationIp_not_contains?: string | null
+  registrationIp_starts_with?: string | null
+  registrationIp_not_starts_with?: string | null
+  registrationIp_ends_with?: string | null
+  registrationIp_not_ends_with?: string | null
+  savePass?: boolean | null
+  savePass_not?: boolean | null
+  showAvatars?: boolean | null
+  showAvatars_not?: boolean | null
+  showImg?: boolean | null
+  showImg_not?: boolean | null
+  showImgSig?: boolean | null
+  showImgSig_not?: boolean | null
+  showSig?: boolean | null
+  showSig_not?: boolean | null
+  showSmilies?: boolean | null
+  showSmilies_not?: boolean | null
+  signature?: string | null
+  signature_not?: string | null
+  signature_in?: string[]
+  signature_not_in?: string[]
+  signature_lt?: string | null
+  signature_lte?: string | null
+  signature_gt?: string | null
+  signature_gte?: string | null
+  signature_contains?: string | null
+  signature_not_contains?: string | null
+  signature_starts_with?: string | null
+  signature_not_starts_with?: string | null
+  signature_ends_with?: string | null
+  signature_not_ends_with?: string | null
+  style?: string | null
+  style_not?: string | null
+  style_in?: string[]
+  style_not_in?: string[]
+  style_lt?: string | null
+  style_lte?: string | null
+  style_gt?: string | null
+  style_gte?: string | null
+  style_contains?: string | null
+  style_not_contains?: string | null
+  style_starts_with?: string | null
+  style_not_starts_with?: string | null
+  style_ends_with?: string | null
+  style_not_ends_with?: string | null
+  timezone?: number | null
+  timezone_not?: number | null
+  timezone_in?: number[]
+  timezone_not_in?: number[]
+  timezone_lt?: number | null
+  timezone_lte?: number | null
+  timezone_gt?: number | null
+  timezone_gte?: number | null
   title?: string | null
   title_not?: string | null
   title_in?: string[]
@@ -1506,14 +7068,56 @@ export interface PostScalarWhereInput {
   title_not_starts_with?: string | null
   title_ends_with?: string | null
   title_not_ends_with?: string | null
-  published?: boolean | null
-  published_not?: boolean | null
-  AND?: PostScalarWhereInput[]
-  OR?: PostScalarWhereInput[]
-  NOT?: PostScalarWhereInput[]
+  url?: string | null
+  url_not?: string | null
+  url_in?: string[]
+  url_not_in?: string[]
+  url_lt?: string | null
+  url_lte?: string | null
+  url_gt?: string | null
+  url_gte?: string | null
+  url_contains?: string | null
+  url_not_contains?: string | null
+  url_starts_with?: string | null
+  url_not_starts_with?: string | null
+  url_ends_with?: string | null
+  url_not_ends_with?: string | null
+  useAvatar?: boolean | null
+  useAvatar_not?: boolean | null
+  username?: string | null
+  username_not?: string | null
+  username_in?: string[]
+  username_not_in?: string[]
+  username_lt?: string | null
+  username_lte?: string | null
+  username_gt?: string | null
+  username_gte?: string | null
+  username_contains?: string | null
+  username_not_contains?: string | null
+  username_starts_with?: string | null
+  username_not_starts_with?: string | null
+  username_ends_with?: string | null
+  username_not_ends_with?: string | null
+  yahoo?: string | null
+  yahoo_not?: string | null
+  yahoo_in?: string[]
+  yahoo_not_in?: string[]
+  yahoo_lt?: string | null
+  yahoo_lte?: string | null
+  yahoo_gt?: string | null
+  yahoo_gte?: string | null
+  yahoo_contains?: string | null
+  yahoo_not_contains?: string | null
+  yahoo_starts_with?: string | null
+  yahoo_not_starts_with?: string | null
+  yahoo_ends_with?: string | null
+  yahoo_not_ends_with?: string | null
+  AND?: PunbbUserWhereInput[]
+  OR?: PunbbUserWhereInput[]
+  NOT?: PunbbUserWhereInput[]
 }
-export type PostScalarWhereInputInputObject =
-  | Extract<keyof PostScalarWhereInput, string>
+export type PunbbUserWhereInputInputObject =
+  | Extract<keyof PunbbUserWhereInput, string>
   | { name: 'id', alias?: string  } 
   | { name: 'id_not', alias?: string  } 
   | { name: 'id_in', alias?: string  } 
@@ -1522,12 +7126,298 @@ export type PostScalarWhereInputInputObject =
   | { name: 'id_lte', alias?: string  } 
   | { name: 'id_gt', alias?: string  } 
   | { name: 'id_gte', alias?: string  } 
-  | { name: 'id_contains', alias?: string  } 
-  | { name: 'id_not_contains', alias?: string  } 
-  | { name: 'id_starts_with', alias?: string  } 
-  | { name: 'id_not_starts_with', alias?: string  } 
-  | { name: 'id_ends_with', alias?: string  } 
-  | { name: 'id_not_ends_with', alias?: string  } 
+  | { name: 'activateKey', alias?: string  } 
+  | { name: 'activateKey_not', alias?: string  } 
+  | { name: 'activateKey_in', alias?: string  } 
+  | { name: 'activateKey_not_in', alias?: string  } 
+  | { name: 'activateKey_lt', alias?: string  } 
+  | { name: 'activateKey_lte', alias?: string  } 
+  | { name: 'activateKey_gt', alias?: string  } 
+  | { name: 'activateKey_gte', alias?: string  } 
+  | { name: 'activateKey_contains', alias?: string  } 
+  | { name: 'activateKey_not_contains', alias?: string  } 
+  | { name: 'activateKey_starts_with', alias?: string  } 
+  | { name: 'activateKey_not_starts_with', alias?: string  } 
+  | { name: 'activateKey_ends_with', alias?: string  } 
+  | { name: 'activateKey_not_ends_with', alias?: string  } 
+  | { name: 'activateString', alias?: string  } 
+  | { name: 'activateString_not', alias?: string  } 
+  | { name: 'activateString_in', alias?: string  } 
+  | { name: 'activateString_not_in', alias?: string  } 
+  | { name: 'activateString_lt', alias?: string  } 
+  | { name: 'activateString_lte', alias?: string  } 
+  | { name: 'activateString_gt', alias?: string  } 
+  | { name: 'activateString_gte', alias?: string  } 
+  | { name: 'activateString_contains', alias?: string  } 
+  | { name: 'activateString_not_contains', alias?: string  } 
+  | { name: 'activateString_starts_with', alias?: string  } 
+  | { name: 'activateString_not_starts_with', alias?: string  } 
+  | { name: 'activateString_ends_with', alias?: string  } 
+  | { name: 'activateString_not_ends_with', alias?: string  } 
+  | { name: 'adminNote', alias?: string  } 
+  | { name: 'adminNote_not', alias?: string  } 
+  | { name: 'adminNote_in', alias?: string  } 
+  | { name: 'adminNote_not_in', alias?: string  } 
+  | { name: 'adminNote_lt', alias?: string  } 
+  | { name: 'adminNote_lte', alias?: string  } 
+  | { name: 'adminNote_gt', alias?: string  } 
+  | { name: 'adminNote_gte', alias?: string  } 
+  | { name: 'adminNote_contains', alias?: string  } 
+  | { name: 'adminNote_not_contains', alias?: string  } 
+  | { name: 'adminNote_starts_with', alias?: string  } 
+  | { name: 'adminNote_not_starts_with', alias?: string  } 
+  | { name: 'adminNote_ends_with', alias?: string  } 
+  | { name: 'adminNote_not_ends_with', alias?: string  } 
+  | { name: 'aim', alias?: string  } 
+  | { name: 'aim_not', alias?: string  } 
+  | { name: 'aim_in', alias?: string  } 
+  | { name: 'aim_not_in', alias?: string  } 
+  | { name: 'aim_lt', alias?: string  } 
+  | { name: 'aim_lte', alias?: string  } 
+  | { name: 'aim_gt', alias?: string  } 
+  | { name: 'aim_gte', alias?: string  } 
+  | { name: 'aim_contains', alias?: string  } 
+  | { name: 'aim_not_contains', alias?: string  } 
+  | { name: 'aim_starts_with', alias?: string  } 
+  | { name: 'aim_not_starts_with', alias?: string  } 
+  | { name: 'aim_ends_with', alias?: string  } 
+  | { name: 'aim_not_ends_with', alias?: string  } 
+  | { name: 'dispPosts', alias?: string  } 
+  | { name: 'dispPosts_not', alias?: string  } 
+  | { name: 'dispTopics', alias?: string  } 
+  | { name: 'dispTopics_not', alias?: string  } 
+  | { name: 'email', alias?: string  } 
+  | { name: 'email_not', alias?: string  } 
+  | { name: 'email_in', alias?: string  } 
+  | { name: 'email_not_in', alias?: string  } 
+  | { name: 'email_lt', alias?: string  } 
+  | { name: 'email_lte', alias?: string  } 
+  | { name: 'email_gt', alias?: string  } 
+  | { name: 'email_gte', alias?: string  } 
+  | { name: 'email_contains', alias?: string  } 
+  | { name: 'email_not_contains', alias?: string  } 
+  | { name: 'email_starts_with', alias?: string  } 
+  | { name: 'email_not_starts_with', alias?: string  } 
+  | { name: 'email_ends_with', alias?: string  } 
+  | { name: 'email_not_ends_with', alias?: string  } 
+  | { name: 'emailSetting', alias?: string  } 
+  | { name: 'emailSetting_not', alias?: string  } 
+  | { name: 'groupId', alias?: string  } 
+  | { name: 'groupId_not', alias?: string  } 
+  | { name: 'groupId_in', alias?: string  } 
+  | { name: 'groupId_not_in', alias?: string  } 
+  | { name: 'groupId_lt', alias?: string  } 
+  | { name: 'groupId_lte', alias?: string  } 
+  | { name: 'groupId_gt', alias?: string  } 
+  | { name: 'groupId_gte', alias?: string  } 
+  | { name: 'icq', alias?: string  } 
+  | { name: 'icq_not', alias?: string  } 
+  | { name: 'icq_in', alias?: string  } 
+  | { name: 'icq_not_in', alias?: string  } 
+  | { name: 'icq_lt', alias?: string  } 
+  | { name: 'icq_lte', alias?: string  } 
+  | { name: 'icq_gt', alias?: string  } 
+  | { name: 'icq_gte', alias?: string  } 
+  | { name: 'icq_contains', alias?: string  } 
+  | { name: 'icq_not_contains', alias?: string  } 
+  | { name: 'icq_starts_with', alias?: string  } 
+  | { name: 'icq_not_starts_with', alias?: string  } 
+  | { name: 'icq_ends_with', alias?: string  } 
+  | { name: 'icq_not_ends_with', alias?: string  } 
+  | { name: 'jabber', alias?: string  } 
+  | { name: 'jabber_not', alias?: string  } 
+  | { name: 'jabber_in', alias?: string  } 
+  | { name: 'jabber_not_in', alias?: string  } 
+  | { name: 'jabber_lt', alias?: string  } 
+  | { name: 'jabber_lte', alias?: string  } 
+  | { name: 'jabber_gt', alias?: string  } 
+  | { name: 'jabber_gte', alias?: string  } 
+  | { name: 'jabber_contains', alias?: string  } 
+  | { name: 'jabber_not_contains', alias?: string  } 
+  | { name: 'jabber_starts_with', alias?: string  } 
+  | { name: 'jabber_not_starts_with', alias?: string  } 
+  | { name: 'jabber_ends_with', alias?: string  } 
+  | { name: 'jabber_not_ends_with', alias?: string  } 
+  | { name: 'language', alias?: string  } 
+  | { name: 'language_not', alias?: string  } 
+  | { name: 'language_in', alias?: string  } 
+  | { name: 'language_not_in', alias?: string  } 
+  | { name: 'language_lt', alias?: string  } 
+  | { name: 'language_lte', alias?: string  } 
+  | { name: 'language_gt', alias?: string  } 
+  | { name: 'language_gte', alias?: string  } 
+  | { name: 'language_contains', alias?: string  } 
+  | { name: 'language_not_contains', alias?: string  } 
+  | { name: 'language_starts_with', alias?: string  } 
+  | { name: 'language_not_starts_with', alias?: string  } 
+  | { name: 'language_ends_with', alias?: string  } 
+  | { name: 'language_not_ends_with', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPost_not', alias?: string  } 
+  | { name: 'lastPost_in', alias?: string  } 
+  | { name: 'lastPost_not_in', alias?: string  } 
+  | { name: 'lastPost_lt', alias?: string  } 
+  | { name: 'lastPost_lte', alias?: string  } 
+  | { name: 'lastPost_gt', alias?: string  } 
+  | { name: 'lastPost_gte', alias?: string  } 
+  | { name: 'lastVisit', alias?: string  } 
+  | { name: 'lastVisit_not', alias?: string  } 
+  | { name: 'lastVisit_in', alias?: string  } 
+  | { name: 'lastVisit_not_in', alias?: string  } 
+  | { name: 'lastVisit_lt', alias?: string  } 
+  | { name: 'lastVisit_lte', alias?: string  } 
+  | { name: 'lastVisit_gt', alias?: string  } 
+  | { name: 'lastVisit_gte', alias?: string  } 
+  | { name: 'location', alias?: string  } 
+  | { name: 'location_not', alias?: string  } 
+  | { name: 'location_in', alias?: string  } 
+  | { name: 'location_not_in', alias?: string  } 
+  | { name: 'location_lt', alias?: string  } 
+  | { name: 'location_lte', alias?: string  } 
+  | { name: 'location_gt', alias?: string  } 
+  | { name: 'location_gte', alias?: string  } 
+  | { name: 'location_contains', alias?: string  } 
+  | { name: 'location_not_contains', alias?: string  } 
+  | { name: 'location_starts_with', alias?: string  } 
+  | { name: 'location_not_starts_with', alias?: string  } 
+  | { name: 'location_ends_with', alias?: string  } 
+  | { name: 'location_not_ends_with', alias?: string  } 
+  | { name: 'msn', alias?: string  } 
+  | { name: 'msn_not', alias?: string  } 
+  | { name: 'msn_in', alias?: string  } 
+  | { name: 'msn_not_in', alias?: string  } 
+  | { name: 'msn_lt', alias?: string  } 
+  | { name: 'msn_lte', alias?: string  } 
+  | { name: 'msn_gt', alias?: string  } 
+  | { name: 'msn_gte', alias?: string  } 
+  | { name: 'msn_contains', alias?: string  } 
+  | { name: 'msn_not_contains', alias?: string  } 
+  | { name: 'msn_starts_with', alias?: string  } 
+  | { name: 'msn_not_starts_with', alias?: string  } 
+  | { name: 'msn_ends_with', alias?: string  } 
+  | { name: 'msn_not_ends_with', alias?: string  } 
+  | { name: 'notifyWithPost', alias?: string  } 
+  | { name: 'notifyWithPost_not', alias?: string  } 
+  | { name: 'numPosts', alias?: string  } 
+  | { name: 'numPosts_not', alias?: string  } 
+  | { name: 'numPosts_in', alias?: string  } 
+  | { name: 'numPosts_not_in', alias?: string  } 
+  | { name: 'numPosts_lt', alias?: string  } 
+  | { name: 'numPosts_lte', alias?: string  } 
+  | { name: 'numPosts_gt', alias?: string  } 
+  | { name: 'numPosts_gte', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'password_not', alias?: string  } 
+  | { name: 'password_in', alias?: string  } 
+  | { name: 'password_not_in', alias?: string  } 
+  | { name: 'password_lt', alias?: string  } 
+  | { name: 'password_lte', alias?: string  } 
+  | { name: 'password_gt', alias?: string  } 
+  | { name: 'password_gte', alias?: string  } 
+  | { name: 'password_contains', alias?: string  } 
+  | { name: 'password_not_contains', alias?: string  } 
+  | { name: 'password_starts_with', alias?: string  } 
+  | { name: 'password_not_starts_with', alias?: string  } 
+  | { name: 'password_ends_with', alias?: string  } 
+  | { name: 'password_not_ends_with', alias?: string  } 
+  | { name: 'readTopics', alias?: string  } 
+  | { name: 'readTopics_not', alias?: string  } 
+  | { name: 'readTopics_in', alias?: string  } 
+  | { name: 'readTopics_not_in', alias?: string  } 
+  | { name: 'readTopics_lt', alias?: string  } 
+  | { name: 'readTopics_lte', alias?: string  } 
+  | { name: 'readTopics_gt', alias?: string  } 
+  | { name: 'readTopics_gte', alias?: string  } 
+  | { name: 'readTopics_contains', alias?: string  } 
+  | { name: 'readTopics_not_contains', alias?: string  } 
+  | { name: 'readTopics_starts_with', alias?: string  } 
+  | { name: 'readTopics_not_starts_with', alias?: string  } 
+  | { name: 'readTopics_ends_with', alias?: string  } 
+  | { name: 'readTopics_not_ends_with', alias?: string  } 
+  | { name: 'realname', alias?: string  } 
+  | { name: 'realname_not', alias?: string  } 
+  | { name: 'realname_in', alias?: string  } 
+  | { name: 'realname_not_in', alias?: string  } 
+  | { name: 'realname_lt', alias?: string  } 
+  | { name: 'realname_lte', alias?: string  } 
+  | { name: 'realname_gt', alias?: string  } 
+  | { name: 'realname_gte', alias?: string  } 
+  | { name: 'realname_contains', alias?: string  } 
+  | { name: 'realname_not_contains', alias?: string  } 
+  | { name: 'realname_starts_with', alias?: string  } 
+  | { name: 'realname_not_starts_with', alias?: string  } 
+  | { name: 'realname_ends_with', alias?: string  } 
+  | { name: 'realname_not_ends_with', alias?: string  } 
+  | { name: 'registered', alias?: string  } 
+  | { name: 'registered_not', alias?: string  } 
+  | { name: 'registered_in', alias?: string  } 
+  | { name: 'registered_not_in', alias?: string  } 
+  | { name: 'registered_lt', alias?: string  } 
+  | { name: 'registered_lte', alias?: string  } 
+  | { name: 'registered_gt', alias?: string  } 
+  | { name: 'registered_gte', alias?: string  } 
+  | { name: 'registrationIp', alias?: string  } 
+  | { name: 'registrationIp_not', alias?: string  } 
+  | { name: 'registrationIp_in', alias?: string  } 
+  | { name: 'registrationIp_not_in', alias?: string  } 
+  | { name: 'registrationIp_lt', alias?: string  } 
+  | { name: 'registrationIp_lte', alias?: string  } 
+  | { name: 'registrationIp_gt', alias?: string  } 
+  | { name: 'registrationIp_gte', alias?: string  } 
+  | { name: 'registrationIp_contains', alias?: string  } 
+  | { name: 'registrationIp_not_contains', alias?: string  } 
+  | { name: 'registrationIp_starts_with', alias?: string  } 
+  | { name: 'registrationIp_not_starts_with', alias?: string  } 
+  | { name: 'registrationIp_ends_with', alias?: string  } 
+  | { name: 'registrationIp_not_ends_with', alias?: string  } 
+  | { name: 'savePass', alias?: string  } 
+  | { name: 'savePass_not', alias?: string  } 
+  | { name: 'showAvatars', alias?: string  } 
+  | { name: 'showAvatars_not', alias?: string  } 
+  | { name: 'showImg', alias?: string  } 
+  | { name: 'showImg_not', alias?: string  } 
+  | { name: 'showImgSig', alias?: string  } 
+  | { name: 'showImgSig_not', alias?: string  } 
+  | { name: 'showSig', alias?: string  } 
+  | { name: 'showSig_not', alias?: string  } 
+  | { name: 'showSmilies', alias?: string  } 
+  | { name: 'showSmilies_not', alias?: string  } 
+  | { name: 'signature', alias?: string  } 
+  | { name: 'signature_not', alias?: string  } 
+  | { name: 'signature_in', alias?: string  } 
+  | { name: 'signature_not_in', alias?: string  } 
+  | { name: 'signature_lt', alias?: string  } 
+  | { name: 'signature_lte', alias?: string  } 
+  | { name: 'signature_gt', alias?: string  } 
+  | { name: 'signature_gte', alias?: string  } 
+  | { name: 'signature_contains', alias?: string  } 
+  | { name: 'signature_not_contains', alias?: string  } 
+  | { name: 'signature_starts_with', alias?: string  } 
+  | { name: 'signature_not_starts_with', alias?: string  } 
+  | { name: 'signature_ends_with', alias?: string  } 
+  | { name: 'signature_not_ends_with', alias?: string  } 
+  | { name: 'style', alias?: string  } 
+  | { name: 'style_not', alias?: string  } 
+  | { name: 'style_in', alias?: string  } 
+  | { name: 'style_not_in', alias?: string  } 
+  | { name: 'style_lt', alias?: string  } 
+  | { name: 'style_lte', alias?: string  } 
+  | { name: 'style_gt', alias?: string  } 
+  | { name: 'style_gte', alias?: string  } 
+  | { name: 'style_contains', alias?: string  } 
+  | { name: 'style_not_contains', alias?: string  } 
+  | { name: 'style_starts_with', alias?: string  } 
+  | { name: 'style_not_starts_with', alias?: string  } 
+  | { name: 'style_ends_with', alias?: string  } 
+  | { name: 'style_not_ends_with', alias?: string  } 
+  | { name: 'timezone', alias?: string  } 
+  | { name: 'timezone_not', alias?: string  } 
+  | { name: 'timezone_in', alias?: string  } 
+  | { name: 'timezone_not_in', alias?: string  } 
+  | { name: 'timezone_lt', alias?: string  } 
+  | { name: 'timezone_lte', alias?: string  } 
+  | { name: 'timezone_gt', alias?: string  } 
+  | { name: 'timezone_gte', alias?: string  } 
   | { name: 'title', alias?: string  } 
   | { name: 'title_not', alias?: string  } 
   | { name: 'title_in', alias?: string  } 
@@ -1542,139 +7432,721 @@ export type PostScalarWhereInputInputObject =
   | { name: 'title_not_starts_with', alias?: string  } 
   | { name: 'title_ends_with', alias?: string  } 
   | { name: 'title_not_ends_with', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'published_not', alias?: string  } 
+  | { name: 'url', alias?: string  } 
+  | { name: 'url_not', alias?: string  } 
+  | { name: 'url_in', alias?: string  } 
+  | { name: 'url_not_in', alias?: string  } 
+  | { name: 'url_lt', alias?: string  } 
+  | { name: 'url_lte', alias?: string  } 
+  | { name: 'url_gt', alias?: string  } 
+  | { name: 'url_gte', alias?: string  } 
+  | { name: 'url_contains', alias?: string  } 
+  | { name: 'url_not_contains', alias?: string  } 
+  | { name: 'url_starts_with', alias?: string  } 
+  | { name: 'url_not_starts_with', alias?: string  } 
+  | { name: 'url_ends_with', alias?: string  } 
+  | { name: 'url_not_ends_with', alias?: string  } 
+  | { name: 'useAvatar', alias?: string  } 
+  | { name: 'useAvatar_not', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  | { name: 'username_not', alias?: string  } 
+  | { name: 'username_in', alias?: string  } 
+  | { name: 'username_not_in', alias?: string  } 
+  | { name: 'username_lt', alias?: string  } 
+  | { name: 'username_lte', alias?: string  } 
+  | { name: 'username_gt', alias?: string  } 
+  | { name: 'username_gte', alias?: string  } 
+  | { name: 'username_contains', alias?: string  } 
+  | { name: 'username_not_contains', alias?: string  } 
+  | { name: 'username_starts_with', alias?: string  } 
+  | { name: 'username_not_starts_with', alias?: string  } 
+  | { name: 'username_ends_with', alias?: string  } 
+  | { name: 'username_not_ends_with', alias?: string  } 
+  | { name: 'yahoo', alias?: string  } 
+  | { name: 'yahoo_not', alias?: string  } 
+  | { name: 'yahoo_in', alias?: string  } 
+  | { name: 'yahoo_not_in', alias?: string  } 
+  | { name: 'yahoo_lt', alias?: string  } 
+  | { name: 'yahoo_lte', alias?: string  } 
+  | { name: 'yahoo_gt', alias?: string  } 
+  | { name: 'yahoo_gte', alias?: string  } 
+  | { name: 'yahoo_contains', alias?: string  } 
+  | { name: 'yahoo_not_contains', alias?: string  } 
+  | { name: 'yahoo_starts_with', alias?: string  } 
+  | { name: 'yahoo_not_starts_with', alias?: string  } 
+  | { name: 'yahoo_ends_with', alias?: string  } 
+  | { name: 'yahoo_not_ends_with', alias?: string  } 
   | { name: 'AND', alias?: string  } 
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostUpdateManyWithWhereNestedInput {
-  where?: PostScalarWhereInput
-  data?: PostUpdateManyDataInput
+export interface PunbbBanCreateInput {
+  id?: number | null
+  email?: string | null
+  expire?: number | null
+  ip?: string | null
+  message?: string | null
+  username?: string | null
 }
-export type PostUpdateManyWithWhereNestedInputInputObject =
-  | Extract<keyof PostUpdateManyWithWhereNestedInput, string>
-  | { name: 'where', alias?: string  } 
+export type PunbbBanCreateInputInputObject =
+  | Extract<keyof PunbbBanCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'email', alias?: string  } 
+  | { name: 'expire', alias?: string  } 
+  | { name: 'ip', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  
+export interface PunbbBanUpdateInput {
+  email?: string | null
+  expire?: number | null
+  ip?: string | null
+  message?: string | null
+  username?: string | null
+}
+export type PunbbBanUpdateInputInputObject =
+  | Extract<keyof PunbbBanUpdateInput, string>
+  | { name: 'email', alias?: string  } 
+  | { name: 'expire', alias?: string  } 
+  | { name: 'ip', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  
+export interface PunbbBanUpdateManyMutationInput {
+  email?: string | null
+  expire?: number | null
+  ip?: string | null
+  message?: string | null
+  username?: string | null
+}
+export type PunbbBanUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbBanUpdateManyMutationInput, string>
+  | { name: 'email', alias?: string  } 
+  | { name: 'expire', alias?: string  } 
+  | { name: 'ip', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  
+export interface PunbbCategoryCreateInput {
+  id?: number | null
+  catName?: string | null
+  dispPosition?: number | null
+}
+export type PunbbCategoryCreateInputInputObject =
+  | Extract<keyof PunbbCategoryCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'catName', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  
+export interface PunbbCategoryUpdateInput {
+  catName?: string | null
+  dispPosition?: number | null
+}
+export type PunbbCategoryUpdateInputInputObject =
+  | Extract<keyof PunbbCategoryUpdateInput, string>
+  | { name: 'catName', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  
+export interface PunbbCategoryUpdateManyMutationInput {
+  catName?: string | null
+  dispPosition?: number | null
+}
+export type PunbbCategoryUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbCategoryUpdateManyMutationInput, string>
+  | { name: 'catName', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  
+export interface PunbbForumCreateInput {
+  id?: number | null
+  catId?: number | null
+  dispPosition?: number | null
+  forumDesc?: string | null
+  forumName?: string | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  moderators?: string | null
+  redirectUrl?: string | null
+  sortBy?: boolean | null
+}
+export type PunbbForumCreateInputInputObject =
+  | Extract<keyof PunbbForumCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'catId', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  | { name: 'forumDesc', alias?: string  } 
+  | { name: 'forumName', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'moderators', alias?: string  } 
+  | { name: 'redirectUrl', alias?: string  } 
+  | { name: 'sortBy', alias?: string  } 
+  
+export interface PunbbForumUpdateInput {
+  catId?: number | null
+  dispPosition?: number | null
+  forumDesc?: string | null
+  forumName?: string | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  moderators?: string | null
+  redirectUrl?: string | null
+  sortBy?: boolean | null
+}
+export type PunbbForumUpdateInputInputObject =
+  | Extract<keyof PunbbForumUpdateInput, string>
+  | { name: 'catId', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  | { name: 'forumDesc', alias?: string  } 
+  | { name: 'forumName', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'moderators', alias?: string  } 
+  | { name: 'redirectUrl', alias?: string  } 
+  | { name: 'sortBy', alias?: string  } 
+  
+export interface PunbbForumUpdateManyMutationInput {
+  catId?: number | null
+  dispPosition?: number | null
+  forumDesc?: string | null
+  forumName?: string | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  moderators?: string | null
+  redirectUrl?: string | null
+  sortBy?: boolean | null
+}
+export type PunbbForumUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbForumUpdateManyMutationInput, string>
+  | { name: 'catId', alias?: string  } 
+  | { name: 'dispPosition', alias?: string  } 
+  | { name: 'forumDesc', alias?: string  } 
+  | { name: 'forumName', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'moderators', alias?: string  } 
+  | { name: 'redirectUrl', alias?: string  } 
+  | { name: 'sortBy', alias?: string  } 
+  
+export interface PunbbOnlineCreateInput {
+  ident?: string | null
+  idle?: boolean | null
+  logged?: number | null
+  userId?: number | null
+}
+export type PunbbOnlineCreateInputInputObject =
+  | Extract<keyof PunbbOnlineCreateInput, string>
+  | { name: 'ident', alias?: string  } 
+  | { name: 'idle', alias?: string  } 
+  | { name: 'logged', alias?: string  } 
+  | { name: 'userId', alias?: string  } 
+  
+export interface PunbbOnlineUpdateManyMutationInput {
+  ident?: string | null
+  idle?: boolean | null
+  logged?: number | null
+  userId?: number | null
+}
+export type PunbbOnlineUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbOnlineUpdateManyMutationInput, string>
+  | { name: 'ident', alias?: string  } 
+  | { name: 'idle', alias?: string  } 
+  | { name: 'logged', alias?: string  } 
+  | { name: 'userId', alias?: string  } 
+  
+export interface PunbbPostCreateInput {
+  id?: number | null
+  edited?: number | null
+  editedBy?: string | null
+  hideSmilies?: boolean | null
+  message?: string
+  posted?: number | null
+  poster?: string | null
+  posterEmail?: string | null
+  posterId?: number | null
+  posterIp?: string | null
+  topicId?: number | null
+}
+export type PunbbPostCreateInputInputObject =
+  | Extract<keyof PunbbPostCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'edited', alias?: string  } 
+  | { name: 'editedBy', alias?: string  } 
+  | { name: 'hideSmilies', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'posterEmail', alias?: string  } 
+  | { name: 'posterId', alias?: string  } 
+  | { name: 'posterIp', alias?: string  } 
+  | { name: 'topicId', alias?: string  } 
+  
+export interface PunbbPostUpdateInput {
+  edited?: number | null
+  editedBy?: string | null
+  hideSmilies?: boolean | null
+  message?: string | null
+  posted?: number | null
+  poster?: string | null
+  posterEmail?: string | null
+  posterId?: number | null
+  posterIp?: string | null
+  topicId?: number | null
+}
+export type PunbbPostUpdateInputInputObject =
+  | Extract<keyof PunbbPostUpdateInput, string>
+  | { name: 'edited', alias?: string  } 
+  | { name: 'editedBy', alias?: string  } 
+  | { name: 'hideSmilies', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'posterEmail', alias?: string  } 
+  | { name: 'posterId', alias?: string  } 
+  | { name: 'posterIp', alias?: string  } 
+  | { name: 'topicId', alias?: string  } 
+  
+export interface PunbbPostUpdateManyMutationInput {
+  edited?: number | null
+  editedBy?: string | null
+  hideSmilies?: boolean | null
+  message?: string | null
+  posted?: number | null
+  poster?: string | null
+  posterEmail?: string | null
+  posterId?: number | null
+  posterIp?: string | null
+  topicId?: number | null
+}
+export type PunbbPostUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbPostUpdateManyMutationInput, string>
+  | { name: 'edited', alias?: string  } 
+  | { name: 'editedBy', alias?: string  } 
+  | { name: 'hideSmilies', alias?: string  } 
+  | { name: 'message', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'posterEmail', alias?: string  } 
+  | { name: 'posterId', alias?: string  } 
+  | { name: 'posterIp', alias?: string  } 
+  | { name: 'topicId', alias?: string  } 
+  
+export interface PunbbTopicCreateInput {
+  id?: number | null
+  closed?: boolean | null
+  forumId?: number | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  movedTo?: number | null
+  no?: string
+  posted?: number | null
+  poster?: string | null
+  question?: string
+  sticky?: boolean | null
+  subject?: string | null
+  yes?: string
+}
+export type PunbbTopicCreateInputInputObject =
+  | Extract<keyof PunbbTopicCreateInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'closed', alias?: string  } 
+  | { name: 'forumId', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'movedTo', alias?: string  } 
+  | { name: 'no', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'question', alias?: string  } 
+  | { name: 'sticky', alias?: string  } 
+  | { name: 'subject', alias?: string  } 
+  | { name: 'yes', alias?: string  } 
+  
+export interface PunbbTopicUpdateInput {
+  closed?: boolean | null
+  forumId?: number | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  movedTo?: number | null
+  no?: string | null
+  posted?: number | null
+  poster?: string | null
+  question?: string | null
+  sticky?: boolean | null
+  subject?: string | null
+  yes?: string | null
+}
+export type PunbbTopicUpdateInputInputObject =
+  | Extract<keyof PunbbTopicUpdateInput, string>
+  | { name: 'closed', alias?: string  } 
+  | { name: 'forumId', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'movedTo', alias?: string  } 
+  | { name: 'no', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'question', alias?: string  } 
+  | { name: 'sticky', alias?: string  } 
+  | { name: 'subject', alias?: string  } 
+  | { name: 'yes', alias?: string  } 
+  
+export interface PunbbTopicUpdateManyMutationInput {
+  closed?: boolean | null
+  forumId?: number | null
+  lastPost?: number | null
+  lastPoster?: string | null
+  lastPostId?: number | null
+  movedTo?: number | null
+  no?: string | null
+  posted?: number | null
+  poster?: string | null
+  question?: string | null
+  sticky?: boolean | null
+  subject?: string | null
+  yes?: string | null
+}
+export type PunbbTopicUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbTopicUpdateManyMutationInput, string>
+  | { name: 'closed', alias?: string  } 
+  | { name: 'forumId', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastPoster', alias?: string  } 
+  | { name: 'lastPostId', alias?: string  } 
+  | { name: 'movedTo', alias?: string  } 
+  | { name: 'no', alias?: string  } 
+  | { name: 'posted', alias?: string  } 
+  | { name: 'poster', alias?: string  } 
+  | { name: 'question', alias?: string  } 
+  | { name: 'sticky', alias?: string  } 
+  | { name: 'subject', alias?: string  } 
+  | { name: 'yes', alias?: string  } 
+  
+export interface PunbbUploadedCreateInput {
+  id?: number | null
+  data?: number
+  descr?: string
+  downs?: number
+  file?: string
+  size?: number
+  uid?: number
+  user?: string
+  userStat?: string
+}
+export type PunbbUploadedCreateInputInputObject =
+  | Extract<keyof PunbbUploadedCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'data', alias?: string  } 
+  | { name: 'descr', alias?: string  } 
+  | { name: 'downs', alias?: string  } 
+  | { name: 'file', alias?: string  } 
+  | { name: 'size', alias?: string  } 
+  | { name: 'uid', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'userStat', alias?: string  } 
   
-export interface PostUpdateManyDataInput {
-  title?: string | null
-  published?: boolean | null
+export interface PunbbUploadedUpdateInput {
+  data?: number | null
+  descr?: string | null
+  downs?: number | null
+  file?: string | null
+  size?: number | null
+  uid?: number | null
+  user?: string | null
+  userStat?: string | null
 }
-export type PostUpdateManyDataInputInputObject =
-  | Extract<keyof PostUpdateManyDataInput, string>
-  | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
+export type PunbbUploadedUpdateInputInputObject =
+  | Extract<keyof PunbbUploadedUpdateInput, string>
+  | { name: 'data', alias?: string  } 
+  | { name: 'descr', alias?: string  } 
+  | { name: 'downs', alias?: string  } 
+  | { name: 'file', alias?: string  } 
+  | { name: 'size', alias?: string  } 
+  | { name: 'uid', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'userStat', alias?: string  } 
   
-export interface UserUpdateManyMutationInput {
+export interface PunbbUploadedUpdateManyMutationInput {
+  data?: number | null
+  descr?: string | null
+  downs?: number | null
+  file?: string | null
+  size?: number | null
+  uid?: number | null
+  user?: string | null
+  userStat?: string | null
+}
+export type PunbbUploadedUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbUploadedUpdateManyMutationInput, string>
+  | { name: 'data', alias?: string  } 
+  | { name: 'descr', alias?: string  } 
+  | { name: 'downs', alias?: string  } 
+  | { name: 'file', alias?: string  } 
+  | { name: 'size', alias?: string  } 
+  | { name: 'uid', alias?: string  } 
+  | { name: 'user', alias?: string  } 
+  | { name: 'userStat', alias?: string  } 
+  
+export interface PunbbUserCreateInput {
+  id?: number | null
+  activateKey?: string | null
+  activateString?: string | null
+  adminNote?: string | null
+  aim?: string | null
+  dispPosts?: boolean | null
+  dispTopics?: boolean | null
   email?: string | null
-  name?: string | null
+  emailSetting?: boolean | null
+  groupId?: number | null
+  icq?: string | null
+  jabber?: string | null
+  language?: string | null
+  lastPost?: number | null
+  lastVisit?: number | null
+  location?: string | null
+  msn?: string | null
+  notifyWithPost?: boolean | null
+  numPosts?: number | null
+  password?: string | null
+  readTopics?: string | null
+  realname?: string | null
+  registered?: number | null
+  registrationIp?: string | null
+  savePass?: boolean | null
+  showAvatars?: boolean | null
+  showImg?: boolean | null
+  showImgSig?: boolean | null
+  showSig?: boolean | null
+  showSmilies?: boolean | null
+  signature?: string | null
+  style?: string | null
+  timezone?: number | null
+  title?: string | null
+  url?: string | null
+  useAvatar?: boolean | null
+  username?: string | null
+  yahoo?: string | null
 }
-export type UserUpdateManyMutationInputInputObject =
-  | Extract<keyof UserUpdateManyMutationInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  
-export interface PostCreateInput {
-  id?: string | null
-  title?: string
-  published?: boolean | null
-  author?: UserCreateOneWithoutPostsInput | null
-}
-export type PostCreateInputInputObject =
-  | Extract<keyof PostCreateInput, string>
+export type PunbbUserCreateInputInputObject =
+  | Extract<keyof PunbbUserCreateInput, string>
   | { name: 'id', alias?: string  } 
-  | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'author', alias?: string  } 
-  
-export interface UserCreateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput | null
-  connect?: UserWhereUniqueInput | null
-}
-export type UserCreateOneWithoutPostsInputInputObject =
-  | Extract<keyof UserCreateOneWithoutPostsInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface UserCreateWithoutPostsInput {
-  id?: string | null
-  email?: string | null
-  name?: string
-}
-export type UserCreateWithoutPostsInputInputObject =
-  | Extract<keyof UserCreateWithoutPostsInput, string>
-  | { name: 'id', alias?: string  } 
+  | { name: 'activateKey', alias?: string  } 
+  | { name: 'activateString', alias?: string  } 
+  | { name: 'adminNote', alias?: string  } 
+  | { name: 'aim', alias?: string  } 
+  | { name: 'dispPosts', alias?: string  } 
+  | { name: 'dispTopics', alias?: string  } 
   | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  
-export interface PostUpdateInput {
-  title?: string | null
-  published?: boolean | null
-  author?: UserUpdateOneWithoutPostsInput | null
-}
-export type PostUpdateInputInputObject =
-  | Extract<keyof PostUpdateInput, string>
+  | { name: 'emailSetting', alias?: string  } 
+  | { name: 'groupId', alias?: string  } 
+  | { name: 'icq', alias?: string  } 
+  | { name: 'jabber', alias?: string  } 
+  | { name: 'language', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastVisit', alias?: string  } 
+  | { name: 'location', alias?: string  } 
+  | { name: 'msn', alias?: string  } 
+  | { name: 'notifyWithPost', alias?: string  } 
+  | { name: 'numPosts', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'readTopics', alias?: string  } 
+  | { name: 'realname', alias?: string  } 
+  | { name: 'registered', alias?: string  } 
+  | { name: 'registrationIp', alias?: string  } 
+  | { name: 'savePass', alias?: string  } 
+  | { name: 'showAvatars', alias?: string  } 
+  | { name: 'showImg', alias?: string  } 
+  | { name: 'showImgSig', alias?: string  } 
+  | { name: 'showSig', alias?: string  } 
+  | { name: 'showSmilies', alias?: string  } 
+  | { name: 'signature', alias?: string  } 
+  | { name: 'style', alias?: string  } 
+  | { name: 'timezone', alias?: string  } 
   | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
-  | { name: 'author', alias?: string  } 
+  | { name: 'url', alias?: string  } 
+  | { name: 'useAvatar', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  | { name: 'yahoo', alias?: string  } 
   
-export interface UserUpdateOneWithoutPostsInput {
-  create?: UserCreateWithoutPostsInput | null
-  update?: UserUpdateWithoutPostsDataInput | null
-  upsert?: UserUpsertWithoutPostsInput | null
-  delete?: boolean | null
-  disconnect?: boolean | null
-  connect?: UserWhereUniqueInput | null
-}
-export type UserUpdateOneWithoutPostsInputInputObject =
-  | Extract<keyof UserUpdateOneWithoutPostsInput, string>
-  | { name: 'create', alias?: string  } 
-  | { name: 'update', alias?: string  } 
-  | { name: 'upsert', alias?: string  } 
-  | { name: 'delete', alias?: string  } 
-  | { name: 'disconnect', alias?: string  } 
-  | { name: 'connect', alias?: string  } 
-  
-export interface UserUpdateWithoutPostsDataInput {
+export interface PunbbUserUpdateInput {
+  activateKey?: string | null
+  activateString?: string | null
+  adminNote?: string | null
+  aim?: string | null
+  dispPosts?: boolean | null
+  dispTopics?: boolean | null
   email?: string | null
-  name?: string | null
-}
-export type UserUpdateWithoutPostsDataInputInputObject =
-  | Extract<keyof UserUpdateWithoutPostsDataInput, string>
-  | { name: 'email', alias?: string  } 
-  | { name: 'name', alias?: string  } 
-  
-export interface UserUpsertWithoutPostsInput {
-  update?: UserUpdateWithoutPostsDataInput
-  create?: UserCreateWithoutPostsInput
-}
-export type UserUpsertWithoutPostsInputInputObject =
-  | Extract<keyof UserUpsertWithoutPostsInput, string>
-  | { name: 'update', alias?: string  } 
-  | { name: 'create', alias?: string  } 
-  
-export interface PostUpdateManyMutationInput {
+  emailSetting?: boolean | null
+  groupId?: number | null
+  icq?: string | null
+  jabber?: string | null
+  language?: string | null
+  lastPost?: number | null
+  lastVisit?: number | null
+  location?: string | null
+  msn?: string | null
+  notifyWithPost?: boolean | null
+  numPosts?: number | null
+  password?: string | null
+  readTopics?: string | null
+  realname?: string | null
+  registered?: number | null
+  registrationIp?: string | null
+  savePass?: boolean | null
+  showAvatars?: boolean | null
+  showImg?: boolean | null
+  showImgSig?: boolean | null
+  showSig?: boolean | null
+  showSmilies?: boolean | null
+  signature?: string | null
+  style?: string | null
+  timezone?: number | null
   title?: string | null
-  published?: boolean | null
+  url?: string | null
+  useAvatar?: boolean | null
+  username?: string | null
+  yahoo?: string | null
 }
-export type PostUpdateManyMutationInputInputObject =
-  | Extract<keyof PostUpdateManyMutationInput, string>
+export type PunbbUserUpdateInputInputObject =
+  | Extract<keyof PunbbUserUpdateInput, string>
+  | { name: 'activateKey', alias?: string  } 
+  | { name: 'activateString', alias?: string  } 
+  | { name: 'adminNote', alias?: string  } 
+  | { name: 'aim', alias?: string  } 
+  | { name: 'dispPosts', alias?: string  } 
+  | { name: 'dispTopics', alias?: string  } 
+  | { name: 'email', alias?: string  } 
+  | { name: 'emailSetting', alias?: string  } 
+  | { name: 'groupId', alias?: string  } 
+  | { name: 'icq', alias?: string  } 
+  | { name: 'jabber', alias?: string  } 
+  | { name: 'language', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastVisit', alias?: string  } 
+  | { name: 'location', alias?: string  } 
+  | { name: 'msn', alias?: string  } 
+  | { name: 'notifyWithPost', alias?: string  } 
+  | { name: 'numPosts', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'readTopics', alias?: string  } 
+  | { name: 'realname', alias?: string  } 
+  | { name: 'registered', alias?: string  } 
+  | { name: 'registrationIp', alias?: string  } 
+  | { name: 'savePass', alias?: string  } 
+  | { name: 'showAvatars', alias?: string  } 
+  | { name: 'showImg', alias?: string  } 
+  | { name: 'showImgSig', alias?: string  } 
+  | { name: 'showSig', alias?: string  } 
+  | { name: 'showSmilies', alias?: string  } 
+  | { name: 'signature', alias?: string  } 
+  | { name: 'style', alias?: string  } 
+  | { name: 'timezone', alias?: string  } 
   | { name: 'title', alias?: string  } 
-  | { name: 'published', alias?: string  } 
+  | { name: 'url', alias?: string  } 
+  | { name: 'useAvatar', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  | { name: 'yahoo', alias?: string  } 
   
-export interface UserSubscriptionWhereInput {
+export interface PunbbUserUpdateManyMutationInput {
+  activateKey?: string | null
+  activateString?: string | null
+  adminNote?: string | null
+  aim?: string | null
+  dispPosts?: boolean | null
+  dispTopics?: boolean | null
+  email?: string | null
+  emailSetting?: boolean | null
+  groupId?: number | null
+  icq?: string | null
+  jabber?: string | null
+  language?: string | null
+  lastPost?: number | null
+  lastVisit?: number | null
+  location?: string | null
+  msn?: string | null
+  notifyWithPost?: boolean | null
+  numPosts?: number | null
+  password?: string | null
+  readTopics?: string | null
+  realname?: string | null
+  registered?: number | null
+  registrationIp?: string | null
+  savePass?: boolean | null
+  showAvatars?: boolean | null
+  showImg?: boolean | null
+  showImgSig?: boolean | null
+  showSig?: boolean | null
+  showSmilies?: boolean | null
+  signature?: string | null
+  style?: string | null
+  timezone?: number | null
+  title?: string | null
+  url?: string | null
+  useAvatar?: boolean | null
+  username?: string | null
+  yahoo?: string | null
+}
+export type PunbbUserUpdateManyMutationInputInputObject =
+  | Extract<keyof PunbbUserUpdateManyMutationInput, string>
+  | { name: 'activateKey', alias?: string  } 
+  | { name: 'activateString', alias?: string  } 
+  | { name: 'adminNote', alias?: string  } 
+  | { name: 'aim', alias?: string  } 
+  | { name: 'dispPosts', alias?: string  } 
+  | { name: 'dispTopics', alias?: string  } 
+  | { name: 'email', alias?: string  } 
+  | { name: 'emailSetting', alias?: string  } 
+  | { name: 'groupId', alias?: string  } 
+  | { name: 'icq', alias?: string  } 
+  | { name: 'jabber', alias?: string  } 
+  | { name: 'language', alias?: string  } 
+  | { name: 'lastPost', alias?: string  } 
+  | { name: 'lastVisit', alias?: string  } 
+  | { name: 'location', alias?: string  } 
+  | { name: 'msn', alias?: string  } 
+  | { name: 'notifyWithPost', alias?: string  } 
+  | { name: 'numPosts', alias?: string  } 
+  | { name: 'password', alias?: string  } 
+  | { name: 'readTopics', alias?: string  } 
+  | { name: 'realname', alias?: string  } 
+  | { name: 'registered', alias?: string  } 
+  | { name: 'registrationIp', alias?: string  } 
+  | { name: 'savePass', alias?: string  } 
+  | { name: 'showAvatars', alias?: string  } 
+  | { name: 'showImg', alias?: string  } 
+  | { name: 'showImgSig', alias?: string  } 
+  | { name: 'showSig', alias?: string  } 
+  | { name: 'showSmilies', alias?: string  } 
+  | { name: 'signature', alias?: string  } 
+  | { name: 'style', alias?: string  } 
+  | { name: 'timezone', alias?: string  } 
+  | { name: 'title', alias?: string  } 
+  | { name: 'url', alias?: string  } 
+  | { name: 'useAvatar', alias?: string  } 
+  | { name: 'username', alias?: string  } 
+  | { name: 'yahoo', alias?: string  } 
+  
+export interface PunbbBanSubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: UserWhereInput | null
-  AND?: UserSubscriptionWhereInput[]
-  OR?: UserSubscriptionWhereInput[]
-  NOT?: UserSubscriptionWhereInput[]
+  node?: PunbbBanWhereInput | null
+  AND?: PunbbBanSubscriptionWhereInput[]
+  OR?: PunbbBanSubscriptionWhereInput[]
+  NOT?: PunbbBanSubscriptionWhereInput[]
 }
-export type UserSubscriptionWhereInputInputObject =
-  | Extract<keyof UserSubscriptionWhereInput, string>
+export type PunbbBanSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbBanSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -1684,18 +8156,144 @@ export type UserSubscriptionWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
-export interface PostSubscriptionWhereInput {
+export interface PunbbCategorySubscriptionWhereInput {
   mutation_in?: prisma.MutationType[]
   updatedFields_contains?: string | null
   updatedFields_contains_every?: string[]
   updatedFields_contains_some?: string[]
-  node?: PostWhereInput | null
-  AND?: PostSubscriptionWhereInput[]
-  OR?: PostSubscriptionWhereInput[]
-  NOT?: PostSubscriptionWhereInput[]
+  node?: PunbbCategoryWhereInput | null
+  AND?: PunbbCategorySubscriptionWhereInput[]
+  OR?: PunbbCategorySubscriptionWhereInput[]
+  NOT?: PunbbCategorySubscriptionWhereInput[]
 }
-export type PostSubscriptionWhereInputInputObject =
-  | Extract<keyof PostSubscriptionWhereInput, string>
+export type PunbbCategorySubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbCategorySubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbForumSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbForumWhereInput | null
+  AND?: PunbbForumSubscriptionWhereInput[]
+  OR?: PunbbForumSubscriptionWhereInput[]
+  NOT?: PunbbForumSubscriptionWhereInput[]
+}
+export type PunbbForumSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbForumSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbOnlineSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbOnlineWhereInput | null
+  AND?: PunbbOnlineSubscriptionWhereInput[]
+  OR?: PunbbOnlineSubscriptionWhereInput[]
+  NOT?: PunbbOnlineSubscriptionWhereInput[]
+}
+export type PunbbOnlineSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbOnlineSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbPostSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbPostWhereInput | null
+  AND?: PunbbPostSubscriptionWhereInput[]
+  OR?: PunbbPostSubscriptionWhereInput[]
+  NOT?: PunbbPostSubscriptionWhereInput[]
+}
+export type PunbbPostSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbPostSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbTopicSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbTopicWhereInput | null
+  AND?: PunbbTopicSubscriptionWhereInput[]
+  OR?: PunbbTopicSubscriptionWhereInput[]
+  NOT?: PunbbTopicSubscriptionWhereInput[]
+}
+export type PunbbTopicSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbTopicSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbUploadedSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbUploadedWhereInput | null
+  AND?: PunbbUploadedSubscriptionWhereInput[]
+  OR?: PunbbUploadedSubscriptionWhereInput[]
+  NOT?: PunbbUploadedSubscriptionWhereInput[]
+}
+export type PunbbUploadedSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbUploadedSubscriptionWhereInput, string>
+  | { name: 'mutation_in', alias?: string  } 
+  | { name: 'updatedFields_contains', alias?: string  } 
+  | { name: 'updatedFields_contains_every', alias?: string  } 
+  | { name: 'updatedFields_contains_some', alias?: string  } 
+  | { name: 'node', alias?: string  } 
+  | { name: 'AND', alias?: string  } 
+  | { name: 'OR', alias?: string  } 
+  | { name: 'NOT', alias?: string  } 
+  
+export interface PunbbUserSubscriptionWhereInput {
+  mutation_in?: prisma.MutationType[]
+  updatedFields_contains?: string | null
+  updatedFields_contains_every?: string[]
+  updatedFields_contains_some?: string[]
+  node?: PunbbUserWhereInput | null
+  AND?: PunbbUserSubscriptionWhereInput[]
+  OR?: PunbbUserSubscriptionWhereInput[]
+  NOT?: PunbbUserSubscriptionWhereInput[]
+}
+export type PunbbUserSubscriptionWhereInputInputObject =
+  | Extract<keyof PunbbUserSubscriptionWhereInput, string>
   | { name: 'mutation_in', alias?: string  } 
   | { name: 'updatedFields_contains', alias?: string  } 
   | { name: 'updatedFields_contains_every', alias?: string  } 
@@ -1706,25 +8304,243 @@ export type PostSubscriptionWhereInputInputObject =
   | { name: 'NOT', alias?: string  } 
   
 
-export type PostOrderByInputValues =
+export type PunbbBanOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
-  | 'title_ASC'
-  | 'title_DESC'
-  | 'published_ASC'
-  | 'published_DESC'
+  | 'email_ASC'
+  | 'email_DESC'
+  | 'expire_ASC'
+  | 'expire_DESC'
+  | 'ip_ASC'
+  | 'ip_DESC'
+  | 'message_ASC'
+  | 'message_DESC'
+  | 'username_ASC'
+  | 'username_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
   | 'updatedAt_DESC'
   
-export type UserOrderByInputValues =
+export type PunbbCategoryOrderByInputValues =
   | 'id_ASC'
   | 'id_DESC'
+  | 'catName_ASC'
+  | 'catName_DESC'
+  | 'dispPosition_ASC'
+  | 'dispPosition_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbForumOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'catId_ASC'
+  | 'catId_DESC'
+  | 'dispPosition_ASC'
+  | 'dispPosition_DESC'
+  | 'forumDesc_ASC'
+  | 'forumDesc_DESC'
+  | 'forumName_ASC'
+  | 'forumName_DESC'
+  | 'lastPost_ASC'
+  | 'lastPost_DESC'
+  | 'lastPoster_ASC'
+  | 'lastPoster_DESC'
+  | 'lastPostId_ASC'
+  | 'lastPostId_DESC'
+  | 'moderators_ASC'
+  | 'moderators_DESC'
+  | 'redirectUrl_ASC'
+  | 'redirectUrl_DESC'
+  | 'sortBy_ASC'
+  | 'sortBy_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbOnlineOrderByInputValues =
+  | 'ident_ASC'
+  | 'ident_DESC'
+  | 'idle_ASC'
+  | 'idle_DESC'
+  | 'logged_ASC'
+  | 'logged_DESC'
+  | 'userId_ASC'
+  | 'userId_DESC'
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbPostOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'edited_ASC'
+  | 'edited_DESC'
+  | 'editedBy_ASC'
+  | 'editedBy_DESC'
+  | 'hideSmilies_ASC'
+  | 'hideSmilies_DESC'
+  | 'message_ASC'
+  | 'message_DESC'
+  | 'posted_ASC'
+  | 'posted_DESC'
+  | 'poster_ASC'
+  | 'poster_DESC'
+  | 'posterEmail_ASC'
+  | 'posterEmail_DESC'
+  | 'posterId_ASC'
+  | 'posterId_DESC'
+  | 'posterIp_ASC'
+  | 'posterIp_DESC'
+  | 'topicId_ASC'
+  | 'topicId_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbTopicOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'closed_ASC'
+  | 'closed_DESC'
+  | 'forumId_ASC'
+  | 'forumId_DESC'
+  | 'lastPost_ASC'
+  | 'lastPost_DESC'
+  | 'lastPoster_ASC'
+  | 'lastPoster_DESC'
+  | 'lastPostId_ASC'
+  | 'lastPostId_DESC'
+  | 'movedTo_ASC'
+  | 'movedTo_DESC'
+  | 'no_ASC'
+  | 'no_DESC'
+  | 'posted_ASC'
+  | 'posted_DESC'
+  | 'poster_ASC'
+  | 'poster_DESC'
+  | 'question_ASC'
+  | 'question_DESC'
+  | 'sticky_ASC'
+  | 'sticky_DESC'
+  | 'subject_ASC'
+  | 'subject_DESC'
+  | 'yes_ASC'
+  | 'yes_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbUploadedOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'data_ASC'
+  | 'data_DESC'
+  | 'descr_ASC'
+  | 'descr_DESC'
+  | 'downs_ASC'
+  | 'downs_DESC'
+  | 'file_ASC'
+  | 'file_DESC'
+  | 'size_ASC'
+  | 'size_DESC'
+  | 'uid_ASC'
+  | 'uid_DESC'
+  | 'user_ASC'
+  | 'user_DESC'
+  | 'userStat_ASC'
+  | 'userStat_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
+  
+export type PunbbUserOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'activateKey_ASC'
+  | 'activateKey_DESC'
+  | 'activateString_ASC'
+  | 'activateString_DESC'
+  | 'adminNote_ASC'
+  | 'adminNote_DESC'
+  | 'aim_ASC'
+  | 'aim_DESC'
+  | 'dispPosts_ASC'
+  | 'dispPosts_DESC'
+  | 'dispTopics_ASC'
+  | 'dispTopics_DESC'
   | 'email_ASC'
   | 'email_DESC'
-  | 'name_ASC'
-  | 'name_DESC'
+  | 'emailSetting_ASC'
+  | 'emailSetting_DESC'
+  | 'groupId_ASC'
+  | 'groupId_DESC'
+  | 'icq_ASC'
+  | 'icq_DESC'
+  | 'jabber_ASC'
+  | 'jabber_DESC'
+  | 'language_ASC'
+  | 'language_DESC'
+  | 'lastPost_ASC'
+  | 'lastPost_DESC'
+  | 'lastVisit_ASC'
+  | 'lastVisit_DESC'
+  | 'location_ASC'
+  | 'location_DESC'
+  | 'msn_ASC'
+  | 'msn_DESC'
+  | 'notifyWithPost_ASC'
+  | 'notifyWithPost_DESC'
+  | 'numPosts_ASC'
+  | 'numPosts_DESC'
+  | 'password_ASC'
+  | 'password_DESC'
+  | 'readTopics_ASC'
+  | 'readTopics_DESC'
+  | 'realname_ASC'
+  | 'realname_DESC'
+  | 'registered_ASC'
+  | 'registered_DESC'
+  | 'registrationIp_ASC'
+  | 'registrationIp_DESC'
+  | 'savePass_ASC'
+  | 'savePass_DESC'
+  | 'showAvatars_ASC'
+  | 'showAvatars_DESC'
+  | 'showImg_ASC'
+  | 'showImg_DESC'
+  | 'showImgSig_ASC'
+  | 'showImgSig_DESC'
+  | 'showSig_ASC'
+  | 'showSig_DESC'
+  | 'showSmilies_ASC'
+  | 'showSmilies_DESC'
+  | 'signature_ASC'
+  | 'signature_DESC'
+  | 'style_ASC'
+  | 'style_DESC'
+  | 'timezone_ASC'
+  | 'timezone_DESC'
+  | 'title_ASC'
+  | 'title_DESC'
+  | 'url_ASC'
+  | 'url_DESC'
+  | 'useAvatar_ASC'
+  | 'useAvatar_DESC'
+  | 'username_ASC'
+  | 'username_DESC'
+  | 'yahoo_ASC'
+  | 'yahoo_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
