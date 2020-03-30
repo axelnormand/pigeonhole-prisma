@@ -15,7 +15,10 @@
     "prisma:generate": "prisma generate",
     "prisma:introspect": "prisma introspect",
     "prisma:deploy": "prisma deploy",
-    "prisma:nexus": "nexus-prisma-generate --client ./prisma-client --output ./nexus-client"
+    "prisma:nexus": "nexus-prisma-generate --client ./prisma-client --output ./nexus-client",
+    "docker:start": "docker-compose up -d",
+    "docker:restart": "docker-compose restart",
+    "docker:logs": "docker-compose logs"
   },
   "dependencies": {
     "prettier": "^2.0.2",
