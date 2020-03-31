@@ -1,13 +1,16 @@
-import { prisma } from "@axelnormand/pigeonhole-prisma-client";
-import { GraphQLServer } from "graphql-yoga";
-import { schema } from "./schema";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 async function main() {
-  const server = new GraphQLServer({
-    schema,
-    context: { prisma }
-  });
-  server.start(() => console.log("Server is running on http://localhost:4000"));
+  const allUsers = await prisma.punbb_users.findMany();
+  console.log(allUsers);
 }
 
-main().catch(e => console.error(e));
+main()
+  .catch((e) => {
+    throw e;
+  })
+  .finally(async () => {
+    await prisma.disconnect();
+  });
