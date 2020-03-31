@@ -6,10 +6,10 @@
 
 ## Running
 
-1. Start your Prisma server: docker-compose up -d
-2. Check running: docker-compose ps
-3. Deploy your Prisma service if you change data model (also re-generates ts): prisma deploy
-4. yarn dev
+1. Start your Prisma server: `yarn docker:up`
+2. Check running: `docker-compose ps`
+3. Deploy your Prisma service if you change data model (also re-generates ts): `yarn prisma:deploy`
+4. run graphql server: `yarn dev`
 
 ## Using prisma in server
 

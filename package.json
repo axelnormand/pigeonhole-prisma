@@ -8,25 +8,26 @@
   "workspaces": [
     "client",
     "server",
-    "prisma-client",
-    "nexus-client"
+    "prisma"
   ],
   "scripts": {
     "prisma:generate": "prisma generate",
     "prisma:introspect": "prisma introspect",
-    "prisma:deploy": "prisma deploy",
-    "prisma:nexus": "nexus-prisma-generate --client ./prisma-client --output ./nexus-client",
     "prisma:token": "prisma token",
-    "docker:start": "docker-compose up -d",
+    "docker:up": "docker-compose up -d",
     "docker:restart": "docker-compose restart",
-    "docker:logs": "docker-compose logs"
+    "docker:logs": "docker-compose logs",
+    "docker:ps": "docker-compose ps"
   },
   "dependencies": {
-    "prettier": "^2.0.2",
-    "prisma-client-lib": "^1.34.10"
+    "@prisma/client": "^2.0.0-beta.1",
+    "nexus": "^0.12.0",
+    "nexus-prisma": "^0.11.1",
+    "nexus-prisma-generate": "^0.3.7",
+    "prettier": "^2.0.2"
   },
   "devDependencies": {
-    "nexus-prisma-generate": "^0.3.7",
+    "@prisma/cli": "^2.0.0-beta.1",
     "typescript": "^3.8.3"
   }
 }

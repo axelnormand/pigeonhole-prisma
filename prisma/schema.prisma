@@ -1,0 +1,1551 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model elec2010_answers {
+  answer       String?
+  candidate_id Int?
+  created      DateTime?
+  id           Int       @default(autoincrement()) @id
+  modified     DateTime?
+  question_id  Int?
+}
+
+model elec2010_candidates {
+  constituency_id Int?
+  created         DateTime?
+  first_name      String?
+  id              Int       @default(autoincrement()) @id
+  modified        DateTime?
+  party_id        Int?
+  prefix_id       Int?
+  surname         String?
+  uuid            String?
+  website         String?
+}
+
+model elec2010_constituencies {
+  created   DateTime?
+  id        Int       @default(autoincrement()) @id
+  modified  DateTime?
+  name      String?
+  region_id Int?
+}
+
+model elec2010_networks {
+  created     DateTime?
+  description String?
+  id          Int       @default(autoincrement()) @id
+  modified    DateTime?
+  title       String?
+  website     String?
+}
+
+model elec2010_parties {
+  created  DateTime?
+  id       Int       @default(autoincrement()) @id
+  modified DateTime?
+  name     String?
+  rgb      String?
+  website  String?
+}
+
+model elec2010_policies {
+  body     String?
+  created  DateTime?
+  id       Int       @default(autoincrement()) @id
+  modified DateTime?
+  title    String?
+}
+
+model elec2010_prefixes {
+  id     Int     @default(autoincrement()) @id
+  prefix String?
+}
+
+model elec2010_questions {
+  created  DateTime?
+  id       Int       @default(autoincrement()) @id
+  modified DateTime?
+  question String?
+}
+
+model elec2010_regions {
+  created  DateTime?
+  id       Int       @default(autoincrement()) @id
+  modified DateTime?
+  name     String?
+}
+
+model elec2010_users {
+  created    DateTime
+  id         Int      @default(autoincrement()) @id
+  last_login DateTime
+  password   String
+  status     Boolean? @default(true)
+  username   String
+}
+
+model facts {
+  fact_date DateTime @default(dbgenerated())
+  fact_id   Int      @default(autoincrement()) @id
+  fact_item String
+}
+
+model gigs {
+  gig_date      DateTime @default(dbgenerated())
+  gig_details   String
+  gig_id        Int      @default(autoincrement()) @id
+  gig_map       String?
+  gig_promotion String?
+  gig_venue     String   @default("")
+}
+
+model news {
+  news_date DateTime @default(dbgenerated())
+  news_id   Int      @default(autoincrement()) @id
+  news_item String
+}
+
+model phplist_admin {
+  created         DateTime?
+  disabled        Int?      @default(0)
+  email           String
+  id              Int       @default(autoincrement()) @id
+  loginname       String    @unique
+  modified        DateTime  @default(now())
+  modifiedby      String?
+  namelc          String?
+  password        String?
+  passwordchanged DateTime?
+  superuser       Int?      @default(0)
+
+  @@index([loginname], name: "loginnameidx")
+}
+
+model phplist_adminattribute {
+  default_value String?
+  id            Int     @default(autoincrement()) @id
+  listorder     Int?
+  name          String
+  required      Int?
+  tablename     String?
+  type          String?
+}
+
+model phplist_admin_attribute {
+  adminattributeid Int
+  adminid          Int
+  value            String?
+
+  @@id([adminattributeid, adminid])
+}
+
+model phplist_admin_task {
+  adminid Int
+  level   Int?
+  taskid  Int
+
+  @@id([adminid, taskid])
+}
+
+model phplist_attachment {
+  description String?
+  filename    String?
+  id          Int     @default(autoincrement()) @id
+  mimetype    String?
+  remotefile  String?
+  size        Int?
+}
+
+model phplist_bounce {
+  comment String?
+  // This type is currently not supported.
+  // data binary?
+  date    DateTime?
+  header  String?
+  id      Int       @default(autoincrement()) @id
+  status  String?
+
+  @@index([date], name: "dateindex")
+}
+
+model phplist_bounceregex {
+  action    String?
+  admin     Int?
+  comment   String?
+  count     Int?    @default(0)
+  id        Int     @default(autoincrement()) @id
+  listorder Int?    @default(0)
+  regex     String? @unique
+  status    String?
+}
+
+model phplist_bounceregex_bounce {
+  bounce Int
+  regex  Int
+
+  @@id([regex, bounce])
+}
+
+model phplist_config {
+  editable Int?    @default(1)
+  item     String  @id
+  type     String?
+  value    String?
+}
+
+model phplist_eventlog {
+  entered DateTime?
+  entry   String?
+  id      Int       @default(autoincrement()) @id
+  page    String?
+
+  @@index([entered], name: "enteredidx")
+  @@index([page], name: "pageidx")
+}
+
+model phplist_linktrack {
+  clicked     Int?      @default(0)
+  firstclick  DateTime?
+  forward     String?
+  latestclick DateTime  @default(now())
+  linkid      Int       @default(autoincrement()) @id
+  messageid   Int
+  url         String?
+  userid      Int
+
+  @@index([messageid], name: "midindex")
+  @@index([messageid, userid], name: "miduidindex")
+  @@index([messageid, userid, url], name: "miduidurlindex")
+  @@index([userid], name: "uidindex")
+  @@index([url], name: "urlindex")
+  @@unique([messageid, userid, url], name: "messageid")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model phplist_linktrack_userclick {
+  // data      String?
+  // date      DateTime?
+  // linkid    Int
+  // messageid Int
+  // name      String?
+  // userid    Int
+
+  // @@index([linkid], name: "linkindex")
+  // @@index([linkid, userid], name: "linkuserindex")
+  // @@index([linkid, userid, messageid], name: "linkusermessageindex")
+  // @@index([messageid], name: "midindex")
+  // @@index([userid], name: "uidindex")
+// }
+
+model phplist_list {
+  active      Int?
+  description String?
+  entered     DateTime?
+  id          Int       @default(autoincrement()) @id
+  listorder   Int?
+  modified    DateTime  @default(now())
+  name        String
+  owner       Int?
+  prefix      String?
+  rssfeed     String?
+
+  @@index([listorder], name: "listorderidx")
+  @@index([name], name: "nameidx")
+}
+
+model phplist_listattr_cbgroup {
+  id        Int     @default(autoincrement()) @id
+  listorder Int?    @default(0)
+  name      String? @unique
+}
+
+model phplist_listattr_comments {
+  id        Int     @default(autoincrement()) @id
+  listorder Int?    @default(0)
+  name      String? @unique
+}
+
+model phplist_listattr_hiddenfiel {
+  id        Int     @default(autoincrement()) @id
+  listorder Int?    @default(0)
+  name      String? @unique
+}
+
+model phplist_listattr_othercomme {
+  id        Int     @default(autoincrement()) @id
+  listorder Int?    @default(0)
+  name      String? @unique
+}
+
+model phplist_listmessage {
+  entered   DateTime?
+  id        Int       @default(autoincrement()) @id
+  listid    Int
+  messageid Int
+  modified  DateTime  @default(now())
+
+  @@index([listid, messageid], name: "listmessageidx")
+  @@unique([messageid, listid], name: "messageid")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model phplist_listrss {
+  // entered DateTime
+  // info    String?
+  // listid  Int
+  // type    String
+
+  // @@index([entered], name: "enteredidx")
+  // @@index([listid], name: "listididx")
+// }
+
+model phplist_listuser {
+  entered  DateTime?
+  listid   Int
+  modified DateTime  @default(now())
+  userid   Int
+
+  @@id([userid, listid])
+  @@index([userid, entered], name: "userenteredidx")
+  @@index([userid, listid, entered], name: "userlistenteredidx")
+}
+
+model phplist_message {
+  ashtml         Int?      @default(0)
+  aspdf          Int?      @default(0)
+  astext         Int?      @default(0)
+  astextandhtml  Int?      @default(0)
+  astextandpdf   Int?      @default(0)
+  bouncecount    Int?      @default(0)
+  embargo        DateTime?
+  entered        DateTime?
+  footer         String?
+  fromfield      String    @default("")
+  htmlformatted  Int?      @default(0)
+  id             Int       @default(autoincrement()) @id
+  message        String?
+  modified       DateTime  @default(now())
+  owner          Int?
+  processed      Int?      @default(0)
+  repeatinterval Int?      @default(0)
+  repeatuntil    DateTime?
+  replyto        String    @default("")
+  rsstemplate    String?
+  sendformat     String?
+  sendstart      DateTime?
+  sent           DateTime?
+  status         String?
+  subject        String    @default("(no subject)")
+  template       Int?
+  textmessage    String?
+  tofield        String    @default("")
+  userselection  String?
+  viewed         Int?      @default(0)
+}
+
+model phplist_messagedata {
+  data String?
+  id   Int
+  name String
+
+  @@id([name, id])
+}
+
+model phplist_message_attachment {
+  attachmentid Int
+  id           Int @default(autoincrement()) @id
+  messageid    Int
+
+  @@index([messageid, attachmentid], name: "messageattidx")
+  @@index([messageid], name: "messageidx")
+}
+
+model phplist_rssitem {
+  added     DateTime?
+  ashtml    Int?      @default(0)
+  astext    Int?      @default(0)
+  id        Int       @default(autoincrement()) @id
+  link      String
+  list      Int
+  processed Int?      @default(0)
+  source    String?
+  title     String
+
+  @@index([list], name: "listidx")
+  @@index([title], name: "titleidx")
+  @@index([title, link], name: "titlelinkidx")
+}
+
+model phplist_rssitem_data {
+  data   String?
+  itemid Int
+  tag    String
+
+  @@id([itemid, tag])
+}
+
+model phplist_rssitem_user {
+  entered DateTime @default(now())
+  itemid  Int
+  userid  Int
+
+  @@id([itemid, userid])
+}
+
+model phplist_sendprocess {
+  alive     Int?      @default(1)
+  id        Int       @default(autoincrement()) @id
+  ipaddress String?
+  modified  DateTime  @default(now())
+  page      String?
+  started   DateTime?
+}
+
+model phplist_subscribepage {
+  active Int?   @default(0)
+  id     Int    @default(autoincrement()) @id
+  owner  Int?
+  title  String
+}
+
+model phplist_subscribepage_data {
+  data String?
+  id   Int
+  name String
+
+  @@id([id, name])
+}
+
+model phplist_task {
+  id   Int    @default(autoincrement()) @id
+  page String @unique
+  type String
+
+  @@index([page], name: "pageidx")
+  @@index([page, type], name: "pagetypeidx")
+}
+
+model phplist_template {
+  id          Int     @default(autoincrement()) @id
+  listorder   Int?
+  // This type is currently not supported.
+  // template binary?
+  title       String  @unique
+}
+
+model phplist_templateimage {
+  // This type is currently not supported.
+  // data  binary?
+  filename String?
+  height   Int?
+  id       Int     @default(autoincrement()) @id
+  mimetype String?
+  template Int     @default(0)
+  width    Int?
+
+  @@index([template], name: "templateidx")
+}
+
+model phplist_urlcache {
+  added        DateTime?
+  content      String?
+  id           Int       @default(autoincrement()) @id
+  lastmodified Int?
+  url          String
+
+  @@index([url], name: "urlindex")
+}
+
+model phplist_usermessage {
+  entered   DateTime
+  messageid Int
+  status    String?
+  userid    Int
+  viewed    DateTime?
+
+  @@id([userid, messageid])
+  @@index([entered], name: "enteredindex")
+  @@index([messageid], name: "messageidindex")
+  @@index([userid], name: "useridindex")
+}
+
+model phplist_userstats {
+  id       Int     @default(autoincrement()) @id
+  item     String?
+  listid   Int?    @default(0)
+  unixdate Int?
+  value    Int?    @default(0)
+
+  @@index([unixdate], name: "dateindex")
+  @@index([item], name: "itemindex")
+  @@index([listid, unixdate], name: "listdateindex")
+  @@index([listid], name: "listindex")
+  @@unique([unixdate, item, listid], name: "entry")
+}
+
+model phplist_user_attribute {
+  default_value String?
+  id            Int     @default(autoincrement()) @id
+  listorder     Int?
+  name          String
+  required      Int?
+  tablename     String?
+  type          String?
+
+  @@index([id, name], name: "idnameindex")
+  @@index([name], name: "nameindex")
+}
+
+model phplist_user_blacklist {
+  added DateTime?
+  email String    @unique
+
+  @@index([email], name: "emailidx")
+}
+
+model phplist_user_blacklist_data {
+  data  String?
+  email String  @default("") @unique
+  name  String?
+}
+
+model phplist_user_message_bounce {
+  bounce  Int
+  id      Int      @default(autoincrement()) @id
+  message Int
+  time    DateTime @default(now())
+  user    Int
+
+  @@index([bounce], name: "bounceidx")
+  @@index([message], name: "msgidx")
+  @@index([user, message, bounce], name: "umbindex")
+  @@index([user], name: "useridx")
+}
+
+model phplist_user_message_forward {
+  forward String?
+  id      Int      @default(autoincrement()) @id
+  message Int
+  status  String?
+  time    DateTime @default(now())
+  user    Int
+
+  @@index([message], name: "messageidx")
+  @@index([user], name: "useridx")
+  @@index([user, message], name: "usermessageidx")
+}
+
+model phplist_user_rss {
+  last   DateTime?
+  userid Int       @id
+}
+
+model phplist_user_user {
+  blacklisted     Int?      @default(0)
+  bouncecount     Int?      @default(0)
+  confirmed       Int?      @default(0)
+  disabled        Int?      @default(0)
+  email           String    @unique
+  entered         DateTime?
+  extradata       String?
+  foreignkey      String?
+  htmlemail       Int?      @default(0)
+  id              Int       @default(autoincrement()) @id
+  modified        DateTime  @default(now())
+  password        String?
+  passwordchanged DateTime?
+  rssfrequency    String?
+  subscribepage   Int?
+  uniqid          String?
+
+  @@index([email], name: "emailidx")
+  @@index([entered], name: "enteredindex")
+  @@index([foreignkey], name: "foreignkey")
+  @@index([uniqid], name: "idx_phplist_user_user_uniqid")
+}
+
+model phplist_user_user_attribute {
+  attributeid Int
+  userid      Int
+  value       String?
+
+  @@id([attributeid, userid])
+  @@index([attributeid], name: "attindex")
+  @@index([userid, attributeid], name: "attuserid")
+  @@index([attributeid, userid], name: "userattid")
+  @@index([userid], name: "userindex")
+}
+
+model phplist_user_user_history {
+  date       DateTime?
+  detail     String?
+  id         Int       @default(autoincrement()) @id
+  ip         String?
+  summary    String?
+  systeminfo String?
+  userid     Int
+
+  @@index([date], name: "dateidx")
+  @@index([userid], name: "userididx")
+}
+
+model punbb_bans {
+  email    String?
+  expire   Int?
+  id       Int     @default(autoincrement()) @id
+  ip       String?
+  message  String?
+  username String?
+}
+
+model punbb_categories {
+  cat_name      String @default("New Category")
+  disp_position Int    @default(0)
+  id            Int    @default(autoincrement()) @id
+}
+
+model punbb_censoring {
+  id           Int    @default(autoincrement()) @id
+  replace_with String @default("")
+  search_for   String @default("")
+}
+
+model punbb_config {
+  conf_name  String  @default("") @id
+  conf_value String?
+}
+
+model punbb_forums {
+  cat_id        Int     @default(0)
+  disp_position Int     @default(0)
+  forum_desc    String?
+  forum_name    String  @default("New forum")
+  id            Int     @default(autoincrement()) @id
+  last_post     Int?
+  last_poster   String?
+  last_post_id  Int?
+  moderators    String?
+  num_posts     Int     @default(0)
+  num_topics    Int     @default(0)
+  redirect_url  String?
+  sort_by       Boolean @default(false)
+}
+
+model punbb_forum_perms {
+  forum_id     Int     @default(0)
+  group_id     Int     @default(0)
+  post_polls   Boolean @default(true)
+  post_replies Boolean @default(true)
+  post_topics  Boolean @default(true)
+  read_forum   Boolean @default(true)
+
+  @@id([group_id, forum_id])
+}
+
+model punbb_groups {
+  g_delete_posts           Boolean @default(true)
+  g_delete_topics          Boolean @default(true)
+  g_edit_posts             Boolean @default(true)
+  g_edit_subjects_interval Int     @default(300)
+  g_id                     Int     @default(autoincrement()) @id
+  g_post_flood             Int     @default(30)
+  g_post_polls             Boolean @default(true)
+  g_post_replies           Boolean @default(true)
+  g_post_topics            Boolean @default(true)
+  g_read_board             Boolean @default(true)
+  g_search                 Boolean @default(true)
+  g_search_flood           Int     @default(30)
+  g_search_users           Boolean @default(true)
+  g_set_title              Boolean @default(true)
+  g_title                  String  @default("")
+  g_user_title             String?
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model punbb_online {
+  // ident   String  @default("")
+  // idle    Boolean @default(false)
+  // logged  Int     @default(0)
+  // user_id Int     @default(1)
+
+  // @@index([user_id], name: "punbb_online_user_id_idx")
+// }
+
+model punbb_polls {
+  id      Int    @default(autoincrement()) @id
+  options String
+  pollid  Int    @default(0)
+  ptype   Int    @default(0)
+  voters  String
+  votes   String
+}
+
+model punbb_posts {
+  edited       Int?
+  edited_by    String?
+  hide_smilies Boolean @default(false)
+  id           Int     @default(autoincrement()) @id
+  message      String
+  posted       Int     @default(0)
+  poster       String  @default("")
+  poster_email String?
+  poster_id    Int     @default(1)
+  poster_ip    String?
+  topic_id     Int     @default(0)
+
+  @@index([poster_id, topic_id], name: "punbb_posts_multi_idx")
+  @@index([topic_id], name: "punbb_posts_topic_id_idx")
+}
+
+model punbb_ranks {
+  id        Int    @default(autoincrement()) @id
+  min_posts Int    @default(0)
+  rank      String @default("")
+}
+
+model punbb_reports {
+  created     Int    @default(0)
+  forum_id    Int    @default(0)
+  id          Int    @default(autoincrement()) @id
+  message     String
+  post_id     Int    @default(0)
+  reported_by Int    @default(0)
+  topic_id    Int    @default(0)
+  zapped      Int?
+  zapped_by   Int?
+
+  @@index([zapped], name: "punbb_reports_zapped_idx")
+}
+
+model punbb_search_cache {
+  id          Int    @default(0) @id
+  ident       String @default("")
+  search_data String
+
+  @@index([ident], name: "punbb_search_cache_ident_idx")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model punbb_search_matches {
+  // post_id       Int     @default(0)
+  // subject_match Boolean @default(false)
+  // word_id       Int     @default(0)
+
+  // @@index([post_id], name: "punbb_search_matches_post_id_idx")
+  // @@index([word_id], name: "punbb_search_matches_word_id_idx")
+// }
+
+model punbb_search_words {
+  id   Int    @default(autoincrement())
+  word String @default("") @id
+
+  @@index([id], name: "punbb_search_words_id_idx")
+}
+
+model punbb_subscriptions {
+  topic_id Int @default(0)
+  user_id  Int @default(0)
+
+  @@id([user_id, topic_id])
+}
+
+model punbb_topics {
+  closed       Boolean @default(false)
+  forum_id     Int     @default(0)
+  id           Int     @default(autoincrement()) @id
+  last_post    Int     @default(0)
+  last_poster  String?
+  last_post_id Int     @default(0)
+  moved_to     Int?
+  no           String
+  num_replies  Int     @default(0)
+  num_views    Int     @default(0)
+  posted       Int     @default(0)
+  poster       String  @default("")
+  question     String
+  sticky       Boolean @default(false)
+  subject      String  @default("")
+  yes          String
+
+  @@index([forum_id], name: "punbb_topics_forum_id_idx")
+  @@index([moved_to], name: "punbb_topics_moved_to_idx")
+}
+
+model punbb_uploaded {
+  data      Int
+  descr     String
+  downs     Int
+  file      String
+  id        Int    @default(autoincrement()) @id
+  size      Int
+  uid       Int
+  user      String
+  user_stat String
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model punbb_uploads_conf {
+  // g_id           Int @default(0)
+  // p_delete       Int @default(0)
+  // p_globaldelete Int @default(0)
+  // p_globalview   Int @default(0)
+  // p_setop        Int @default(0)
+  // p_upload       Int @default(0)
+  // p_view         Int @default(0)
+  // u_fsize        Int @default(0)
+// }
+
+model punbb_uploads_types {
+  exts String
+  id   Int    @default(autoincrement()) @id
+  type String
+}
+
+model punbb_users {
+  activate_key     String?
+  activate_string  String?
+  admin_note       String?
+  aim              String?
+  disp_posts       Int?
+  disp_topics      Int?
+  email            String  @default("")
+  email_setting    Boolean @default(true)
+  group_id         Int     @default(4)
+  icq              String?
+  id               Int     @default(autoincrement()) @id
+  jabber           String?
+  language         String  @default("English")
+  last_post        Int?
+  last_visit       Int     @default(0)
+  location         String?
+  msn              String?
+  notify_with_post Boolean @default(false)
+  num_posts        Int     @default(0)
+  password         String  @default("")
+  read_topics      String?
+  realname         String?
+  registered       Int     @default(0)
+  registration_ip  String  @default("0.0.0.0")
+  save_pass        Boolean @default(true)
+  show_avatars     Boolean @default(true)
+  show_img         Boolean @default(true)
+  show_img_sig     Boolean @default(true)
+  show_sig         Boolean @default(true)
+  show_smilies     Boolean @default(true)
+  signature        String?
+  style            String  @default("Oxygen")
+  timezone         Float   @default(0)
+  title            String?
+  url              String?
+  username         String  @default("")
+  use_avatar       Boolean @default(false)
+  yahoo            String?
+
+  @@index([registered], name: "punbb_users_registered_idx")
+  @@index([username], name: "punbb_users_username_idx")
+}
+
+model punbb_userthread {
+  forum     Int     @default(0)
+  last_read Int?
+  posted    Boolean @default(false)
+  thread    Int     @default(0)
+  user      Int     @default(0)
+
+  @@id([user, thread, forum])
+}
+
+model t_blogs {
+  blog     String
+  id       Int      @default(autoincrement()) @id
+  posted   DateTime @default(dbgenerated())
+  title    String   @default("")
+  username String   @default("")
+}
+
+model t_gigs {
+  flyerlink  String   @default("")
+  gigdate    DateTime @default(dbgenerated())
+  giglink    String   @default("")
+  gigplace   String   @default("")
+  gigtext    String
+  id         Int      @default(autoincrement()) @id
+  maplink    String   @default("")
+  posted     DateTime @default(dbgenerated())
+  ticketlink String   @default("")
+  username   String   @default("")
+}
+
+model t_news {
+  id       Int      @default(autoincrement()) @id
+  news     String
+  posted   DateTime @default(dbgenerated())
+  username String   @default("")
+}
+
+model t_users {
+  email     String   @default("")
+  lastlogin DateTime @default(dbgenerated())
+  password  String   @default("")
+  userid    String   @default("")
+  username  String   @default("") @id
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_archive {
+  // This type is currently not supported.
+  // ar_comment    binary
+  // ar_deleted    Int    @default(0)
+  // This type is currently not supported.
+  // ar_flags      binary
+  // ar_len        Int?
+  // ar_minor_edit Int    @default(0)
+  // ar_namespace  Int    @default(0)
+  // ar_page_id    Int?
+  // ar_parent_id  Int?
+  // ar_rev_id     Int?
+  // This type is currently not supported.
+  // ar_text       binary
+  // ar_text_id    Int?
+  // This type is currently not supported.
+  // ar_timestamp  binary @default(dbgenerated())
+  // This type is currently not supported.
+  // ar_title      binary @default(dbgenerated())
+  // ar_user       Int    @default(0)
+  // This type is currently not supported.
+  // ar_user_text  binary
+// }
+
+model wikipete_category {
+  cat_files    Int    @default(0)
+  cat_hidden   Int    @default(0)
+  cat_id       Int    @default(autoincrement()) @id
+  cat_pages    Int    @default(0)
+  cat_subcats  Int    @default(0)
+  // This type is currently not supported.
+  // cat_title binary @unique
+
+  @@index([cat_pages], name: "cat_pages")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_categorylinks {
+  // cl_from      Int      @default(0)
+  // This type is currently not supported.
+  // cl_sortkey   binary   @default(dbgenerated())
+  // cl_timestamp DateTime @default(now())
+  // This type is currently not supported.
+  // cl_to        binary   @default(dbgenerated())
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_change_tag {
+  // ct_log_id Int?
+  // This type is currently not supported.
+  // ct_params binary?
+  // ct_rc_id  Int?
+  // ct_rev_id Int?
+  // This type is currently not supported.
+  // ct_tag    binary
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_externallinks {
+  // el_from  Int    @default(0)
+  // This type is currently not supported.
+  // el_index binary
+  // This type is currently not supported.
+  // el_to    binary
+// }
+
+model wikipete_filearchive {
+  // This type is currently not supported.
+  // fa_archive_name      binary?                             @default(dbgenerated())
+  fa_bits                 Int?                                @default(0)
+  fa_deleted              Int                                 @default(0)
+  // This type is currently not supported.
+  // fa_deleted_reason    binary?
+  // This type is currently not supported.
+  // fa_deleted_timestamp binary?                             @default(dbgenerated())
+  fa_deleted_user         Int?
+  // This type is currently not supported.
+  // fa_description       binary?
+  fa_height               Int?                                @default(0)
+  fa_id                   Int                                 @default(autoincrement()) @id
+  fa_major_mime           wikipete_filearchive_fa_major_mime? @default(unknown)
+  fa_media_type           wikipete_filearchive_fa_media_type?
+  // This type is currently not supported.
+  // fa_metadata          binary?
+  // This type is currently not supported.
+  // fa_minor_mime        binary?                             @default(dbgenerated())
+  // This type is currently not supported.
+  // fa_name              binary                              @default(dbgenerated())
+  fa_size                 Int?                                @default(0)
+  // This type is currently not supported.
+  // fa_storage_group     binary?
+  // This type is currently not supported.
+  // fa_storage_key       binary?                             @default(dbgenerated())
+  // This type is currently not supported.
+  // fa_timestamp         binary?                             @default(dbgenerated())
+  fa_user                 Int?                                @default(0)
+  // This type is currently not supported.
+  // fa_user_text         binary?
+  fa_width                Int?                                @default(0)
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_hitcounter {
+  // hc_id Int
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_image {
+  // img_bits        Int                            @default(0)
+  // This type is currently not supported.
+  // img_description binary
+  // img_height      Int                            @default(0)
+  // img_major_mime  wikipete_image_img_major_mime  @default(unknown)
+  // img_media_type  wikipete_image_img_media_type?
+  // This type is currently not supported.
+  // img_metadata    binary
+  // This type is currently not supported.
+  // img_minor_mime  binary                         @default(dbgenerated())
+  // This type is currently not supported.
+  // img_name        binary                         @default(dbgenerated()) @id
+  // This type is currently not supported.
+  // img_sha1        binary                         @default(dbgenerated())
+  // img_size        Int                            @default(0)
+  // This type is currently not supported.
+  // img_timestamp   binary                         @default(dbgenerated())
+  // img_user        Int                            @default(0)
+  // This type is currently not supported.
+  // img_user_text   binary
+  // img_width       Int                            @default(0)
+
+  // @@index([img_size], name: "img_size")
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_imagelinks {
+  // il_from Int    @default(0)
+  // This type is currently not supported.
+  // il_to   binary @default(dbgenerated())
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_interwiki {
+  // iw_local  Boolean
+  // This type is currently not supported.
+  // iw_prefix binary  @unique
+  // iw_trans  Int     @default(0)
+  // This type is currently not supported.
+  // iw_url    binary
+// }
+
+model wikipete_ipblocks {
+  // This type is currently not supported.
+  // ipb_address       binary
+  ipb_allow_usertalk   Boolean @default(false)
+  ipb_anon_only        Boolean @default(false)
+  ipb_auto             Boolean @default(false)
+  ipb_block_email      Boolean @default(false)
+  ipb_by               Int     @default(0)
+  // This type is currently not supported.
+  // ipb_by_text       binary  @default(dbgenerated())
+  ipb_create_account   Boolean @default(true)
+  ipb_deleted          Boolean @default(false)
+  ipb_enable_autoblock Boolean @default(true)
+  // This type is currently not supported.
+  // ipb_expiry        binary  @default(dbgenerated())
+  ipb_id               Int     @default(autoincrement()) @id
+  // This type is currently not supported.
+  // ipb_range_end     binary
+  // This type is currently not supported.
+  // ipb_range_start   binary
+  // This type is currently not supported.
+  // ipb_reason        binary
+  // This type is currently not supported.
+  // ipb_timestamp     binary  @default(dbgenerated())
+  ipb_user             Int     @default(0)
+
+  @@index([ipb_user], name: "ipb_user")
+}
+
+model wikipete_job {
+  // This type is currently not supported.
+  // job_cmd    binary @default(dbgenerated())
+  job_id        Int    @default(autoincrement()) @id
+  job_namespace Int
+  // This type is currently not supported.
+  // job_params binary
+  // This type is currently not supported.
+  // job_title  binary
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_langlinks {
+  // ll_from  Int    @default(0)
+  // This type is currently not supported.
+  // ll_lang  binary @default(dbgenerated())
+  // This type is currently not supported.
+  // ll_title binary @default(dbgenerated())
+// }
+
+model wikipete_logging {
+  // This type is currently not supported.
+  // log_action    binary @default(dbgenerated())
+  // This type is currently not supported.
+  // log_comment   binary @default(dbgenerated())
+  log_deleted      Int    @default(0)
+  log_id           Int    @default(autoincrement()) @id
+  log_namespace    Int    @default(0)
+  // This type is currently not supported.
+  // log_params    binary
+  // This type is currently not supported.
+  // log_timestamp binary @default(dbgenerated())
+  // This type is currently not supported.
+  // log_title     binary @default(dbgenerated())
+  // This type is currently not supported.
+  // log_type      binary @default(dbgenerated())
+  log_user         Int    @default(0)
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_math {
+  // This type is currently not supported.
+  // math_html                  binary?
+  // math_html_conservativeness Int
+  // This type is currently not supported.
+  // math_inputhash             binary  @unique
+  // This type is currently not supported.
+  // math_mathml                binary?
+  // This type is currently not supported.
+  // math_outputhash            binary
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_objectcache {
+  // exptime DateTime?
+  // This type is currently not supported.
+  // keyname binary    @default(dbgenerated()) @id
+  // This type is currently not supported.
+  // value   binary?
+
+  // @@index([exptime], name: "exptime")
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_oldimage {
+  // This type is currently not supported.
+  // oi_archive_name binary                           @default(dbgenerated())
+  // oi_bits         Int                              @default(0)
+  // oi_deleted      Int                              @default(0)
+  // This type is currently not supported.
+  // oi_description  binary
+  // oi_height       Int                              @default(0)
+  // oi_major_mime   wikipete_oldimage_oi_major_mime  @default(unknown)
+  // oi_media_type   wikipete_oldimage_oi_media_type?
+  // This type is currently not supported.
+  // oi_metadata     binary
+  // This type is currently not supported.
+  // oi_minor_mime   binary                           @default(dbgenerated())
+  // This type is currently not supported.
+  // oi_name         binary                           @default(dbgenerated())
+  // This type is currently not supported.
+  // oi_sha1         binary                           @default(dbgenerated())
+  // oi_size         Int                              @default(0)
+  // This type is currently not supported.
+  // oi_timestamp    binary                           @default(dbgenerated())
+  // oi_user         Int                              @default(0)
+  // This type is currently not supported.
+  // oi_user_text    binary
+  // oi_width        Int                              @default(0)
+// }
+
+model wikipete_page {
+  page_counter         Int    @default(0)
+  page_id              Int    @default(autoincrement()) @id
+  page_is_new          Int    @default(0)
+  page_is_redirect     Int    @default(0)
+  page_latest          Int
+  page_len             Int
+  page_namespace       Int
+  page_random          Float
+  // This type is currently not supported.
+  // page_restrictions binary
+  // This type is currently not supported.
+  // page_title        binary
+  // This type is currently not supported.
+  // page_touched      binary @default(dbgenerated())
+
+  @@index([page_len], name: "page_len")
+  @@index([page_random], name: "page_random")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_pagelinks {
+  // pl_from      Int    @default(0)
+  // pl_namespace Int    @default(0)
+  // This type is currently not supported.
+  // pl_title     binary @default(dbgenerated())
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_page_props {
+  // pp_page     Int
+  // This type is currently not supported.
+  // pp_propname binary
+  // This type is currently not supported.
+  // pp_value    binary
+// }
+
+model wikipete_page_restrictions {
+  pr_cascade   Int
+  // This type is currently not supported.
+  // pr_expiry binary?
+  pr_id        Int     @default(autoincrement()) @id
+  // This type is currently not supported.
+  // pr_level  binary
+  pr_page      Int
+  // This type is currently not supported.
+  // pr_type   binary
+  pr_user      Int?
+
+  @@index([pr_cascade], name: "pr_cascade")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_protected_titles {
+  // This type is currently not supported.
+  // pt_create_perm binary
+  // This type is currently not supported.
+  // pt_expiry      binary  @default(dbgenerated())
+  // pt_namespace   Int
+  // This type is currently not supported.
+  // pt_reason      binary?
+  // This type is currently not supported.
+  // pt_timestamp   binary
+  // This type is currently not supported.
+  // pt_title       binary
+  // pt_user        Int
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_querycache {
+  // qc_namespace Int    @default(0)
+  // This type is currently not supported.
+  // qc_title     binary @default(dbgenerated())
+  // This type is currently not supported.
+  // qc_type      binary
+  // qc_value     Int    @default(0)
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_querycachetwo {
+  // qcc_namespace    Int    @default(0)
+  // qcc_namespacetwo Int    @default(0)
+  // This type is currently not supported.
+  // qcc_title        binary @default(dbgenerated())
+  // This type is currently not supported.
+  // qcc_titletwo     binary @default(dbgenerated())
+  // This type is currently not supported.
+  // qcc_type         binary
+  // qcc_value        Int    @default(0)
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_querycache_info {
+  // This type is currently not supported.
+  // qci_timestamp binary @default(dbgenerated())
+  // This type is currently not supported.
+  // qci_type      binary @default(dbgenerated()) @unique
+// }
+
+model wikipete_recentchanges {
+  rc_bot               Int     @default(0)
+  // This type is currently not supported.
+  // rc_comment        binary  @default(dbgenerated())
+  rc_cur_id            Int     @default(0)
+  // This type is currently not supported.
+  // rc_cur_time       binary  @default(dbgenerated())
+  rc_deleted           Int     @default(0)
+  rc_id                Int     @default(autoincrement()) @id
+  // This type is currently not supported.
+  // rc_ip             binary  @default(dbgenerated())
+  rc_last_oldid        Int     @default(0)
+  rc_logid             Int     @default(0)
+  // This type is currently not supported.
+  // rc_log_action     binary?
+  // This type is currently not supported.
+  // rc_log_type       binary?
+  rc_minor             Int     @default(0)
+  rc_moved_to_ns       Int     @default(0)
+  // This type is currently not supported.
+  // rc_moved_to_title binary  @default(dbgenerated())
+  rc_namespace         Int     @default(0)
+  rc_new               Int     @default(0)
+  rc_new_len           Int?
+  rc_old_len           Int?
+  // This type is currently not supported.
+  // rc_params         binary?
+  rc_patrolled         Int     @default(0)
+  rc_this_oldid        Int     @default(0)
+  // This type is currently not supported.
+  // rc_timestamp      binary  @default(dbgenerated())
+  // This type is currently not supported.
+  // rc_title          binary  @default(dbgenerated())
+  rc_type              Int     @default(0)
+  rc_user              Int     @default(0)
+  // This type is currently not supported.
+  // rc_user_text      binary
+
+  @@index([rc_cur_id], name: "rc_cur_id")
+}
+
+model wikipete_redirect {
+  rd_from      Int    @default(0) @id
+  rd_namespace Int    @default(0)
+  // This type is currently not supported.
+  // rd_title  binary @default(dbgenerated())
+}
+
+model wikipete_revision {
+  // This type is currently not supported.
+  // rev_comment   binary
+  rev_deleted      Int    @default(0)
+  rev_id           Int    @default(autoincrement()) @id
+  rev_len          Int?
+  rev_minor_edit   Int    @default(0)
+  rev_page         Int
+  rev_parent_id    Int?
+  rev_text_id      Int
+  // This type is currently not supported.
+  // rev_timestamp binary @default(dbgenerated())
+  rev_user         Int    @default(0)
+  // This type is currently not supported.
+  // rev_user_text binary @default(dbgenerated())
+
+  @@unique([rev_page, rev_id], name: "rev_page_id")
+}
+
+model wikipete_searchindex {
+  si_page  Int    @unique
+  si_text  String
+  si_title String @default("")
+
+  @@index([si_text], name: "si_text")
+  @@index([si_title], name: "si_title")
+}
+
+model wikipete_site_stats {
+  ss_active_users  Int? @default(dbgenerated())
+  ss_admins        Int? @default(dbgenerated())
+  ss_good_articles Int? @default(0)
+  ss_images        Int? @default(0)
+  ss_row_id        Int  @unique
+  ss_total_edits   Int? @default(0)
+  ss_total_pages   Int? @default(dbgenerated())
+  ss_total_views   Int? @default(0)
+  ss_users         Int? @default(dbgenerated())
+}
+
+model wikipete_tag_summary {
+  ts_log_id  Int?   @unique
+  ts_rc_id   Int?   @unique
+  ts_rev_id  Int?   @unique
+  // This type is currently not supported.
+  // ts_tags binary
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_templatelinks {
+  // tl_from      Int    @default(0)
+  // tl_namespace Int    @default(0)
+  // This type is currently not supported.
+  // tl_title     binary @default(dbgenerated())
+// }
+
+model wikipete_text {
+  // This type is currently not supported.
+  // old_flags binary
+  old_id       Int    @default(autoincrement()) @id
+  // This type is currently not supported.
+  // old_text  binary
+}
+
+model wikipete_trackbacks {
+  // This type is currently not supported.
+  // tb_ex    binary?
+  tb_id       Int     @default(autoincrement()) @id
+  // This type is currently not supported.
+  // tb_name  binary?
+  tb_page     Int?
+  // This type is currently not supported.
+  // tb_title binary
+  // This type is currently not supported.
+  // tb_url   binary
+
+  @@index([tb_page], name: "tb_page")
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_transcache {
+  // This type is currently not supported.
+  // tc_contents binary?
+  // tc_time     Int
+  // This type is currently not supported.
+  // tc_url      binary  @unique
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_updatelog {
+  // This type is currently not supported.
+  // ul_key binary @id
+// }
+
+model wikipete_user {
+  user_editcount              Int?
+  // This type is currently not supported.
+  // user_email               binary
+  // This type is currently not supported.
+  // user_email_authenticated binary?
+  // This type is currently not supported.
+  // user_email_token         binary?
+  // This type is currently not supported.
+  // user_email_token_expires binary?
+  user_id                     Int     @default(autoincrement()) @id
+  // This type is currently not supported.
+  // user_name                binary  @default(dbgenerated()) @unique
+  // This type is currently not supported.
+  // user_newpassword         binary
+  // This type is currently not supported.
+  // user_newpass_time        binary?
+  // This type is currently not supported.
+  // user_options             binary
+  // This type is currently not supported.
+  // user_password            binary
+  // This type is currently not supported.
+  // user_real_name           binary  @default(dbgenerated())
+  // This type is currently not supported.
+  // user_registration        binary?
+  // This type is currently not supported.
+  // user_token               binary  @default(dbgenerated())
+  // This type is currently not supported.
+  // user_touched             binary  @default(dbgenerated())
+}
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_user_groups {
+  // This type is currently not supported.
+  // ug_group binary @default(dbgenerated())
+  // ug_user  Int    @default(0)
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_user_newtalk {
+  // user_id             Int    @default(0)
+  // This type is currently not supported.
+  // user_ip             binary @default(dbgenerated())
+  // This type is currently not supported.
+  // user_last_timestamp binary @default(dbgenerated())
+
+  // @@index([user_id], name: "user_id")
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_valid_tag {
+  // This type is currently not supported.
+  // vt_tag binary @id
+// }
+
+// The underlying table does not contain a unique identifier and can therefore currently not be handled.
+// model wikipete_watchlist {
+  // wl_namespace             Int     @default(0)
+  // This type is currently not supported.
+  // wl_notificationtimestamp binary?
+  // This type is currently not supported.
+  // wl_title                 binary  @default(dbgenerated())
+  // wl_user                  Int
+// }
+
+enum wikipete_filearchive_fa_major_mime {
+  unknown
+  application
+  audio
+  image
+  text
+  video
+  message
+  model
+  multipart
+}
+
+enum wikipete_filearchive_fa_media_type {
+  UNKNOWN
+  BITMAP
+  DRAWING
+  AUDIO
+  VIDEO
+  MULTIMEDIA
+  OFFICE
+  TEXT
+  EXECUTABLE
+  ARCHIVE
+}
+
+enum wikipete_image_img_major_mime {
+  unknown
+  application
+  audio
+  image
+  text
+  video
+  message
+  model
+  multipart
+}
+
+enum wikipete_image_img_media_type {
+  UNKNOWN
+  BITMAP
+  DRAWING
+  AUDIO
+  VIDEO
+  MULTIMEDIA
+  OFFICE
+  TEXT
+  EXECUTABLE
+  ARCHIVE
+}
+
+enum wikipete_oldimage_oi_major_mime {
+  unknown
+  application
+  audio
+  image
+  text
+  video
+  message
+  model
+  multipart
+}
+
+enum wikipete_oldimage_oi_media_type {
+  UNKNOWN
+  BITMAP
+  DRAWING
+  AUDIO
+  VIDEO
+  MULTIMEDIA
+  OFFICE
+  TEXT
+  EXECUTABLE
+  ARCHIVE
+}
