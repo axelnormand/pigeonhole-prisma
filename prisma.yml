@@ -1,9 +1,12 @@
 endpoint: http://localhost:4466
 datamodel: datamodel.prisma
+secret: triangle
 
 generate:
   - generator: typescript-client
     output: ./prisma-client/
+  - generator: graphql-schema
+    output: ./prisma-client/prisma.graphql
 
 hooks:
   post-deploy:
