@@ -11,6 +11,13 @@
 3. Deploy your Prisma service if you change data model (also re-generates ts): `yarn prisma:deploy`
 4. run graphql server: `yarn dev`
 
+## Using prisma client
+
+```
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+```
+
 ## Using prisma in server
 
 - `import { prisma } from './generated/prisma-client'`
