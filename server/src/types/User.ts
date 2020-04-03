@@ -1,11 +1,13 @@
-import { objectType } from 'nexus'
+import { objectType } from 'nexus';
 
 export const User = objectType({
-  name: 'User',
+  name: 'punbb_users',
   definition(t) {
-    t.model.id()
-    t.model.name()
-    t.model.email()
-    t.model.posts({ pagination: false })
+    t.model.id();
+    t.model.username();
+    t.model.signature();
+    t.model.registered();
+    t.model.last_visit();
+    t.model.last_post();
   },
-})
+});
