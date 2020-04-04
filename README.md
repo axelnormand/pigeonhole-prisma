@@ -32,4 +32,5 @@
 - [] navigation + web
 - [] bbcode
 - [] push notifications
-- [] offline friendly
+- [] offline friendly / PWA
+- [] signup

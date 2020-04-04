@@ -1,6 +1,6 @@
 import { objectType } from 'nexus';
 
-export const Thread = objectType({
+export const punbb_forums = objectType({
   name: 'punbb_forums',
   definition(t) {
     t.model.id();

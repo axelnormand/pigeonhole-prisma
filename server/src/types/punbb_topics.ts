@@ -1,6 +1,6 @@
 import { objectType } from 'nexus';
 
-export const Thread = objectType({
+export const punbb_topics = objectType({
   name: 'punbb_topics',
   definition(t) {
     t.model.id();
@@ -12,5 +12,6 @@ export const Thread = objectType({
     t.model.last_post();
     t.model.last_post_id();
     t.model.last_poster();
+    t.model.forum_id();
   },
 });

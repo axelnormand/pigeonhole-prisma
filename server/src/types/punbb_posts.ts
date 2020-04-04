@@ -1,6 +1,6 @@
 import { objectType } from 'nexus';
 
-export const Post = objectType({
+export const punbb_posts = objectType({
   name: 'punbb_posts',
   definition(t) {
     t.model.id();

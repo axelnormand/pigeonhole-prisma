@@ -1,5 +1,5 @@
 import { getUserId } from '../utils';
-import { rule, shield } from 'graphql-shield';
+import { rule, shield, deny } from 'graphql-shield';
 import { Context } from '../context';
 
 const rules = {
@@ -20,7 +20,7 @@ const rules = {
   }),
   isTopicOwner: rule()(async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
-    const author = await context.prisma.punbb_threads
+    const author = await context.prisma.punbb_topics
       .findOne({
         where: {
           id: Number(id),
@@ -31,18 +31,21 @@ const rules = {
   }),
 };
 
-export const permissions = shield({
-  Query: {
-    me: rules.isAuthenticated,
-    filterPosts: rules.isAuthenticated,
-    post: rules.isAuthenticated,
+export const permissions = shield(
+  {
+    Query: {
+      me: rules.isAuthenticated,
+      searchPosts: rules.isAuthenticated,
+      post: rules.isAuthenticated,
+    },
+    Mutation: {
+      createPost: rules.isPostOwner,
+      updatePost: rules.isPostOwner,
+      deletePost: rules.isPostOwner,
+      createTopic: rules.isTopicOwner,
+      updateTopic: rules.isTopicOwner,
+      deleteTopic: rules.isTopicOwner,
+    },
   },
-  Mutation: {
-    createPost: rules.isPostOwner,
-    updatePost: rules.isPostOwner,
-    deletePost: rules.isPostOwner,
-    createThread: rules.isTopicOwner,
-    updateThread: rules.isTopicOwner,
-    deleteThread: rules.isTopicOwner,
-  },
-});
+  { fallbackRule: deny },
+);

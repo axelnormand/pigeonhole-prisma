@@ -55,11 +55,11 @@ export const Mutation = mutationType({
       },
     });
 
-    t.field('createThread', {
-      type: 'Thread',
+    t.field('createTopic', {
+      type: 'punbb_topics',
       args: {
-        title: stringArg({ nullable: false }),
-        content: stringArg(),
+        title: stringArg({ required: true }),
+        content: stringArg({ required: true }),
       },
       resolve: (_parent, { title, content }, ctx) => {
         const userId = getUserId(ctx);
@@ -75,8 +75,8 @@ export const Mutation = mutationType({
       },
     });
 
-    t.field('updateThread', {
-      type: 'Thread',
+    t.field('updateTopic', {
+      type: 'punbb_topics',
       nullable: true,
       args: { id: intArg() },
       resolve: (_parent, { id }, ctx) => {
@@ -87,53 +87,8 @@ export const Mutation = mutationType({
       },
     });
 
-    t.field('deleteThread', {
-      type: 'Thread',
-      nullable: true,
-      args: { id: intArg({ nullable: false }) },
-      resolve: (_parent, { id }, ctx) => {
-        return ctx.prisma.post.delete({
-          where: {
-            id,
-          },
-        });
-      },
-    });
-
-    t.field('createPost', {
-      type: 'Post',
-      args: {
-        title: stringArg({ nullable: false }),
-        content: stringArg(),
-      },
-      resolve: (_parent, { title, content }, ctx) => {
-        const userId = getUserId(ctx);
-        if (!userId) throw new Error('Could not authenticate user.');
-        return ctx.prisma.post.create({
-          data: {
-            title,
-            content,
-            published: false,
-            author: { connect: { id: Number(userId) } },
-          },
-        });
-      },
-    });
-
-    t.field('updatePost', {
-      type: 'Post',
-      nullable: true,
-      args: { id: intArg() },
-      resolve: (_parent, { id }, ctx) => {
-        return ctx.prisma.post.update({
-          where: { id },
-          data: { published: true },
-        });
-      },
-    });
-
-    t.field('deletePost', {
-      type: 'Post',
+    t.field('deleteTopic', {
+      type: 'punbb_topics',
       nullable: true,
       args: { id: intArg({ nullable: false }) },
       resolve: (_parent, { id }, ctx) => {

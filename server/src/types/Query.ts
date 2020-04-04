@@ -1,37 +1,49 @@
-import { intArg, queryType, stringArg } from 'nexus'
-import { getUserId } from '../utils'
+import { intArg, queryType, stringArg } from 'nexus';
+import { getUserId } from '../utils';
 
 export const Query = queryType({
   definition(t) {
     t.field('me', {
-      type: 'User',
+      type: 'punbb_users',
       nullable: true,
-      resolve: (parent, args, ctx) => {
-        const userId = getUserId(ctx)
-        return ctx.prisma.user.findOne({
+      resolve: (_parent, _args, ctx) => {
+        const userId = getUserId(ctx);
+        return ctx.prisma.punbb_users.findOne({
           where: {
             id: Number(userId),
           },
-        })
+        });
       },
-    })
+    });
 
-    t.list.field('feed', {
-      type: 'Post',
-      resolve: (parent, args, ctx) => {
-        return ctx.prisma.post.findMany({
-          where: { published: true },
-        })
+    t.list.field('forums', {
+      type: 'punbb_forums',
+      resolve: (_parent, _args, ctx) => {
+        return ctx.prisma.punbb_forums;
       },
-    })
+    });
 
-    t.list.field('filterPosts', {
-      type: 'Post',
+    t.list.field('topics', {
+      type: 'punbb_topics',
+      args: {
+        forum_id: intArg({ required: true }),
+      },
+      resolve: (_parent, { forum_id }, ctx) => {
+        return ctx.prisma.punbb_topics({ paginated: true }).findMany({
+          where: {
+            forum_id: Number(forum_id),
+          },
+        });
+      },
+    });
+
+    t.list.field('searchPosts', {
+      type: 'punbb_posts',
       args: {
         searchString: stringArg({ nullable: true }),
       },
-      resolve: (parent, { searchString }, ctx) => {
-        return ctx.prisma.post.findMany({
+      resolve: (_parent, { searchString }, ctx) => {
+        return ctx.prisma.punbb_posts.findMany({
           where: {
             OR: [
               {
@@ -46,21 +58,8 @@ export const Query = queryType({
               },
             ],
           },
-        })
+        });
       },
-    })
-
-    t.field('post', {
-      type: 'Post',
-      nullable: true,
-      args: { id: intArg() },
-      resolve: (parent, { id }, ctx) => {
-        return ctx.prisma.post.findOne({
-          where: {
-            id: Number(id),
-          },
-        })
-      },
-    })
+    });
   },
-})
+});
