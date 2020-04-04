@@ -1,23 +1,33 @@
 module.export = {
+  root: true,
+  parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:import/typescript',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
   ],
-  plugins: ['import'],
+  plugins: ['@typescript-eslint'],
   rules: {
-    // turn on errors for missing imports
-    'import/no-unresolved': 'error',
-  },
-  settings: {
-    'import/parsers': {
-      '@typescript-eslint/parser': ['.ts', '.tsx'],
-    },
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: false,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
       },
-    },
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['external', 'builtin'],
+          'internal',
+          ['parent', 'sibling', 'index'],
+        ],
+      },
+    ],
   },
+  settings: {},
 };
