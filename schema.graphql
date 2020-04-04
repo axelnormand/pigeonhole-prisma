@@ -8,10 +8,7 @@ type AuthPayload {
 }
 
 type Mutation {
-  createTopic(content: String!, title: String!): punbb_topics!
-  deleteTopic(id: Int!): punbb_topics
   login(password: String!, username: String!): AuthPayload!
-  updateTopic(id: Int): punbb_topics
 }
 
 type punbb_forums {

@@ -1,5 +1,5 @@
 import { getUserId } from '../utils';
-import { rule, shield, deny } from 'graphql-shield';
+import { rule, shield, deny, allow } from 'graphql-shield';
 import { Context } from '../context';
 
 const rules = {
@@ -36,16 +36,18 @@ export const permissions = shield(
   {
     Query: {
       me: rules.isAuthenticated,
+      forums: rules.isAuthenticated,
+      topics: rules.isAuthenticated,
       searchPosts: rules.isAuthenticated,
-      post: rules.isAuthenticated,
     },
     Mutation: {
-      createPost: rules.isPostOwner,
-      updatePost: rules.isPostOwner,
-      deletePost: rules.isPostOwner,
-      createTopic: rules.isTopicOwner,
-      updateTopic: rules.isTopicOwner,
-      deleteTopic: rules.isTopicOwner,
+      login: allow,
+      // createPost: rules.isPostOwner,
+      // updatePost: rules.isPostOwner,
+      // deletePost: rules.isPostOwner,
+      // createTopic: rules.isTopicOwner,
+      // updateTopic: rules.isTopicOwner,
+      // deleteTopic: rules.isTopicOwner,
     },
   },
   { fallbackRule: deny },

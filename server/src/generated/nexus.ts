@@ -52,10 +52,7 @@ export interface NexusGenFieldTypes {
     user: NexusGenRootTypes['punbb_users']; // punbb_users!
   }
   Mutation: { // field return type
-    createTopic: NexusGenRootTypes['punbb_topics']; // punbb_topics!
-    deleteTopic: NexusGenRootTypes['punbb_topics'] | null; // punbb_topics
     login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
-    updateTopic: NexusGenRootTypes['punbb_topics'] | null; // punbb_topics
   }
   Query: { // field return type
     forums: NexusGenRootTypes['punbb_forums'][]; // [punbb_forums!]!
@@ -100,19 +97,9 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    createTopic: { // args
-      content: string; // String!
-      title: string; // String!
-    }
-    deleteTopic: { // args
-      id: number; // Int!
-    }
     login: { // args
       password: string; // String!
       username: string; // String!
-    }
-    updateTopic: { // args
-      id?: number | null; // Int
     }
   }
   Query: {
