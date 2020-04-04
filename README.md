@@ -22,6 +22,7 @@
 
 - [] deploy heroku with config
 - [] expo install
+- [] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
 
 ## Feature TODOs
 

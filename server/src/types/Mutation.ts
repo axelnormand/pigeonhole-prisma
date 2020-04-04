@@ -32,18 +32,23 @@ export const Mutation = mutationType({
     t.field('login', {
       type: 'AuthPayload',
       args: {
-        username: stringArg({ nullable: false }),
-        password: stringArg({ nullable: false }),
+        username: stringArg({ required: true }),
+        password: stringArg({ required: true }),
       },
       resolve: async (_parent, { username, password }, ctx) => {
-        const user = await ctx.prisma.punbb_users.findOne({
+        const users = await ctx.prisma.punbb_users.findMany({
           where: {
-            username,
+            OR: [{ username }, { email: username }],
           },
         });
-        if (!user) {
-          throw new Error(`No username found: ${username}`);
+        if (!users || !users.length) {
+          throw new Error(`No username/email found: ${username}`);
         }
+        if (users.length > 1) {
+          throw new Error(`Multiple usernames/emails found: ${username}`);
+        }
+        const user = users[0];
+
         const passwordValid = await compare(password, user.password);
         if (!passwordValid) {
           throw new Error('Invalid password');
@@ -55,49 +60,46 @@ export const Mutation = mutationType({
       },
     });
 
-    t.field('createTopic', {
-      type: 'punbb_topics',
-      args: {
-        title: stringArg({ required: true }),
-        content: stringArg({ required: true }),
-      },
-      resolve: (_parent, { title, content }, ctx) => {
-        const userId = getUserId(ctx);
-        if (!userId) throw new Error('Could not authenticate user.');
-        return ctx.prisma.post.create({
-          data: {
-            title,
-            content,
-            published: false,
-            author: { connect: { id: Number(userId) } },
-          },
-        });
-      },
-    });
+    // t.field('createTopic', {
+    //   type: 'punbb_topics',
+    //   args: {
+    //     subject: stringArg({ required: true }),
+    //   },
+    //   resolve: (_parent, { title, content }, ctx) => {
+    //     const userId = getUserId(ctx);
+    //     if (!userId) throw new Error('Could not authenticate user.');
+    //     return ctx.prisma.punbb_topics.create({
+    //       data: {
+    //         subject,
+    //         author: { connect: { id: Number(userId) } },
+    //       },
+    //     });
+    //   },
+    // });
 
-    t.field('updateTopic', {
-      type: 'punbb_topics',
-      nullable: true,
-      args: { id: intArg() },
-      resolve: (_parent, { id }, ctx) => {
-        return ctx.prisma.post.update({
-          where: { id },
-          data: { published: true },
-        });
-      },
-    });
+    // t.field('updateTopic', {
+    //   type: 'punbb_topics',
+    //   nullable: true,
+    //   args: { id: intArg() },
+    //   resolve: (_parent, { id }, ctx) => {
+    //     return ctx.prisma.post.update({
+    //       where: { id },
+    //       data: { published: true },
+    //     });
+    //   },
+    // });
 
-    t.field('deleteTopic', {
-      type: 'punbb_topics',
-      nullable: true,
-      args: { id: intArg({ nullable: false }) },
-      resolve: (_parent, { id }, ctx) => {
-        return ctx.prisma.post.delete({
-          where: {
-            id,
-          },
-        });
-      },
-    });
+    // t.field('deleteTopic', {
+    //   type: 'punbb_topics',
+    //   nullable: true,
+    //   args: { id: intArg({ nullable: false }) },
+    //   resolve: (_parent, { id }, ctx) => {
+    //     return ctx.prisma.post.delete({
+    //       where: {
+    //         id,
+    //       },
+    //     });
+    //   },
+    // });
   },
 });

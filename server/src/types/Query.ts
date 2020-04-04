@@ -19,7 +19,11 @@ export const Query = queryType({
     t.list.field('forums', {
       type: 'punbb_forums',
       resolve: (_parent, _args, ctx) => {
-        return ctx.prisma.punbb_forums;
+        return ctx.prisma.punbb_forums.findMany({
+          orderBy: {
+            forum_name: 'asc',
+          },
+        });
       },
     });
 
@@ -29,9 +33,12 @@ export const Query = queryType({
         forum_id: intArg({ required: true }),
       },
       resolve: (_parent, { forum_id }, ctx) => {
-        return ctx.prisma.punbb_topics({ paginated: true }).findMany({
+        return ctx.prisma.punbb_topics.findMany({
           where: {
             forum_id: Number(forum_id),
+          },
+          orderBy: {
+            last_post: 'desc',
           },
         });
       },
@@ -45,18 +52,9 @@ export const Query = queryType({
       resolve: (_parent, { searchString }, ctx) => {
         return ctx.prisma.punbb_posts.findMany({
           where: {
-            OR: [
-              {
-                title: {
-                  contains: searchString,
-                },
-              },
-              {
-                content: {
-                  contains: searchString,
-                },
-              },
-            ],
+            message: {
+              contains: searchString,
+            },
           },
         });
       },
