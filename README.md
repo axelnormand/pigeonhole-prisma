@@ -23,6 +23,11 @@
 - [] deploy heroku with config
 - [] expo install
 - [] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
+- [] dependbot
+- [] jest
+- [] circle ci
+- [] fix linting
+- [] use babel or stay ts-node
 
 ## Feature TODOs
 
