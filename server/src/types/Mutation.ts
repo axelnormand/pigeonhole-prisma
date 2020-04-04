@@ -2,6 +2,7 @@ import { compare, hash } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import { mutationType, stringArg, intArg } from 'nexus';
 import { getUserId } from '../utils';
+import { config } from '../config';
 
 export const Mutation = mutationType({
   definition(t) {
@@ -37,18 +38,18 @@ export const Mutation = mutationType({
       resolve: async (_parent, { username, password }, ctx) => {
         const user = await ctx.prisma.punbb_users.findOne({
           where: {
-            email,
+            username,
           },
         });
         if (!user) {
-          throw new Error(`No user found for email: ${email}`);
+          throw new Error(`No username found: ${username}`);
         }
         const passwordValid = await compare(password, user.password);
         if (!passwordValid) {
           throw new Error('Invalid password');
         }
         return {
-          token: sign({ userId: user.id }, APP_SECRET),
+          token: sign({ userId: user.id }, config().appSecret),
           user,
         };
       },
@@ -60,7 +61,7 @@ export const Mutation = mutationType({
         title: stringArg({ nullable: false }),
         content: stringArg(),
       },
-      resolve: (parent, { title, content }, ctx) => {
+      resolve: (_parent, { title, content }, ctx) => {
         const userId = getUserId(ctx);
         if (!userId) throw new Error('Could not authenticate user.');
         return ctx.prisma.post.create({
@@ -78,7 +79,7 @@ export const Mutation = mutationType({
       type: 'Thread',
       nullable: true,
       args: { id: intArg() },
-      resolve: (parent, { id }, ctx) => {
+      resolve: (_parent, { id }, ctx) => {
         return ctx.prisma.post.update({
           where: { id },
           data: { published: true },
@@ -90,7 +91,7 @@ export const Mutation = mutationType({
       type: 'Thread',
       nullable: true,
       args: { id: intArg({ nullable: false }) },
-      resolve: (parent, { id }, ctx) => {
+      resolve: (_parent, { id }, ctx) => {
         return ctx.prisma.post.delete({
           where: {
             id,
@@ -105,7 +106,7 @@ export const Mutation = mutationType({
         title: stringArg({ nullable: false }),
         content: stringArg(),
       },
-      resolve: (parent, { title, content }, ctx) => {
+      resolve: (_parent, { title, content }, ctx) => {
         const userId = getUserId(ctx);
         if (!userId) throw new Error('Could not authenticate user.');
         return ctx.prisma.post.create({
@@ -123,7 +124,7 @@ export const Mutation = mutationType({
       type: 'Post',
       nullable: true,
       args: { id: intArg() },
-      resolve: (parent, { id }, ctx) => {
+      resolve: (_parent, { id }, ctx) => {
         return ctx.prisma.post.update({
           where: { id },
           data: { published: true },
@@ -135,7 +136,7 @@ export const Mutation = mutationType({
       type: 'Post',
       nullable: true,
       args: { id: intArg({ nullable: false }) },
-      resolve: (parent, { id }, ctx) => {
+      resolve: (_parent, { id }, ctx) => {
         return ctx.prisma.post.delete({
           where: {
             id,

@@ -1,5 +1,5 @@
-import { rule, shield } from 'graphql-shield';
 import { getUserId } from '../utils';
+import { rule, shield } from 'graphql-shield';
 import { Context } from '../context';
 
 const rules = {
@@ -18,7 +18,7 @@ const rules = {
       .author();
     return userId === author.id;
   }),
-  isThreadOwner: rule()(async (_parent, { id }, context: Context) => {
+  isTopicOwner: rule()(async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
     const author = await context.prisma.punbb_threads
       .findOne({
@@ -41,8 +41,8 @@ export const permissions = shield({
     createPost: rules.isPostOwner,
     updatePost: rules.isPostOwner,
     deletePost: rules.isPostOwner,
-    createThread: rules.isThreadOwner,
-    updateThread: rules.isThreadOwner,
-    deleteThread: rules.isThreadOwner,
+    createThread: rules.isTopicOwner,
+    updateThread: rules.isTopicOwner,
+    deleteThread: rules.isTopicOwner,
   },
 });

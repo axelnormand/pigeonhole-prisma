@@ -16,18 +16,22 @@
     "docker:up": "docker-compose up -d",
     "docker:restart": "docker-compose restart",
     "docker:logs": "docker-compose logs",
-    "docker:ps": "docker-compose ps"
+    "docker:ps": "docker-compose ps",
+    "lint": "eslint **/*.ts* --cache",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
     "@prisma/client": "^2.0.0-beta.1",
-    "prettier": "^2.0.2",
     "yup": "^0.28.3"
   },
   "devDependencies": {
     "@prisma/cli": "^2.0.0-beta.1",
     "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
     "eslint-import-resolver-typescript": "^2.0.0",
     "eslint-plugin-import": "^2.20.2",
-    "typescript": "^3.8.3"
+    "prettier": "^2.0.2",
+    "typescript": "^3.8.3",
+    "typescript-eslint": "^0.0.1-alpha.0"
   }
 }

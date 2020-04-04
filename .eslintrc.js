@@ -1,5 +1,10 @@
 module.export = {
-  extends: 'eslint:recommended',
+  extends: [
+    'eslint:recommended',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+    'plugin:import/typescript',
+  ],
   plugins: ['import'],
   rules: {
     // turn on errors for missing imports
@@ -11,7 +16,7 @@ module.export = {
     },
     'import/resolver': {
       typescript: {
-        alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+        alwaysTryTypes: true,
       },
     },
   },
