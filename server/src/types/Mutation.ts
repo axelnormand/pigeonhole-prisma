@@ -49,7 +49,7 @@ export const Mutation = mutationType({
         }
         const user = users[0];
 
-        const passwordValid = sha1(password) === user.password;
+        const passwordValid = sha1(password).toString() === user.password;
         if (!passwordValid) {
           throw new Error('Invalid password');
         }

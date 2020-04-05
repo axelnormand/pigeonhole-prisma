@@ -50,5 +50,5 @@ export const permissions = shield(
       // deleteTopic: rules.isTopicOwner,
     },
   },
-  { fallbackRule: deny, debug: true },
+  //{ fallbackRule: deny, debug: true },
 );
