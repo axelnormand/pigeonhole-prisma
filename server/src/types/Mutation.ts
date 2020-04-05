@@ -1,7 +1,6 @@
-import { compare, hash } from 'bcryptjs';
+import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
 import { mutationType, stringArg, intArg } from 'nexus';
-import { getUserId } from '../utils';
 import { config } from '../config';
 
 export const Mutation = mutationType({
@@ -36,9 +35,10 @@ export const Mutation = mutationType({
         password: stringArg({ required: true }),
       },
       resolve: async (_parent, { username, password }, ctx) => {
+        const lowerUsername = username.toLowerCase();
         const users = await ctx.prisma.punbb_users.findMany({
           where: {
-            OR: [{ username }, { email: username }],
+            OR: [{ username: lowerUsername }, { email: lowerUsername }],
           },
         });
         if (!users || !users.length) {
@@ -49,7 +49,7 @@ export const Mutation = mutationType({
         }
         const user = users[0];
 
-        const passwordValid = await compare(password, user.password);
+        const passwordValid = sha1(password) === user.password;
         if (!passwordValid) {
           throw new Error('Invalid password');
         }

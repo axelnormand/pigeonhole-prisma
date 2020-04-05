@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
-    "lib": ["es2016", "esnext.asynciterable"]
+    "lib": ["es2016", "esnext.asynciterable"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }
