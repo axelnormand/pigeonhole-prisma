@@ -6,7 +6,7 @@ interface Token {
   userId: string;
 }
 
-export function getUserId(context: Context): Number {
+export function getUserId(context: Context): number | null {
   const { appSecret } = config();
   if (!appSecret) {
     throw new Error('process.env.APP_SECRET is blank');
@@ -16,6 +16,10 @@ export function getUserId(context: Context): Number {
     const token = Authorization.replace('Bearer ', '');
     const verifiedToken = verify(token, appSecret) as Token;
     const userId = parseInt(verifiedToken.userId);
-    return verifiedToken && !isNaN(userId) && userId;
+
+    if (!verifiedToken || isNaN(userId)) {
+      return null;
+    }
+    return userId;
   }
 }

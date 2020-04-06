@@ -1,6 +1,6 @@
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
-import { mutationType, stringArg, intArg } from 'nexus';
+import { mutationType, stringArg } from 'nexus';
 import { config } from '../config';
 
 export const Mutation = mutationType({
