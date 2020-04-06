@@ -2,12 +2,15 @@ import { getUserId } from '../auth';
 import { rule } from 'graphql-shield';
 import { Context } from '../context';
 
-export const rules = {
-  isAuthenticated: rule()((_parent, _args, context: Context) => {
+export const isAuthenticated = rule({ cache: 'contextual' })(
+  (_parent, _args, context: Context) => {
     const userId = getUserId(context);
     return Boolean(userId);
-  }),
-  isPostOwner: rule()(async (_parent, { id }, context: Context) => {
+  },
+);
+
+export const isPostOwner = rule({ cache: 'contextual' })(
+  async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
     const post = await context.prisma.punbb_posts.findOne({
       where: {
@@ -15,8 +18,11 @@ export const rules = {
       },
     });
     return userId === post.poster_id;
-  }),
-  isTopicOwner: rule()(async (_parent, { id }, context: Context) => {
+  },
+);
+
+export const isTopicOwner = rule({ cache: 'contextual' })(
+  async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
     const user = await context.prisma.punbb_users.findOne({
       where: {
@@ -29,5 +35,5 @@ export const rules = {
       },
     });
     return user.username === topic.poster;
-  }),
-};
+  },
+);

@@ -55,7 +55,6 @@ export const Mutation = mutationType({
         }
         return {
           token: sign({ userId: user.id }, config().appSecret),
-          user,
         };
       },
     });

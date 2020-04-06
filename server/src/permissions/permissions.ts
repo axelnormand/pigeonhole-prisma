@@ -1,25 +1,29 @@
 import { shield, deny, allow } from 'graphql-shield';
-import { rules } from './rules';
+import { isAuthenticated } from './rules';
 
 export const permissions = shield(
   {
     Query: {
-      me: rules.isAuthenticated,
-      forums: rules.isAuthenticated,
-      topics: rules.isAuthenticated,
-      searchPosts: rules.isAuthenticated,
+      me: isAuthenticated,
+      forums: isAuthenticated,
+      topics: isAuthenticated,
+      searchPosts: isAuthenticated,
     },
     Mutation: {
       login: allow,
 
-      // createPost: rules.isPostOwner,
-      // updatePost: rules.isPostOwner,
-      // deletePost: rules.isPostOwner,
-      // createTopic: rules.isTopicOwner,
-      // updateTopic: rules.isTopicOwner,
-      // deleteTopic: rules.isTopicOwner,
+      // createPost: isPostOwner,
+      // updatePost: isPostOwner,
+      // deletePost: isPostOwner,
+      // createTopic: isTopicOwner,
+      // updateTopic: isTopicOwner,
+      // deleteTopic: isTopicOwner,
     },
+    AuthPayload: allow,
+    punbb_users: isAuthenticated,
+    punbb_forums: isAuthenticated,
+    punbb_topics: isAuthenticated,
+    punbb_posts: isAuthenticated,
   },
-
   { fallbackRule: deny },
 );
