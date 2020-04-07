@@ -1,5 +1,9 @@
 # pigeonhole-prisma
 
+Punbb exposed as GraphQL endpoint and with a react native expo client
+
+Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo, Mobx State Tree + mst-gql, react native paper
+
 # Install
 
 - npm install -g prisma
@@ -20,23 +24,23 @@
 
 ## Code TODOS
 
-- [] deploy heroku with config
-- [] expo install
-- [] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
-- [] dependabot
-- [] jest
-- [] circle ci
-- [] fix linting
-- [] use babel or stay ts-node
+- [ ] deploy heroku with config
+- [ ] expo install
+- [ ] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
+- [ ] dependabot
+- [ ] jest
+- [ ] circle ci
+- [ ] fix linting
+- [ ] use babel or stay ts-node
 
 ## Feature TODOs
 
-- [] login
-- [] read forums + topics + posts
-- [] create post and topic
-- [] update/delete post and topic
-- [] navigation + web
-- [] bbcode
-- [] push notifications
-- [] offline friendly / PWA
-- [] signup
+- [ ] login
+- [ ] read forums + topics + posts
+- [ ] create post and topic
+- [ ] update/delete post and topic
+- [ ] navigation + web
+- [ ] bbcode
+- [ ] push notifications
+- [ ] offline friendly / PWA
+- [ ] signup
