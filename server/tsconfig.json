@@ -1,4 +1,13 @@
 {
-  "extends": "../tsconfig.base.json",
-  "rootDir": "src"
+  "compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "src",
+    "outDir": "dist"
+  }
 }
