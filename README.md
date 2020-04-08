@@ -2,29 +2,28 @@
 
 Punbb exposed as GraphQL endpoint and with a react native expo client
 
-Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo, Mobx State Tree + mst-gql, react native paper
+Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo, Mobx State Tree + mst-gql, Kitten UI toolkit
 
 # Install
 
 - npm install -g prisma
 
-## Running
+## Running Locally
 
-1. Start your Prisma server: `yarn docker:up`
+1. Start your Mysql server: `yarn docker:up`
 2. Check running: `docker-compose ps`
-3. Deploy your Prisma service if you change data model (also re-generates ts): `yarn prisma:deploy`
-4. run graphql server: `yarn dev`
+3. run graphql server: `yarn start`
 
-## Outline
+## Running netlify locally
 
-- Expose your MySQL DB over the internet
-- Deploy this Node Docker image to somewhere like Heroku
-- Uses prisma + nexus to generate typed graphql from DB schema
-- Uses graphql-yoga and graphql-shield to provide GraphQL endpoint with permissions
+1. `yarn start:netlify:dev`
+2. Status: http://localhost:8888/.netlify/functions/status
+3. Playground: http://localhost:8888/.netlify/functions/playground
+4. GraphQL Server: http://localhost:8888/.netlify/functions/server
 
 ## Code TODOS
 
-- [ ] deploy heroku with config
+- [ ] deploy netlify
 - [ ] expo install
 - [ ] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
 - [ ] dependabot
