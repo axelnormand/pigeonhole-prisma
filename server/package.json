@@ -5,14 +5,15 @@
   "scripts": {
     "start": "node dist/server",
     "clean": "rm -rf dist",
-    "build": "npm -s run clean && npm -s run generate && tsc",
-    "generate": "npm -s run generate:prisma && npm -s run generate:nexus",
+    "build": "yarn clean && yarn generate && tsc",
+    "generate": "yarn generate:prisma && yarn generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
-    "postinstall": "npm -s run generate",
+    "postinstall": "yarn generate",
     "dev": "ts-node-dev --no-notify --respawn --transpileOnly ./src"
   },
   "dependencies": {
+    "@prisma/client": "^2.0.0-beta.1",
     "@types/crypto-js": "^3.1.44",
     "crypto-js": "^4.0.0",
     "dotenv": "^8.2.0",
@@ -25,6 +26,7 @@
     "nexus-prisma-generate": "^0.3.7"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.0.0-beta.1",
     "@types/bcryptjs": "2.4.2",
     "@types/jsonwebtoken": "8.3.8",
     "@types/node": "13.9.8",

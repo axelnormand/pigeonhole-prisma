@@ -7,19 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model punbb_bans {
+model punbb_ban {
   email    String?
   expire   Int?
   id       Int     @default(autoincrement()) @id
   ip       String?
   message  String?
   username String?
+
+  @@map("punbb_ban")
 }
 
-model punbb_categories {
+model punbb_category {
   cat_name      String @default("New Category")
   disp_position Int    @default(0)
   id            Int    @default(autoincrement()) @id
+
+  @@map("punbb_categories")
 }
 
 model punbb_censoring {
@@ -33,7 +37,7 @@ model punbb_config {
   conf_value String?
 }
 
-model punbb_forums {
+model punbb_forum {
   cat_id        Int     @default(0)
   disp_position Int     @default(0)
   forum_desc    String?
@@ -47,9 +51,11 @@ model punbb_forums {
   num_topics    Int     @default(0)
   redirect_url  String?
   sort_by       Boolean @default(false)
+
+  @@map("punbb_forums")
 }
 
-model punbb_forum_perms {
+model punbb_forum_perm {
   forum_id     Int     @default(0)
   group_id     Int     @default(0)
   post_polls   Boolean @default(true)
@@ -58,9 +64,10 @@ model punbb_forum_perms {
   read_forum   Boolean @default(true)
 
   @@id([group_id, forum_id])
+  @@map("punbb_forum_perms")
 }
 
-model punbb_groups {
+model punbb_group {
   g_delete_posts           Boolean @default(true)
   g_delete_topics          Boolean @default(true)
   g_edit_posts             Boolean @default(true)
@@ -77,6 +84,8 @@ model punbb_groups {
   g_set_title              Boolean @default(true)
   g_title                  String  @default("")
   g_user_title             String?
+
+  @@map("punbb_groups")
 }
 
 // The underlying table does not contain a unique identifier and can therefore currently not be handled.
@@ -89,16 +98,18 @@ model punbb_groups {
   // @@index([user_id], name: "punbb_online_user_id_idx")
 // }
 
-model punbb_polls {
+model punbb_poll {
   id      Int    @default(autoincrement()) @id
   options String
   pollid  Int    @default(0)
   ptype   Int    @default(0)
   voters  String
   votes   String
+
+  @@map("punbb_polls")
 }
 
-model punbb_posts {
+model punbb_post {
   edited       Int?
   edited_by    String?
   hide_smilies Boolean @default(false)
@@ -113,15 +124,18 @@ model punbb_posts {
 
   @@index([poster_id, topic_id], name: "punbb_posts_multi_idx")
   @@index([topic_id], name: "punbb_posts_topic_id_idx")
+  @@map("punbb_posts")
 }
 
-model punbb_ranks {
+model punbb_rank {
   id        Int    @default(autoincrement()) @id
   min_posts Int    @default(0)
   rank      String @default("")
+
+  @@map("punbb_ranks")
 }
 
-model punbb_reports {
+model punbb_report {
   created     Int    @default(0)
   forum_id    Int    @default(0)
   id          Int    @default(autoincrement()) @id
@@ -133,6 +147,7 @@ model punbb_reports {
   zapped_by   Int?
 
   @@index([zapped], name: "punbb_reports_zapped_idx")
+  @@map("punbb_reports")
 }
 
 model punbb_search_cache {
@@ -153,21 +168,23 @@ model punbb_search_cache {
   // @@index([word_id], name: "punbb_search_matches_word_id_idx")
 // }
 
-model punbb_search_words {
+model punbb_search_word {
   id   Int    @default(autoincrement())
   word String @default("") @id
 
   @@index([id], name: "punbb_search_words_id_idx")
+  @@map("punbb_search_words")
 }
 
-model punbb_subscriptions {
+model punbb_subscription {
   topic_id Int @default(0)
   user_id  Int @default(0)
 
   @@id([user_id, topic_id])
+  @@map("punbb_subscriptions")
 }
 
-model punbb_topics {
+model punbb_topic {
   closed       Boolean @default(false)
   forum_id     Int     @default(0)
   id           Int     @default(autoincrement()) @id
@@ -187,6 +204,7 @@ model punbb_topics {
 
   @@index([forum_id], name: "punbb_topics_forum_id_idx")
   @@index([moved_to], name: "punbb_topics_moved_to_idx")
+  @@map("punbb_topics")
 }
 
 model punbb_uploaded {
@@ -213,13 +231,15 @@ model punbb_uploaded {
   // u_fsize        Int @default(0)
 // }
 
-model punbb_uploads_types {
+model punbb_uploads_type {
   exts String
   id   Int    @default(autoincrement()) @id
   type String
+
+  @@map("punbb_uploads_types")
 }
 
-model punbb_users {
+model punbb_user {
   activate_key     String?
   activate_string  String?
   admin_note       String?
@@ -261,6 +281,7 @@ model punbb_users {
 
   @@index([registered], name: "punbb_users_registered_idx")
   @@index([username], name: "punbb_users_username_idx")
+  @@map("punbb_users")
 }
 
 model punbb_userthread {
