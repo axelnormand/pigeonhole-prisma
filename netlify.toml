@@ -3,6 +3,7 @@
   publish = "public"
   functions = "server/dist/functions"
   command = "yarn build"
+  environment = { NODE_ENV = "production", PIGEONHOLE_SERVER = "lambda" }
 
 [build.environment]
   # Fix to ensure the Prisma binary is packaged with the lambda function
