@@ -1,7 +1,7 @@
 import { objectType } from 'nexus';
 
-export const punbb_forums = objectType({
-  name: 'punbb_forums',
+export const punbb_forum = objectType({
+  name: 'punbb_forum',
   definition(t) {
     t.model.id();
     t.model.forum_name();

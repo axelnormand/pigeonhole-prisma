@@ -1,7 +1,7 @@
 import { objectType } from 'nexus';
 
-export const punbb_topics = objectType({
-  name: 'punbb_topics',
+export const punbb_topic = objectType({
+  name: 'punbb_topic',
   definition(t) {
     t.model.id();
     t.model.poster();

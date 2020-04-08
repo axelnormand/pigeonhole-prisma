@@ -1,7 +1,7 @@
 import { objectType } from 'nexus';
 
-export const punbb_users = objectType({
-  name: 'punbb_users',
+export const punbb_user = objectType({
+  name: 'punbb_user',
   definition(t) {
     t.model.id();
     t.model.username();

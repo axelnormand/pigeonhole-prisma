@@ -4,7 +4,6 @@
  */
 
 import * as Context from "../context"
-import * as client from "@prisma/client"
 
 
 
@@ -31,10 +30,6 @@ export interface NexusGenRootTypes {
   }
   Mutation: {};
   Query: {};
-  punbb_forums: client.punbb_forums;
-  punbb_posts: client.punbb_posts;
-  punbb_topics: client.punbb_topics;
-  punbb_users: client.punbb_users;
   String: string;
   Int: number;
   Float: number;
@@ -57,39 +52,6 @@ export interface NexusGenFieldTypes {
     me: NexusGenRootTypes['punbb_users'] | null; // punbb_users
     searchPosts: NexusGenRootTypes['punbb_posts'][]; // [punbb_posts!]!
     topics: NexusGenRootTypes['punbb_topics'][]; // [punbb_topics!]!
-  }
-  punbb_forums: { // field return type
-    forum_desc: string | null; // String
-    forum_name: string; // String!
-    id: number; // Int!
-  }
-  punbb_posts: { // field return type
-    edited: number | null; // Int
-    edited_by: string | null; // String
-    id: number; // Int!
-    message: string; // String!
-    posted: number; // Int!
-    poster_id: number; // Int!
-  }
-  punbb_topics: { // field return type
-    closed: boolean; // Boolean!
-    forum_id: number; // Int!
-    id: number; // Int!
-    last_post: number; // Int!
-    last_post_id: number; // Int!
-    last_poster: string | null; // String
-    posted: number; // Int!
-    poster: string; // String!
-    sticky: boolean; // Boolean!
-    subject: string; // String!
-  }
-  punbb_users: { // field return type
-    id: number; // Int!
-    last_post: number | null; // Int
-    last_visit: number; // Int!
-    registered: number; // Int!
-    signature: string | null; // String
-    username: string; // String!
   }
 }
 

@@ -36,7 +36,7 @@ export const Mutation = mutationType({
       },
       resolve: async (_parent, { username, password }, ctx) => {
         const lowerUsername = username.toLowerCase();
-        const users = await ctx.prisma.punbb_users.findMany({
+        const users = await ctx.prisma.punbb_user.findMany({
           where: {
             OR: [{ username: lowerUsername }, { email: lowerUsername }],
           },
