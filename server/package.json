@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "clean": "rm -rf dist",
+    "start": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "build": "cross-env NODE_ENV=production yarn clean && yarn generate && tsc",
-    "start": "cross-env NODE_ENV=production node dist",
+    "start:prod": "cross-env NODE_ENV=production yarn build && node dist",
+    "start:netlify:dev": "cross-env PIGEONHOLE_SERVER=lambda yarn build && netlify dev -d public -f dist/functions",
     "generate": "yarn generate:prisma && yarn generate:nexus",
     "generate:prisma": "prisma generate",
     "generate:nexus": "ts-node --transpile-only src/schema",
@@ -32,6 +33,7 @@
     "@types/node": "13.9.8",
     "@types/ws": "7.2.3",
     "cross-env": "^7.0.2",
+    "netlify": "^4.0.4",
     "ts-node": "8.8.1",
     "ts-node-dev": "1.0.0-pre.44"
   }
