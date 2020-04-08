@@ -4,6 +4,7 @@
  */
 
 import * as Context from "../context"
+import * as client from "@prisma/client"
 
 
 
@@ -30,6 +31,10 @@ export interface NexusGenRootTypes {
   }
   Mutation: {};
   Query: {};
+  punbb_forum: client.punbb_forum;
+  punbb_post: client.punbb_post;
+  punbb_topic: client.punbb_topic;
+  punbb_user: client.punbb_user;
   String: string;
   Int: number;
   Float: number;
@@ -48,10 +53,43 @@ export interface NexusGenFieldTypes {
     login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
   }
   Query: { // field return type
-    forums: NexusGenRootTypes['punbb_forums'][]; // [punbb_forums!]!
-    me: NexusGenRootTypes['punbb_users'] | null; // punbb_users
-    searchPosts: NexusGenRootTypes['punbb_posts'][]; // [punbb_posts!]!
-    topics: NexusGenRootTypes['punbb_topics'][]; // [punbb_topics!]!
+    forums: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
+    me: NexusGenRootTypes['punbb_user'] | null; // punbb_user
+    searchPosts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
+    topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
+  }
+  punbb_forum: { // field return type
+    forum_desc: string | null; // String
+    forum_name: string; // String!
+    id: number; // Int!
+  }
+  punbb_post: { // field return type
+    edited: number | null; // Int
+    edited_by: string | null; // String
+    id: number; // Int!
+    message: string; // String!
+    posted: number; // Int!
+    poster_id: number; // Int!
+  }
+  punbb_topic: { // field return type
+    closed: boolean; // Boolean!
+    forum_id: number; // Int!
+    id: number; // Int!
+    last_post: number; // Int!
+    last_post_id: number; // Int!
+    last_poster: string | null; // String
+    posted: number; // Int!
+    poster: string; // String!
+    sticky: boolean; // Boolean!
+    subject: string; // String!
+  }
+  punbb_user: { // field return type
+    id: number; // Int!
+    last_post: number | null; // Int
+    last_visit: number; // Int!
+    registered: number; // Int!
+    signature: string | null; // String
+    username: string; // String!
   }
 }
 
@@ -77,7 +115,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_forums" | "punbb_posts" | "punbb_topics" | "punbb_users";
+export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user";
 
 export type NexusGenInputNames = never;
 

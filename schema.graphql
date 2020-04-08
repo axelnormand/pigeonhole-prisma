@@ -10,17 +10,46 @@ type Mutation {
   login(password: String!, username: String!): AuthPayload!
 }
 
-type punbb_forums
+type punbb_forum {
+  forum_desc: String
+  forum_name: String!
+  id: Int!
+}
 
-type punbb_posts
+type punbb_post {
+  edited: Int
+  edited_by: String
+  id: Int!
+  message: String!
+  posted: Int!
+  poster_id: Int!
+}
 
-type punbb_topics
+type punbb_topic {
+  closed: Boolean!
+  forum_id: Int!
+  id: Int!
+  last_post: Int!
+  last_post_id: Int!
+  last_poster: String
+  posted: Int!
+  poster: String!
+  sticky: Boolean!
+  subject: String!
+}
 
-type punbb_users
+type punbb_user {
+  id: Int!
+  last_post: Int
+  last_visit: Int!
+  registered: Int!
+  signature: String
+  username: String!
+}
 
 type Query {
-  forums: [punbb_forums!]!
-  me: punbb_users
-  searchPosts(searchString: String): [punbb_posts!]!
-  topics(forum_id: Int!): [punbb_topics!]!
+  forums: [punbb_forum!]!
+  me: punbb_user
+  searchPosts(searchString: String): [punbb_post!]!
+  topics(forum_id: Int!): [punbb_topic!]!
 }

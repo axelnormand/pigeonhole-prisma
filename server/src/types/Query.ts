@@ -4,7 +4,7 @@ import { getUserId } from '../auth';
 export const Query = queryType({
   definition(t) {
     t.field('me', {
-      type: 'punbb_users',
+      type: 'punbb_user',
       nullable: true,
       resolve: (_parent, _args, ctx) => {
         const userId = getUserId(ctx);
@@ -17,7 +17,7 @@ export const Query = queryType({
     });
 
     t.list.field('forums', {
-      type: 'punbb_forums',
+      type: 'punbb_forum',
       resolve: (_parent, _args, ctx) => {
         return ctx.prisma.punbb_forum.findMany({
           orderBy: {
@@ -28,7 +28,7 @@ export const Query = queryType({
     });
 
     t.list.field('topics', {
-      type: 'punbb_topics',
+      type: 'punbb_topic',
       args: {
         forum_id: intArg({ required: true }),
       },
@@ -45,7 +45,7 @@ export const Query = queryType({
     });
 
     t.list.field('searchPosts', {
-      type: 'punbb_posts',
+      type: 'punbb_post',
       args: {
         searchString: stringArg({ nullable: true }),
       },
