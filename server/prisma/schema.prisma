@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["rhel-openssl-1.0.x"]
 }
 
 datasource db {
@@ -90,14 +91,12 @@ model punbb_group {
 
 // The underlying table does not contain a unique identifier and can therefore currently not be handled.
 // model punbb_online {
-  // ident   String  @default("")
-  // idle    Boolean @default(false)
-  // logged  Int     @default(0)
-  // user_id Int     @default(1)
-
-  // @@index([user_id], name: "punbb_online_user_id_idx")
+// ident   String  @default("")
+// idle    Boolean @default(false)
+// logged  Int     @default(0)
+// user_id Int     @default(1)
+// @@index([user_id], name: "punbb_online_user_id_idx")
 // }
-
 model punbb_poll {
   id      Int    @default(autoincrement()) @id
   options String
@@ -160,14 +159,12 @@ model punbb_search_cache {
 
 // The underlying table does not contain a unique identifier and can therefore currently not be handled.
 // model punbb_search_matches {
-  // post_id       Int     @default(0)
-  // subject_match Boolean @default(false)
-  // word_id       Int     @default(0)
-
-  // @@index([post_id], name: "punbb_search_matches_post_id_idx")
-  // @@index([word_id], name: "punbb_search_matches_word_id_idx")
+// post_id       Int     @default(0)
+// subject_match Boolean @default(false)
+// word_id       Int     @default(0)
+// @@index([post_id], name: "punbb_search_matches_post_id_idx")
+// @@index([word_id], name: "punbb_search_matches_word_id_idx")
 // }
-
 model punbb_search_word {
   id   Int    @default(autoincrement())
   word String @default("") @id
@@ -221,16 +218,15 @@ model punbb_uploaded {
 
 // The underlying table does not contain a unique identifier and can therefore currently not be handled.
 // model punbb_uploads_conf {
-  // g_id           Int @default(0)
-  // p_delete       Int @default(0)
-  // p_globaldelete Int @default(0)
-  // p_globalview   Int @default(0)
-  // p_setop        Int @default(0)
-  // p_upload       Int @default(0)
-  // p_view         Int @default(0)
-  // u_fsize        Int @default(0)
+// g_id           Int @default(0)
+// p_delete       Int @default(0)
+// p_globaldelete Int @default(0)
+// p_globalview   Int @default(0)
+// p_setop        Int @default(0)
+// p_upload       Int @default(0)
+// p_view         Int @default(0)
+// u_fsize        Int @default(0)
 // }
-
 model punbb_uploads_type {
   exts String
   id   Int    @default(autoincrement()) @id
