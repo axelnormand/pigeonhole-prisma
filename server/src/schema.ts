@@ -9,6 +9,7 @@ export const schema = makeSchema({
       outputs: {
         typegen: __dirname + '/generated/nexusTypes.ts',
       },
+      shouldGenerateArtifacts: false,
     }),
   ],
   outputs: {
