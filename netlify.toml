@@ -1,6 +1,5 @@
 [build]
-  base = "server/"
-  publish = "public"
+  publish = "server/public"
   functions = "server/dist/functions"
-  command = "yarn build"
-  environment = { NODE_ENV = "production", PIGEONHOLE_SERVER = "lambda", ZISI_VERSION = "0.4.0-9" }
+  command = "yarn build:server"
+  environment = { PIGEONHOLE_SERVER = "lambda", ZISI_VERSION = "0.4.0-9" }
