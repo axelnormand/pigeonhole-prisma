@@ -4,7 +4,13 @@ import * as types from './types';
 
 export const schema = makeSchema({
   types,
-  plugins: [nexusPrismaPlugin({ shouldGenerateArtifacts: false })],
+  plugins: [
+    nexusPrismaPlugin({
+      outputs: {
+        typegen: __dirname + '/generated/nexusTypes.ts',
+      },
+    }),
+  ],
   outputs: {
     schema: __dirname + '/../../schema.graphql',
     typegen: __dirname + '/generated/nexus.ts',
