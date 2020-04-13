@@ -7,12 +7,12 @@ import * as types from './types';
  * __dirname not working on netlify
  * Error: ENOENT: no such file or directory, mkdir
  *
- * Trying solution from here instead
+ * Trying solution from here instead to get generated dir path
  * https://github.com/prisma/prisma/issues/1021
  */
-const getPathFromDirname = (...fileParts: string[]) => {
+const getGeneratedFilePath = (filename: string) => {
   // process.cwd is the server dir, so add on src
-  return path.join(process.cwd(), 'src', ...fileParts);
+  return path.join(process.cwd(), 'src', 'generated', filename);
 };
 
 export const schema = makeSchema({
@@ -21,16 +21,16 @@ export const schema = makeSchema({
     nexusPrismaPlugin({
       outputs: {
         //typegen: __dirname + '/generated/nexusTypes.ts',
-        typegen: getPathFromDirname('generated', 'nexusTypes.ts'),
+        typegen: getGeneratedFilePath('nexusTypes.ts'),
       },
       shouldGenerateArtifacts: false,
     }),
   ],
   outputs: {
     //schema: __dirname + '/../../schema.graphql',
-    schema: getPathFromDirname('../../', 'schema.graphql'),
+    schema: getGeneratedFilePath('schema.graphql'),
     //typegen: __dirname + '/generated/nexus.ts',
-    typegen: getPathFromDirname('generated', 'nexus.ts'),
+    typegen: getGeneratedFilePath('nexus.ts'),
   },
   typegenAutoConfig: {
     sources: [
