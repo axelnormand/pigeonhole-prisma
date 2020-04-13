@@ -1,1 +1,1 @@
-{ 'schemaPath': './server/src/generated/schema.graphql' }
+{ 'schemaPath': './schema.graphql' }
