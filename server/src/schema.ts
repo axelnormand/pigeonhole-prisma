@@ -12,8 +12,13 @@ export const schema = makeSchema({
   types,
   plugins: [
     nexusPrismaPlugin({
-      shouldGenerateArtifacts:
-        config().pigeonholeServer === 'node' ? true : false,
+      shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
+      outputs:
+        config().pigeonholeServer === 'node'
+          ? {
+              typegen: __dirname + '/generated/nexusTypes.ts',
+            }
+          : undefined,
     }),
   ],
   outputs:
@@ -22,7 +27,7 @@ export const schema = makeSchema({
           schema: __dirname + '/../../schema.graphql',
           typegen: __dirname + '/generated/nexus.ts',
         }
-      : false,
+      : undefined,
   typegenAutoConfig: {
     sources: [
       {
