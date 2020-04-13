@@ -22,7 +22,7 @@ export const schema = makeSchema({
           schema: __dirname + '/../../schema.graphql',
           typegen: __dirname + '/generated/nexus.ts',
         }
-      : undefined,
+      : false,
   typegenAutoConfig: {
     sources: [
       {
