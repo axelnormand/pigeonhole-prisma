@@ -1,4 +1,4 @@
-import { objectType } from 'nexus';
+import { objectType } from '@nexus/schema';
 
 export const punbb_user = objectType({
   name: 'punbb_user',
