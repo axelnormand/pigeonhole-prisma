@@ -9,25 +9,20 @@ import { config } from './config';
 // Therefore schema outputs undefined for netlify
 
 export const schema = makeSchema({
+  shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
   types,
   plugins: [
     nexusPrismaPlugin({
       shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
-      outputs:
-        config().pigeonholeServer === 'node'
-          ? {
-              typegen: __dirname + '/generated/nexusTypes.ts',
-            }
-          : undefined,
+      outputs: {
+        typegen: __dirname + '/generated/nexusTypes.ts',
+      },
     }),
   ],
-  outputs:
-    config().pigeonholeServer === 'node'
-      ? {
-          schema: __dirname + '/../../schema.graphql',
-          typegen: __dirname + '/generated/nexus.ts',
-        }
-      : false,
+  outputs: {
+    schema: __dirname + '/../../schema.graphql',
+    typegen: __dirname + '/generated/nexus.ts',
+  },
   typegenAutoConfig: {
     sources: [
       {
