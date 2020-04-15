@@ -3,6 +3,12 @@ import { makeSchema } from '@nexus/schema';
 import * as types from './types';
 import { config } from './config';
 
+const { nodeEnv, pigeonholeServer } = config();
+
+console.log(
+  `Loading schema with NODE_ENV ${nodeEnv} and PIGEONHOLE_SERVER ${pigeonholeServer}`,
+);
+
 export const schema = makeSchema({
   shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
   types,
