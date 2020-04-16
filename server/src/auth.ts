@@ -11,6 +11,15 @@ export function getUserId(context: Context): number | null {
   if (!appSecret) {
     throw new Error('process.env.APP_SECRET is blank');
   }
+  if (!context) {
+    console.log('No context!');
+    return null;
+  }
+  if (!context.request) {
+    console.log('No context.request!');
+    return null;
+  }
+
   const Authorization = context.request.get('Authorization');
   if (!Authorization) {
     console.log('No Authorization in header');
