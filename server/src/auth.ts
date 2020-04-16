@@ -12,14 +12,17 @@ export function getUserId(context: Context): number | null {
     throw new Error('process.env.APP_SECRET is blank');
   }
   const Authorization = context.request.get('Authorization');
-  if (Authorization) {
-    const token = Authorization.replace('Bearer ', '');
-    const verifiedToken = verify(token, appSecret) as Token;
-    const userId = parseInt(verifiedToken.userId);
-
-    if (!verifiedToken || isNaN(userId)) {
-      return null;
-    }
-    return userId;
+  if (!Authorization) {
+    console.log('No Authorization in header');
+    return null;
   }
+
+  const token = Authorization.replace('Bearer ', '');
+  const verifiedToken = verify(token, appSecret) as Token;
+  const userId = parseInt(verifiedToken.userId);
+
+  if (!verifiedToken || isNaN(userId)) {
+    return null;
+  }
+  return userId;
 }
