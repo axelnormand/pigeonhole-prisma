@@ -23,8 +23,8 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 
 ## Code TODOS
 
-- [ ] deploy netlify
-- [ ] expo install
+- [x] deploy netlify
+- [x] expo install
 - [ ] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
 - [ ] dependabot
 - [ ] jest
