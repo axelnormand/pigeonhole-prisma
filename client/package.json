@@ -47,7 +47,9 @@
       "**/expo*",
       "**/expo*/**",
       "**/@ui-kitten*",
-      "**/@ui-kitten*/**"
+      "**/@ui-kitten*/**",
+      "**/@eva-design*",
+      "**/@eva-design*/**"
     ]
   }
 }
