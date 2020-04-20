@@ -8,11 +8,11 @@ import {
 } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
-import { config } from './config';
+import { config } from '../config';
 
 console.log(`Started App with GraphQL: ${config().graphqlServerUrl}`);
 
-const App = () => {
+export const App = () => {
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
@@ -41,5 +41,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
-export default App;

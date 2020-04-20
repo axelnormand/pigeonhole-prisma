@@ -4,7 +4,7 @@ type Config = {
   graphqlServerUrl: string;
 };
 
-/* read process.env known keys */
+/* read process.env known keys and expo constants */
 export const config = (): Config => ({
   graphqlServerUrl: Constants.manifest?.releaseChannel
     ? 'https://graphql.tessellators.com/.netlify/functions/server'
