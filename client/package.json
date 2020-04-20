@@ -49,7 +49,9 @@
       "**/@ui-kitten*",
       "**/@ui-kitten*/**",
       "**/@eva-design*",
-      "**/@eva-design*/**"
+      "**/@eva-design*/**",
+      "**/jest-expo*",
+      "**/jest-expo*/**"
     ]
   }
 }
