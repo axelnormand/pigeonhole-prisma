@@ -8,6 +8,9 @@ import {
 } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
+import { config } from './config';
+
+console.log(`Started App with GraphQL: ${config().graphqlServerUrl}`);
 
 const App = () => {
   return (
@@ -19,7 +22,7 @@ const App = () => {
             Hello, World!
           </Text>
           <Text style={styles.text} category="s1">
-            Pigeonhole yo
+            Pigeonhole!
           </Text>
         </Layout>
       </ApplicationProvider>
