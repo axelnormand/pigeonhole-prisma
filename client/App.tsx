@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
-import {
-  AccessibilityRole,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  Text as RNText,
-} from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 import {
   ApplicationProvider,
-  Button,
-  Icon,
   IconRegistry,
   Layout,
   Text,
@@ -17,7 +9,7 @@ import {
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
 
-const App = (): React.FC => {
+const App = () => {
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />

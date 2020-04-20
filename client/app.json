@@ -5,13 +5,13 @@
     "name": "pigeonhole",
     "slug": "pigeonhole",
     "version": "1.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "platforms": ["ios", "android", "web"],
+    "assetBundlePatterns": ["assets/**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#83a850",
+      "icon": "./assets/icon.png"
+    }
   }
 }
