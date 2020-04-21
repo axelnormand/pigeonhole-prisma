@@ -16,8 +16,7 @@
     "docker:ps": "docker-compose ps",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --cache",
     "lint:fix": "yarn lint --fix",
-    "test": "jest",
-    "build:server": "yarn workspace @axelnormand/pigeonhole-server build"
+    "test": "jest"
   },
   "dependencies": {},
   "devDependencies": {

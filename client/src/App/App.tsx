@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 import {
   ApplicationProvider,
   IconRegistry,
-  Layout,
   Text,
+  Layout,
 } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
@@ -18,12 +18,7 @@ export const App = () => {
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider mapping={mapping} theme={dark}>
         <Layout style={styles.container}>
-          <Text style={styles.text} category="h1">
-            Hello, World!
-          </Text>
-          <Text style={styles.text} category="s1">
-            Pigeonhole!
-          </Text>
+          <Text category="h1">Hello, World!</Text>
         </Layout>
       </ApplicationProvider>
     </>
@@ -35,9 +30,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 10,
-  },
-  text: {
-    textAlign: 'center',
   },
 });

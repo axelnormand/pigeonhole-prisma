@@ -27,10 +27,14 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [x] expo install
 - [ ] foreign keys in schema.prisma: https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations#example
 - [ ] dependabot
-- [ ] jest
-- [ ] circle ci
-- [ ] fix linting
-- [ ] use babel or stay ts-node
+- [x] jest
+- [ ] circle ci / github actions
+- [ ] linting
+- [ ] prettier
+- [ ] bugsnag
+- [ ] sentry
+- [ ] Error Boundary
+- [ ] OTA updates
 
 ## Feature TODOs
 

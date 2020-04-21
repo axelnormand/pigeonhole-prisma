@@ -1,4 +1,5 @@
 [build]
+  base = "server/"
   publish = "server/public"
   functions = "server/dist/functions"
-  command = "yarn build:server"
+  command = "yarn build"
