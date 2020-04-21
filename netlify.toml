@@ -1,5 +1,5 @@
 [build]
   publish = "server/public"
   functions = "server/dist/functions"
-  command = "yarn build"
+  command = "yarn build:server"
   ignore = "git diff --quiet HEAD^ HEAD server/"
