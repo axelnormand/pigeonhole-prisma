@@ -8141,6 +8141,11 @@ react-native-svg@^11.0.1:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
 
+react-native-tab-view@^2.14.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.14.0.tgz#dd801f82fdb8e92fce9688b78d13923f3a5a2b3f"
+  integrity sha512-Z7XAM3NsMB96c17e9EAveunk7SUgilXWwVUTmWI1u/+p2SeOMUOB87z+//UXrcVlD1e9BPweR73q7dq7krTzTg==
+
 react-native-unimodules@~0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/react-native-unimodules/-/react-native-unimodules-0.9.0.tgz#5ce642ac50d124b9d41c09ff7cb397e22f1110ea"

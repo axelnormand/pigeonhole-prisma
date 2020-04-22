@@ -39,6 +39,7 @@
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
     "react-native-svg": "^11.0.1",
+    "react-native-tab-view": "^2.14.0",
     "react-native-unimodules": "~0.9.0",
     "react-native-web": "~0.11.7",
     "react-navigation": "^4.3.7",
@@ -79,7 +80,9 @@
       "**/@eva-design*",
       "**/@eva-design*/**",
       "**/jest-expo*",
-      "**/jest-expo*/**"
+      "**/jest-expo*/**",
+      "**/@react-navigation*",
+      "**/@react-navigation*/**"
     ]
   }
 }
