@@ -17,7 +17,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx --cache",
     "lint:fix": "yarn lint --fix",
     "test": "jest",
-    "build:server": "yarn workspace @axelnormand/pigeonhole-server build"
+    "build:netlify": "yarn workspace @axelnormand/pigeonhole-server build && yarn workspace @axelnormand/pigeonhole-client build:web"
   },
   "dependencies": {},
   "devDependencies": {

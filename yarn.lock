@@ -6085,6 +6085,11 @@ jmespath@0.15.0:
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/jmespath/-/jmespath-0.15.0.tgz#a3f222a9aae9f966f5d27c796510e28091764217"
 
+js-bbcode-parser@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/js-bbcode-parser/-/js-bbcode-parser-3.0.2.tgz#eb37898171df7e9fda263a0a5c5146d392907fa9"
+  integrity sha512-2O9ZhQ2wt9jUcSElzgoUaqLwR+1fAlS8/4huY0cfN2l9xHm6c70wKcr1xCdNK+w4itQ57Ph1L5tIEFUDm5NCLg==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"

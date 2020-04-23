@@ -10,7 +10,7 @@ import { AppStack } from '../navigation/AppStack';
 
 console.log(`Started App with GraphQL: ${config().graphqlServerUrl}`);
 
-const isAuthorized = false;
+const isAuthorized = true;
 
 export const App = () => {
   return (
