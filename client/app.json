@@ -12,6 +12,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#83a850",
       "icon": "./assets/icon.png"
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#222B45"
     }
   }
 }
