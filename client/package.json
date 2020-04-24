@@ -27,6 +27,7 @@
     "@ui-kitten/eva-icons": "^4.4.1",
     "expo": "~37.0.3",
     "expo-constants": "^9.0.0",
+    "expo-secure-store": "^8.1.0",
     "expo-updates": "~0.1.0",
     "formik": "^2.1.4",
     "graphql-request": "^1.8.2",
