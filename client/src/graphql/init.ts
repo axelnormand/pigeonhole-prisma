@@ -1,9 +1,9 @@
 import { Platform } from 'react-native';
-import { storage } from './storage.web';
+import { getKey } from './storage';
 
 enum key {
   bearer = 'bearer',
 }
 
 export const getBearerToken = async (): Promise<string | null> =>
-  storage.getKey(key.bearer);
+  getKey(key.bearer);

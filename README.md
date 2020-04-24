@@ -33,8 +33,11 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] prettier
 - [ ] bugsnag
 - [ ] sentry
-- [ ] Error Boundary
+- [x] Error Boundary
 - [ ] OTA updates
+- [ ] expo error recovery https://docs.expo.io/versions/latest/sdk/error-recovery/
+- [ ] absolute import rules
+- [ ] storybook
 
 ## Feature TODOs
 
@@ -42,7 +45,7 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] read forums + topics + posts
 - [ ] create post and topic
 - [ ] update/delete post and topic
-- [ ] navigation + web
+- [x] navigation + web
 - [ ] bbcode
 - [ ] push notifications
 - [ ] offline friendly / PWA
