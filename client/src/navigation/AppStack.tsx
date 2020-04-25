@@ -3,16 +3,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Login } from '../screens/Login';
 import { ForumsTabs } from './ForumTabs';
 
-type Params = {
+export type AppStackParams = {
   Login: undefined;
   Home: undefined;
 };
 
 type Props = {
-  initialRouteName: keyof Params;
+  initialRouteName: keyof AppStackParams;
 };
 
-const Stack = createStackNavigator<Params>();
+const Stack = createStackNavigator<AppStackParams>();
 
 export const AppStack: React.FC<Props> = ({ initialRouteName }) => (
   <Stack.Navigator headerMode="none" initialRouteName={initialRouteName}>
