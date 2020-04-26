@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { Button, Input } from '@ui-kitten/components';
+import { Button, Input, Text } from '@ui-kitten/components';
 import { Formik, FormikErrors } from 'formik';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
 import type { AppStackParams } from '../navigation/AppStack';
 import { CentreScreen } from '../comps/CentreScreen';
-import { LoadingAccessory } from '../comps/LoadingAccessory';
 
 type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
@@ -23,7 +22,7 @@ type LoginSchema = InferType<typeof loginSchema>;
 export const Login: React.FC<Props> = ({ navigation }) => {
   const initialValues: LoginSchema = { username: '', password: '' };
   return (
-    <CentreScreen>
+    <CentreScreen style={{ paddingLeft: 20, paddingRight: 20 }}>
       <Formik
         initialValues={initialValues}
         validate={(values) => {
@@ -45,11 +44,15 @@ export const Login: React.FC<Props> = ({ navigation }) => {
       >
         {({ handleSubmit, values, isSubmitting, errors }) => (
           <>
+            <Text category="h5" style={{ marginBottom: 10 }}>
+              Welcome to the Pigeon Hole
+            </Text>
             <Input
               placeholder="Username"
               status={errors.username ? 'danger' : ''}
               caption={errors.username || ''}
               value={values.username}
+              style={styles.row}
             />
             <Input
               placeholder="Password"
@@ -57,10 +60,12 @@ export const Login: React.FC<Props> = ({ navigation }) => {
               caption={errors.password || ''}
               value={values.password}
               secureTextEntry
+              style={styles.row}
             />
             <Button
               onPress={(e) => handleSubmit(e as any)}
               disabled={isSubmitting}
+              style={styles.row}
             >
               Login
             </Button>
@@ -70,3 +75,9 @@ export const Login: React.FC<Props> = ({ navigation }) => {
     </CentreScreen>
   );
 };
+
+const styles = StyleSheet.create({
+  row: {
+    marginTop: 10,
+  },
+});

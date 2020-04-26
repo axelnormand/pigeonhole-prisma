@@ -75,10 +75,10 @@
   },
   "workspaces": {
     "nohoist": [
-      "**/@react-native*",
-      "**/@react-native*/**",
-      "**/react-native*",
-      "**/react-native*/**",
+      "**/@react-*",
+      "**/@react-*/**",
+      "**/react-*",
+      "**/react-*/**",
       "**/@unimodules*",
       "**/@unimodules*/**",
       "**/expo*",
@@ -92,7 +92,9 @@
       "**/@react-navigation*",
       "**/@react-navigation*/**",
       "**/formik*",
-      "**/formik*/**"
+      "**/formik*/**",
+      "**/yup*",
+      "**/yup*/**"
     ]
   }
 }

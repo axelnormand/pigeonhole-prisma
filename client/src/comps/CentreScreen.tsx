@@ -1,13 +1,14 @@
 import React from 'react';
 import { Layout } from '@ui-kitten/components';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 
 type Props = {
   children: React.ReactNode;
+  style?: ViewStyle;
 };
 
-export const CentreScreen: React.FC<Props> = ({ children }) => (
-  <Layout style={styles.container}>{children}</Layout>
+export const CentreScreen: React.FC<Props> = ({ style, children }) => (
+  <Layout style={[style, styles.container]}>{children}</Layout>
 );
 
 const styles = StyleSheet.create({
