@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet } from 'react-native';
-import { Button, Input, Text } from '@ui-kitten/components';
+import { StyleSheet, Platform } from 'react-native';
+import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik, FormikErrors } from 'formik';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
@@ -19,22 +19,17 @@ const loginSchema = object().shape({
 
 type LoginSchema = InferType<typeof loginSchema>;
 
+const margin = 15;
+
 export const Login: React.FC<Props> = ({ navigation }) => {
   const initialValues: LoginSchema = { username: '', password: '' };
+  const [isShowingPassword, setIsShowingPassword] = useState(false);
+
   return (
     <CentreScreen style={{ paddingLeft: 20, paddingRight: 20 }}>
       <Formik
         initialValues={initialValues}
-        validate={(values) => {
-          const errors: FormikErrors<LoginSchema> = {};
-          if (!values.username) {
-            errors.username = 'Required';
-          }
-          if (!values.password) {
-            errors.password = 'Required';
-          }
-          return errors;
-        }}
+        validationSchema={loginSchema}
         onSubmit={({ username }, { setSubmitting }) => {
           setTimeout(() => {
             console.log(`Submitting ${username}`);
@@ -42,30 +37,47 @@ export const Login: React.FC<Props> = ({ navigation }) => {
           }, 1000);
         }}
       >
-        {({ handleSubmit, values, isSubmitting, errors }) => (
+        {({
+          handleSubmit,
+          values,
+          isSubmitting,
+          errors,
+          handleChange,
+          handleBlur,
+          isValid,
+          submitCount,
+        }) => (
           <>
-            <Text category="h5" style={{ marginBottom: 10 }}>
+            <Text category="h5" style={{ marginBottom: margin }}>
               Welcome to the Pigeon Hole
             </Text>
             <Input
               placeholder="Username"
-              status={errors.username ? 'danger' : ''}
-              caption={errors.username || ''}
+              status={submitCount && errors.username ? 'danger' : ''}
+              caption={(submitCount && errors.username) || ''}
               value={values.username}
-              style={styles.row}
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              style={styles.input}
             />
             <Input
               placeholder="Password"
-              status={errors.password ? 'danger' : ''}
-              caption={errors.password || ''}
+              status={submitCount && errors.password ? 'danger' : ''}
+              caption={(submitCount && errors.password) || ''}
               value={values.password}
-              secureTextEntry
-              style={styles.row}
+              secureTextEntry={!isShowingPassword}
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              style={styles.input}
+              icon={(style) => (
+                <Icon {...style} name={isShowingPassword ? 'eye-off' : 'eye'} />
+              )}
+              onIconPress={() => setIsShowingPassword(!isShowingPassword)}
             />
             <Button
               onPress={(e) => handleSubmit(e as any)}
-              disabled={isSubmitting}
-              style={styles.row}
+              disabled={isSubmitting || !isValid}
+              style={{ marginTop: margin }}
             >
               Login
             </Button>
@@ -77,7 +89,8 @@ export const Login: React.FC<Props> = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  row: {
-    marginTop: 10,
+  input: {
+    marginTop: margin,
+    minWidth: Platform.OS === 'web' ? 400 : undefined,
   },
 });
