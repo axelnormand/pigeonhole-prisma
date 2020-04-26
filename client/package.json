@@ -13,7 +13,8 @@
     "optimize": "npx expo-optimize",
     "build:web": "yarn optimize && expo build:web",
     "build:ios": "expo build:ios",
-    "build:android": "expo build:android"
+    "build:android": "expo build:android",
+    "generate": "yarn mst-gql --format ts http://localhost:4000"
   },
   "dependencies": {
     "@eva-design/eva": "^1.4.0",
