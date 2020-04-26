@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Platform } from 'react-native';
-import { Button, Input, Text, Icon } from '@ui-kitten/components';
+import { Button, Input, Text, Icon, Layout } from '@ui-kitten/components';
 import { Formik, FormikErrors } from 'formik';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
 import type { AppStackParams } from '../navigation/AppStack';
 import { CentreScreen } from '../comps/CentreScreen';
+import { useSafeArea } from 'react-native-safe-area-context';
 
 type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
@@ -20,13 +21,13 @@ const loginSchema = object().shape({
 type LoginSchema = InferType<typeof loginSchema>;
 
 const margin = 15;
-
 export const Login: React.FC<Props> = ({ navigation }) => {
+  const insets = useSafeArea();
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
 
   return (
-    <CentreScreen style={{ paddingLeft: 20, paddingRight: 20 }}>
+    <Layout style={[styles.container, { paddingTop: insets.top + 20 }]}>
       <Formik
         initialValues={initialValues}
         validationSchema={loginSchema}
@@ -84,11 +85,17 @@ export const Login: React.FC<Props> = ({ navigation }) => {
           </>
         )}
       </Formik>
-    </CentreScreen>
+    </Layout>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
   input: {
     marginTop: margin,
     minWidth: Platform.OS === 'web' ? 400 : undefined,
