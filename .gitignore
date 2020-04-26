@@ -106,3 +106,4 @@ typings/
 # Local Netlify folder
 .netlify
 **/web-build
+client/.expo-shared/
