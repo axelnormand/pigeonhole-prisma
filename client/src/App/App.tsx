@@ -10,23 +10,22 @@ import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
+import { createHttpClient } from 'mst-gql';
 import { config } from '../config';
 import { AppStack } from '../navigation/AppStack';
 import { getBearerToken } from '../graphql/init';
 import { CentreScreen } from '../comps/CentreScreen';
 import { ErrorBoundary } from '../comps/ErrorBoundary';
+import { init } from './init';
+import { getGraphQLClient, setTokenInHeader } from '../graphql/client';
+import { RootStore, StoreContext } from '../models';
 
-console.log(`Started App with GraphQL: ${config().graphqlServerUrl}`);
+console.log(`Starting App with GraphQL: ${config().graphqlServerUrl}`);
+init();
 
-// setup async error handler
-if (Platform.OS !== 'web') {
-  const defaultErrorHandler = ErrorUtils.getGlobalHandler();
-  const myErrorHandler = (e: Error, isFatal?: boolean) => {
-    console.error(`ASYNC ERROR (isFatal ${isFatal}): ${e.message}`, e);
-    defaultErrorHandler(e, isFatal);
-  };
-  ErrorUtils.setGlobalHandler(myErrorHandler);
-}
+const rootStore = RootStore.create(undefined, {
+  gqlHttpClient: getGraphQLClient(),
+});
 
 export const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +35,9 @@ export const App = () => {
     (async () => {
       const token = await getBearerToken();
       console.log(`Got token: "${token}"`);
+      if (token) {
+        setTokenInHeader(token);
+      }
       setIsAuthorized(token ? true : false);
       setIsLoading(false);
     })();
@@ -45,17 +47,19 @@ export const App = () => {
     <ErrorBoundary>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider mapping={mapping} theme={dark}>
-        <SafeAreaProvider>
-          <NavigationContainer>
-            {isLoading ? (
-              <CentreScreen>
-                <Spinner size="giant" />
-              </CentreScreen>
-            ) : (
-              <AppStack initialRouteName={isAuthorized ? 'Home' : 'Login'} />
-            )}
-          </NavigationContainer>
-        </SafeAreaProvider>
+        <StoreContext.Provider value={rootStore}>
+          <SafeAreaProvider>
+            <NavigationContainer>
+              {isLoading ? (
+                <CentreScreen>
+                  <Spinner size="giant" />
+                </CentreScreen>
+              ) : (
+                <AppStack initialRouteName={isAuthorized ? 'Home' : 'Login'} />
+              )}
+            </NavigationContainer>
+          </SafeAreaProvider>
+        </StoreContext.Provider>
       </ApplicationProvider>
     </ErrorBoundary>
   );

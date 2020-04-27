@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
-import { StyleSheet, Platform } from 'react-native';
-import { Button, Input, Text, Icon, Layout } from '@ui-kitten/components';
-import { Formik, FormikErrors } from 'formik';
+import { StyleSheet, Platform, ImageBackground } from 'react-native';
+import {
+  Button,
+  Input,
+  Text,
+  Icon,
+  Layout,
+  Spinner,
+} from '@ui-kitten/components';
+import { Formik } from 'formik';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
+import { observer } from 'mobx-react';
 import type { AppStackParams } from '../navigation/AppStack';
-import { CentreScreen } from '../comps/CentreScreen';
-import { useSafeArea } from 'react-native-safe-area-context';
+import { useQuery } from '../models';
 
 type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
@@ -21,80 +28,95 @@ const loginSchema = object().shape({
 type LoginSchema = InferType<typeof loginSchema>;
 
 const margin = 15;
-export const Login: React.FC<Props> = ({ navigation }) => {
-  const insets = useSafeArea();
+export const Login: React.FC<Props> = observer(({ navigation }) => {
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
+  const { store, data, loading, error } = useQuery();
 
   return (
-    <Layout style={[styles.container, { paddingTop: insets.top + 20 }]}>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={loginSchema}
-        onSubmit={({ username }, { setSubmitting }) => {
-          setTimeout(() => {
+    <>
+      <ImageBackground
+        style={styles.appBar}
+        source={require('../../assets/login-background.png')}
+      />
+      <Layout style={styles.container}>
+        <Formik
+          initialValues={initialValues}
+          validationSchema={loginSchema}
+          onSubmit={async ({ username, password }, { setSubmitting }) => {
             console.log(`Submitting ${username}`);
+            const query = store.mutateLogin({ username, password });
+            await query;
             setSubmitting(false);
-          }, 1000);
-        }}
-      >
-        {({
-          handleSubmit,
-          values,
-          isSubmitting,
-          errors,
-          handleChange,
-          handleBlur,
-          isValid,
-          submitCount,
-        }) => (
-          <>
-            <Text category="h5" style={{ marginBottom: margin }}>
-              Welcome to the Pigeon Hole
-            </Text>
-            <Input
-              placeholder="Username"
-              status={submitCount && errors.username ? 'danger' : ''}
-              caption={(submitCount && errors.username) || ''}
-              value={values.username}
-              onChangeText={handleChange('username')}
-              onBlur={handleBlur('username')}
-              style={styles.input}
-            />
-            <Input
-              placeholder="Password"
-              status={submitCount && errors.password ? 'danger' : ''}
-              caption={(submitCount && errors.password) || ''}
-              value={values.password}
-              secureTextEntry={!isShowingPassword}
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              style={styles.input}
-              icon={(style) => (
-                <Icon {...style} name={isShowingPassword ? 'eye-off' : 'eye'} />
-              )}
-              onIconPress={() => setIsShowingPassword(!isShowingPassword)}
-            />
-            <Button
-              onPress={(e) => handleSubmit(e as any)}
-              disabled={isSubmitting || !isValid}
-              style={{ marginTop: margin }}
-            >
-              Login
-            </Button>
-          </>
-        )}
-      </Formik>
-    </Layout>
+            console.log(`Submitted! ${username}`, query);
+          }}
+        >
+          {({
+            handleSubmit,
+            values,
+            isSubmitting,
+            errors,
+            handleChange,
+            handleBlur,
+            isValid,
+            submitCount,
+          }) => (
+            <>
+              <Text category="h5" style={{ marginBottom: margin }}>
+                Welcome to the Pigeon Hole
+              </Text>
+              <Input
+                placeholder="Username"
+                status={submitCount && errors.username ? 'danger' : ''}
+                caption={(submitCount && errors.username) || ''}
+                value={values.username}
+                onChangeText={handleChange('username')}
+                onBlur={handleBlur('username')}
+                style={styles.input}
+              />
+              <Input
+                placeholder="Password"
+                status={submitCount && errors.password ? 'danger' : ''}
+                caption={(submitCount && errors.password) || ''}
+                value={values.password}
+                secureTextEntry={!isShowingPassword}
+                onChangeText={handleChange('password')}
+                onBlur={handleBlur('password')}
+                style={styles.input}
+                icon={(style) => (
+                  <Icon
+                    {...style}
+                    name={isShowingPassword ? 'eye-off' : 'eye'}
+                  />
+                )}
+                onIconPress={() => setIsShowingPassword(!isShowingPassword)}
+              />
+              <Button
+                onPress={(e) => handleSubmit(e as any)}
+                disabled={isSubmitting || !isValid || loading}
+                style={{ marginTop: margin }}
+              >
+                Login
+              </Button>
+              {loading && <Spinner />}
+            </>
+          )}
+        </Formik>
+      </Layout>
+    </>
   );
-};
+});
 
 const styles = StyleSheet.create({
+  appBar: {
+    height: 192,
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     paddingLeft: 20,
     paddingRight: 20,
+    paddingTop: 20,
   },
   input: {
     marginTop: margin,
