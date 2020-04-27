@@ -14,6 +14,7 @@ import { InferType, string, object } from 'yup';
 import { observer } from 'mobx-react';
 import type { AppStackParams } from '../navigation/AppStack';
 import { useQuery } from '../models';
+import { setTokenInHeader } from '../graphql/client';
 
 type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
@@ -45,10 +46,17 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
           validationSchema={loginSchema}
           onSubmit={async ({ username, password }, { setSubmitting }) => {
             console.log(`Submitting ${username}`);
-            const query = store.mutateLogin({ username, password });
-            await query;
+            const { login } = await store.mutateLogin({
+              username,
+              password,
+            });
             setSubmitting(false);
-            console.log(`Submitted! ${username}`, query);
+            console.log(`Success! ${username} and got token ${login.token}`);
+            if (!login.token) {
+              throw Error('Server returned empty token');
+            }
+            setTokenInHeader(login.token);
+            navigation.navigate('Home');
           }}
         >
           {({
