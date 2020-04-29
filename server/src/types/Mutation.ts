@@ -54,6 +54,7 @@ export const Mutation = mutationType({
           throw new Error('Invalid password');
         }
         return {
+          success: true,
           token: sign({ userId: user.id }, config().appSecret),
         };
       },

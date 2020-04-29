@@ -5,6 +5,7 @@
 import { types } from "mobx-state-tree"
 import { QueryBuilder } from "mst-gql"
 import { ModelBase } from "./ModelBase"
+import { LoginResultEnum } from "./LoginResultEnum"
 import { RootStoreType } from "./index"
 
 
@@ -17,6 +18,7 @@ export const AuthPayloadModelBase = ModelBase
   .props({
     __typename: types.optional(types.literal("AuthPayload"), "AuthPayload"),
     token: types.union(types.undefined, types.string),
+    loginResult: types.union(types.undefined, LoginResultEnum),
   })
   .views(self => ({
     get store() {
@@ -26,9 +28,10 @@ export const AuthPayloadModelBase = ModelBase
 
 export class AuthPayloadModelSelector extends QueryBuilder {
   get token() { return this.__attr(`token`) }
+  get loginResult() { return this.__attr(`loginResult`) }
 }
 export function selectFromAuthPayload() {
   return new AuthPayloadModelSelector()
 }
 
-export const authPayloadModelPrimitives = selectFromAuthPayload().token
+export const authPayloadModelPrimitives = selectFromAuthPayload().token.loginResult

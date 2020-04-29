@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, Platform, ImageBackground } from 'react-native';
 import {
   Button,
@@ -12,9 +12,9 @@ import { Formik } from 'formik';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
 import { observer } from 'mobx-react';
-import type { AppStackParams } from '../navigation/AppStack';
-import { useQuery } from '../models';
-import { setTokenInHeader } from '../graphql/client';
+import type { AppStackParams } from '../../navigation/AppStack';
+import { StoreContext } from '../../models';
+import { setTokenInHeader } from '../../graphql/client';
 
 type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
@@ -32,7 +32,10 @@ const margin = 15;
 export const Login: React.FC<Props> = observer(({ navigation }) => {
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
-  const { store, data, loading, error } = useQuery();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFailedLogin, setIsError] = useState(false);
+
+  const store = useContext(StoreContext);
 
   return (
     <>
@@ -46,17 +49,25 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
           validationSchema={loginSchema}
           onSubmit={async ({ username, password }, { setSubmitting }) => {
             console.log(`Submitting ${username}`);
-            const { login } = await store.mutateLogin({
-              username,
-              password,
-            });
-            setSubmitting(false);
-            console.log(`Success! ${username} and got token ${login.token}`);
-            if (!login.token) {
-              throw Error('Server returned empty token');
+            setIsLoading(true);
+
+            try {
+              const { login } = await store.mutateLogin({
+                username,
+                password,
+              });
+              console.log(`Success! ${username} and got token ${login.token}`);
+              if (!login.token) {
+                throw Error('Server returned empty token');
+              }
+              setTokenInHeader(login.token);
+              navigation.navigate('Home');
+            } catch (e) {
+              console.log(`Can't login: ${e.message}`);
+            } finally {
+              setSubmitting(false);
+              setIsLoading(false);
             }
-            setTokenInHeader(login.token);
-            navigation.navigate('Home');
           }}
         >
           {({
@@ -80,7 +91,7 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
                 value={values.username}
                 onChangeText={handleChange('username')}
                 onBlur={handleBlur('username')}
-                style={styles.input}
+                style={styles.row}
               />
               <Input
                 placeholder="Password"
@@ -90,7 +101,7 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
                 secureTextEntry={!isShowingPassword}
                 onChangeText={handleChange('password')}
                 onBlur={handleBlur('password')}
-                style={styles.input}
+                style={styles.row}
                 icon={(style) => (
                   <Icon
                     {...style}
@@ -101,12 +112,21 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
               />
               <Button
                 onPress={(e) => handleSubmit(e as any)}
-                disabled={isSubmitting || !isValid || loading}
+                disabled={isSubmitting || !isValid || isLoading}
                 style={{ marginTop: margin }}
               >
-                Login
+                {isLoading ? 'Logging in...' : 'Login'}
               </Button>
-              {loading && <Spinner />}
+              {isLoading && <Spinner size="giant" style={styles.row} />}
+              {isError && (
+                <Text
+                  category="s1"
+                  status="danger"
+                  style={{ marginBottom: margin }}
+                >
+                  Sorry invalid username/password please try again
+                </Text>
+              )}
             </>
           )}
         </Formik>
@@ -126,7 +146,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingTop: 20,
   },
-  input: {
+  row: {
     marginTop: margin,
     minWidth: Platform.OS === 'web' ? 400 : undefined,
   },

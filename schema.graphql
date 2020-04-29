@@ -3,7 +3,14 @@
 
 
 type AuthPayload {
+  loginResult: LoginResult!
   token: String!
+}
+
+enum LoginResult {
+  ERROR
+  INVALID
+  SUCCESS
 }
 
 type Mutation {

@@ -23,10 +23,12 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
+  LoginResult: "ERROR" | "INVALID" | "SUCCESS"
 }
 
 export interface NexusGenRootTypes {
   AuthPayload: { // root type
+    loginResult: NexusGenEnums['LoginResult']; // LoginResult!
     token: string; // String!
   }
   Mutation: {};
@@ -43,10 +45,12 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  LoginResult: NexusGenEnums['LoginResult'];
 }
 
 export interface NexusGenFieldTypes {
   AuthPayload: { // field return type
+    loginResult: NexusGenEnums['LoginResult']; // LoginResult!
     token: string; // String!
   }
   Mutation: { // field return type
@@ -119,7 +123,7 @@ export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_
 
 export type NexusGenInputNames = never;
 
-export type NexusGenEnumNames = never;
+export type NexusGenEnumNames = "LoginResult";
 
 export type NexusGenInterfaceNames = never;
 

@@ -16,6 +16,7 @@ import { punbbPostModelPrimitives, PunbbPostModelSelector } from "./PunbbPostMod
 import { AuthPayloadModel, AuthPayloadModelType } from "./AuthPayloadModel"
 import { authPayloadModelPrimitives, AuthPayloadModelSelector } from "./AuthPayloadModel.base"
 
+import { LoginResult } from "./LoginResultEnum"
 
 /* The TypeScript type that explicits the refs to other models in order to prevent a circular refs issue */
 type Refs = {

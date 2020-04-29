@@ -38,6 +38,8 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] expo error recovery https://docs.expo.io/versions/latest/sdk/error-recovery/
 - [ ] absolute import rules
 - [ ] storybook
+- [ ] websocket subscriptions + lambda updates from a php post
+- [ ] store push token in db by creating new table
 
 ## Feature TODOs
 
