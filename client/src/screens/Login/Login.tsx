@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import type { AppStackParams } from '../../navigation/AppStack';
-import { StoreContext, LoginResult } from '../../models';
+import { StoreContext } from '../../models';
 import { setTokenInHeader } from '../../graphql/client';
 import { LoginComponent } from './LoginComponent';
 
