@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Platform, ImageBackground } from 'react-native';
 import {
   Button,
@@ -10,7 +10,6 @@ import {
 } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
-import { setTokenInHeader } from '../../graphql/client';
 
 type Props = {
   onSubmit: (username: string, password: string) => Promise<boolean>;
@@ -34,7 +33,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
     <>
       <ImageBackground
         style={styles.appBar}
-        source={require('../../assets/login-background.png')}
+        source={require('../../../assets/login-background.png')}
       />
       <Layout style={styles.container}>
         <Formik
@@ -45,8 +44,9 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             setIsLoading(true);
             const success = await onSubmit(username, password);
             if (!success) {
-              setIsLoading(true);
+              setIsLoading(false);
               setIsFailed(true);
+              setSubmitting(false);
             }
           }}
         >
@@ -90,14 +90,6 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
                 )}
                 onIconPress={() => setIsShowingPassword(!isShowingPassword)}
               />
-              <Button
-                onPress={(e) => handleSubmit(e as any)}
-                disabled={isSubmitting || !isValid || isLoading}
-                style={{ marginTop: margin }}
-              >
-                {isLoading ? 'Logging in...' : 'Login'}
-              </Button>
-              {isLoading && <Spinner size="giant" style={styles.row} />}
               {isFailed && (
                 <Text
                   category="s1"
@@ -107,6 +99,14 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
                   Sorry invalid username/password please try again
                 </Text>
               )}
+              <Button
+                onPress={(e) => handleSubmit(e as any)}
+                disabled={isSubmitting || !isValid || isLoading}
+                style={{ marginTop: margin }}
+              >
+                {isLoading ? 'Logging in...' : 'Login'}
+              </Button>
+              {isLoading && <Spinner size="giant" style={styles.row} />}
             </>
           )}
         </Formik>
