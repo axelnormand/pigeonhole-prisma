@@ -17,7 +17,7 @@ export const AuthPayloadModelBase = ModelBase
   .named('AuthPayload')
   .props({
     __typename: types.optional(types.literal("AuthPayload"), "AuthPayload"),
-    token: types.union(types.undefined, types.string),
+    token: types.union(types.undefined, types.null, types.string),
     loginResult: types.union(types.undefined, LoginResultEnum),
   })
   .views(self => ({

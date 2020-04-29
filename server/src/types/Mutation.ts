@@ -42,19 +42,22 @@ export const Mutation = mutationType({
           },
         });
         if (!users || !users.length) {
-          throw new Error(`No username/email found: ${username}`);
+          return {
+            loginResult: 'INVALID',
+            token: null,
+          };
         }
         if (users.length > 1) {
-          throw new Error(`Multiple usernames/emails found: ${username}`);
+          return { loginResult: 'ERROR', token: null };
         }
         const user = users[0];
 
         const passwordValid = sha1(password).toString() === user.password;
         if (!passwordValid) {
-          throw new Error('Invalid password');
+          return { loginResult: 'INVALID', token: null };
         }
         return {
-          success: true,
+          loginResult: 'SUCCESS',
           token: sign({ userId: user.id }, config().appSecret),
         };
       },

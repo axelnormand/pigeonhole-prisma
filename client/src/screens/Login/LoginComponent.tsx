@@ -9,16 +9,11 @@ import {
   Spinner,
 } from '@ui-kitten/components';
 import { Formik } from 'formik';
-import { StackNavigationProp } from '@react-navigation/stack';
 import { InferType, string, object } from 'yup';
-import { observer } from 'mobx-react';
-import type { AppStackParams } from '../../navigation/AppStack';
-import { StoreContext } from '../../models';
 import { setTokenInHeader } from '../../graphql/client';
 
-type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
 type Props = {
-  navigation: Navigation;
+  onSubmit: (username: string, password: string) => Promise<boolean>;
 };
 
 const loginSchema = object().shape({
@@ -29,13 +24,11 @@ const loginSchema = object().shape({
 type LoginSchema = InferType<typeof loginSchema>;
 
 const margin = 15;
-export const Login: React.FC<Props> = observer(({ navigation }) => {
+export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isFailedLogin, setIsError] = useState(false);
-
-  const store = useContext(StoreContext);
+  const [isFailed, setIsFailed] = useState(false);
 
   return (
     <>
@@ -50,23 +43,10 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
           onSubmit={async ({ username, password }, { setSubmitting }) => {
             console.log(`Submitting ${username}`);
             setIsLoading(true);
-
-            try {
-              const { login } = await store.mutateLogin({
-                username,
-                password,
-              });
-              console.log(`Success! ${username} and got token ${login.token}`);
-              if (!login.token) {
-                throw Error('Server returned empty token');
-              }
-              setTokenInHeader(login.token);
-              navigation.navigate('Home');
-            } catch (e) {
-              console.log(`Can't login: ${e.message}`);
-            } finally {
-              setSubmitting(false);
-              setIsLoading(false);
+            const success = await onSubmit(username, password);
+            if (!success) {
+              setIsLoading(true);
+              setIsFailed(true);
             }
           }}
         >
@@ -118,7 +98,7 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
                 {isLoading ? 'Logging in...' : 'Login'}
               </Button>
               {isLoading && <Spinner size="giant" style={styles.row} />}
-              {isError && (
+              {isFailed && (
                 <Text
                   category="s1"
                   status="danger"
@@ -133,7 +113,7 @@ export const Login: React.FC<Props> = observer(({ navigation }) => {
       </Layout>
     </>
   );
-});
+};
 
 const styles = StyleSheet.create({
   appBar: {

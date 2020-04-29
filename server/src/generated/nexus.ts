@@ -29,7 +29,7 @@ export interface NexusGenEnums {
 export interface NexusGenRootTypes {
   AuthPayload: { // root type
     loginResult: NexusGenEnums['LoginResult']; // LoginResult!
-    token: string; // String!
+    token?: string | null; // String
   }
   Mutation: {};
   Query: {};
@@ -51,7 +51,7 @@ export interface NexusGenAllTypes extends NexusGenRootTypes {
 export interface NexusGenFieldTypes {
   AuthPayload: { // field return type
     loginResult: NexusGenEnums['LoginResult']; // LoginResult!
-    token: string; // String!
+    token: string | null; // String
   }
   Mutation: { // field return type
     login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
