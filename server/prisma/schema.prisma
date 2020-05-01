@@ -20,9 +20,10 @@ model punbb_ban {
 }
 
 model punbb_category {
-  cat_name      String @default("New Category")
-  disp_position Int    @default(0)
-  id            Int    @default(autoincrement()) @id
+  cat_name      String        @default("New Category")
+  disp_position Int           @default(0)
+  id            Int           @default(autoincrement()) @id
+  punbb_forum   punbb_forum[]
 
   @@map("punbb_categories")
 }
@@ -39,20 +40,21 @@ model punbb_config {
 }
 
 model punbb_forum {
-  cat_id        Int           @default(0)
-  disp_position Int           @default(0)
-  forum_desc    String?
-  forum_name    String        @default("New forum")
-  id            Int           @default(autoincrement()) @id
-  last_post     Int?
-  last_poster   String?
-  last_post_id  Int?
-  moderators    String?
-  num_posts     Int           @default(0)
-  num_topics    Int           @default(0)
-  redirect_url  String?
-  sort_by       Boolean       @default(false)
-  punbb_topic   punbb_topic[]
+  cat_id         Int            @default(0)
+  disp_position  Int            @default(0)
+  forum_desc     String?
+  forum_name     String         @default("New forum")
+  id             Int            @default(autoincrement()) @id
+  last_post      Int?
+  last_poster    String?
+  last_post_id   Int?
+  moderators     String?
+  num_posts      Int            @default(0)
+  num_topics     Int            @default(0)
+  redirect_url   String?
+  sort_by        Boolean        @default(false)
+  punbb_topic    punbb_topic[]
+  punbb_category punbb_category @relation(fields: [cat_id], references: [id])
 
   @@map("punbb_forums")
 }
@@ -122,6 +124,7 @@ model punbb_post {
   poster_ip    String?
   topic_id     Int         @default(0)
   punbb_topic  punbb_topic @relation(fields: [topic_id], references: [id])
+  punbb_user   punbb_user  @relation(fields: [poster_id], references: [id])
 
   @@index([poster_id, topic_id], name: "punbb_posts_multi_idx")
   @@index([topic_id], name: "punbb_posts_topic_id_idx")
@@ -246,38 +249,39 @@ model punbb_user {
   aim              String?
   disp_posts       Int?
   disp_topics      Int?
-  email            String  @default("")
-  email_setting    Boolean @default(true)
-  group_id         Int     @default(4)
+  email            String       @default("")
+  email_setting    Boolean      @default(true)
+  group_id         Int          @default(4)
   icq              String?
-  id               Int     @default(autoincrement()) @id
+  id               Int          @default(autoincrement()) @id
   jabber           String?
-  language         String  @default("English")
+  language         String       @default("English")
   last_post        Int?
-  last_visit       Int     @default(0)
+  last_visit       Int          @default(0)
   location         String?
   msn              String?
-  notify_with_post Boolean @default(false)
-  num_posts        Int     @default(0)
-  password         String  @default("")
+  notify_with_post Boolean      @default(false)
+  num_posts        Int          @default(0)
+  password         String       @default("")
   read_topics      String?
   realname         String?
-  registered       Int     @default(0)
-  registration_ip  String  @default("0.0.0.0")
-  save_pass        Boolean @default(true)
-  show_avatars     Boolean @default(true)
-  show_img         Boolean @default(true)
-  show_img_sig     Boolean @default(true)
-  show_sig         Boolean @default(true)
-  show_smilies     Boolean @default(true)
+  registered       Int          @default(0)
+  registration_ip  String       @default("0.0.0.0")
+  save_pass        Boolean      @default(true)
+  show_avatars     Boolean      @default(true)
+  show_img         Boolean      @default(true)
+  show_img_sig     Boolean      @default(true)
+  show_sig         Boolean      @default(true)
+  show_smilies     Boolean      @default(true)
   signature        String?
-  style            String  @default("Oxygen")
-  timezone         Float   @default(0)
+  style            String       @default("Oxygen")
+  timezone         Float        @default(0)
   title            String?
   url              String?
-  username         String  @default("")
-  use_avatar       Boolean @default(false)
+  username         String       @default("")
+  use_avatar       Boolean      @default(false)
   yahoo            String?
+  punbb_post       punbb_post[]
 
   @@index([registered], name: "punbb_users_registered_idx")
   @@index([username], name: "punbb_users_username_idx")

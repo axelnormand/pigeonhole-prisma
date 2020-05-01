@@ -20,6 +20,15 @@ declare global {
 }
 
 export interface NexusGenInputs {
+  punbb_forumWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  punbb_postWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
+  punbb_topicWhereUniqueInput: { // input type
+    id?: number | null; // Int
+  }
 }
 
 export interface NexusGenEnums {
@@ -33,6 +42,7 @@ export interface NexusGenRootTypes {
   }
   Mutation: {};
   Query: {};
+  punbb_category: client.punbb_category;
   punbb_forum: client.punbb_forum;
   punbb_post: client.punbb_post;
   punbb_topic: client.punbb_topic;
@@ -45,6 +55,9 @@ export interface NexusGenRootTypes {
 }
 
 export interface NexusGenAllTypes extends NexusGenRootTypes {
+  punbb_forumWhereUniqueInput: NexusGenInputs['punbb_forumWhereUniqueInput'];
+  punbb_postWhereUniqueInput: NexusGenInputs['punbb_postWhereUniqueInput'];
+  punbb_topicWhereUniqueInput: NexusGenInputs['punbb_topicWhereUniqueInput'];
   LoginResult: NexusGenEnums['LoginResult'];
 }
 
@@ -62,10 +75,19 @@ export interface NexusGenFieldTypes {
     searchPosts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
+  punbb_category: { // field return type
+    cat_name: string; // String!
+    disp_position: number; // Int!
+    id: number; // Int!
+    punbb_forum: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
+  }
   punbb_forum: { // field return type
+    cat_id: number; // Int!
     forum_desc: string | null; // String
     forum_name: string; // String!
     id: number; // Int!
+    punbb_category: NexusGenRootTypes['punbb_category']; // punbb_category!
+    punbb_topic: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
   punbb_post: { // field return type
     edited: number | null; // Int
@@ -74,6 +96,7 @@ export interface NexusGenFieldTypes {
     message: string; // String!
     posted: number; // Int!
     poster_id: number; // Int!
+    punbb_user: NexusGenRootTypes['punbb_user']; // punbb_user!
   }
   punbb_topic: { // field return type
     closed: boolean; // Boolean!
@@ -84,6 +107,8 @@ export interface NexusGenFieldTypes {
     last_poster: string | null; // String
     posted: number; // Int!
     poster: string; // String!
+    punbb_forum: NexusGenRootTypes['punbb_forum']; // punbb_forum!
+    punbb_post: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     sticky: boolean; // Boolean!
     subject: string; // String!
   }
@@ -112,6 +137,33 @@ export interface NexusGenArgTypes {
       forum_id: number; // Int!
     }
   }
+  punbb_category: {
+    punbb_forum: { // args
+      after?: NexusGenInputs['punbb_forumWhereUniqueInput'] | null; // punbb_forumWhereUniqueInput
+      before?: NexusGenInputs['punbb_forumWhereUniqueInput'] | null; // punbb_forumWhereUniqueInput
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    }
+  }
+  punbb_forum: {
+    punbb_topic: { // args
+      after?: NexusGenInputs['punbb_topicWhereUniqueInput'] | null; // punbb_topicWhereUniqueInput
+      before?: NexusGenInputs['punbb_topicWhereUniqueInput'] | null; // punbb_topicWhereUniqueInput
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    }
+  }
+  punbb_topic: {
+    punbb_post: { // args
+      after?: NexusGenInputs['punbb_postWhereUniqueInput'] | null; // punbb_postWhereUniqueInput
+      before?: NexusGenInputs['punbb_postWhereUniqueInput'] | null; // punbb_postWhereUniqueInput
+      first?: number | null; // Int
+      last?: number | null; // Int
+      skip?: number | null; // Int
+    }
+  }
 }
 
 export interface NexusGenAbstractResolveReturnTypes {
@@ -119,9 +171,9 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user";
+export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_category" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user";
 
-export type NexusGenInputNames = never;
+export type NexusGenInputNames = "punbb_forumWhereUniqueInput" | "punbb_postWhereUniqueInput" | "punbb_topicWhereUniqueInput";
 
 export type NexusGenEnumNames = "LoginResult";
 

@@ -6,5 +6,8 @@ export const punbb_forum = objectType({
     t.model.id();
     t.model.forum_name();
     t.model.forum_desc();
+    t.model.cat_id();
+    t.model.punbb_category();
+    t.model.punbb_topic();
   },
 });

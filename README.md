@@ -43,6 +43,7 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] pull to refresh
 - [ ] animations
 - [ ] nice styling
+- [ ] why forum card has multiple click hovers
 
 ## Feature TODOs
 

@@ -9,5 +9,6 @@ export const punbb_post = objectType({
     t.model.posted();
     t.model.edited();
     t.model.edited_by();
+    t.model.punbb_user();
   },
 });
