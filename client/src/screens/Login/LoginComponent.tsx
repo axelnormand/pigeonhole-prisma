@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, ImageBackground } from 'react-native';
-import {
-  Button,
-  Input,
-  Text,
-  Icon,
-  Layout,
-  Spinner,
-} from '@ui-kitten/components';
+import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
-import { Screen } from '../../comps/Screen';
+import { Page } from '../../comps/Page';
 import { FormRow } from '../../comps/FormRow';
 import { PageTitle } from '../../comps/PageTitle';
-import { FormLoading } from '../../comps/FormLoading';
+import { CentreLoading } from '../../comps/CentreLoading';
 
 type Props = {
   onSubmit: (username: string, password: string) => Promise<boolean>;
@@ -37,7 +30,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
         style={styles.appBar}
         source={require('../../../assets/login-background.png')}
       />
-      <Screen isCentre>
+      <Page isCentre>
         <Formik
           initialValues={initialValues}
           validationSchema={loginSchema}
@@ -112,11 +105,11 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
                 </Button>
               </FormRow>
 
-              {isLoading && <FormLoading />}
+              {isLoading && <CentreLoading />}
             </>
           )}
         </Formik>
-      </Screen>
+      </Page>
     </>
   );
 };

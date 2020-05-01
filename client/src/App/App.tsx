@@ -34,8 +34,8 @@ export const App = () => {
   useEffect(() => {
     (async () => {
       const token = await getBearerToken();
-      console.log(`Got token: "${token}"`);
       if (token) {
+        console.log(`Got token from storage`);
         setTokenInHeader(token);
       }
       setIsAuthorized(token ? true : false);

@@ -7,13 +7,13 @@ type Props = {
   style?: ViewStyle;
 };
 
-export const FormRow: React.FC<Props> = ({ children, style }) => (
+export const CardRow: React.FC<Props> = ({ children, style }) => (
   <Layout style={[styles.row, style]}>{children}</Layout>
 );
 
 const styles = StyleSheet.create({
   row: {
-    marginBottom: 15,
+    marginBottom: 20,
     minWidth: Platform.OS === 'web' ? 400 : undefined,
   },
 });

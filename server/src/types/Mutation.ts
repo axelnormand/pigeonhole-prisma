@@ -2,6 +2,7 @@ import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
 import { mutationType, stringArg } from '@nexus/schema';
 import { config } from '../config';
+import { LoginResultType } from './AuthPayload';
 
 export const Mutation = mutationType({
   definition(t) {
@@ -43,21 +44,20 @@ export const Mutation = mutationType({
         });
         if (!users || !users.length) {
           return {
-            loginResult: 'INVALID',
-            token: null,
+            loginResult: LoginResultType.INVALID,
           };
         }
         if (users.length > 1) {
-          return { loginResult: 'ERROR', token: null };
+          return { loginResult: LoginResultType.ERROR };
         }
         const user = users[0];
 
         const passwordValid = sha1(password).toString() === user.password;
         if (!passwordValid) {
-          return { loginResult: 'INVALID', token: null };
+          return { loginResult: LoginResultType.INVALID };
         }
         return {
-          loginResult: 'SUCCESS',
+          loginResult: LoginResultType.SUCCESS,
           token: sign({ userId: user.id }, config().appSecret),
         };
       },

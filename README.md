@@ -40,15 +40,20 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] storybook
 - [ ] websocket subscriptions + lambda updates from a php post
 - [ ] store push token in db by creating new table
+- [ ] pull to refresh
+- [ ] animations
+- [ ] nice styling
 
 ## Feature TODOs
 
-- [ ] login
+- [x] login
+- [ ] add bbcode
 - [ ] read forums + topics + posts
 - [ ] create post and topic
 - [ ] update/delete post and topic
 - [x] navigation + web
-- [ ] bbcode
 - [ ] push notifications
 - [ ] offline friendly / PWA
 - [ ] signup
+- [ ] floating videos
+- [ ] nice music player / floating

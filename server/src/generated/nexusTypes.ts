@@ -288,7 +288,7 @@ interface NexusPrismaInputs {
   ordering: 'conf_name' | 'conf_value'
 }
     punbbForums: {
-  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'AND' | 'OR' | 'NOT'
+  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topic' | 'AND' | 'OR' | 'NOT'
   ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
 }
     punbbForumPerms: {
@@ -304,8 +304,8 @@ interface NexusPrismaInputs {
   ordering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes'
 }
     punbbPosts: {
-  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT'
-  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic'
+  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic'
 }
     punbbRanks: {
   filtering: 'id' | 'min_posts' | 'rank' | 'AND' | 'OR' | 'NOT'
@@ -328,8 +328,8 @@ interface NexusPrismaInputs {
   ordering: 'topic_id' | 'user_id'
 }
     punbbTopics: {
-  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'AND' | 'OR' | 'NOT'
-  ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_post' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+  ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
 }
     punbbUploadeds: {
   filtering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat' | 'AND' | 'OR' | 'NOT'
@@ -362,7 +362,10 @@ interface NexusPrismaInputs {
 
 
   },  punbb_forum: {
-
+    punbb_topic: {
+  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_post' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+  ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
+}
 
   },  punbb_forum_perm: {
 
@@ -392,7 +395,10 @@ interface NexusPrismaInputs {
 
 
   },  punbb_topic: {
-
+    punbb_post: {
+  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic'
+  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic'
+}
 
   },  punbb_uploaded: {
 
@@ -604,6 +610,7 @@ interface NexusPrismaTypes {
     num_topics: 'Int'
     redirect_url: 'String'
     sort_by: 'Boolean'
+    punbb_topic: 'punbb_topic'
 
 },  punbb_forum_perm: {
     forum_id: 'Int'
@@ -651,6 +658,7 @@ interface NexusPrismaTypes {
     poster_id: 'Int'
     poster_ip: 'String'
     topic_id: 'Int'
+    punbb_topic: 'punbb_topic'
 
 },  punbb_rank: {
     id: 'Int'
@@ -698,6 +706,8 @@ interface NexusPrismaTypes {
     sticky: 'Boolean'
     subject: 'String'
     yes: 'String'
+    punbb_forum: 'punbb_forum'
+    punbb_post: 'punbb_post'
 
 },  punbb_uploaded: {
     data: 'Int'

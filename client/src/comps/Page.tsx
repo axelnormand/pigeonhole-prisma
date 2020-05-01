@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 
 type Props = {
@@ -7,15 +7,18 @@ type Props = {
   isCentre?: boolean;
 };
 
-export const Screen: React.FC<Props> = ({ children, isCentre }) => (
+export const Page: React.FC<Props> = ({ children, isCentre }) => (
   <Layout
     style={[styles.container, isCentre ? { alignItems: 'center' } : null]}
   >
-    {children}
+    <ScrollView style={styles.scroll}>{children}</ScrollView>
   </Layout>
 );
 
 const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     paddingLeft: 20,

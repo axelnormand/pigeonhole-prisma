@@ -1,18 +1,14 @@
 import React, { useContext } from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
-import type { AppStackParams } from '../../navigation/AppStack';
 import { StoreContext } from '../../models';
 import { setTokenInHeader } from '../../graphql/client';
 import { LoginComponent } from './LoginComponent';
+import { LoginScreenProps } from '../../navigation/AppStack';
 
-type Navigation = StackNavigationProp<AppStackParams, 'Login'>;
-type Props = {
-  navigation: Navigation;
-};
-
-export const Login: React.FC<Props> = observer(({ navigation }) => {
+export const Login: React.FC = observer(() => {
   const store = useContext(StoreContext);
+  const navigation = useNavigation<LoginScreenProps>();
 
   const handleSubmit = async (
     username: string,
