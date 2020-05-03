@@ -4,7 +4,6 @@
  */
 
 import * as Context from "../context"
-import * as client from "@prisma/client"
 
 
 
@@ -25,9 +24,12 @@ export interface NexusGenInputs {
   }
   punbb_postWhereUniqueInput: { // input type
     id?: number | null; // Int
+    topic_id?: number | null; // Int
   }
   punbb_topicWhereUniqueInput: { // input type
+    forum_id?: number | null; // Int
     id?: number | null; // Int
+    moved_to?: number | null; // Int
   }
 }
 
@@ -42,11 +44,45 @@ export interface NexusGenRootTypes {
   }
   Mutation: {};
   Query: {};
-  punbb_category: client.punbb_category;
-  punbb_forum: client.punbb_forum;
-  punbb_post: client.punbb_post;
-  punbb_topic: client.punbb_topic;
-  punbb_user: client.punbb_user;
+  punbb_category: { // root type
+    cat_name: string; // String!
+    disp_position: number; // Int!
+    id: number; // Int!
+  }
+  punbb_forum: { // root type
+    cat_id: number; // Int!
+    forum_desc?: string | null; // String
+    forum_name: string; // String!
+    id: number; // Int!
+  }
+  punbb_post: { // root type
+    edited?: number | null; // Int
+    edited_by?: string | null; // String
+    id: number; // Int!
+    message: string; // String!
+    posted: number; // Int!
+    poster_id: number; // Int!
+  }
+  punbb_topic: { // root type
+    closed: boolean; // Boolean!
+    forum_id: number; // Int!
+    id: number; // Int!
+    last_post: number; // Int!
+    last_post_id: number; // Int!
+    last_poster?: string | null; // String
+    posted: number; // Int!
+    poster: string; // String!
+    sticky: boolean; // Boolean!
+    subject: string; // String!
+  }
+  punbb_user: { // root type
+    id: number; // Int!
+    last_post?: number | null; // Int
+    last_visit: number; // Int!
+    registered: number; // Int!
+    signature?: string | null; // String
+    username: string; // String!
+  }
   String: string;
   Int: number;
   Float: number;

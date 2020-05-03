@@ -49,6 +49,7 @@ type punbb_post {
 
 input punbb_postWhereUniqueInput {
   id: Int
+  topic_id: Int
 }
 
 type punbb_topic {
@@ -67,7 +68,9 @@ type punbb_topic {
 }
 
 input punbb_topicWhereUniqueInput {
+  forum_id: Int
   id: Int
+  moved_to: Int
 }
 
 type punbb_user {

@@ -107,7 +107,12 @@
       "**/humanize-plus*",
       "**/humanize-plus*/**",
       "**/dayjs*",
-      "**/dayjs*/**"
+      "**/dayjs*/**",
+      "**/graphql*",
+      "**/graphql*/**"
     ]
+  },
+  "resolutions": {
+    "**/graphql": "14.6.0."
   }
 }
