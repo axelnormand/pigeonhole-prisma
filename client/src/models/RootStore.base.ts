@@ -7,10 +7,10 @@ import { MSTGQLStore, configureStoreMixin, QueryOptions, withTypedRefs } from "m
 
 import { PunbbUserModel, PunbbUserModelType } from "./PunbbUserModel"
 import { punbbUserModelPrimitives, PunbbUserModelSelector } from "./PunbbUserModel.base"
-import { PunbbForumModel, PunbbForumModelType } from "./PunbbForumModel"
-import { punbbForumModelPrimitives, PunbbForumModelSelector } from "./PunbbForumModel.base"
 import { PunbbCategoryModel, PunbbCategoryModelType } from "./PunbbCategoryModel"
 import { punbbCategoryModelPrimitives, PunbbCategoryModelSelector } from "./PunbbCategoryModel.base"
+import { PunbbForumModel, PunbbForumModelType } from "./PunbbForumModel"
+import { punbbForumModelPrimitives, PunbbForumModelSelector } from "./PunbbForumModel.base"
 import { PunbbTopicModel, PunbbTopicModelType } from "./PunbbTopicModel"
 import { punbbTopicModelPrimitives, PunbbTopicModelSelector } from "./PunbbTopicModel.base"
 import { PunbbPostModel, PunbbPostModelType } from "./PunbbPostModel"
@@ -42,7 +42,7 @@ type Refs = {
 */
 export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
   .named("RootStore")
-  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_forum', () => PunbbForumModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel]], [], "js"))
+  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel]], [], "js"))
   .props({
 
   })
@@ -52,14 +52,19 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbUserModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    queryForums(variables?: {  }, resultSelector: string | ((qb: PunbbForumModelSelector) => PunbbForumModelSelector) = punbbForumModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ forums: PunbbForumModelType[]}>(`query forums { forums {
-        ${typeof resultSelector === "function" ? resultSelector(new PunbbForumModelSelector()).toString() : resultSelector}
+    queryCategories(variables?: {  }, resultSelector: string | ((qb: PunbbCategoryModelSelector) => PunbbCategoryModelSelector) = punbbCategoryModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ categories: PunbbCategoryModelType[]}>(`query categories { categories {
+        ${typeof resultSelector === "function" ? resultSelector(new PunbbCategoryModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     queryTopics(variables: { forumId: number }, resultSelector: string | ((qb: PunbbTopicModelSelector) => PunbbTopicModelSelector) = punbbTopicModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ topics: PunbbTopicModelType[]}>(`query topics($forumId: Int!) { topics(forum_id: $forumId) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
+      } }`, variables, options)
+    },
+    queryPosts(variables: { topicId: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!) { posts(topic_id: $topicId) {
+        ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     querySearchPosts(variables: { searchString?: string }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {

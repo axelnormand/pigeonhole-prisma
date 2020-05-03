@@ -106,8 +106,9 @@ export interface NexusGenFieldTypes {
     login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
   }
   Query: { // field return type
-    forums: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
+    categories: NexusGenRootTypes['punbb_category'][]; // [punbb_category!]!
     me: NexusGenRootTypes['punbb_user'] | null; // punbb_user
+    posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     searchPosts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
@@ -166,6 +167,9 @@ export interface NexusGenArgTypes {
     }
   }
   Query: {
+    posts: { // args
+      topic_id: number; // Int!
+    }
     searchPosts: { // args
       searchString?: string | null; // String
     }

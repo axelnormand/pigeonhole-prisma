@@ -5,8 +5,9 @@ export const permissions = shield(
   {
     Query: {
       me: isAuthenticated,
-      forums: isAuthenticated,
+      categories: isAuthenticated,
       topics: isAuthenticated,
+      posts: isAuthenticated,
       searchPosts: isAuthenticated,
     },
     Mutation: {
@@ -21,6 +22,7 @@ export const permissions = shield(
     },
     AuthPayload: allow,
     punbb_user: isAuthenticated,
+    punbb_category: isAuthenticated,
     punbb_forum: isAuthenticated,
     punbb_topic: isAuthenticated,
     punbb_post: isAuthenticated,

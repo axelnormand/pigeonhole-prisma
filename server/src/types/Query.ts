@@ -16,12 +16,12 @@ export const Query = queryType({
       },
     });
 
-    t.list.field('forums', {
-      type: 'punbb_forum',
+    t.list.field('categories', {
+      type: 'punbb_category',
       resolve: (_parent, _args, ctx) => {
-        return ctx.prisma.punbb_forum.findMany({
+        return ctx.prisma.punbb_category.findMany({
           orderBy: {
-            forum_name: 'asc',
+            disp_position: 'asc',
           },
         });
       },
@@ -39,6 +39,23 @@ export const Query = queryType({
           },
           orderBy: {
             last_post: 'desc',
+          },
+        });
+      },
+    });
+
+    t.list.field('posts', {
+      type: 'punbb_post',
+      args: {
+        topic_id: intArg({ required: true }),
+      },
+      resolve: (_parent, { topic_id }, ctx) => {
+        return ctx.prisma.punbb_post.findMany({
+          where: {
+            topic_id: Number(topic_id),
+          },
+          orderBy: {
+            posted: 'asc',
           },
         });
       },

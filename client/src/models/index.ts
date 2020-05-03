@@ -3,8 +3,8 @@
 /* tslint:disable */
 
 export * from "./PunbbUserModel"
-export * from "./PunbbForumModel"
 export * from "./PunbbCategoryModel"
+export * from "./PunbbForumModel"
 export * from "./PunbbTopicModel"
 export * from "./PunbbPostModel"
 export * from "./AuthPayloadModel"

@@ -83,8 +83,9 @@ type punbb_user {
 }
 
 type Query {
-  forums: [punbb_forum!]!
+  categories: [punbb_category!]!
   me: punbb_user
+  posts(topic_id: Int!): [punbb_post!]!
   searchPosts(searchString: String): [punbb_post!]!
   topics(forum_id: Int!): [punbb_topic!]!
 }
