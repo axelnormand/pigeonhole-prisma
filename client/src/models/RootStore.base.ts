@@ -9,6 +9,8 @@ import { PunbbUserModel, PunbbUserModelType } from "./PunbbUserModel"
 import { punbbUserModelPrimitives, PunbbUserModelSelector } from "./PunbbUserModel.base"
 import { PunbbForumModel, PunbbForumModelType } from "./PunbbForumModel"
 import { punbbForumModelPrimitives, PunbbForumModelSelector } from "./PunbbForumModel.base"
+import { PunbbCategoryModel, PunbbCategoryModelType } from "./PunbbCategoryModel"
+import { punbbCategoryModelPrimitives, PunbbCategoryModelSelector } from "./PunbbCategoryModel.base"
 import { PunbbTopicModel, PunbbTopicModelType } from "./PunbbTopicModel"
 import { punbbTopicModelPrimitives, PunbbTopicModelSelector } from "./PunbbTopicModel.base"
 import { PunbbPostModel, PunbbPostModelType } from "./PunbbPostModel"
@@ -18,6 +20,18 @@ import { authPayloadModelPrimitives, AuthPayloadModelSelector } from "./AuthPayl
 
 import { LoginResult } from "./LoginResultEnum"
 
+export type PunbbForumWhereUniqueInput = {
+  id?: number
+}
+export type PunbbTopicWhereUniqueInput = {
+  forum_id?: number
+  id?: number
+  moved_to?: number
+}
+export type PunbbPostWhereUniqueInput = {
+  id?: number
+  topic_id?: number
+}
 /* The TypeScript type that explicits the refs to other models in order to prevent a circular refs issue */
 type Refs = {
 
@@ -28,7 +42,7 @@ type Refs = {
 */
 export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
   .named("RootStore")
-  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel]], [], "js"))
+  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_forum', () => PunbbForumModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel]], [], "js"))
   .props({
 
   })

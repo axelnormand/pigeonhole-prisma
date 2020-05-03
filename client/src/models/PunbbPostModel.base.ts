@@ -5,6 +5,8 @@
 import { types } from "mobx-state-tree"
 import { QueryBuilder } from "mst-gql"
 import { ModelBase } from "./ModelBase"
+import { PunbbUserModel, PunbbUserModelType } from "./PunbbUserModel"
+import { PunbbUserModelSelector } from "./PunbbUserModel.base"
 import { RootStoreType } from "./index"
 
 
@@ -22,6 +24,7 @@ export const PunbbPostModelBase = ModelBase
     posted: types.union(types.undefined, types.integer),
     edited: types.union(types.undefined, types.null, types.integer),
     edited_by: types.union(types.undefined, types.null, types.string),
+    punbb_user: types.union(types.undefined, types.late((): any => PunbbUserModel)),
   })
   .views(self => ({
     get store() {
@@ -36,6 +39,7 @@ export class PunbbPostModelSelector extends QueryBuilder {
   get posted() { return this.__attr(`posted`) }
   get edited() { return this.__attr(`edited`) }
   get edited_by() { return this.__attr(`edited_by`) }
+  punbb_user(builder?: string | PunbbUserModelSelector | ((selector: PunbbUserModelSelector) => PunbbUserModelSelector)) { return this.__child(`punbb_user`, PunbbUserModelSelector, builder) }
 }
 export function selectFromPunbbPost() {
   return new PunbbPostModelSelector()

@@ -4,6 +4,7 @@
 
 export * from "./PunbbUserModel"
 export * from "./PunbbForumModel"
+export * from "./PunbbCategoryModel"
 export * from "./PunbbTopicModel"
 export * from "./PunbbPostModel"
 export * from "./AuthPayloadModel"
