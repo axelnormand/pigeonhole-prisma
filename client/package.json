@@ -11,7 +11,7 @@
     "start": "react-native start",
     "test": "jest",
     "optimize": "npx expo-optimize",
-    "build:web": "yarn optimize && expo build:web",
+    "build:web": "expo build:web",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
     "generate": "yarn mst-gql --format ts http://localhost:4000"
