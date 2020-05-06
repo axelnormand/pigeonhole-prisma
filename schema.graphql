@@ -21,7 +21,8 @@ type punbb_category {
   cat_name: String!
   disp_position: Int!
   id: Int!
-  punbb_forum(after: punbb_forumWhereUniqueInput, before: punbb_forumWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_forum!]!
+  punbb_forums(after: punbb_forumWhereUniqueInput, before: punbb_forumWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_forum!]!
+  topicCount: Int!
 }
 
 type punbb_forum {
@@ -30,7 +31,7 @@ type punbb_forum {
   forum_name: String!
   id: Int!
   punbb_category: punbb_category!
-  punbb_topic(after: punbb_topicWhereUniqueInput, before: punbb_topicWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_topic!]!
+  punbb_topics(after: punbb_topicWhereUniqueInput, before: punbb_topicWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_topic!]!
 }
 
 input punbb_forumWhereUniqueInput {
@@ -62,7 +63,7 @@ type punbb_topic {
   posted: Int!
   poster: String!
   punbb_forum: punbb_forum!
-  punbb_post(after: punbb_postWhereUniqueInput, before: punbb_postWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_post!]!
+  punbb_posts(after: punbb_postWhereUniqueInput, before: punbb_postWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_post!]!
   sticky: Boolean!
   subject: String!
 }

@@ -116,7 +116,8 @@ export interface NexusGenFieldTypes {
     cat_name: string; // String!
     disp_position: number; // Int!
     id: number; // Int!
-    punbb_forum: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
+    punbb_forums: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
+    topicCount: number; // Int!
   }
   punbb_forum: { // field return type
     cat_id: number; // Int!
@@ -124,7 +125,7 @@ export interface NexusGenFieldTypes {
     forum_name: string; // String!
     id: number; // Int!
     punbb_category: NexusGenRootTypes['punbb_category']; // punbb_category!
-    punbb_topic: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
+    punbb_topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
   punbb_post: { // field return type
     edited: number | null; // Int
@@ -145,7 +146,7 @@ export interface NexusGenFieldTypes {
     posted: number; // Int!
     poster: string; // String!
     punbb_forum: NexusGenRootTypes['punbb_forum']; // punbb_forum!
-    punbb_post: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
+    punbb_posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     sticky: boolean; // Boolean!
     subject: string; // String!
   }
@@ -178,7 +179,7 @@ export interface NexusGenArgTypes {
     }
   }
   punbb_category: {
-    punbb_forum: { // args
+    punbb_forums: { // args
       after?: NexusGenInputs['punbb_forumWhereUniqueInput'] | null; // punbb_forumWhereUniqueInput
       before?: NexusGenInputs['punbb_forumWhereUniqueInput'] | null; // punbb_forumWhereUniqueInput
       first?: number | null; // Int
@@ -187,7 +188,7 @@ export interface NexusGenArgTypes {
     }
   }
   punbb_forum: {
-    punbb_topic: { // args
+    punbb_topics: { // args
       after?: NexusGenInputs['punbb_topicWhereUniqueInput'] | null; // punbb_topicWhereUniqueInput
       before?: NexusGenInputs['punbb_topicWhereUniqueInput'] | null; // punbb_topicWhereUniqueInput
       first?: number | null; // Int
@@ -196,7 +197,7 @@ export interface NexusGenArgTypes {
     }
   }
   punbb_topic: {
-    punbb_post: { // args
+    punbb_posts: { // args
       after?: NexusGenInputs['punbb_postWhereUniqueInput'] | null; // punbb_postWhereUniqueInput
       before?: NexusGenInputs['punbb_postWhereUniqueInput'] | null; // punbb_postWhereUniqueInput
       first?: number | null; // Int

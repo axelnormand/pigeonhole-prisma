@@ -9,7 +9,7 @@ import { useQuery } from '../models';
 import { CentreLoading } from '../comps/CentreLoading';
 
 export const Forums = observer(() => {
-  const { data, loading, error } = useQuery((store) => store.queryForums());
+  const { data, loading, error } = useQuery((store) => store.queryCategories());
   const navigation = useNavigation<ForumTabProps>();
 
   if (error) {
@@ -21,17 +21,20 @@ export const Forums = observer(() => {
   }
   return (
     <Page>
-      {data?.forums.map((forum) => (
-        <ForumCard
-          key={forum.id}
-          header={forum.forum_name ?? ''}
-          blurb={forum.forum_desc ?? ''}
-          lastPost={new Date()}
-          lastPostUsername="testingUser"
-          posts={10000}
-          topics={32}
-        />
-      ))}
+      {data?.categories.map((category) => {
+        category.punbb_forums?.map((forum) => {
+          <ForumCard
+            key={forum.id}
+            header={forum.forum_name ?? ''}
+            blurb={forum.forum_desc ?? ''}
+            category={category.cat_name ?? ''}
+            lastPost={new Date()}
+            lastPostUsername="testingUser"
+            posts={110}
+            topics={11}
+          />;
+        });
+      })}
     </Page>
   );
 });

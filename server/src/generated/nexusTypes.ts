@@ -276,7 +276,7 @@ interface NexusPrismaInputs {
   ordering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username'
 }
     punbbCategories: {
-  filtering: 'cat_name' | 'disp_position' | 'id' | 'punbb_forum' | 'AND' | 'OR' | 'NOT'
+  filtering: 'cat_name' | 'disp_position' | 'id' | 'punbb_forums' | 'AND' | 'OR' | 'NOT'
   ordering: 'cat_name' | 'disp_position' | 'id'
 }
     punbbCensorings: {
@@ -288,7 +288,7 @@ interface NexusPrismaInputs {
   ordering: 'conf_name' | 'conf_value'
 }
     punbbForums: {
-  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topic' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
   ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
 }
     punbbForumPerms: {
@@ -328,7 +328,7 @@ interface NexusPrismaInputs {
   ordering: 'topic_id' | 'user_id'
 }
     punbbTopics: {
-  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_post' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
   ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
 }
     punbbUploadeds: {
@@ -340,7 +340,7 @@ interface NexusPrismaInputs {
   ordering: 'exts' | 'id' | 'type'
 }
     punbbUsers: {
-  filtering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_post' | 'AND' | 'OR' | 'NOT'
+  filtering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'AND' | 'OR' | 'NOT'
   ordering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
 }
     punbbUserthreads: {
@@ -353,8 +353,8 @@ interface NexusPrismaInputs {
 
 
   },  punbb_category: {
-    punbb_forum: {
-  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topic' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+    punbb_forums: {
+  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
   ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
 }
 
@@ -365,8 +365,8 @@ interface NexusPrismaInputs {
 
 
   },  punbb_forum: {
-    punbb_topic: {
-  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_post' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+    punbb_topics: {
+  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
   ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
 }
 
@@ -398,7 +398,7 @@ interface NexusPrismaInputs {
 
 
   },  punbb_topic: {
-    punbb_post: {
+    punbb_posts: {
   filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
   ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
 }
@@ -410,7 +410,7 @@ interface NexusPrismaInputs {
 
 
   },  punbb_user: {
-    punbb_post: {
+    punbb_posts: {
   filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
   ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
 }
@@ -592,7 +592,7 @@ interface NexusPrismaTypes {
     cat_name: 'String'
     disp_position: 'Int'
     id: 'Int'
-    punbb_forum: 'punbb_forum'
+    punbb_forums: 'punbb_forum'
 
 },  punbb_censoring: {
     id: 'Int'
@@ -617,7 +617,7 @@ interface NexusPrismaTypes {
     num_topics: 'Int'
     redirect_url: 'String'
     sort_by: 'Boolean'
-    punbb_topic: 'punbb_topic'
+    punbb_topics: 'punbb_topic'
     punbb_category: 'punbb_category'
 
 },  punbb_forum_perm: {
@@ -716,7 +716,7 @@ interface NexusPrismaTypes {
     subject: 'String'
     yes: 'String'
     punbb_forum: 'punbb_forum'
-    punbb_post: 'punbb_post'
+    punbb_posts: 'punbb_post'
 
 },  punbb_uploaded: {
     data: 'Int'
@@ -773,7 +773,7 @@ interface NexusPrismaTypes {
     username: 'String'
     use_avatar: 'Boolean'
     yahoo: 'String'
-    punbb_post: 'punbb_post'
+    punbb_posts: 'punbb_post'
 
 },  punbb_userthread: {
     forum: 'Int'

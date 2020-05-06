@@ -23,6 +23,9 @@ export const Query = queryType({
           orderBy: {
             disp_position: 'asc',
           },
+          include: {
+            punbb_forums: true,
+          },
         });
       },
     });

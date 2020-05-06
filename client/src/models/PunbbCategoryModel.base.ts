@@ -21,7 +21,7 @@ export const PunbbCategoryModelBase = ModelBase
     id: types.union(types.undefined, types.integer),
     cat_name: types.union(types.undefined, types.string),
     disp_position: types.union(types.undefined, types.integer),
-    punbb_forum: types.union(types.undefined, types.array(types.late((): any => PunbbForumModel))),
+    punbb_forums: types.union(types.undefined, types.array(types.late((): any => PunbbForumModel))),
   })
   .views(self => ({
     get store() {
@@ -33,7 +33,7 @@ export class PunbbCategoryModelSelector extends QueryBuilder {
   get id() { return this.__attr(`id`) }
   get cat_name() { return this.__attr(`cat_name`) }
   get disp_position() { return this.__attr(`disp_position`) }
-  punbb_forum(builder?: string | PunbbForumModelSelector | ((selector: PunbbForumModelSelector) => PunbbForumModelSelector)) { return this.__child(`punbb_forum`, PunbbForumModelSelector, builder) }
+  punbb_forums(builder?: string | PunbbForumModelSelector | ((selector: PunbbForumModelSelector) => PunbbForumModelSelector)) { return this.__child(`punbb_forums`, PunbbForumModelSelector, builder) }
 }
 export function selectFromPunbbCategory() {
   return new PunbbCategoryModelSelector()

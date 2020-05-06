@@ -23,7 +23,7 @@ model punbb_category {
   cat_name      String        @default("New Category")
   disp_position Int           @default(0)
   id            Int           @default(autoincrement()) @id
-  punbb_forum   punbb_forum[]
+  punbb_forums  punbb_forum[]
 
   @@map("punbb_categories")
 }
@@ -53,7 +53,7 @@ model punbb_forum {
   num_topics     Int            @default(0)
   redirect_url   String?
   sort_by        Boolean        @default(false)
-  punbb_topic    punbb_topic[]
+  punbb_topics   punbb_topic[]
   punbb_category punbb_category @relation(fields: [cat_id], references: [id])
 
   @@map("punbb_forums")
@@ -204,7 +204,7 @@ model punbb_topic {
   subject      String       @default("")
   yes          String
   punbb_forum  punbb_forum  @relation(fields: [forum_id], references: [id])
-  punbb_post   punbb_post[]
+  punbb_posts  punbb_post[]
 
   @@index([forum_id], name: "punbb_topics_forum_id_idx")
   @@index([moved_to], name: "punbb_topics_moved_to_idx")
@@ -281,7 +281,7 @@ model punbb_user {
   username         String       @default("")
   use_avatar       Boolean      @default(false)
   yahoo            String?
-  punbb_post       punbb_post[]
+  punbb_posts      punbb_post[]
 
   @@index([registered], name: "punbb_users_registered_idx")
   @@index([username], name: "punbb_users_username_idx")

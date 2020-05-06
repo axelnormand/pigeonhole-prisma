@@ -11,6 +11,7 @@ dayjs.extend(relativeTime);
 type Props = {
   header: string;
   blurb: string;
+  category: string;
   topics: number;
   posts: number;
   lastPost: Date;
@@ -24,10 +25,11 @@ export const ForumCard: React.FC<Props> = ({
   lastPostUsername,
   posts,
   topics,
+  category,
 }) => {
   const subtitle = `topics: ${compactInteger(topics)} | posts: ${compactInteger(
     posts,
-  )}`;
+  )} | ${category}`;
   return (
     <CardRow>
       <Card
