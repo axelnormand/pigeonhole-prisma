@@ -44,23 +44,27 @@ export const App = () => {
   }, []);
 
   return (
-    <ErrorBoundary>
+    <>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider mapping={mapping} theme={dark}>
-        <StoreContext.Provider value={rootStore}>
-          <SafeAreaProvider>
-            <NavigationContainer>
-              {isLoading ? (
-                <CentreScreen>
-                  <Spinner size="giant" />
-                </CentreScreen>
-              ) : (
-                <AppStack initialRouteName={isAuthorized ? 'Home' : 'Login'} />
-              )}
-            </NavigationContainer>
-          </SafeAreaProvider>
-        </StoreContext.Provider>
+        <ErrorBoundary>
+          <StoreContext.Provider value={rootStore}>
+            <SafeAreaProvider>
+              <NavigationContainer>
+                {isLoading ? (
+                  <CentreScreen>
+                    <Spinner size="giant" />
+                  </CentreScreen>
+                ) : (
+                  <AppStack
+                    initialRouteName={isAuthorized ? 'Home' : 'Login'}
+                  />
+                )}
+              </NavigationContainer>
+            </SafeAreaProvider>
+          </StoreContext.Provider>
+        </ErrorBoundary>
       </ApplicationProvider>
-    </ErrorBoundary>
+    </>
   );
 };

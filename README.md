@@ -44,6 +44,9 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 - [ ] animations
 - [ ] nice styling
 - [ ] why forum card has multiple click hovers
+- [ ] offline check 
+- [ ] offline mode
+- [ ] better unauth catch
 
 ## Feature TODOs
 

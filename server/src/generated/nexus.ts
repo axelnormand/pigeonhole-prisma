@@ -54,6 +54,11 @@ export interface NexusGenRootTypes {
     forum_desc?: string | null; // String
     forum_name: string; // String!
     id: number; // Int!
+    last_post?: number | null; // Int
+    last_post_id?: number | null; // Int
+    last_poster?: string | null; // String
+    num_posts: number; // Int!
+    num_topics: number; // Int!
   }
   punbb_post: { // root type
     edited?: number | null; // Int
@@ -117,14 +122,17 @@ export interface NexusGenFieldTypes {
     disp_position: number; // Int!
     id: number; // Int!
     punbb_forums: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
-    topicCount: number; // Int!
   }
   punbb_forum: { // field return type
     cat_id: number; // Int!
     forum_desc: string | null; // String
     forum_name: string; // String!
     id: number; // Int!
-    punbb_category: NexusGenRootTypes['punbb_category']; // punbb_category!
+    last_post: number | null; // Int
+    last_post_id: number | null; // Int
+    last_poster: string | null; // String
+    num_posts: number; // Int!
+    num_topics: number; // Int!
     punbb_topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
   punbb_post: { // field return type
@@ -145,7 +153,6 @@ export interface NexusGenFieldTypes {
     last_poster: string | null; // String
     posted: number; // Int!
     poster: string; // String!
-    punbb_forum: NexusGenRootTypes['punbb_forum']; // punbb_forum!
     punbb_posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     sticky: boolean; // Boolean!
     subject: string; // String!

@@ -7,7 +7,11 @@ export const punbb_forum = objectType({
     t.model.forum_name();
     t.model.forum_desc();
     t.model.cat_id();
-    t.model.punbb_category();
+    t.model.num_posts();
+    t.model.num_topics();
+    t.model.last_post();
+    t.model.last_post_id();
+    t.model.last_poster();
     t.model.punbb_topics();
   },
 });

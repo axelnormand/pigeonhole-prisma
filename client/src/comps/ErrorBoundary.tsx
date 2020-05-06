@@ -1,6 +1,6 @@
 import React from 'react';
 import { CentreScreen } from './CentreScreen';
-import { Text, Divider } from '@ui-kitten/components';
+import { Text } from '@ui-kitten/components';
 
 type Props = {
   children: React.ReactNode;
@@ -19,7 +19,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     this.setState({ errorMsg: error.message });
-    console.error(error, errorInfo);
+    console.error(`Error Boundary: ${error.message}`, error, errorInfo);
   }
 
   render() {
@@ -29,9 +29,8 @@ export class ErrorBoundary extends React.Component<Props, State> {
           <Text status="danger">
             💥 Oops, something went wrong. Please restart.
           </Text>
-          <Divider>
-            <Text appearance="hint">{this.state.errorMsg}</Text>
-          </Divider>
+
+          <Text appearance="hint">{this.state.errorMsg}</Text>
         </CentreScreen>
       );
     }

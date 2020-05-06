@@ -7,17 +7,31 @@ import { ForumTabProps } from '../navigation/ForumTabs';
 import { ForumCard } from '../comps/ForumCard';
 import { useQuery } from '../models';
 import { CentreLoading } from '../comps/CentreLoading';
+import { clearTokenInHeader } from '../graphql/client';
 
 export const Forums = observer(() => {
   const { data, loading, error } = useQuery((store) => store.queryCategories());
   const navigation = useNavigation<ForumTabProps>();
 
   if (error) {
+    if (error.message.indexOf('Not Authorised') >= 0) {
+      clearTokenInHeader();
+      navigation.navigate('Home');
+      return (
+        <Page>
+          <CentreLoading />
+        </Page>
+      );
+    }
     throw error;
   }
 
   if (loading) {
-    return <CentreLoading />;
+    return (
+      <Page>
+        <CentreLoading />
+      </Page>
+    );
   }
   return (
     <Page>
