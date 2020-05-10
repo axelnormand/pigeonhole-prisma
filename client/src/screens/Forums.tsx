@@ -51,9 +51,10 @@ export const Forums = observer(() => {
       </Page>
     );
   }
+
   return (
     <Page>
-      {data?.categories.map((category) => {
+      {data?.categories.map((category, index) => {
         // TODO: forum should be typed?!
         return category.punbb_forums?.map((forum: PunbbForumModelType) => {
           return (

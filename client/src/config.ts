@@ -6,7 +6,7 @@ type Config = {
 };
 
 const isProductionWeb =
-  Platform.OS === 'web' && process.env.IS_PRODUCTION_CLIENT === 'true';
+  Platform.OS === 'web' && process.env.NODE_ENV === 'production';
 
 const isProductionPhone =
   Platform.OS !== 'web' && Constants.manifest?.releaseChannel;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { compactInteger } from 'humanize-plus';
-import { Card, CardHeader, Text, Layout } from '@ui-kitten/components';
+import { Card, CardHeader, Text, useTheme } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { CardRow } from './CardRow';
@@ -27,13 +27,22 @@ export const ForumCard: React.FC<Props> = ({
   topics,
   category,
 }) => {
+  const theme = useTheme();
   const subtitle = `${category} | topics: ${compactInteger(
     topics,
   )} | posts: ${compactInteger(posts)}`;
   return (
     <CardRow>
       <Card
-        header={() => <Header header={header} subtitle={subtitle} />}
+        header={() => (
+          <CardHeader
+            title={header}
+            description={subtitle}
+            descriptionStyle={{
+              color: theme['text-hint-color'],
+            }}
+          />
+        )}
         footer={() => (
           <Footer lastPost={lastPost} lastPostUsername={lastPostUsername} />
         )}
@@ -44,20 +53,15 @@ export const ForumCard: React.FC<Props> = ({
   );
 };
 
-const Header: React.FC<{ header: string; subtitle: string }> = ({
-  header,
-  subtitle,
-}) => <CardHeader title={header} description={subtitle} />;
-
 const Footer: React.FC<{
   lastPost: number;
   lastPostUsername: string;
 }> = ({ lastPost, lastPostUsername }) => (
-  <Layout style={styles.footerContainer}>
+  <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
       Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPostUsername}
     </Text>
-  </Layout>
+  </View>
 );
 
 const styles = StyleSheet.create({
