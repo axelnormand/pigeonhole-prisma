@@ -55,7 +55,7 @@ const Footer: React.FC<{
 }> = ({ lastPost, lastPostUsername }) => (
   <Layout style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      Last Post {dayjs(lastPost).fromNow()} by {lastPostUsername}
+      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPostUsername}
     </Text>
   </Layout>
 );
