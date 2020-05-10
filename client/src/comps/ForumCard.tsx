@@ -27,9 +27,9 @@ export const ForumCard: React.FC<Props> = ({
   topics,
   category,
 }) => {
-  const subtitle = `topics: ${compactInteger(topics)} | posts: ${compactInteger(
-    posts,
-  )} | ${category}`;
+  const subtitle = `${category} | topics: ${compactInteger(
+    topics,
+  )} | posts: ${compactInteger(posts)}`;
   return (
     <CardRow>
       <Card
