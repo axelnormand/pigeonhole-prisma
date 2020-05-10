@@ -26,6 +26,7 @@ type punbb_category {
 
 type punbb_forum {
   cat_id: Int!
+  disp_position: Int!
   forum_desc: String
   forum_name: String!
   id: Int!

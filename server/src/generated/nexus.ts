@@ -51,6 +51,7 @@ export interface NexusGenRootTypes {
   }
   punbb_forum: { // root type
     cat_id: number; // Int!
+    disp_position: number; // Int!
     forum_desc?: string | null; // String
     forum_name: string; // String!
     id: number; // Int!
@@ -125,6 +126,7 @@ export interface NexusGenFieldTypes {
   }
   punbb_forum: { // field return type
     cat_id: number; // Int!
+    disp_position: number; // Int!
     forum_desc: string | null; // String
     forum_name: string; // String!
     id: number; // Int!

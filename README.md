@@ -12,7 +12,36 @@ Uses: Prisma 2, GraphQL Nexus, GraphQL yoga, Graphql shield, React Native, Expo,
 
 1. Start your Mysql server: `yarn docker:up`
 2. Check running: `docker-compose ps`
-3. run graphql server: `yarn start`
+3. run graphql server on `http://localhost:4000`: `cd server; yarn start`
+4. run react native / react native web on `https://localhost:19006/` : `cd client; yarn start`
+
+## Local graphql playground 
+Can run graphql queries on playground by going to `http://localhost:4000`
+
+Login mutation first to get long lasting token:
+```
+mutation {
+  login(username: "USERNAME", password: "PASSWORD") {
+    token,
+  }
+}
+```
+Use token to set HTTP header in bottom panel
+```
+{
+  "Authorization": "Bearer PASTE_TOKEN_HERE"
+}
+```
+Now can run example query
+```
+query {
+  topics(forum_id: 4) {
+    id
+    subject
+    poster
+  }
+}
+```
 
 ## Running netlify locally
 
