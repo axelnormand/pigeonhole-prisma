@@ -39,10 +39,10 @@ export const Forums = observer(() => {
         category.punbb_forums?.map((forum) => {
           <ForumCard
             key={forum.id}
+            category={category.cat_name ?? ''}
             header={forum.forum_name ?? ''}
             blurb={forum.forum_desc ?? ''}
-            category={category.cat_name ?? ''}
-            lastPost={new Date()}
+            lastPost={forum.num_posts}
             lastPostUsername="testingUser"
             posts={110}
             topics={11}

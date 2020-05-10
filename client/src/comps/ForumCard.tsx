@@ -14,7 +14,7 @@ type Props = {
   category: string;
   topics: number;
   posts: number;
-  lastPost: Date;
+  lastPost: number;
   lastPostUsername: string;
 };
 
@@ -50,7 +50,7 @@ const Header: React.FC<{ header: string; subtitle: string }> = ({
 }) => <CardHeader title={header} description={subtitle} />;
 
 const Footer: React.FC<{
-  lastPost: Date;
+  lastPost: number;
   lastPostUsername: string;
 }> = ({ lastPost, lastPostUsername }) => (
   <Layout style={styles.footerContainer}>
