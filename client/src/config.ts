@@ -11,6 +11,12 @@ const isProductionWeb =
 const isProductionPhone =
   Platform.OS !== 'web' && Constants.manifest?.releaseChannel;
 
+console.log(
+  `Config: isProductionWeb ${isProductionWeb}, isProductionPhone: ${isProductionPhone}`,
+);
+
+console.log(`Config: process.env`, process.env);
+
 /* read process.env known keys and expo constants */
 export const config = (): Config => ({
   graphqlServerUrl:

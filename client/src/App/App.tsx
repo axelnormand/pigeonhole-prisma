@@ -20,7 +20,11 @@ import { init } from './init';
 import { getGraphQLClient, setTokenInHeader } from '../graphql/client';
 import { RootStore, StoreContext } from '../models';
 
-console.log(`Starting App with GraphQL: ${config().graphqlServerUrl}`);
+console.log(
+  `Starting App with GraphQL "${config().graphqlServerUrl}" on Platform ${
+    Platform.OS
+  } `,
+);
 init();
 
 const rootStore = RootStore.create(undefined, {
