@@ -65,10 +65,15 @@ export const Mutation = mutationType({
             );
             return { loginResult: LoginResultType.INVALID };
           }
-          console.log(`Login mutation: success for ${lowerUsername}`);
+          console.log(`Login mutation: found user for ${lowerUsername}`);
+          console.log(`Login mutation: user ${lowerUsername} is id ${user.id}`);
+          const token = sign({ userId: user.id }, config().appSecret);
+          console.log(
+            `Login mutation: success and generated token for ${lowerUsername}`,
+          );
           return {
             loginResult: LoginResultType.SUCCESS,
-            token: sign({ userId: user.id }, config().appSecret),
+            token,
           };
         } catch (e) {
           console.error(
