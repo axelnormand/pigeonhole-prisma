@@ -37,29 +37,45 @@ export const Mutation = mutationType({
       },
       resolve: async (_parent, { username, password }, ctx) => {
         const lowerUsername = username.toLowerCase();
-        const users = await ctx.prisma.punbb_user.findMany({
-          where: {
-            OR: [{ username: lowerUsername }, { email: lowerUsername }],
-          },
-        });
-        if (!users || !users.length) {
-          return {
-            loginResult: LoginResultType.INVALID,
-          };
-        }
-        if (users.length > 1) {
-          return { loginResult: LoginResultType.ERROR };
-        }
-        const user = users[0];
+        try {
+          console.log(`Login mutation: Querying for ${lowerUsername}`);
+          const users = await ctx.prisma.punbb_user.findMany({
+            where: {
+              OR: [{ username: lowerUsername }, { email: lowerUsername }],
+            },
+          });
+          if (!users || !users.length) {
+            console.log(`Login mutation: no users found for ${lowerUsername}`);
+            return {
+              loginResult: LoginResultType.INVALID,
+            };
+          }
+          if (users.length > 1) {
+            console.log(
+              `Login mutation: ${users.length} users (!) for ${lowerUsername}`,
+            );
+            return { loginResult: LoginResultType.ERROR };
+          }
+          const user = users[0];
 
-        const passwordValid = sha1(password).toString() === user.password;
-        if (!passwordValid) {
-          return { loginResult: LoginResultType.INVALID };
+          const passwordValid = sha1(password).toString() === user.password;
+          if (!passwordValid) {
+            console.log(
+              `Login mutation: invalid password for ${lowerUsername}`,
+            );
+            return { loginResult: LoginResultType.INVALID };
+          }
+          console.log(`Login mutation: success for ${lowerUsername}`);
+          return {
+            loginResult: LoginResultType.SUCCESS,
+            token: sign({ userId: user.id }, config().appSecret),
+          };
+        } catch (e) {
+          console.error(
+            `Login mutation: ERROR for ${lowerUsername}: ${e.message}`,
+            e,
+          );
         }
-        return {
-          loginResult: LoginResultType.SUCCESS,
-          token: sign({ userId: user.id }, config().appSecret),
-        };
       },
     });
 
