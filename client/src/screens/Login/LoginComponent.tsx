@@ -36,13 +36,14 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
           validationSchema={loginSchema}
           onSubmit={async ({ username, password }, { setSubmitting }) => {
             console.log(`Submitting ${username}`);
+            setIsFailed(false);
             setIsLoading(true);
             const success = await onSubmit(username, password);
             if (!success) {
-              setIsLoading(false);
               setIsFailed(true);
-              setSubmitting(false);
             }
+            setIsLoading(false);
+            setSubmitting(false);
           }}
         >
           {({

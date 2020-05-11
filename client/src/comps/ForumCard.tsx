@@ -28,6 +28,7 @@ export const ForumCard: React.FC<Props> = ({
   category,
 }) => {
   const theme = useTheme();
+  const descriptionColour = theme['text-hint-color'];
   const subtitle = `${category} | topics: ${compactInteger(
     topics,
   )} | posts: ${compactInteger(posts)}`;
@@ -35,13 +36,12 @@ export const ForumCard: React.FC<Props> = ({
     <CardRow>
       <Card
         header={() => (
-          <CardHeader
-            title={header}
-            description={subtitle}
-            descriptionStyle={{
-              color: theme['text-hint-color'],
-            }}
-          />
+          <View style={styles.headerContainer}>
+            <Text category="h6">{header}</Text>
+            <Text appearance="hint" category="p1">
+              {subtitle}
+            </Text>
+          </View>
         )}
         footer={() => (
           <Footer lastPost={lastPost} lastPostUsername={lastPostUsername} />
@@ -65,10 +65,19 @@ const Footer: React.FC<{
 );
 
 const styles = StyleSheet.create({
+  headerContainer: {
+    paddingTop: 16,
+    paddingBottom: 16,
+    paddingLeft: 24,
+    paddingRight: 24,
+  },
   footerContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    padding: 5,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 24,
+    paddingRight: 24,
   },
 });
