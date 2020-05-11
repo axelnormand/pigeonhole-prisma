@@ -32,9 +32,9 @@ export const Forums = observer(() => {
   if (error) {
     // TODO: move this to not auth middleware of sorts + read correct http status for not auth
     if (error.toString().indexOf('Not Authorised') >= 0) {
-      console.log(`Not auth, navigating Home after clearing token`);
+      console.log(`Not auth, navigating Login after clearing token`);
       clearTokenInHeader();
-      navigation.navigate('Home');
+      navigation.navigate('Login');
       return (
         <Page>
           <CentreLoading />

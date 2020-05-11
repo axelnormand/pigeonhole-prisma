@@ -19,9 +19,7 @@ export const Login: React.FC = observer(() => {
         username,
         password,
       });
-      console.log(
-        `Result ${login.loginResult}! ${username} with token ${login.token}`,
-      );
+      console.log(`Result ${login.loginResult}! ${username}.`);
       if (login.loginResult === 'ERROR') {
         throw Error('Server returned Error');
       }
