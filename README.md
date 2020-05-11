@@ -76,6 +76,7 @@ query {
 - [ ] offline check 
 - [ ] offline mode
 - [ ] better unauth catch
+- [ ] fix nested mst-gql typings in screens/Forums
 
 ## Feature TODOs
 

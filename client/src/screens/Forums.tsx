@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
@@ -32,7 +31,8 @@ export const Forums = observer(() => {
 
   if (error) {
     // TODO: move this to not auth middleware of sorts + read correct http status for not auth
-    if (error.message.indexOf('Not Authorised') >= 0) {
+    if (error.toString().indexOf('Not Authorised') >= 0) {
+      console.log(`Not auth, navigating Home after clearing token`);
       clearTokenInHeader();
       navigation.navigate('Home');
       return (
@@ -73,12 +73,4 @@ export const Forums = observer(() => {
       })}
     </Page>
   );
-});
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
 });
