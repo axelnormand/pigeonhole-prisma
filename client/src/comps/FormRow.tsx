@@ -14,6 +14,5 @@ export const FormRow: React.FC<Props> = ({ children, style }) => (
 const styles = StyleSheet.create({
   row: {
     marginBottom: 15,
-    minWidth: Platform.OS === 'web' ? 400 : undefined,
   },
 });

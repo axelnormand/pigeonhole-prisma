@@ -64,8 +64,10 @@ type punbb_topic {
   last_post: Int!
   last_post_id: Int!
   last_poster: String
+  num_replies: Int!
   posted: Int!
   poster: String!
+  punbb_forum: punbb_forum!
   punbb_posts(after: punbb_postWhereUniqueInput, before: punbb_postWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_post!]!
   sticky: Boolean!
   subject: String!
@@ -90,6 +92,7 @@ type Query {
   categories: [punbb_category!]!
   me: punbb_user
   posts(topic_id: Int!): [punbb_post!]!
+  recentTopics: [punbb_topic!]!
   searchPosts(searchString: String): [punbb_post!]!
   topics(forum_id: Int!): [punbb_topic!]!
 }

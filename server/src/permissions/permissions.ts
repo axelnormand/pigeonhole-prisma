@@ -6,6 +6,7 @@ export const permissions = shield(
     Query: {
       me: isAuthenticated,
       categories: isAuthenticated,
+      recentTopics: isAuthenticated,
       topics: isAuthenticated,
       posts: isAuthenticated,
       searchPosts: isAuthenticated,

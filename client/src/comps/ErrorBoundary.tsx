@@ -1,6 +1,9 @@
 import React from 'react';
 import { CentreScreen } from './CentreScreen';
-import { Text } from '@ui-kitten/components';
+import { Text, Button } from '@ui-kitten/components';
+import { FormRow } from './FormRow';
+import { clearTokenInHeader } from '../graphql/client';
+import { NavigationContext } from '@react-navigation/native';
 
 type Props = {
   children: React.ReactNode;
@@ -11,6 +14,7 @@ type State = {
 };
 
 export class ErrorBoundary extends React.Component<Props, State> {
+  static contextType = NavigationContext;
   state: State = { hasError: false };
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
@@ -20,11 +24,24 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
+      const navigation = this.context;
       return (
         <CentreScreen>
-          <Text status="danger">
-            💥 Oops, something went wrong. Please restart.
-          </Text>
+          <FormRow>
+            <Text status="danger" category="h5">
+              💥 Oops, something went wrong
+            </Text>
+          </FormRow>
+
+          <FormRow>
+            <Button
+              onPress={() => {
+                clearTokenInHeader();
+              }}
+            >
+              Clear Login Token
+            </Button>
+          </FormRow>
 
           <Text appearance="hint">{this.state.errorMsg}</Text>
         </CentreScreen>

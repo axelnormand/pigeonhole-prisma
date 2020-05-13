@@ -76,6 +76,7 @@ export interface NexusGenRootTypes {
     last_post: number; // Int!
     last_post_id: number; // Int!
     last_poster?: string | null; // String
+    num_replies: number; // Int!
     posted: number; // Int!
     poster: string; // String!
     sticky: boolean; // Boolean!
@@ -115,6 +116,7 @@ export interface NexusGenFieldTypes {
     categories: NexusGenRootTypes['punbb_category'][]; // [punbb_category!]!
     me: NexusGenRootTypes['punbb_user'] | null; // punbb_user
     posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
+    recentTopics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
     searchPosts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
@@ -153,8 +155,10 @@ export interface NexusGenFieldTypes {
     last_post: number; // Int!
     last_post_id: number; // Int!
     last_poster: string | null; // String
+    num_replies: number; // Int!
     posted: number; // Int!
     poster: string; // String!
+    punbb_forum: NexusGenRootTypes['punbb_forum']; // punbb_forum!
     punbb_posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     sticky: boolean; // Boolean!
     subject: string; // String!

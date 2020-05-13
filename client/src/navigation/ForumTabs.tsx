@@ -6,13 +6,13 @@ import {
 import { Icon } from '@ui-kitten/components';
 import { CompositeNavigationProp } from '@react-navigation/native';
 import { Forums } from '../screens/Forums';
-import { RecentThreads } from '../screens/RecentThreads';
+import { RecentTopics } from '../screens/RecentTopics';
 import { TopTabBar } from '../comps/TopTabBar';
 import { HomeScreenProps } from './AppStack';
 
 type TopTabParams = {
   Forums: undefined;
-  RecentThreads: undefined;
+  RecentTopics: undefined;
 };
 
 const TopTab = createMaterialTopTabNavigator<TopTabParams>();
@@ -23,7 +23,7 @@ export type ForumTabProps = CompositeNavigationProp<
 >;
 
 export type RecentThreadsTabProps = CompositeNavigationProp<
-  MaterialTopTabNavigationProp<TopTabParams, 'RecentThreads'>,
+  MaterialTopTabNavigationProp<TopTabParams, 'RecentTopics'>,
   HomeScreenProps
 >;
 
@@ -38,8 +38,8 @@ export const ForumsTabs = (): React.ReactElement => (
       }}
     />
     <TopTab.Screen
-      name="RecentThreads"
-      component={RecentThreads}
+      name="RecentTopics"
+      component={RecentTopics}
       options={{
         title: 'RECENT',
         tabBarIcon: (props) => <Icon name="heart" {...props} />,

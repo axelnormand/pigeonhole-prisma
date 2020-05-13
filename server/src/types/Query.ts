@@ -30,6 +30,25 @@ export const Query = queryType({
       },
     });
 
+    t.list.field('recentTopics', {
+      type: 'punbb_topic',
+      resolve: (_parent, _args, ctx) => {
+        return ctx.prisma.punbb_topic.findMany({
+          where: {
+            last_post: {
+              gte: Math.round(new Date().getTime() / 1000) - 7 * 24 * 60 * 60,
+            },
+          },
+          orderBy: {
+            last_post: 'desc',
+          },
+          include: {
+            punbb_forum: true,
+          },
+        });
+      },
+    });
+
     t.list.field('topics', {
       type: 'punbb_topic',
       args: {

@@ -7,6 +7,8 @@ import { Page } from '../../comps/Page';
 import { FormRow } from '../../comps/FormRow';
 import { PageTitle } from '../../comps/PageTitle';
 import { CentreLoading } from '../../comps/CentreLoading';
+import { useNavigation } from '@react-navigation/native';
+import { LoginScreenProps } from '../../navigation/AppStack';
 
 type Props = {
   onSubmit: (username: string, password: string) => Promise<boolean>;
@@ -19,6 +21,7 @@ const loginSchema = object().shape({
 
 type LoginSchema = InferType<typeof loginSchema>;
 export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
+  const navigation = useNavigation<LoginScreenProps>();
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +47,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             }
             setIsLoading(false);
             setSubmitting(false);
+            navigation.navigate('Home');
           }}
         >
           {({

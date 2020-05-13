@@ -57,6 +57,11 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbCategoryModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
+    queryRecentTopics(variables?: {  }, resultSelector: string | ((qb: PunbbTopicModelSelector) => PunbbTopicModelSelector) = punbbTopicModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ recentTopics: PunbbTopicModelType[]}>(`query recentTopics { recentTopics {
+        ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
+      } }`, variables, options)
+    },
     queryTopics(variables: { forumId: number }, resultSelector: string | ((qb: PunbbTopicModelSelector) => PunbbTopicModelSelector) = punbbTopicModelPrimitives.toString(), options: QueryOptions = {}) {
       return self.query<{ topics: PunbbTopicModelType[]}>(`query topics($forumId: Int!) { topics(forum_id: $forumId) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
