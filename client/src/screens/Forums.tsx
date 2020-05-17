@@ -2,11 +2,12 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
-import { ForumTabProps } from '../navigation/ForumTabs';
 import { ForumCard } from '../comps/ForumCard';
 import { useQuery, PunbbForumModelType } from '../models';
 import { CentreLoading } from '../comps/CentreLoading';
 import { clearTokenInHeader } from '../graphql/client';
+import { TabsScreenProps } from '../navigation/TopicStack';
+import { ForumTabProps } from '../navigation/ForumTabs';
 
 export const Forums = observer(() => {
   const { data, loading, error } = useQuery((store) =>
@@ -27,7 +28,7 @@ export const Forums = observer(() => {
       ),
     ),
   );
-  const navigation = useNavigation<ForumTabProps>();
+  const navigation = useNavigation<TabsScreenProps | ForumTabProps>();
 
   if (error) {
     // TODO: move this to not auth middleware of sorts + read correct http status for not auth

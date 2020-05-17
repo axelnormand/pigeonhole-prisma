@@ -11,11 +11,12 @@ type Props = {
 type State = {
   hasError: boolean;
   errorMsg?: string;
+  isTokenCleared: boolean;
 };
 
 export class ErrorBoundary extends React.Component<Props, State> {
   static contextType = NavigationContext;
-  state: State = { hasError: false };
+  state: State = { hasError: false, isTokenCleared: false };
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     console.error(`Error Boundary: ${error.message}`, error, errorInfo);
@@ -37,7 +38,9 @@ export class ErrorBoundary extends React.Component<Props, State> {
             <Button
               onPress={() => {
                 clearTokenInHeader();
+                this.setState({ isTokenCleared: true });
               }}
+              disabled={this.state.isTokenCleared}
             >
               Clear Login Token
             </Button>

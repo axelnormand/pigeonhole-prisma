@@ -3,8 +3,8 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from '@react-navigation/stack';
-import { Login } from '../screens/Login/Login';
-import { ForumsTabs } from './ForumTabs';
+import { Login } from '../screens/Login';
+import { TopicStack } from './TopicStack';
 
 type AppStackParams = {
   Login: undefined;
@@ -23,6 +23,6 @@ const Stack = createStackNavigator<AppStackParams>();
 export const AppStack: React.FC<Props> = ({ initialRouteName }) => (
   <Stack.Navigator headerMode="none" initialRouteName={initialRouteName}>
     <Stack.Screen name="Login" component={Login} />
-    <Stack.Screen name="Home" component={ForumsTabs} />
+    <Stack.Screen name="Home" component={TopicStack} />
   </Stack.Navigator>
 );
