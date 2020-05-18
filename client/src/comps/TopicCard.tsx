@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { compactInteger } from 'humanize-plus';
-import { Card, CardHeader, Text, useTheme } from '@ui-kitten/components';
+import { Card, Text, useTheme } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { CardRow } from './CardRow';
@@ -14,40 +14,32 @@ type Props = {
   lastPoster: string;
   replies: number;
   lastPost: number;
-  lastPostUsername: string;
-  forum: string;
 };
 
 export const TopicCard: React.FC<Props> = ({
   subject,
-  blurb,
+  poster,
+  lastPoster,
   lastPost,
-  lastPostUsername,
-  posts,
-  topics,
-  category,
+  replies,
 }) => {
   const theme = useTheme();
   const descriptionColour = theme['text-hint-color'];
-  const subtitle = `${category} | topics: ${compactInteger(
-    topics,
-  )} | posts: ${compactInteger(posts)}`;
+  const subtitle = `posts: ${compactInteger(replies)}`;
   return (
     <CardRow>
       <Card
         header={() => (
           <View style={styles.headerContainer}>
-            <Text category="h6">{header}</Text>
+            <Text category="h6">{poster}</Text>
             <Text appearance="hint" category="p1">
               {subtitle}
             </Text>
           </View>
         )}
-        footer={() => (
-          <Footer lastPost={lastPost} lastPostUsername={lastPostUsername} />
-        )}
+        footer={() => <Footer lastPost={lastPost} lastPoster={lastPoster} />}
       >
-        <Text>{blurb}</Text>
+        <Text>{subject}</Text>
       </Card>
     </CardRow>
   );
@@ -55,11 +47,11 @@ export const TopicCard: React.FC<Props> = ({
 
 const Footer: React.FC<{
   lastPost: number;
-  lastPostUsername: string;
-}> = ({ lastPost, lastPostUsername }) => (
+  lastPoster: string;
+}> = ({ lastPost, lastPoster }) => (
   <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPostUsername}
+      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPoster}
     </Text>
   </View>
 );

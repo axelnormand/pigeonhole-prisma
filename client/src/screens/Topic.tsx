@@ -2,43 +2,39 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
-import { ForumTabProps } from '../navigation/ForumTabs';
-import { ForumCard } from '../comps/ForumCard';
+import { PostCard } from '../comps/PostCard';
 import { useQuery, PunbbForumModelType } from '../models';
-import { CentreLoading } from '../comps/CentreLoading';
-import { clearTokenInHeader } from '../graphql/client';
+import { CentreLoadingPage } from '../comps/CentreLoadingPage';
+import { TopicScreenProps, TopicRouteProp } from '../navigation/TopicStack';
 
-export const Topic = observer(() => {
+type Props = {
+  navigation: TopicScreenProps;
+  route: TopicRouteProp;
+};
+
+export const Topic = observer(({ route }: Props) => {
+  const { topicId } = route.params;
   const { data, loading, error } = useQuery((store) =>
-    store.queryRecentTopics(),
+    store.queryPosts({ topicId }),
   );
-  const navigation = useNavigation<TopicStackParams>();
 
   if (error) {
     throw error;
   }
 
   if (loading) {
-    return (
-      <Page>
-        <CentreLoading />
-      </Page>
-    );
+    return <CentreLoadingPage />;
   }
 
   return (
     <Page>
-      {data?.recentTopics.map((topic) => {
+      {data?.posts.map(({ id, message, posted, poster }) => {
         return (
-          <ForumCard
-            key={forum.id}
-            category={category.cat_name ?? ''}
-            header={forum.forum_name ?? ''}
-            blurb={forum.forum_desc ?? ''}
-            lastPost={forum.last_post ?? new Date().getTime()}
-            lastPostUsername={forum.last_poster ?? ''}
-            posts={forum.num_posts ?? 0}
-            topics={forum.num_topics ?? 0}
+          <PostCard
+            key={id}
+            message={message ?? ''}
+            posted={posted ?? new Date().getTime()}
+            poster={poster ?? ''}
           />
         );
       })}

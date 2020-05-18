@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { ForumCard } from '../comps/ForumCard';
 import { useQuery, PunbbForumModelType } from '../models';
-import { CentreLoading } from '../comps/CentreLoading';
+import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 import { clearTokenInHeader } from '../graphql/client';
 import { TabsScreenProps } from '../navigation/TopicStack';
 import { ForumTabProps } from '../navigation/ForumTabs';
@@ -28,49 +28,52 @@ export const Forums = observer(() => {
       ),
     ),
   );
-  const navigation = useNavigation<TabsScreenProps | ForumTabProps>();
+  const navigation = useNavigation<TabsScreenProps>();
 
   if (error) {
     // TODO: move this to not auth middleware of sorts + read correct http status for not auth
     if (error.toString().indexOf('Not Authorised') >= 0) {
       console.log(`Not auth, navigating Login after clearing token`);
       clearTokenInHeader();
+      // @ts-ignore
       navigation.navigate('Login');
-      return (
-        <Page>
-          <CentreLoading />
-        </Page>
-      );
+      return <CentreLoadingPage />;
     }
     throw error;
   }
 
   if (loading) {
-    return (
-      <Page>
-        <CentreLoading />
-      </Page>
-    );
+    return <CentreLoadingPage />;
   }
 
   return (
     <Page>
-      {data?.categories.map((category) => {
+      {data?.categories.map(({ cat_name, punbb_forums }) => {
         // TODO: forum should be typed?!
-        return category.punbb_forums?.map((forum: PunbbForumModelType) => {
-          return (
-            <ForumCard
-              key={forum.id}
-              category={category.cat_name ?? ''}
-              header={forum.forum_name ?? ''}
-              blurb={forum.forum_desc ?? ''}
-              lastPost={forum.last_post ?? new Date().getTime()}
-              lastPostUsername={forum.last_poster ?? ''}
-              posts={forum.num_posts ?? 0}
-              topics={forum.num_topics ?? 0}
-            />
-          );
-        });
+        return punbb_forums?.map(
+          ({
+            id,
+            forum_name,
+            forum_desc,
+            last_post,
+            last_poster,
+            num_posts,
+            num_topics,
+          }: PunbbForumModelType) => {
+            return (
+              <ForumCard
+                key={id}
+                category={cat_name ?? ''}
+                header={forum_name ?? ''}
+                blurb={forum_desc ?? ''}
+                lastPost={last_post ?? new Date().getTime()}
+                lastPoster={last_poster ?? ''}
+                posts={num_posts ?? 0}
+                topics={num_topics ?? 0}
+              />
+            );
+          },
+        );
       })}
     </Page>
   );

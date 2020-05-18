@@ -2,11 +2,10 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
-import { ForumCard } from '../comps/ForumCard';
-import { useQuery, PunbbForumModelType } from '../models';
-import { CentreLoading } from '../comps/CentreLoading';
-import { clearTokenInHeader } from '../graphql/client';
+import { useQuery } from '../models';
+import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 import { TabsScreenProps } from '../navigation/TopicStack';
+import { TopicCard } from '../comps/TopicCard';
 
 export const RecentTopics = observer(() => {
   const { data, loading, error } = useQuery((store) =>
@@ -19,29 +18,25 @@ export const RecentTopics = observer(() => {
   }
 
   if (loading) {
-    return (
-      <Page>
-        <CentreLoading />
-      </Page>
-    );
+    return <CentreLoadingPage />;
   }
 
   return (
     <Page>
-      {data?.recentTopics.map((topic) => {
-        return (
-          <ForumCard
-            key={forum.id}
-            category={category.cat_name ?? ''}
-            header={forum.forum_name ?? ''}
-            blurb={forum.forum_desc ?? ''}
-            lastPost={forum.last_post ?? new Date().getTime()}
-            lastPostUsername={forum.last_poster ?? ''}
-            posts={forum.num_posts ?? 0}
-            topics={forum.num_topics ?? 0}
-          />
-        );
-      })}
+      {data?.recentTopics.map(
+        ({ id, subject, poster, last_poster, num_replies, last_post }) => {
+          return (
+            <TopicCard
+              key={id}
+              subject={subject ?? ''}
+              poster={poster ?? ''}
+              lastPoster={last_poster ?? ''}
+              replies={num_replies ?? 0}
+              lastPost={last_post ?? new Date().getTime()}
+            />
+          );
+        },
+      )}
       ;
     </Page>
   );

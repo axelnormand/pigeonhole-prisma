@@ -15,14 +15,14 @@ type Props = {
   topics: number;
   posts: number;
   lastPost: number;
-  lastPostUsername: string;
+  lastPoster: string;
 };
 
 export const ForumCard: React.FC<Props> = ({
   header,
   blurb,
   lastPost,
-  lastPostUsername,
+  lastPoster,
   posts,
   topics,
   category,
@@ -43,9 +43,7 @@ export const ForumCard: React.FC<Props> = ({
             </Text>
           </View>
         )}
-        footer={() => (
-          <Footer lastPost={lastPost} lastPostUsername={lastPostUsername} />
-        )}
+        footer={() => <Footer lastPost={lastPost} lastPoster={lastPoster} />}
       >
         <Text>{blurb}</Text>
       </Card>
@@ -55,11 +53,11 @@ export const ForumCard: React.FC<Props> = ({
 
 const Footer: React.FC<{
   lastPost: number;
-  lastPostUsername: string;
-}> = ({ lastPost, lastPostUsername }) => (
+  lastPoster: string;
+}> = ({ lastPost, lastPoster }) => (
   <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPostUsername}
+      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPoster}
     </Text>
   </View>
 );

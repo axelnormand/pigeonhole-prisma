@@ -48,6 +48,7 @@ type punbb_post {
   id: Int!
   message: String!
   posted: Int!
+  poster: String!
   poster_id: Int!
   punbb_user: punbb_user!
 }

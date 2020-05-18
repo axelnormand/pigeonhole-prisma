@@ -67,6 +67,7 @@ export interface NexusGenRootTypes {
     id: number; // Int!
     message: string; // String!
     posted: number; // Int!
+    poster: string; // String!
     poster_id: number; // Int!
   }
   punbb_topic: { // root type
@@ -145,6 +146,7 @@ export interface NexusGenFieldTypes {
     id: number; // Int!
     message: string; // String!
     posted: number; // Int!
+    poster: string; // String!
     poster_id: number; // Int!
     punbb_user: NexusGenRootTypes['punbb_user']; // punbb_user!
   }

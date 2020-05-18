@@ -77,6 +77,7 @@ query {
 - [ ] offline mode
 - [ ] better unauth catch
 - [ ] fix nested mst-gql typings in screens/Forums
+- [ ] web urls with newer react navigation
 
 ## Feature TODOs
 

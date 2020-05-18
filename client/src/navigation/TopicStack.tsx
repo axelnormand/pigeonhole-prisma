@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/stack';
 import { Topic } from '../screens/Topic';
 import { ForumsTabs } from './ForumTabs';
+import { RouteProp } from '@react-navigation/native';
 
 type TopicStackParams = {
   Tabs: undefined;
@@ -13,6 +14,7 @@ type TopicStackParams = {
 
 export type TabsScreenProps = StackNavigationProp<TopicStackParams, 'Tabs'>;
 export type TopicScreenProps = StackNavigationProp<TopicStackParams, 'Topic'>;
+export type TopicRouteProp = RouteProp<TopicStackParams, 'Topic'>;
 
 type Props = {};
 
