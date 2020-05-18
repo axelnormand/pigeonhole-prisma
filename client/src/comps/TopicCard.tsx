@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { compactInteger } from 'humanize-plus';
-import { Card, Text, useTheme } from '@ui-kitten/components';
+import { Card, Text } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { CardRow } from './CardRow';
@@ -14,6 +14,7 @@ type Props = {
   lastPoster: string;
   replies: number;
   lastPost: number;
+  onPress: () => void;
 };
 
 export const TopicCard: React.FC<Props> = ({
@@ -22,13 +23,13 @@ export const TopicCard: React.FC<Props> = ({
   lastPoster,
   lastPost,
   replies,
+  onPress,
 }) => {
-  const theme = useTheme();
-  const descriptionColour = theme['text-hint-color'];
   const subtitle = `posts: ${compactInteger(replies)}`;
   return (
     <CardRow>
       <Card
+        onPress={onPress}
         header={() => (
           <View style={styles.headerContainer}>
             <Text category="h6">{poster}</Text>

@@ -33,11 +33,11 @@ export const RecentTopics = observer(() => {
               lastPoster={last_poster ?? ''}
               replies={num_replies ?? 0}
               lastPost={last_post ?? new Date().getTime()}
+              onPress={() => navigation.navigate('Topic', { topicId: id ?? 0 })}
             />
           );
         },
       )}
-      ;
     </Page>
   );
 });

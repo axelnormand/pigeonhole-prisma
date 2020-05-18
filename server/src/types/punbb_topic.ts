@@ -14,7 +14,6 @@ export const punbb_topic = objectType({
     t.model.last_poster();
     t.model.num_replies();
     t.model.forum_id();
-    t.model.punbb_forum();
     t.model.punbb_posts();
   },
 });

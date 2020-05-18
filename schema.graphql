@@ -68,7 +68,6 @@ type punbb_topic {
   num_replies: Int!
   posted: Int!
   poster: String!
-  punbb_forum: punbb_forum!
   punbb_posts(after: punbb_postWhereUniqueInput, before: punbb_postWhereUniqueInput, first: Int, last: Int, skip: Int): [punbb_post!]!
   sticky: Boolean!
   subject: String!

@@ -78,6 +78,7 @@ query {
 - [ ] better unauth catch
 - [ ] fix nested mst-gql typings in screens/Forums
 - [ ] web urls with newer react navigation
+- [ ] ui kitten 5
 
 ## Feature TODOs
 

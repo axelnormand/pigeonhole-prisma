@@ -160,7 +160,6 @@ export interface NexusGenFieldTypes {
     num_replies: number; // Int!
     posted: number; // Int!
     poster: string; // String!
-    punbb_forum: NexusGenRootTypes['punbb_forum']; // punbb_forum!
     punbb_posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
     sticky: boolean; // Boolean!
     subject: string; // String!
