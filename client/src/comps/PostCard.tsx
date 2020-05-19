@@ -16,7 +16,10 @@ type Props = {
 export const PostCard: React.FC<Props> = ({ message, posted, poster }) => {
   return (
     <CardRow>
-      <Card footer={() => <Footer posted={posted} poster={poster} />}>
+      <Card
+        footer={() => <Footer posted={posted} poster={poster} />}
+        disabled={true}
+      >
         <Text>{message}</Text>
       </Card>
     </CardRow>
@@ -29,7 +32,7 @@ const Footer: React.FC<{
 }> = ({ posted, poster }) => (
   <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      Last Post {dayjs(posted * 1000).fromNow()} by {poster}
+      {dayjs(posted * 1000).format('dddd, MMMM D, YYYY h:mm A')} by {poster}
     </Text>
   </View>
 );

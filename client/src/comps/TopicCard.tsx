@@ -1,5 +1,4 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
 import { compactInteger } from 'humanize-plus';
 import { Card, Text } from '@ui-kitten/components';
 import dayjs from 'dayjs';
@@ -25,52 +24,20 @@ export const TopicCard: React.FC<Props> = ({
   replies,
   onPress,
 }) => {
-  const subtitle = `posts: ${compactInteger(replies)}`;
+  const msg = `${compactInteger(replies)} Posts | Last Post ${dayjs(
+    lastPost * 1000,
+  ).fromNow()} by ${lastPoster}`;
   return (
     <CardRow>
-      <Card
-        onPress={onPress}
-        header={() => (
-          <View style={styles.headerContainer}>
-            <Text category="h6">{poster}</Text>
-            <Text appearance="hint" category="p1">
-              {subtitle}
-            </Text>
-          </View>
-        )}
-        footer={() => <Footer lastPost={lastPost} lastPoster={lastPoster} />}
-      >
-        <Text>{subject}</Text>
+      <Card onPress={onPress}>
+        <Text category="h6">{subject}</Text>
+        <Text appearance="hint" category="p1">
+          {msg}
+        </Text>
+        <Text appearance="hint" category="p1">
+          {poster}
+        </Text>
       </Card>
     </CardRow>
   );
 };
-
-const Footer: React.FC<{
-  lastPost: number;
-  lastPoster: string;
-}> = ({ lastPost, lastPoster }) => (
-  <View style={styles.footerContainer}>
-    <Text appearance="hint" category="c1">
-      Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPoster}
-    </Text>
-  </View>
-);
-
-const styles = StyleSheet.create({
-  headerContainer: {
-    paddingTop: 16,
-    paddingBottom: 16,
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
-  footerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    paddingTop: 5,
-    paddingBottom: 5,
-    paddingLeft: 24,
-    paddingRight: 24,
-  },
-});

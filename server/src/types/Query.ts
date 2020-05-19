@@ -36,7 +36,7 @@ export const Query = queryType({
         return ctx.prisma.punbb_topic.findMany({
           where: {
             last_post: {
-              gte: Math.round(new Date().getTime() / 1000) - 7 * 24 * 60 * 60,
+              gte: Math.round(new Date().getTime() / 1000) - 100 * 24 * 60 * 60,
             },
           },
           orderBy: {

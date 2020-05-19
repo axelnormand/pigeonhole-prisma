@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { compactInteger } from 'humanize-plus';
-import { Card, CardHeader, Text, useTheme } from '@ui-kitten/components';
+import { Card, Text } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { CardRow } from './CardRow';
@@ -27,8 +27,6 @@ export const ForumCard: React.FC<Props> = ({
   topics,
   category,
 }) => {
-  const theme = useTheme();
-  const descriptionColour = theme['text-hint-color'];
   const subtitle = `${category} | topics: ${compactInteger(
     topics,
   )} | posts: ${compactInteger(posts)}`;

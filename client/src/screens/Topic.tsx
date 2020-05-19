@@ -38,7 +38,6 @@ export const Topic = observer(({ route }: Props) => {
           />
         );
       })}
-      ;
     </Page>
   );
 });
