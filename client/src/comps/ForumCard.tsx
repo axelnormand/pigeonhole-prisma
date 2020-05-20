@@ -16,6 +16,7 @@ type Props = {
   posts: number;
   lastPost: number;
   lastPoster: string;
+  onPress: () => void;
 };
 
 export const ForumCard: React.FC<Props> = ({
@@ -26,6 +27,7 @@ export const ForumCard: React.FC<Props> = ({
   posts,
   topics,
   category,
+  onPress,
 }) => {
   const subtitle = `${category} | topics: ${compactInteger(
     topics,
@@ -33,6 +35,7 @@ export const ForumCard: React.FC<Props> = ({
   return (
     <CardRow>
       <Card
+        onPress={onPress}
         header={() => (
           <View style={styles.headerContainer}>
             <Text category="h6">{header}</Text>

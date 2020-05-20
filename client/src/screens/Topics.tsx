@@ -1,18 +1,23 @@
 import React from 'react';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { useQuery } from '../models';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
-import { TopicCard } from '../comps/TopicCard';
 import { MainStackParams } from '../navigation/MainStack';
+import { TopicCard } from '../comps/TopicCard';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-type NavProps = StackNavigationProp<MainStackParams, 'ForumTabs'>;
+type Props = {
+  route: RouteProp<MainStackParams, 'Topics'>;
+};
 
-export const RecentTopics = observer(() => {
+type NavProps = StackNavigationProp<MainStackParams, 'Topics'>;
+
+export const Topics = observer(({ route }: Props) => {
+  const { forumId } = route.params;
   const { data, loading, error } = useQuery((store) =>
-    store.queryRecentTopics(),
+    store.queryTopics({ forumId }),
   );
   const navigation = useNavigation<NavProps>();
 
@@ -26,7 +31,7 @@ export const RecentTopics = observer(() => {
 
   return (
     <Page>
-      {data?.recentTopics.map(
+      {data?.topics.map(
         ({ id, subject, poster, last_poster, num_replies, last_post }) => {
           return (
             <TopicCard

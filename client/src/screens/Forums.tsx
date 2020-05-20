@@ -1,13 +1,22 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {
+  useNavigation,
+  CompositeNavigationProp,
+} from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { ForumCard } from '../comps/ForumCard';
 import { useQuery, PunbbForumModelType } from '../models';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 import { clearTokenInHeader } from '../graphql/client';
-import { TabsScreenProps } from '../navigation/TopicStack';
-import { ForumTabProps } from '../navigation/ForumTabs';
+import { AppStackParams } from '../navigation/AppStack';
+import { MainStackParams } from '../navigation/MainStack';
+
+type NavProps = CompositeNavigationProp<
+  StackNavigationProp<AppStackParams, 'Login'>,
+  StackNavigationProp<MainStackParams, 'ForumTabs'>
+>;
 
 export const Forums = observer(() => {
   const { data, loading, error } = useQuery((store) =>
@@ -28,14 +37,13 @@ export const Forums = observer(() => {
       ),
     ),
   );
-  const navigation = useNavigation<TabsScreenProps>();
+  const navigation = useNavigation<NavProps>();
 
   if (error) {
     // TODO: move this to not auth middleware of sorts + read correct http status for not auth
     if (error.toString().indexOf('Not Authorised') >= 0) {
       console.log(`Not auth, navigating Login after clearing token`);
       clearTokenInHeader();
-      // @ts-ignore
       navigation.navigate('Login');
       return <CentreLoadingPage />;
     }
@@ -70,6 +78,9 @@ export const Forums = observer(() => {
                 lastPoster={last_poster ?? ''}
                 posts={num_posts ?? 0}
                 topics={num_topics ?? 0}
+                onPress={() =>
+                  navigation.navigate('Topics', { forumId: id ?? 0 })
+                }
               />
             );
           },

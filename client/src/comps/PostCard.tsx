@@ -32,7 +32,7 @@ const Footer: React.FC<{
 }> = ({ posted, poster }) => (
   <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      {dayjs(posted * 1000).format('dddd, MMMM D, YYYY h:mm A')} by {poster}
+      {poster} | {dayjs(posted * 1000).format('dddd, MMMM D, YYYY h:mm A')}
     </Text>
   </View>
 );

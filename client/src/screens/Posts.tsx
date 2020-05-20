@@ -1,18 +1,17 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { PostCard } from '../comps/PostCard';
-import { useQuery, PunbbForumModelType } from '../models';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
-import { TopicScreenProps, TopicRouteProp } from '../navigation/TopicStack';
+import { useQuery } from '../models';
+import { MainStackParams } from '../navigation/MainStack';
 
 type Props = {
-  navigation: TopicScreenProps;
-  route: TopicRouteProp;
+  route: RouteProp<MainStackParams, 'Posts'>;
 };
 
-export const Topic = observer(({ route }: Props) => {
+export const Posts = observer(({ route }: Props) => {
   const { topicId } = route.params;
   const { data, loading, error } = useQuery((store) =>
     store.queryPosts({ topicId }),

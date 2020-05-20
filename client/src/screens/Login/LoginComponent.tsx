@@ -8,11 +8,14 @@ import { FormRow } from '../../comps/FormRow';
 import { PageTitle } from '../../comps/PageTitle';
 import { CentreLoading } from '../../comps/CentreLoading';
 import { useNavigation } from '@react-navigation/native';
-import { LoginScreenProps } from '../../navigation/AppStack';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { AppStackParams } from '../../navigation/AppStack';
 
 type Props = {
   onSubmit: (username: string, password: string) => Promise<boolean>;
 };
+
+type NavProps = StackNavigationProp<AppStackParams, 'Login'>;
 
 const loginSchema = object().shape({
   username: string().required('Please enter your username'),
@@ -21,7 +24,7 @@ const loginSchema = object().shape({
 
 type LoginSchema = InferType<typeof loginSchema>;
 export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
-  const navigation = useNavigation<LoginScreenProps>();
+  const navigation = useNavigation<NavProps>();
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
