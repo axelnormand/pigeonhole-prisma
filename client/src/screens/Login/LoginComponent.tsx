@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ImageBackground } from 'react-native';
+import { StyleSheet, ImageBackground, View } from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
@@ -63,7 +63,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             isValid,
             submitCount,
           }) => (
-            <>
+            <View style={styles.container}>
               <PageTitle>Welcome to the Pigeon Hole</PageTitle>
 
               <FormRow>
@@ -114,7 +114,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
               </FormRow>
 
               {isLoading && <CentreLoading />}
-            </>
+            </View>
           )}
         </Formik>
       </Page>
@@ -123,6 +123,10 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+  },
   appBar: {
     height: 192,
   },

@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
+    "tsc": "tsc",
     "start": "ts-node-dev --no-notify --respawn --transpileOnly ./src",
     "build": "cross-env NODE_ENV=production yarn clean && yarn generate && tsc",
     "start:prod": "cross-env NODE_ENV=production yarn build && node dist",
