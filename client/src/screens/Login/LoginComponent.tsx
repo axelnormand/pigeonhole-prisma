@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ImageBackground, View } from 'react-native';
+import { StyleSheet, ImageBackground } from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
@@ -36,7 +36,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
         style={styles.appBar}
         source={require('../../../assets/login-background.png')}
       />
-      <Page isCentre>
+      <Page>
         <Formik
           initialValues={initialValues}
           validationSchema={loginSchema}
@@ -45,12 +45,13 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             setIsFailed(false);
             setIsLoading(true);
             const success = await onSubmit(username, password);
-            if (!success) {
+            if (success) {
+              navigation.navigate('Home');
+            } else {
               setIsFailed(true);
             }
             setIsLoading(false);
             setSubmitting(false);
-            navigation.navigate('Home');
           }}
         >
           {({
@@ -63,7 +64,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             isValid,
             submitCount,
           }) => (
-            <View style={styles.container}>
+            <>
               <PageTitle>Welcome to the Pigeon Hole</PageTitle>
 
               <FormRow>
@@ -114,7 +115,7 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
               </FormRow>
 
               {isLoading && <CentreLoading />}
-            </View>
+            </>
           )}
         </Formik>
       </Page>
@@ -123,10 +124,6 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-  },
   appBar: {
     height: 192,
   },

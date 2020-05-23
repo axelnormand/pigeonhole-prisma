@@ -24,18 +24,16 @@ export const TopicCard: React.FC<Props> = ({
   replies,
   onPress,
 }) => {
-  const msg = `${compactInteger(replies)} Posts | Last Post ${dayjs(
-    lastPost * 1000,
-  ).fromNow()} by ${lastPoster}`;
+  const subtitle = `${poster} | ${compactInteger(replies)} Posts`;
   return (
     <CardRow>
       <Card onPress={onPress}>
         <Text category="h6">{subject}</Text>
         <Text appearance="hint" category="p1">
-          {msg}
+          {subtitle}
         </Text>
         <Text appearance="hint" category="p1">
-          {poster}
+          Last Post {dayjs(lastPost * 1000).fromNow()} by {lastPoster}
         </Text>
       </Card>
     </CardRow>

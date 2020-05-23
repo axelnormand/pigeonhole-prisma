@@ -15,5 +15,6 @@ export const PageTitle: React.FC<Props> = ({ children }) => (
 const styles = StyleSheet.create({
   container: {
     marginBottom: 15,
+    alignSelf: 'center',
   },
 });
