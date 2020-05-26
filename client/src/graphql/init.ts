@@ -1,4 +1,3 @@
-import { Platform } from 'react-native';
 import { getKey, setKey } from './storage';
 
 enum key {

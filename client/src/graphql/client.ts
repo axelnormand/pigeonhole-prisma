@@ -11,12 +11,12 @@ const graphQLClient: GraphQLClient = createHttpClient(
 
 export const getGraphQLClient = () => graphQLClient;
 
-export const setTokenInHeader = (token: string) => {
+export const setTokenInHeader = async (token: string) => {
   graphQLClient.setHeader('Authorization', `Bearer ${token}`);
-  setBearerToken(token);
+  await setBearerToken(token);
 };
 
-export const clearTokenInHeader = () => {
+export const clearTokenInHeader = async () => {
   graphQLClient.setHeader('Authorization', ``);
-  setBearerToken('');
+  await setBearerToken('');
 };

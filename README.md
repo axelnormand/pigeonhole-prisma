@@ -79,6 +79,8 @@ query {
 - [ ] fix nested mst-gql typings in screens/Forums
 - [ ] web urls with newer react navigation
 - [ ] ui kitten 5
+- [ ] sign put + pop animation + better state https://reactnavigation.org/docs/auth-flow
+- [ ] mst middleware to logout
 
 ## Feature TODOs
 

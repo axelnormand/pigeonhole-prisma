@@ -15,7 +15,7 @@ type Props = {};
 const Stack = createStackNavigator<MainStackParams>();
 
 export const MainStack: React.FC<Props> = () => (
-  <Stack.Navigator headerMode="none">
+  <Stack.Navigator>
     <Stack.Screen name="ForumTabs" component={ForumsTabs} />
     <Stack.Screen name="Topics" component={Topics} />
     <Stack.Screen name="Posts" component={Posts} />

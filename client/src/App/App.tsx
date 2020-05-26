@@ -32,21 +32,6 @@ const rootStore = RootStore.create(undefined, {
 });
 
 export const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isAuthorized, setIsAuthorized] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      const token = await getBearerToken();
-      if (token) {
-        console.log(`Got token from storage`);
-        setTokenInHeader(token);
-      }
-      setIsAuthorized(token ? true : false);
-      setIsLoading(false);
-    })();
-  }, []);
-
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
@@ -55,15 +40,7 @@ export const App = () => {
           <StoreContext.Provider value={rootStore}>
             <SafeAreaProvider>
               <NavigationContainer>
-                {isLoading ? (
-                  <CentreScreen>
-                    <Spinner size="giant" />
-                  </CentreScreen>
-                ) : (
-                  <AppStack
-                    initialRouteName={isAuthorized ? 'Home' : 'Login'}
-                  />
-                )}
+                <AppStack />
               </NavigationContainer>
             </SafeAreaProvider>
           </StoreContext.Provider>
