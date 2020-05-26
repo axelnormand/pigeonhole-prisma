@@ -11,7 +11,7 @@ import { LoginResult } from './LoginResultEnum';
 export interface RootStoreType extends Instance<typeof RootStore.Type> {}
 
 export const RootStore = RootStoreBase.props({
-  token: types.string,
+  token: types.maybe(types.string),
 })
   .views((self) => ({
     get isAuthorized() {

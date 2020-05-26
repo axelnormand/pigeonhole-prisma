@@ -3,9 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Login } from '../screens/Login';
 import { MainStack } from './MainStack';
 import { observer } from 'mobx-react';
-import { StoreContext } from '../models';
-import { getBearerToken } from '../graphql/init';
-import { setTokenInHeader } from '../graphql/client';
+import { StoreContext, useQuery } from '../models';
 import { CentreScreen } from '../comps/CentreScreen';
 import { Spinner } from '@ui-kitten/components';
 
@@ -17,17 +15,9 @@ export type AppStackParams = {
 const Stack = createStackNavigator<AppStackParams>();
 
 export const AppStack = observer(() => {
-  const store = useContext(StoreContext);
-  const [isLoading, setIsLoading] = useState(true);
+  const { store, loading, error } = useQuery((store) => store.loadToken());
 
-  useEffect(() => {
-    (async () => {
-      store.
-      setIsLoading(false);
-    })();
-  }, []);
-
-  if (isLoading) {
+  if (loading) {
     return (
       <CentreScreen>
         <Spinner size="giant" />
@@ -35,9 +25,13 @@ export const AppStack = observer(() => {
     );
   }
 
+  if (error) {
+    throw error;
+  }
+
   return (
     <Stack.Navigator headerMode="none">
-      {isAuthorized ? (
+      {store.isAuthorized ? (
         <Stack.Screen name="Home" component={MainStack} />
       ) : (
         <Stack.Screen name="Login" component={Login} />
