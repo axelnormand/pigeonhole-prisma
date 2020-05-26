@@ -15,6 +15,7 @@ export type AppStackParams = {
 const Stack = createStackNavigator<AppStackParams>();
 
 export const AppStack = observer(() => {
+  //@ts-ignore PromiseLike in Query doesnt match Promise https://github.com/mobxjs/mst-gql/issues/227
   const { store, loading, error } = useQuery((store) => store.loadToken());
 
   if (loading) {
