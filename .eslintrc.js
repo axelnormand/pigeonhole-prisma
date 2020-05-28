@@ -4,7 +4,7 @@ module.export = {
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
-    "ecmaVersion": 2017
+    ecmaVersion: 2017,
   },
   extends: [
     'eslint:recommended',
@@ -15,7 +15,7 @@ module.export = {
     'plugin:import/warnings',
     'plugin:import/typescript',
   ],
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'react-hooks'],
   rules: {
     'import/no-unused-modules': ['error', { unusedExports: true }],
     'sort-imports': [
@@ -41,6 +41,8 @@ module.export = {
         },
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   settings: {},
 };

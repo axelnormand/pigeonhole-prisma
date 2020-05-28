@@ -7,8 +7,8 @@ import { useTheme } from '@ui-kitten/components';
 
 export type MainStackParams = {
   ForumTabs: undefined;
-  Topics: { forumId: number };
-  Posts: { topicId: number };
+  Topics: { forumId: number; forumName: string };
+  Posts: { topicId: number; topicName: string };
 };
 
 type Props = {};
@@ -20,6 +20,7 @@ export const MainStack: React.FC<Props> = () => {
   return (
     <Stack.Navigator
       screenOptions={{
+        headerBackTitle: ' ',
         headerStyle: { backgroundColor: theme['background-basic-color-1'] },
       }}
     >

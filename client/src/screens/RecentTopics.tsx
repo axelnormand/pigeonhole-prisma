@@ -36,7 +36,12 @@ export const RecentTopics = observer(() => {
               lastPoster={last_poster ?? ''}
               replies={num_replies ?? 0}
               lastPost={last_post ?? new Date().getTime()}
-              onPress={() => navigation.navigate('Posts', { topicId: id ?? 0 })}
+              onPress={() =>
+                navigation.navigate('Posts', {
+                  topicId: id ?? 0,
+                  topicName: subject ?? '',
+                })
+              }
             />
           );
         },

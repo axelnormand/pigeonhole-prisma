@@ -72,7 +72,10 @@ export const Forums = observer(() => {
                 posts={num_posts ?? 0}
                 topics={num_topics ?? 0}
                 onPress={() =>
-                  navigation.navigate('Topics', { forumId: id ?? 0 })
+                  navigation.navigate('Topics', {
+                    forumId: id ?? 0,
+                    forumName: forum_name ?? '',
+                  })
                 }
               />
             );

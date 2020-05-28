@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigation, RouteProp } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
@@ -15,11 +15,17 @@ type Props = {
 type NavProps = StackNavigationProp<MainStackParams, 'Topics'>;
 
 export const Topics = observer(({ route }: Props) => {
-  const { forumId } = route.params;
+  const { forumId, forumName } = route.params;
   const { data, loading, error } = useQuery((store) =>
     store.queryTopics({ forumId }),
   );
   const navigation = useNavigation<NavProps>();
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: forumName,
+    });
+  }, [navigation, forumName]);
 
   if (error) {
     throw error;
@@ -41,7 +47,12 @@ export const Topics = observer(({ route }: Props) => {
               lastPoster={last_poster ?? ''}
               replies={num_replies ?? 0}
               lastPost={last_post ?? new Date().getTime()}
-              onPress={() => navigation.navigate('Posts', { topicId: id ?? 0 })}
+              onPress={() =>
+                navigation.navigate('Posts', {
+                  topicId: id ?? 0,
+                  topicName: subject ?? '',
+                })
+              }
             />
           );
         },
