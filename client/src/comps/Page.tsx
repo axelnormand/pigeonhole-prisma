@@ -9,7 +9,7 @@ type Props = {
 
 export const Page: React.FC<Props> = ({ children, isCentre }) => (
   <Layout
-    style={[styles.container, isCentre ? { alignItems: 'center' } : null]}
+    style={[styles.container, { alignItems: isCentre ? 'center' : undefined }]}
   >
     <ScrollView style={styles.scroll}>{children}</ScrollView>
   </Layout>

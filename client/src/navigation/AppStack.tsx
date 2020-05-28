@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Spinner } from '@ui-kitten/components';
 import { MainStack } from './MainStack';
 import { observer } from 'mobx-react';
-import { useQuery } from '../models';
-import { CentreScreen } from '../comps/CentreScreen';
+import { StoreContext } from '../models';
 import { Login } from '../screens/Login';
+import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 
 export type AppStackParams = {
   Login: undefined;
@@ -15,19 +14,22 @@ export type AppStackParams = {
 const Stack = createStackNavigator<AppStackParams>();
 
 export const AppStack = observer(() => {
-  //@ts-ignore PromiseLike in Query doesnt match Promise https://github.com/mobxjs/mst-gql/issues/227
-  const { store, loading, error } = useQuery((store) => store.loadToken());
+  const [isLoading, setIsLoading] = useState(true);
+  const store = useContext(StoreContext);
 
-  if (loading) {
-    return (
-      <CentreScreen>
-        <Spinner size="giant" />
-      </CentreScreen>
-    );
-  }
+  useEffect(() => {
+    (async () => {
+      await store.loadToken();
+      setIsLoading(false);
+    })();
+  }, []);
 
-  if (error) {
-    throw error;
+  console.log(
+    `Render AppStack isLoading: ${isLoading}, store.isAuthorized ${store.isAuthorized}`,
+  );
+
+  if (isLoading) {
+    return <CentreLoadingPage />;
   }
 
   return (

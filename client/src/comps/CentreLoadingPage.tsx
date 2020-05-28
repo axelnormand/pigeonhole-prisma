@@ -1,9 +1,18 @@
 import React from 'react';
-import { Page } from './Page';
+import { StyleSheet } from 'react-native';
 import { CentreLoading } from './CentreLoading';
+import { Layout } from '@ui-kitten/components';
 
 export const CentreLoadingPage: React.FC = () => (
-  <Page>
+  <Layout style={styles.container}>
     <CentreLoading />
-  </Page>
+  </Layout>
 );
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+});
