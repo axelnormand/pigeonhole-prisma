@@ -14,6 +14,5 @@ export const CardRow: React.FC<Props> = ({ children, style }) => (
 const styles = StyleSheet.create({
   row: {
     marginBottom: 20,
-    minWidth: Platform.OS === 'web' ? 400 : undefined,
   },
 });

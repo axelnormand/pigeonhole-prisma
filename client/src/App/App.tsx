@@ -4,7 +4,7 @@ import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { config } from '../config';
 import { AppStack } from '../navigation/AppStack';
 import { ErrorBoundary } from '../comps/ErrorBoundary';
@@ -24,6 +24,13 @@ const rootStore = RootStore.create(undefined, {
 });
 
 export const App = () => {
+  const navTheme = {
+    ...DarkTheme,
+    colors: {
+      ...DarkTheme.colors,
+      background: dark['color-basic-700'],
+    },
+  };
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
@@ -31,7 +38,7 @@ export const App = () => {
         <ErrorBoundary>
           <StoreContext.Provider value={rootStore}>
             <SafeAreaProvider>
-              <NavigationContainer>
+              <NavigationContainer theme={navTheme}>
                 <AppStack />
               </NavigationContainer>
             </SafeAreaProvider>

@@ -9,7 +9,6 @@ import { Page } from '../comps/Page';
 import { ForumCard } from '../comps/ForumCard';
 import { useQuery, PunbbForumModelType } from '../models';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
-import { clearTokenInHeader } from '../graphql/client';
 import { AppStackParams } from '../navigation/AppStack';
 import { MainStackParams } from '../navigation/MainStack';
 
@@ -41,13 +40,6 @@ export const Forums = observer(() => {
   const navigation = useNavigation<NavProps>();
 
   if (error) {
-    // TODO: move this to not auth middleware of sorts + read correct http status for not auth
-    if (error.toString().indexOf('Not Authorised') >= 0) {
-      console.log(`Not auth, navigating Login after clearing token`);
-      clearTokenInHeader();
-      navigation.navigate('Login');
-      return <CentreLoadingPage />;
-    }
     throw error;
   }
 
