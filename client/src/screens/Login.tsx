@@ -1,21 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, ImageBackground } from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
-import { Page } from '../../comps/Page';
-import { FormRow } from '../../comps/FormRow';
-import { PageTitle } from '../../comps/PageTitle';
-import { CentreLoading } from '../../comps/CentreLoading';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { AppStackParams } from '../../navigation/AppStack';
-
-type Props = {
-  onSubmit: (username: string, password: string) => Promise<boolean>;
-};
-
-type NavProps = StackNavigationProp<AppStackParams, 'Login'>;
+import { StoreContext } from '../models';
+import { Page } from '../comps/Page';
+import { PageTitle } from '../comps/PageTitle';
+import { FormRow } from '../comps/FormRow';
+import { CentreLoading } from '../comps/CentreLoading';
 
 const loginSchema = object().shape({
   username: string().required('Please enter your username'),
@@ -23,18 +15,19 @@ const loginSchema = object().shape({
 });
 
 type LoginSchema = InferType<typeof loginSchema>;
-export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
-  const navigation = useNavigation<NavProps>();
+
+export const Login: React.FC = () => {
   const initialValues: LoginSchema = { username: '', password: '' };
   const [isShowingPassword, setIsShowingPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isFailed, setIsFailed] = useState(false);
+  const store = useContext(StoreContext);
 
   return (
     <>
       <ImageBackground
         style={styles.appBar}
-        source={require('../../../assets/login-background.png')}
+        source={require('../../assets/login-background.png')}
       />
       <Page>
         <Formik
@@ -44,10 +37,8 @@ export const LoginComponent: React.FC<Props> = ({ onSubmit }) => {
             console.log(`Submitting ${username}`);
             setIsFailed(false);
             setIsLoading(true);
-            const success = await onSubmit(username, password);
-            if (success) {
-              navigation.navigate('Home');
-            } else {
+            await store.login(username, password);
+            if (!store.isAuthorized) {
               setIsFailed(true);
             }
             setIsLoading(false);

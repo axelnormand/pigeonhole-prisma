@@ -2,11 +2,7 @@ import { Instance, types, flow } from 'mobx-state-tree';
 import { RootStoreBase } from './RootStore.base';
 import { getBearerToken } from '../graphql/init';
 import { setTokenInHeader, clearTokenInHeader } from '../graphql/client';
-import {
-  AuthPayloadModelType,
-  AuthPayloadModelSelector,
-} from './AuthPayloadModel';
-import { LoginResult } from './LoginResultEnum';
+import { AuthPayloadModelType } from './AuthPayloadModel';
 
 export interface RootStoreType extends Instance<typeof RootStore.Type> {}
 
@@ -35,22 +31,25 @@ export const RootStore = RootStoreBase.props({
     login: flow(function* login(username: string, password: string) {
       try {
         const {
-          loginResult,
-          token,
-        }: { loginResult: LoginResult; token: string } = yield self.mutateLogin(
-          {
-            username,
-            password,
-          },
-        );
-
+          login,
+        }: { login: AuthPayloadModelType } = yield self.mutateLogin({
+          username,
+          password,
+        });
+        const { token, loginResult } = login;
         console.log(`Login Result ${loginResult} for ${username}`);
+        if (!loginResult) {
+          throw new Error(`empty loginResult returned!`);
+        }
         switch (loginResult) {
-          case LoginResult.ERROR:
+          case 'ERROR':
             throw Error('Server returned Error');
-          case LoginResult.INVALID:
+          case 'INVALID':
             break;
-          case LoginResult.SUCCESS:
+          case 'SUCCESS':
+            if (!token) {
+              throw new Error(`empty token returned with SUCCESS login!`);
+            }
             yield setTokenInHeader(token);
             self.token = token;
             break;

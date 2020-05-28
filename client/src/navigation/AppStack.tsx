@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Login } from '../screens/Login';
+import { Spinner } from '@ui-kitten/components';
 import { MainStack } from './MainStack';
 import { observer } from 'mobx-react';
-import { StoreContext, useQuery } from '../models';
+import { useQuery } from '../models';
 import { CentreScreen } from '../comps/CentreScreen';
-import { Spinner } from '@ui-kitten/components';
+import { Login } from '../screens/Login';
 
 export type AppStackParams = {
   Login: undefined;
