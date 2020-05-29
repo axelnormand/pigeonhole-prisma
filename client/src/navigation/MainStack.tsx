@@ -21,7 +21,12 @@ export const MainStack: React.FC<Props> = () => {
     <Stack.Navigator
       screenOptions={{
         headerBackTitle: ' ',
-        headerStyle: { backgroundColor: theme['background-basic-color-1'] },
+        headerStyle: {
+          backgroundColor: theme['background-basic-color-1'],
+        },
+        headerTitleStyle: {
+          textAlign: 'center',
+        },
       }}
     >
       <Stack.Screen
