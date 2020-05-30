@@ -3,7 +3,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Posts } from '../screens/Posts';
 import { Topics } from '../screens/Topics';
 import { ForumsTabs } from './ForumTabs';
-import { useTheme } from '@ui-kitten/components';
+import { useTheme, Icon, Button } from '@ui-kitten/components';
+import { useNavigation, DrawerActions } from '@react-navigation/core';
 
 export type MainStackParams = {
   ForumTabs: undefined;
@@ -17,6 +18,7 @@ const Stack = createStackNavigator<MainStackParams>();
 
 export const MainStack: React.FC<Props> = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
   return (
     <Stack.Navigator
       screenOptions={{
@@ -32,7 +34,18 @@ export const MainStack: React.FC<Props> = () => {
       <Stack.Screen
         name="ForumTabs"
         component={ForumsTabs}
-        options={{ title: 'Pigeon Hole 🐦' }}
+        options={{
+          title: 'Pigeon Hole 🐦',
+          headerLeft: () => (
+            <Button
+              onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+              appearance="ghost"
+              icon={() => (
+                <Icon name="menu-outline" fill={theme['color-primary-300']} />
+              )}
+            />
+          ),
+        }}
       />
       <Stack.Screen name="Topics" component={Topics} />
       <Stack.Screen name="Posts" component={Posts} />

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { MainStack } from './MainStack';
 import { observer } from 'mobx-react';
 import { StoreContext } from '../models';
 import { Login } from '../screens/Login';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
+import { MainDrawer } from './MainDrawer';
 
 export type AppStackParams = {
   Login: undefined;
@@ -35,7 +35,7 @@ export const AppStack = observer(() => {
   return (
     <Stack.Navigator headerMode="none">
       {store.isAuthorized ? (
-        <Stack.Screen name="Home" component={MainStack} />
+        <Stack.Screen name="Home" component={MainDrawer} />
       ) : (
         <Stack.Screen name="Login" component={Login} />
       )}
