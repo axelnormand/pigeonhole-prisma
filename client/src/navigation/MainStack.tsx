@@ -21,6 +21,7 @@ export const MainStack: React.FC<Props> = () => {
   const navigation = useNavigation();
   return (
     <Stack.Navigator
+      headerMode="float"
       screenOptions={{
         headerBackTitle: ' ',
         headerStyle: {
