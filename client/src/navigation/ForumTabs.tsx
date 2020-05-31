@@ -15,19 +15,19 @@ const TopTab = createMaterialTopTabNavigator<TopTabParams>();
 export const ForumsTabs = (): React.ReactElement => (
   <TopTab.Navigator tabBar={(props) => <TopTabBar {...props} />}>
     <TopTab.Screen
-      name="Forums"
-      component={Forums}
-      options={{
-        title: 'FORUMS',
-        tabBarIcon: (props) => <Icon name="star" {...props} />,
-      }}
-    />
-    <TopTab.Screen
       name="RecentTopics"
       component={RecentTopics}
       options={{
         title: 'RECENT',
         tabBarIcon: (props) => <Icon name="heart" {...props} />,
+      }}
+    />
+    <TopTab.Screen
+      name="Forums"
+      component={Forums}
+      options={{
+        title: 'FORUMS',
+        tabBarIcon: (props) => <Icon name="star" {...props} />,
       }}
     />
   </TopTab.Navigator>
