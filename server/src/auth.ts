@@ -13,22 +13,22 @@ export function getUserId(context: Context): number | null {
     if (!appSecret) {
       throw new Error('process.env.APP_SECRET is blank');
     }
-    if (!context) {
-      console.log('No context!');
-      return null;
+
+    let authorization: string;
+    if (config().pigeonholeServer === 'lambda') {
+      //netlify stores auth token in different place in request
+      // @ts-ignore no event in context
+      authorization = context.event.headers.authorization;
+    } else {
+      authorization = context.request.get('Authorization');
     }
-    if (!context.request) {
-      console.log('No context.request!');
+
+    if (!authorization) {
+      console.log('No Authorization in header. Context: ', context);
       return null;
     }
 
-    const Authorization = context.request.get('Authorization');
-    if (!Authorization) {
-      console.log('No Authorization in header');
-      return null;
-    }
-
-    const token = Authorization.replace('Bearer ', '');
+    const token = authorization.replace('Bearer ', '');
 
     const verifiedToken = verify(token, appSecret) as Token;
     const userId = parseInt(verifiedToken.userId);
@@ -38,7 +38,7 @@ export function getUserId(context: Context): number | null {
     }
     return userId;
   } catch (e) {
-    console.error(`Error getUserId: ${e.message}`, e);
+    console.error(`Error getUserId: ${e.message}`, e, context);
     return null;
   }
 }
