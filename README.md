@@ -81,6 +81,7 @@ query {
 - [ ] ui kitten 5
 - [ ] sign put + pop animation + better state https://reactnavigation.org/docs/auth-flow
 - [ ] mst middleware to logout
+- [ ] favicon + icon
 
 ## Feature TODOs
 

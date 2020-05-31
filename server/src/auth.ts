@@ -9,6 +9,7 @@ interface Token {
 export function getUserId(context: Context): number | null {
   try {
     const { appSecret } = config();
+    console.log(`getUserId with context`, context);
     if (!appSecret) {
       throw new Error('process.env.APP_SECRET is blank');
     }
