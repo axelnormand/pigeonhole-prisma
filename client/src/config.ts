@@ -3,6 +3,8 @@ import { Platform } from 'react-native';
 
 type Config = {
   graphqlServerUrl: string;
+  webUrl: string;
+  appScheme: string;
 };
 
 const isProductionWeb =
@@ -23,4 +25,9 @@ export const config = (): Config => ({
     isProductionPhone || isProductionWeb
       ? 'https://graphql.tessellators.com/.netlify/functions/server'
       : 'http://localhost:4000',
+  webUrl:
+    isProductionPhone || isProductionWeb
+      ? 'https://graphql.tessellators.com'
+      : 'http://localhost:19006',
+  appScheme: 'pigeonhole://',
 });

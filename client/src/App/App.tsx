@@ -4,13 +4,20 @@ import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { NavigationContainer, DarkTheme } from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DarkTheme,
+  LinkingOptions,
+  Theme,
+  InitialState,
+} from '@react-navigation/native';
 import { config } from '../config';
 import { AppStack } from '../navigation/AppStack';
 import { ErrorBoundary } from '../comps/ErrorBoundary';
 import { init } from './init';
 import { getGraphQLClient } from '../graphql/client';
 import { RootStore, StoreContext } from '../models';
+import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 
 console.log(
   `Starting App with GraphQL "${config().graphqlServerUrl}" on Platform ${
@@ -23,14 +30,29 @@ const rootStore = RootStore.create(undefined, {
   gqlHttpClient: getGraphQLClient(),
 });
 
-export const App = () => {
-  const navTheme = {
-    ...DarkTheme,
-    colors: {
-      ...DarkTheme.colors,
-      background: dark['color-basic-700'],
+const navTheme: Theme = {
+  ...DarkTheme,
+  colors: {
+    ...DarkTheme.colors,
+    background: dark['color-basic-700'],
+  },
+};
+
+const { webUrl, appScheme } = config();
+const linking: LinkingOptions = {
+  prefixes: [webUrl, appScheme],
+  config: {
+    Home: {
+      initialRouteName: 'Feed',
+      screens: {
+        Profile: 'users/:id',
+        Settings: 'settings',
+      },
     },
-  };
+  },
+};
+
+export const App = () => {
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
@@ -38,7 +60,11 @@ export const App = () => {
         <ErrorBoundary>
           <StoreContext.Provider value={rootStore}>
             <SafeAreaProvider>
-              <NavigationContainer theme={navTheme}>
+              <NavigationContainer
+                theme={navTheme}
+                linking={linking}
+                fallback={<CentreLoadingPage />}
+              >
                 <AppStack />
               </NavigationContainer>
             </SafeAreaProvider>

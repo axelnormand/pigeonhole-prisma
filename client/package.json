@@ -20,16 +20,17 @@
   "dependencies": {
     "@eva-design/eva": "^1.4.0",
     "@react-native-community/masked-view": "^0.1.10",
-    "@react-navigation/core": "^5.8.1",
-    "@react-navigation/drawer": "^5.7.7",
-    "@react-navigation/material-top-tabs": "^5.2.7",
-    "@react-navigation/native": "^5.4.2",
-    "@react-navigation/stack": "^5.3.9",
+    "@react-navigation/core": "^5.10.0",
+    "@react-navigation/drawer": "^5.8.2",
+    "@react-navigation/material-top-tabs": "^5.2.10",
+    "@react-navigation/native": "^5.5.1",
+    "@react-navigation/stack": "^5.5.1",
     "@types/humanize-plus": "^1.8.0",
     "@ui-kitten/components": "^4.4.1",
     "@ui-kitten/eva-icons": "^4.4.1",
     "expo": "~37.0.3",
     "expo-constants": "^9.0.0",
+    "expo-linking": "^1.0.1",
     "expo-secure-store": "^8.1.0",
     "expo-updates": "~0.1.0",
     "formik": "^2.1.4",
@@ -58,17 +59,17 @@
   "devDependencies": {
     "@babel/core": "~7.9.0",
     "@types/jest": "^25.2.1",
-    "@types/react": "~16.9.23",
+    "@types/react": "~16.9.35",
     "@types/react-native": "~0.61.23",
     "@types/react-test-renderer": "^16.9.2",
     "@types/yup": "^0.28.0",
     "babel-preset-expo": "~8.1.0",
     "eslint-plugin-react-hooks": "^4.0.4",
-    "expo-cli": "^3.20.1",
+    "expo-cli": "^3.21.5",
     "jest-expo": "~37.0.0",
     "react-test-renderer": "^16.13.1",
     "sharp-cli": "^1.14.0",
-    "typescript": "~3.9.3"
+    "typescript": "~3.9.5"
   },
   "resolutions": {
     "expo-cli/**/webpack": "4.39.0"
