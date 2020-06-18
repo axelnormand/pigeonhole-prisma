@@ -9,7 +9,6 @@ import {
   DarkTheme,
   LinkingOptions,
   Theme,
-  InitialState,
 } from '@react-navigation/native';
 import { config } from '../config';
 import { AppStack } from '../navigation/AppStack';
@@ -41,15 +40,7 @@ const navTheme: Theme = {
 const { webUrl, appScheme } = config();
 const linking: LinkingOptions = {
   prefixes: [webUrl, appScheme],
-  config: {
-    Home: {
-      initialRouteName: 'Feed',
-      screens: {
-        Profile: 'users/:id',
-        Settings: 'settings',
-      },
-    },
-  },
+  enabled: false,
 };
 
 export const App = () => {

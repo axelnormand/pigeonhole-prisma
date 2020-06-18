@@ -66,17 +66,21 @@ query {
 - [x] navigation + web
 - [x] display categories/topics/posts
 - [x] logout + drawer
-- [ ] web urls with newer react navigation
 - [ ] pagination
 - [ ] add bbcode
+- [ ] bbcode bandcamp, soundcloud, code, quote
 - [ ] favicon + icon
+- [ ] web urls with newer react navigation
 - [ ] create post and topic
 - [ ] update/delete post and topic
 - [ ] push notifications (store push token in db)
+- [ ] bbcode smilies
+- [ ] avatars to each post / thread
 - [ ] whats new/unread
 - [ ] jump to unread page
 - [ ] offline friendly / PWA
 - [ ] floating videos
+- [ ] bbcode signature
 - [ ] nice music player / floating
 - [ ] circle ci / github actions
 - [ ] linting

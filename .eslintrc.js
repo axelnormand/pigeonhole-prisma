@@ -6,6 +6,9 @@ module.export = {
     project: ['./tsconfig.json'],
     ecmaVersion: 2017,
   },
+  env: {
+    es6: true
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -14,6 +17,7 @@ module.export = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
+    'plugin:react/recommended'
   ],
   plugins: ['@typescript-eslint', 'react-hooks'],
   rules: {

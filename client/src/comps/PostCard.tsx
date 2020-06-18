@@ -4,6 +4,7 @@ import { Card, Text } from '@ui-kitten/components';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { CardRow } from './CardRow';
+import { parse } from '../bbcode';
 
 dayjs.extend(relativeTime);
 
@@ -20,7 +21,7 @@ export const PostCard: React.FC<Props> = ({ message, posted, poster }) => {
         footer={() => <Footer posted={posted} poster={poster} />}
         disabled={true}
       >
-        <Text>{message}</Text>
+        <Text>{parse(message)}</Text>
       </Card>
     </CardRow>
   );

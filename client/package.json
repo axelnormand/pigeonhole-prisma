@@ -38,7 +38,6 @@
     "graphql-request": "^1.8.2",
     "graphql-tag": "^2.10.3",
     "humanize-plus": "^1.8.2",
-    "js-bbcode-parser": "^3.0.4",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "mobx-state-tree": "^3.16.0",
@@ -49,21 +48,25 @@
     "react-native-gesture-handler": "^1.6.1",
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "^1.0.2",
+    "react-native-scalable-image": "^1.0.0",
     "react-native-screens": "^2.8.0",
     "react-native-svg": "^11.0.1",
     "react-native-tab-view": "^2.14.0",
     "react-native-unimodules": "~0.9.0",
     "react-native-web": "~0.11.7",
+    "react-native-webview": "^10.2.3",
     "yup": "^0.28.4"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",
+    "@testing-library/react-native": "^5.0.3",
     "@types/jest": "^25.2.1",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.61.23",
     "@types/react-test-renderer": "^16.9.2",
     "@types/yup": "^0.28.0",
     "babel-preset-expo": "~8.1.0",
+    "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "expo-cli": "^3.21.5",
     "jest-expo": "~37.0.0",
@@ -73,17 +76,6 @@
   },
   "resolutions": {
     "expo-cli/**/webpack": "4.39.0"
-  },
-  "jest": {
-    "preset": "react-native",
-    "collectCoverage": true,
-    "collectCoverageFrom": [
-      "**/*.{ts,tsx}",
-      "!**/coverage/**",
-      "!**/node_modules/**",
-      "!**/babel.config.js",
-      "!**/jest.setup.js"
-    ]
   },
   "workspaces": {
     "nohoist": [
