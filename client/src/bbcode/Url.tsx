@@ -10,7 +10,11 @@ export const Url: React.FC<{ url: string; children: string }> = ({
     throw new Error('Please only use http links');
   }
   return (
-    <Text status="primary" onPress={() => Linking.openURL(url)}>
+    <Text
+      status="primary"
+      onPress={() => Linking.openURL(url)}
+      testID="bbcode-url"
+    >
       {children}
     </Text>
   );

@@ -4,6 +4,7 @@ import { Dimensions } from 'react-native';
 
 export const Img: React.FC<{ url: string }> = ({ url }) => (
   <Image
+    testID="bbcode-img"
     width={Dimensions.get('window').width} // height will be calculated automatically
     source={{ uri: url }}
   />
