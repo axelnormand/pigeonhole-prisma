@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Platform, ViewStyle } from 'react-native';
+import { StyleSheet, ViewStyle } from 'react-native';
 import { Layout } from '@ui-kitten/components';
 
 type Props = {

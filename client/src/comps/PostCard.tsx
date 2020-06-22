@@ -21,7 +21,7 @@ export const PostCard: React.FC<Props> = ({ message, posted, poster }) => {
         footer={() => <Footer posted={posted} poster={poster} />}
         disabled={true}
       >
-        <Text>{parse(message)}</Text>
+        {parse(message)}
       </Card>
     </CardRow>
   );

@@ -3,7 +3,6 @@ import { CentreScreen } from './CentreScreen';
 import { Text, Button } from '@ui-kitten/components';
 import { FormRow } from './FormRow';
 import { clearTokenInHeader } from '../graphql/client';
-import { NavigationContext } from '@react-navigation/native';
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +14,6 @@ type State = {
 };
 
 export class ErrorBoundary extends React.Component<Props, State> {
-  static contextType = NavigationContext;
   state: State = { hasError: false, isTokenCleared: false };
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
@@ -25,7 +23,6 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
-      const navigation = this.context;
       return (
         <CentreScreen>
           <FormRow>

@@ -7,7 +7,7 @@ export const Url: React.FC<{ url: string; children: string }> = ({
   children,
 }) => {
   if (!url.startsWith('http')) {
-    throw new Error('Please only use http links');
+    throw new Error('Please only use http(s) links');
   }
   return (
     <Text

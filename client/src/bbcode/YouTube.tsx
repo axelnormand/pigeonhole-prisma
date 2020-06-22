@@ -7,6 +7,7 @@ export const YouTube: React.FC<{ videoId: string }> = ({ videoId }) => (
     domStorageEnabled={true}
     allowsInlineMediaPlayback={true}
     testID="bbcode-youtube"
+    style={{ flex: 1 }}
     source={{
       uri: `https://www.youtube.com/embed/${videoId}?playsinline=1&fs=1`,
     }}

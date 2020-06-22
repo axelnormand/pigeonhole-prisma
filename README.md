@@ -75,6 +75,7 @@ query {
 - [ ] update/delete post and topic
 - [ ] push notifications (store push token in db)
 - [ ] bbcode smilies
+- [ ] fix vscode debug jest codelens
 - [ ] avatars to each post / thread
 - [ ] whats new/unread
 - [ ] jump to unread page

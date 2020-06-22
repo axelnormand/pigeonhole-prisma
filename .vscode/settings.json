@@ -1,0 +1,4 @@
+{
+  "jest.rootPath": "client",
+  "jest.runAllTestsFirst": false
+}
