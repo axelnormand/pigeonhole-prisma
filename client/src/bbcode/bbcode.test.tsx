@@ -32,8 +32,8 @@ it('works with bold bbcode', () => {
 it('works with url bbcode', () => {
   const url = 'https://dude.com';
   const text = `Hello [url]${url}[/url] wassup`;
-  const { getByTestId, debug } = render(parse(text));
-  debug();
+  const { getByTestId } = render(parse(text));
+
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(url);
 
@@ -101,37 +101,47 @@ it('works 2 bbcodes', () => {
 it('works with quote bbcode', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
-  const text = `[quote name=${name}]${quoteText}[/quote]`;
+  const text = `[quote=${name}]${quoteText}[/quote]`;
   const { getByTestId } = render(parse(text));
 
-  expect(getNodeText(getByTestId('bbcode-quote-name'))).toEqual(name);
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+  expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+});
+
+it('works with quote bbcode and more text', () => {
+  const name = 'Foo';
+  const quoteText = 'hello, world';
+  const text = `Before [quote=${name}]${quoteText}[/quote] After`;
+  const { getByTestId } = render(parse(text));
+
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
 });
 
 it('works with quote bbcode, name in quotes', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
-  const text = `[quote name="${name}"]${quoteText}[/quote]`;
+  const text = `[quote="${name}"]${quoteText}[/quote]`;
   const { getByTestId } = render(parse(text));
 
-  expect(getNodeText(getByTestId('bbcode-quote-name'))).toEqual(name);
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
 });
 
 it('works with quote bbcode and nested text bbcodes', () => {
   const name = 'Foo';
   const quoteText = '[i]Hello[/i] [b]dude[/b] wassup';
-  const text = `[quote name=${name}]${quoteText}[/quote]`;
+  const text = `[quote=${name}]${quoteText}[/quote]`;
   const { getByTestId } = render(parse(text));
 
-  expect(getNodeText(getByTestId('bbcode-quote-name'))).toEqual(name);
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+
+  // check nested text codes ok
+  expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
+  expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
 
   //check whole sentence there
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(
     'Hello dude wassup',
   );
-
-  // check nested text codes ok
-  expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
-  expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
 });

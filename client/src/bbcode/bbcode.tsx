@@ -7,11 +7,11 @@ import { YouTube } from './YouTube';
 import { Quote } from './Quote';
 
 type Code = {
-  regex: string;
+  regex: string | RegExp;
   replace(matches: string[]): React.ReactElement;
 };
 
-/** codes that surround text only */
+/** codes that surround text only, can't be nested */
 const textCodes: Code[] = [
   {
     regex: '\\[img\\](.+?)\\[/img\\]',
@@ -38,12 +38,13 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
-    regex: '(http.+?) ',
-    replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
-  },
-  {
     regex: '\\[youtube\\].*?youtube.*?v=(.*?)\\[/youtube\\]',
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
+  },
+  {
+    // lastly auto match a url without bbcodes surrounding
+    regex: /\b(https?:\/\/\S*\b)/,
+    replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
   },
 ];
 
@@ -75,19 +76,29 @@ const parseCode = (
  * recursively parse text into array of bbcode components based on passed in codes.
  * Mutates split array
  */
-const doParse = (text: string, codes: Code[], splits: React.ReactNode[]) => {
+const doParse = (
+  text: string,
+  codes: Code[],
+  canNestCodes: boolean,
+  splits: React.ReactNode[],
+) => {
+  let remainingText = text;
   // split text into array of components and text (also a react node)
   codes.forEach((code) => {
-    const { before, after, component } = parseCode(text, code);
+    const { before, after, component } = parseCode(remainingText, code);
     if (before) {
       splits.push(before);
     }
     if (component) {
       splits.push(component);
+      if (!canNestCodes) {
+        // now remove matched portion of text as cant have
+        remainingText = `${before || ''}${after || ''}`;
+      }
     }
     if (after) {
       const lengthBefore = splits.length;
-      doParse(after, codes, splits);
+      doParse(after, codes, canNestCodes, splits);
       const lengthAfter = splits.length;
       if (lengthBefore === lengthAfter) {
         //no further splits so add after
@@ -106,21 +117,30 @@ const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
 export const parse = (text: string): React.ReactNode => {
   const splits: React.ReactNode[] = [];
   // split quotes first then text ones
-  doParse(text, wrapperCodes, splits);
+  doParse(text, wrapperCodes, true, splits);
 
   if (!splits.length) {
     // no wrapper bbcodes found, look for text codes straight in text
-    doParse(text, textCodes, splits);
+    doParse(text, textCodes, false, splits);
   } else {
     // go through children of each wrapper code found and parse those for text codes
-    splits.forEach((split) => {
-      // if split is a react component, then parse the children as text
-      const splitTexts = isReactElement(split)
-        ? React.Children.toArray(split.props.children)
-        : [split];
-      splitTexts.forEach((splitText) => {
-        doParse(splitText as string, textCodes, splits);
-      });
+    splits.forEach((split, index, splitArray) => {
+      if (isReactElement(split)) {
+        // parse children prop text into sub components
+        const childText = split.props.children;
+        const newChildrenSplits: React.ReactNode[] = [];
+        doParse(childText as string, textCodes, false, newChildrenSplits);
+        if (newChildrenSplits.length) {
+          // update children prop with this new array of splits
+          // update array in place
+          splitArray[index] = React.cloneElement(split, {
+            children: newChildrenSplits,
+          });
+        }
+      } else {
+        // this is normal before or after text
+        doParse(split as string, textCodes, false, splits);
+      }
     });
   }
 
