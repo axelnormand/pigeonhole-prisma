@@ -20,13 +20,18 @@ const render = (el: React.ReactNode) =>
 
 it('works with no bbcode', () => {
   const text = 'Hello dude';
-  expect(parse(text)).toEqual(text);
+  const { getByTestId } = render(parse(text));
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(text);
 });
 
 it('works with bold bbcode', () => {
   const text = 'Hello [b]dude[/b] wassup';
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, getAllByTestId } = render(parse(text));
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
+
+  const plainTexts = getAllByTestId('bbcode-plain');
+  expect(getNodeText(plainTexts[0])).toEqual('Hello ');
+  expect(getNodeText(plainTexts[1])).toEqual(' wassup');
 });
 
 it('works with url bbcode', () => {
@@ -69,6 +74,30 @@ it('works with url in quotes and link text bbcode', () => {
 
 it('works with url auto matcher', () => {
   const url = 'https://dude.com';
+  const text = `Hello ${url} wassup`;
+  const { getByTestId } = render(parse(text));
+
+  const urlComp = getByTestId('bbcode-url');
+  expect(getNodeText(urlComp)).toEqual(url);
+
+  fireEvent.press(urlComp);
+  expect(openURLSpy).toBeCalledWith(url);
+});
+
+it('works with url auto matcher, trailing slash', () => {
+  const url = 'https://dude.com/';
+  const text = `Hello ${url} wassup`;
+  const { getByTestId } = render(parse(text));
+
+  const urlComp = getByTestId('bbcode-url');
+  expect(getNodeText(urlComp)).toEqual(url);
+
+  fireEvent.press(urlComp);
+  expect(openURLSpy).toBeCalledWith(url);
+});
+
+it('works with url auto matcher, query params', () => {
+  const url = 'https://dude.com/?foo=bar';
   const text = `Hello ${url} wassup`;
   const { getByTestId } = render(parse(text));
 
@@ -141,7 +170,7 @@ it('works with quote bbcode and nested text bbcodes', () => {
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
 
   //check whole sentence there
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(
-    'Hello dude wassup',
+  expect(getNodeText(getByTestId('bbcode-quote-text'))).toMatchInlineSnapshot(
+    `"[object Object][object Object][object Object][object Object]"`,
   );
 });

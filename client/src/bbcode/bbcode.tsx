@@ -5,6 +5,7 @@ import { Italic } from './Italic';
 import { Url } from './Url';
 import { YouTube } from './YouTube';
 import { Quote } from './Quote';
+import { Text } from '@ui-kitten/components';
 
 type Code = {
   regex: string | RegExp;
@@ -43,7 +44,7 @@ const textCodes: Code[] = [
   },
   {
     // lastly auto match a url without bbcodes surrounding
-    regex: /\b(https?:\/\/\S*\b)/,
+    regex: /\s*(https?:\/\/\S+)\s*/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
   },
 ];
@@ -57,6 +58,10 @@ const wrapperCodes: Code[] = [
     ),
   },
 ];
+
+const plainTextComponent = (text: string) => (
+  <Text testID="bbcode-plain">{text}</Text>
+);
 
 const parseCode = (
   text: string,
@@ -87,7 +92,7 @@ const doParse = (
   codes.forEach((code) => {
     const { before, after, component } = parseCode(remainingText, code);
     if (before) {
-      splits.push(before);
+      splits.push(plainTextComponent(before));
     }
     if (component) {
       splits.push(component);
@@ -102,7 +107,7 @@ const doParse = (
       const lengthAfter = splits.length;
       if (lengthBefore === lengthAfter) {
         //no further splits so add after
-        splits.push(after);
+        splits.push(plainTextComponent(after));
       }
     }
   });
@@ -146,7 +151,7 @@ export const parse = (text: string): React.ReactNode => {
 
   if (!splits.length) {
     // no bbcode
-    return text;
+    return plainTextComponent(text);
   }
   return (
     <>
