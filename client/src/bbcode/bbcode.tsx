@@ -6,6 +6,8 @@ import { Url } from './Url';
 import { YouTube } from './YouTube';
 import { Quote } from './Quote';
 import { Text } from '@ui-kitten/components';
+import { Soundcloud } from './Soundcloud';
+import { Bandcamp } from './Bandcamp';
 
 type Code = {
   regex: string | RegExp;
@@ -41,6 +43,28 @@ const textCodes: Code[] = [
   {
     regex: '\\[youtube\\].*?youtube.*?v=(.*?)\\[/youtube\\]',
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
+  },
+  {
+    regex: '\\[bandcamp.*? album=(\\d+).* track=(\\d+).*?\\]',
+    replace: (matches: string[]) => (
+      <Bandcamp album={matches[0]} track={matches[1]} />
+    ),
+  },
+  {
+    regex: '\\[bandcamp.*? album=(\\d+).*?\\]',
+    replace: (matches: string[]) => <Bandcamp album={matches[0]} />,
+  },
+  {
+    regex: '\\[bandcamp.*? track=(\\d+).*?\\]',
+    replace: (matches: string[]) => <Bandcamp track={matches[1]} />,
+  },
+  {
+    regex: '\\[url="?(.+?)"?\\](.+?)\\[/url\\]',
+    replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
+  },
+  {
+    regex: '\\[soundcloud url="?(.+?)"?.*?\\]',
+    replace: (matches: string[]) => <Soundcloud url={matches[0]} />,
   },
   {
     // lastly auto match a url without bbcodes surrounding

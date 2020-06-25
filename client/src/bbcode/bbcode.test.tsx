@@ -110,7 +110,7 @@ it('works with url auto matcher, query params', () => {
 
 it('works with youtube bbcode', () => {
   const videoId = '123';
-  const text = `Hello [youtube]https://youtube.com?v=${videoId}[/youtube] wassup`;
+  const text = `Hello [youtube]https://youtube.com/watch?v=${videoId}[/youtube] wassup`;
   const { getByTestId } = render(parse(text));
 
   const youtubeComp = getByTestId('bbcode-youtube');
