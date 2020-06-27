@@ -10,7 +10,7 @@ export const Bandcamp: React.FC<{ album?: string; track?: string }> = ({
     return (
       <WebView
         testID="bbcode-bandcamp"
-        style={{ flex: 1, width: '560px', height: '120px' }}
+        style={{ width: 310, height: 500 }}
         source={{
           uri: url,
         }}
@@ -23,7 +23,7 @@ export const Bandcamp: React.FC<{ album?: string; track?: string }> = ({
     return (
       <WebView
         testID="bbcode-bandcamp"
-        style={{ flex: 1, width: '350px', height: '654px' }}
+        style={{ width: 310, height: 500 }}
         source={{
           uri: url,
         }}
@@ -36,7 +36,7 @@ export const Bandcamp: React.FC<{ album?: string; track?: string }> = ({
   return (
     <WebView
       testID="bbcode-bandcamp"
-      style={{ flex: 1, width: '350px', height: '442px' }}
+      style={{ width: 310, height: 500 }}
       source={{
         uri: url,
       }}

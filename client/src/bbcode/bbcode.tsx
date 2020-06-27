@@ -41,7 +41,7 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
-    regex: '\\[youtube\\].*?youtube.*?v=(.*?)\\[/youtube\\]',
+    regex: '\\[youtube\\].*v=(.+)&?.*\\[/youtube\\]',
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   {
