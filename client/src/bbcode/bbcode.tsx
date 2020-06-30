@@ -110,13 +110,19 @@ const doParse = (
   codes: Code[],
   canNestCodes: boolean,
   splits: React.ReactNode[],
-) => {
+): boolean => {
   let remainingText = text;
+  const initialSize = splits.length;
+
   // split text into array of components and text (also a react node)
   codes.forEach((code) => {
     const { before, after, component } = parseCode(remainingText, code);
     if (before) {
-      splits.push(plainTextComponent(before));
+      const hasNewSplits = doParse(before, codes, canNestCodes, splits);
+      if (!hasNewSplits) {
+        //no further splits so add before
+        splits.push(plainTextComponent(before));
+      }
     }
     if (component) {
       splits.push(component);
@@ -126,15 +132,17 @@ const doParse = (
       }
     }
     if (after) {
-      const lengthBefore = splits.length;
-      doParse(after, codes, canNestCodes, splits);
-      const lengthAfter = splits.length;
-      if (lengthBefore === lengthAfter) {
+      const hasNewSplits = doParse(after, codes, canNestCodes, splits);
+      if (!hasNewSplits) {
         //no further splits so add after
         splits.push(plainTextComponent(after));
       }
     }
   });
+
+  const finalSize = splits.length;
+  // return true if have add new splits
+  return initialSize !== finalSize;
 };
 
 const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
@@ -146,9 +154,9 @@ const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
 export const parse = (text: string): React.ReactNode => {
   const splits: React.ReactNode[] = [];
   // split quotes first then text ones
-  doParse(text, wrapperCodes, true, splits);
+  const hasFoundSplits = doParse(text, wrapperCodes, true, splits);
 
-  if (!splits.length) {
+  if (!hasFoundSplits) {
     // no wrapper bbcodes found, look for text codes straight in text
     doParse(text, textCodes, false, splits);
   } else {

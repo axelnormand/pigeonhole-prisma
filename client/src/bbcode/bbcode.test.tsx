@@ -7,161 +7,181 @@ import {
 } from '@testing-library/react-native';
 import { parse } from './bbcode';
 import { ApplicationProvider } from '@ui-kitten/components';
-import { mapping, dark } from '@eva-design/eva';
+import { mapping } from '@eva-design/eva';
 
 const openURLSpy = jest.spyOn(Linking, 'openURL');
 
 const render = (el: React.ReactNode) =>
   testRender(
-    <ApplicationProvider mapping={mapping} theme={dark}>
+    <ApplicationProvider
+      mapping={mapping}
+      theme={{
+        'text-primary-color': '#fff',
+        'text-basic-color': '#ff2',
+      }}
+    >
       {el}
     </ApplicationProvider>,
   );
 
 it('works with no bbcode', () => {
   const text = 'Hello dude';
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(text);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with bold bbcode', () => {
   const text = 'Hello [b]dude[/b] wassup';
-  const { getByTestId, getAllByTestId } = render(parse(text));
+  const { getByTestId, getAllByTestId, asJSON } = render(parse(text));
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
 
   const plainTexts = getAllByTestId('bbcode-plain');
   expect(getNodeText(plainTexts[0])).toEqual('Hello ');
   expect(getNodeText(plainTexts[1])).toEqual(' wassup');
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url bbcode', () => {
   const url = 'https://dude.com';
   const text = `Hello [url]${url}[/url] wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(url);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url and link text bbcode', () => {
   const linkText = `DUDE`;
   const url = 'https://dude.com';
   const text = `Hello [url=${url}]${linkText}[/url] wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(linkText);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url in quotes and link text bbcode', () => {
   const linkText = `DUDE`;
   const url = 'https://dude.com';
   const text = `Hello [url="${url}"]${linkText}[/url] wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(linkText);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url auto matcher', () => {
   const url = 'https://dude.com';
   const text = `Hello ${url} wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(url);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url auto matcher, trailing slash', () => {
   const url = 'https://dude.com/';
   const text = `Hello ${url} wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(url);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with url auto matcher, query params', () => {
   const url = 'https://dude.com/?foo=bar';
   const text = `Hello ${url} wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const urlComp = getByTestId('bbcode-url');
   expect(getNodeText(urlComp)).toEqual(url);
 
   fireEvent.press(urlComp);
   expect(openURLSpy).toBeCalledWith(url);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with youtube bbcode', () => {
   const videoId = '123';
   const text = `Hello [youtube]https://youtube.com/watch?v=${videoId}[/youtube] wassup`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   const youtubeComp = getByTestId('bbcode-youtube');
   expect(youtubeComp.getProp('source')).toEqual({
     uri: `https://www.youtube.com/embed/${videoId}?playsinline=1&fs=1`,
   });
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works 2 bbcodes', () => {
   const text = '[i]Hello[/i] [b]dude[/b] wassup';
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual('wassup');
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with quote bbcode', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
   const text = `[quote=${name}]${quoteText}[/quote]`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with quote bbcode and more text', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
   const text = `Before [quote=${name}]${quoteText}[/quote] After`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+  expect(asJSON()).toMatchSnapshot();
 });
 
 it('works with quote bbcode, name in quotes', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
   const text = `[quote="${name}"]${quoteText}[/quote]`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+  expect(asJSON()).toMatchSnapshot();
 });
 
-it('works with quote bbcode and nested text bbcodes', () => {
+it.only('works with quote bbcode and nested text bbcodes', () => {
   const name = 'Foo';
   const quoteText = '[i]Hello[/i] [b]dude[/b] wassup';
   const text = `[quote=${name}]${quoteText}[/quote]`;
-  const { getByTestId } = render(parse(text));
+  const { getByTestId, asJSON } = render(parse(text));
 
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
 
@@ -173,4 +193,5 @@ it('works with quote bbcode and nested text bbcodes', () => {
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toMatchInlineSnapshot(
     `"[object Object][object Object][object Object][object Object]"`,
   );
+  expect(asJSON()).toMatchSnapshot();
 });
