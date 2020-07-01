@@ -44,6 +44,16 @@ const textCodes: Code[] = [
     regex: '\\[youtube\\].*v=(.+)&?.*\\[/youtube\\]',
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
+  // auto-replace https://www.youtube.com/watch?v=_ISAA_Jt9kI
+  {
+    regex: /\s*https:\/\/www\.youtube\.com\/watch?v=(.+)&?.*\s*/,
+    replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
+  },
+  // auto-replace https://youtu.be/_ISAA_Jt9kI
+  {
+    regex: /\s*https:\/\/youtu\.be\/(.+)\s*/,
+    replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
+  },
   {
     regex: '\\[bandcamp.*? album=(\\d+).* track=(\\d+).*?\\]',
     replace: (matches: string[]) => (
@@ -110,7 +120,7 @@ const doParse = (
   codes: Code[],
   canNestCodes: boolean,
   splits: React.ReactNode[],
-): boolean => {
+) => {
   let remainingText = text;
   const initialSize = splits.length;
 
@@ -118,11 +128,7 @@ const doParse = (
   codes.forEach((code) => {
     const { before, after, component } = parseCode(remainingText, code);
     if (before) {
-      const hasNewSplits = doParse(before, codes, canNestCodes, splits);
-      if (!hasNewSplits) {
-        //no further splits so add before
-        splits.push(plainTextComponent(before));
-      }
+      remainingText = doParse(before, codes, canNestCodes, splits);
     }
     if (component) {
       splits.push(component);
@@ -132,17 +138,16 @@ const doParse = (
       }
     }
     if (after) {
-      const hasNewSplits = doParse(after, codes, canNestCodes, splits);
-      if (!hasNewSplits) {
-        //no further splits so add after
-        splits.push(plainTextComponent(after));
-      }
+      remainingText = doParse(after, codes, canNestCodes, splits);
     }
   });
 
   const finalSize = splits.length;
-  // return true if have add new splits
-  return initialSize !== finalSize;
+  if (initialSize === finalSize) {
+    // no new splits, add this plain text
+    splits.push(plainTextComponent(text));
+  }
+  return remainingText;
 };
 
 const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
@@ -154,9 +159,9 @@ const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
 export const parse = (text: string): React.ReactNode => {
   const splits: React.ReactNode[] = [];
   // split quotes first then text ones
-  const hasFoundSplits = doParse(text, wrapperCodes, true, splits);
+  doParse(text, wrapperCodes, true, splits);
 
-  if (!hasFoundSplits) {
+  if (!splits.length) {
     // no wrapper bbcodes found, look for text codes straight in text
     doParse(text, textCodes, false, splits);
   } else {

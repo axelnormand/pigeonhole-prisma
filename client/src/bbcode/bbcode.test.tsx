@@ -134,6 +134,30 @@ it('works with youtube bbcode', () => {
   expect(asJSON()).toMatchSnapshot();
 });
 
+it('works with youtube auto replace (long domain)', () => {
+  const videoId = '123';
+  const text = `Hello https://youtube.com/watch?v=${videoId} wassup`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  const youtubeComp = getByTestId('bbcode-youtube');
+  expect(youtubeComp.getProp('source')).toEqual({
+    uri: `https://www.youtube.com/embed/${videoId}?playsinline=1&fs=1`,
+  });
+  expect(asJSON()).toMatchSnapshot();
+});
+
+it('works with youtube auto replace (short domain)', () => {
+  const videoId = '123';
+  const text = `Hello https://youtu.be/${videoId} wassup`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  const youtubeComp = getByTestId('bbcode-youtube');
+  expect(youtubeComp.getProp('source')).toEqual({
+    uri: `https://www.youtube.com/embed/${videoId}?playsinline=1&fs=1`,
+  });
+  expect(asJSON()).toMatchSnapshot();
+});
+
 it('works 2 bbcodes', () => {
   const text = '[i]Hello[/i] [b]dude[/b] wassup';
   const { getByTestId, asJSON } = render(parse(text));
@@ -177,7 +201,7 @@ it('works with quote bbcode, name in quotes', () => {
   expect(asJSON()).toMatchSnapshot();
 });
 
-it.only('works with quote bbcode and nested text bbcodes', () => {
+it('works with quote bbcode and nested text bbcodes', () => {
   const name = 'Foo';
   const quoteText = '[i]Hello[/i] [b]dude[/b] wassup';
   const text = `[quote=${name}]${quoteText}[/quote]`;
@@ -189,9 +213,5 @@ it.only('works with quote bbcode and nested text bbcodes', () => {
   expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
 
-  //check whole sentence there
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toMatchInlineSnapshot(
-    `"[object Object][object Object][object Object][object Object]"`,
-  );
   expect(asJSON()).toMatchSnapshot();
 });
