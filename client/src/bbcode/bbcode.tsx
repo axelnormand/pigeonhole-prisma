@@ -121,33 +121,28 @@ const doParse = (
   canNestCodes: boolean,
   splits: React.ReactNode[],
 ) => {
-  let remainingText = text;
-  const initialSize = splits.length;
-
+  let foundMatch = false;
   // split text into array of components and text (also a react node)
-  codes.forEach((code) => {
-    const { before, after, component } = parseCode(remainingText, code);
+  for (let i = 0; i < codes.length; i++) {
+    const code = codes[i];
+    const { before, after, component } = parseCode(text, code);
     if (before) {
-      remainingText = doParse(before, codes, canNestCodes, splits);
+      doParse(before, codes, canNestCodes, splits);
     }
     if (component) {
       splits.push(component);
-      if (!canNestCodes) {
-        // now remove matched portion of text as cant have
-        remainingText = `${before || ''}${after || ''}`;
-      }
+      foundMatch = true;
     }
     if (after) {
-      remainingText = doParse(after, codes, canNestCodes, splits);
+      doParse(after, codes, canNestCodes, splits);
     }
-  });
+    if (foundMatch) break;
+  }
 
-  const finalSize = splits.length;
-  if (finalSize > 0 && initialSize === finalSize) {
-    // no new splits, add this plain text
+  if (!canNestCodes && !foundMatch) {
+    // no match, add this plain text
     splits.push(plainTextComponent(text));
   }
-  return remainingText;
 };
 
 const isReactElement = (el: React.ReactNode): el is React.ReactElement =>

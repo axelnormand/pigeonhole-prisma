@@ -1,5 +1,203 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`works 2 bbcodes 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          Object {
+            "fontStyle": "italic",
+          },
+        ]
+      }
+      testID="bbcode-italic"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+      testID="bbcode-bold"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      dude
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+       wassup
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`works with bold bbcode 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello 
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+      testID="bbcode-bold"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      dude
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+       wassup
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`works with no bbcode 1`] = `
 <View
   collapsable={true}
@@ -141,7 +339,31 @@ exports[`works with quote bbcode 1`] = `
           }
         }
       >
-        hello, world
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          hello, world
+        </Text>
       </Text>
     </View>
   </View>
@@ -243,34 +465,33 @@ exports[`works with quote bbcode and more text 1`] = `
           }
         }
       >
-        hello, world
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          hello, world
+        </Text>
       </Text>
     </View>
-    <Text
-      appearance="default"
-      category="p1"
-      style={
-        Array [
-          Object {
-            "color": "#ff2",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-            "lineHeight": 20,
-          },
-          undefined,
-        ]
-      }
-      testID="bbcode-plain"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
-    >
-       After
-    </Text>
   </View>
 </View>
 `;
@@ -550,7 +771,31 @@ exports[`works with quote bbcode, name in quotes 1`] = `
           }
         }
       >
-        hello, world
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          hello, world
+        </Text>
       </Text>
     </View>
   </View>
@@ -574,6 +819,31 @@ exports[`works with url and link text bbcode 1`] = `
       }
     }
   >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello 
+    </Text>
     <Text
       appearance="default"
       category="p1"
@@ -649,6 +919,31 @@ exports[`works with url auto matcher 1`] = `
     <Text
       appearance="default"
       category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
       status="primary"
       style={
         Array [
@@ -718,6 +1013,31 @@ exports[`works with url auto matcher, query params 1`] = `
       }
     }
   >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
     <Text
       appearance="default"
       category="p1"
@@ -793,6 +1113,31 @@ exports[`works with url auto matcher, trailing slash 1`] = `
     <Text
       appearance="default"
       category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
       status="primary"
       style={
         Array [
@@ -862,6 +1207,31 @@ exports[`works with url bbcode 1`] = `
       }
     }
   >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello 
+    </Text>
     <Text
       appearance="default"
       category="p1"
@@ -937,6 +1307,31 @@ exports[`works with url in quotes and link text bbcode 1`] = `
     <Text
       appearance="default"
       category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello 
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
       status="primary"
       style={
         Array [
@@ -989,6 +1384,191 @@ exports[`works with url in quotes and link text bbcode 1`] = `
 </View>
 `;
 
+exports[`works with youtube auto replace (long domain) 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      https://youtube.com/watch?v=123
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      wassup
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`works with youtube auto replace (short domain) 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
+      }
+    >
+      <RNCWebView
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        domStorageEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        source={
+          Object {
+            "uri": "https://www.youtube.com/embed/123 wassup?playsinline=1&fs=1",
+          }
+        }
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "overflow": "hidden",
+            },
+            Object {
+              "backgroundColor": "#ffffff",
+            },
+            Object {
+              "flex": 1,
+            },
+          ]
+        }
+        testID="bbcode-youtube"
+        useSharedProcessPool={true}
+      />
+    </View>
+  </View>
+</View>
+`;
+
 exports[`works with youtube bbcode 1`] = `
 <View
   collapsable={true}
@@ -1006,6 +1586,31 @@ exports[`works with youtube bbcode 1`] = `
       }
     }
   >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      Hello 
+    </Text>
     <View
       style={
         Array [
