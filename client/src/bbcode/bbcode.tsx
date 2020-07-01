@@ -143,7 +143,7 @@ const doParse = (
   });
 
   const finalSize = splits.length;
-  if (initialSize === finalSize) {
+  if (finalSize > 0 && initialSize === finalSize) {
     // no new splits, add this plain text
     splits.push(plainTextComponent(text));
   }
@@ -175,8 +175,11 @@ export const parse = (text: string): React.ReactNode => {
         if (newChildrenSplits.length) {
           // update children prop with this new array of splits
           // update array in place
+          // make sure each child has a key
           splitArray[index] = React.cloneElement(split, {
-            children: newChildrenSplits,
+            children: newChildrenSplits.map((child, index) => (
+              <React.Fragment key={index}>{child}</React.Fragment>
+            )),
           });
         }
       } else {

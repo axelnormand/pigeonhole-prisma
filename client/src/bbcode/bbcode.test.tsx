@@ -196,9 +196,10 @@ it('works with quote bbcode, name in quotes', () => {
   const text = `[quote="${name}"]${quoteText}[/quote]`;
   const { getByTestId, asJSON } = render(parse(text));
 
-  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
   expect(asJSON()).toMatchSnapshot();
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+  expect(getNodeText(getByTestId('bbcode-quote-text'))).toBeDefined();
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
 it('works with quote bbcode and nested text bbcodes', () => {
