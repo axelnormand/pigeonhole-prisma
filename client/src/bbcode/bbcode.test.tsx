@@ -24,9 +24,10 @@ const render = (el: React.ReactNode) =>
     </ApplicationProvider>,
   );
 
-it('works with no bbcode', () => {
+it.only('works with no bbcode', () => {
   const text = 'Hello dude';
-  const { getByTestId, asJSON } = render(parse(text));
+  const parsed = parse(text);
+  const { getByTestId, asJSON } = render(parsed);
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(text);
