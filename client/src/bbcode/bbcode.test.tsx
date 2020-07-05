@@ -125,7 +125,7 @@ it('works with url auto matcher, query params', () => {
 });
 
 it('works with youtube bbcode', () => {
-  const videoId = '123';
+  const videoId = '123Abc';
   const text = `Hello [youtube]https://youtube.com/watch?v=${videoId}[/youtube] wassup`;
   const { getByTestId, asJSON } = render(parse(text));
 
@@ -136,8 +136,20 @@ it('works with youtube bbcode', () => {
   });
 });
 
-it('works with youtube auto replace (long domain)', () => {
-  const videoId = '123';
+it('works with youtube auto replace (long domain with www)', () => {
+  const videoId = '123Abc';
+  const text = `Hello https://www.youtube.com/watch?v=${videoId} wassup`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+  const youtubeComp = getByTestId('bbcode-youtube');
+  expect(youtubeComp.getProp('source')).toEqual({
+    uri: `https://www.youtube.com/embed/${videoId}?playsinline=1&fs=1`,
+  });
+});
+
+it('works with youtube auto replace (long domain without www)', () => {
+  const videoId = '123Abc';
   const text = `Hello https://youtube.com/watch?v=${videoId} wassup`;
   const { getByTestId, asJSON } = render(parse(text));
 
@@ -149,7 +161,7 @@ it('works with youtube auto replace (long domain)', () => {
 });
 
 it('works with youtube auto replace (short domain)', () => {
-  const videoId = '123';
+  const videoId = '123Abc';
   const text = `Hello https://youtu.be/${videoId} wassup`;
   const { getByTestId, asJSON } = render(parse(text));
 

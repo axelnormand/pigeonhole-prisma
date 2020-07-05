@@ -46,12 +46,12 @@ const textCodes: Code[] = [
   },
   // auto-replace https://www.youtube.com/watch?v=_ISAA_Jt9kI
   {
-    regex: /\s*https:\/\/www\.youtube\.com\/watch?v=(.+)&?.*\s*/,
+    regex: /\s*https:\/\/.*youtube\.com\/watch\?v=((\w|\d)+)/,
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   // auto-replace https://youtu.be/_ISAA_Jt9kI
   {
-    regex: /\s*https:\/\/youtu\.be\/(.+)\s*/,
+    regex: /\s*https:\/\/youtu\.be\/((\w|\d)+)/,
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   {
@@ -66,7 +66,7 @@ const textCodes: Code[] = [
   },
   {
     regex: '\\[bandcamp.*? track=(\\d+).*?\\]',
-    replace: (matches: string[]) => <Bandcamp track={matches[1]} />,
+    replace: (matches: string[]) => <Bandcamp track={matches[0]} />,
   },
   {
     regex: '\\[url="?(.+?)"?\\](.+?)\\[/url\\]',
