@@ -188,8 +188,8 @@ it('works with quote bbcode and no name', () => {
   const { getByTestId, queryByTestId, asJSON } = render(parse(text));
 
   expect(asJSON()).toMatchSnapshot();
-  expect(queryByTestId('bbcode-quote-name')).not.toBeDefined();
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+  expect(queryByTestId('bbcode-quote-name')).toBeNull();
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
 it('works with quote bbcode and more text', () => {
@@ -211,7 +211,6 @@ it('works with quote bbcode, name in quotes', () => {
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toBeDefined();
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
