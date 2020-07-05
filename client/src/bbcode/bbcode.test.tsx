@@ -24,7 +24,7 @@ const render = (el: React.ReactNode) =>
     </ApplicationProvider>,
   );
 
-it.only('works with no bbcode', () => {
+it('works with no bbcode', () => {
   const text = 'Hello dude';
   const parsed = parse(text);
   const { getByTestId, asJSON } = render(parsed);
@@ -170,7 +170,7 @@ it('works 2 bbcodes', () => {
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(' wassup');
 });
 
-it('works with quote bbcode', () => {
+it('works with quote bbcode and name', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';
   const text = `[quote=${name}]${quoteText}[/quote]`;
@@ -178,6 +178,17 @@ it('works with quote bbcode', () => {
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+  expect(getByTestId('bbcode-quote-text')).toBeDefined();
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
+});
+
+it('works with quote bbcode and no name', () => {
+  const quoteText = 'hello, world';
+  const text = `[quote]${quoteText}[/quote]`;
+  const { getByTestId, queryByTestId, asJSON } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+  expect(queryByTestId('bbcode-quote-name')).not.toBeDefined();
   expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
 });
 
@@ -189,7 +200,7 @@ it('works with quote bbcode and more text', () => {
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
-  expect(getNodeText(getByTestId('bbcode-quote-text'))).toEqual(quoteText);
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
 it('works with quote bbcode, name in quotes', () => {

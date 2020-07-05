@@ -41,7 +41,7 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
-    regex: '\\[youtube\\].*v=(.+)&?.*\\[/youtube\\]',
+    regex: '\\[youtube\\].+v=(.+)&?.*\\[/youtube\\]',
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   // auto-replace https://www.youtube.com/watch?v=_ISAA_Jt9kI
@@ -83,13 +83,17 @@ const textCodes: Code[] = [
   },
 ];
 
-/** Codes that can wrap things (more like <View> than <Text>) */
+/** Codes that can wrap things like Quote (more like <View> than <Text>) */
 const wrapperCodes: Code[] = [
   {
     regex: '\\[quote="?(.+?)"?\\](.+?)\\[/quote\\]',
     replace: (matches: string[]) => (
       <Quote name={matches[0]}>{matches[1]}</Quote>
     ),
+  },
+  {
+    regex: '\\[quote\\](.+?)\\[/quote\\]',
+    replace: (matches: string[]) => <Quote>{matches[0]}</Quote>,
   },
 ];
 
@@ -115,33 +119,54 @@ const parseCode = (
  * recursively parse text into array of bbcode components based on passed in codes.
  * Mutates split array
  */
-const doParse = (
-  text: string,
-  codes: Code[],
-  canNestCodes: boolean,
-  splits: React.ReactNode[],
-) => {
+const parseText = (text: string, splits: React.ReactNode[]) => {
   let foundMatch = false;
   // split text into array of components and text (also a react node)
-  for (let i = 0; i < codes.length; i++) {
-    const code = codes[i];
+  for (let i = 0; i < textCodes.length; i++) {
+    const code = textCodes[i];
     const { before, after, component } = parseCode(text, code);
     if (before) {
-      doParse(before, codes, canNestCodes, splits);
+      parseText(before, splits);
     }
     if (component) {
       splits.push(component);
       foundMatch = true;
     }
     if (after) {
-      doParse(after, codes, canNestCodes, splits);
+      parseText(after, splits);
     }
     if (foundMatch) break;
   }
 
   if (!foundMatch) {
-    // no match, add this text. Wrap in text component if not quotes
-    splits.push(canNestCodes ? () => text : plainTextComponent(text));
+    // no match, add this text.
+    splits.push(plainTextComponent(text));
+  }
+};
+
+/**
+ * recursively parse wrapper codes into array of bbcode components or strings based on passed in codes.
+ * Children of quotes are text
+ * Mutates split array
+ */
+const parseWrapper = (text: string, splits: React.ReactNode[]) => {
+  let foundMatch = false;
+
+  // split text into array of components and text
+  for (let i = 0; i < wrapperCodes.length; i++) {
+    const code = wrapperCodes[i];
+    const { before, after, component } = parseCode(text, code);
+    if (before) {
+      parseWrapper(before, splits);
+    }
+    if (component) {
+      splits.push(component);
+      foundMatch = true;
+    }
+    if (after) {
+      parseWrapper(after, splits);
+    }
+    if (foundMatch) break;
   }
 };
 
@@ -154,11 +179,11 @@ const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
 export const parse = (text: string): React.ReactNode => {
   const splits: React.ReactNode[] = [];
   // split quotes first then text ones
-  doParse(text, wrapperCodes, true, splits);
+  parseWrapper(text, splits);
 
   if (!splits.length) {
     // no wrapper bbcodes found, look for text codes straight in text
-    doParse(text, textCodes, false, splits);
+    parseText(text, splits);
   } else {
     // go through children of each wrapper code found and parse those for text codes
     splits.forEach((split, index, splitArray) => {
@@ -168,22 +193,36 @@ export const parse = (text: string): React.ReactNode => {
         ? split.props.children
         : split;
 
-      doParse(childText, textCodes, false, newChildrenSplits);
+      parseText(childText, newChildrenSplits);
       if (newChildrenSplits.length) {
         // update children prop with this new array of splits
-        // update array in place, make sure each child has a key
-        splitArray[index] = React.cloneElement(split as any, {
-          children: newChildrenSplits.map((child, childIndex) =>
-            React.cloneElement(child as any, { key: `${index}-${childIndex}` }),
-          ),
-        });
+        if (newChildrenSplits.length === 1) {
+          // update array in place
+          splitArray[index] = React.cloneElement(split as any, {
+            children: newChildrenSplits[0],
+          });
+        } else {
+          // update array in place, make sure each child has a key
+          splitArray[index] = React.cloneElement(split as any, {
+            children: newChildrenSplits.map((child, childIndex) =>
+              React.cloneElement(child as any, {
+                key: `${index}-${childIndex}`,
+              }),
+            ),
+          });
+        }
       }
     });
   }
 
   if (!splits.length) {
-    // no bbcode
+    // no bbcode found
     return plainTextComponent(text);
+  }
+
+  if (splits.length === 1) {
+    //no need to add key for one thing
+    return splits[0];
   }
 
   return splits.map((split, index) =>

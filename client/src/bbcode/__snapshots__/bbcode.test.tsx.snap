@@ -244,7 +244,7 @@ exports[`works with no bbcode 1`] = `
 </View>
 `;
 
-exports[`works with quote bbcode 1`] = `
+exports[`works with quote bbcode and more text 1`] = `
 <View
   collapsable={true}
   pointerEvents="box-none"
@@ -370,7 +370,7 @@ exports[`works with quote bbcode 1`] = `
 </View>
 `;
 
-exports[`works with quote bbcode and more text 1`] = `
+exports[`works with quote bbcode and name 1`] = `
 <View
   collapsable={true}
   pointerEvents="box-none"
@@ -669,6 +669,104 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
           }
         >
            wassup
+        </Text>
+      </Text>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`works with quote bbcode and no name 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <View
+      appearance="default"
+      level="1"
+      style={
+        Array [
+          Object {
+            "backgroundColor": "background-basic-color-1",
+          },
+          Array [
+            Object {
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "padding": 16,
+            },
+            Object {
+              "borderColor": "#C5CEE0",
+            },
+          ],
+        ]
+      }
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-quote-text"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          hello, world
         </Text>
       </Text>
     </View>
