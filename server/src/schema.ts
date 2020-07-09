@@ -1,4 +1,4 @@
-import { nexusPrismaPlugin } from 'nexus-prisma';
+import { nexusSchemaPrisma } from 'nexus-plugin-prisma/schema';
 import { makeSchema } from '@nexus/schema';
 import * as types from './types';
 import { config } from './config';
@@ -11,7 +11,7 @@ export const schema = makeSchema({
   shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
   types,
   plugins: [
-    nexusPrismaPlugin({
+    nexusSchemaPrisma({
       shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
       outputs: {
         typegen: __dirname + '/generated/nexusTypes.ts',

@@ -1,427 +1,193 @@
-import * as prisma from '@prisma/client';
-import { core } from '@nexus/schema';
-import { GraphQLResolveInfo } from 'graphql';
+import * as Typegen from 'nexus-plugin-prisma/typegen'
+import * as Prisma from '@prisma/client';
 
-// Types helpers
-  type IsModelNameExistsInGraphQLTypes<
-  ReturnType extends any
-> = ReturnType extends core.GetGen<'objectNames'> ? true : false;
-
-type NexusPrismaScalarOpts = {
-  alias?: string;
-};
-
+// Pagination type
 type Pagination = {
-  first?: boolean;
-  last?: boolean;
-  before?: boolean;
-  after?: boolean;
-  skip?: boolean;
-};
-
-type RootObjectTypes = Pick<
-  core.GetGen<'rootTypes'>,
-  core.GetGen<'objectNames'>
->;
-
-/**
- * Determine if `B` is a subset (or equivalent to) of `A`.
-*/
-type IsSubset<A, B> = keyof A extends never
-  ? false
-  : B extends A
-  ? true
-  : false;
-
-type OmitByValue<T, ValueType> = Pick<
-  T,
-  { [Key in keyof T]: T[Key] extends ValueType ? never : Key }[keyof T]
->;
-
-type GetSubsetTypes<ModelName extends any> = keyof OmitByValue<
-  {
-    [P in keyof RootObjectTypes]: ModelName extends keyof ModelTypes
-      ? IsSubset<RootObjectTypes[P], ModelTypes[ModelName]> extends true
-        ? RootObjectTypes[P]
-        : never
-      : never;
-  },
-  never
->;
-
-type SubsetTypes<ModelName extends any> = GetSubsetTypes<
-  ModelName
-> extends never
-  ? `ERROR: No subset types are available. Please make sure that one of your GraphQL type is a subset of your t.model('<ModelName>')`
-  : GetSubsetTypes<ModelName>;
-
-type DynamicRequiredType<ReturnType extends any> = IsModelNameExistsInGraphQLTypes<
-  ReturnType
-> extends true
-  ? { type?: SubsetTypes<ReturnType> }
-  : { type: SubsetTypes<ReturnType> };
-
-type GetNexusPrismaInput<
-  ModelName extends any,
-  MethodName extends any,
-  InputName extends 'filtering' | 'ordering'
-> = ModelName extends keyof NexusPrismaInputs
-  ? MethodName extends keyof NexusPrismaInputs[ModelName]
-    ? NexusPrismaInputs[ModelName][MethodName][InputName]
-    : never
-  : never;
-
-/**
- *  Represents arguments required by Prisma Client JS that will
- *  be derived from a request's input (args, context, and info)
- *  and omitted from the GraphQL API. The object itself maps the
- *  names of these args to a function that takes an object representing
- *  the request's input and returns the value to pass to the prisma
- *  arg of the same name.
- */
-export type LocalComputedInputs<MethodName extends any> = Record<
-  string,
-  (params: LocalMutationResolverParams<MethodName>) => unknown
->
-
-export type GlobalComputedInputs = Record<
-  string,
-  (params: GlobalMutationResolverParams) => unknown
->
-
-type BaseMutationResolverParams = {
-  info: GraphQLResolveInfo
-  ctx: Context
+  first?: boolean
+  last?: boolean
+  before?: boolean
+  after?: boolean
 }
 
-export type GlobalMutationResolverParams = BaseMutationResolverParams & {
-  args: Record<string, any> & { data: unknown }
+// Prisma custom scalar names
+type CustomScalars = 'No custom scalars are used in your Prisma Schema.'
+
+// Prisma model type definitions
+interface PrismaModels {
+  punbb_ban: Prisma.punbb_ban
+  punbb_category: Prisma.punbb_category
+  punbb_censoring: Prisma.punbb_censoring
+  punbb_config: Prisma.punbb_config
+  punbb_forum: Prisma.punbb_forum
+  punbb_forum_perm: Prisma.punbb_forum_perm
+  punbb_group: Prisma.punbb_group
+  punbb_poll: Prisma.punbb_poll
+  punbb_post: Prisma.punbb_post
+  punbb_rank: Prisma.punbb_rank
+  punbb_report: Prisma.punbb_report
+  punbb_search_cache: Prisma.punbb_search_cache
+  punbb_search_word: Prisma.punbb_search_word
+  punbb_subscription: Prisma.punbb_subscription
+  punbb_topic: Prisma.punbb_topic
+  punbb_uploaded: Prisma.punbb_uploaded
+  punbb_uploads_type: Prisma.punbb_uploads_type
+  punbb_user: Prisma.punbb_user
+  punbb_userthread: Prisma.punbb_userthread
 }
 
-export type LocalMutationResolverParams<
-  MethodName extends any
-> = BaseMutationResolverParams & {
-  args: MethodName extends keyof core.GetGen2<'argTypes', 'Mutation'>
-    ? core.GetGen3<'argTypes', 'Mutation', MethodName>
-    : any
-}
-
-export type Context = core.GetGen<'context'>
-
-type NexusPrismaRelationOpts<
-  ModelName extends any,
-  MethodName extends any,
-  ReturnType extends any
-> = GetNexusPrismaInput<
-  // If GetNexusPrismaInput returns never, it means there are no filtering/ordering args for it.
-  ModelName,
-  MethodName,
-  'filtering'
-> extends never
-  ? {
-      alias?: string;
-      computedInputs?: LocalComputedInputs<MethodName>;
-    } & DynamicRequiredType<ReturnType>
-  : {
-      alias?: string;
-      computedInputs?: LocalComputedInputs<MethodName>;
-      filtering?:
-        | boolean
-        | Partial<
-            Record<
-              GetNexusPrismaInput<ModelName, MethodName, 'filtering'>,
-              boolean
-            >
-          >;
-      ordering?:
-        | boolean
-        | Partial<
-            Record<
-              GetNexusPrismaInput<ModelName, MethodName, 'ordering'>,
-              boolean
-            >
-          >;
-      pagination?: boolean | Pagination;
-    } & DynamicRequiredType<ReturnType>;
-
-type IsScalar<TypeName extends any> = TypeName extends core.GetGen<'scalarNames'>
-  ? true
-  : false;
-
-type IsObject<Name extends any> = Name extends core.GetGen<'objectNames'>
-  ? true
-  : false
-
-type IsEnum<Name extends any> = Name extends core.GetGen<'enumNames'>
-  ? true
-  : false
-
-type IsInputObject<Name extends any> = Name extends core.GetGen<'inputNames'>
-  ? true
-  : false
-
-/**
- * The kind that a GraphQL type may be.
- */
-type Kind = 'Enum' | 'Object' | 'Scalar' | 'InputObject'
-
-/**
- * Helper to safely reference a Kind type. For example instead of the following
- * which would admit a typo:
- *
- * ```ts
- * type Foo = Bar extends 'scalar' ? ...
- * ```
- *
- * You can do this which guarantees a correct reference:
- *
- * ```ts
- * type Foo = Bar extends AKind<'Scalar'> ? ...
- * ```
- *
- */
-type AKind<T extends Kind> = T
-
-type GetKind<Name extends any> = IsEnum<Name> extends true
-  ? 'Enum'
-  : IsScalar<Name> extends true
-  ? 'Scalar'
-  : IsObject<Name> extends true
-  ? 'Object'
-  : IsInputObject<Name> extends true
-  ? 'InputObject'
-  // FIXME should be `never`, but GQL objects named differently
-  // than backing type fall into this branch
-  : 'Object'
-
-type NexusPrismaFields<ModelName extends keyof NexusPrismaTypes> = {
-  [MethodName in keyof NexusPrismaTypes[ModelName]]: NexusPrismaMethod<
-    ModelName,
-    MethodName,
-    GetKind<NexusPrismaTypes[ModelName][MethodName]> // Is the return type a scalar?
-  >;
-};
-
-type NexusPrismaMethod<
-  ModelName extends keyof NexusPrismaTypes,
-  MethodName extends keyof NexusPrismaTypes[ModelName],
-  ThisKind extends Kind,
-  ReturnType extends any = NexusPrismaTypes[ModelName][MethodName]
-> =
-  ThisKind extends AKind<'Enum'>
-  ? () => NexusPrismaFields<ModelName>
-  : ThisKind extends AKind<'Scalar'>
-  ? (opts?: NexusPrismaScalarOpts) => NexusPrismaFields<ModelName> // Return optional scalar opts
-  : IsModelNameExistsInGraphQLTypes<ReturnType> extends true // If model name has a mapped graphql types
-  ? (
-      opts?: NexusPrismaRelationOpts<ModelName, MethodName, ReturnType>
-    ) => NexusPrismaFields<ModelName> // Then make opts optional
-  : (
-      opts: NexusPrismaRelationOpts<ModelName, MethodName, ReturnType>
-    ) => NexusPrismaFields<ModelName>; // Else force use input the related graphql type -> { type: '...' }
-
-type GetNexusPrismaMethod<
-  TypeName extends string
-> = TypeName extends keyof NexusPrismaMethods
-  ? NexusPrismaMethods[TypeName]
-  : <CustomTypeName extends keyof ModelTypes>(
-      typeName: CustomTypeName
-    ) => NexusPrismaMethods[CustomTypeName];
-
-type GetNexusPrisma<
-  TypeName extends string,
-  ModelOrCrud extends 'model' | 'crud'
-> = ModelOrCrud extends 'model'
-  ? TypeName extends 'Mutation'
-    ? never
-    : TypeName extends 'Query'
-    ? never
-    : GetNexusPrismaMethod<TypeName>
-  : ModelOrCrud extends 'crud'
-  ? TypeName extends 'Mutation'
-    ? GetNexusPrismaMethod<TypeName>
-    : TypeName extends 'Query'
-    ? GetNexusPrismaMethod<TypeName>
-    : never
-  : never;
-  
-
-// Generated
-interface ModelTypes {
-  punbb_ban: prisma.punbb_ban
-  punbb_category: prisma.punbb_category
-  punbb_censoring: prisma.punbb_censoring
-  punbb_config: prisma.punbb_config
-  punbb_forum: prisma.punbb_forum
-  punbb_forum_perm: prisma.punbb_forum_perm
-  punbb_group: prisma.punbb_group
-  punbb_poll: prisma.punbb_poll
-  punbb_post: prisma.punbb_post
-  punbb_rank: prisma.punbb_rank
-  punbb_report: prisma.punbb_report
-  punbb_search_cache: prisma.punbb_search_cache
-  punbb_search_word: prisma.punbb_search_word
-  punbb_subscription: prisma.punbb_subscription
-  punbb_topic: prisma.punbb_topic
-  punbb_uploaded: prisma.punbb_uploaded
-  punbb_uploads_type: prisma.punbb_uploads_type
-  punbb_user: prisma.punbb_user
-  punbb_userthread: prisma.punbb_userthread
-}
-  
+// Prisma input types metadata
 interface NexusPrismaInputs {
   Query: {
     punbbBans: {
-  filtering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username' | 'AND' | 'OR' | 'NOT'
-  ordering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username'
-}
+      filtering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username' | 'AND' | 'OR' | 'NOT'
+      ordering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username'
+    }
     punbbCategories: {
-  filtering: 'cat_name' | 'disp_position' | 'id' | 'punbb_forums' | 'AND' | 'OR' | 'NOT'
-  ordering: 'cat_name' | 'disp_position' | 'id'
-}
+      filtering: 'cat_name' | 'disp_position' | 'id' | 'punbb_forums' | 'AND' | 'OR' | 'NOT'
+      ordering: 'cat_name' | 'disp_position' | 'id'
+    }
     punbbCensorings: {
-  filtering: 'id' | 'replace_with' | 'search_for' | 'AND' | 'OR' | 'NOT'
-  ordering: 'id' | 'replace_with' | 'search_for'
-}
+      filtering: 'id' | 'replace_with' | 'search_for' | 'AND' | 'OR' | 'NOT'
+      ordering: 'id' | 'replace_with' | 'search_for'
+    }
     punbbConfigs: {
-  filtering: 'conf_name' | 'conf_value' | 'AND' | 'OR' | 'NOT'
-  ordering: 'conf_name' | 'conf_value'
-}
+      filtering: 'conf_name' | 'conf_value' | 'AND' | 'OR' | 'NOT'
+      ordering: 'conf_name' | 'conf_value'
+    }
     punbbForums: {
-  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
-  ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
-}
+      filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
+    }
     punbbForumPerms: {
-  filtering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum' | 'AND' | 'OR' | 'NOT'
-  ordering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
-}
+      filtering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum' | 'AND' | 'OR' | 'NOT'
+      ordering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
+    }
     punbbGroups: {
-  filtering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title' | 'AND' | 'OR' | 'NOT'
-  ordering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title'
-}
+      filtering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title' | 'AND' | 'OR' | 'NOT'
+      ordering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title'
+    }
     punbbPolls: {
-  filtering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes' | 'AND' | 'OR' | 'NOT'
-  ordering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes'
-}
+      filtering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes' | 'AND' | 'OR' | 'NOT'
+      ordering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes'
+    }
     punbbPosts: {
-  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
-  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
-}
+      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+    }
     punbbRanks: {
-  filtering: 'id' | 'min_posts' | 'rank' | 'AND' | 'OR' | 'NOT'
-  ordering: 'id' | 'min_posts' | 'rank'
-}
+      filtering: 'id' | 'min_posts' | 'rank' | 'AND' | 'OR' | 'NOT'
+      ordering: 'id' | 'min_posts' | 'rank'
+    }
     punbbReports: {
-  filtering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by' | 'AND' | 'OR' | 'NOT'
-  ordering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by'
-}
+      filtering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by' | 'AND' | 'OR' | 'NOT'
+      ordering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by'
+    }
     punbbSearchCaches: {
-  filtering: 'id' | 'ident' | 'search_data' | 'AND' | 'OR' | 'NOT'
-  ordering: 'id' | 'ident' | 'search_data'
-}
+      filtering: 'id' | 'ident' | 'search_data' | 'AND' | 'OR' | 'NOT'
+      ordering: 'id' | 'ident' | 'search_data'
+    }
     punbbSearchWords: {
-  filtering: 'id' | 'word' | 'AND' | 'OR' | 'NOT'
-  ordering: 'id' | 'word'
-}
+      filtering: 'id' | 'word' | 'AND' | 'OR' | 'NOT'
+      ordering: 'id' | 'word'
+    }
     punbbSubscriptions: {
-  filtering: 'topic_id' | 'user_id' | 'AND' | 'OR' | 'NOT'
-  ordering: 'topic_id' | 'user_id'
-}
+      filtering: 'topic_id' | 'user_id' | 'AND' | 'OR' | 'NOT'
+      ordering: 'topic_id' | 'user_id'
+    }
     punbbTopics: {
-  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
-  ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
-}
+      filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+    }
     punbbUploadeds: {
-  filtering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat' | 'AND' | 'OR' | 'NOT'
-  ordering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
-}
+      filtering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat' | 'AND' | 'OR' | 'NOT'
+      ordering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
+    }
     punbbUploadsTypes: {
-  filtering: 'exts' | 'id' | 'type' | 'AND' | 'OR' | 'NOT'
-  ordering: 'exts' | 'id' | 'type'
-}
+      filtering: 'exts' | 'id' | 'type' | 'AND' | 'OR' | 'NOT'
+      ordering: 'exts' | 'id' | 'type'
+    }
     punbbUsers: {
-  filtering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'AND' | 'OR' | 'NOT'
-  ordering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
-}
+      filtering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'AND' | 'OR' | 'NOT'
+      ordering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
+    }
     punbbUserthreads: {
-  filtering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'AND' | 'OR' | 'NOT'
-  ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
-}
-
+      filtering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'AND' | 'OR' | 'NOT'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
+    }
   },
-    punbb_ban: {
+  punbb_ban: {
 
-
-  },  punbb_category: {
+  }
+  punbb_category: {
     punbb_forums: {
-  filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
-  ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
-}
+      filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
+    }
+  }
+  punbb_censoring: {
 
-  },  punbb_censoring: {
+  }
+  punbb_config: {
 
-
-  },  punbb_config: {
-
-
-  },  punbb_forum: {
+  }
+  punbb_forum: {
     punbb_topics: {
-  filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
-  ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
-}
+      filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+    }
+  }
+  punbb_forum_perm: {
 
-  },  punbb_forum_perm: {
+  }
+  punbb_group: {
 
+  }
+  punbb_poll: {
 
-  },  punbb_group: {
+  }
+  punbb_post: {
 
+  }
+  punbb_rank: {
 
-  },  punbb_poll: {
+  }
+  punbb_report: {
 
+  }
+  punbb_search_cache: {
 
-  },  punbb_post: {
+  }
+  punbb_search_word: {
 
+  }
+  punbb_subscription: {
 
-  },  punbb_rank: {
-
-
-  },  punbb_report: {
-
-
-  },  punbb_search_cache: {
-
-
-  },  punbb_search_word: {
-
-
-  },  punbb_subscription: {
-
-
-  },  punbb_topic: {
+  }
+  punbb_topic: {
     punbb_posts: {
-  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
-  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
-}
+      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+    }
+  }
+  punbb_uploaded: {
 
-  },  punbb_uploaded: {
+  }
+  punbb_uploads_type: {
 
-
-  },  punbb_uploads_type: {
-
-
-  },  punbb_user: {
+  }
+  punbb_user: {
     punbb_posts: {
-  filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
-  ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
-}
-
-  },  punbb_userthread: {
-
+      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+    }
+  }
+  punbb_userthread: {
 
   }
 }
 
-interface NexusPrismaTypes {
+// Prisma output types metadata
+interface NexusPrismaOutputs {
   Query: {
     punbbBan: 'punbb_ban'
     punbbBans: 'punbb_ban'
@@ -461,7 +227,6 @@ interface NexusPrismaTypes {
     punbbUsers: 'punbb_user'
     punbbUserthread: 'punbb_userthread'
     punbbUserthreads: 'punbb_userthread'
-
   },
   Mutation: {
     createOnepunbb_ban: 'punbb_ban'
@@ -578,7 +343,6 @@ interface NexusPrismaTypes {
     deleteOnepunbb_userthread: 'punbb_userthread'
     deleteManypunbb_userthread: 'BatchPayload'
     upsertOnepunbb_userthread: 'punbb_userthread'
-
   },
   punbb_ban: {
     email: 'String'
@@ -587,23 +351,23 @@ interface NexusPrismaTypes {
     ip: 'String'
     message: 'String'
     username: 'String'
-
-},  punbb_category: {
+  }
+  punbb_category: {
     cat_name: 'String'
     disp_position: 'Int'
     id: 'Int'
     punbb_forums: 'punbb_forum'
-
-},  punbb_censoring: {
+  }
+  punbb_censoring: {
     id: 'Int'
     replace_with: 'String'
     search_for: 'String'
-
-},  punbb_config: {
+  }
+  punbb_config: {
     conf_name: 'String'
     conf_value: 'String'
-
-},  punbb_forum: {
+  }
+  punbb_forum: {
     cat_id: 'Int'
     disp_position: 'Int'
     forum_desc: 'String'
@@ -619,16 +383,16 @@ interface NexusPrismaTypes {
     sort_by: 'Boolean'
     punbb_topics: 'punbb_topic'
     punbb_category: 'punbb_category'
-
-},  punbb_forum_perm: {
+  }
+  punbb_forum_perm: {
     forum_id: 'Int'
     group_id: 'Int'
     post_polls: 'Boolean'
     post_replies: 'Boolean'
     post_topics: 'Boolean'
     read_forum: 'Boolean'
-
-},  punbb_group: {
+  }
+  punbb_group: {
     g_delete_posts: 'Boolean'
     g_delete_topics: 'Boolean'
     g_edit_posts: 'Boolean'
@@ -645,16 +409,16 @@ interface NexusPrismaTypes {
     g_set_title: 'Boolean'
     g_title: 'String'
     g_user_title: 'String'
-
-},  punbb_poll: {
+  }
+  punbb_poll: {
     id: 'Int'
     options: 'String'
     pollid: 'Int'
     ptype: 'Int'
     voters: 'String'
     votes: 'String'
-
-},  punbb_post: {
+  }
+  punbb_post: {
     edited: 'Int'
     edited_by: 'String'
     hide_smilies: 'Boolean'
@@ -668,13 +432,13 @@ interface NexusPrismaTypes {
     topic_id: 'Int'
     punbb_topic: 'punbb_topic'
     punbb_user: 'punbb_user'
-
-},  punbb_rank: {
+  }
+  punbb_rank: {
     id: 'Int'
     min_posts: 'Int'
     rank: 'String'
-
-},  punbb_report: {
+  }
+  punbb_report: {
     created: 'Int'
     forum_id: 'Int'
     id: 'Int'
@@ -684,21 +448,21 @@ interface NexusPrismaTypes {
     topic_id: 'Int'
     zapped: 'Int'
     zapped_by: 'Int'
-
-},  punbb_search_cache: {
+  }
+  punbb_search_cache: {
     id: 'Int'
     ident: 'String'
     search_data: 'String'
-
-},  punbb_search_word: {
+  }
+  punbb_search_word: {
     id: 'Int'
     word: 'String'
-
-},  punbb_subscription: {
+  }
+  punbb_subscription: {
     topic_id: 'Int'
     user_id: 'Int'
-
-},  punbb_topic: {
+  }
+  punbb_topic: {
     closed: 'Boolean'
     forum_id: 'Int'
     id: 'Int'
@@ -717,8 +481,8 @@ interface NexusPrismaTypes {
     yes: 'String'
     punbb_forum: 'punbb_forum'
     punbb_posts: 'punbb_post'
-
-},  punbb_uploaded: {
+  }
+  punbb_uploaded: {
     data: 'Int'
     descr: 'String'
     downs: 'Int'
@@ -728,13 +492,13 @@ interface NexusPrismaTypes {
     uid: 'Int'
     user: 'String'
     user_stat: 'String'
-
-},  punbb_uploads_type: {
+  }
+  punbb_uploads_type: {
     exts: 'String'
     id: 'Int'
     type: 'String'
-
-},  punbb_user: {
+  }
+  punbb_user: {
     activate_key: 'String'
     activate_string: 'String'
     admin_note: 'String'
@@ -774,46 +538,56 @@ interface NexusPrismaTypes {
     use_avatar: 'Boolean'
     yahoo: 'String'
     punbb_posts: 'punbb_post'
-
-},  punbb_userthread: {
+  }
+  punbb_userthread: {
     forum: 'Int'
     last_read: 'Int'
     posted: 'Boolean'
     thread: 'Int'
     user: 'Int'
-
+  }
 }
-}
 
+// Helper to gather all methods relative to a model
 interface NexusPrismaMethods {
-  punbb_ban: NexusPrismaFields<'punbb_ban'>
-  punbb_category: NexusPrismaFields<'punbb_category'>
-  punbb_censoring: NexusPrismaFields<'punbb_censoring'>
-  punbb_config: NexusPrismaFields<'punbb_config'>
-  punbb_forum: NexusPrismaFields<'punbb_forum'>
-  punbb_forum_perm: NexusPrismaFields<'punbb_forum_perm'>
-  punbb_group: NexusPrismaFields<'punbb_group'>
-  punbb_poll: NexusPrismaFields<'punbb_poll'>
-  punbb_post: NexusPrismaFields<'punbb_post'>
-  punbb_rank: NexusPrismaFields<'punbb_rank'>
-  punbb_report: NexusPrismaFields<'punbb_report'>
-  punbb_search_cache: NexusPrismaFields<'punbb_search_cache'>
-  punbb_search_word: NexusPrismaFields<'punbb_search_word'>
-  punbb_subscription: NexusPrismaFields<'punbb_subscription'>
-  punbb_topic: NexusPrismaFields<'punbb_topic'>
-  punbb_uploaded: NexusPrismaFields<'punbb_uploaded'>
-  punbb_uploads_type: NexusPrismaFields<'punbb_uploads_type'>
-  punbb_user: NexusPrismaFields<'punbb_user'>
-  punbb_userthread: NexusPrismaFields<'punbb_userthread'>
-  Query: NexusPrismaFields<'Query'>
-  Mutation: NexusPrismaFields<'Mutation'>
+  punbb_ban: Typegen.NexusPrismaFields<'punbb_ban'>
+  punbb_category: Typegen.NexusPrismaFields<'punbb_category'>
+  punbb_censoring: Typegen.NexusPrismaFields<'punbb_censoring'>
+  punbb_config: Typegen.NexusPrismaFields<'punbb_config'>
+  punbb_forum: Typegen.NexusPrismaFields<'punbb_forum'>
+  punbb_forum_perm: Typegen.NexusPrismaFields<'punbb_forum_perm'>
+  punbb_group: Typegen.NexusPrismaFields<'punbb_group'>
+  punbb_poll: Typegen.NexusPrismaFields<'punbb_poll'>
+  punbb_post: Typegen.NexusPrismaFields<'punbb_post'>
+  punbb_rank: Typegen.NexusPrismaFields<'punbb_rank'>
+  punbb_report: Typegen.NexusPrismaFields<'punbb_report'>
+  punbb_search_cache: Typegen.NexusPrismaFields<'punbb_search_cache'>
+  punbb_search_word: Typegen.NexusPrismaFields<'punbb_search_word'>
+  punbb_subscription: Typegen.NexusPrismaFields<'punbb_subscription'>
+  punbb_topic: Typegen.NexusPrismaFields<'punbb_topic'>
+  punbb_uploaded: Typegen.NexusPrismaFields<'punbb_uploaded'>
+  punbb_uploads_type: Typegen.NexusPrismaFields<'punbb_uploads_type'>
+  punbb_user: Typegen.NexusPrismaFields<'punbb_user'>
+  punbb_userthread: Typegen.NexusPrismaFields<'punbb_userthread'>
+  Query: Typegen.NexusPrismaFields<'Query'>
+  Mutation: Typegen.NexusPrismaFields<'Mutation'>
 }
-  
+
+interface NexusPrismaGenTypes {
+  inputs: NexusPrismaInputs
+  outputs: NexusPrismaOutputs
+  methods: NexusPrismaMethods
+  models: PrismaModels
+  pagination: Pagination
+  scalars: CustomScalars
+}
 
 declare global {
+  interface NexusPrismaGen extends NexusPrismaGenTypes {}
+
   type NexusPrisma<
     TypeName extends string,
     ModelOrCrud extends 'model' | 'crud'
-  > = GetNexusPrisma<TypeName, ModelOrCrud>;
+  > = Typegen.GetNexusPrisma<TypeName, ModelOrCrud>;
 }
   
