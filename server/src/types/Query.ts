@@ -36,7 +36,7 @@ export const Query = queryType({
         return ctx.prisma.punbb_topic.findMany({
           where: {
             last_post: {
-              gte: Math.round(new Date().getTime() / 1000) - 100 * 24 * 60 * 60,
+              gte: Math.round(new Date().getTime() / 1000) - 200 * 24 * 60 * 60,
             },
           },
           orderBy: {
@@ -53,9 +53,12 @@ export const Query = queryType({
       type: 'punbb_topic',
       args: {
         forum_id: intArg({ required: true }),
+        skip: intArg({ required: false }),
       },
-      resolve: (_parent, { forum_id }, ctx) => {
+      resolve: (_parent, { forum_id, skip }, ctx) => {
         return ctx.prisma.punbb_topic.findMany({
+          skip,
+          first: 20,
           where: {
             forum_id: Number(forum_id),
           },
@@ -70,9 +73,12 @@ export const Query = queryType({
       type: 'punbb_post',
       args: {
         topic_id: intArg({ required: true }),
+        skip: intArg({ required: false }),
       },
-      resolve: (_parent, { topic_id }, ctx) => {
+      resolve: (_parent, { topic_id, skip }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
+          skip,
+          first: 20,
           where: {
             topic_id: Number(topic_id),
           },
@@ -87,9 +93,12 @@ export const Query = queryType({
       type: 'punbb_post',
       args: {
         searchString: stringArg({ nullable: true }),
+        skip: intArg({ required: false }),
       },
-      resolve: (_parent, { searchString }, ctx) => {
+      resolve: (_parent, { searchString, skip }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
+          skip,
+          first: 20,
           where: {
             message: {
               contains: searchString,

@@ -1,0 +1,16 @@
+windows:
+  - name: pigeon
+    root: ~/git/pigeonhole-prisma
+    layout: tiled
+    panes:
+      - commands:
+          - cd client
+          - yarn start
+      - commands:
+          - cd client
+          - yarn web
+      - commands:
+          - cd client
+      - commands:
+          - cd server
+          - yarn start

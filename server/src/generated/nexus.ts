@@ -183,13 +183,16 @@ export interface NexusGenArgTypes {
   }
   Query: {
     posts: { // args
+      skip?: number | null; // Int
       topic_id: number; // Int!
     }
     searchPosts: { // args
       searchString?: string | null; // String
+      skip?: number | null; // Int
     }
     topics: { // args
       forum_id: number; // Int!
+      skip?: number | null; // Int
     }
   }
   punbb_category: {

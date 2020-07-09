@@ -91,8 +91,8 @@ type punbb_user {
 type Query {
   categories: [punbb_category!]!
   me: punbb_user
-  posts(topic_id: Int!): [punbb_post!]!
+  posts(skip: Int, topic_id: Int!): [punbb_post!]!
   recentTopics: [punbb_topic!]!
-  searchPosts(searchString: String): [punbb_post!]!
-  topics(forum_id: Int!): [punbb_topic!]!
+  searchPosts(searchString: String, skip: Int): [punbb_post!]!
+  topics(forum_id: Int!, skip: Int): [punbb_topic!]!
 }
