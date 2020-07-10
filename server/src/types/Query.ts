@@ -1,6 +1,8 @@
 import { intArg, queryType, stringArg } from '@nexus/schema';
 import { getUserId } from '../auth';
 
+const DEFAULT_TAKE = 20;
+
 export const Query = queryType({
   definition(t) {
     t.field('me', {
@@ -53,12 +55,16 @@ export const Query = queryType({
       type: 'punbb_topic',
       args: {
         forum_id: intArg({ required: true }),
-        skip: intArg({ required: false }),
+        cursor: intArg({ required: false }),
+        take: intArg({ required: false }),
       },
-      resolve: (_parent, { forum_id, skip }, ctx) => {
+      resolve: (_parent, { forum_id, cursor, take }, ctx) => {
         return ctx.prisma.punbb_topic.findMany({
-          skip,
-          first: 20,
+          skip: cursor ? 1 : 0,
+          take: take || DEFAULT_TAKE,
+          cursor: {
+            id: cursor,
+          },
           where: {
             forum_id: Number(forum_id),
           },
@@ -73,12 +79,16 @@ export const Query = queryType({
       type: 'punbb_post',
       args: {
         topic_id: intArg({ required: true }),
-        skip: intArg({ required: false }),
+        cursor: intArg({ required: false }),
+        take: intArg({ required: false }),
       },
-      resolve: (_parent, { topic_id, skip }, ctx) => {
+      resolve: (_parent, { topic_id, cursor, take }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
-          skip,
-          first: 20,
+          skip: cursor ? 1 : 0,
+          take: take || DEFAULT_TAKE,
+          cursor: {
+            id: cursor,
+          },
           where: {
             topic_id: Number(topic_id),
           },
@@ -93,12 +103,16 @@ export const Query = queryType({
       type: 'punbb_post',
       args: {
         searchString: stringArg({ nullable: true }),
-        skip: intArg({ required: false }),
+        cursor: intArg({ required: false }),
+        take: intArg({ required: false }),
       },
-      resolve: (_parent, { searchString, skip }, ctx) => {
+      resolve: (_parent, { searchString, cursor, take }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
-          skip,
-          first: 20,
+          skip: cursor ? 1 : 0,
+          take: take || DEFAULT_TAKE,
+          cursor: {
+            id: cursor,
+          },
           where: {
             message: {
               contains: searchString,
