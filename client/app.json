@@ -10,11 +10,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#83a850",
-      "icon": "./assets/icon.png"
+      "backgroundColor": "#83a850"
     },
     "androidStatusBar": {
       "backgroundColor": "#222B45"
+    },
+    "ios": {
+      "icon": "./assets/icon.png"
+    },
+    "android": {
+      "icon": "./assets/icon.png"
     }
   }
 }

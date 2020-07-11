@@ -5,6 +5,7 @@ import { Topics } from '../screens/Topics';
 import { ForumsTabs } from './ForumTabs';
 import { useTheme, Icon, Button } from '@ui-kitten/components';
 import { useNavigation, DrawerActions } from '@react-navigation/core';
+import { Platform } from 'react-native';
 
 export type MainStackParams = {
   ForumTabs: undefined;
@@ -28,7 +29,7 @@ export const MainStack: React.FC<Props> = () => {
           backgroundColor: theme['background-basic-color-1'],
         },
         headerTitleStyle: {
-          textAlign: 'center',
+          textAlign: Platform.OS == 'ios' ? 'center' : undefined,
         },
       }}
     >
