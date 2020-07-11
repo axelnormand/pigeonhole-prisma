@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "tsc": "tsc",
-    "start": "ts-node-dev ./src --no-notify --respawn --transpileOnly ",
+    "start": "ts-node-dev --no-notify --respawn --transpileOnly src",
     "build": "cross-env NODE_ENV=production yarn clean && yarn generate && tsc",
     "start:prod": "cross-env NODE_ENV=production yarn build && node dist",
     "start:netlify:dev": "cross-env PIGEONHOLE_SERVER=lambda yarn build && netlify dev -d public -f dist/functions",
@@ -37,6 +37,6 @@
     "cross-env": "^7.0.2",
     "netlify": "^4.3.5",
     "ts-node": "8.10.2",
-    "ts-node-dev": "1.0.0-pre.51"
+    "ts-node-dev": "1.0.0-pre.44"
   }
 }
