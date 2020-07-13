@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigation, RouteProp } from '@react-navigation/native';
+import { StyleSheet, FlatList } from 'react-native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { useQuery } from '../models';
@@ -37,8 +38,19 @@ export const Topics = observer(({ route }: Props) => {
 
   return (
     <Page>
-      {data?.topics.map(
-        ({ id, subject, poster, last_poster, num_replies, last_post }) => {
+      <FlatList
+        style={styles.scroll}
+        data={data?.topics}
+        keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
+        renderItem={({ item }) => {
+          const {
+            id,
+            subject,
+            poster,
+            last_poster,
+            num_replies,
+            last_post,
+          } = item;
           return (
             <TopicCard
               key={id}
@@ -55,8 +67,14 @@ export const Topics = observer(({ route }: Props) => {
               }
             />
           );
-        },
-      )}
+        }}
+      />
     </Page>
   );
+});
+
+const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
 });

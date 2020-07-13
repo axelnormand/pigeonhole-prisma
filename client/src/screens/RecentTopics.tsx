@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyleSheet, FlatList } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
@@ -26,8 +27,19 @@ export const RecentTopics = observer(() => {
 
   return (
     <Page>
-      {data?.recentTopics.map(
-        ({ id, subject, poster, last_poster, num_replies, last_post }) => {
+      <FlatList
+        style={styles.scroll}
+        data={data?.recentTopics}
+        keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
+        renderItem={({ item }) => {
+          const {
+            id,
+            subject,
+            poster,
+            last_poster,
+            num_replies,
+            last_post,
+          } = item;
           return (
             <TopicCard
               key={id}
@@ -44,8 +56,14 @@ export const RecentTopics = observer(() => {
               }
             />
           );
-        },
-      )}
+        }}
+      />
     </Page>
   );
+});
+
+const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
 });

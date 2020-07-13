@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { StyleSheet, FlatList } from 'react-native';
 import { RouteProp, useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
@@ -35,18 +36,32 @@ export const Posts = observer(({ route }: Props) => {
     return <CentreLoadingPage />;
   }
 
+  //{data?.posts.map(({ id, message, posted, poster }) => {
+
   return (
     <Page>
-      {data?.posts.map(({ id, message, posted, poster }) => {
-        return (
-          <PostCard
-            key={id}
-            message={message ?? ''}
-            posted={posted ?? new Date().getTime()}
-            poster={poster ?? ''}
-          />
-        );
-      })}
+      <FlatList
+        style={styles.scroll}
+        data={data?.posts}
+        keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
+        renderItem={({ item }) => {
+          const { id, message, posted, poster } = item;
+          return (
+            <PostCard
+              key={id}
+              message={message ?? ''}
+              posted={posted ?? new Date().getTime()}
+              poster={poster ?? ''}
+            />
+          );
+        }}
+      />
     </Page>
   );
+});
+
+const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
 });
