@@ -62,9 +62,11 @@ export const Query = queryType({
         return ctx.prisma.punbb_topic.findMany({
           skip: cursor ? 1 : 0,
           take: take || DEFAULT_TAKE,
-          cursor: {
-            id: cursor,
-          },
+          cursor: cursor
+            ? {
+                id: cursor,
+              }
+            : undefined,
           where: {
             forum_id: Number(forum_id),
           },
@@ -86,9 +88,11 @@ export const Query = queryType({
         return ctx.prisma.punbb_post.findMany({
           skip: cursor ? 1 : 0,
           take: take || DEFAULT_TAKE,
-          cursor: {
-            id: cursor,
-          },
+          cursor: cursor
+            ? {
+                id: cursor,
+              }
+            : undefined,
           where: {
             topic_id: Number(topic_id),
           },
@@ -110,9 +114,11 @@ export const Query = queryType({
         return ctx.prisma.punbb_post.findMany({
           skip: cursor ? 1 : 0,
           take: take || DEFAULT_TAKE,
-          cursor: {
-            id: cursor,
-          },
+          cursor: cursor
+            ? {
+                id: cursor,
+              }
+            : undefined,
           where: {
             message: {
               contains: searchString,

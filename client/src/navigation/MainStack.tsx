@@ -29,7 +29,7 @@ export const MainStack: React.FC<Props> = () => {
           backgroundColor: theme['background-basic-color-1'],
         },
         headerTitleStyle: {
-          textAlign: Platform.OS == 'ios' ? 'center' : undefined,
+          textAlign: Platform.OS == 'android' ? undefined : 'center',
         },
       }}
     >
