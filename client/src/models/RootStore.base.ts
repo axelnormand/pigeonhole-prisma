@@ -78,18 +78,18 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    queryTopics(variables: { forumId: number }, resultSelector: string | ((qb: PunbbTopicModelSelector) => PunbbTopicModelSelector) = punbbTopicModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ topics: PunbbTopicModelType[]}>(`query topics($forumId: Int!) { topics(forum_id: $forumId) {
+    queryTopics(variables: { forumId: number, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbTopicModelSelector) => PunbbTopicModelSelector) = punbbTopicModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ topics: PunbbTopicModelType[]}>(`query topics($forumId: Int!, $cursor: Int, $take: Int) { topics(forum_id: $forumId, cursor: $cursor, take: $take) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    queryPosts(variables: { topicId: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!) { posts(topic_id: $topicId) {
+    queryPosts(variables: { topicId: number, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!, $cursor: Int, $take: Int) { posts(topic_id: $topicId, cursor: $cursor, take: $take) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    querySearchPosts(variables: { searchString?: string }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ searchPosts: PunbbPostModelType[]}>(`query searchPosts($searchString: String) { searchPosts(searchString: $searchString) {
+    querySearchPosts(variables: { searchString?: string, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ searchPosts: PunbbPostModelType[]}>(`query searchPosts($searchString: String, $cursor: Int, $take: Int) { searchPosts(searchString: $searchString, cursor: $cursor, take: $take) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },

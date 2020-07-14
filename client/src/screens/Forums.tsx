@@ -37,7 +37,7 @@ export const Forums = observer(() => {
       ),
     ),
   );
-  console.log(`Render Forums loading: ${loading}`);
+
   const navigation = useNavigation<NavProps>();
 
   if (error) {

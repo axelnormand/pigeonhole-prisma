@@ -36,8 +36,6 @@ export const Posts = observer(({ route }: Props) => {
     return <CentreLoadingPage />;
   }
 
-  //{data?.posts.map(({ id, message, posted, poster }) => {
-
   return (
     <Page>
       <FlatList
