@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import React, { useEffect, useContext } from 'react';
 import { RouteProp, useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
 import { PostCard } from '../comps/PostCard';
-import { CentreLoadingPage } from '../comps/CentreLoadingPage';
-import { useQuery } from '../models';
+import { StoreContext, PunbbPostModelType } from '../models';
 import { MainStackParams } from '../navigation/MainStack';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { CursorFlatList } from '../comps/CursorFlatList';
 
 type Props = {
   route: RouteProp<MainStackParams, 'Posts'>;
@@ -18,9 +17,7 @@ type NavProps = StackNavigationProp<MainStackParams, 'Posts'>;
 export const Posts = observer(({ route }: Props) => {
   const navigation = useNavigation<NavProps>();
   const { topicId, topicName } = route.params;
-  const { data, loading, error } = useQuery((store) =>
-    store.queryPosts({ topicId }),
-  );
+  const store = useContext(StoreContext);
 
   useEffect(() => {
     navigation.setOptions({
@@ -28,20 +25,12 @@ export const Posts = observer(({ route }: Props) => {
     });
   }, [navigation, topicName]);
 
-  if (error) {
-    throw error;
-  }
-
-  if (loading) {
-    return <CentreLoadingPage />;
-  }
-
   return (
     <Page>
-      <FlatList
-        style={styles.scroll}
-        data={data?.posts}
-        keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
+      <CursorFlatList<PunbbPostModelType>
+        fetch={async (cursor) =>
+          (await store.queryPosts({ cursor, topicId })).posts
+        }
         renderItem={({ item }) => {
           const { id, message, posted, poster } = item;
           return (
@@ -56,10 +45,4 @@ export const Posts = observer(({ route }: Props) => {
       />
     </Page>
   );
-});
-
-const styles = StyleSheet.create({
-  scroll: {
-    flex: 1,
-  },
 });

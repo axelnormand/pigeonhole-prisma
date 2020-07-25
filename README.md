@@ -105,3 +105,4 @@ query {
 - [ ] sign out + pop animation + better state https://reactnavigation.org/docs/auth-flow
 - [ ] react native action sheet to edit / delete or something
 - [ ] universal links + smart banner https://medium.com/@ageitgey/everything-you-need-to-know-about-implementing-ios-and-android-mobile-deep-linking-f4348b265b49
+- [ ] eslint deps rule, perhaps move to 2 eslintrc for client and server

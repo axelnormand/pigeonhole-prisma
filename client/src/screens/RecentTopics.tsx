@@ -1,36 +1,25 @@
-import React from 'react';
-import { StyleSheet, FlatList } from 'react-native';
+import React, { useContext } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Page } from '../comps/Page';
-import { useQuery } from '../models';
-import { CentreLoadingPage } from '../comps/CentreLoadingPage';
+import { StoreContext, PunbbTopicModelType } from '../models';
 import { TopicCard } from '../comps/TopicCard';
 import { MainStackParams } from '../navigation/MainStack';
+import { CursorFlatList } from '../comps/CursorFlatList';
 
 type NavProps = StackNavigationProp<MainStackParams, 'ForumTabs'>;
 
 export const RecentTopics = observer(() => {
-  const { data, loading, error } = useQuery((store) =>
-    store.queryRecentTopics(),
-  );
   const navigation = useNavigation<NavProps>();
-
-  if (error) {
-    throw error;
-  }
-
-  if (loading) {
-    return <CentreLoadingPage />;
-  }
+  const store = useContext(StoreContext);
 
   return (
     <Page>
-      <FlatList
-        style={styles.scroll}
-        data={data?.recentTopics}
-        keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
+      <CursorFlatList<PunbbTopicModelType>
+        fetch={async (cursor) =>
+          (await store.queryRecentTopics({ cursor })).recentTopics
+        }
         renderItem={({ item }) => {
           const {
             id,
@@ -60,10 +49,4 @@ export const RecentTopics = observer(() => {
       />
     </Page>
   );
-});
-
-const styles = StyleSheet.create({
-  scroll: {
-    flex: 1,
-  },
 });
