@@ -17,7 +17,7 @@ export const RecentTopics = observer(() => {
   return (
     <Page>
       <CursorFlatList<PunbbTopicModelType>
-        fetch={async (cursor) =>
+        fetch={async ({ cursor }) =>
           (await store.queryRecentTopics({ cursor })).recentTopics
         }
         renderItem={({ item }) => {

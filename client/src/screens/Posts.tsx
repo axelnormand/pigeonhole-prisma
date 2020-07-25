@@ -28,7 +28,7 @@ export const Posts = observer(({ route }: Props) => {
   return (
     <Page>
       <CursorFlatList<PunbbPostModelType>
-        fetch={async (cursor) =>
+        fetch={async ({ cursor }) =>
           (await store.queryPosts({ cursor, topicId })).posts
         }
         renderItem={({ item }) => {

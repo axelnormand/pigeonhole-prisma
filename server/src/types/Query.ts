@@ -38,7 +38,7 @@ export const Query = queryType({
         cursor: intArg({ required: false }),
         take: intArg({ required: false }),
       },
-      resolve: (_parent, _args, ctx) => {
+      resolve: (_parent, { cursor, take }, ctx) => {
         return ctx.prisma.punbb_topic.findMany({
           skip: cursor ? 1 : 0,
           take: take || DEFAULT_TAKE,
@@ -47,11 +47,6 @@ export const Query = queryType({
                 id: cursor,
               }
             : undefined,
-          where: {
-            last_post: {
-              gte: Math.round(new Date().getTime() / 1000) - 200 * 24 * 60 * 60,
-            },
-          },
           orderBy: {
             last_post: 'desc',
           },

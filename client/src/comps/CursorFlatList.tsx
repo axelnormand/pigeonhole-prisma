@@ -9,7 +9,7 @@ type Item = {
 };
 
 type Props<T extends Item> = {
-  fetch: (cursor?: number) => Promise<T[]>;
+  fetch: (variables: { cursor?: number }) => Promise<T[]>;
   renderItem: ListRenderItem<T>;
 };
 
@@ -43,11 +43,12 @@ export const CursorFlatList = <T extends Item>({
   }, []);
 
   const loadMore = async () => {
+    if (loadingState !== LoadingState.none) return;
     try {
       setLoadingState(LoadingState.loading);
       const cursor = list.length ? list[list.length - 1].id : undefined;
       console.log(`loading more`, { cursor });
-      const data = await fetch(cursor);
+      const data = await fetch({ cursor });
       setHasMore((data.length && !!data[data.length - 1].id) || false);
       console.log(
         `loaded More, list[0] ${list?.length && list[0].id}, data[0] ${
@@ -66,7 +67,7 @@ export const CursorFlatList = <T extends Item>({
       //clear and re-fetch from beginning
       setLoadingState(LoadingState.refreshing);
       setList([]);
-      const data = await fetch(undefined);
+      const data = await fetch({ cursor: undefined });
       console.log(`refreshed`, { data });
       setList(data);
       setLoadingState(LoadingState.none);
@@ -91,7 +92,7 @@ export const CursorFlatList = <T extends Item>({
       data={list}
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
-      onEndReached={loadMore}
+      onEndReached={hasMore ? loadMore : undefined}
       ListFooterComponent={hasMore ? <CentreLoading /> : null}
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
