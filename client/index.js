@@ -1,6 +1,5 @@
 import 'mobx-react-lite/batchingForReactNative';
 import { registerRootComponent } from 'expo';
-
 import { App } from './src/App';
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);

@@ -13,6 +13,12 @@ type Props<T extends Item> = {
   renderItem: ListRenderItem<T>;
 };
 
+enum LoadingState {
+  none = 'none',
+  loading = 'loading',
+  refreshing = 'refreshing',
+}
+
 /**
  * abstracts so just need to provide a fetch function that takes in next cursor.
  *
@@ -23,51 +29,59 @@ export const CursorFlatList = <T extends Item>({
   renderItem,
 }: Props<T>) => {
   const [list, setList] = useState<T[]>([]);
-  const [cursor, setCursor] = useState<number>();
-  const [nextCursor, setNextCursor] = useState<number>();
-  const [refreshing, setRefreshing] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [initialLoad, setInitialLoad] = useState(true);
+  const [loadingState, setLoadingState] = useState<LoadingState>(
+    LoadingState.none,
+  );
   const [error, setError] = useState<Error>();
+  const [hasMore, setHasMore] = useState(false);
 
-  //const ref = useRef<FlatList<T>>();
-
-  //load data
+  // loadMore on initial render
   useEffect(() => {
-    (async () => {
-      try {
-        setLoading(true);
-        setError(undefined);
-        const data = await fetch(cursor);
-        console.log(`FLATLIST`, { cursor, list, data });
-        setList([...list, ...data]);
-        setRefreshing(false);
-        setLoading(false);
-        setNextCursor(data.length ? data[data.length - 1].id : undefined);
-      } catch (e) {
-        setError(e);
-      }
-    })();
-  }, [cursor]);
+    loadMore();
+    setInitialLoad(false);
+  }, []);
 
-  const loadMore = () => {
-    // set cursor to trigger useEffect
-    setCursor(nextCursor);
+  const loadMore = async () => {
+    try {
+      setLoadingState(LoadingState.loading);
+      const cursor = list.length ? list[list.length - 1].id : undefined;
+      console.log(`loading more`, { cursor });
+      const data = await fetch(cursor);
+      setHasMore((data.length && !!data[data.length - 1].id) || false);
+      console.log(
+        `loaded More, list[0] ${list?.length && list[0].id}, data[0] ${
+          data?.length && data[0].id
+        }, hasMore ${hasMore}`,
+      );
+      setList([...list, ...data]);
+      setLoadingState(LoadingState.none);
+    } catch (e) {
+      setError(e);
+    }
   };
 
-  const refresh = () => {
-    //clear and re-fetch from beginning
-    setList([]);
-    setRefreshing(true);
-    setCursor(undefined);
+  const refresh = async () => {
+    try {
+      //clear and re-fetch from beginning
+      setLoadingState(LoadingState.refreshing);
+      setList([]);
+      const data = await fetch(undefined);
+      console.log(`refreshed`, { data });
+      setList(data);
+      setLoadingState(LoadingState.none);
+    } catch (e) {
+      setError(e);
+    }
   };
 
-  console.log(`Render CursorFlatList`, { loading, cursor, nextCursor });
+  console.log(`Render CursorFlatList`, { loadingState, list, hasMore });
 
   if (error) {
     throw error;
   }
 
-  if (refreshing) {
+  if (initialLoad) {
     return <CentreLoadingPage />;
   }
 
@@ -76,9 +90,9 @@ export const CursorFlatList = <T extends Item>({
       style={styles.scroll}
       data={list}
       onRefresh={refresh}
-      refreshing={refreshing}
+      refreshing={loadingState === LoadingState.refreshing}
       onEndReached={loadMore}
-      ListFooterComponent={nextCursor ? <CentreLoading /> : null}
+      ListFooterComponent={hasMore ? <CentreLoading /> : null}
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
     />

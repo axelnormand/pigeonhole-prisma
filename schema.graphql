@@ -92,7 +92,7 @@ type Query {
   categories: [punbb_category!]!
   me: punbb_user
   posts(cursor: Int, take: Int, topic_id: Int!): [punbb_post!]!
-  recentTopics: [punbb_topic!]!
+  recentTopics(cursor: Int, take: Int): [punbb_topic!]!
   searchPosts(cursor: Int, searchString: String, take: Int): [punbb_post!]!
   topics(cursor: Int, forum_id: Int!, take: Int): [punbb_topic!]!
 }

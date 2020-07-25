@@ -187,6 +187,10 @@ export interface NexusGenArgTypes {
       take?: number | null; // Int
       topic_id: number; // Int!
     }
+    recentTopics: { // args
+      cursor?: number | null; // Int
+      take?: number | null; // Int
+    }
     searchPosts: { // args
       cursor?: number | null; // Int
       searchString?: string | null; // String
