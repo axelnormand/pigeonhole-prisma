@@ -116,57 +116,36 @@ const parseCode = (
 };
 
 /**
- * recursively parse text into array of bbcode components based on passed in codes.
+ * recursively parse codes into array of bbcode components based on passed in codes.
  * Mutates split array
  */
-const parseText = (text: string, splits: React.ReactNode[]) => {
+const parseCodes = (
+  text: string,
+  codes: Code[],
+  isWrapperCodes: boolean,
+  splits: React.ReactNode[],
+) => {
   let foundMatch = false;
   // split text into array of components and text (also a react node)
-  for (let i = 0; i < textCodes.length; i++) {
-    const code = textCodes[i];
+  for (let i = 0; i < codes.length; i++) {
+    const code = codes[i];
     const { before, after, component } = parseCode(text, code);
     if (before) {
-      parseText(before, splits);
+      parseCodes(before, codes, isWrapperCodes, splits);
     }
     if (component) {
       splits.push(component);
       foundMatch = true;
     }
     if (after) {
-      parseText(after, splits);
+      parseCodes(after, codes, isWrapperCodes, splits);
     }
     if (foundMatch) break;
   }
 
   if (!foundMatch) {
     // no match, add this text.
-    splits.push(plainTextComponent(text));
-  }
-};
-
-/**
- * recursively parse wrapper codes into array of bbcode components or strings based on passed in codes.
- * Children of quotes are text
- * Mutates split array
- */
-const parseWrapper = (text: string, splits: React.ReactNode[]) => {
-  let foundMatch = false;
-
-  // split text into array of components and text
-  for (let i = 0; i < wrapperCodes.length; i++) {
-    const code = wrapperCodes[i];
-    const { before, after, component } = parseCode(text, code);
-    if (before) {
-      parseWrapper(before, splits);
-    }
-    if (component) {
-      splits.push(component);
-      foundMatch = true;
-    }
-    if (after) {
-      parseWrapper(after, splits);
-    }
-    if (foundMatch) break;
+    splits.push(isWrapperCodes ? text : plainTextComponent(text));
   }
 };
 
@@ -178,12 +157,12 @@ const isReactElement = (el: React.ReactNode): el is React.ReactElement =>
  */
 export const parse = (text: string): React.ReactNode => {
   const splits: React.ReactNode[] = [];
-  // split quotes first then text ones
-  parseWrapper(text, splits);
+  // split wrapper codes (eg quotes) first then text ones
+  parseCodes(text, wrapperCodes, true, splits);
 
   if (!splits.length) {
     // no wrapper bbcodes found, look for text codes straight in text
-    parseText(text, splits);
+    parseCodes(text, textCodes, false, splits);
   } else {
     // go through children of each wrapper code found and parse those for text codes
     splits.forEach((split, index, splitArray) => {
@@ -193,23 +172,30 @@ export const parse = (text: string): React.ReactNode => {
         ? split.props.children
         : split;
 
-      parseText(childText, newChildrenSplits);
+      parseCodes(childText, textCodes, false, newChildrenSplits);
       if (newChildrenSplits.length) {
         // update children prop with this new array of splits
-        if (newChildrenSplits.length === 1) {
-          // update array in place
+        if (isReactElement(split)) {
+          // update array in place. Updated children prop with new children
           splitArray[index] = React.cloneElement(split as any, {
-            children: newChildrenSplits[0],
+            children: newChildrenSplits.map((child, childIndex) => {
+              const childComponent = isReactElement(child)
+                ? child
+                : plainTextComponent(child as any);
+              return React.cloneElement(childComponent, {
+                key:
+                  newChildrenSplits.length > 1
+                    ? `${index}-${childIndex}`
+                    : undefined,
+              });
+            }),
           });
         } else {
-          // update array in place, make sure each child has a key
-          splitArray[index] = React.cloneElement(split as any, {
-            children: newChildrenSplits.map((child, childIndex) =>
-              React.cloneElement(child as any, {
-                key: `${index}-${childIndex}`,
-              }),
-            ),
-          });
+          //currently just a string, replace with Text component(s)
+          splitArray[index] =
+            newChildrenSplits.length === 1
+              ? newChildrenSplits[0]
+              : newChildrenSplits;
         }
       }
     });
@@ -225,7 +211,9 @@ export const parse = (text: string): React.ReactNode => {
     return splits[0];
   }
 
-  return splits.map((split, index) =>
+  const splitsWithKey = splits.map((split, index) =>
     React.cloneElement(split as any, { key: `${index}` }),
   );
+
+  return splitsWithKey;
 };

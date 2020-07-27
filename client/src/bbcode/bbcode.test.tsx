@@ -205,14 +205,21 @@ it('works with quote bbcode and no name', () => {
 });
 
 it('works with quote bbcode and more text', () => {
+  const before = 'Before ';
+  const after = ' After';
   const name = 'Foo';
   const quoteText = 'hello, world';
-  const text = `Before [quote=${name}]${quoteText}[/quote] After`;
-  const { getByTestId, asJSON } = render(parse(text));
+  const text = `${before}[quote=${name}]${quoteText}[/quote]${after}`;
+  const { getByTestId, queryAllByTestId, asJSON } = render(parse(text));
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
-  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
+
+  const plainTexts = queryAllByTestId('bbcode-plain');
+  expect(plainTexts.length).toEqual(3);
+  expect(getNodeText(plainTexts[0])).toEqual(before);
+  expect(getNodeText(plainTexts[1])).toEqual(quoteText);
+  expect(getNodeText(plainTexts[2])).toEqual(after);
 });
 
 it('works with quote bbcode, name in quotes', () => {
