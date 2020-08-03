@@ -36,6 +36,7 @@ export const Posts = observer(({ route }: Props) => {
           return (
             <PostCard
               key={id}
+              id={id ?? 0}
               message={message ?? ''}
               posted={posted ?? new Date().getTime()}
               poster={poster ?? ''}

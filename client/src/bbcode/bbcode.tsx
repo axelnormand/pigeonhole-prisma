@@ -101,6 +101,11 @@ const plainTextComponent = (text: string) => (
   <Text testID="bbcode-plain">{text}</Text>
 );
 
+/** return Text wrapped so no line breaks */
+const WrapperText: React.FC = ({ children }) => (
+  <Text testID="bbcode-text-wrap">{children}</Text>
+);
+
 const parseCode = (
   text: string,
   code: Code,
@@ -203,17 +208,16 @@ export const parse = (text: string): React.ReactNode => {
 
   if (!splits.length) {
     // no bbcode found
-    return plainTextComponent(text);
+    return <WrapperText>{text}</WrapperText>;
   }
 
   if (splits.length === 1) {
     //no need to add key for one thing
-    return splits[0];
+    return <WrapperText>{splits[0]}</WrapperText>;
   }
 
   const splitsWithKey = splits.map((split, index) =>
     React.cloneElement(split as any, { key: `${index}` }),
   );
-
-  return splitsWithKey;
+  return <WrapperText>{splitsWithKey}</WrapperText>;
 };

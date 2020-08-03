@@ -9,15 +9,17 @@ import { parse } from '../bbcode';
 dayjs.extend(relativeTime);
 
 type Props = {
+  id: number;
   message: string;
   posted: number;
   poster: string;
 };
 
-export const PostCard: React.FC<Props> = ({ message, posted, poster }) => {
+export const PostCard: React.FC<Props> = ({ message, posted, poster, id }) => {
   return (
     <CardRow>
       <Card
+        testID={`PostCard-${id}`}
         footer={() => <Footer posted={posted} poster={poster} />}
         disabled={true}
       >
