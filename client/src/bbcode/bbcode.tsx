@@ -103,7 +103,7 @@ const plainTextComponent = (text: string) => (
 
 /** return Text wrapped so no line breaks */
 const WrapperText: React.FC = ({ children }) => (
-  <Text testID="bbcode-text-wrap">{children}</Text>
+  <Text testID="bbcode-text-wrap">{children as any}</Text>
 );
 
 const parseCode = (
@@ -112,11 +112,15 @@ const parseCode = (
 ): { before?: string; component?: React.ReactElement; after?: string } => {
   const matches = text.match(code.regex);
   if (!matches?.length) return {};
-  const before = text.slice(0, matches.index);
+  const before = text.slice(0, matches.index) || undefined;
+  // use slice(1) to call replace without the with whole match (index 0) in array
+  // Therefore only includes each subsequent match as nicer to use match[0] than match[1] in replace method
   const component = code.replace(matches.slice(1));
-  const after = matches.index
-    ? text.slice(matches.index + matches[0].length)
-    : undefined;
+  const after =
+    matches.index != undefined && matches.index >= 0
+      ? text.slice(matches.index + matches[0].length) || undefined
+      : undefined;
+
   return { before, after, component };
 };
 
@@ -216,8 +220,11 @@ export const parse = (text: string): React.ReactNode => {
     return <WrapperText>{splits[0]}</WrapperText>;
   }
 
-  const splitsWithKey = splits.map((split, index) =>
-    React.cloneElement(split as any, { key: `${index}` }),
-  );
+  const splitsWithKey = splits.map((split, index) => {
+    if (!split || (split as any).length) {
+      return split;
+    }
+    return React.cloneElement(split as any, { key: `${index}` });
+  });
   return <WrapperText>{splitsWithKey}</WrapperText>;
 };

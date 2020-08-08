@@ -124,6 +124,42 @@ it('works with url auto matcher, query params', () => {
   expect(openURLSpy).toBeCalledWith(url);
 });
 
+it('works with newlines', () => {
+  const text = `Line 1\nLine 2 `;
+  const { asJSON, getByTestId } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+
+  //retains the newlines
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(text);
+});
+
+it('works with newline and url', () => {
+  const url = 'https://dude.com/';
+  const text = `Line 1\n${url}`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+  const urlComp = getByTestId('bbcode-url');
+  expect(getNodeText(urlComp)).toEqual(url);
+
+  //retains the newline
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(`Line 1\n`);
+});
+
+it('works with newline and url 1st', () => {
+  const url = 'https://dude.com/';
+  const text = `${url}\nLine 2\n`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+  const urlComp = getByTestId('bbcode-url');
+  expect(getNodeText(urlComp)).toEqual(url);
+
+  //retains the newline
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(`\nLine 2\n`);
+});
+
 it('works with youtube bbcode', () => {
   const videoId = '123Abc';
   const text = `Hello [youtube]https://youtube.com/watch?v=${videoId}[/youtube] wassup`;
@@ -245,4 +281,31 @@ it('works with quote bbcode and nested text bbcodes', () => {
   // check nested text codes ok
   expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
+});
+
+it(`Quote first, bold in quote, other codes, real example`, () => {
+  const text = `[quote=dereksoul]I really liked the sound of [b]Michael[/b].[/quote]
+  Cool. For what it's worth i was surprisingly underwhelmed when i saw them at Raw Power last year but they were on pretty early and that might have been more down to me than them. All other evidence points to this record being good and this launch show being a lot of fun.
+  
+  I have no doubt laboured this point on here many times but this band is essentially [b]Bad Guys[/b] who were amazing with a different, probably not as good, singer. Check 'em out. PJ from both bands makes some [url=https://www.youtube.com/watch?v=0UPJiLSdzEg]amazing[/url], [url=https://www.youtube.com/watch?v=gcZ3oxMhpmU]hilarious[/url] videos.`;
+
+  const { getAllByTestId, getByTestId, asJSON } = render(parse(text));
+  const boldTexts = getAllByTestId('bbcode-bold');
+  expect(getNodeText(boldTexts[0])).toEqual('Michael');
+  expect(getNodeText(boldTexts[1])).toEqual('Bad Guys');
+
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain('dereksoul');
+
+  const plainTexts = getAllByTestId('bbcode-plain');
+  expect(getNodeText(plainTexts[0])).toContain('I really liked');
+  expect(getNodeText(plainTexts[2])).toContain(
+    'I have no doubt laboured this point',
+  );
+  expect(getNodeText(plainTexts[5])).toContain('videos');
+
+  const urlTexts = getAllByTestId('bbcode-url');
+  expect(getNodeText(urlTexts[0])).toContain('amazing');
+  expect(getNodeText(urlTexts[1])).toContain('hilarious');
+
+  expect(asJSON()).toMatchSnapshot();
 });
