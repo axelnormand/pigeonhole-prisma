@@ -210,12 +210,14 @@ it('works with youtube auto replace (short domain)', () => {
 
 it('works 2 bbcodes', () => {
   const text = '[i]Hello[/i] [b]dude[/b] wassup';
-  const { getByTestId, asJSON } = render(parse(text));
+  const { getByTestId, asJSON, queryAllByTestId } = render(parse(text));
 
   expect(asJSON()).toMatchSnapshot();
   expect(getNodeText(getByTestId('bbcode-italic'))).toEqual('Hello');
   expect(getNodeText(getByTestId('bbcode-bold'))).toEqual('dude');
-  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(' wassup');
+  const plainTexts = queryAllByTestId('bbcode-plain');
+  expect(getNodeText(plainTexts[0])).toEqual(' ');
+  expect(getNodeText(plainTexts[1])).toEqual(' wassup');
 });
 
 it('works with quote bbcode and name', () => {

@@ -46,12 +46,12 @@ const textCodes: Code[] = [
   },
   // auto-replace https://www.youtube.com/watch?v=_ISAA_Jt9kI
   {
-    regex: /\s*https:\/\/.*youtube\.com\/watch\?v=((\w|\d)+)/,
+    regex: /https:\/\/.*youtube\.com\/watch\?v=((\w|\d)+)/,
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   // auto-replace https://youtu.be/_ISAA_Jt9kI
   {
-    regex: /\s*https:\/\/youtu\.be\/((\w|\d)+)/,
+    regex: /https:\/\/youtu\.be\/((\w|\d)+)/,
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   {
@@ -78,7 +78,7 @@ const textCodes: Code[] = [
   },
   {
     // lastly auto match a url without bbcodes surrounding
-    regex: /\s*(https?:\/\/\S+)\s*/,
+    regex: /(https?:\/\/\S+)/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
   },
 ];

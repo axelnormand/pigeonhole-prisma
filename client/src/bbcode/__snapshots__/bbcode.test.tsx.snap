@@ -719,6 +719,7 @@ exports[`works with newline and url 1`] = `
         }
       >
         Line 1
+
       </Text>
       <Text
         appearance="default"
@@ -840,7 +841,8 @@ exports[`works with newline and url 1st 1`] = `
           }
         }
       >
-        Line 2
+        
+Line 2
 
       </Text>
     </Text>
@@ -2024,7 +2026,7 @@ exports[`works with url auto matcher 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <Text
         appearance="default"
@@ -2075,7 +2077,7 @@ exports[`works with url auto matcher 1`] = `
           }
         }
       >
-        wassup
+         wassup
       </Text>
     </Text>
   </View>
@@ -2145,7 +2147,7 @@ exports[`works with url auto matcher, query params 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <Text
         appearance="default"
@@ -2196,7 +2198,7 @@ exports[`works with url auto matcher, query params 1`] = `
           }
         }
       >
-        wassup
+         wassup
       </Text>
     </Text>
   </View>
@@ -2266,7 +2268,7 @@ exports[`works with url auto matcher, trailing slash 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <Text
         appearance="default"
@@ -2317,7 +2319,7 @@ exports[`works with url auto matcher, trailing slash 1`] = `
           }
         }
       >
-        wassup
+         wassup
       </Text>
     </Text>
   </View>
@@ -2629,7 +2631,7 @@ exports[`works with youtube auto replace (long domain with www) 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <View
         style={
@@ -2766,7 +2768,7 @@ exports[`works with youtube auto replace (long domain without www) 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <View
         style={
@@ -2903,7 +2905,7 @@ exports[`works with youtube auto replace (short domain) 1`] = `
           }
         }
       >
-        Hello
+        Hello 
       </Text>
       <View
         style={
