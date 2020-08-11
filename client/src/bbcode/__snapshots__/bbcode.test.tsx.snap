@@ -41,30 +41,20 @@ exports[`Quote first, bold in quote, other codes, real example 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -425,30 +415,20 @@ exports[`Quote first, youtube in quote, real example 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -1126,30 +1106,20 @@ exports[`works with newline and quote with name= 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -1785,30 +1755,20 @@ exports[`works with quote bbcode and more text 1`] = `
         Before 
       </Text>
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -1960,30 +1920,20 @@ exports[`works with quote bbcode and name 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -2110,30 +2060,20 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -2339,30 +2279,20 @@ exports[`works with quote bbcode and no name 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -2461,30 +2391,20 @@ exports[`works with quote bbcode in quotes and name 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
@@ -2611,30 +2531,20 @@ exports[`works with quote bbcode, name in quotes 1`] = `
       }
     >
       <View
-        appearance="default"
-        level="1"
         style={
           Array [
             Object {
-              "backgroundColor": "background-basic-color-1",
+              "borderRadius": 8,
+              "borderWidth": 2,
+              "display": "flex",
+              "flex": 1,
+              "padding": 16,
             },
-            Array [
-              Object {
-                "borderRadius": 8,
-                "borderWidth": 2,
-                "padding": 16,
-              },
-              Object {
-                "borderColor": "#C5CEE0",
-              },
-            ],
+            Object {
+              "backgroundColor": "#1A2138",
+              "borderColor": "#C5CEE0",
+            },
           ]
-        }
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
         }
       >
         <Text
