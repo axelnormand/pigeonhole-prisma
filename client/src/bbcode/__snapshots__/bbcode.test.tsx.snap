@@ -384,6 +384,436 @@ exports[`Quote first, bold in quote, other codes, real example 1`] = `
 </View>
 `;
 
+exports[`Quote first, youtube in quote, real example 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-text-wrap"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      <View
+        appearance="default"
+        level="1"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "background-basic-color-1",
+            },
+            Array [
+              Object {
+                "borderRadius": 8,
+                "borderWidth": 2,
+                "padding": 16,
+              },
+              Object {
+                "borderColor": "#C5CEE0",
+              },
+            ],
+          ]
+        }
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              Object {
+                "fontStyle": "italic",
+              },
+            ]
+          }
+          testID="bbcode-quote-name"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          Leth
+           wrote:
+        </Text>
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-quote-text"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            Quite like that Caribou track. Can't say anything in that Pitchfork list is of any interest to me but i'm sure there's other good stuff on the way.
+  I'm looking forward to the debut 
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+            testID="bbcode-bold"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            Michael
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+             album.
+  
+  
+          </Text>
+          <View
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                  "overflow": "hidden",
+                },
+                undefined,
+              ]
+            }
+          >
+            <RNCWebView
+              allowsInlineMediaPlayback={true}
+              cacheEnabled={true}
+              domStorageEnabled={true}
+              injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+              injectedJavaScriptForMainFrameOnly={true}
+              javaScriptEnabled={true}
+              messagingEnabled={false}
+              source={
+                Object {
+                  "uri": "https://www.youtube.com/embed/BJD5UQBPOwQ?playsinline=1&fs=1",
+                }
+              }
+              style={
+                Array [
+                  Object {
+                    "flex": 1,
+                    "overflow": "hidden",
+                  },
+                  Object {
+                    "backgroundColor": "#ffffff",
+                  },
+                  Object {
+                    "flex": 1,
+                  },
+                ]
+              }
+              testID="bbcode-youtube"
+              useSharedProcessPool={true}
+            />
+          </View>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            
+  
+  They are playing their album launch at the Shacklewell Arms on Saturday 1st Feb. Support from the thoroughly ace 
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+            testID="bbcode-bold"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            We Wild Blood
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+             and the even wilder 
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                Object {
+                  "fontWeight": "bold",
+                },
+              ]
+            }
+            testID="bbcode-bold"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            MGF
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            . Heaty on the decks. The whole night is going to be killer. Did i mention it was a Saturday night? Come on down. Tickets are 
+          </Text>
+          <Text
+            appearance="default"
+            category="p1"
+            status="primary"
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-url"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            £4.50!
+          </Text>
+        </Text>
+      </View>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-plain"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        
+  I really wanna go to this but haven't got any fixed plans for that weekend. Byrne's down so it depends whether I can get any of the £15 tix for the national theatre or not or whether we just wanna hang home. Sounding good though, but I can't see any of the band, where's the doude with the fringe?
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`works 2 bbcodes 1`] = `
 <View
   collapsable={true}
@@ -655,7 +1085,305 @@ exports[`works with bold bbcode 1`] = `
 </View>
 `;
 
+exports[`works with newline and quote with name= 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-text-wrap"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      <View
+        appearance="default"
+        level="1"
+        style={
+          Array [
+            Object {
+              "backgroundColor": "background-basic-color-1",
+            },
+            Array [
+              Object {
+                "borderRadius": 8,
+                "borderWidth": 2,
+                "padding": 16,
+              },
+              Object {
+                "borderColor": "#C5CEE0",
+              },
+            ],
+          ]
+        }
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              Object {
+                "fontStyle": "italic",
+              },
+            ]
+          }
+          testID="bbcode-quote-name"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          Foo
+           wrote:
+        </Text>
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+                "lineHeight": 20,
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-quote-text"
+          theme={
+            Object {
+              "text-basic-color": "#ff2",
+              "text-primary-color": "#fff",
+            }
+          }
+        >
+          <Text
+            appearance="default"
+            category="p1"
+            style={
+              Array [
+                Object {
+                  "color": "#ff2",
+                  "fontFamily": "System",
+                  "fontSize": 15,
+                  "fontWeight": "400",
+                  "lineHeight": 20,
+                },
+                undefined,
+              ]
+            }
+            testID="bbcode-plain"
+            theme={
+              Object {
+                "text-basic-color": "#ff2",
+                "text-primary-color": "#fff",
+              }
+            }
+          >
+            Line 1
+Line 2
+          </Text>
+        </Text>
+      </View>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-plain"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        I'm After
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`works with newline and url 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-text-wrap"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-plain"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        Hello 
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        status="primary"
+        style={
+          Array [
+            Object {
+              "color": "#fff",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-url"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        Line 1
+Line 2
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-plain"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+         wassup
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`works with newline and url auto match 1`] = `
 <View
   collapsable={true}
   pointerEvents="box-none"
@@ -752,7 +1480,7 @@ exports[`works with newline and url 1`] = `
 </View>
 `;
 
-exports[`works with newline and url 1st 1`] = `
+exports[`works with newline and url auto match 1st 1`] = `
 <View
   collapsable={true}
   pointerEvents="box-none"

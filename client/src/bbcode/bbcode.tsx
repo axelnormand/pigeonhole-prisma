@@ -17,7 +17,7 @@ type Code = {
 /** codes that surround text only, can't be nested */
 const textCodes: Code[] = [
   {
-    regex: /\[img\](.+?)\[\/img\]/,
+    regex: /\[img\]([\s\S]+?)\[\/img\]/,
     replace: (matches: string[]) => <Img url={matches[0]} />,
   },
   {
@@ -25,19 +25,19 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <Img url={matches[0]} />,
   },
   {
-    regex: /\[b\](.+?)\[\/b\]/,
+    regex: /\[b\]([\s\S]+?)\[\/b\]/,
     replace: (matches: string[]) => <Bold>{matches[0]}</Bold>,
   },
   {
-    regex: /\[i\](.+?)\[\/i\]/,
+    regex: /\[i\]([\s\S]+?)\[\/i\]/,
     replace: (matches: string[]) => <Italic>{matches[0]}</Italic>,
   },
   {
-    regex: /\[url\](.+?)\[\/url\]/,
+    regex: /\[url\]([\s\S]+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
   },
   {
-    regex: /\[url="?(.+?)"?\](.+?)\[\/url\]/,
+    regex: /\[url="?(.+?)"?\]([\s\S]+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
@@ -69,7 +69,7 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <Bandcamp track={matches[0]} />,
   },
   {
-    regex: /\[url="?(.+?)"?\](.+?)\[\/url\]/,
+    regex: /\[url="?(.+?)"?\]([\s\S]+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
@@ -86,13 +86,19 @@ const textCodes: Code[] = [
 /** Codes that can wrap things like Quote (more like <View> than <Text>) */
 const wrapperCodes: Code[] = [
   {
-    regex: /\[quote="?(.+?)"?\](.+?)\[\/quote\]/,
+    regex: /\[quote="?(.+?)"?\]([\s\S]+?)\[\/quote\]/,
     replace: (matches: string[]) => (
       <Quote name={matches[0]}>{matches[1]}</Quote>
     ),
   },
   {
-    regex: /\[quote\](.+?)\[\/quote\]/,
+    regex: /\[quote name="?(.+?)"?\]([\s\S]+?)\[\/quote\]/,
+    replace: (matches: string[]) => (
+      <Quote name={matches[0]}>{matches[1]}</Quote>
+    ),
+  },
+  {
+    regex: /\[quote\]([\s\S]+?)\[\/quote\]/,
     replace: (matches: string[]) => <Quote>{matches[0]}</Quote>,
   },
 ];

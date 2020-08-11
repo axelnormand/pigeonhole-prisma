@@ -135,6 +135,21 @@ it('works with newlines', () => {
 });
 
 it('works with newline and url', () => {
+  const linkText = `Line 1\nLine 2`;
+  const url = 'https://dude.com';
+  const text = `Hello [url="${url}"]${linkText}[/url] wassup`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  const urlComp = getByTestId('bbcode-url');
+  expect(getNodeText(urlComp)).toEqual(linkText);
+
+  fireEvent.press(urlComp);
+  expect(openURLSpy).toBeCalledWith(url);
+
+  expect(asJSON()).toMatchSnapshot();
+});
+
+it('works with newline and url auto match', () => {
   const url = 'https://dude.com/';
   const text = `Line 1\n${url}`;
   const { getByTestId, asJSON } = render(parse(text));
@@ -147,7 +162,7 @@ it('works with newline and url', () => {
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(`Line 1\n`);
 });
 
-it('works with newline and url 1st', () => {
+it('works with newline and url auto match 1st', () => {
   const url = 'https://dude.com/';
   const text = `${url}\nLine 2\n`;
   const { getByTestId, asJSON } = render(parse(text));
@@ -254,6 +269,21 @@ it('works with quote bbcode and no name', () => {
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
+it('works with newline and quote with name=', () => {
+  const name = 'Foo';
+  const quoteText = `Line 1\nLine 2`;
+  const afterText = `I'm After`;
+  const text = `[quote name=${name}]${quoteText}[/quote]${afterText}`;
+  const { getByTestId, asJSON, queryAllByTestId } = render(parse(text));
+
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+  //retains the newline
+  const plainTexts = queryAllByTestId('bbcode-plain');
+  expect(getNodeText(plainTexts[0])).toEqual(quoteText);
+  expect(getNodeText(plainTexts[1])).toEqual(afterText);
+  expect(asJSON()).toMatchSnapshot();
+});
+
 it('works with quote bbcode and more text', () => {
   const before = 'Before ';
   const after = ' After';
@@ -342,14 +372,11 @@ it(`Quote first, youtube in quote, real example`, () => {
   expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain('Leth');
 
   const plainTexts = getAllByTestId('bbcode-plain');
-  expect(getNodeText(plainTexts[0])).toContain('I really liked');
-  expect(getNodeText(plainTexts[2])).toContain(
-    'I have no doubt laboured this point',
-  );
+  expect(getNodeText(plainTexts[0])).toContain('Quite like that Caribou track');
+  expect(getNodeText(plainTexts[2])).toContain('Shacklewell Arms');
 
   const urlTexts = getAllByTestId('bbcode-url');
   expect(getNodeText(urlTexts[0])).toContain('£4.50!');
-  expect(urlTexts[0].getProp('url')).toContain('dice.fm');
 
   const youtubeComp = getByTestId('bbcode-youtube');
   expect(youtubeComp.getProp('source')).toEqual({
