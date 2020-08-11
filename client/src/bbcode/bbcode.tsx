@@ -232,10 +232,14 @@ const updateSplitArrayWithNewChildren = (
       });
     } else {
       //currently just a string, replace with Text component(s)
-      splitArray[index] =
-        newChildrenSplits.length === 1
-          ? newChildrenSplits[0]
-          : newChildrenSplits;
+      splitArray[index] = newChildrenSplits.map((child, childIndex) => {
+        const childComponent = isReactElement(child)
+          ? child
+          : plainTextComponent(child as any);
+        return React.cloneElement(childComponent, {
+          key: `${index}-${childIndex}`,
+        });
+      });
     }
   }
 };

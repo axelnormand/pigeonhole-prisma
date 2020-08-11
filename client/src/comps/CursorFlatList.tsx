@@ -76,8 +76,6 @@ export const CursorFlatList = <T extends Item>({
     }
   };
 
-  console.log(`Render CursorFlatList`, { loadingState, list, hasMore });
-
   if (error) {
     throw error;
   }
