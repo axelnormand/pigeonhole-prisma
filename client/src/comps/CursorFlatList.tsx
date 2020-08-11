@@ -47,14 +47,8 @@ export const CursorFlatList = <T extends Item>({
     try {
       setLoadingState(LoadingState.loading);
       const cursor = list.length ? list[list.length - 1].id : undefined;
-      console.log(`loading more`, { cursor });
       const data = await fetch({ cursor });
       setHasMore((data.length && !!data[data.length - 1].id) || false);
-      console.log(
-        `loaded More, list[0] ${list?.length && list[0].id}, data[0] ${
-          data?.length && data[0].id
-        }, hasMore ${hasMore}`,
-      );
       setList([...list, ...data]);
       setLoadingState(LoadingState.none);
     } catch (e) {
@@ -68,7 +62,6 @@ export const CursorFlatList = <T extends Item>({
       setLoadingState(LoadingState.refreshing);
       setList([]);
       const data = await fetch({ cursor: undefined });
-      console.log(`refreshed`, { data });
       setList(data);
       setLoadingState(LoadingState.none);
     } catch (e) {
