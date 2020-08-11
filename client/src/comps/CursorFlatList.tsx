@@ -1,7 +1,9 @@
-import React, { Ref, useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Text } from '@ui-kitten/components';
 import { StyleSheet, FlatList, ListRenderItem } from 'react-native';
 import { CentreLoadingPage } from './CentreLoadingPage';
 import { CentreLoading } from './CentreLoading';
+import { CentreFin } from './CentreFin';
 
 /** make sure can get next cursor using last element id in array */
 type Item = {
@@ -84,7 +86,13 @@ export const CursorFlatList = <T extends Item>({
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
       onEndReached={hasMore ? loadMore : undefined}
-      ListFooterComponent={hasMore ? <CentreLoading /> : null}
+      ListFooterComponent={
+        hasMore ? (
+          <CentreLoading />
+        ) : loadingState === LoadingState.none ? (
+          <CentreFin />
+        ) : null
+      }
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
     />

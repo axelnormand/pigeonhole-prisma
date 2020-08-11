@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { Spinner } from '@ui-kitten/components';
+import { Text } from '@ui-kitten/components';
 import { FormRow } from './FormRow';
 
-export const CentreLoading: React.FC = () => (
+export const CentreFin: React.FC = () => (
   <FormRow style={styles.container}>
-    <Spinner size="giant" />
+    <Text appearance="hint" category="c1">
+      ~ end ~
+    </Text>
   </FormRow>
 );
 
