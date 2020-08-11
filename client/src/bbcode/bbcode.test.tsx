@@ -232,6 +232,18 @@ it('works with quote bbcode and name', () => {
   expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
 });
 
+it('works with quote bbcode in quotes and name', () => {
+  const name = 'Foo';
+  const quoteText = 'hello, world';
+  const text = `[quote="${name}"]${quoteText}[/quote]`;
+  const { getByTestId, asJSON } = render(parse(text));
+
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain(name);
+  expect(getByTestId('bbcode-quote-text')).toBeDefined();
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual(quoteText);
+  expect(asJSON()).toMatchSnapshot();
+});
+
 it('works with quote bbcode and no name', () => {
   const quoteText = 'hello, world';
   const text = `[quote]${quoteText}[/quote]`;
@@ -308,6 +320,41 @@ it(`Quote first, bold in quote, other codes, real example`, () => {
   const urlTexts = getAllByTestId('bbcode-url');
   expect(getNodeText(urlTexts[0])).toContain('amazing');
   expect(getNodeText(urlTexts[1])).toContain('hilarious');
+
+  expect(asJSON()).toMatchSnapshot();
+});
+
+it(`Quote first, youtube in quote, real example`, () => {
+  const text = `[quote=Leth]Quite like that Caribou track. Can't say anything in that Pitchfork list is of any interest to me but i'm sure there's other good stuff on the way.
+  I'm looking forward to the debut [b]Michael[/b] album.
+  
+  [youtube]https://www.youtube.com/watch?v=BJD5UQBPOwQ[/youtube]
+  
+  They are playing their album launch at the Shacklewell Arms on Saturday 1st Feb. Support from the thoroughly ace [b]We Wild Blood[/b] and the even wilder [b]MGF[/b]. Heaty on the decks. The whole night is going to be killer. Did i mention it was a Saturday night? Come on down. Tickets are [url=https://dice.fm/partner/lnzrt-ltd/event/w2bep-michael-debut-album-launch-1st-feb-the-shacklewell-arms-london-tickets?_branch_match_id=462617361746934257]£4.50![/url][/quote]
+  I really wanna go to this but haven't got any fixed plans for that weekend. Byrne's down so it depends whether I can get any of the £15 tix for the national theatre or not or whether we just wanna hang home. Sounding good though, but I can't see any of the band, where's the doude with the fringe?`;
+
+  const { getAllByTestId, getByTestId, asJSON } = render(parse(text));
+  const boldTexts = getAllByTestId('bbcode-bold');
+  expect(getNodeText(boldTexts[0])).toEqual('Michael');
+  expect(getNodeText(boldTexts[1])).toEqual('We Wild Blood');
+  expect(getNodeText(boldTexts[2])).toEqual('MGF');
+
+  expect(getNodeText(getByTestId('bbcode-quote-name'))).toContain('Leth');
+
+  const plainTexts = getAllByTestId('bbcode-plain');
+  expect(getNodeText(plainTexts[0])).toContain('I really liked');
+  expect(getNodeText(plainTexts[2])).toContain(
+    'I have no doubt laboured this point',
+  );
+
+  const urlTexts = getAllByTestId('bbcode-url');
+  expect(getNodeText(urlTexts[0])).toContain('£4.50!');
+  expect(urlTexts[0].getProp('url')).toContain('dice.fm');
+
+  const youtubeComp = getByTestId('bbcode-youtube');
+  expect(youtubeComp.getProp('source')).toEqual({
+    uri: expect.stringContaining('BJD5'),
+  });
 
   expect(asJSON()).toMatchSnapshot();
 });

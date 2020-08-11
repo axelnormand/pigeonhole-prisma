@@ -18,6 +18,7 @@ type Code = {
 const textCodes: Code[] = [
   {
     regex: '\\[img\\](.+?)\\[/img\\]',
+    //regex: /\[img\](.+?)\\[/img\]/,
     replace: (matches: string[]) => <Img url={matches[0]} />,
   },
   {
@@ -180,33 +181,8 @@ export const parse = (text: string): React.ReactNode => {
       const childText: string = isReactElement(split)
         ? split.props.children
         : split;
-
       parseCodes(childText, textCodes, false, newChildrenSplits);
-      if (newChildrenSplits.length) {
-        // update children prop with this new array of splits
-        if (isReactElement(split)) {
-          // update array in place. Updated children prop with new children
-          splitArray[index] = React.cloneElement(split as any, {
-            children: newChildrenSplits.map((child, childIndex) => {
-              const childComponent = isReactElement(child)
-                ? child
-                : plainTextComponent(child as any);
-              return React.cloneElement(childComponent, {
-                key:
-                  newChildrenSplits.length > 1
-                    ? `${index}-${childIndex}`
-                    : undefined,
-              });
-            }),
-          });
-        } else {
-          //currently just a string, replace with Text component(s)
-          splitArray[index] =
-            newChildrenSplits.length === 1
-              ? newChildrenSplits[0]
-              : newChildrenSplits;
-        }
-      }
+      updateSplitArrayWithNewChildren(splitArray, newChildrenSplits, index);
     });
   }
 
@@ -227,4 +203,34 @@ export const parse = (text: string): React.ReactNode => {
     return React.cloneElement(split as any, { key: `${index}` });
   });
   return <WrapperText>{splitsWithKey}</WrapperText>;
+};
+
+const updateSplitArrayWithNewChildren = (
+  splitArray: React.ReactNode[],
+  newChildrenSplits: React.ReactNode[],
+  index: number,
+) => {
+  const split = splitArray[index];
+  if (newChildrenSplits.length) {
+    // update children prop with this new array of splits
+    if (isReactElement(split)) {
+      // add key to children
+      splitArray[index] = React.cloneElement(split as any, {
+        children: newChildrenSplits.map((child, childIndex) => {
+          const childComponent = isReactElement(child)
+            ? child
+            : plainTextComponent(child as any);
+          return React.cloneElement(childComponent, {
+            key: `${index}-${childIndex}`,
+          });
+        }),
+      });
+    } else {
+      //currently just a string, replace with Text component(s)
+      splitArray[index] =
+        newChildrenSplits.length === 1
+          ? newChildrenSplits[0]
+          : newChildrenSplits;
+    }
+  }
 };
