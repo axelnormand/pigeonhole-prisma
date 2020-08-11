@@ -10,39 +10,38 @@ import { Soundcloud } from './Soundcloud';
 import { Bandcamp } from './Bandcamp';
 
 type Code = {
-  regex: string | RegExp;
+  regex: RegExp;
   replace(matches: string[]): React.ReactElement;
 };
 
 /** codes that surround text only, can't be nested */
 const textCodes: Code[] = [
   {
-    regex: '\\[img\\](.+?)\\[/img\\]',
-    //regex: /\[img\](.+?)\\[/img\]/,
+    regex: /\[img\](.+?)\[\/img\]/,
     replace: (matches: string[]) => <Img url={matches[0]} />,
   },
   {
-    regex: '\\[img=(.+?)\\]',
+    regex: /\[img=(.+?)\]/,
     replace: (matches: string[]) => <Img url={matches[0]} />,
   },
   {
-    regex: '\\[b\\](.+?)\\[/b\\]',
+    regex: /\[b\](.+?)\[\/b\]/,
     replace: (matches: string[]) => <Bold>{matches[0]}</Bold>,
   },
   {
-    regex: '\\[i\\](.+?)\\[/i\\]',
+    regex: /\[i\](.+?)\[\/i\]/,
     replace: (matches: string[]) => <Italic>{matches[0]}</Italic>,
   },
   {
-    regex: '\\[url\\](.+?)\\[/url\\]',
+    regex: /\[url\](.+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[0]}</Url>,
   },
   {
-    regex: '\\[url="?(.+?)"?\\](.+?)\\[/url\\]',
+    regex: /\[url="?(.+?)"?\](.+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
-    regex: '\\[youtube\\].+v=(.+)&?.*\\[/youtube\\]',
+    regex: /\[youtube\].+v=(.+)&?.*\[\/youtube\]/,
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   // auto-replace https://www.youtube.com/watch?v=_ISAA_Jt9kI
@@ -56,25 +55,25 @@ const textCodes: Code[] = [
     replace: (matches: string[]) => <YouTube videoId={matches[0]} />,
   },
   {
-    regex: '\\[bandcamp.*? album=(\\d+).* track=(\\d+).*?\\]',
+    regex: /\[bandcamp.*? album=(\d+).* track=(\d+).*?\]/,
     replace: (matches: string[]) => (
       <Bandcamp album={matches[0]} track={matches[1]} />
     ),
   },
   {
-    regex: '\\[bandcamp.*? album=(\\d+).*?\\]',
+    regex: /\[bandcamp.*? album=(\d+).*?\]/,
     replace: (matches: string[]) => <Bandcamp album={matches[0]} />,
   },
   {
-    regex: '\\[bandcamp.*? track=(\\d+).*?\\]',
+    regex: /\[bandcamp.*? track=(\d+).*?\]/,
     replace: (matches: string[]) => <Bandcamp track={matches[0]} />,
   },
   {
-    regex: '\\[url="?(.+?)"?\\](.+?)\\[/url\\]',
+    regex: /\[url="?(.+?)"?\](.+?)\[\/url\]/,
     replace: (matches: string[]) => <Url url={matches[0]}>{matches[1]}</Url>,
   },
   {
-    regex: '\\[soundcloud url="?(.+?)"?.*?\\]',
+    regex: /\[soundcloud url="?(.+?)"?.*?\]/,
     replace: (matches: string[]) => <Soundcloud url={matches[0]} />,
   },
   {
@@ -87,13 +86,13 @@ const textCodes: Code[] = [
 /** Codes that can wrap things like Quote (more like <View> than <Text>) */
 const wrapperCodes: Code[] = [
   {
-    regex: '\\[quote="?(.+?)"?\\](.+?)\\[/quote\\]',
+    regex: /\[quote="?(.+?)"?\](.+?)\[\/quote\]/,
     replace: (matches: string[]) => (
       <Quote name={matches[0]}>{matches[1]}</Quote>
     ),
   },
   {
-    regex: '\\[quote\\](.+?)\\[/quote\\]',
+    regex: /\[quote\](.+?)\[\/quote\]/,
     replace: (matches: string[]) => <Quote>{matches[0]}</Quote>,
   },
 ];
