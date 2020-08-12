@@ -2,11 +2,11 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Card, Text } from '@ui-kitten/components';
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
 import { CardRow } from './CardRow';
 import { parse } from '../bbcode';
 
-dayjs.extend(relativeTime);
+dayjs.extend(advancedFormat);
 
 type Props = {
   id: number;
@@ -35,7 +35,7 @@ const Footer: React.FC<{
 }> = ({ posted, poster }) => (
   <View style={styles.footerContainer}>
     <Text appearance="hint" category="c1">
-      {poster} | {dayjs(posted * 1000).format('dddd, MMMM D, YYYY h:mm A')}
+      {poster} | {dayjs(posted * 1000).format('ddd Do MMM YYYY hh:mm a')}
     </Text>
   </View>
 );

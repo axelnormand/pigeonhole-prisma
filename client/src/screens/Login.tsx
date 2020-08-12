@@ -1,10 +1,5 @@
 import React, { useState, useContext } from 'react';
-import {
-  StyleSheet,
-  ImageBackground,
-  ScrollView,
-  Keyboard,
-} from 'react-native';
+import { StyleSheet, ImageBackground, Keyboard } from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
@@ -34,98 +29,96 @@ export const Login: React.FC = () => {
         style={styles.appBar}
         source={require('../../assets/login-background.png')}
       />
-      <Page>
-        <ScrollView style={styles.scroll} keyboardShouldPersistTaps="always">
-          <Formik
-            initialValues={initialValues}
-            validationSchema={loginSchema}
-            onSubmit={async ({ username, password }, { setSubmitting }) => {
-              try {
-                console.log(`Submitting ${username}`);
-                setIsFailed(false);
-                setIsLoading(true);
-                await store.login(username, password);
-                if (!store.isAuthorized) {
-                  setIsFailed(true);
-                }
-                setIsLoading(false);
-                setSubmitting(false);
-              } catch (e) {
-                console.error(e);
-              } finally {
-                setIsLoading(false);
-                setSubmitting(false);
+      <Page keyboardShouldPersistTaps="always">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={loginSchema}
+          onSubmit={async ({ username, password }, { setSubmitting }) => {
+            try {
+              console.log(`Submitting ${username}`);
+              setIsFailed(false);
+              setIsLoading(true);
+              await store.login(username, password);
+              if (!store.isAuthorized) {
+                setIsFailed(true);
               }
-            }}
-          >
-            {({
-              handleSubmit,
-              values,
-              isSubmitting,
-              errors,
-              handleChange,
-              handleBlur,
-              isValid,
-              submitCount,
-            }) => (
-              <>
-                <PageTitle>Welcome to the Pigeon Hole</PageTitle>
+              setIsLoading(false);
+              setSubmitting(false);
+            } catch (e) {
+              console.error(e);
+            } finally {
+              setIsLoading(false);
+              setSubmitting(false);
+            }
+          }}
+        >
+          {({
+            handleSubmit,
+            values,
+            isSubmitting,
+            errors,
+            handleChange,
+            handleBlur,
+            isValid,
+            submitCount,
+          }) => (
+            <>
+              <PageTitle>Welcome to the Pigeon Hole</PageTitle>
 
+              <FormRow>
+                <Input
+                  placeholder="Username"
+                  status={submitCount && errors.username ? 'danger' : ''}
+                  caption={(submitCount && errors.username) || ''}
+                  value={values.username}
+                  onChangeText={handleChange('username')}
+                  onBlur={handleBlur('username')}
+                  disabled={isLoading}
+                />
+              </FormRow>
+
+              <FormRow>
+                <Input
+                  placeholder="Password"
+                  status={submitCount && errors.password ? 'danger' : ''}
+                  caption={(submitCount && errors.password) || ''}
+                  value={values.password}
+                  secureTextEntry={!isShowingPassword}
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
+                  disabled={isLoading}
+                  onSubmitEditing={Keyboard.dismiss}
+                  icon={(style) => (
+                    <Icon
+                      {...style}
+                      name={isShowingPassword ? 'eye-off' : 'eye'}
+                    />
+                  )}
+                  onIconPress={() => setIsShowingPassword(!isShowingPassword)}
+                />
+              </FormRow>
+
+              {isFailed && (
                 <FormRow>
-                  <Input
-                    placeholder="Username"
-                    status={submitCount && errors.username ? 'danger' : ''}
-                    caption={(submitCount && errors.username) || ''}
-                    value={values.username}
-                    onChangeText={handleChange('username')}
-                    onBlur={handleBlur('username')}
-                    disabled={isLoading}
-                  />
+                  <Text category="s1" status="danger">
+                    Sorry invalid login, please try again
+                  </Text>
                 </FormRow>
+              )}
 
-                <FormRow>
-                  <Input
-                    placeholder="Password"
-                    status={submitCount && errors.password ? 'danger' : ''}
-                    caption={(submitCount && errors.password) || ''}
-                    value={values.password}
-                    secureTextEntry={!isShowingPassword}
-                    onChangeText={handleChange('password')}
-                    onBlur={handleBlur('password')}
-                    disabled={isLoading}
-                    onSubmitEditing={Keyboard.dismiss}
-                    icon={(style) => (
-                      <Icon
-                        {...style}
-                        name={isShowingPassword ? 'eye-off' : 'eye'}
-                      />
-                    )}
-                    onIconPress={() => setIsShowingPassword(!isShowingPassword)}
-                  />
-                </FormRow>
+              <FormRow>
+                <Button
+                  onPress={(e) => handleSubmit(e as any)}
+                  disabled={isSubmitting || !isValid || isLoading}
+                >
+                  {isLoading ? 'Logging in...' : 'Login'}
+                </Button>
+              </FormRow>
 
-                {isFailed && (
-                  <FormRow>
-                    <Text category="s1" status="danger">
-                      Sorry invalid login, please try again
-                    </Text>
-                  </FormRow>
-                )}
-
-                <FormRow>
-                  <Button
-                    onPress={(e) => handleSubmit(e as any)}
-                    disabled={isSubmitting || !isValid || isLoading}
-                  >
-                    {isLoading ? 'Logging in...' : 'Login'}
-                  </Button>
-                </FormRow>
-
-                {isLoading && <CentreLoading />}
-              </>
-            )}
-          </Formik>
-        </ScrollView>
+              {isLoading && <CentreLoading />}
+            </>
+          )}
+        </Formik>
       </Page>
     </>
   );
@@ -134,8 +127,5 @@ export const Login: React.FC = () => {
 const styles = StyleSheet.create({
   appBar: {
     height: 192,
-  },
-  scroll: {
-    flex: 1,
   },
 });

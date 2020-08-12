@@ -51,8 +51,8 @@ exports[`Quote first, bold in quote, other codes, real example 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -425,8 +425,8 @@ exports[`Quote first, youtube in quote, real example 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -1116,8 +1116,8 @@ exports[`works with newline and quote with name= 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -1765,8 +1765,8 @@ exports[`works with quote bbcode and more text 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -1930,8 +1930,8 @@ exports[`works with quote bbcode and name 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -2070,8 +2070,8 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -2289,8 +2289,8 @@ exports[`works with quote bbcode and no name 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -2401,8 +2401,8 @@ exports[`works with quote bbcode in quotes and name 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }
@@ -2541,8 +2541,8 @@ exports[`works with quote bbcode, name in quotes 1`] = `
               "padding": 16,
             },
             Object {
-              "backgroundColor": "#1A2138",
-              "borderColor": "#C5CEE0",
+              "backgroundColor": undefined,
+              "borderColor": undefined,
             },
           ]
         }

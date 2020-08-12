@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { RouteProp, useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
-import { Page } from '../comps/Page';
 import { PostCard } from '../comps/PostCard';
 import { StoreContext, PunbbPostModelType } from '../models';
 import { MainStackParams } from '../navigation/MainStack';
@@ -26,24 +25,22 @@ export const Posts = observer(({ route }: Props) => {
   }, [navigation, topicName]);
 
   return (
-    <Page>
-      <CursorFlatList<PunbbPostModelType>
-        fetch={async ({ cursor }) =>
-          (await store.queryPosts({ cursor, topicId })).posts
-        }
-        renderItem={({ item }) => {
-          const { id, message, posted, poster } = item;
-          return (
-            <PostCard
-              key={id}
-              id={id ?? 0}
-              message={message ?? ''}
-              posted={posted ?? new Date().getTime()}
-              poster={poster ?? ''}
-            />
-          );
-        }}
-      />
-    </Page>
+    <CursorFlatList<PunbbPostModelType>
+      fetch={async ({ cursor }) =>
+        (await store.queryPosts({ cursor, topicId })).posts
+      }
+      renderItem={({ item }) => {
+        const { id, message, posted, poster } = item;
+        return (
+          <PostCard
+            key={id}
+            id={id ?? 0}
+            message={message ?? ''}
+            posted={posted ?? new Date().getTime()}
+            poster={poster ?? ''}
+          />
+        );
+      }}
+    />
   );
 });

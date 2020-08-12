@@ -1,15 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { Text } from '@ui-kitten/components';
+import { Text, useTheme } from '@ui-kitten/components';
 import { Italic } from './Italic';
-import { dark } from '@eva-design/eva';
 
 export const Quote: React.FC<{ name?: string; children: string }> = ({
   name,
   children,
 }) => {
-  const border = dark['color-basic-500'];
-  const background = dark['color-basic-900'];
+  const theme = useTheme();
+  const border = theme['color-basic-500'];
+  const background = theme['color-basic-900'];
   return (
     <View
       style={[

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text } from '@ui-kitten/components';
+import { Text, useTheme } from '@ui-kitten/components';
 import { StyleSheet, FlatList, ListRenderItem } from 'react-native';
 import { CentreLoadingPage } from './CentreLoadingPage';
 import { CentreLoading } from './CentreLoading';
@@ -30,6 +30,8 @@ export const CursorFlatList = <T extends Item>({
   fetch,
   renderItem,
 }: Props<T>) => {
+  const theme = useTheme();
+  const background = theme['color-basic-800'];
   const [list, setList] = useState<T[]>([]);
   const [initialLoad, setInitialLoad] = useState(true);
   const [loadingState, setLoadingState] = useState<LoadingState>(
@@ -81,7 +83,7 @@ export const CursorFlatList = <T extends Item>({
 
   return (
     <FlatList
-      style={styles.scroll}
+      style={[styles.scroll, { backgroundColor: background }]}
       data={list}
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
@@ -102,5 +104,8 @@ export const CursorFlatList = <T extends Item>({
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20,
   },
 });
