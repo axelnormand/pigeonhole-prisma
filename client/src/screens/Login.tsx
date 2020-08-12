@@ -1,5 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { StyleSheet, ImageBackground, ScrollView } from 'react-native';
+import {
+  StyleSheet,
+  ImageBackground,
+  ScrollView,
+  Keyboard,
+} from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
@@ -30,20 +35,27 @@ export const Login: React.FC = () => {
         source={require('../../assets/login-background.png')}
       />
       <Page>
-        <ScrollView style={styles.scroll}>
+        <ScrollView style={styles.scroll} keyboardShouldPersistTaps="always">
           <Formik
             initialValues={initialValues}
             validationSchema={loginSchema}
             onSubmit={async ({ username, password }, { setSubmitting }) => {
-              console.log(`Submitting ${username}`);
-              setIsFailed(false);
-              setIsLoading(true);
-              await store.login(username, password);
-              if (!store.isAuthorized) {
-                setIsFailed(true);
+              try {
+                console.log(`Submitting ${username}`);
+                setIsFailed(false);
+                setIsLoading(true);
+                await store.login(username, password);
+                if (!store.isAuthorized) {
+                  setIsFailed(true);
+                }
+                setIsLoading(false);
+                setSubmitting(false);
+              } catch (e) {
+                console.error(e);
+              } finally {
+                setIsLoading(false);
+                setSubmitting(false);
               }
-              setIsLoading(false);
-              setSubmitting(false);
             }}
           >
             {({
@@ -67,6 +79,7 @@ export const Login: React.FC = () => {
                     value={values.username}
                     onChangeText={handleChange('username')}
                     onBlur={handleBlur('username')}
+                    disabled={isLoading}
                   />
                 </FormRow>
 
@@ -79,6 +92,8 @@ export const Login: React.FC = () => {
                     secureTextEntry={!isShowingPassword}
                     onChangeText={handleChange('password')}
                     onBlur={handleBlur('password')}
+                    disabled={isLoading}
+                    onSubmitEditing={Keyboard.dismiss}
                     icon={(style) => (
                       <Icon
                         {...style}
@@ -92,7 +107,7 @@ export const Login: React.FC = () => {
                 {isFailed && (
                   <FormRow>
                     <Text category="s1" status="danger">
-                      Sorry invalid username/password please try again
+                      Sorry invalid login, please try again
                     </Text>
                   </FormRow>
                 )}

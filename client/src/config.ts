@@ -24,7 +24,7 @@ export const config = (): Config => ({
   graphqlServerUrl:
     isProductionPhone || isProductionWeb
       ? 'https://graphql.tessellators.com/.netlify/functions/server'
-      : 'http://localhost:4000',
+      : 'http://192.168.0.204:4000',
   webUrl:
     isProductionPhone || isProductionWeb
       ? 'https://graphql.tessellators.com'

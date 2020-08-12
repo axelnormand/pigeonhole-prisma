@@ -66,19 +66,21 @@ query {
 - [x] navigation + web
 - [x] display categories/topics/posts
 - [x] logout + drawer
-- [ ] pagination
-- [ ] add bbcode
-- [ ] bbcode bandcamp, soundcloud, code, quote
+- [x] infinite scroll
+- [x] add bbcode
+- [x] bbcode bandcamp, soundcloud, code, quote
+- [ ] fix youtube etc ios
+- [ ] check ipa/apk works
+- [ ] jump to unread
+- [ ] load previous X button / show read messages
+- [ ] whats new/unread on homescreen
 - [ ] favicon + icon
 - [ ] web urls with newer react navigation
 - [ ] create post and topic
 - [ ] update/delete post and topic
 - [ ] push notifications (store push token in db)
 - [ ] bbcode smilies
-- [ ] fix vscode debug jest codelens
 - [ ] avatars to each post / thread
-- [ ] whats new/unread
-- [ ] jump to unread page
 - [ ] offline friendly / PWA
 - [ ] floating videos
 - [ ] bbcode signature
@@ -106,3 +108,4 @@ query {
 - [ ] react native action sheet to edit / delete or something
 - [ ] universal links + smart banner https://medium.com/@ageitgey/everything-you-need-to-know-about-implementing-ios-and-android-mobile-deep-linking-f4348b265b49
 - [ ] eslint deps rule, perhaps move to 2 eslintrc for client and server
+- [ ] nested quotes
