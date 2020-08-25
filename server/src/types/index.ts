@@ -6,3 +6,4 @@ export * from './punbb_forum';
 export * from './punbb_topic';
 export * from './Query';
 export * from './Mutation';
+export * from './punbb_userthread';

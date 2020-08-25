@@ -91,6 +91,13 @@ export interface NexusGenRootTypes {
     signature?: string | null; // String
     username: string; // String!
   }
+  punbb_userthread: { // root type
+    forum: number; // Int!
+    last_read?: number | null; // Int
+    posted: boolean; // Boolean!
+    thread: number; // Int!
+    user: number; // Int!
+  }
   String: string;
   Int: number;
   Float: number;
@@ -172,6 +179,13 @@ export interface NexusGenFieldTypes {
     signature: string | null; // String
     username: string; // String!
   }
+  punbb_userthread: { // field return type
+    forum: number; // Int!
+    last_read: number | null; // Int
+    posted: boolean; // Boolean!
+    thread: number; // Int!
+    user: number; // Int!
+  }
 }
 
 export interface NexusGenArgTypes {
@@ -233,7 +247,7 @@ export interface NexusGenAbstractResolveReturnTypes {
 
 export interface NexusGenInheritedFields {}
 
-export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_category" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user";
+export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_category" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user" | "punbb_userthread";
 
 export type NexusGenInputNames = "punbb_forumWhereUniqueInput" | "punbb_postWhereUniqueInput" | "punbb_topicWhereUniqueInput";
 

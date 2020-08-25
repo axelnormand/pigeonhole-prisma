@@ -57,6 +57,7 @@ model punbb_forum {
   punbb_category punbb_category @relation(fields: [cat_id], references: [id])
 
   @@map("punbb_forums")
+  punbb_userthread punbb_userthread[]
 }
 
 model punbb_forum_perm {
@@ -209,6 +210,7 @@ model punbb_topic {
   @@index([forum_id], name: "punbb_topics_forum_id_idx")
   @@index([moved_to], name: "punbb_topics_moved_to_idx")
   @@map("punbb_topics")
+  punbb_userthread punbb_userthread[]
 }
 
 model punbb_uploaded {
@@ -286,6 +288,7 @@ model punbb_user {
   @@index([registered], name: "punbb_users_registered_idx")
   @@index([username], name: "punbb_users_username_idx")
   @@map("punbb_users")
+  punbb_userthread punbb_userthread[]
 }
 
 model punbb_userthread {
@@ -296,4 +299,7 @@ model punbb_userthread {
   user      Int     @default(0)
 
   @@id([user, thread, forum])
+  punbb_topic punbb_topic @relation(fields: [thread], references: [id])
+  punbb_forum punbb_forum @relation(fields: [forum], references: [id])
+  punbb_user  punbb_user  @relation(fields: [user], references: [id])
 }

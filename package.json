@@ -1,5 +1,5 @@
 {
-  "name": "pigeonhole-prisma",
+  "name": "@axelnormand/pigeonhole-prisma",
   "version": "1.0.0",
   "repository": "https://github.com/axelnormand/pigeonhole-prisma.git",
   "author": "axelnormand <axel@axelnormand.co.uk>",

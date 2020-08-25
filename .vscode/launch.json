@@ -3,7 +3,7 @@
   "configurations": [
     {
       "type": "node",
-      "name": "client jest file", // used when pressing f5, runs all tests in file
+      "name": "jest file", // used when pressing f5, runs all tests in file
       "request": "launch",
       "args": ["--runInBand", "--no-coverage", "${relativeFile}"],
       "cwd": "${workspaceFolder}/client",

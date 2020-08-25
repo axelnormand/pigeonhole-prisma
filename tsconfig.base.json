@@ -1,0 +1,12 @@
+{
+  "include": ["client/src", "server/src"],
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@axelnormand/pigeonhole-client/*": ["client/src"],
+      "@axelnormand/pigeonhole-server/*": ["server/src"]
+    }
+  }
+}

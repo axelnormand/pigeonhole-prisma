@@ -1,4 +1,8 @@
 {
-  "jest.rootPath": "client",
-  "jest.runAllTestsFirst": false
+  "jest.runAllTestsFirst": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true
+  }
 }

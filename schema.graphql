@@ -88,6 +88,14 @@ type punbb_user {
   username: String!
 }
 
+type punbb_userthread {
+  forum: Int!
+  last_read: Int
+  posted: Boolean!
+  thread: Int!
+  user: Int!
+}
+
 type Query {
   categories: [punbb_category!]!
   me: punbb_user

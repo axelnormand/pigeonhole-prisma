@@ -1,5 +1,11 @@
 {
+  "include": ["src"],
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    // for references
+    "baseUrl": "src",
+    // references required for monorepo to work
+    //"references": [{ "path": "../server" }],
     "target": "es5",
     "moduleResolution": "node",
     "module": "commonjs",
