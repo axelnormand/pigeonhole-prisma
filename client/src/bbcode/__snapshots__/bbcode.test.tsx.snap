@@ -70,7 +70,7 @@ exports[`Quote first, bold in quote, other codes, real example 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -444,7 +444,7 @@ exports[`Quote first, youtube in quote, real example 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -1135,7 +1135,7 @@ exports[`works with newline and quote with name= 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -1784,7 +1784,7 @@ exports[`works with quote bbcode and more text 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -1949,7 +1949,7 @@ exports[`works with quote bbcode and name 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -2089,7 +2089,7 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -2420,7 +2420,7 @@ exports[`works with quote bbcode in quotes and name 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }
@@ -2560,7 +2560,7 @@ exports[`works with quote bbcode, name in quotes 1`] = `
                 "lineHeight": 20,
               },
               Object {
-                "fontStyle": "italic",
+                "fontWeight": "bold",
               },
             ]
           }

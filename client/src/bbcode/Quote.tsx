@@ -1,7 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { Text, useTheme } from '@ui-kitten/components';
-import { Italic } from './Italic';
 
 export const Quote: React.FC<{ name?: string; children: string }> = ({
   name,
@@ -17,7 +16,11 @@ export const Quote: React.FC<{ name?: string; children: string }> = ({
         { borderColor: border, backgroundColor: background },
       ]}
     >
-      {name && <Italic testID="bbcode-quote-name">{name} wrote:</Italic>}
+      {name && (
+        <Text style={{ fontWeight: 'bold' }} testID="bbcode-quote-name">
+          {name} wrote:
+        </Text>
+      )}
       <Text testID="bbcode-quote-text">{children}</Text>
     </View>
   );
