@@ -235,6 +235,15 @@ it('works 2 bbcodes', () => {
   expect(getNodeText(plainTexts[1])).toEqual(' wassup');
 });
 
+it('works with underline', () => {
+  const text = 'Hello [u]dude[/u]';
+  const { getByTestId, asJSON, queryAllByTestId } = render(parse(text));
+
+  expect(asJSON()).toMatchSnapshot();
+  expect(getNodeText(getByTestId('bbcode-underline'))).toEqual('dude');
+  expect(getNodeText(getByTestId('bbcode-plain'))).toEqual('Hello ');
+});
+
 it('works with quote bbcode and name', () => {
   const name = 'Foo';
   const quoteText = 'hello, world';

@@ -8,6 +8,7 @@ import { Quote } from './Quote';
 import { Text } from '@ui-kitten/components';
 import { Soundcloud } from './Soundcloud';
 import { Bandcamp } from './Bandcamp';
+import { Underline } from './Underline';
 
 type Code = {
   regex: RegExp;
@@ -31,6 +32,10 @@ const textCodes: Code[] = [
   {
     regex: /\[i\]([\s\S]+?)\[\/i\]/,
     replace: (matches: string[]) => <Italic>{matches[0]}</Italic>,
+  },
+  {
+    regex: /\[u\]([\s\S]+?)\[\/u\]/,
+    replace: (matches: string[]) => <Underline>{matches[0]}</Underline>,
   },
   {
     regex: /\[url\]([\s\S]+?)\[\/url\]/,

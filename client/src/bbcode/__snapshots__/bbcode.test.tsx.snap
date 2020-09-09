@@ -2630,6 +2630,103 @@ exports[`works with quote bbcode, name in quotes 1`] = `
 </View>
 `;
 
+exports[`works with underline 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+            "lineHeight": 20,
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-text-wrap"
+      theme={
+        Object {
+          "text-basic-color": "#ff2",
+          "text-primary-color": "#fff",
+        }
+      }
+    >
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-plain"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        Hello 
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+              "lineHeight": 20,
+            },
+            Object {
+              "textDecorationLine": "underline",
+            },
+          ]
+        }
+        testID="bbcode-underline"
+        theme={
+          Object {
+            "text-basic-color": "#ff2",
+            "text-primary-color": "#fff",
+          }
+        }
+      >
+        dude
+      </Text>
+    </Text>
+  </View>
+</View>
+`;
+
 exports[`works with url and link text bbcode 1`] = `
 <View
   collapsable={true}
