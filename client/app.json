@@ -5,8 +5,14 @@
     "name": "pigeonhole",
     "slug": "pigeonhole",
     "version": "1.0.0",
-    "platforms": ["ios", "android", "web"],
-    "assetBundlePatterns": ["assets/**/*"],
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "assets/**/*"
+    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -16,7 +22,8 @@
       "backgroundColor": "#222B45"
     },
     "ios": {
-      "icon": "./assets/icon.png"
+      "icon": "./assets/icon.png",
+      "bundleIdentifier": "com.axelnormand.pigeonhole"
     },
     "android": {
       "icon": "./assets/icon.png"

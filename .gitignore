@@ -107,3 +107,5 @@ typings/
 .netlify
 **/web-build
 client/.expo-shared/
+
+client/ios/pigeonhole/Supporting/

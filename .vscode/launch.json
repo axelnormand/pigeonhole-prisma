@@ -6,22 +6,22 @@
       "name": "jest file", // used when pressing f5, runs all tests in file
       "request": "launch",
       "args": ["--runInBand", "--no-coverage", "${relativeFile}"],
-      "cwd": "${workspaceFolder}/client",
+      "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
-      "program": "${workspaceFolder}/client/node_modules/jest/bin/jest"
+      "program": "${workspaceFolder}/node_modules/.bin/jest"
     },
     {
       "type": "node",
       "name": "vscode-jest-tests", // used by debug codelens https://github.com/jest-community/vscode-jest/issues/458
       "request": "launch",
       "args": ["--runInBand", "--no-coverage"],
-      "cwd": "${workspaceFolder}/client",
+      "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
-      "program": "${workspaceFolder}/client/node_modules/jest/bin/jest"
+      "program": "${workspaceFolder}/node_modules/.bin/jest"
     }
   ]
 }
