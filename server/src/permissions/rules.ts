@@ -12,7 +12,7 @@ export const isAuthenticated = rule({ cache: 'contextual' })(
 export const isPostOwner = rule({ cache: 'contextual' })(
   async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
-    const post = await context.prisma.punbb_post.findOne({
+    const post = await context.prisma.punbb_post.findUnique({
       where: {
         id: Number(id),
       },
@@ -24,12 +24,12 @@ export const isPostOwner = rule({ cache: 'contextual' })(
 export const isTopicOwner = rule({ cache: 'contextual' })(
   async (_parent, { id }, context: Context) => {
     const userId = getUserId(context);
-    const user = await context.prisma.punbb_user.findOne({
+    const user = await context.prisma.punbb_user.findUnique({
       where: {
         id: Number(userId),
       },
     });
-    const topic = await context.prisma.punbb_topic.findOne({
+    const topic = await context.prisma.punbb_topic.findUnique({
       where: {
         id: Number(id),
       },

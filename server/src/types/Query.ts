@@ -9,7 +9,7 @@ export const Query = queryType({
       type: 'punbb_user',
       resolve: (_parent, _args, ctx) => {
         const userId = getUserId(ctx);
-        return ctx.prisma.punbb_user.findOne({
+        return ctx.prisma.punbb_user.findUnique({
           where: {
             id: Number(userId),
           },
