@@ -3,7 +3,7 @@
 
 
 type AuthPayload {
-  loginResult: LoginResult!
+  loginResult: LoginResult
   token: String
 }
 
@@ -14,7 +14,7 @@ enum LoginResult {
 }
 
 type Mutation {
-  login(password: String!, username: String!): AuthPayload!
+  login(password: String!, username: String!): AuthPayload
 }
 
 type punbb_category {
@@ -55,7 +55,6 @@ type punbb_post {
 
 input punbb_postWhereUniqueInput {
   id: Int
-  topic_id: Int
 }
 
 type punbb_topic {
@@ -74,9 +73,7 @@ type punbb_topic {
 }
 
 input punbb_topicWhereUniqueInput {
-  forum_id: Int
   id: Int
-  moved_to: Int
 }
 
 type punbb_user {
@@ -97,10 +94,10 @@ type punbb_userthread {
 }
 
 type Query {
-  categories: [punbb_category!]!
+  categories: [punbb_category]
   me: punbb_user
-  posts(cursor: Int, take: Int, topic_id: Int!): [punbb_post!]!
-  recentTopics(cursor: Int, take: Int): [punbb_topic!]!
-  searchPosts(cursor: Int, searchString: String, take: Int): [punbb_post!]!
-  topics(cursor: Int, forum_id: Int!, take: Int): [punbb_topic!]!
+  posts(cursor: Int, take: Int, topic_id: Int!): [punbb_post]
+  recentTopics(cursor: Int, take: Int): [punbb_topic]
+  searchPosts(cursor: Int, searchString: String!, take: Int): [punbb_post]
+  topics(cursor: Int, forum_id: Int!, take: Int): [punbb_topic]
 }

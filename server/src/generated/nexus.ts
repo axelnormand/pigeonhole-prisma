@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as Context from "../context"
+import * as Context from "./../context"
 
 
 
@@ -24,12 +24,9 @@ export interface NexusGenInputs {
   }
   punbb_postWhereUniqueInput: { // input type
     id?: number | null; // Int
-    topic_id?: number | null; // Int
   }
   punbb_topicWhereUniqueInput: { // input type
-    forum_id?: number | null; // Int
     id?: number | null; // Int
-    moved_to?: number | null; // Int
   }
 }
 
@@ -37,9 +34,17 @@ export interface NexusGenEnums {
   LoginResult: "ERROR" | "INVALID" | "SUCCESS"
 }
 
-export interface NexusGenRootTypes {
+export interface NexusGenScalars {
+  String: string
+  Int: number
+  Float: number
+  Boolean: boolean
+  ID: string
+}
+
+export interface NexusGenObjects {
   AuthPayload: { // root type
-    loginResult: NexusGenEnums['LoginResult']; // LoginResult!
+    loginResult?: NexusGenEnums['LoginResult'] | null; // LoginResult
     token?: string | null; // String
   }
   Mutation: {};
@@ -98,35 +103,33 @@ export interface NexusGenRootTypes {
     thread: number; // Int!
     user: number; // Int!
   }
-  String: string;
-  Int: number;
-  Float: number;
-  Boolean: boolean;
-  ID: string;
 }
 
-export interface NexusGenAllTypes extends NexusGenRootTypes {
-  punbb_forumWhereUniqueInput: NexusGenInputs['punbb_forumWhereUniqueInput'];
-  punbb_postWhereUniqueInput: NexusGenInputs['punbb_postWhereUniqueInput'];
-  punbb_topicWhereUniqueInput: NexusGenInputs['punbb_topicWhereUniqueInput'];
-  LoginResult: NexusGenEnums['LoginResult'];
+export interface NexusGenInterfaces {
 }
+
+export interface NexusGenUnions {
+}
+
+export type NexusGenRootTypes = NexusGenObjects
+
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars & NexusGenEnums
 
 export interface NexusGenFieldTypes {
   AuthPayload: { // field return type
-    loginResult: NexusGenEnums['LoginResult']; // LoginResult!
+    loginResult: NexusGenEnums['LoginResult'] | null; // LoginResult
     token: string | null; // String
   }
   Mutation: { // field return type
-    login: NexusGenRootTypes['AuthPayload']; // AuthPayload!
+    login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
   }
   Query: { // field return type
-    categories: NexusGenRootTypes['punbb_category'][]; // [punbb_category!]!
+    categories: Array<NexusGenRootTypes['punbb_category'] | null> | null; // [punbb_category]
     me: NexusGenRootTypes['punbb_user'] | null; // punbb_user
-    posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
-    recentTopics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
-    searchPosts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
-    topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
+    posts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    recentTopics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
+    searchPosts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    topics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
   }
   punbb_category: { // field return type
     cat_name: string; // String!
@@ -188,6 +191,82 @@ export interface NexusGenFieldTypes {
   }
 }
 
+export interface NexusGenFieldTypeNames {
+  AuthPayload: { // field return type name
+    loginResult: 'LoginResult'
+    token: 'String'
+  }
+  Mutation: { // field return type name
+    login: 'AuthPayload'
+  }
+  Query: { // field return type name
+    categories: 'punbb_category'
+    me: 'punbb_user'
+    posts: 'punbb_post'
+    recentTopics: 'punbb_topic'
+    searchPosts: 'punbb_post'
+    topics: 'punbb_topic'
+  }
+  punbb_category: { // field return type name
+    cat_name: 'String'
+    disp_position: 'Int'
+    id: 'Int'
+    punbb_forums: 'punbb_forum'
+  }
+  punbb_forum: { // field return type name
+    cat_id: 'Int'
+    disp_position: 'Int'
+    forum_desc: 'String'
+    forum_name: 'String'
+    id: 'Int'
+    last_post: 'Int'
+    last_post_id: 'Int'
+    last_poster: 'String'
+    num_posts: 'Int'
+    num_topics: 'Int'
+    punbb_topics: 'punbb_topic'
+  }
+  punbb_post: { // field return type name
+    edited: 'Int'
+    edited_by: 'String'
+    id: 'Int'
+    message: 'String'
+    posted: 'Int'
+    poster: 'String'
+    poster_id: 'Int'
+    punbb_user: 'punbb_user'
+  }
+  punbb_topic: { // field return type name
+    closed: 'Boolean'
+    forum_id: 'Int'
+    id: 'Int'
+    last_post: 'Int'
+    last_post_id: 'Int'
+    last_poster: 'String'
+    num_replies: 'Int'
+    posted: 'Int'
+    poster: 'String'
+    punbb_posts: 'punbb_post'
+    sticky: 'Boolean'
+    subject: 'String'
+  }
+  punbb_user: { // field return type name
+    id: 'Int'
+    last_post: 'Int'
+    last_visit: 'Int'
+    registered: 'Int'
+    signature: 'String'
+    username: 'String'
+  }
+  punbb_userthread: { // field return type name
+    forum: 'Int'
+    last_read: 'Int'
+    posted: 'Boolean'
+    thread: 'Int'
+    user: 'Int'
+  }
+}
+
 export interface NexusGenArgTypes {
   Mutation: {
     login: { // args
@@ -207,7 +286,7 @@ export interface NexusGenArgTypes {
     }
     searchPosts: { // args
       cursor?: number | null; // Int
-      searchString?: string | null; // String
+      searchString: string; // String!
       take?: number | null; // Int
     }
     topics: { // args
@@ -242,22 +321,35 @@ export interface NexusGenArgTypes {
   }
 }
 
-export interface NexusGenAbstractResolveReturnTypes {
+export interface NexusGenAbstractTypeMembers {
 }
 
-export interface NexusGenInheritedFields {}
+export interface NexusGenTypeInterfaces {
+}
 
-export type NexusGenObjectNames = "AuthPayload" | "Mutation" | "Query" | "punbb_category" | "punbb_forum" | "punbb_post" | "punbb_topic" | "punbb_user" | "punbb_userthread";
+export type NexusGenObjectNames = keyof NexusGenObjects;
 
-export type NexusGenInputNames = "punbb_forumWhereUniqueInput" | "punbb_postWhereUniqueInput" | "punbb_topicWhereUniqueInput";
+export type NexusGenInputNames = keyof NexusGenInputs;
 
-export type NexusGenEnumNames = "LoginResult";
+export type NexusGenEnumNames = keyof NexusGenEnums;
 
 export type NexusGenInterfaceNames = never;
 
-export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
+export type NexusGenScalarNames = keyof NexusGenScalars;
 
 export type NexusGenUnionNames = never;
+
+export type NexusGenObjectsUsingAbstractStrategyIsTypeOf = never;
+
+export type NexusGenAbstractsUsingStrategyResolveType = never;
+
+export type NexusGenFeaturesConfig = {
+  abstractTypeStrategies: {
+    isTypeOf: false
+    resolveType: true
+    __typename: false
+  }
+}
 
 export interface NexusGenTypes {
   context: Context.Context;
@@ -265,8 +357,9 @@ export interface NexusGenTypes {
   rootTypes: NexusGenRootTypes;
   argTypes: NexusGenArgTypes;
   fieldTypes: NexusGenFieldTypes;
+  fieldTypeNames: NexusGenFieldTypeNames;
   allTypes: NexusGenAllTypes;
-  inheritedFields: NexusGenInheritedFields;
+  typeInterfaces: NexusGenTypeInterfaces;
   objectNames: NexusGenObjectNames;
   inputNames: NexusGenInputNames;
   enumNames: NexusGenEnumNames;
@@ -277,7 +370,10 @@ export interface NexusGenTypes {
   allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
   allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
-  abstractResolveReturn: NexusGenAbstractResolveReturnTypes;
+  abstractTypeMembers: NexusGenAbstractTypeMembers;
+  objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
+  abstractsUsingStrategyResolveType: NexusGenAbstractsUsingStrategyResolveType;
+  features: NexusGenFeaturesConfig;
 }
 
 
@@ -285,7 +381,71 @@ declare global {
   interface NexusGenPluginTypeConfig<TypeName extends string> {
   }
   interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
+    /**
+     * Whether the type can be null
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    nullable?: boolean
+    /**
+     * Whether the type is list of values, or just a single value.
+     * If list is true, we assume the type is a list. If list is an array,
+     * we'll assume that it's a list with the depth. The boolean indicates whether
+     * the type is required (non-null), where true = nonNull, false = nullable.
+     * @see declarativeWrappingPlugin
+     */
+    list?: true | boolean[]
+    /**
+     * Whether the type should be non null, `required: true` = `nullable: false`
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    required?: boolean
+  }
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
+    /**
+     * Whether the type can be null
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    nullable?: boolean
+    /**
+     * Whether the type is list of values, or just a single value.
+     * If list is true, we assume the type is a list. If list is an array,
+     * we'll assume that it's a list with the depth. The boolean indicates whether
+     * the type is required (non-null), where true = nonNull, false = nullable.
+     * @see declarativeWrappingPlugin
+     */
+    list?: true | boolean[]
+    /**
+     * Whether the type should be non null, `required: true` = `nullable: false`
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    required?: boolean
   }
   interface NexusGenPluginSchemaConfig {
+  }
+  interface NexusGenPluginArgConfig {
+    /**
+     * Whether the type can be null
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    nullable?: boolean
+    /**
+     * Whether the type is list of values, or just a single value.
+     * If list is true, we assume the type is a list. If list is an array,
+     * we'll assume that it's a list with the depth. The boolean indicates whether
+     * the type is required (non-null), where true = nonNull, false = nullable.
+     * @see declarativeWrappingPlugin
+     */
+    list?: true | boolean[]
+    /**
+     * Whether the type should be non null, `required: true` = `nullable: false`
+     * @default (depends on whether nullability is configured in type or schema)
+     * @see declarativeWrappingPlugin
+     */
+    required?: boolean
   }
 }

@@ -1,6 +1,6 @@
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
-import { mutationType, stringArg } from '@nexus/schema';
+import { mutationType, nonNull, stringArg } from '@nexus/schema';
 import { config } from '../config';
 import { LoginResultType } from './AuthPayload';
 
@@ -32,8 +32,8 @@ export const Mutation = mutationType({
     t.field('login', {
       type: 'AuthPayload',
       args: {
-        username: stringArg({ required: true }),
-        password: stringArg({ required: true }),
+        username: nonNull(stringArg()),
+        password: nonNull(stringArg()),
       },
       resolve: async (_parent, { username, password }, ctx) => {
         const lowerUsername = username.toLowerCase();

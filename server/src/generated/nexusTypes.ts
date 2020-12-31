@@ -39,79 +39,79 @@ interface PrismaModels {
 interface NexusPrismaInputs {
   Query: {
     punbbBans: {
-      filtering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username'
       ordering: 'email' | 'expire' | 'id' | 'ip' | 'message' | 'username'
     }
     punbbCategories: {
-      filtering: 'cat_name' | 'disp_position' | 'id' | 'punbb_forums' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'cat_name' | 'disp_position' | 'id' | 'punbb_forums'
       ordering: 'cat_name' | 'disp_position' | 'id'
     }
     punbbCensorings: {
-      filtering: 'id' | 'replace_with' | 'search_for' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'replace_with' | 'search_for'
       ordering: 'id' | 'replace_with' | 'search_for'
     }
     punbbConfigs: {
-      filtering: 'conf_name' | 'conf_value' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'conf_name' | 'conf_value'
       ordering: 'conf_name' | 'conf_value'
     }
     punbbForums: {
-      filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+      filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
       ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
     }
     punbbForumPerms: {
-      filtering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
       ordering: 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
     }
     punbbGroups: {
-      filtering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title'
       ordering: 'g_delete_posts' | 'g_delete_topics' | 'g_edit_posts' | 'g_edit_subjects_interval' | 'g_id' | 'g_post_flood' | 'g_post_polls' | 'g_post_replies' | 'g_post_topics' | 'g_read_board' | 'g_search' | 'g_search_flood' | 'g_search_users' | 'g_set_title' | 'g_title' | 'g_user_title'
     }
     punbbPolls: {
-      filtering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes'
       ordering: 'id' | 'options' | 'pollid' | 'ptype' | 'voters' | 'votes'
     }
     punbbPosts: {
-      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
       ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
     }
     punbbRanks: {
-      filtering: 'id' | 'min_posts' | 'rank' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'min_posts' | 'rank'
       ordering: 'id' | 'min_posts' | 'rank'
     }
     punbbReports: {
-      filtering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by'
       ordering: 'created' | 'forum_id' | 'id' | 'message' | 'post_id' | 'reported_by' | 'topic_id' | 'zapped' | 'zapped_by'
     }
     punbbSearchCaches: {
-      filtering: 'id' | 'ident' | 'search_data' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'ident' | 'search_data'
       ordering: 'id' | 'ident' | 'search_data'
     }
     punbbSearchWords: {
-      filtering: 'id' | 'word' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'word'
       ordering: 'id' | 'word'
     }
     punbbSubscriptions: {
-      filtering: 'topic_id' | 'user_id' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'topic_id' | 'user_id'
       ordering: 'topic_id' | 'user_id'
     }
     punbbTopics: {
-      filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+      filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
       ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
     }
     punbbUploadeds: {
-      filtering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
       ordering: 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
     }
     punbbUploadsTypes: {
-      filtering: 'exts' | 'id' | 'type' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'exts' | 'id' | 'type'
       ordering: 'exts' | 'id' | 'type'
     }
     punbbUsers: {
-      filtering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'punbb_userthread'
       ordering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
     }
     punbbUserthreads: {
-      filtering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'AND' | 'OR' | 'NOT'
+      filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
       ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   },
@@ -120,7 +120,7 @@ interface NexusPrismaInputs {
   }
   punbb_category: {
     punbb_forums: {
-      filtering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'AND' | 'OR' | 'NOT' | 'punbb_category'
+      filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
       ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
     }
   }
@@ -132,8 +132,12 @@ interface NexusPrismaInputs {
   }
   punbb_forum: {
     punbb_topics: {
-      filtering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_posts' | 'AND' | 'OR' | 'NOT' | 'punbb_forum'
+      filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
       ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+    }
+    punbb_userthread: {
+      filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_forum_perm: {
@@ -165,8 +169,12 @@ interface NexusPrismaInputs {
   }
   punbb_topic: {
     punbb_posts: {
-      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
       ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+    }
+    punbb_userthread: {
+      filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_uploaded: {
@@ -177,8 +185,12 @@ interface NexusPrismaInputs {
   }
   punbb_user: {
     punbb_posts: {
-      filtering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'AND' | 'OR' | 'NOT' | 'punbb_topic' | 'punbb_user'
+      filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
       ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+    }
+    punbb_userthread: {
+      filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_userthread: {
@@ -383,6 +395,7 @@ interface NexusPrismaOutputs {
     sort_by: 'Boolean'
     punbb_topics: 'punbb_topic'
     punbb_category: 'punbb_category'
+    punbb_userthread: 'punbb_userthread'
   }
   punbb_forum_perm: {
     forum_id: 'Int'
@@ -481,6 +494,7 @@ interface NexusPrismaOutputs {
     yes: 'String'
     punbb_forum: 'punbb_forum'
     punbb_posts: 'punbb_post'
+    punbb_userthread: 'punbb_userthread'
   }
   punbb_uploaded: {
     data: 'Int'
@@ -538,6 +552,7 @@ interface NexusPrismaOutputs {
     use_avatar: 'Boolean'
     yahoo: 'String'
     punbb_posts: 'punbb_post'
+    punbb_userthread: 'punbb_userthread'
   }
   punbb_userthread: {
     forum: 'Int'
@@ -545,6 +560,9 @@ interface NexusPrismaOutputs {
     posted: 'Boolean'
     thread: 'Int'
     user: 'Int'
+    punbb_topic: 'punbb_topic'
+    punbb_forum: 'punbb_forum'
+    punbb_user: 'punbb_user'
   }
 }
 

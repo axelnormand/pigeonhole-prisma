@@ -1,13 +1,12 @@
-import { intArg, queryType, stringArg } from '@nexus/schema';
+import { intArg, nonNull, nullable, queryType, stringArg } from '@nexus/schema';
 import { getUserId } from '../auth';
 
 const DEFAULT_TAKE = 20;
 
 export const Query = queryType({
   definition(t) {
-    t.field('me', {
+    t.nullable.field('me', {
       type: 'punbb_user',
-      nullable: true,
       resolve: (_parent, _args, ctx) => {
         const userId = getUserId(ctx);
         return ctx.prisma.punbb_user.findOne({
@@ -35,8 +34,8 @@ export const Query = queryType({
     t.list.field('recentTopics', {
       type: 'punbb_topic',
       args: {
-        cursor: intArg({ required: false }),
-        take: intArg({ required: false }),
+        cursor: nullable(intArg()),
+        take: nullable(intArg()),
       },
       resolve: (_parent, { cursor, take }, ctx) => {
         return ctx.prisma.punbb_topic.findMany({
@@ -60,9 +59,9 @@ export const Query = queryType({
     t.list.field('topics', {
       type: 'punbb_topic',
       args: {
-        forum_id: intArg({ required: true }),
-        cursor: intArg({ required: false }),
-        take: intArg({ required: false }),
+        forum_id: nonNull(intArg()),
+        cursor: nullable(intArg()),
+        take: nullable(intArg()),
       },
       resolve: (_parent, { forum_id, cursor, take }, ctx) => {
         return ctx.prisma.punbb_topic.findMany({
@@ -86,9 +85,9 @@ export const Query = queryType({
     t.list.field('posts', {
       type: 'punbb_post',
       args: {
-        topic_id: intArg({ required: true }),
-        cursor: intArg({ required: false }),
-        take: intArg({ required: false }),
+        topic_id: nonNull(intArg()),
+        cursor: nullable(intArg()),
+        take: nullable(intArg()),
       },
       resolve: (_parent, { topic_id, cursor, take }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
@@ -112,9 +111,9 @@ export const Query = queryType({
     t.list.field('searchPosts', {
       type: 'punbb_post',
       args: {
-        searchString: stringArg({ nullable: true }),
-        cursor: intArg({ required: false }),
-        take: intArg({ required: false }),
+        searchString: nonNull(stringArg()),
+        cursor: nullable(intArg()),
+        take: nullable(intArg()),
       },
       resolve: (_parent, { searchString, cursor, take }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
