@@ -4,6 +4,7 @@ import { config } from '../config';
 import { setBearerToken } from './init';
 
 /** singleton */
+// @ts-expect-error
 const graphQLClient: GraphQLClient = createHttpClient(
   config().graphqlServerUrl,
 );
