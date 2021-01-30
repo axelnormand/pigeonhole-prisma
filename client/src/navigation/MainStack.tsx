@@ -42,7 +42,7 @@ export const MainStack: React.FC<Props> = () => {
             <Button
               onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
               appearance="ghost"
-              icon={() => (
+              accessoryLeft={() => (
                 <Icon name="menu-outline" fill={theme['color-primary-300']} />
               )}
             />

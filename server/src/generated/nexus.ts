@@ -50,58 +50,58 @@ export interface NexusGenObjects {
   Mutation: {};
   Query: {};
   punbb_category: { // root type
-    cat_name?: string | null; // String
-    disp_position?: number | null; // Int
-    id?: number | null; // Int
+    cat_name: string; // String!
+    disp_position: number; // Int!
+    id: number; // Int!
   }
   punbb_forum: { // root type
-    cat_id?: number | null; // Int
-    disp_position?: number | null; // Int
+    cat_id: number; // Int!
+    disp_position: number; // Int!
     forum_desc?: string | null; // String
-    forum_name?: string | null; // String
-    id?: number | null; // Int
+    forum_name: string; // String!
+    id: number; // Int!
     last_post?: number | null; // Int
     last_post_id?: number | null; // Int
     last_poster?: string | null; // String
-    num_posts?: number | null; // Int
-    num_topics?: number | null; // Int
+    num_posts: number; // Int!
+    num_topics: number; // Int!
   }
   punbb_post: { // root type
     edited?: number | null; // Int
     edited_by?: string | null; // String
-    id?: number | null; // Int
-    message?: string | null; // String
-    posted?: number | null; // Int
-    poster?: string | null; // String
-    poster_id?: number | null; // Int
+    id: number; // Int!
+    message: string; // String!
+    posted: number; // Int!
+    poster: string; // String!
+    poster_id: number; // Int!
   }
   punbb_topic: { // root type
-    closed?: boolean | null; // Boolean
-    forum_id?: number | null; // Int
-    id?: number | null; // Int
-    last_post?: number | null; // Int
-    last_post_id?: number | null; // Int
+    closed: boolean; // Boolean!
+    forum_id: number; // Int!
+    id: number; // Int!
+    last_post: number; // Int!
+    last_post_id: number; // Int!
     last_poster?: string | null; // String
-    num_replies?: number | null; // Int
-    posted?: number | null; // Int
-    poster?: string | null; // String
-    sticky?: boolean | null; // Boolean
-    subject?: string | null; // String
+    num_replies: number; // Int!
+    posted: number; // Int!
+    poster: string; // String!
+    sticky: boolean; // Boolean!
+    subject: string; // String!
   }
   punbb_user: { // root type
-    id?: number | null; // Int
+    id: number; // Int!
     last_post?: number | null; // Int
-    last_visit?: number | null; // Int
-    registered?: number | null; // Int
+    last_visit: number; // Int!
+    registered: number; // Int!
     signature?: string | null; // String
-    username?: string | null; // String
+    username: string; // String!
   }
   punbb_userthread: { // root type
-    forum?: number | null; // Int
+    forum: number; // Int!
     last_read?: number | null; // Int
-    posted?: boolean | null; // Boolean
-    thread?: number | null; // Int
-    user?: number | null; // Int
+    posted: boolean; // Boolean!
+    thread: number; // Int!
+    user: number; // Int!
   }
 }
 
@@ -132,62 +132,62 @@ export interface NexusGenFieldTypes {
     topics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
   }
   punbb_category: { // field return type
-    cat_name: string | null; // String
-    disp_position: number | null; // Int
-    id: number | null; // Int
+    cat_name: string; // String!
+    disp_position: number; // Int!
+    id: number; // Int!
     punbb_forums: NexusGenRootTypes['punbb_forum'][]; // [punbb_forum!]!
   }
   punbb_forum: { // field return type
-    cat_id: number | null; // Int
-    disp_position: number | null; // Int
+    cat_id: number; // Int!
+    disp_position: number; // Int!
     forum_desc: string | null; // String
-    forum_name: string | null; // String
-    id: number | null; // Int
+    forum_name: string; // String!
+    id: number; // Int!
     last_post: number | null; // Int
     last_post_id: number | null; // Int
     last_poster: string | null; // String
-    num_posts: number | null; // Int
-    num_topics: number | null; // Int
+    num_posts: number; // Int!
+    num_topics: number; // Int!
     punbb_topics: NexusGenRootTypes['punbb_topic'][]; // [punbb_topic!]!
   }
   punbb_post: { // field return type
     edited: number | null; // Int
     edited_by: string | null; // String
-    id: number | null; // Int
-    message: string | null; // String
-    posted: number | null; // Int
-    poster: string | null; // String
-    poster_id: number | null; // Int
-    punbb_user: NexusGenRootTypes['punbb_user'] | null; // punbb_user
+    id: number; // Int!
+    message: string; // String!
+    posted: number; // Int!
+    poster: string; // String!
+    poster_id: number; // Int!
+    punbb_user: NexusGenRootTypes['punbb_user']; // punbb_user!
   }
   punbb_topic: { // field return type
-    closed: boolean | null; // Boolean
-    forum_id: number | null; // Int
-    id: number | null; // Int
-    last_post: number | null; // Int
-    last_post_id: number | null; // Int
+    closed: boolean; // Boolean!
+    forum_id: number; // Int!
+    id: number; // Int!
+    last_post: number; // Int!
+    last_post_id: number; // Int!
     last_poster: string | null; // String
-    num_replies: number | null; // Int
-    posted: number | null; // Int
-    poster: string | null; // String
+    num_replies: number; // Int!
+    posted: number; // Int!
+    poster: string; // String!
     punbb_posts: NexusGenRootTypes['punbb_post'][]; // [punbb_post!]!
-    sticky: boolean | null; // Boolean
-    subject: string | null; // String
+    sticky: boolean; // Boolean!
+    subject: string; // String!
   }
   punbb_user: { // field return type
-    id: number | null; // Int
+    id: number; // Int!
     last_post: number | null; // Int
-    last_visit: number | null; // Int
-    registered: number | null; // Int
+    last_visit: number; // Int!
+    registered: number; // Int!
     signature: string | null; // String
-    username: string | null; // String
+    username: string; // String!
   }
   punbb_userthread: { // field return type
-    forum: number | null; // Int
+    forum: number; // Int!
     last_read: number | null; // Int
-    posted: boolean | null; // Boolean
-    thread: number | null; // Int
-    user: number | null; // Int
+    posted: boolean; // Boolean!
+    thread: number; // Int!
+    user: number; // Int!
   }
 }
 

@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Drawer as KittenDrawer, Layout } from '@ui-kitten/components';
+import React, { useCallback, useContext } from 'react';
+import { Drawer as KittenDrawer, IndexPath, Layout, DrawerItem } from '@ui-kitten/components';
 import { DrawerContentComponentProps } from '@react-navigation/drawer';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StoreContext } from '../models';
@@ -10,26 +10,22 @@ export const DrawerContent: React.FC<DrawerContentComponentProps> = ({
 }) => {
   const insets = useSafeAreaInsets();
   const store = useContext(StoreContext);
-  const onSelect = (index: number) => {
-    if (index === 0) {
-      navigation.navigate(state.routeNames[index]);
-    } else if (index === 1) {
+  const onSelect = useCallback( (index: IndexPath) => {
+    if (index.row !== 1) {
+      navigation.navigate(state.routeNames[index.row]);
+    } else if (index.row === 1) {
       store.logout();
     }
-  };
+  },[]);
 
   return (
     <Layout style={{ paddingTop: insets.top, flex: 1 }}>
       <KittenDrawer
-        data={[
-          {
-            title: 'Home',
-          },
-          { title: 'Logout' },
-        ]}
-        selectedIndex={state.index}
-        onSelect={onSelect}
-      />
+        selectedIndex={new IndexPath(state.index)}
+        onSelect={onSelect}>
+        <DrawerItem title='Home' />
+        <DrawerItem title='Logout' />
+        </KittenDrawer>
     </Layout>
   );
 };

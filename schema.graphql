@@ -18,23 +18,23 @@ type Mutation {
 }
 
 type punbb_category {
-  cat_name: String
-  disp_position: Int
-  id: Int
+  cat_name: String!
+  disp_position: Int!
+  id: Int!
   punbb_forums(after: punbb_forumWhereUniqueInput, before: punbb_forumWhereUniqueInput, first: Int, last: Int): [punbb_forum!]!
 }
 
 type punbb_forum {
-  cat_id: Int
-  disp_position: Int
+  cat_id: Int!
+  disp_position: Int!
   forum_desc: String
-  forum_name: String
-  id: Int
+  forum_name: String!
+  id: Int!
   last_post: Int
   last_post_id: Int
   last_poster: String
-  num_posts: Int
-  num_topics: Int
+  num_posts: Int!
+  num_topics: Int!
   punbb_topics(after: punbb_topicWhereUniqueInput, before: punbb_topicWhereUniqueInput, first: Int, last: Int): [punbb_topic!]!
 }
 
@@ -45,12 +45,12 @@ input punbb_forumWhereUniqueInput {
 type punbb_post {
   edited: Int
   edited_by: String
-  id: Int
-  message: String
-  posted: Int
-  poster: String
-  poster_id: Int
-  punbb_user: punbb_user
+  id: Int!
+  message: String!
+  posted: Int!
+  poster: String!
+  poster_id: Int!
+  punbb_user: punbb_user!
 }
 
 input punbb_postWhereUniqueInput {
@@ -58,18 +58,18 @@ input punbb_postWhereUniqueInput {
 }
 
 type punbb_topic {
-  closed: Boolean
-  forum_id: Int
-  id: Int
-  last_post: Int
-  last_post_id: Int
+  closed: Boolean!
+  forum_id: Int!
+  id: Int!
+  last_post: Int!
+  last_post_id: Int!
   last_poster: String
-  num_replies: Int
-  posted: Int
-  poster: String
+  num_replies: Int!
+  posted: Int!
+  poster: String!
   punbb_posts(after: punbb_postWhereUniqueInput, before: punbb_postWhereUniqueInput, first: Int, last: Int): [punbb_post!]!
-  sticky: Boolean
-  subject: String
+  sticky: Boolean!
+  subject: String!
 }
 
 input punbb_topicWhereUniqueInput {
@@ -77,20 +77,20 @@ input punbb_topicWhereUniqueInput {
 }
 
 type punbb_user {
-  id: Int
+  id: Int!
   last_post: Int
-  last_visit: Int
-  registered: Int
+  last_visit: Int!
+  registered: Int!
   signature: String
-  username: String
+  username: String!
 }
 
 type punbb_userthread {
-  forum: Int
+  forum: Int!
   last_read: Int
-  posted: Boolean
-  thread: Int
-  user: Int
+  posted: Boolean!
+  thread: Int!
+  user: Int!
 }
 
 type Query {

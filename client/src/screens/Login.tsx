@@ -9,9 +9,9 @@ import { PageTitle } from '../comps/PageTitle';
 import { FormRow } from '../comps/FormRow';
 import { CentreLoading } from '../comps/CentreLoading';
 
-const loginSchema = object().shape({
-  username: string().required('Please enter your username'),
-  password: string().required('Please enter your password'),
+const loginSchema = object({
+  username: string().defined('Please enter your username'),
+  password: string().defined('Please enter your password'),
 });
 
 type LoginSchema = InferType<typeof loginSchema>;
