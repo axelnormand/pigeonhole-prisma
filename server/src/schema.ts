@@ -4,15 +4,17 @@ import * as types from './types';
 import { config } from './config';
 
 console.log(
-  `Loading schema with PIGEONHOLE_SERVER ${config().pigeonholeServer}`,
+  `Loading schema with PIGEONHOLE_SERVER ${config().pigeonholeServer}`
 );
 
+const shouldGenerateArtifacts = config().pigeonholeServer === 'node'; // dont output on netlify
+
 export const schema = makeSchema({
-  shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
+  shouldGenerateArtifacts,
   types,
   plugins: [
     nexusSchemaPrisma({
-      shouldGenerateArtifacts: config().pigeonholeServer === 'node', // dont output on netlify
+      shouldGenerateArtifacts,
       outputs: {
         typegen: __dirname + '/generated/nexusTypes.ts',
       },
