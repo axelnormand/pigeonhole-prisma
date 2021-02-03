@@ -796,20 +796,27 @@ exports[`Quote first, youtube in quote, real example 1`] = `
 
 exports[`works 2 bbcodes 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -821,144 +828,99 @@ exports[`works 2 bbcodes 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
+          },
+          Object {
+            "fontStyle": "italic",
+          },
+        ]
+      }
+      testID="bbcode-italic"
+    >
+      Hello
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontStyle": "italic",
-            },
-          ]
-        }
-        testID="bbcode-italic"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontWeight": "bold",
-            },
-          ]
-        }
-        testID="bbcode-bold"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        dude
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+       
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+      testID="bbcode-bold"
+    >
+      dude
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with bold bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -970,98 +932,53 @@ exports[`works with bold bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "fontWeight": "bold",
-            },
-          ]
-        }
-        testID="bbcode-bold"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        dude
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "fontWeight": "bold",
+          },
+        ]
+      }
+      testID="bbcode-bold"
+    >
+      dude
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
@@ -1355,20 +1272,27 @@ Line 2
 
 exports[`works with newline and url auto match 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -1380,93 +1304,83 @@ exports[`works with newline and url auto match 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Line 1
+      Line 1
 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com/
-      </Text>
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com/
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with newline and url auto match 1st 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com/
+    </Text>
     <Text
       appearance="default"
       category="p1"
@@ -1477,93 +1391,43 @@ exports[`works with newline and url auto match 1st 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com/
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        
+      
 Line 2
 
-      </Text>
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with newlines 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -1575,66 +1439,42 @@ exports[`works with newlines 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Line 1
+      Line 1
 Line 2 
-      </Text>
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with no bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -1646,65 +1486,41 @@ exports[`works with no bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello dude
-      </Text>
+      Hello dude
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with quote bbcode and more text 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -1716,17 +1532,29 @@ exports[`works with quote bbcode and more text 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
+      testID="bbcode-plain"
+    >
+      Before 
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "borderRadius": 8,
+            "borderWidth": 2,
+            "display": "flex",
+            "flex": 1,
+            "padding": 16,
+          },
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": undefined,
+          },
+        ]
       }
     >
       <Text
@@ -1739,116 +1567,17 @@ exports[`works with quote bbcode and more text 1`] = `
               "fontFamily": "System",
               "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 20,
             },
-            undefined,
+            Object {
+              "fontWeight": "bold",
+            },
           ]
         }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
+        testID="bbcode-quote-name"
       >
-        Before 
+        Foo
+         wrote:
       </Text>
-      <View
-        style={
-          Array [
-            Object {
-              "borderRadius": 8,
-              "borderWidth": 2,
-              "display": "flex",
-              "flex": 1,
-              "padding": 16,
-            },
-            Object {
-              "backgroundColor": undefined,
-              "borderColor": undefined,
-            },
-          ]
-        }
-      >
-        <Text
-          appearance="default"
-          category="p1"
-          style={
-            Array [
-              Object {
-                "color": "#ff2",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-                "lineHeight": 20,
-              },
-              Object {
-                "fontWeight": "bold",
-              },
-            ]
-          }
-          testID="bbcode-quote-name"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
-        >
-          Foo
-           wrote:
-        </Text>
-        <Text
-          appearance="default"
-          category="p1"
-          style={
-            Array [
-              Object {
-                "color": "#ff2",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-                "lineHeight": 20,
-              },
-              undefined,
-            ]
-          }
-          testID="bbcode-quote-text"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
-        >
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            hello, world
-          </Text>
-        </Text>
-      </View>
       <Text
         appearance="default"
         category="p1"
@@ -1859,82 +1588,131 @@ exports[`works with quote bbcode and more text 1`] = `
               "fontFamily": "System",
               "fontSize": 15,
               "fontWeight": "400",
-              "lineHeight": 20,
             },
             undefined,
           ]
         }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
+        testID="bbcode-quote-text"
       >
-         After
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+        >
+          hello, world
+        </Text>
       </Text>
+    </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       After
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with quote bbcode and name 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
-    <Text
-      appearance="default"
-      category="p1"
+    <View
       style={
         Array [
           Object {
-            "color": "#ff2",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-            "lineHeight": 20,
+            "borderRadius": 8,
+            "borderWidth": 2,
+            "display": "flex",
+            "flex": 1,
+            "padding": 16,
           },
-          undefined,
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": undefined,
+          },
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
     >
-      <View
+      <Text
+        appearance="default"
+        category="p1"
         style={
           Array [
             Object {
-              "borderRadius": 8,
-              "borderWidth": 2,
-              "display": "flex",
-              "flex": 1,
-              "padding": 16,
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
             },
             Object {
-              "backgroundColor": undefined,
-              "borderColor": undefined,
+              "fontWeight": "bold",
             },
           ]
         }
+        testID="bbcode-quote-name"
+      >
+        Foo
+         wrote:
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-quote-text"
       >
         <Text
           appearance="default"
@@ -1946,135 +1724,97 @@ exports[`works with quote bbcode and name 1`] = `
                 "fontFamily": "System",
                 "fontSize": 15,
                 "fontWeight": "400",
-                "lineHeight": 20,
-              },
-              Object {
-                "fontWeight": "bold",
-              },
-            ]
-          }
-          testID="bbcode-quote-name"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
-        >
-          Foo
-           wrote:
-        </Text>
-        <Text
-          appearance="default"
-          category="p1"
-          style={
-            Array [
-              Object {
-                "color": "#ff2",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-                "lineHeight": 20,
               },
               undefined,
             ]
           }
-          testID="bbcode-quote-text"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
+          testID="bbcode-plain"
         >
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            hello, world
-          </Text>
+          hello, world
         </Text>
-      </View>
-    </Text>
-  </View>
+      </Text>
+    </View>
+  </Text>
 </View>
 `;
 
 exports[`works with quote bbcode and nested text bbcodes 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
-    <Text
-      appearance="default"
-      category="p1"
+    <View
       style={
         Array [
           Object {
-            "color": "#ff2",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-            "lineHeight": 20,
+            "borderRadius": 8,
+            "borderWidth": 2,
+            "display": "flex",
+            "flex": 1,
+            "padding": 16,
           },
-          undefined,
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": undefined,
+          },
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
     >
-      <View
+      <Text
+        appearance="default"
+        category="p1"
         style={
           Array [
             Object {
-              "borderRadius": 8,
-              "borderWidth": 2,
-              "display": "flex",
-              "flex": 1,
-              "padding": 16,
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
             },
             Object {
-              "backgroundColor": undefined,
-              "borderColor": undefined,
+              "fontWeight": "bold",
             },
           ]
         }
+        testID="bbcode-quote-name"
+      >
+        Foo
+         wrote:
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-quote-text"
       >
         <Text
           appearance="default"
@@ -2086,23 +1826,53 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
                 "fontFamily": "System",
                 "fontSize": 15,
                 "fontWeight": "400",
-                "lineHeight": 20,
+              },
+              Object {
+                "fontStyle": "italic",
+              },
+            ]
+          }
+          testID="bbcode-italic"
+        >
+          Hello
+        </Text>
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
+              },
+              undefined,
+            ]
+          }
+          testID="bbcode-plain"
+        >
+           
+        </Text>
+        <Text
+          appearance="default"
+          category="p1"
+          style={
+            Array [
+              Object {
+                "color": "#ff2",
+                "fontFamily": "System",
+                "fontSize": 15,
+                "fontWeight": "400",
               },
               Object {
                 "fontWeight": "bold",
               },
             ]
           }
-          testID="bbcode-quote-name"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
+          testID="bbcode-bold"
         >
-          Foo
-           wrote:
+          dude
         </Text>
         <Text
           appearance="default"
@@ -2114,186 +1884,76 @@ exports[`works with quote bbcode and nested text bbcodes 1`] = `
                 "fontFamily": "System",
                 "fontSize": 15,
                 "fontWeight": "400",
-                "lineHeight": 20,
               },
               undefined,
             ]
           }
-          testID="bbcode-quote-text"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
+          testID="bbcode-plain"
         >
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                Object {
-                  "fontStyle": "italic",
-                },
-              ]
-            }
-            testID="bbcode-italic"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            Hello
-          </Text>
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-             
-          </Text>
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                Object {
-                  "fontWeight": "bold",
-                },
-              ]
-            }
-            testID="bbcode-bold"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            dude
-          </Text>
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-             wassup
-          </Text>
+           wassup
         </Text>
-      </View>
-    </Text>
-  </View>
+      </Text>
+    </View>
+  </Text>
 </View>
 `;
 
 exports[`works with quote bbcode and no name 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
-    <Text
-      appearance="default"
-      category="p1"
+    <View
       style={
         Array [
           Object {
-            "color": "#ff2",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-            "lineHeight": 20,
+            "borderRadius": 8,
+            "borderWidth": 2,
+            "display": "flex",
+            "flex": 1,
+            "padding": 16,
           },
-          undefined,
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": undefined,
+          },
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
     >
-      <View
+      <Text
+        appearance="default"
+        category="p1"
         style={
           Array [
             Object {
-              "borderRadius": 8,
-              "borderWidth": 2,
-              "display": "flex",
-              "flex": 1,
-              "padding": 16,
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
             },
-            Object {
-              "backgroundColor": undefined,
-              "borderColor": undefined,
-            },
+            undefined,
           ]
         }
+        testID="bbcode-quote-text"
       >
         <Text
           appearance="default"
@@ -2305,48 +1965,17 @@ exports[`works with quote bbcode and no name 1`] = `
                 "fontFamily": "System",
                 "fontSize": 15,
                 "fontWeight": "400",
-                "lineHeight": 20,
               },
               undefined,
             ]
           }
-          testID="bbcode-quote-text"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
+          testID="bbcode-plain"
         >
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            hello, world
-          </Text>
+          hello, world
         </Text>
-      </View>
-    </Text>
-  </View>
+      </Text>
+    </View>
+  </Text>
 </View>
 `;
 
@@ -2492,60 +2121,81 @@ exports[`works with quote bbcode in quotes and name 1`] = `
 
 exports[`works with quote bbcode, name in quotes 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
-    <Text
-      appearance="default"
-      category="p1"
+    <View
       style={
         Array [
           Object {
-            "color": "#ff2",
-            "fontFamily": "System",
-            "fontSize": 15,
-            "fontWeight": "400",
-            "lineHeight": 20,
+            "borderRadius": 8,
+            "borderWidth": 2,
+            "display": "flex",
+            "flex": 1,
+            "padding": 16,
           },
-          undefined,
+          Object {
+            "backgroundColor": undefined,
+            "borderColor": undefined,
+          },
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
     >
-      <View
+      <Text
+        appearance="default"
+        category="p1"
         style={
           Array [
             Object {
-              "borderRadius": 8,
-              "borderWidth": 2,
-              "display": "flex",
-              "flex": 1,
-              "padding": 16,
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
             },
             Object {
-              "backgroundColor": undefined,
-              "borderColor": undefined,
+              "fontWeight": "bold",
             },
           ]
         }
+        testID="bbcode-quote-name"
+      >
+        Foo
+         wrote:
+      </Text>
+      <Text
+        appearance="default"
+        category="p1"
+        style={
+          Array [
+            Object {
+              "color": "#ff2",
+              "fontFamily": "System",
+              "fontSize": 15,
+              "fontWeight": "400",
+            },
+            undefined,
+          ]
+        }
+        testID="bbcode-quote-text"
       >
         <Text
           appearance="default"
@@ -2557,95 +2207,43 @@ exports[`works with quote bbcode, name in quotes 1`] = `
                 "fontFamily": "System",
                 "fontSize": 15,
                 "fontWeight": "400",
-                "lineHeight": 20,
-              },
-              Object {
-                "fontWeight": "bold",
-              },
-            ]
-          }
-          testID="bbcode-quote-name"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
-        >
-          Foo
-           wrote:
-        </Text>
-        <Text
-          appearance="default"
-          category="p1"
-          style={
-            Array [
-              Object {
-                "color": "#ff2",
-                "fontFamily": "System",
-                "fontSize": 15,
-                "fontWeight": "400",
-                "lineHeight": 20,
               },
               undefined,
             ]
           }
-          testID="bbcode-quote-text"
-          theme={
-            Object {
-              "text-basic-color": "#ff2",
-              "text-primary-color": "#fff",
-            }
-          }
+          testID="bbcode-plain"
         >
-          <Text
-            appearance="default"
-            category="p1"
-            style={
-              Array [
-                Object {
-                  "color": "#ff2",
-                  "fontFamily": "System",
-                  "fontSize": 15,
-                  "fontWeight": "400",
-                  "lineHeight": 20,
-                },
-                undefined,
-              ]
-            }
-            testID="bbcode-plain"
-            theme={
-              Object {
-                "text-basic-color": "#ff2",
-                "text-primary-color": "#fff",
-              }
-            }
-          >
-            hello, world
-          </Text>
+          hello, world
         </Text>
-      </View>
-    </Text>
-  </View>
+      </Text>
+    </View>
+  </Text>
 </View>
 `;
 
 exports[`works with underline 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -2657,92 +2255,61 @@ exports[`works with underline 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            Object {
-              "textDecorationLine": "underline",
-            },
-          ]
-        }
-        testID="bbcode-underline"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        dude
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          Object {
+            "textDecorationLine": "underline",
+          },
+        ]
+      }
+      testID="bbcode-underline"
+    >
+      dude
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url and link text bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -2754,116 +2321,79 @@ exports[`works with url and link text bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        DUDE
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      DUDE
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url auto matcher 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -2875,116 +2405,79 @@ exports[`works with url auto matcher 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url auto matcher, query params 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -2996,116 +2489,79 @@ exports[`works with url auto matcher, query params 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com/?foo=bar
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com/?foo=bar
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url auto matcher, trailing slash 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3117,116 +2573,79 @@ exports[`works with url auto matcher, trailing slash 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com/
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com/
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3238,116 +2657,79 @@ exports[`works with url bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        https://dude.com
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      https://dude.com
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with url in quotes and link text bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3359,116 +2741,79 @@ exports[`works with url in quotes and link text bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
-      }
+      testID="bbcode-plain"
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        Hello 
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        status="primary"
-        style={
-          Array [
-            Object {
-              "color": "#fff",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-url"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-        DUDE
-      </Text>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
-          Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+      Hello 
     </Text>
-  </View>
+    <Text
+      appearance="default"
+      category="p1"
+      onPress={[Function]}
+      status="primary"
+      style={
+        Array [
+          Object {
+            "color": "#fff",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-url"
+    >
+      DUDE
+    </Text>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
+          Object {
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
+    </Text>
+  </Text>
 </View>
 `;
 
 exports[`works with youtube auto replace (long domain with www) 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3480,132 +2825,109 @@ exports[`works with youtube auto replace (long domain with www) 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
+      testID="bbcode-plain"
+    >
+      Hello 
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
       }
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
+      <RNCWebView
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        domStorageEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
+            "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
           }
         }
-      >
-        Hello 
-      </Text>
-      <View
         style={
           Array [
             Object {
               "flex": 1,
               "overflow": "hidden",
             },
-            undefined,
-          ]
-        }
-      >
-        <RNCWebView
-          allowsInlineMediaPlayback={true}
-          cacheEnabled={true}
-          domStorageEnabled={true}
-          injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-          injectedJavaScriptForMainFrameOnly={true}
-          javaScriptEnabled={true}
-          messagingEnabled={false}
-          source={
             Object {
-              "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
-            }
-          }
-          style={
-            Array [
-              Object {
-                "flex": 1,
-                "overflow": "hidden",
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-              },
-              Object {
-                "flex": 1,
-              },
-            ]
-          }
-          testID="bbcode-youtube"
-          useSharedProcessPool={true}
-        />
-      </View>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
+              "backgroundColor": "#ffffff",
             },
-            undefined,
+            Object {
+              "flex": 1,
+            },
           ]
         }
-        testID="bbcode-plain"
-        theme={
+        testID="bbcode-youtube"
+        useSharedProcessPool={true}
+      />
+    </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with youtube auto replace (long domain without www) 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3617,132 +2939,109 @@ exports[`works with youtube auto replace (long domain without www) 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
+      testID="bbcode-plain"
+    >
+      Hello 
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
       }
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
+      <RNCWebView
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        domStorageEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
+            "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
           }
         }
-      >
-        Hello 
-      </Text>
-      <View
         style={
           Array [
             Object {
               "flex": 1,
               "overflow": "hidden",
             },
-            undefined,
-          ]
-        }
-      >
-        <RNCWebView
-          allowsInlineMediaPlayback={true}
-          cacheEnabled={true}
-          domStorageEnabled={true}
-          injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-          injectedJavaScriptForMainFrameOnly={true}
-          javaScriptEnabled={true}
-          messagingEnabled={false}
-          source={
             Object {
-              "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
-            }
-          }
-          style={
-            Array [
-              Object {
-                "flex": 1,
-                "overflow": "hidden",
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-              },
-              Object {
-                "flex": 1,
-              },
-            ]
-          }
-          testID="bbcode-youtube"
-          useSharedProcessPool={true}
-        />
-      </View>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
+              "backgroundColor": "#ffffff",
             },
-            undefined,
+            Object {
+              "flex": 1,
+            },
           ]
         }
-        testID="bbcode-plain"
-        theme={
+        testID="bbcode-youtube"
+        useSharedProcessPool={true}
+      />
+    </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with youtube auto replace (short domain) 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3754,132 +3053,109 @@ exports[`works with youtube auto replace (short domain) 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
+      testID="bbcode-plain"
+    >
+      Hello 
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
       }
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
+      <RNCWebView
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        domStorageEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
+            "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
           }
         }
-      >
-        Hello 
-      </Text>
-      <View
         style={
           Array [
             Object {
               "flex": 1,
               "overflow": "hidden",
             },
-            undefined,
-          ]
-        }
-      >
-        <RNCWebView
-          allowsInlineMediaPlayback={true}
-          cacheEnabled={true}
-          domStorageEnabled={true}
-          injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-          injectedJavaScriptForMainFrameOnly={true}
-          javaScriptEnabled={true}
-          messagingEnabled={false}
-          source={
             Object {
-              "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
-            }
-          }
-          style={
-            Array [
-              Object {
-                "flex": 1,
-                "overflow": "hidden",
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-              },
-              Object {
-                "flex": 1,
-              },
-            ]
-          }
-          testID="bbcode-youtube"
-          useSharedProcessPool={true}
-        />
-      </View>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
+              "backgroundColor": "#ffffff",
             },
-            undefined,
+            Object {
+              "flex": 1,
+            },
           ]
         }
-        testID="bbcode-plain"
-        theme={
+        testID="bbcode-youtube"
+        useSharedProcessPool={true}
+      />
+    </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
     </Text>
-  </View>
+  </Text>
 </View>
 `;
 
 exports[`works with youtube bbcode 1`] = `
 <View
-  collapsable={true}
-  pointerEvents="box-none"
   style={
     Object {
       "flex": 1,
     }
   }
 >
-  <View
+  <Text
+    appearance="default"
+    category="p1"
     style={
-      Object {
-        "flex": 1,
-      }
+      Array [
+        Object {
+          "color": "#ff2",
+          "fontFamily": "System",
+          "fontSize": 15,
+          "fontWeight": "400",
+        },
+        undefined,
+      ]
     }
+    testID="bbcode-text-wrap"
   >
     <Text
       appearance="default"
@@ -3891,112 +3167,82 @@ exports[`works with youtube bbcode 1`] = `
             "fontFamily": "System",
             "fontSize": 15,
             "fontWeight": "400",
-            "lineHeight": 20,
           },
           undefined,
         ]
       }
-      testID="bbcode-text-wrap"
-      theme={
-        Object {
-          "text-basic-color": "#ff2",
-          "text-primary-color": "#fff",
-        }
+      testID="bbcode-plain"
+    >
+      Hello 
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          undefined,
+        ]
       }
     >
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
-            },
-            undefined,
-          ]
-        }
-        testID="bbcode-plain"
-        theme={
+      <RNCWebView
+        allowsInlineMediaPlayback={true}
+        cacheEnabled={true}
+        domStorageEnabled={true}
+        injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+        injectedJavaScriptForMainFrameOnly={true}
+        javaScriptEnabled={true}
+        messagingEnabled={false}
+        onContentProcessDidTerminate={[Function]}
+        onHttpError={[Function]}
+        onLoadingError={[Function]}
+        onLoadingFinish={[Function]}
+        onLoadingProgress={[Function]}
+        onLoadingStart={[Function]}
+        onMessage={[Function]}
+        onShouldStartLoadWithRequest={[Function]}
+        source={
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
+            "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
           }
         }
-      >
-        Hello 
-      </Text>
-      <View
         style={
           Array [
             Object {
               "flex": 1,
               "overflow": "hidden",
             },
-            undefined,
-          ]
-        }
-      >
-        <RNCWebView
-          allowsInlineMediaPlayback={true}
-          cacheEnabled={true}
-          domStorageEnabled={true}
-          injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
-          injectedJavaScriptForMainFrameOnly={true}
-          javaScriptEnabled={true}
-          messagingEnabled={false}
-          source={
             Object {
-              "uri": "https://www.youtube.com/embed/123Abc?playsinline=1&fs=1",
-            }
-          }
-          style={
-            Array [
-              Object {
-                "flex": 1,
-                "overflow": "hidden",
-              },
-              Object {
-                "backgroundColor": "#ffffff",
-              },
-              Object {
-                "flex": 1,
-              },
-            ]
-          }
-          testID="bbcode-youtube"
-          useSharedProcessPool={true}
-        />
-      </View>
-      <Text
-        appearance="default"
-        category="p1"
-        style={
-          Array [
-            Object {
-              "color": "#ff2",
-              "fontFamily": "System",
-              "fontSize": 15,
-              "fontWeight": "400",
-              "lineHeight": 20,
+              "backgroundColor": "#ffffff",
             },
-            undefined,
+            Object {
+              "flex": 1,
+            },
           ]
         }
-        testID="bbcode-plain"
-        theme={
+        testID="bbcode-youtube"
+        useSharedProcessPool={true}
+      />
+    </View>
+    <Text
+      appearance="default"
+      category="p1"
+      style={
+        Array [
           Object {
-            "text-basic-color": "#ff2",
-            "text-primary-color": "#fff",
-          }
-        }
-      >
-         wassup
-      </Text>
+            "color": "#ff2",
+            "fontFamily": "System",
+            "fontSize": 15,
+            "fontWeight": "400",
+          },
+          undefined,
+        ]
+      }
+      testID="bbcode-plain"
+    >
+       wassup
     </Text>
-  </View>
+  </Text>
 </View>
 `;

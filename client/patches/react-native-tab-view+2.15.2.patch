@@ -1,0 +1,43 @@
+diff --git a/node_modules/react-native-tab-view/lib/module/Pager.js b/node_modules/react-native-tab-view/lib/module/Pager.js
+index 406e30a..b320220 100644
+--- a/node_modules/react-native-tab-view/lib/module/Pager.js
++++ b/node_modules/react-native-tab-view/lib/module/Pager.js
+@@ -7,12 +7,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
+ function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+ 
+ import * as React from 'react';
+-import { StyleSheet, TextInput, Keyboard, I18nManager, InteractionManager } from 'react-native';
++import { I18nManager, InteractionManager, Keyboard, StyleSheet, TextInput } from 'react-native';
+ import { PanGestureHandler, State } from 'react-native-gesture-handler';
+-import Animated, { Easing as OldEasing // @ts-ignore
+-, EasingNode } from 'react-native-reanimated';
++import Animated, {
++  Easing as OldEasing // @ts-ignore
++} from 'react-native-reanimated';
+ import memoize from './memoize';
+-const Easing = EasingNode || OldEasing;
++const Easing = OldEasing;
+ const {
+   Clock,
+   Value,
+diff --git a/node_modules/react-native-tab-view/lib/module/TabBarIndicator.js b/node_modules/react-native-tab-view/lib/module/TabBarIndicator.js
+index 60004ed..95e84a8 100644
+--- a/node_modules/react-native-tab-view/lib/module/TabBarIndicator.js
++++ b/node_modules/react-native-tab-view/lib/module/TabBarIndicator.js
+@@ -1,11 +1,12 @@
+ function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+ 
+ import * as React from 'react';
+-import { StyleSheet, I18nManager } from 'react-native';
+-import Animated, { Easing as OldEasing // @ts-ignore
+-, EasingNode } from 'react-native-reanimated';
++import { I18nManager, StyleSheet } from 'react-native';
++import Animated, {
++  Easing as OldEasing // @ts-ignore
++} from 'react-native-reanimated';
+ import memoize from './memoize';
+-const Easing = EasingNode || OldEasing;
++const Easing = OldEasing;
+ const {
+   multiply,
+   Extrapolate

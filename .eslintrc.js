@@ -4,10 +4,11 @@ module.export = {
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.base.json'],
-    ecmaVersion: 2017,
+    ecmaVersion: 2018,
   },
   env: {
-    es6: true
+    es6: true,
+    node: true
   },
   extends: [
     'eslint:recommended',

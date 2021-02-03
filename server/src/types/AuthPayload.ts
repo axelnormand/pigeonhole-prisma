@@ -14,7 +14,7 @@ export const LoginResult = enumType({
 export const AuthPayload = objectType({
   name: 'AuthPayload',
   definition(t) {
-    t.string('token', { nullable: true });
+    t.nullable.string('token');
     t.field('loginResult', {
       type: LoginResult,
     });

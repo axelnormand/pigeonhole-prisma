@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { StyleSheet, ImageBackground, Keyboard } from 'react-native';
+import { StyleSheet, ImageBackground, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { Button, Input, Text, Icon } from '@ui-kitten/components';
 import { Formik } from 'formik';
 import { InferType, string, object } from 'yup';
@@ -9,9 +9,9 @@ import { PageTitle } from '../comps/PageTitle';
 import { FormRow } from '../comps/FormRow';
 import { CentreLoading } from '../comps/CentreLoading';
 
-const loginSchema = object().shape({
-  username: string().required('Please enter your username'),
-  password: string().required('Please enter your password'),
+const loginSchema = object({
+  username: string().defined('Please enter your username'),
+  password: string().defined('Please enter your password'),
 });
 
 type LoginSchema = InferType<typeof loginSchema>;
@@ -88,13 +88,14 @@ export const Login: React.FC = () => {
                   onBlur={handleBlur('password')}
                   disabled={isLoading}
                   onSubmitEditing={Keyboard.dismiss}
-                  icon={(style) => (
+                  accessoryRight={(style) => (
+                    <TouchableWithoutFeedback onPress={() => setIsShowingPassword(!isShowingPassword)}>
                     <Icon
                       {...style}
                       name={isShowingPassword ? 'eye-off' : 'eye'}
-                    />
+                      />
+                      </TouchableWithoutFeedback>
                   )}
-                  onIconPress={() => setIsShowingPassword(!isShowingPassword)}
                 />
               </FormRow>
 
