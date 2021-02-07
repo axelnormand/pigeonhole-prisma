@@ -2864,14 +2864,6 @@
     unixify "^1.0.0"
     yargs "^15.4.1"
 
-"@nexus/schema@^0.20.1":
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/@nexus/schema/-/schema-0.20.1.tgz#12f82304c54c287b8f1e94ac074a52f57af32f00"
-  integrity sha512-8J9On+L1aS7a17tOCJ2l0prA9tltEmla3lV3lpAjL3HCih5DGYCOkmExMS5dVVRKxOu9QjoOEP2bl8qy2Gc36g==
-  dependencies:
-    iterall "^1.3.0"
-    tslib "^2.0.3"
-
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.3.tgz#3a582bdb53804c6ba6d146579c46e52130cf4a3b"
@@ -10377,11 +10369,6 @@ graphql@14.2.1:
   integrity sha512-2PL1UbvKeSjy/lUeJqHk+eR9CvuErXoCNwJI4jm3oNFEeY+9ELqHNKO1ZuSxAkasPkpWbmT/iMRMFxd3cEL3tQ==
   dependencies:
     iterall "^1.2.2"
-
-graphql@^15.4.0:
-  version "15.4.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.4.0.tgz#e459dea1150da5a106486ba7276518b5295a4347"
-  integrity sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA==
 
 growly@^1.3.0:
   version "1.3.0"
