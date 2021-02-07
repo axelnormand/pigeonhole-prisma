@@ -16,7 +16,7 @@ ERROR="ERROR"
 /**
 * LoginResult
 */
-export const LoginResultEnum = types.enumeration("LoginResult", [
+export const LoginResultEnumType = types.enumeration("LoginResult", [
         "SUCCESS",
   "INVALID",
   "ERROR",

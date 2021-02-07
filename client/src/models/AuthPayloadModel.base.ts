@@ -5,7 +5,7 @@
 import { types } from "mobx-state-tree"
 import { QueryBuilder } from "mst-gql"
 import { ModelBase } from "./ModelBase"
-import { LoginResultEnum } from "./LoginResultEnum"
+import { LoginResultEnumType } from "./LoginResultEnum"
 import { RootStoreType } from "./index"
 
 
@@ -18,7 +18,7 @@ export const AuthPayloadModelBase = ModelBase
   .props({
     __typename: types.optional(types.literal("AuthPayload"), "AuthPayload"),
     token: types.union(types.undefined, types.null, types.string),
-    loginResult: types.union(types.undefined, LoginResultEnum),
+    loginResult: types.union(types.undefined, types.null, LoginResultEnumType),
   })
   .views(self => ({
     get store() {

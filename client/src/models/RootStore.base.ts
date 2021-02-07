@@ -17,6 +17,9 @@ import { PunbbPostModel, PunbbPostModelType } from "./PunbbPostModel"
 import { punbbPostModelPrimitives, PunbbPostModelSelector } from "./PunbbPostModel.base"
 import { AuthPayloadModel, AuthPayloadModelType } from "./AuthPayloadModel"
 import { authPayloadModelPrimitives, AuthPayloadModelSelector } from "./AuthPayloadModel.base"
+import { PunbbUserthreadModel, PunbbUserthreadModelType } from "./PunbbUserthreadModel"
+import { punbbUserthreadModelPrimitives, PunbbUserthreadModelSelector } from "./PunbbUserthreadModel.base"
+
 
 import { LoginResult } from "./LoginResultEnum"
 
@@ -24,13 +27,10 @@ export type PunbbForumWhereUniqueInput = {
   id?: number
 }
 export type PunbbTopicWhereUniqueInput = {
-  forum_id?: number
   id?: number
-  moved_to?: number
 }
 export type PunbbPostWhereUniqueInput = {
   id?: number
-  topic_id?: number
 }
 /* The TypeScript type that explicits the refs to other models in order to prevent a circular refs issue */
 type Refs = {
@@ -58,7 +58,7 @@ mutateLogin="mutateLogin"
 */
 export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
   .named("RootStore")
-  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel]], [], "js"))
+  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel], ['punbb_userthread', () => PunbbUserthreadModel]], [], "js"))
   .props({
 
   })
@@ -88,8 +88,8 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    querySearchPosts(variables: { searchString?: string, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ searchPosts: PunbbPostModelType[]}>(`query searchPosts($searchString: String, $cursor: Int, $take: Int) { searchPosts(searchString: $searchString, cursor: $cursor, take: $take) {
+    querySearchPosts(variables: { searchString: string, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ searchPosts: PunbbPostModelType[]}>(`query searchPosts($searchString: String!, $cursor: Int, $take: Int) { searchPosts(searchString: $searchString, cursor: $cursor, take: $take) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
