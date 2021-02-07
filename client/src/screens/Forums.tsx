@@ -50,7 +50,6 @@ export const Forums = observer(() => {
   return (
     <Page>
       {data?.categories.map(({ cat_name, punbb_forums }) => {
-        // TODO: forum should be typed?!
         return punbb_forums?.map(
           ({
             id,
@@ -60,7 +59,7 @@ export const Forums = observer(() => {
             last_poster,
             num_posts,
             num_topics,
-          }: PunbbForumModelType) => {
+          }) => {
             return (
               <ForumCard
                 key={id}

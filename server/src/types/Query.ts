@@ -1,4 +1,4 @@
-import { intArg, nonNull, nullable, queryType, stringArg } from '@nexus/schema';
+import { intArg, nonNull, nullable, queryType, stringArg } from 'nexus';
 import { getUserId } from '../auth';
 
 const DEFAULT_TAKE = 20;

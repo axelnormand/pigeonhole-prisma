@@ -1,4 +1,4 @@
-import { objectType } from '@nexus/schema';
+import { objectType } from 'nexus';
 
 export const punbb_topic = objectType({
   name: 'punbb_topic',

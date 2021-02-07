@@ -1,7 +1,7 @@
 import { nexusSchemaPrisma } from 'nexus-plugin-prisma/schema';
-import { makeSchema } from '@nexus/schema';
 import * as types from './types';
 import { config } from './config';
+import { makeSchema } from 'nexus';
 
 console.log(
   `Loading schema with PIGEONHOLE_SERVER ${config().pigeonholeServer}`
@@ -24,17 +24,17 @@ export const schema = makeSchema({
     schema: __dirname + '/../../schema.graphql',
     typegen: __dirname + '/generated/nexus.ts',
   },
-  typegenAutoConfig: {
-    sources: [
-      {
-        source: '@prisma/client',
-        alias: 'client',
-      },
-      {
-        source: require.resolve('./context'),
-        alias: 'Context',
-      },
-    ],
-    contextType: 'Context.Context',
-  },
+  // typegenAutoConfig: {
+  //   sources: [
+  //     {
+  //       source: '@prisma/client',
+  //       alias: 'client',
+  //     },
+  //     {
+  //       source: require.resolve('./context'),
+  //       alias: 'Context',
+  //     },
+  //   ],
+  //   contextType: 'Context.Context',
+  // },
 });

@@ -1,6 +1,6 @@
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
-import { mutationType, nonNull, stringArg } from '@nexus/schema';
+import { mutationType, nonNull, stringArg } from 'nexus';
 import { config } from '../config';
 import { LoginResultType } from './AuthPayload';
 
