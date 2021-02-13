@@ -15,6 +15,7 @@ enum LoginResult {
 
 type Mutation {
   login(password: String!, username: String!): AuthPayload
+  updatePushToken(token: String!): punbb_user
 }
 
 type punbb_category {
@@ -77,6 +78,7 @@ input punbb_topicWhereUniqueInput {
 }
 
 type punbb_user {
+  admin_note: String
   id: Int!
   last_post: Int
   last_visit: Int!

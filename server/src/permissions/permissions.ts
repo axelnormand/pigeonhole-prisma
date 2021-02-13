@@ -13,6 +13,7 @@ export const permissions = shield(
     },
     Mutation: {
       login: allow,
+      updatePushToken: isAuthenticated,
 
       // createPost: isPostOwner,
       // updatePost: isPostOwner,

@@ -37,6 +37,8 @@ export const Forums = observer(() => {
     ),
   );
 
+  console.log(`Forums screen`,  { data, loading, error })
+
   const navigation = useNavigation<NavProps>();
 
   if (error) {

@@ -89,6 +89,7 @@ export interface NexusGenObjects {
     subject: string; // String!
   }
   punbb_user: { // root type
+    admin_note?: string | null; // String
     id: number; // Int!
     last_post?: number | null; // Int
     last_visit: number; // Int!
@@ -122,6 +123,7 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
+    updatePushToken: NexusGenRootTypes['punbb_user'] | null; // punbb_user
   }
   Query: { // field return type
     categories: Array<NexusGenRootTypes['punbb_category'] | null> | null; // [punbb_category]
@@ -175,6 +177,7 @@ export interface NexusGenFieldTypes {
     subject: string; // String!
   }
   punbb_user: { // field return type
+    admin_note: string | null; // String
     id: number; // Int!
     last_post: number | null; // Int
     last_visit: number; // Int!
@@ -198,6 +201,7 @@ export interface NexusGenFieldTypeNames {
   }
   Mutation: { // field return type name
     login: 'AuthPayload'
+    updatePushToken: 'punbb_user'
   }
   Query: { // field return type name
     categories: 'punbb_category'
@@ -251,6 +255,7 @@ export interface NexusGenFieldTypeNames {
     subject: 'String'
   }
   punbb_user: { // field return type name
+    admin_note: 'String'
     id: 'Int'
     last_post: 'Int'
     last_visit: 'Int'
@@ -272,6 +277,9 @@ export interface NexusGenArgTypes {
     login: { // args
       password: string; // String!
       username: string; // String!
+    }
+    updatePushToken: { // args
+      token: string; // String!
     }
   }
   Query: {

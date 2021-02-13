@@ -50,7 +50,8 @@ queryPosts="queryPosts",
 querySearchPosts="querySearchPosts"
 }
 export enum RootStoreBaseMutations {
-mutateLogin="mutateLogin"
+mutateLogin="mutateLogin",
+mutateUpdatePushToken="mutateUpdatePushToken"
 }
 
 /**
@@ -96,6 +97,11 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
     mutateLogin(variables: { username: string, password: string }, resultSelector: string | ((qb: AuthPayloadModelSelector) => AuthPayloadModelSelector) = authPayloadModelPrimitives.toString(), optimisticUpdate?: () => void) {
       return self.mutate<{ login: AuthPayloadModelType}>(`mutation login($username: String!, $password: String!) { login(username: $username, password: $password) {
         ${typeof resultSelector === "function" ? resultSelector(new AuthPayloadModelSelector()).toString() : resultSelector}
+      } }`, variables, optimisticUpdate)
+    },
+    mutateUpdatePushToken(variables: { token: string }, resultSelector: string | ((qb: PunbbUserModelSelector) => PunbbUserModelSelector) = punbbUserModelPrimitives.toString(), optimisticUpdate?: () => void) {
+      return self.mutate<{ updatePushToken: PunbbUserModelType}>(`mutation updatePushToken($token: String!) { updatePushToken(token: $token) {
+        ${typeof resultSelector === "function" ? resultSelector(new PunbbUserModelSelector()).toString() : resultSelector}
       } }`, variables, optimisticUpdate)
     },
   })))

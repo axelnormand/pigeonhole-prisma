@@ -1,3 +1,5 @@
+import { getUserId } from '../auth';
+import { Context } from 'context';
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
 import { mutationType, nonNull, stringArg } from 'nexus';
@@ -13,7 +15,7 @@ export const Mutation = mutationType({
     //     email: stringArg({ nullable: false }),
     //     password: stringArg({ nullable: false }),
     //   },
-    //   resolve: async (_parent, { name, email, password }, ctx) => {
+    //   resolve: async (_parent, { name, email, password }, ctx:Context) => {
     //     const hashedPassword = await hash(password, 10);
     //     const user = await ctx.prisma.user.create({
     //       data: {
@@ -35,7 +37,7 @@ export const Mutation = mutationType({
         username: nonNull(stringArg()),
         password: nonNull(stringArg()),
       },
-      resolve: async (_parent, { username, password }, ctx) => {
+      resolve: async (_parent, { username, password }, ctx:Context) => {
         const lowerUsername = username.toLowerCase();
         try {
           console.log(`Login mutation: Querying for ${lowerUsername}`);
@@ -80,13 +82,31 @@ export const Mutation = mutationType({
       },
     });
 
+    t.field('updatePushToken', {
+      type: 'punbb_user',
+      args: {
+        token: nonNull(stringArg()),
+      },
+      resolve: (_parent, { token }, ctx: Context) => {
+        const userId = getUserId(ctx);
+        if (!userId) throw new Error('Could not find user.');
+        return ctx.prisma.punbb_user.update({
+          data: {
+            admin_note: token,
+          }, where: {
+            id: userId
+          }
+        });
+      },
+    });
+
     // t.field('createTopic', {
     //   type: 'punbb_topics',
     //   args: {
     //     subject: stringArg({ required: true }),
     //   },
-    //   resolve: (_parent, { title, content }, ctx) => {
-    //     const userId = getUserId(ctx);
+    //   resolve: (_parent, { title, content }, ctx:Context) => {
+    //     const userId = getUserId(ctx:Context);
     //     if (!userId) throw new Error('Could not authenticate user.');
     //     return ctx.prisma.punbb_topics.create({
     //       data: {
@@ -101,7 +121,7 @@ export const Mutation = mutationType({
     //   type: 'punbb_topics',
     //   nullable: true,
     //   args: { id: intArg() },
-    //   resolve: (_parent, { id }, ctx) => {
+    //   resolve: (_parent, { id }, ctx:Context) => {
     //     return ctx.prisma.post.update({
     //       where: { id },
     //       data: { published: true },
@@ -113,7 +133,7 @@ export const Mutation = mutationType({
     //   type: 'punbb_topics',
     //   nullable: true,
     //   args: { id: intArg({ nullable: false }) },
-    //   resolve: (_parent, { id }, ctx) => {
+    //   resolve: (_parent, { id }, ctx:Context) => {
     //     return ctx.prisma.post.delete({
     //       where: {
     //         id,

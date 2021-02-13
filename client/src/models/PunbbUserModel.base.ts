@@ -22,6 +22,7 @@ export const PunbbUserModelBase = ModelBase
     registered: types.union(types.undefined, types.integer),
     last_visit: types.union(types.undefined, types.integer),
     last_post: types.union(types.undefined, types.null, types.integer),
+    admin_note: types.union(types.undefined, types.null, types.string),
   })
   .views(self => ({
     get store() {
@@ -36,9 +37,10 @@ export class PunbbUserModelSelector extends QueryBuilder {
   get registered() { return this.__attr(`registered`) }
   get last_visit() { return this.__attr(`last_visit`) }
   get last_post() { return this.__attr(`last_post`) }
+  get admin_note() { return this.__attr(`admin_note`) }
 }
 export function selectFromPunbbUser() {
   return new PunbbUserModelSelector()
 }
 
-export const punbbUserModelPrimitives = selectFromPunbbUser().username.signature.registered.last_visit.last_post
+export const punbbUserModelPrimitives = selectFromPunbbUser().username.signature.registered.last_visit.last_post.admin_note
