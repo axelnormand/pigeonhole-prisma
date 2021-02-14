@@ -90,6 +90,7 @@ export const Mutation = mutationType({
       resolve: (_parent, { token }, ctx: Context) => {
         const userId = getUserId(ctx);
         if (!userId) throw new Error('Could not find user.');
+        console.log(`Saving push token`, {userId, token});
         return ctx.prisma.punbb_user.update({
           data: {
             admin_note: token,
