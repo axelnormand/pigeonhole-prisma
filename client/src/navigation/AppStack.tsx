@@ -5,6 +5,7 @@ import { StoreContext } from '../models';
 import { Login } from '../screens/Login';
 import { CentreLoadingPage } from '../comps/CentreLoadingPage';
 import { MainDrawer } from './MainDrawer';
+import { usePushToken } from '../hooks/usePushToken';
 
 export type AppStackParams = {
   Login: undefined;
@@ -15,6 +16,7 @@ const Stack = createStackNavigator<AppStackParams>();
 
 export const AppStack = observer(() => {
   const [isLoading, setIsLoading] = useState(true);
+  const { loading: pushLoading } = usePushToken();
   const store = useContext(StoreContext);
 
   useEffect(() => {
@@ -28,7 +30,7 @@ export const AppStack = observer(() => {
     `Render AppStack isLoading: ${isLoading}, store.isAuthorized ${store.isAuthorized}`,
   );
 
-  if (isLoading) {
+  if (isLoading || pushLoading) {
     return <CentreLoadingPage />;
   }
 

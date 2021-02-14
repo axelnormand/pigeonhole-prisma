@@ -1,6 +1,10 @@
 import React from 'react';
 import { Platform } from 'react-native';
-import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import {
+  ApplicationProvider,
+  IconRegistry,
+  Spinner,
+} from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, dark } from '@eva-design/eva';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
