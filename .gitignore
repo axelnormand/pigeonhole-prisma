@@ -109,3 +109,5 @@ typings/
 client/.expo-shared/
 
 client/ios/pigeonhole/Supporting/
+
+.dccache
