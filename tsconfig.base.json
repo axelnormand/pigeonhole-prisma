@@ -14,6 +14,7 @@
     "allowJs": true,
     "checkJs": false,
     "skipLibCheck": true,
+    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
       "@axelnormand/pigeonhole-client/*": ["client/src"],
