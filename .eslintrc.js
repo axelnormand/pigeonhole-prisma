@@ -2,19 +2,22 @@ module.export = {
   root: true,
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2018, 
-    sourceType: "module", 
+    ecmaVersion: 2018,
+    sourceType: "module",
   },
   env: {
     browser: true,
     node: true,
+    es6: true
   },
   ignorePatterns: [
-    "**/generated/**",
+    "**/generated/**",  
     "**/build/**",
     "**/public/**",
     "**/coverage/**",
     "**/node_modules/**",
+    "**/dist/**",
+    "**/web-build/**",
   ],
   extends: [
     "plugin:@typescript-eslint/recommended",
@@ -74,7 +77,7 @@ module.export = {
         ignoreDeclarationSort: true,
       },
     ],
-    "import/no-default-export": "error", 
+    "import/no-default-export": "error",
     "react/prop-types": "off",
     "jsdoc/require-returns": "off",
     "jsdoc/require-param-description": "off",

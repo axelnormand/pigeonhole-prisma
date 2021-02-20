@@ -56,7 +56,7 @@ interface NexusPrismaInputs {
     }
     punbbForums: {
       filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
-      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_category'
     }
     punbbForumPerms: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
@@ -72,7 +72,7 @@ interface NexusPrismaInputs {
     }
     punbbPosts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
     }
     punbbRanks: {
       filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'min_posts' | 'rank'
@@ -96,7 +96,7 @@ interface NexusPrismaInputs {
     }
     punbbTopics: {
       filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
-      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
     }
     punbbUploadeds: {
       filtering: 'AND' | 'OR' | 'NOT' | 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
@@ -112,7 +112,7 @@ interface NexusPrismaInputs {
     }
     punbbUserthreads: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
     }
   },
   punbb_ban: {
@@ -121,7 +121,7 @@ interface NexusPrismaInputs {
   punbb_category: {
     punbb_forums: {
       filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
-      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_category'
     }
   }
   punbb_censoring: {
@@ -133,11 +133,11 @@ interface NexusPrismaInputs {
   punbb_forum: {
     punbb_topics: {
       filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
-      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
     }
   }
   punbb_forum_perm: {
@@ -170,11 +170,11 @@ interface NexusPrismaInputs {
   punbb_topic: {
     punbb_posts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
     }
   }
   punbb_uploaded: {
@@ -186,11 +186,11 @@ interface NexusPrismaInputs {
   punbb_user: {
     punbb_posts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
     }
   }
   punbb_userthread: {
@@ -243,117 +243,117 @@ interface NexusPrismaOutputs {
   Mutation: {
     createOnepunbb_ban: 'punbb_ban'
     updateOnepunbb_ban: 'punbb_ban'
-    updateManypunbb_ban: 'BatchPayload'
+    updateManypunbb_ban: 'AffectedRowsOutput'
     deleteOnepunbb_ban: 'punbb_ban'
-    deleteManypunbb_ban: 'BatchPayload'
+    deleteManypunbb_ban: 'AffectedRowsOutput'
     upsertOnepunbb_ban: 'punbb_ban'
     createOnepunbb_category: 'punbb_category'
     updateOnepunbb_category: 'punbb_category'
-    updateManypunbb_category: 'BatchPayload'
+    updateManypunbb_category: 'AffectedRowsOutput'
     deleteOnepunbb_category: 'punbb_category'
-    deleteManypunbb_category: 'BatchPayload'
+    deleteManypunbb_category: 'AffectedRowsOutput'
     upsertOnepunbb_category: 'punbb_category'
     createOnepunbb_censoring: 'punbb_censoring'
     updateOnepunbb_censoring: 'punbb_censoring'
-    updateManypunbb_censoring: 'BatchPayload'
+    updateManypunbb_censoring: 'AffectedRowsOutput'
     deleteOnepunbb_censoring: 'punbb_censoring'
-    deleteManypunbb_censoring: 'BatchPayload'
+    deleteManypunbb_censoring: 'AffectedRowsOutput'
     upsertOnepunbb_censoring: 'punbb_censoring'
     createOnepunbb_config: 'punbb_config'
     updateOnepunbb_config: 'punbb_config'
-    updateManypunbb_config: 'BatchPayload'
+    updateManypunbb_config: 'AffectedRowsOutput'
     deleteOnepunbb_config: 'punbb_config'
-    deleteManypunbb_config: 'BatchPayload'
+    deleteManypunbb_config: 'AffectedRowsOutput'
     upsertOnepunbb_config: 'punbb_config'
     createOnepunbb_forum: 'punbb_forum'
     updateOnepunbb_forum: 'punbb_forum'
-    updateManypunbb_forum: 'BatchPayload'
+    updateManypunbb_forum: 'AffectedRowsOutput'
     deleteOnepunbb_forum: 'punbb_forum'
-    deleteManypunbb_forum: 'BatchPayload'
+    deleteManypunbb_forum: 'AffectedRowsOutput'
     upsertOnepunbb_forum: 'punbb_forum'
     createOnepunbb_forum_perm: 'punbb_forum_perm'
     updateOnepunbb_forum_perm: 'punbb_forum_perm'
-    updateManypunbb_forum_perm: 'BatchPayload'
+    updateManypunbb_forum_perm: 'AffectedRowsOutput'
     deleteOnepunbb_forum_perm: 'punbb_forum_perm'
-    deleteManypunbb_forum_perm: 'BatchPayload'
+    deleteManypunbb_forum_perm: 'AffectedRowsOutput'
     upsertOnepunbb_forum_perm: 'punbb_forum_perm'
     createOnepunbb_group: 'punbb_group'
     updateOnepunbb_group: 'punbb_group'
-    updateManypunbb_group: 'BatchPayload'
+    updateManypunbb_group: 'AffectedRowsOutput'
     deleteOnepunbb_group: 'punbb_group'
-    deleteManypunbb_group: 'BatchPayload'
+    deleteManypunbb_group: 'AffectedRowsOutput'
     upsertOnepunbb_group: 'punbb_group'
     createOnepunbb_poll: 'punbb_poll'
     updateOnepunbb_poll: 'punbb_poll'
-    updateManypunbb_poll: 'BatchPayload'
+    updateManypunbb_poll: 'AffectedRowsOutput'
     deleteOnepunbb_poll: 'punbb_poll'
-    deleteManypunbb_poll: 'BatchPayload'
+    deleteManypunbb_poll: 'AffectedRowsOutput'
     upsertOnepunbb_poll: 'punbb_poll'
     createOnepunbb_post: 'punbb_post'
     updateOnepunbb_post: 'punbb_post'
-    updateManypunbb_post: 'BatchPayload'
+    updateManypunbb_post: 'AffectedRowsOutput'
     deleteOnepunbb_post: 'punbb_post'
-    deleteManypunbb_post: 'BatchPayload'
+    deleteManypunbb_post: 'AffectedRowsOutput'
     upsertOnepunbb_post: 'punbb_post'
     createOnepunbb_rank: 'punbb_rank'
     updateOnepunbb_rank: 'punbb_rank'
-    updateManypunbb_rank: 'BatchPayload'
+    updateManypunbb_rank: 'AffectedRowsOutput'
     deleteOnepunbb_rank: 'punbb_rank'
-    deleteManypunbb_rank: 'BatchPayload'
+    deleteManypunbb_rank: 'AffectedRowsOutput'
     upsertOnepunbb_rank: 'punbb_rank'
     createOnepunbb_report: 'punbb_report'
     updateOnepunbb_report: 'punbb_report'
-    updateManypunbb_report: 'BatchPayload'
+    updateManypunbb_report: 'AffectedRowsOutput'
     deleteOnepunbb_report: 'punbb_report'
-    deleteManypunbb_report: 'BatchPayload'
+    deleteManypunbb_report: 'AffectedRowsOutput'
     upsertOnepunbb_report: 'punbb_report'
     createOnepunbb_search_cache: 'punbb_search_cache'
     updateOnepunbb_search_cache: 'punbb_search_cache'
-    updateManypunbb_search_cache: 'BatchPayload'
+    updateManypunbb_search_cache: 'AffectedRowsOutput'
     deleteOnepunbb_search_cache: 'punbb_search_cache'
-    deleteManypunbb_search_cache: 'BatchPayload'
+    deleteManypunbb_search_cache: 'AffectedRowsOutput'
     upsertOnepunbb_search_cache: 'punbb_search_cache'
     createOnepunbb_search_word: 'punbb_search_word'
     updateOnepunbb_search_word: 'punbb_search_word'
-    updateManypunbb_search_word: 'BatchPayload'
+    updateManypunbb_search_word: 'AffectedRowsOutput'
     deleteOnepunbb_search_word: 'punbb_search_word'
-    deleteManypunbb_search_word: 'BatchPayload'
+    deleteManypunbb_search_word: 'AffectedRowsOutput'
     upsertOnepunbb_search_word: 'punbb_search_word'
     createOnepunbb_subscription: 'punbb_subscription'
     updateOnepunbb_subscription: 'punbb_subscription'
-    updateManypunbb_subscription: 'BatchPayload'
+    updateManypunbb_subscription: 'AffectedRowsOutput'
     deleteOnepunbb_subscription: 'punbb_subscription'
-    deleteManypunbb_subscription: 'BatchPayload'
+    deleteManypunbb_subscription: 'AffectedRowsOutput'
     upsertOnepunbb_subscription: 'punbb_subscription'
     createOnepunbb_topic: 'punbb_topic'
     updateOnepunbb_topic: 'punbb_topic'
-    updateManypunbb_topic: 'BatchPayload'
+    updateManypunbb_topic: 'AffectedRowsOutput'
     deleteOnepunbb_topic: 'punbb_topic'
-    deleteManypunbb_topic: 'BatchPayload'
+    deleteManypunbb_topic: 'AffectedRowsOutput'
     upsertOnepunbb_topic: 'punbb_topic'
     createOnepunbb_uploaded: 'punbb_uploaded'
     updateOnepunbb_uploaded: 'punbb_uploaded'
-    updateManypunbb_uploaded: 'BatchPayload'
+    updateManypunbb_uploaded: 'AffectedRowsOutput'
     deleteOnepunbb_uploaded: 'punbb_uploaded'
-    deleteManypunbb_uploaded: 'BatchPayload'
+    deleteManypunbb_uploaded: 'AffectedRowsOutput'
     upsertOnepunbb_uploaded: 'punbb_uploaded'
     createOnepunbb_uploads_type: 'punbb_uploads_type'
     updateOnepunbb_uploads_type: 'punbb_uploads_type'
-    updateManypunbb_uploads_type: 'BatchPayload'
+    updateManypunbb_uploads_type: 'AffectedRowsOutput'
     deleteOnepunbb_uploads_type: 'punbb_uploads_type'
-    deleteManypunbb_uploads_type: 'BatchPayload'
+    deleteManypunbb_uploads_type: 'AffectedRowsOutput'
     upsertOnepunbb_uploads_type: 'punbb_uploads_type'
     createOnepunbb_user: 'punbb_user'
     updateOnepunbb_user: 'punbb_user'
-    updateManypunbb_user: 'BatchPayload'
+    updateManypunbb_user: 'AffectedRowsOutput'
     deleteOnepunbb_user: 'punbb_user'
-    deleteManypunbb_user: 'BatchPayload'
+    deleteManypunbb_user: 'AffectedRowsOutput'
     upsertOnepunbb_user: 'punbb_user'
     createOnepunbb_userthread: 'punbb_userthread'
     updateOnepunbb_userthread: 'punbb_userthread'
-    updateManypunbb_userthread: 'BatchPayload'
+    updateManypunbb_userthread: 'AffectedRowsOutput'
     deleteOnepunbb_userthread: 'punbb_userthread'
-    deleteManypunbb_userthread: 'BatchPayload'
+    deleteManypunbb_userthread: 'AffectedRowsOutput'
     upsertOnepunbb_userthread: 'punbb_userthread'
   },
   punbb_ban: {

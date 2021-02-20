@@ -83,7 +83,7 @@ export const Mutation = mutationType({
     });
 
     t.field('updatePushToken', {
-      type: 'punbb_user',
+      type: 'punbb_user', 
       args: {
         token: nonNull(stringArg()),
       },
@@ -97,9 +97,9 @@ export const Mutation = mutationType({
             admin_note: token,
           }, where: {
             id: userId 
-          }
+          } 
         });
-      },
+      }, 
     });
 
     // t.field('createTopic', {

@@ -1,9 +1,20 @@
 {
-  "include": ["client/src", "server/src"],
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
     "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["dom", "es2017"],
+    "jsx": "react",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@axelnormand/pigeonhole-client/*": ["client/src"],
       "@axelnormand/pigeonhole-server/*": ["server/src"]

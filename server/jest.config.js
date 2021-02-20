@@ -1,14 +1,8 @@
+const baseConfig = require('../jest.config.base');
+
 module.exports = {
-    rootDir: '.',
-    setupFiles: ["<rootDir>/jest.setup.js"],
-    globals: {
-        'ts-jest': {
-            tsconfig: '<rootDir>/tsconfig.json'
-        }
-    },
-    moduleFileExtensions: ['ts', 'js'],
-    transform: {
-        '^.+\\.(ts)$': 'ts-jest'
-    },
-    testEnvironment: 'node'
+  ...baseConfig,
+  testEnvironment: 'node',
+  setupFiles: ['./src/tools/jest/jestSetup.ts'],
+  setupFilesAfterEnv: ['./src/tools/jest/jestSetupAfterEnv.ts'],
 };

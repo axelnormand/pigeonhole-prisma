@@ -1,19 +1,7 @@
 {
-  "include": ["src"],
   "extends": "../tsconfig.base.json",
+  "include": ["src/**/*"],
   "compilerOptions": {
-    // for references
-    "baseUrl": "src",
-    // references required for monorepo to work
-    //"references": [{ "path": "../server" }],
-    "target": "es5",
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "sourceMap": true,
-    "lib": ["esnext", "dom"],
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "rootDir": "src",
-    "outDir": "dist"
+    "baseUrl": ".",
   }
 }
