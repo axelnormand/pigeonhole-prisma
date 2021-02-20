@@ -19,7 +19,7 @@ export function getUserId(context: Context): number | null {
       // @ts-ignore no event in context
       authorization = context.event.headers.authorization;
     } else {
-      authorization = context.request.get('Authorization');
+      authorization = context.request.get('Authorization') ?? '';
     }
 
     if (!authorization) {

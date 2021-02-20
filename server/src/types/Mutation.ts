@@ -1,5 +1,5 @@
 import { getUserId } from '../auth';
-import { Context } from 'context';
+import { Context } from '../context';
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
 import { mutationType, nonNull, stringArg } from 'nexus';
@@ -67,7 +67,7 @@ export const Mutation = mutationType({
             );
             return { loginResult: LoginResultType.INVALID };
           }
-          const token = sign({ userId: user.id }, config().appSecret);
+          const token = sign({ userId: user.id }, config().appSecret ??'');
           console.log(`Login mutation: user ${lowerUsername} is id ${user.id}`);
           return {
             loginResult: LoginResultType.SUCCESS,
@@ -79,6 +79,7 @@ export const Mutation = mutationType({
             e,
           );
         }
+        return { loginResult: LoginResultType.ERROR };
       },
     });
 

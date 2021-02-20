@@ -17,7 +17,7 @@ export const isPostOwner = rule({ cache: 'contextual' })(
         id: Number(id),
       },
     });
-    return userId === post.poster_id;
+    return userId === post?.poster_id;
   },
 );
 
@@ -34,6 +34,7 @@ export const isTopicOwner = rule({ cache: 'contextual' })(
         id: Number(id),
       },
     });
+    if (!user || !topic) return false;
     return user.username === topic.poster;
   },
 );
