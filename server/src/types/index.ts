@@ -1,4 +1,4 @@
-export * from './AuthPayload';
+export * from './types';
 export * from './punbb_post';
 export * from './punbb_user';
 export * from './punbb_category';

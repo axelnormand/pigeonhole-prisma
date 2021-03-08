@@ -49,6 +49,9 @@ export interface NexusGenObjects {
   }
   Mutation: {};
   Query: {};
+  UpdateResult: { // root type
+    success?: boolean | null; // Boolean
+  }
   punbb_category: { // root type
     cat_name: string; // String!
     disp_position: number; // Int!
@@ -123,7 +126,7 @@ export interface NexusGenFieldTypes {
   }
   Mutation: { // field return type
     login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
-    updatePushToken: NexusGenRootTypes['punbb_user'] | null; // punbb_user
+    updatePushToken: NexusGenRootTypes['UpdateResult'] | null; // UpdateResult
   }
   Query: { // field return type
     categories: Array<NexusGenRootTypes['punbb_category'] | null> | null; // [punbb_category]
@@ -132,6 +135,9 @@ export interface NexusGenFieldTypes {
     recentTopics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
     searchPosts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
     topics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
+  }
+  UpdateResult: { // field return type
+    success: boolean | null; // Boolean
   }
   punbb_category: { // field return type
     cat_name: string; // String!
@@ -201,7 +207,7 @@ export interface NexusGenFieldTypeNames {
   }
   Mutation: { // field return type name
     login: 'AuthPayload'
-    updatePushToken: 'punbb_user'
+    updatePushToken: 'UpdateResult'
   }
   Query: { // field return type name
     categories: 'punbb_category'
@@ -210,6 +216,9 @@ export interface NexusGenFieldTypeNames {
     recentTopics: 'punbb_topic'
     searchPosts: 'punbb_post'
     topics: 'punbb_topic'
+  }
+  UpdateResult: { // field return type name
+    success: 'Boolean'
   }
   punbb_category: { // field return type name
     cat_name: 'String'

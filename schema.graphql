@@ -15,7 +15,7 @@ enum LoginResult {
 
 type Mutation {
   login(password: String!, username: String!): AuthPayload
-  updatePushToken(token: String!): punbb_user
+  updatePushToken(token: String!): UpdateResult
 }
 
 type punbb_category {
@@ -102,4 +102,8 @@ type Query {
   recentTopics(cursor: Int, take: Int): [punbb_topic]
   searchPosts(cursor: Int, searchString: String!, take: Int): [punbb_post]
   topics(cursor: Int, forum_id: Int!, take: Int): [punbb_topic]
+}
+
+type UpdateResult {
+  success: Boolean
 }

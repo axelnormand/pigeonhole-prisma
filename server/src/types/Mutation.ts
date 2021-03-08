@@ -4,7 +4,7 @@ import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
 import { mutationType, nonNull, stringArg } from 'nexus';
 import { config } from '../config';
-import { LoginResultType } from './AuthPayload';
+import { LoginResultType } from './types';
 
 export const Mutation = mutationType({
   definition(t) {
@@ -84,22 +84,38 @@ export const Mutation = mutationType({
     });
 
     t.field('updatePushToken', {
-      type: 'punbb_user', 
+      type: 'UpdateResult', 
       args: {
         token: nonNull(stringArg()),
       },
-      resolve: (_parent, { token }, ctx: Context) => {
+      resolve: async (_parent, { token }, ctx: Context) => {
         const userId = getUserId(ctx);
         if (!userId) throw new Error('Could not find user.');
         console.log(`Saving push token`, { userId, token });
-        //get current ones and append new one if it doesnt exist
-        return ctx.prisma.punbb_user.update({
+        const user = await ctx.prisma.punbb_user.findUnique({
+          where: {
+            id: Number(userId),
+          },
+        });
+        if (!user) {
+          throw new Error(`user not found with userId ${userId}`)
+        }
+        const tokens = (user.admin_note ?? '').split(','); 
+        if (tokens.indexOf(token) >= 0) {
+          //already saved token
+          console.log(`Already saved`);
+          return { success: false};
+        }
+        tokens.push(token);
+        // get current ones and append new one if it doesnt exist
+        ctx.prisma.punbb_user.update({
           data: {
-            admin_note: token,
+            admin_note: tokens.join(','),
           }, where: {
             id: userId 
           } 
         });
+        return {success: true};
       }, 
     });
 

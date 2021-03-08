@@ -11,6 +11,13 @@ export const LoginResult = enumType({
   members: LoginResultType,
 });
 
+export const UpdateResult = objectType({
+  name: 'UpdateResult',
+  definition(t) {
+    t.boolean('success');
+  },
+});
+
 export const AuthPayload = objectType({
   name: 'AuthPayload',
   definition(t) {
