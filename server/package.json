@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
-    "type-check": "tsc",
+    "type-check": "tsc --noEmit",
     "test": "jest",
     "start": "ts-node-dev --no-notify --respawn --transpile-only src",
     "build": "cross-env NODE_ENV=production yarn clean && yarn generate && tsc",
