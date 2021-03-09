@@ -9,7 +9,7 @@
     "start": "ts-node-dev --no-notify --respawn --transpile-only src",
     "build": "cross-env NODE_ENV=production yarn clean && yarn generate && tsc",
     "lint": "eslint --cache .",
-    "lint:fix": "yarn lint-js --fix",
+    "lint:fix": "yarn lint --fix",
     "start:prod": "cross-env NODE_ENV=production yarn build && node dist",
     "start:netlify:dev": "cross-env PIGEONHOLE_SERVER=lambda yarn build && netlify dev -d public -f dist/functions",
     "generate": "yarn generate:prisma && yarn generate:nexus",
