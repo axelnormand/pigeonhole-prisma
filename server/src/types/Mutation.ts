@@ -5,6 +5,8 @@ import { sign } from 'jsonwebtoken';
 import { intArg, mutationType, nonNull, stringArg } from 'nexus';
 import { config } from '../config';
 import { LoginResultType } from './types';
+import { getPushTokens } from 'src/services/db';
+import { PushMessage, sendPushNotification } from 'src/services/push';
 
 export const Mutation = mutationType({
   definition(t) {
@@ -192,7 +194,21 @@ export const Mutation = mutationType({
           }, where: {
             id: newTopic.id,
           },
-        });
+         });
+        
+         //send push message
+         const pushMessage: PushMessage = {
+          body: `${subject}`,
+          title: `New topic from ${user.username}`,
+          data: {
+            type: "newTopic",
+            forum_id: forum.id,
+            topic_id: newTopic.id,
+            post_id: newPost.id
+          }
+        }
+        const tokens = await getPushTokens(ctx);
+        await sendPushNotification(pushMessage, tokens);
         return newTopic;
       },
     });
@@ -289,6 +305,21 @@ export const Mutation = mutationType({
             id: forum.id,
           },
         });
+
+        //send push message
+        const pushMessage: PushMessage = {
+          body: `${message}`,
+          title: `New post from ${user.username} in ${topic.subject}`,
+          data: {
+            type: "newPost",
+            forum_id: forum.id,
+            topic_id: topic.id,
+            post_id: newPost.id
+          }
+        }
+        const tokens = await getPushTokens(ctx);
+        await sendPushNotification(pushMessage, tokens);
+
         return newPost;
       },
     });
