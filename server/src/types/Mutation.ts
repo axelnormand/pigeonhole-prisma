@@ -2,7 +2,7 @@ import { getUserId } from '../auth';
 import { Context } from '../context';
 import sha1 from 'crypto-js/sha1';
 import { sign } from 'jsonwebtoken';
-import { mutationType, nonNull, stringArg } from 'nexus';
+import { intArg, mutationType, nonNull, stringArg } from 'nexus';
 import { config } from '../config';
 import { LoginResultType } from './types';
 
@@ -119,22 +119,83 @@ export const Mutation = mutationType({
       }, 
     });
 
-    // t.field('createTopic', {
-    //   type: 'punbb_topics',
-    //   args: {
-    //     subject: stringArg({ required: true }),
-    //   },
-    //   resolve: (_parent, { title, content }, ctx:Context) => {
-    //     const userId = getUserId(ctx:Context);
-    //     if (!userId) throw new Error('Could not authenticate user.');
-    //     return ctx.prisma.punbb_topics.create({
-    //       data: {
-    //         subject,
-    //         author: { connect: { id: Number(userId) } },
-    //       },
-    //     });
-    //   },
-    // });
+    t.field('createTopic', {
+      type: 'punbb_topic',
+      args: {
+        forum_id: nonNull(intArg()),
+        message: nonNull(stringArg()),
+        subject: nonNull(stringArg()),
+      },
+      resolve: async (_parent, { forum_id, subject, message }, ctx:Context) => {
+        const userId = getUserId(ctx);
+        if (!userId) throw new Error('Could not find user.');
+        const user = await ctx.prisma.punbb_user.findUnique({
+          where: {
+            id: Number(userId),
+          },
+        });
+        if (!user) {
+          throw new Error(`user not found with userId ${userId}`)
+        }
+        const forum = await ctx.prisma.punbb_forum.findUnique({
+          where: {
+            id: forum_id,
+          },
+        });
+        if (!forum) {
+          throw new Error(`forum not found with forum_id ${forum_id}`)
+        }
+        const posted = Math.round(Date.now() / 1000); // epoch seconds
+
+        const newTopic = await ctx.prisma.punbb_topic.create({
+          data: {
+            last_post: posted,
+            last_poster: user.username,
+            num_replies: 1,
+            poster: user.username,
+            posted,
+            subject,
+            forum_id,
+            yes: '',
+            no: '',
+            question:''
+          },
+        });
+
+        const newPost = await ctx.prisma.punbb_post.create({
+          data: {
+            message,
+            poster_id: userId,
+            poster: user.username,
+            poster_ip: ctx.request.ip,
+            topic_id: newTopic.id,
+            posted
+          },
+        });
+
+        //update forum bits
+        await ctx.prisma.punbb_forum.update({
+          data: {
+            last_post: posted,
+            last_post_id: newPost.id,
+            last_poster: user.username,
+            num_posts: forum.num_posts + 1,
+            num_topics: forum.num_topics+1,
+          }, where: {
+            id: forum.id,
+          },
+        });
+         //update thread with new post id
+         await ctx.prisma.punbb_topic.update({
+          data: {
+            last_post_id: newPost.id,
+          }, where: {
+            id: newTopic.id,
+          },
+        });
+        return newTopic;
+      },
+    });
 
     // t.field('updateTopic', {
     //   type: 'punbb_topics',
@@ -160,5 +221,76 @@ export const Mutation = mutationType({
     //     });
     //   },
     // });
+
+    t.field('createPost', {
+      type: 'punbb_post',
+      args: {
+        topic_id: nonNull(intArg()),
+        message: nonNull(stringArg()),
+      },
+      resolve: async (_parent, { message, topic_id }, ctx:Context) => {
+        const userId = getUserId(ctx);
+        if (!userId) throw new Error('Could not find user.');
+        const user = await ctx.prisma.punbb_user.findUnique({
+          where: {
+            id: Number(userId),
+          },
+        });
+        if (!user) {
+          throw new Error(`user not found with userId ${userId}`)
+        }
+        const topic = await ctx.prisma.punbb_topic.findUnique({
+          where: {
+            id: topic_id,
+          },
+        });
+        if (!topic) {
+          throw new Error(`topic not found with topic_id ${topic_id}`)
+        }
+        const forum = await ctx.prisma.punbb_forum.findUnique({
+          where: {
+            id: topic.forum_id,
+          },
+        });
+        if (!forum) {
+          throw new Error(`forum not found with forum_id ${topic.forum_id}`)
+        }
+        const posted = Math.round(Date.now() / 1000); // epoch seconds
+
+        const newPost = await ctx.prisma.punbb_post.create({
+          data: {
+            message,
+            poster_id: userId,
+            poster: user.username,
+            poster_ip: ctx.request.ip,
+            topic_id,
+            posted
+          },
+        });
+        //update thread bits
+        await ctx.prisma.punbb_topic.update({
+          data: {
+            last_post: posted,
+            last_post_id: newPost.id,
+            last_poster: user.username,
+            num_replies: topic.num_replies+1,
+          }, where: {
+            id: topic_id,
+          },
+        });
+        //update forum bits
+        await ctx.prisma.punbb_forum.update({
+          data: {
+            last_post: posted,
+            last_post_id: newPost.id,
+            last_poster: user.username,
+            num_posts: forum.num_posts+1,
+          }, where: {
+            id: forum.id,
+          },
+        });
+        return newPost;
+      },
+    });
   },
 });
