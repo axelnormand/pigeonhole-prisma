@@ -20,6 +20,7 @@ export const PunbbPostModelBase = ModelBase
     __typename: types.optional(types.literal("punbb_post"), "punbb_post"),
     id: types.union(types.undefined, types.integer),
     poster_id: types.union(types.undefined, types.integer),
+    topic_id: types.union(types.undefined, types.integer),
     message: types.union(types.undefined, types.string),
     posted: types.union(types.undefined, types.integer),
     poster: types.union(types.undefined, types.string),
@@ -36,6 +37,7 @@ export const PunbbPostModelBase = ModelBase
 export class PunbbPostModelSelector extends QueryBuilder {
   get id() { return this.__attr(`id`) }
   get poster_id() { return this.__attr(`poster_id`) }
+  get topic_id() { return this.__attr(`topic_id`) }
   get message() { return this.__attr(`message`) }
   get posted() { return this.__attr(`posted`) }
   get poster() { return this.__attr(`poster`) }
@@ -47,4 +49,4 @@ export function selectFromPunbbPost() {
   return new PunbbPostModelSelector()
 }
 
-export const punbbPostModelPrimitives = selectFromPunbbPost().poster_id.message.posted.poster.edited.edited_by
+export const punbbPostModelPrimitives = selectFromPunbbPost().poster_id.topic_id.message.posted.poster.edited.edited_by
