@@ -14,10 +14,12 @@ export const usePushToken = () => {
 
   useEffect(() => {
     (async () => {
-      setToken(await registerForPushNotifications());
+      const token = await registerForPushNotifications();
       setLoading(false);
+      setToken(token);
 
       if (token) {
+        console.log(`calling mutateUpdatePushToken `, { token });
         await store.mutateUpdatePushToken({ token });
 
         // This listener is fired whenever a notification is received while the app is foregrounded
