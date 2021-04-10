@@ -93,7 +93,6 @@ export const Mutation = mutationType({
       resolve: async (_parent, { token }, ctx: Context) => {
         const userId = getUserId(ctx);
         if (!userId) throw new Error('Could not find user.');
-        console.log(`Saving push token`, { userId, token });
         const user = await ctx.prisma.punbb_user.findUnique({
           where: {
             id: Number(userId),
@@ -102,7 +101,7 @@ export const Mutation = mutationType({
         if (!user) {
           throw new Error(`user not found with userId ${userId}`)
         }
-        const tokens = (user.admin_note ?? '').split(',');
+        const tokens = (user.admin_note ?? '').split(',').filter((t:string)=> !!t);
         console.log(`loaded tokens for ${user.username} `, { tokens });
         if (tokens.indexOf(token) >= 0) {
           //already saved token

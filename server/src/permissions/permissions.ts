@@ -1,5 +1,5 @@
 import { shield, deny, allow } from 'graphql-shield';
-import { isAuthenticated } from './rules';
+import { isAuthenticated, isPostOwner, isTopicOwner } from './rules';
 
 export const permissions = shield(
   {
@@ -14,13 +14,12 @@ export const permissions = shield(
     Mutation: {
       login: allow,
       updatePushToken: isAuthenticated,
-
-      // createPost: isPostOwner,
-      // updatePost: isPostOwner,
-      // deletePost: isPostOwner,
-      // createTopic: isTopicOwner,
-      // updateTopic: isTopicOwner,
-      // deleteTopic: isTopicOwner,
+      createPost: isPostOwner,
+      //updatePost: isPostOwner,
+      //deletePost: isPostOwner,
+      createTopic: isTopicOwner,
+      //updateTopic: isTopicOwner,
+      //deleteTopic: isTopicOwner,
     },
     AuthPayload: allow,
     punbb_user: isAuthenticated,
