@@ -14,6 +14,8 @@ enum LoginResult {
 }
 
 type Mutation {
+  createPost(message: String!, topic_id: Int!): punbb_post
+  createTopic(forum_id: Int!, message: String!, subject: String!): punbb_topic
   login(password: String!, username: String!): AuthPayload
   updatePushToken(token: String!): UpdateResult
 }
@@ -52,6 +54,7 @@ type punbb_post {
   poster: String!
   poster_id: Int!
   punbb_user: punbb_user!
+  topic_id: Int!
 }
 
 input punbb_postWhereUniqueInput {

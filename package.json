@@ -22,7 +22,8 @@
     "lint:fix": "lerna run lint:fix",
     "test": "jest",
     "build:netlify": "yarn workspace @axelnormand/pigeonhole-server build && yarn workspace @axelnormand/pigeonhole-client build:web",
-    "clean": "rimraf '**/node_modules'"
+    "clean": "rimraf '**/node_modules'",
+    "generate": "lerna run generate"
   },
   "dependencies": {
     "@types/node": "14.14.28",

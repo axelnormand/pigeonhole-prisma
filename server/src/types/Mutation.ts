@@ -5,8 +5,8 @@ import { sign } from 'jsonwebtoken';
 import { intArg, mutationType, nonNull, stringArg } from 'nexus';
 import { config } from '../config';
 import { LoginResultType } from './types';
-import { getPushTokens } from 'src/services/db';
-import { PushMessage, sendPushNotification } from 'src/services/push';
+import { getPushTokens } from '../services/db';
+import { PushMessage, sendPushNotification } from '../services/push';
 
 export const Mutation = mutationType({
   definition(t) {

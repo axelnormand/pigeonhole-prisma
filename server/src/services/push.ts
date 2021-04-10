@@ -9,10 +9,13 @@ import {
 // optionally providing an access token if you have enabled push security
 let expo = new Expo({ accessToken: process.env.EXPO_ACCESS_TOKEN });
 
+export type PushMessageType = "newPost" | "newTopic"
+export type PushMessageData = {type: PushMessageType, [key: string]: string | number | boolean}
+
 export type PushMessage = {
   title: string;
   body: string;
-  data?: object;
+  data?: PushMessageData;
 };
 
 /**  Can use this function below, OR use Expo's Push Notification Tool-> https://expo.io/notifications */

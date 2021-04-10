@@ -77,6 +77,7 @@ export interface NexusGenObjects {
     posted: number; // Int!
     poster: string; // String!
     poster_id: number; // Int!
+    topic_id: number; // Int!
   }
   punbb_topic: { // root type
     closed: boolean; // Boolean!
@@ -125,6 +126,8 @@ export interface NexusGenFieldTypes {
     token: string | null; // String
   }
   Mutation: { // field return type
+    createPost: NexusGenRootTypes['punbb_post'] | null; // punbb_post
+    createTopic: NexusGenRootTypes['punbb_topic'] | null; // punbb_topic
     login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
     updatePushToken: NexusGenRootTypes['UpdateResult'] | null; // UpdateResult
   }
@@ -167,6 +170,7 @@ export interface NexusGenFieldTypes {
     poster: string; // String!
     poster_id: number; // Int!
     punbb_user: NexusGenRootTypes['punbb_user']; // punbb_user!
+    topic_id: number; // Int!
   }
   punbb_topic: { // field return type
     closed: boolean; // Boolean!
@@ -206,6 +210,8 @@ export interface NexusGenFieldTypeNames {
     token: 'String'
   }
   Mutation: { // field return type name
+    createPost: 'punbb_post'
+    createTopic: 'punbb_topic'
     login: 'AuthPayload'
     updatePushToken: 'UpdateResult'
   }
@@ -248,6 +254,7 @@ export interface NexusGenFieldTypeNames {
     poster: 'String'
     poster_id: 'Int'
     punbb_user: 'punbb_user'
+    topic_id: 'Int'
   }
   punbb_topic: { // field return type name
     closed: 'Boolean'
@@ -283,6 +290,15 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
+    createPost: { // args
+      message: string; // String!
+      topic_id: number; // Int!
+    }
+    createTopic: { // args
+      forum_id: number; // Int!
+      message: string; // String!
+      subject: string; // String!
+    }
     login: { // args
       password: string; // String!
       username: string; // String!
