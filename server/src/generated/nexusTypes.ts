@@ -107,8 +107,8 @@ interface NexusPrismaInputs {
       ordering: 'exts' | 'id' | 'type'
     }
     punbbUsers: {
-      filtering: 'AND' | 'OR' | 'NOT' | 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'punbb_userthread'
-      ordering: 'activate_key' | 'activate_string' | 'admin_note' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
+      filtering: 'AND' | 'OR' | 'NOT' | 'activate_key' | 'activate_string' | 'tokens' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo' | 'punbb_posts' | 'punbb_userthread'
+      ordering: 'activate_key' | 'activate_string' | 'tokens' | 'aim' | 'disp_posts' | 'disp_topics' | 'email' | 'email_setting' | 'group_id' | 'icq' | 'id' | 'jabber' | 'language' | 'last_post' | 'last_visit' | 'location' | 'msn' | 'notify_with_post' | 'num_posts' | 'password' | 'read_topics' | 'realname' | 'registered' | 'registration_ip' | 'save_pass' | 'show_avatars' | 'show_img' | 'show_img_sig' | 'show_sig' | 'show_smilies' | 'signature' | 'style' | 'timezone' | 'title' | 'url' | 'username' | 'use_avatar' | 'yahoo'
     }
     punbbUserthreads: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
@@ -515,7 +515,7 @@ interface NexusPrismaOutputs {
   punbb_user: {
     activate_key: 'String'
     activate_string: 'String'
-    admin_note: 'String'
+    tokens: 'String'
     aim: 'String'
     disp_posts: 'Int'
     disp_topics: 'Int'

@@ -9,6 +9,6 @@ export const punbb_user = objectType({
     t.model.registered();
     t.model.last_visit();
     t.model.last_post();
-    t.model.admin_note();
+    t.model.tokens();
   },
 });

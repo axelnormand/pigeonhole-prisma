@@ -101,7 +101,7 @@ export const Mutation = mutationType({
         if (!user) {
           throw new Error(`user not found with userId ${userId}`)
         }
-        const tokens = (user.admin_note ?? '').split(',').filter((t:string)=> !!t);
+        const tokens = (user.tokens ?? '').split(',').filter((t:string)=> !!t);
         console.log(`loaded tokens for ${user.username} `, { tokens });
         if (tokens.indexOf(token) >= 0) {
           //already saved token
@@ -109,15 +109,16 @@ export const Mutation = mutationType({
           return { success: false};
         }
         tokens.push(token);
-        console.log(`saving with new tokens into admin_note for ${user.username} `, { tokens });
+        console.log(`saving with new tokens into tokens for ${user.username} `, { tokens });
         // get current ones and append new one if it doesnt exist
-        ctx.prisma.punbb_user.update({
+        const updated = await ctx.prisma.punbb_user.update({
           data: {
-            admin_note: tokens.join(','),
+            tokens: tokens.join(','),
           }, where: {
             id: userId 
           } 
         });
+        console.log(`saved with new tokens into tokens for ${user.username}: ${updated.tokens}`);
         return {success: true};
       }, 
     });

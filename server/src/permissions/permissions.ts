@@ -28,5 +28,8 @@ export const permissions = shield(
     punbb_topic: isAuthenticated,
     punbb_post: isAuthenticated,
   },
-  { fallbackRule: deny, debug: true },
+  {
+    //fallbackRule: deny,
+    debug: true,
+  },
 );

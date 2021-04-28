@@ -81,12 +81,12 @@ input punbb_topicWhereUniqueInput {
 }
 
 type punbb_user {
-  admin_note: String
   id: Int!
   last_post: Int
   last_visit: Int!
   registered: Int!
   signature: String
+  tokens: String
   username: String!
 }
 

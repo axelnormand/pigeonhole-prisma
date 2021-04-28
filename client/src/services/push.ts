@@ -16,6 +16,8 @@ export const registerForPushNotifications = async (): Promise<
     console.log(`Not registering for push on web`);
     return;
   }
+
+  console.log(`Registering for push...`);
   
   const { status: existingStatus } = await Notifications.getPermissionsAsync();
   let finalStatus = existingStatus;

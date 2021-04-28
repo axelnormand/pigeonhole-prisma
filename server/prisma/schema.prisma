@@ -247,7 +247,7 @@ model punbb_uploads_type {
 model punbb_user {
   activate_key     String?
   activate_string  String?
-  admin_note       String?
+  tokens           String?
   aim              String?
   disp_posts       Int?
   disp_topics      Int?

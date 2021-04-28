@@ -93,12 +93,12 @@ export interface NexusGenObjects {
     subject: string; // String!
   }
   punbb_user: { // root type
-    admin_note?: string | null; // String
     id: number; // Int!
     last_post?: number | null; // Int
     last_visit: number; // Int!
     registered: number; // Int!
     signature?: string | null; // String
+    tokens?: string | null; // String
     username: string; // String!
   }
   punbb_userthread: { // root type
@@ -187,12 +187,12 @@ export interface NexusGenFieldTypes {
     subject: string; // String!
   }
   punbb_user: { // field return type
-    admin_note: string | null; // String
     id: number; // Int!
     last_post: number | null; // Int
     last_visit: number; // Int!
     registered: number; // Int!
     signature: string | null; // String
+    tokens: string | null; // String
     username: string; // String!
   }
   punbb_userthread: { // field return type
@@ -271,12 +271,12 @@ export interface NexusGenFieldTypeNames {
     subject: 'String'
   }
   punbb_user: { // field return type name
-    admin_note: 'String'
     id: 'Int'
     last_post: 'Int'
     last_visit: 'Int'
     registered: 'Int'
     signature: 'String'
+    tokens: 'String'
     username: 'String'
   }
   punbb_userthread: { // field return type name
