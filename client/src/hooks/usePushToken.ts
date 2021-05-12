@@ -19,7 +19,7 @@ export const usePushToken = () => {
       setToken(token);
 
       if (token) {
-        console.log(`calling mutateUpdatePushToken `, { token });
+        console.log(`calling mutateUpdatePushToken ${token}`);
         await store.mutateUpdatePushToken({ token });
 
         // This listener is fired whenever a notification is received while the app is foregrounded

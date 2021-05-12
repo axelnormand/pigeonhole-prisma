@@ -30,8 +30,7 @@ export const registerForPushNotifications = async (): Promise<
     return;
   }
   const token = (await Notifications.getExpoPushTokenAsync()).data;
-  console.log(`push token grabbed`, { token });
-
+  
   if (Platform.OS === 'android') {
     Notifications.setNotificationChannelAsync('default', {
       name: 'default',
