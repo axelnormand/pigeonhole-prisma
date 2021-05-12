@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Text, useTheme } from '@ui-kitten/components';
-import { StyleSheet, FlatList, ListRenderItem } from 'react-native';
+import { useTheme } from '@ui-kitten/components';
+import { StyleSheet, ListRenderItem } from 'react-native';
 import { CentreLoadingPage } from './CentreLoadingPage';
 import { CentreLoading } from './CentreLoading';
 import { CentreFin } from './CentreFin';
+import { FlatList } from 'react-native-bidirectional-infinite-scroll';
 
 /** make sure can get next cursor using last element id in array */
 type Item = {
@@ -40,13 +41,13 @@ export const CursorFlatList = <T extends Item>({
   const [error, setError] = useState<Error>();
   const [hasMore, setHasMore] = useState(false);
 
-  // loadMore on initial render
+  // loadMore on initial mount
   useEffect(() => {
-    loadMore();
+    loadMore("down");
     setInitialLoad(false);
   }, []);
 
-  const loadMore = async () => {
+  const loadMore = async (direction: "up" | "down") => {
     if (loadingState !== LoadingState.none) return;
     try {
       setLoadingState(LoadingState.loading);
@@ -87,14 +88,17 @@ export const CursorFlatList = <T extends Item>({
       data={list}
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
-      onEndReached={hasMore ? loadMore : undefined}
-      ListFooterComponent={
-        hasMore ? (
-          <CentreLoading />
-        ) : loadingState === LoadingState.none ? (
-          <CentreFin />
-        ) : null
-      }
+      onEndReached={() => loadMore("up")}
+      onStartReached={() => loadMore("down")}
+      FooterLoadingIndicator={() => <CentreLoading />}
+      HeaderLoadingIndicator={() => <CentreLoading />}
+      // ListFooterComponent={
+      //   hasMore ? (
+      //     <CentreLoading />
+      //   ) : loadingState === LoadingState.none ? (
+      //     <CentreFin />
+      //   ) : null
+      // }
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
     />

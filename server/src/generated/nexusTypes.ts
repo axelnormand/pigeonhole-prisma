@@ -56,7 +56,7 @@ interface NexusPrismaInputs {
     }
     punbbForums: {
       filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
-      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_category'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
     }
     punbbForumPerms: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum_id' | 'group_id' | 'post_polls' | 'post_replies' | 'post_topics' | 'read_forum'
@@ -72,7 +72,7 @@ interface NexusPrismaInputs {
     }
     punbbPosts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
     }
     punbbRanks: {
       filtering: 'AND' | 'OR' | 'NOT' | 'id' | 'min_posts' | 'rank'
@@ -96,7 +96,7 @@ interface NexusPrismaInputs {
     }
     punbbTopics: {
       filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
-      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
     }
     punbbUploadeds: {
       filtering: 'AND' | 'OR' | 'NOT' | 'data' | 'descr' | 'downs' | 'file' | 'id' | 'size' | 'uid' | 'user' | 'user_stat'
@@ -112,7 +112,7 @@ interface NexusPrismaInputs {
     }
     punbbUserthreads: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   },
   punbb_ban: {
@@ -121,7 +121,7 @@ interface NexusPrismaInputs {
   punbb_category: {
     punbb_forums: {
       filtering: 'AND' | 'OR' | 'NOT' | 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_topics' | 'punbb_category' | 'punbb_userthread'
-      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by' | 'punbb_category'
+      ordering: 'cat_id' | 'disp_position' | 'forum_desc' | 'forum_name' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moderators' | 'num_posts' | 'num_topics' | 'redirect_url' | 'sort_by'
     }
   }
   punbb_censoring: {
@@ -133,11 +133,11 @@ interface NexusPrismaInputs {
   punbb_forum: {
     punbb_topics: {
       filtering: 'AND' | 'OR' | 'NOT' | 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum' | 'punbb_posts' | 'punbb_userthread'
-      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes' | 'punbb_forum'
+      ordering: 'closed' | 'forum_id' | 'id' | 'last_post' | 'last_poster' | 'last_post_id' | 'moved_to' | 'no' | 'num_replies' | 'num_views' | 'posted' | 'poster' | 'question' | 'sticky' | 'subject' | 'yes'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_forum_perm: {
@@ -170,11 +170,11 @@ interface NexusPrismaInputs {
   punbb_topic: {
     punbb_posts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_uploaded: {
@@ -186,11 +186,11 @@ interface NexusPrismaInputs {
   punbb_user: {
     punbb_posts: {
       filtering: 'AND' | 'OR' | 'NOT' | 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
-      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id' | 'punbb_topic' | 'punbb_user'
+      ordering: 'edited' | 'edited_by' | 'hide_smilies' | 'id' | 'message' | 'posted' | 'poster' | 'poster_email' | 'poster_id' | 'poster_ip' | 'topic_id'
     }
     punbb_userthread: {
       filtering: 'AND' | 'OR' | 'NOT' | 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
-      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user' | 'punbb_topic' | 'punbb_forum' | 'punbb_user'
+      ordering: 'forum' | 'last_read' | 'posted' | 'thread' | 'user'
     }
   }
   punbb_userthread: {
