@@ -87,12 +87,12 @@ export const Query = queryType({
       args: {
         topic_id: nonNull(intArg()),
         cursor: nullable(intArg()),
-        take: nullable(intArg()),
+        take: intArg(),
       },
       resolve: (_parent, { topic_id, cursor, take }, ctx) => {
         return ctx.prisma.punbb_post.findMany({
           skip: cursor ? 1 : 0,
-          take: take || DEFAULT_TAKE,
+          take: take,
           cursor: cursor
             ? {
                 id: cursor,

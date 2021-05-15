@@ -6,19 +6,21 @@ import { CentreLoading } from './CentreLoading';
 import { CentreFin } from './CentreFin';
 import { FlatList } from 'react-native-bidirectional-infinite-scroll';
 
+const DEFAULT_TAKE = 20;
+
 /** make sure can get next cursor using last element id in array */
 type Item = {
   id: number | undefined;
 };
 
 type Props<T extends Item> = {
-  fetch: (variables: { cursor?: number }) => Promise<T[]>;
+  fetch: (variables: { cursor?: number, take: number }) => Promise<T[]>;
   renderItem: ListRenderItem<T>;
 };
 
 enum LoadingState {
   none = 'none',
-  loading = 'loading',
+  loading = 'loading', 
   refreshing = 'refreshing',
 }
 
@@ -43,18 +45,27 @@ export const CursorFlatList = <T extends Item>({
 
   // loadMore on initial mount
   useEffect(() => {
-    loadMore("down");
+    loadMore(true);
     setInitialLoad(false);
   }, []);
 
-  const loadMore = async (direction: "up" | "down") => {
+  const loadMore = async (down: boolean) => {
     if (loadingState !== LoadingState.none) return;
     try {
       setLoadingState(LoadingState.loading);
-      const cursor = list.length ? list[list.length - 1].id : undefined;
-      const data = await fetch({ cursor });
-      setHasMore((data.length && !!data[data.length - 1].id) || false);
-      setList([...list, ...data]);
+      if (down) {
+        // scrolling down
+        const cursor = list.length ? list[list.length - 1].id : undefined;
+        const data = await fetch({ cursor, take: DEFAULT_TAKE });
+        setHasMore((data.length && !!data[data.length - 1].id) || false);
+        setList([...list, ...data]);  
+      } else {
+        // scrolling up
+        const cursor = list.length ? list[0].id : undefined;
+        const data = await fetch({ cursor, take: -DEFAULT_TAKE });
+        setHasMore((data.length && !!data[0].id) || false);
+        setList([...data, ...list]);
+      }
       setLoadingState(LoadingState.none);
     } catch (e) {
       setError(e);
@@ -66,7 +77,7 @@ export const CursorFlatList = <T extends Item>({
       //clear and re-fetch from beginning
       setLoadingState(LoadingState.refreshing);
       setList([]);
-      const data = await fetch({ cursor: undefined });
+      const data = await fetch({ cursor: undefined, take: DEFAULT_TAKE });
       setList(data);
       setLoadingState(LoadingState.none);
     } catch (e) {
@@ -88,8 +99,8 @@ export const CursorFlatList = <T extends Item>({
       data={list}
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
-      onEndReached={() => loadMore("up")}
-      onStartReached={() => loadMore("down")}
+      onEndReached={() => loadMore(true)}
+      onStartReached={() => loadMore(false)}
       FooterLoadingIndicator={() => <CentreLoading />}
       HeaderLoadingIndicator={() => <CentreLoading />}
       // ListFooterComponent={

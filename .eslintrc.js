@@ -11,13 +11,13 @@ module.export = {
     es6: true
   },
   ignorePatterns: [
-    "**/generated/**",  
-    "**/build/**",
-    "**/public/**",
-    "**/coverage/**",
-    "**/node_modules/**",
-    "**/dist/**",
-    "**/web-build/**",
+    "**/generated/*",  
+    "**/build/*",
+    "**/public/*",
+    "**/coverage/*",
+    "**/node_modules/*",
+    "**/dist/*",
+    "**/web-build/*",
   ],
   extends: [
     "plugin:@typescript-eslint/recommended",
