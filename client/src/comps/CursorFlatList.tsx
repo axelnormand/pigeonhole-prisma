@@ -4,7 +4,8 @@ import { StyleSheet, ListRenderItem } from 'react-native';
 import { CentreLoadingPage } from './CentreLoadingPage';
 import { CentreLoading } from './CentreLoading';
 import { CentreFin } from './CentreFin';
-import { FlatList } from 'react-native-bidirectional-infinite-scroll';
+import { FlatList } from 'react-native';
+import { Button } from '@ui-kitten/components';
 
 const DEFAULT_TAKE = 20;
 
@@ -42,6 +43,7 @@ export const CursorFlatList = <T extends Item>({
   );
   const [error, setError] = useState<Error>();
   const [hasMore, setHasMore] = useState(false);
+  const [hasPrevious, setHasPrevious] = useState(false);
 
   // loadMore on initial mount
   useEffect(() => {
@@ -58,12 +60,14 @@ export const CursorFlatList = <T extends Item>({
         const cursor = list.length ? list[list.length - 1].id : undefined;
         const data = await fetch({ cursor, take: DEFAULT_TAKE });
         setHasMore((data.length && !!data[data.length - 1].id) || false);
+        setHasPrevious(data.length > 0);
         setList([...list, ...data]);  
       } else {
         // scrolling up
         const cursor = list.length ? list[0].id : undefined;
         const data = await fetch({ cursor, take: -DEFAULT_TAKE });
         setHasMore((data.length && !!data[0].id) || false);
+        setHasPrevious(data.length > 0);
         setList([...data, ...list]);
       }
       setLoadingState(LoadingState.none);
@@ -100,16 +104,20 @@ export const CursorFlatList = <T extends Item>({
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
       onEndReached={() => loadMore(true)}
-      onStartReached={() => loadMore(false)}
-      FooterLoadingIndicator={() => <CentreLoading />}
-      HeaderLoadingIndicator={() => <CentreLoading />}
-      // ListFooterComponent={
-      //   hasMore ? (
-      //     <CentreLoading />
-      //   ) : loadingState === LoadingState.none ? (
-      //     <CentreFin />
-      //   ) : null
-      // }
+      ListHeaderComponent = {
+        hasPrevious ? (
+          <Button>Load Previous</Button>
+        ) : loadingState === LoadingState.none ? (
+          <CentreFin />
+        ) : null
+     }
+      ListFooterComponent = {
+         hasMore ? (
+           <CentreLoading />
+         ) : loadingState === LoadingState.none ? (
+           <CentreFin />
+         ) : null
+      }
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
     />
