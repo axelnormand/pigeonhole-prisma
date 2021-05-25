@@ -106,7 +106,7 @@ export const CursorFlatList = <T extends Item>({
       }}
       ListHeaderComponent = {
         hasPrevious ? (
-          <Button>Load Previous</Button>
+          <Button appearance='ghost' size='tiny' onPress={() => loadMore(false)}>Load Previous</Button>
         ) : null
      }
       ListFooterComponent = {
