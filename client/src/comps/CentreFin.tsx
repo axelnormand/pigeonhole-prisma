@@ -3,10 +3,13 @@ import { StyleSheet } from 'react-native';
 import { Text } from '@ui-kitten/components';
 import { FormRow } from './FormRow';
 
-export const CentreFin: React.FC = () => (
+export const CentreFin: React.FC = ({children}) => (
   <FormRow style={styles.container}>
     <Text appearance="hint" category="c1">
-      ~ end ~
+      <>
+        {children}
+        {!children && `~ end ~`}
+      </>
     </Text>
   </FormRow>
 );

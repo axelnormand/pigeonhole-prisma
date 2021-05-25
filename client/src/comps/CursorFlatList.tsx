@@ -59,14 +59,12 @@ export const CursorFlatList = <T extends Item>({
         // scrolling down
         const cursor = list.length ? list[list.length - 1].id : undefined;
         const data = await fetch({ cursor, take: DEFAULT_TAKE });
-        setHasMore((data.length && !!data[data.length - 1].id) || false);
-        setHasPrevious(data.length > 0);
+        setHasMore(data.length > 0);
         setList([...list, ...data]);  
       } else {
         // scrolling up
         const cursor = list.length ? list[0].id : undefined;
         const data = await fetch({ cursor, take: -DEFAULT_TAKE });
-        setHasMore((data.length && !!data[0].id) || false);
         setHasPrevious(data.length > 0);
         setList([...data, ...list]);
       }
@@ -103,12 +101,12 @@ export const CursorFlatList = <T extends Item>({
       data={list}
       onRefresh={refresh}
       refreshing={loadingState === LoadingState.refreshing}
-      onEndReached={() => loadMore(true)}
+      onEndReached={() => {
+        if (hasMore) loadMore(true)
+      }}
       ListHeaderComponent = {
         hasPrevious ? (
           <Button>Load Previous</Button>
-        ) : loadingState === LoadingState.none ? (
-          <CentreFin />
         ) : null
      }
       ListFooterComponent = {
