@@ -61,6 +61,7 @@
     "react-native-web": "~0.14.10",
     "react-native-webview": "11.0.2",
     "react-youtube": "^7.13.0",
+    "tailwind-rn": "^3.0.1",
     "yup": "^0.32.8"
   },
   "devDependencies": {
