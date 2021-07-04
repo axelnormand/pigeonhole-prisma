@@ -5,7 +5,7 @@ import { PunbbTopicModelType, StoreContext } from '../models';
 import { MainStackParams } from '../navigation/MainStack';
 import { TopicCard } from '../comps/TopicCard';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { CursorFlatList } from '../comps/CursorFlatList';
+import { CursorFlatList } from '../comps/flatlist';
 
 type Props = {
   route: RouteProp<MainStackParams, 'Topics'>;

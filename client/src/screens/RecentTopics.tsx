@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import { StoreContext, PunbbTopicModelType } from '../models';
 import { TopicCard } from '../comps/TopicCard';
 import { MainStackParams } from '../navigation/MainStack';
-import { CursorFlatList } from '../comps/CursorFlatList';
+import { CursorFlatList } from '../comps/flatlist';
 
 type NavProps = StackNavigationProp<MainStackParams, 'ForumTabs'>;
 

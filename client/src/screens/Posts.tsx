@@ -1,23 +1,18 @@
 import React, { useEffect, useContext } from 'react';
-import { RouteProp, useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { PostCard } from '../comps/PostCard';
 import { StoreContext, PunbbPostModelType } from '../models';
 import { MainStackParams } from '../navigation/MainStack';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { CursorFlatList } from '../comps/CursorFlatList';
+import { StackScreenProps } from '@react-navigation/stack';
+import { OffsetFlatList } from '../comps/flatlist';
+import { useState } from 'react';
 
-type Props = {
-  route: RouteProp<MainStackParams, 'Posts'>;
-};
+type Props = StackScreenProps<MainStackParams, 'Posts'>;
 
-type NavProps = StackNavigationProp<MainStackParams, 'Posts'>;
-
-export const Posts = observer(({ route }: Props) => {
-  const navigation = useNavigation<NavProps>();
+export const Posts = observer(({ route, navigation }: Props) => {
   const { topicId, topicName } = route.params;
   const store = useContext(StoreContext);
-
+  
   useEffect(() => {
     navigation.setOptions({
       title: topicName,
@@ -25,9 +20,9 @@ export const Posts = observer(({ route }: Props) => {
   }, [navigation, topicName]);
 
   return (
-    <CursorFlatList<PunbbPostModelType>
-      fetch={async ({ cursor }) =>
-        (await store.queryPosts({ cursor, topicId })).posts
+    <OffsetFlatList<PunbbPostModelType>
+      fetch={async ({ skip, take, resumePosition }) =>
+        (await store.queryPosts({ skip, take, resumePosition, topicId })).posts
       }
       renderItem={({ item }) => {
         const { id, message, posted, poster } = item;
