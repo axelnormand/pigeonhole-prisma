@@ -309,7 +309,8 @@ export interface NexusGenArgTypes {
   }
   Query: {
     posts: { // args
-      cursor?: number | null; // Int
+      resumePosition?: boolean | null; // Boolean
+      skip?: number | null; // Int
       take?: number | null; // Int
       topic_id: number; // Int!
     }

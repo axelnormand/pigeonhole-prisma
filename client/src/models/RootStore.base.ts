@@ -88,8 +88,8 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    queryPosts(variables: { topicId: number, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!, $cursor: Int, $take: Int) { posts(topic_id: $topicId, cursor: $cursor, take: $take) {
+    queryPosts(variables: { topicId: number, skip?: number, take?: number, resumePosition?: boolean }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!, $skip: Int, $take: Int, $resumePosition: Boolean) { posts(topic_id: $topicId, skip: $skip, take: $take, resumePosition: $resumePosition) {
         ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
