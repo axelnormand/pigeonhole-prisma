@@ -96,6 +96,12 @@ export const Query = queryType({
         const finalTake = take || DEFAULT_TAKE;
         const finalSkip = skip || 0;
 
+        const topic = await ctx.prisma.punbb_topic.findFirst({
+          where: {
+            id: topic_id
+          }
+        });
+
         const userThread = await ctx.prisma.punbb_userthread.findFirst({
           where: {
             user: getUserId(ctx) ?? 0,
@@ -126,7 +132,7 @@ export const Query = queryType({
           },
         });
 
-        return { posts, totalPages, currentPage, totalPosts };
+        return { posts, totalPages, currentPage, totalPosts, topicName: topic?.subject };
       },
     });
 

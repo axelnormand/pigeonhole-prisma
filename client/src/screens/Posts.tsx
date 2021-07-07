@@ -5,7 +5,6 @@ import { StoreContext, PunbbPostModelType } from '../models';
 import { MainStackParams } from '../navigation/MainStack';
 import { StackScreenProps } from '@react-navigation/stack';
 import { OffsetFlatList } from '../comps/flatlist';
-import { useState } from 'react';
 
 type Props = StackScreenProps<MainStackParams, 'Posts'>;
 
