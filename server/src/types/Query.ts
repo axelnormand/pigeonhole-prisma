@@ -84,8 +84,8 @@ export const Query = queryType({
     });
 
     // posts have offset not cursor pagination so can jump to last read page
-    t.list.field('posts', {
-      type: 'punbb_post',
+    t.field('posts', {
+      type: 'PostsResult',
       args: {
         topic_id: nonNull(intArg()),
         skip: nullable(intArg()),
@@ -93,26 +93,40 @@ export const Query = queryType({
         resumePosition: booleanArg(), // true on first load to resume page where you left off
       },
       resolve: async (_parent, { topic_id, skip, take, resumePosition }, ctx: Context) => {
+        const finalTake = take || DEFAULT_TAKE;
+        const finalSkip = skip || 0;
+
         const userThread = await ctx.prisma.punbb_userthread.findFirst({
           where: {
             user: getUserId(ctx) ?? 0,
             thread: topic_id
           }
         });
+        const totalPosts = await ctx.prisma.punbb_post.count({
+          where: {
+            topic_id: Number(topic_id),
+          }
+        });
+        const totalPages = totalPosts / finalTake;
+        const currentPage = (finalSkip / finalTake);
 
-        return ctx.prisma.punbb_post.findMany({
-          skip: skip ?? 0,
-          take: take || DEFAULT_TAKE,
+        console.log(`Got user thread for topic ${topic_id} with resumePosition ${resumePosition}`, { user: getUserId(ctx), userThread, totalPages, totalPosts, currentPage });
+
+        const posts = await ctx.prisma.punbb_post.findMany({
+          skip: finalSkip,
+          take: finalTake,
           where: {
             topic_id: Number(topic_id),
             posted: {
-              gte: resumePosition? (userThread?.last_read||0) : 0
+              gte: resumePosition ? (userThread?.last_read || 0) : 0
             }
           },
           orderBy: {
             posted: 'asc',
           },
         });
+
+        return { posts, totalPages, currentPage, totalPosts };
       },
     });
 

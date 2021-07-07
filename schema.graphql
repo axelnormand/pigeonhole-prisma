@@ -20,6 +20,14 @@ type Mutation {
   updatePushToken(token: String!): UpdateResult
 }
 
+type PostsResult {
+  currentPage: Int
+  posts: [punbb_post]
+  topicName: String
+  totalPages: Int
+  totalPosts: Int
+}
+
 type punbb_category {
   cat_name: String!
   disp_position: Int!
@@ -101,7 +109,7 @@ type punbb_userthread {
 type Query {
   categories: [punbb_category]
   me: punbb_user
-  posts(resumePosition: Boolean, skip: Int, take: Int, topic_id: Int!): [punbb_post]
+  posts(resumePosition: Boolean, skip: Int, take: Int, topic_id: Int!): PostsResult
   recentTopics(cursor: Int, take: Int): [punbb_topic]
   searchPosts(cursor: Int, searchString: String!, take: Int): [punbb_post]
   topics(cursor: Int, forum_id: Int!, take: Int): [punbb_topic]

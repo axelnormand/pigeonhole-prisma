@@ -37,8 +37,9 @@ export const OffsetFlatList = <T extends Item>({
     LoadingState.none,
   );
   const [error, setError] = useState<Error>();
-  const [page, setPage] = useState(0);
-  const [pages, setPages] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [totalPosts, setTotalPosts] = useState(0);
 
   // fetchPage on initial mount
   useEffect(() => {

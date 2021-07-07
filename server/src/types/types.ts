@@ -1,4 +1,5 @@
 import { objectType, enumType } from 'nexus';
+import { punbb_post } from './punbb_post';
 
 export enum LoginResultType {
   SUCCESS = 'SUCCESS',
@@ -27,3 +28,17 @@ export const AuthPayload = objectType({
     });
   },
 });
+
+export const PostsResult = objectType({
+  name: 'PostsResult',
+  definition(t) {
+    t.list.field('posts', {
+      type: punbb_post,
+    });
+    t.string('topicName');
+    t.int('currentPage');
+    t.int('totalPages')
+    t.int('totalPosts')
+  },
+});
+

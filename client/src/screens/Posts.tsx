@@ -22,7 +22,7 @@ export const Posts = observer(({ route, navigation }: Props) => {
   return (
     <OffsetFlatList<PunbbPostModelType>
       fetch={async ({ skip, take, resumePosition }) =>
-        (await store.queryPosts({ skip, take, resumePosition, topicId })).posts
+        (await store.queryPosts({ skip, take, resumePosition, topicId: Number(topicId)})).posts
       }
       renderItem={({ item }) => {
         const { id, message, posted, poster } = item;

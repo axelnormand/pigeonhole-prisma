@@ -48,6 +48,13 @@ export interface NexusGenObjects {
     token?: string | null; // String
   }
   Mutation: {};
+  PostsResult: { // root type
+    currentPage?: number | null; // Int
+    posts?: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    topicName?: string | null; // String
+    totalPages?: number | null; // Int
+    totalPosts?: number | null; // Int
+  }
   Query: {};
   UpdateResult: { // root type
     success?: boolean | null; // Boolean
@@ -131,10 +138,17 @@ export interface NexusGenFieldTypes {
     login: NexusGenRootTypes['AuthPayload'] | null; // AuthPayload
     updatePushToken: NexusGenRootTypes['UpdateResult'] | null; // UpdateResult
   }
+  PostsResult: { // field return type
+    currentPage: number | null; // Int
+    posts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    topicName: string | null; // String
+    totalPages: number | null; // Int
+    totalPosts: number | null; // Int
+  }
   Query: { // field return type
     categories: Array<NexusGenRootTypes['punbb_category'] | null> | null; // [punbb_category]
     me: NexusGenRootTypes['punbb_user'] | null; // punbb_user
-    posts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    posts: NexusGenRootTypes['PostsResult'] | null; // PostsResult
     recentTopics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
     searchPosts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
     topics: Array<NexusGenRootTypes['punbb_topic'] | null> | null; // [punbb_topic]
@@ -215,10 +229,17 @@ export interface NexusGenFieldTypeNames {
     login: 'AuthPayload'
     updatePushToken: 'UpdateResult'
   }
+  PostsResult: { // field return type name
+    currentPage: 'Int'
+    posts: 'punbb_post'
+    topicName: 'String'
+    totalPages: 'Int'
+    totalPosts: 'Int'
+  }
   Query: { // field return type name
     categories: 'punbb_category'
     me: 'punbb_user'
-    posts: 'punbb_post'
+    posts: 'PostsResult'
     recentTopics: 'punbb_topic'
     searchPosts: 'punbb_post'
     topics: 'punbb_topic'
