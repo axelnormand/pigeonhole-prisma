@@ -32,13 +32,13 @@ export const AuthPayload = objectType({
 export const PostsResult = objectType({
   name: 'PostsResult',
   definition(t) {
-    t.list.field('posts', {
+    t.list.field('items', {
       type: punbb_post,
     });
     t.string('topicName');
     t.int('currentPage');
     t.int('totalPages')
-    t.int('totalPosts')
+    t.int('totalItems')
   },
 });
 

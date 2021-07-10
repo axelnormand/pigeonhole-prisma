@@ -10,7 +10,7 @@ import { Platform } from 'react-native';
 export type MainStackParams = {
   ForumTabs: undefined;
   Topics: { forumId: number; forumName: string };
-  Posts: { topicId: number; topicName: string };
+  Posts: { topicId: number; topicName?: string };
 };
 
 type Props = {};
