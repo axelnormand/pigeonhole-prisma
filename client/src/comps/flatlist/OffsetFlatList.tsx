@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '@ui-kitten/components';
-import { StyleSheet, ListRenderItem } from 'react-native';
+import { StyleSheet, ListRenderItem, View, Text } from 'react-native';
 import { CentreLoadingPage } from '../CentreLoadingPage';
 import { CentreLoading } from '../CentreLoading';
 import { CentreFin } from '../CentreFin';
@@ -8,13 +8,18 @@ import { FlatList } from 'react-native';
 import { Button } from '@ui-kitten/components';
 import { DEFAULT_TAKE, Item, LoadingState, styles } from './common';
 
-
+type OffsetPage<T> = {
+  items: T[];
+  totalItems: number;
+  currentPage: number;
+  totalPages: number;
+}
 
 type Props<T extends Item> = {
   /**
    * resume position true to resume from last read page on initial load
    */
-  fetch: (variables: { skip: number, take: number, resumePosition: boolean }) => Promise<T[]>;
+  fetch: (variables: { skip: number, take: number, resumePosition: boolean }) => Promise<OffsetPage<T>>;
   renderItem: ListRenderItem<T>;
 };
 
@@ -30,45 +35,33 @@ export const OffsetFlatList = <T extends Item>({
 }: Props<T>) => {
   const theme = useTheme();
   const background = theme['color-basic-800'];
-  const [list, setList] = useState<T[]>([]);
+  const [items, setItems] = useState<T[]>([]);
   const [initialLoad, setInitialLoad] = useState(true);
   const [resumePosition, setResumePosition] = useState(true);
   const [loadingState, setLoadingState] = useState<LoadingState>(
     LoadingState.none,
   );
   const [error, setError] = useState<Error>();
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(-1);
   const [totalPages, setTotalPages] = useState(0);
-  const [totalPosts, setTotalPosts] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   // fetchPage on initial mount
   useEffect(() => {
-    fetchPage();
+    fetchPage(true);
     setInitialLoad(false);
     setResumePosition(false);
   }, []);
 
-  const fetchPage = async () => {
+  const fetchPage = async (isNext: boolean) => {
     if (loadingState !== LoadingState.none) return;
     try {
       setLoadingState(LoadingState.loading);
-      const data = await fetch({skip: pages * DEFAULT_TAKE, take: DEFAULT_TAKE, resumePosition });
-      setPage(page+1);
-      setList([...list, ...data]);  
-      setLoadingState(LoadingState.none);
-    } catch (e) {
-      setError(e);
-    }
-  };
-
-  const refresh = async () => {
-    try {
-      //clear and re-fetch from beginning
-      setLoadingState(LoadingState.refreshing);
-      setList([]);
-      setPage(0);
-      const data = await fetch({ skip: pages * DEFAULT_TAKE , take: DEFAULT_TAKE, resumePosition });
-      setList(data);
+      const data = await fetch({skip: (currentPage + (isNext? 1 : -1)) * DEFAULT_TAKE, take: DEFAULT_TAKE, resumePosition });
+      setCurrentPage(data.currentPage);
+      setTotalPages(data.totalPages);
+      setTotalItems(data.totalItems);
+      setItems(data.items);  
       setLoadingState(LoadingState.none);
     } catch (e) {
       setError(e);
@@ -86,16 +79,22 @@ export const OffsetFlatList = <T extends Item>({
   return (
     <FlatList
       style={[styles.scroll, { backgroundColor: background }]}
-      data={list}
-      onRefresh={refresh}
-      refreshing={loadingState === LoadingState.refreshing}
-      ListFooterComponent = {
-         page === pages && loadingState === LoadingState.none ? (
-           <CentreFin />
-         ) : null
-      }
+      data={items}
+      ListFooterComponent={<Pagination currentPage={currentPage} totalItems={totalItems} totalPages={totalPages} onNext={() => fetchPage(true)} onPrev={() => fetchPage(false)}/>}
       keyExtractor={(item, index) => item.id?.toString() ?? `index-${index}`}
       renderItem={renderItem}
     />
   );
 };
+
+const Pagination: React.FC<{ currentPage: number; totalPages: number; totalItems: number, onNext: () => void; onPrev: () => void }> = ({ currentPage, totalPages, totalItems, onNext, onPrev }) => {
+  return(
+    <View>
+      <Button onPress={onPrev} disabled={currentPage < 2}>Prev</Button>
+      <Button onPress={onNext} disabled={currentPage >= totalPages}>Next</Button>
+      <Text>Current: ${currentPage}</Text>
+      <Text>Total Pages: ${totalPages}</Text>
+      <Text>Total Items: ${totalItems}</Text>
+    </View>
+  )
+}

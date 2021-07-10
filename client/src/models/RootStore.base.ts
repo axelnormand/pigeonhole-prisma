@@ -15,6 +15,8 @@ import { PunbbTopicModel, PunbbTopicModelType } from "./PunbbTopicModel"
 import { punbbTopicModelPrimitives, PunbbTopicModelSelector } from "./PunbbTopicModel.base"
 import { PunbbPostModel, PunbbPostModelType } from "./PunbbPostModel"
 import { punbbPostModelPrimitives, PunbbPostModelSelector } from "./PunbbPostModel.base"
+import { PostsResultModel, PostsResultModelType } from "./PostsResultModel"
+import { postsResultModelPrimitives, PostsResultModelSelector } from "./PostsResultModel.base"
 import { AuthPayloadModel, AuthPayloadModelType } from "./AuthPayloadModel"
 import { authPayloadModelPrimitives, AuthPayloadModelSelector } from "./AuthPayloadModel.base"
 import { UpdateResultModel, UpdateResultModelType } from "./UpdateResultModel"
@@ -63,7 +65,7 @@ mutateCreatePost="mutateCreatePost"
 */
 export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
   .named("RootStore")
-  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['AuthPayload', () => AuthPayloadModel], ['UpdateResult', () => UpdateResultModel], ['punbb_userthread', () => PunbbUserthreadModel]], [], "js"))
+  .extend(configureStoreMixin([['punbb_user', () => PunbbUserModel], ['punbb_category', () => PunbbCategoryModel], ['punbb_forum', () => PunbbForumModel], ['punbb_topic', () => PunbbTopicModel], ['punbb_post', () => PunbbPostModel], ['PostsResult', () => PostsResultModel], ['AuthPayload', () => AuthPayloadModel], ['UpdateResult', () => UpdateResultModel], ['punbb_userthread', () => PunbbUserthreadModel]], [], "js"))
   .props({
 
   })
@@ -88,9 +90,9 @@ export const RootStoreBase = withTypedRefs<Refs>()(MSTGQLStore
         ${typeof resultSelector === "function" ? resultSelector(new PunbbTopicModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
-    queryPosts(variables: { topicId: number, skip?: number, take?: number, resumePosition?: boolean }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
-      return self.query<{ posts: PunbbPostModelType[]}>(`query posts($topicId: Int!, $skip: Int, $take: Int, $resumePosition: Boolean) { posts(topic_id: $topicId, skip: $skip, take: $take, resumePosition: $resumePosition) {
-        ${typeof resultSelector === "function" ? resultSelector(new PunbbPostModelSelector()).toString() : resultSelector}
+    queryPosts(variables: { topicId: number, skip?: number, take?: number, resumePosition?: boolean }, resultSelector: string | ((qb: PostsResultModelSelector) => PostsResultModelSelector) = postsResultModelPrimitives.toString(), options: QueryOptions = {}) {
+      return self.query<{ posts: PostsResultModelType}>(`query posts($topicId: Int!, $skip: Int, $take: Int, $resumePosition: Boolean) { posts(topic_id: $topicId, skip: $skip, take: $take, resumePosition: $resumePosition) {
+        ${typeof resultSelector === "function" ? resultSelector(new PostsResultModelSelector()).toString() : resultSelector}
       } }`, variables, options)
     },
     querySearchPosts(variables: { searchString: string, cursor?: number, take?: number }, resultSelector: string | ((qb: PunbbPostModelSelector) => PunbbPostModelSelector) = punbbPostModelPrimitives.toString(), options: QueryOptions = {}) {
