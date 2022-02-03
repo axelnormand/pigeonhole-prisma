@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '@ui-kitten/components';
-import { StyleSheet, ListRenderItem, View, Text } from 'react-native';
+import { ListRenderItem, View, Text } from 'react-native';
 import { CentreLoadingPage } from '../CentreLoadingPage';
-import { CentreLoading } from '../CentreLoading';
-import { CentreFin } from '../CentreFin';
 import { FlatList } from 'react-native';
 import { Button } from '@ui-kitten/components';
 import { DEFAULT_TAKE, Item, LoadingState, styles } from './common';
 
 type OffsetPage<T> = {
-  items: T[];
+  items: T[] | undefined |null;
   totalItems: number;
   currentPage: number;
   totalPages: number;
@@ -61,7 +59,7 @@ export const OffsetFlatList = <T extends Item>({
       setCurrentPage(data.currentPage);
       setTotalPages(data.totalPages);
       setTotalItems(data.totalItems);
-      setItems(data.items);  
+      setItems(data.items ?? []);  
       setLoadingState(LoadingState.none);
     } catch (e) {
       setError(e);

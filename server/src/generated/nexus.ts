@@ -50,10 +50,10 @@ export interface NexusGenObjects {
   Mutation: {};
   PostsResult: { // root type
     currentPage?: number | null; // Int
-    posts?: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    items?: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
     topicName?: string | null; // String
+    totalItems?: number | null; // Int
     totalPages?: number | null; // Int
-    totalPosts?: number | null; // Int
   }
   Query: {};
   UpdateResult: { // root type
@@ -140,10 +140,10 @@ export interface NexusGenFieldTypes {
   }
   PostsResult: { // field return type
     currentPage: number | null; // Int
-    posts: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
+    items: Array<NexusGenRootTypes['punbb_post'] | null> | null; // [punbb_post]
     topicName: string | null; // String
+    totalItems: number | null; // Int
     totalPages: number | null; // Int
-    totalPosts: number | null; // Int
   }
   Query: { // field return type
     categories: Array<NexusGenRootTypes['punbb_category'] | null> | null; // [punbb_category]
@@ -231,10 +231,10 @@ export interface NexusGenFieldTypeNames {
   }
   PostsResult: { // field return type name
     currentPage: 'Int'
-    posts: 'punbb_post'
+    items: 'punbb_post'
     topicName: 'String'
+    totalItems: 'Int'
     totalPages: 'Int'
-    totalPosts: 'Int'
   }
   Query: { // field return type name
     categories: 'punbb_category'

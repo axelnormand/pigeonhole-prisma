@@ -22,10 +22,10 @@ type Mutation {
 
 type PostsResult {
   currentPage: Int
-  posts: [punbb_post]
+  items: [punbb_post]
   topicName: String
+  totalItems: Int
   totalPages: Int
-  totalPosts: Int
 }
 
 type punbb_category {
